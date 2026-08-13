@@ -3,7 +3,7 @@ param(
     [string]$ReleaseManifest,
     [string]$PatchPath,
     [string]$CuePath,
-    [string]$XdeltaPath,
+    [string]$XdeltaSourceDirectory,
     [string]$OutputDirectory,
     [switch]$Force
 )
@@ -18,7 +18,7 @@ if ([string]::IsNullOrWhiteSpace($ReleaseManifest)) {
 }
 $ReleaseManifest = [IO.Path]::GetFullPath($ReleaseManifest)
 $Manifest = Get-Content -LiteralPath $ReleaseManifest -Raw -Encoding UTF8 | ConvertFrom-Json
-if ($Manifest.format -ne 'xenogears-mass-driver-one-app-v1') {
+if ($Manifest.format -ne 'xenogears-mass-driver-one-app-v2') {
     throw "Unsupported one-app release manifest format: $($Manifest.format)"
 }
 
@@ -60,7 +60,6 @@ if ([string]$Manifest.package.staging_prefix -notmatch '^\.[A-Za-z0-9_-]+\.$' -o
     throw "package.staging_prefix must be a short safe dotted prefix: $($Manifest.package.staging_prefix)"
 }
 Assert-SafeRelative 'patch.relative_path' ([string]$Manifest.patch.relative_path) (([string]$Manifest.package.support_directory) + '/patches/') '.xdelta'
-Assert-SafeRelative 'decoder.relative_path' ([string]$Manifest.decoder.relative_path) (([string]$Manifest.package.support_directory) + '/tools/') '.exe'
 Assert-SafeRelative 'cue_template.relative_path' ([string]$Manifest.cue_template.relative_path) (([string]$Manifest.package.support_directory) + '/game/') '.template'
 
 if ([string]::IsNullOrWhiteSpace($OutputDirectory)) {
@@ -69,17 +68,17 @@ if ([string]::IsNullOrWhiteSpace($OutputDirectory)) {
 $OutputDirectory = [IO.Path]::GetFullPath($OutputDirectory)
 
 if ([string]::IsNullOrWhiteSpace($PatchPath)) {
-    throw 'Supply -PatchPath pointing to the V161 xdelta patch from the release package.'
+    throw 'Supply -PatchPath pointing to the V161 plain-VCDIFF patch from the release package.'
 }
 if ([string]::IsNullOrWhiteSpace($CuePath)) {
     $CuePath = [IO.Path]::Combine($Here, 'game', [IO.Path]::GetFileName([string]$Manifest.cue_template.relative_path))
 }
-if ([string]::IsNullOrWhiteSpace($XdeltaPath)) {
-    throw 'Supply -XdeltaPath pointing to the reviewed xdelta3.exe from the release package.'
+if ([string]::IsNullOrWhiteSpace($XdeltaSourceDirectory)) {
+    throw "Supply -XdeltaSourceDirectory pointing to a clean xdelta checkout at commit $($Manifest.decoder.source_commit)."
 }
 $PatchPath = [IO.Path]::GetFullPath($PatchPath)
 $CuePath = [IO.Path]::GetFullPath($CuePath)
-$XdeltaPath = [IO.Path]::GetFullPath($XdeltaPath)
+$XdeltaSourceDirectory = [IO.Path]::GetFullPath($XdeltaSourceDirectory)
 
 function Assert-PinnedFile {
     param([string]$Label, [string]$Path, [long]$Size, [string]$Sha256)
@@ -90,6 +89,20 @@ function Assert-PinnedFile {
     $Actual = (Get-FileHash -LiteralPath $Path -Algorithm SHA256).Hash.ToLowerInvariant()
     if ($Actual -ne $Sha256.ToLowerInvariant()) {
         throw "$Label SHA-256 mismatch: expected $Sha256; found $Actual"
+    }
+}
+
+function Assert-PinnedCheckout {
+    param([string]$Label, [string]$Path, [string]$Commit)
+    if (-not [IO.Directory]::Exists($Path)) { throw "$Label source checkout is missing: $Path" }
+    $Git = (Get-Command git.exe -ErrorAction Stop).Source
+    $Head = (& $Git -C $Path rev-parse --verify HEAD 2>$null).Trim()
+    if ($LASTEXITCODE -ne 0 -or $Head -cne $Commit) {
+        throw "$Label source commit mismatch: expected $Commit; found $Head"
+    }
+    $Status = @(& $Git -C $Path status --porcelain=v1 --untracked-files=all)
+    if ($LASTEXITCODE -ne 0 -or $Status.Count -ne 0) {
+        throw "$Label source checkout must be clean at pinned commit $Commit."
     }
 }
 
@@ -147,14 +160,17 @@ function New-MassDriverIcon([string]$Path) {
 
 foreach ($Hash in @(
     [string]$Manifest.source.sha256, [string]$Manifest.patch.sha256,
-    [string]$Manifest.decoder.sha256, [string]$Manifest.cue_template.sha256,
+    [string]$Manifest.cue_template.sha256,
     [string]$Manifest.output.bin_sha256, [string]$Manifest.output.cue_sha256
 )) {
     if ($Hash -notmatch '^[0-9a-fA-F]{64}$') { throw "Invalid SHA-256 in release manifest: $Hash" }
 }
+foreach ($Commit in @([string]$Manifest.decoder.source_commit)) {
+    if ($Commit -notmatch '^[0-9a-f]{40}$') { throw "Invalid source commit in release manifest: $Commit" }
+}
 Assert-PinnedFile "$($Manifest.package.display_version) patch" $PatchPath ([long]$Manifest.patch.size) ([string]$Manifest.patch.sha256)
-Assert-PinnedFile 'xdelta3 decoder' $XdeltaPath ([long]$Manifest.decoder.size) ([string]$Manifest.decoder.sha256)
 Assert-PinnedFile 'CUE template' $CuePath ([long]$Manifest.cue_template.size) ([string]$Manifest.cue_template.sha256)
+Assert-PinnedCheckout 'xdelta3' $XdeltaSourceDirectory ([string]$Manifest.decoder.source_commit)
 
 $VsWhere = 'C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere.exe'
 if (-not [IO.File]::Exists($VsWhere)) { throw 'Visual Studio Build Tools locator is not installed.' }
@@ -193,15 +209,12 @@ try {
 #define RELEASE_OUTPUT_FOLDER L"$(Escape-Cpp ([string]$Manifest.package.output_folder))"
 #define RELEASE_STAGE_PREFIX L"$(Escape-Cpp ([string]$Manifest.package.staging_prefix))"
 #define RELEASE_PATCH_RELATIVE L"$(Escape-Cpp (([string]$Manifest.patch.relative_path) -replace '/', '\'))"
-#define RELEASE_DECODER_RELATIVE L"$(Escape-Cpp (([string]$Manifest.decoder.relative_path) -replace '/', '\'))"
 #define RELEASE_CUE_RELATIVE L"$(Escape-Cpp (([string]$Manifest.cue_template.relative_path) -replace '/', '\'))"
 #define RELEASE_APP_FILENAME L"$(Escape-Cpp ([string]$Manifest.package.app_filename))"
 #define RELEASE_SOURCE_SIZE $([long]$Manifest.source.size)ULL
 #define RELEASE_SOURCE_SHA "$(Escape-Cpp ([string]$Manifest.source.sha256.ToLowerInvariant()))"
 #define RELEASE_PATCH_SIZE $([long]$Manifest.patch.size)ULL
 #define RELEASE_PATCH_SHA "$(Escape-Cpp ([string]$Manifest.patch.sha256.ToLowerInvariant()))"
-#define RELEASE_DECODER_SIZE $([long]$Manifest.decoder.size)ULL
-#define RELEASE_DECODER_SHA "$(Escape-Cpp ([string]$Manifest.decoder.sha256.ToLowerInvariant()))"
 #define RELEASE_CUE_SIZE $([long]$Manifest.cue_template.size)ULL
 #define RELEASE_CUE_SHA "$(Escape-Cpp ([string]$Manifest.cue_template.sha256.ToLowerInvariant()))"
 #define RELEASE_OUTPUT_SIZE $([long]$Manifest.output.bin_size)ULL
@@ -209,6 +222,17 @@ try {
 "@
     $HeaderPath = [IO.Path]::Combine($BuildRoot, 'release_config.h')
     Write-Utf8NoBom $HeaderPath $Header
+
+    $XdeltaConfig = @"
+#ifndef XDELTA3_CONFIG_H
+#define XDELTA3_CONFIG_H
+#define SIZEOF_SIZE_T 8
+#define SIZEOF_UNSIGNED_INT 4
+#define SIZEOF_UNSIGNED_LONG 4
+#define SIZEOF_UNSIGNED_LONG_LONG 8
+#endif
+"@
+    Write-Utf8NoBom ([IO.Path]::Combine($BuildRoot, 'config.h')) $XdeltaConfig
 
     $FileVersion = [string]$Manifest.package.file_version
 
@@ -224,15 +248,33 @@ try {
     $StartExe = [IO.Path]::Combine($BuildRoot, [string]$Manifest.package.app_filename)
     $MainObj = [IO.Path]::Combine($BuildRoot, 'main.obj')
     $EmulatorObj = [IO.Path]::Combine($BuildRoot, 'emulator.obj')
-    $CompileFlags = @('/nologo','/c','/std:c++17','/O2','/Oi','/GL','/MT','/EHsc','/permissive-','/W4',
-        '/DUNICODE','/D_UNICODE','/DWIN32_LEAN_AND_MEAN','/guard:cf','/sdl','/Brepro',"/I$BuildRoot","/I$Here")
+    $DecoderObj = [IO.Path]::Combine($BuildRoot, 'xdelta_decoder.obj')
+    $XdeltaCoreObj = [IO.Path]::Combine($BuildRoot, 'xdelta3_decode_core.obj')
+    $XdeltaCodeDirectory = [IO.Path]::Combine($XdeltaSourceDirectory, 'xdelta3')
+    $XdeltaSource = [IO.Path]::Combine($XdeltaCodeDirectory, 'xdelta3.c')
+    if (-not [IO.File]::Exists($XdeltaSource)) {
+        throw 'Pinned xdelta3 source is missing.'
+    }
+    $XdeltaAbiFlags = @('/DHAVE_CONFIG_H=1','/DXD3_USE_LARGESIZET=1','/DXD3_ENCODER=0',
+        "/I$XdeltaCodeDirectory")
+    $CompileFlags = @('/nologo','/c','/std:c++17','/O2','/Oi','/MT','/EHsc','/permissive-','/W4',
+        '/DUNICODE','/D_UNICODE','/DWIN32_LEAN_AND_MEAN','/DNOMINMAX','/guard:cf','/sdl','/Brepro',"/I$BuildRoot","/I$Here") + $XdeltaAbiFlags
     & $Cl @CompileFlags "/Fo$MainObj" ([IO.Path]::Combine($Here, 'main.cpp'))
     if ($LASTEXITCODE -ne 0 -or -not [IO.File]::Exists($MainObj)) { throw 'Main source compilation failed.' }
     & $Cl @CompileFlags "/Fo$EmulatorObj" ([IO.Path]::Combine($Here, 'emulator.cpp'))
     if ($LASTEXITCODE -ne 0 -or -not [IO.File]::Exists($EmulatorObj)) { throw 'Emulator source compilation failed.' }
-    & $Cl /nologo "/Fe$StartExe" $MainObj $EmulatorObj $MainRes `
+    & $Cl @CompileFlags "/Fo$DecoderObj" ([IO.Path]::Combine($Here, 'xdelta_decoder.cpp'))
+    if ($LASTEXITCODE -ne 0 -or -not [IO.File]::Exists($DecoderObj)) { throw 'Integrated decoder wrapper compilation failed.' }
+    $XdeltaCoreFlags = @('/nologo','/c','/TC','/std:c11','/O2','/Oi','/MT','/W3','/guard:cf','/sdl','/Brepro',
+        '/D_CRT_SECURE_NO_WARNINGS','/D_CRT_NONSTDC_NO_WARNINGS','/DREGRESSION_TEST=0',
+        '/DSECONDARY_DJW=0','/DSECONDARY_FGK=0','/DSECONDARY_LZMA=0','/DXD3_MAIN=0','/DXD3_DEBUG=0',
+        '/DXD3_WIN32=1','/DXD3_POSIX=0','/DXD3_STDIO=0','/DEXTERNAL_COMPRESSION=0','/DSHELL_TESTS=0',
+        "/I$BuildRoot") + $XdeltaAbiFlags
+    & $Cl @XdeltaCoreFlags "/Fo$XdeltaCoreObj" $XdeltaSource
+    if ($LASTEXITCODE -ne 0 -or -not [IO.File]::Exists($XdeltaCoreObj)) { throw 'Pinned xdelta3 decoder-core compilation failed.' }
+    & $Cl /nologo "/Fe$StartExe" $MainObj $EmulatorObj $DecoderObj $XdeltaCoreObj $MainRes `
         user32.lib gdi32.lib shell32.lib comdlg32.lib bcrypt.lib ole32.lib version.lib `
-        /link /SUBSYSTEM:WINDOWS /MACHINE:X64 /DYNAMICBASE /HIGHENTROPYVA /NXCOMPAT /CETCOMPAT /GUARD:CF /OPT:REF /OPT:ICF /LTCG /BREPRO
+        /link /SUBSYSTEM:WINDOWS /MACHINE:X64 /DYNAMICBASE /HIGHENTROPYVA /NXCOMPAT /CETCOMPAT /GUARD:CF /OPT:REF /OPT:ICF /BREPRO
     if ($LASTEXITCODE -ne 0 -or -not [IO.File]::Exists($StartExe)) { throw 'One-app build failed.' }
 
     $StartLength = (Get-Item -LiteralPath $StartExe).Length
@@ -240,13 +282,11 @@ try {
 
     $PackageRoot = [IO.Path]::Combine($StageRoot, [string]$Manifest.package.directory_name)
     $SupportRoot = [IO.Path]::Combine($PackageRoot, [string]$Manifest.package.support_directory)
-    [IO.Directory]::CreateDirectory([IO.Path]::Combine($SupportRoot, 'tools')) | Out-Null
     [IO.Directory]::CreateDirectory([IO.Path]::Combine($SupportRoot, 'patches')) | Out-Null
     [IO.Directory]::CreateDirectory([IO.Path]::Combine($SupportRoot, 'game')) | Out-Null
     [IO.Directory]::CreateDirectory([IO.Path]::Combine($SupportRoot, 'licenses')) | Out-Null
     [IO.Directory]::CreateDirectory([IO.Path]::Combine($SupportRoot, 'docs')) | Out-Null
     Copy-Item -LiteralPath $StartExe -Destination ([IO.Path]::Combine($PackageRoot, [string]$Manifest.package.app_filename))
-    Copy-Item -LiteralPath $XdeltaPath -Destination ([IO.Path]::Combine($PackageRoot, ($Manifest.decoder.relative_path -replace '/', '\')))
     Copy-Item -LiteralPath $PatchPath -Destination ([IO.Path]::Combine($PackageRoot, ($Manifest.patch.relative_path -replace '/', '\')))
     Copy-Item -LiteralPath $CuePath -Destination ([IO.Path]::Combine($PackageRoot, ($Manifest.cue_template.relative_path -replace '/', '\')))
     $PublicManifest = Get-Content -LiteralPath $ReleaseManifest -Raw -Encoding UTF8 | ConvertFrom-Json
@@ -258,7 +298,6 @@ try {
     }
     Copy-Item -LiteralPath ([IO.Path]::Combine($Here, 'licenses', 'Perfect_Works_GPL-3.0.txt')) -Destination ([IO.Path]::Combine($SupportRoot, 'licenses'))
     Copy-Item -LiteralPath ([IO.Path]::Combine($Here, 'licenses', 'xdelta-Apache-2.0.txt')) -Destination ([IO.Path]::Combine($SupportRoot, 'licenses'))
-    Copy-Item -LiteralPath ([IO.Path]::Combine($Here, 'licenses', 'xz-libLZMA-0BSD.txt')) -Destination ([IO.Path]::Combine($SupportRoot, 'licenses'))
 
     $Files = Get-ChildItem -LiteralPath $PackageRoot -Recurse -File | Sort-Object { $_.FullName.Substring($PackageRoot.Length + 1).Replace('\','/') }
     $ChecksumLines = foreach ($File in $Files) {
@@ -268,8 +307,8 @@ try {
     Write-Utf8NoBom ([IO.Path]::Combine($SupportRoot, 'SHA256SUMS.txt')) (($ChecksumLines -join "`n") + "`n")
 
     $Expected = @(
-        [string]$Manifest.package.app_filename,[string]$Manifest.decoder.relative_path,
-        [string]$Manifest.patch.relative_path,[string]$Manifest.cue_template.relative_path,
+        [string]$Manifest.package.app_filename,[string]$Manifest.patch.relative_path,
+        [string]$Manifest.cue_template.relative_path,
         (([string]$Manifest.package.support_directory) + '/patch_manifest.json'),
         (([string]$Manifest.package.support_directory) + '/docs/README_FIRST.md'),
         (([string]$Manifest.package.support_directory) + '/docs/RELEASE_NOTES.md'),
@@ -278,8 +317,7 @@ try {
         (([string]$Manifest.package.support_directory) + '/docs/CREDITS_AND_LICENSES.md'),
         (([string]$Manifest.package.support_directory) + '/SHA256SUMS.txt'),
         (([string]$Manifest.package.support_directory) + '/licenses/Perfect_Works_GPL-3.0.txt'),
-        (([string]$Manifest.package.support_directory) + '/licenses/xdelta-Apache-2.0.txt'),
-        (([string]$Manifest.package.support_directory) + '/licenses/xz-libLZMA-0BSD.txt')
+        (([string]$Manifest.package.support_directory) + '/licenses/xdelta-Apache-2.0.txt')
     ) | Sort-Object
     $Actual = Get-ChildItem -LiteralPath $PackageRoot -Recurse -File | ForEach-Object {
         $_.FullName.Substring($PackageRoot.Length + 1).Replace('\','/')

@@ -14,24 +14,14 @@ Xenogears: Perfect Works Build 0.10.2. The included
 
 ## xdelta3
 
-The visible decoder in `MassDriverData/tools/xdelta3.exe` is a reviewed, reproducible x64
-build from unmodified xdelta 3.2.0 and XZ Utils 5.8.3 source. Deterministic
-path remapping prevents local source or build paths from being embedded. Its
-exact build description and SHA-256 identity are recorded in
-`MassDriverData/patch_manifest.json` and `MassDriverData/SHA256SUMS.txt`.
+The app statically integrates a decode-only core compiled from reviewed,
+unmodified xdelta 3.2.0 source. There is no bundled xdelta executable. The
+exact source commit and build description are recorded in
+`MassDriverData/patch_manifest.json`.
 
 - Project: https://github.com/jmacd/xdelta
 - Source commit: `ff322e592383227b0d65ddfde7e0e5bbc504dc15`
 - License: Apache License 2.0, included as `xdelta-Apache-2.0.txt`
-
-## XZ Utils / liblzma
-
-The decoder links liblzma from XZ Utils 5.8.3.
-
-- Project: https://tukaani.org/xz/
-- Source: https://github.com/tukaani-project/xz/releases/tag/v5.8.3
-- Source commit: `4b73f2ec19a99ef465282fbce633e8deb33691b3`
-- License for liblzma: 0BSD, included as `xz-libLZMA-0BSD.txt`
 
 Xenogears and its original game content belong to their respective copyright
 holders. This unofficial playtest release is not affiliated with or endorsed

@@ -1,12 +1,12 @@
 {
-  "format": "xenogears-mass-driver-one-app-v1",
-  "release": "v161.2",
+  "format": "xenogears-mass-driver-one-app-v2",
+  "release": "v161.3",
   "package": {
     "display_name": "Xenogears Mass Driver",
     "display_version": "V161",
-    "file_version": "1.6.1.2",
+    "file_version": "1.6.1.3",
     "directory_name": "Xenogears_Mass_Driver_V161_One_App",
-    "zip_filename": "Xenogears_Mass_Driver_V161.2_One_App.zip",
+    "zip_filename": "Xenogears_Mass_Driver_V161.3_One_App.zip",
     "app_filename": "Xenogears_Mass_Driver.exe",
     "app_size": null,
     "app_sha256": null,
@@ -21,17 +21,15 @@
   },
   "patch": {
     "relative_path": "MassDriverData/patches/Xenogears_Mass_Driver_v161_USA_Disc2.xdelta",
-    "encoding": "VCDIFF with LZMA secondary compression and no application header",
-    "size": 6415237,
-    "sha256": "1aab51fd5380e1b89053e42fa521036d4e063ec3e8c4382edd31992bc729a7b1"
+    "encoding": "Plain VCDIFF with no secondary compression and no application header",
+    "size": 8094235,
+    "sha256": "5acf90906eb1373ae2804566c114a692b9ef9ffd0126af92158055c366bbaef2"
   },
   "decoder": {
-    "relative_path": "MassDriverData/tools/xdelta3.exe",
-    "name": "xdelta3",
+    "name": "Integrated xdelta3 decoder core",
     "version": "3.2.0",
-    "build": "Reviewed reproducible x64 /MT build from unmodified xdelta 3.2.0 commit ff322e592383227b0d65ddfde7e0e5bbc504dc15 and XZ Utils 5.8.3 commit 4b73f2ec19a99ef465282fbce633e8deb33691b3; REGRESSION_TEST=1, /Brepro, deterministic /pathmap with no private build paths, /guard:cf, /sdl, CET, ASLR, and NX",
-    "size": 416768,
-    "sha256": "a67b7fcaeea48bf0d2e05d8d3ff2f12eddff35f1bd890cd5880baba23292a5b5"
+    "source_commit": "ff322e592383227b0d65ddfde7e0e5bbc504dc15",
+    "build": "Decode-only xdelta 3.2.0 core compiled into the app from the pinned clean source commit with all secondary compressors disabled; no xdelta helper process, console, or bundled decoder executable"
   },
   "cue_template": {
     "relative_path": "MassDriverData/game/Xenogears_PW_CD2_mass_driver_standalone_v161.cue.template",

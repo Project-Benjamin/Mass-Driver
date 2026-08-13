@@ -23,9 +23,9 @@ provide. It does not contain Xenogears, a PlayStation emulator, or a BIOS.
    of its official download links.
 
 The patcher reads the original BIN but never changes it. It creates the
-verified game in the `Xenogears Mass Driver V161` subfolder. A normal xdelta3
-console window is visible while the patch is being applied; wait for it to
-close on its own.
+verified game in the `Xenogears Mass Driver V161` subfolder. The xdelta decoder
+is built into the app, so applying the patch does not start a helper program or
+open a console window.
 
 The app checks for a supported emulator each time it runs. It does not
 save an emulator path or other application settings. Your emulator remains
@@ -38,12 +38,12 @@ restore older resident game code and is not valid for checking V161 changes.
 ## Transparent package
 
 The ZIP root contains only `Xenogears_Mass_Driver.exe` and the
-`MassDriverData` support folder. Patches, the visible xdelta3 decoder,
-documentation, and licenses are organized inside that folder. The app does
-not contain or unpack another executable. It verifies every runtime component
-before building, then verifies the finished BIN and CUE.
+`MassDriverData` support folder. The patch, documentation, and licenses are
+organized inside that folder. The app does not contain or unpack another
+executable. It verifies every runtime file before building, then verifies the
+finished BIN and CUE.
 
 `MassDriverData/SHA256SUMS.txt` lists every distributed file and its SHA-256
-value. The app and xdelta3 are not code-signed, so Windows SmartScreen may show a warning.
+value. The app is not code-signed, so Windows SmartScreen may show a warning.
 If antivirus software reports a threat, stop and report the exact filename,
 SHA-256 value, and detection name instead of adding an exclusion.

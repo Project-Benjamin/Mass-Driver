@@ -1,4 +1,4 @@
-# Xenogears Mass Driver V161.1 - one-app packaging revision
+# Xenogears Mass Driver V161.3 - one-app packaging revision
 
 V161 is an unofficial fan-made playtest build for the reconstructed Mass
 Driver dungeon. It is not affiliated with or endorsed by Square Enix.
@@ -21,9 +21,8 @@ resident battle code and cannot validate V161.
 This release replaces the former multi-file root with one clear app. Extract
 the ZIP and open `Xenogears_Mass_Driver.exe`. The ZIP root contains only that
 app and its `MassDriverData` support folder. The same app builds the game,
-finds or asks for an emulator, and starts the game. It runs the visible
-adjacent xdelta3 program normally in a visible console and does not unpack,
-create, hide, suspend, or delete executable files.
+finds or asks for an emulator, and starts the game. Its integrated xdelta3
+decoder applies the patch without unpacking or starting a helper executable.
 
 The package contains no original game disc image, emulator, or BIOS. It
 requires the user's unmodified USA Disc 2 BIN and their own emulator and BIOS.

@@ -17,6 +17,7 @@
 #include "resource.h"
 #include "release_config.h"
 #include "emulator.h"
+#include "xdelta_decoder.h"
 
 #pragma comment(lib, "bcrypt.lib")
 #pragma comment(lib, "comdlg32.lib")
@@ -30,15 +31,12 @@ static const wchar_t* kCueName = RELEASE_CUE_NAME;
 static const wchar_t* kOutputFolder = RELEASE_OUTPUT_FOLDER;
 static const wchar_t* kStagePrefix = RELEASE_STAGE_PREFIX;
 static const wchar_t* kPatchRelative = RELEASE_PATCH_RELATIVE;
-static const wchar_t* kDecoderRelative = RELEASE_DECODER_RELATIVE;
 static const wchar_t* kCueRelative = RELEASE_CUE_RELATIVE;
 
 static const unsigned long long kSourceSize = RELEASE_SOURCE_SIZE;
 static const char* kSourceSha = RELEASE_SOURCE_SHA;
 static const unsigned long long kPatchSize = RELEASE_PATCH_SIZE;
 static const char* kPatchSha = RELEASE_PATCH_SHA;
-static const unsigned long long kDecoderSize = RELEASE_DECODER_SIZE;
-static const char* kDecoderSha = RELEASE_DECODER_SHA;
 static const unsigned long long kCueSize = RELEASE_CUE_SIZE;
 static const char* kCueSha = RELEASE_CUE_SHA;
 static const unsigned long long kOutputSize = RELEASE_OUTPUT_SIZE;
@@ -103,19 +101,6 @@ static fs::path ExecutableDirectory() {
     return fs::path(std::wstring(buffer.data(), size)).parent_path();
 }
 
-static std::wstring Lower(std::wstring value) {
-    for (wchar_t& c : value) c = static_cast<wchar_t>(std::towlower(c));
-    return value;
-}
-
-static bool RegularExe(const fs::path& path) {
-    std::error_code error;
-    if (!fs::is_regular_file(path, error) || error || Lower(path.extension().wstring()) != L".exe") return false;
-    DWORD type = 0;
-    return GetBinaryTypeW(path.c_str(), &type) &&
-        (type == SCS_32BIT_BINARY || type == SCS_64BIT_BINARY);
-}
-
 class ReadLock {
 public:
     ReadLock() = default;
@@ -139,6 +124,7 @@ public:
             OPEN_EXISTING, FILE_FLAG_SEQUENTIAL_SCAN, nullptr);
         return handle_ != INVALID_HANDLE_VALUE;
     }
+    HANDLE Get() const { return handle_; }
 private:
     void Close() {
         if (handle_ != INVALID_HANDLE_VALUE) {
@@ -235,28 +221,6 @@ static fs::path MakeStage(const fs::path& final) {
     return final.parent_path() / (std::wstring(kStagePrefix) + text);
 }
 
-static int RunDecoder(const fs::path& decoder, const fs::path& source, const fs::path& patch,
-    const fs::path& output, std::wstring& error) {
-    std::wstring command = Quote(decoder.wstring()) + L" -d -s " + Quote(source.wstring()) + L" " +
-        Quote(patch.wstring()) + L" " + Quote(output.wstring());
-    std::vector<wchar_t> mutableCommand(command.begin(), command.end()); mutableCommand.push_back(0);
-    STARTUPINFOW startup{sizeof(startup)};
-    PROCESS_INFORMATION process{};
-    if (!CreateProcessW(decoder.c_str(), mutableCommand.data(), nullptr, nullptr, FALSE,
-        CREATE_NEW_CONSOLE, nullptr, decoder.parent_path().c_str(), &startup, &process)) {
-        error = L"The visible xdelta3 tool could not start: " + ErrorText(GetLastError());
-        return -1;
-    }
-    CloseHandle(process.hThread);
-    DWORD wait = WaitForSingleObject(process.hProcess, INFINITE);
-    DWORD code = XDELTA_FAILED;
-    if (wait != WAIT_OBJECT_0 || !GetExitCodeProcess(process.hProcess, &code)) {
-        error = L"Windows could not wait for xdelta3 to finish.";
-    }
-    CloseHandle(process.hProcess);
-    return static_cast<int>(code);
-}
-
 static void Status(const std::wstring& message, bool headless) {
     if (headless) WriteConsole(message);
     else if (gWindow) PostMessageW(gWindow, WM_BUILD_STATUS, 0,
@@ -272,23 +236,20 @@ static bool ExactOutput(const fs::path& final) {
 
 static int CheckPackage(std::wstring& error, std::vector<ReadLock>* retained = nullptr) {
     try {
-        const fs::path decoder = gRoot / kDecoderRelative;
         const fs::path patch = gRoot / kPatchRelative;
         const fs::path cueTemplate = gRoot / kCueRelative;
         std::vector<ReadLock> localLocks;
         std::vector<ReadLock>& locks = retained ? *retained : localLocks;
         locks.clear();
-        locks.reserve(3);
-        ReadLock decoderLock, patchLock, cueLock;
-        if (!decoderLock.Open(decoder) || !patchLock.Open(patch) || !cueLock.Open(cueTemplate)) {
+        locks.reserve(2);
+        ReadLock patchLock, cueLock;
+        if (!patchLock.Open(patch) || !cueLock.Open(cueTemplate)) {
             error = L"A patch-kit file is missing, busy, or could not be locked for a safe build.";
             return PACKAGE_BAD;
         }
-        locks.push_back(std::move(decoderLock));
         locks.push_back(std::move(patchLock));
         locks.push_back(std::move(cueLock));
-        if (!RegularExe(decoder) || !Pinned(decoder, kDecoderSize, kDecoderSha) ||
-            !Pinned(patch, kPatchSize, kPatchSha) ||
+        if (!Pinned(patch, kPatchSize, kPatchSha) ||
             !Pinned(cueTemplate, kCueSize, kCueSha)) {
             error = L"A patch-kit file is missing or changed. Extract a fresh copy of the complete ZIP.";
             return PACKAGE_BAD;
@@ -320,12 +281,10 @@ static int BuildGame(const fs::path& source, const fs::path& final,
             return SOURCE_HASH;
         }
 
-        Status(L"Checking the visible patch-kit files...", headless);
+        Status(L"Checking the patch-kit files...", headless);
         std::vector<ReadLock> packageLocks;
         int packageResult = CheckPackage(error, &packageLocks);
         if (packageResult != OK) return packageResult;
-        const fs::path decoder = gRoot / kDecoderRelative;
-        const fs::path patch = gRoot / kPatchRelative;
         const fs::path cueTemplate = gRoot / kCueRelative;
 
         if (fs::exists(final)) {
@@ -352,11 +311,11 @@ static int BuildGame(const fs::path& source, const fs::path& final,
         }
         stageOwned = true;
         fs::path output = stage / kBinName;
-        Status(L"Running the visible xdelta3 patch tool. This may take several minutes...", headless);
-        int decoderResult = RunDecoder(Extended(decoder), Extended(source), Extended(patch),
-            Extended(output), error);
+        Status(L"Building the game with the integrated xdelta decoder. This may take several minutes...", headless);
+        int decoderResult = DecodeVcdiff(sourceLock.Get(), packageLocks[0].Get(),
+            Extended(output).c_str(), kOutputSize, error);
         if (decoderResult != 0) {
-            if (error.empty()) error = L"xdelta3 could not build the game (error " +
+            if (error.empty()) error = L"The integrated xdelta decoder could not build the game (error " +
                 std::to_wstring(decoderResult) + L").";
             fs::remove_all(stage, fileError); stageOwned = false; return XDELTA_FAILED;
         }
@@ -578,7 +537,7 @@ static LRESULT CALLBACK WindowProc(HWND window, UINT message, WPARAM word, LPARA
     }
     case WM_CLOSE:
         if (gBuilding.load()) {
-            MessageBoxW(window, L"Wait for xdelta3 to finish before closing this window.", kTitle,
+            MessageBoxW(window, L"Wait for the game build to finish before closing this window.", kTitle,
                 MB_OK | MB_ICONINFORMATION); return 0;
         }
         DestroyWindow(window); return 0;

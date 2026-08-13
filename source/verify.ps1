@@ -32,13 +32,12 @@ function Get-Relative([string]$Root, [string]$Path) {
 $SupportName = [string]$Contract.package.support_directory
 $AppName = [string]$Contract.package.app_filename
 $Expected = @(
-    $AppName,[string]$Contract.decoder.relative_path,
-    [string]$Contract.patch.relative_path,[string]$Contract.cue_template.relative_path,
+    $AppName,[string]$Contract.patch.relative_path,[string]$Contract.cue_template.relative_path,
     "$SupportName/patch_manifest.json","$SupportName/docs/README_FIRST.md",
     "$SupportName/docs/RELEASE_NOTES.md","$SupportName/docs/TEST_CHECKLIST.md",
     "$SupportName/docs/FEEDBACK_TEMPLATE.md","$SupportName/docs/CREDITS_AND_LICENSES.md",
     "$SupportName/SHA256SUMS.txt","$SupportName/licenses/Perfect_Works_GPL-3.0.txt",
-    "$SupportName/licenses/xdelta-Apache-2.0.txt","$SupportName/licenses/xz-libLZMA-0BSD.txt"
+    "$SupportName/licenses/xdelta-Apache-2.0.txt"
 ) | Sort-Object
 $Actual = @(Get-ChildItem -LiteralPath $PackageDirectory -Recurse -File | ForEach-Object {
     Get-Relative $PackageDirectory $_.FullName
@@ -48,6 +47,8 @@ $RootEntries = @(Get-ChildItem -LiteralPath $PackageDirectory -Force)
 Assert-True ($RootEntries.Count -eq 2) 'Package root must contain exactly the app and support directory.'
 Assert-True ([IO.File]::Exists([IO.Path]::Combine($PackageDirectory, $AppName))) 'Root app is missing.'
 Assert-True ([IO.Directory]::Exists([IO.Path]::Combine($PackageDirectory, $SupportName))) 'Support directory is missing.'
+$PackagedExecutables = @(Get-ChildItem -LiteralPath $PackageDirectory -Recurse -File -Filter '*.exe')
+Assert-True ($PackagedExecutables.Count -eq 1 -and $PackagedExecutables[0].Name -ceq $AppName) 'The app must be the package''s only executable.'
 
 $PrivacyNeedles = @(
     $RepoRoot,[Environment]::GetFolderPath([Environment+SpecialFolder]::UserProfile),
@@ -67,17 +68,16 @@ foreach ($File in Get-ChildItem -LiteralPath $PackageDirectory -Recurse -File) {
 
 $Support = [IO.Path]::Combine($PackageDirectory, $SupportName)
 $Public = Get-Content -LiteralPath ([IO.Path]::Combine($Support, 'patch_manifest.json')) -Raw -Encoding UTF8 | ConvertFrom-Json
-Assert-True ($Public.format -ceq 'xenogears-mass-driver-one-app-v1') 'Public manifest format is wrong.'
+Assert-True ($Public.format -ceq 'xenogears-mass-driver-one-app-v2') 'Public manifest format is wrong.'
 foreach ($Executable in @(
-    @{ Path = [IO.Path]::Combine($PackageDirectory, $AppName); Size = [long]$Public.package.app_size; Hash = [string]$Public.package.app_sha256 },
-    @{ Path = [IO.Path]::Combine($Support, 'tools', 'xdelta3.exe'); Size = [long]$Public.decoder.size; Hash = [string]$Public.decoder.sha256 }
+    @{ Path = [IO.Path]::Combine($PackageDirectory, $AppName); Size = [long]$Public.package.app_size; Hash = [string]$Public.package.app_sha256 }
 )) {
     $Item = Get-Item -LiteralPath $Executable.Path
     Assert-True ($Item.Length -eq $Executable.Size) "Executable size mismatch: $($Executable.Path)"
     Assert-True ((Get-FileHash -LiteralPath $Executable.Path -Algorithm SHA256).Hash.ToLowerInvariant() -ceq $Executable.Hash) "Executable hash mismatch: $($Executable.Path)"
     $Bytes = [IO.File]::ReadAllBytes($Executable.Path)
     $Ascii = [Text.Encoding]::ASCII.GetString($Bytes); $Unicode = [Text.Encoding]::Unicode.GetString($Bytes)
-    foreach ($Forbidden in @('CREATE_SUSPENDED','CREATE_NO_WINDOW','SW_HIDE')) {
+    foreach ($Forbidden in @('CREATE_SUSPENDED','CREATE_NO_WINDOW','SW_HIDE','missile')) {
         Assert-True (-not $Ascii.Contains($Forbidden) -and -not $Unicode.Contains($Forbidden)) "Executable contains forbidden marker '$Forbidden': $($Executable.Path)"
     }
 }

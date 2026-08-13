@@ -17,7 +17,7 @@ BEGIN
     BLOCK "040904b0"
     BEGIN
       VALUE "CompanyName", "Xenogears Mass Driver Project\0"
-      VALUE "FileDescription", "Xenogears Mass Driver Setup and Play\0"
+      VALUE "FileDescription", "Xenogears Mass Driver Disc Patcher and Launcher\0"
       VALUE "FileVersion", "@@FILE_VERSION_TEXT@@\0"
       VALUE "InternalName", "XenogearsMassDriver\0"
       VALUE "OriginalFilename", "@@START_FILENAME@@\0"
