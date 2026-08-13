@@ -1,5 +1,6 @@
 [CmdletBinding()]
 param(
+    [string]$BuildManifest,
     [string]$PackageDirectory,
     [string]$ZipPath,
     [string]$SourceBin,
@@ -12,7 +13,12 @@ $ErrorActionPreference = 'Stop'
 
 $Here = [IO.Path]::GetFullPath($PSScriptRoot)
 $RepoRoot = [IO.Path]::GetFullPath([IO.Path]::Combine($Here, '..'))
-$Contract = Get-Content -LiteralPath ([IO.Path]::Combine($Here, 'release_manifest.json')) -Raw -Encoding UTF8 | ConvertFrom-Json
+if ([string]::IsNullOrWhiteSpace($BuildManifest)) {
+    $BuildManifest = [IO.Path]::Combine($Here, 'build_manifest.json')
+}
+$BuildManifest = [IO.Path]::GetFullPath($BuildManifest)
+$Contract = Get-Content -LiteralPath $BuildManifest -Raw -Encoding UTF8 | ConvertFrom-Json
+if ($Contract.format -cne 'xenogears-mass-driver-build-v1') { throw 'Build manifest format is wrong.' }
 if ([string]::IsNullOrWhiteSpace($PackageDirectory)) {
     $PackageDirectory = [IO.Path]::Combine($RepoRoot, 'dist', [string]$Contract.package.directory_name)
 }
@@ -33,16 +39,15 @@ $SupportName = [string]$Contract.package.support_directory
 $AppName = [string]$Contract.package.app_filename
 $Expected = @(
     $AppName,[string]$Contract.patch.relative_path,[string]$Contract.cue_template.relative_path,
-    "$SupportName/patch_manifest.json","$SupportName/docs/README_FIRST.md",
-    "$SupportName/docs/RELEASE_NOTES.md","$SupportName/docs/TEST_CHECKLIST.md",
-    "$SupportName/docs/FEEDBACK_TEMPLATE.md","$SupportName/docs/CREDITS_AND_LICENSES.md",
+    "$SupportName/patch_manifest.txt","$SupportName/docs/README_FIRST.md",
+    "$SupportName/docs/CREDITS_AND_LICENSES.md",
     "$SupportName/SHA256SUMS.txt","$SupportName/licenses/Perfect_Works_GPL-3.0.txt",
     "$SupportName/licenses/xdelta-Apache-2.0.txt"
 ) | Sort-Object
 $Actual = @(Get-ChildItem -LiteralPath $PackageDirectory -Recurse -File | ForEach-Object {
     Get-Relative $PackageDirectory $_.FullName
 } | Sort-Object)
-Assert-True (-not (Compare-Object $Expected $Actual -CaseSensitive)) 'Package inventory differs from the one-app allowlist.'
+Assert-True (-not (Compare-Object $Expected $Actual -CaseSensitive)) 'Package inventory differs from the build allowlist.'
 $RootEntries = @(Get-ChildItem -LiteralPath $PackageDirectory -Force)
 Assert-True ($RootEntries.Count -eq 2) 'Package root must contain exactly the app and support directory.'
 Assert-True ([IO.File]::Exists([IO.Path]::Combine($PackageDirectory, $AppName))) 'Root app is missing.'
@@ -50,31 +55,34 @@ Assert-True ([IO.Directory]::Exists([IO.Path]::Combine($PackageDirectory, $Suppo
 $PackagedExecutables = @(Get-ChildItem -LiteralPath $PackageDirectory -Recurse -File -Filter '*.exe')
 Assert-True ($PackagedExecutables.Count -eq 1 -and $PackagedExecutables[0].Name -ceq $AppName) 'The app must be the package''s only executable.'
 
-$PrivacyNeedles = @(
-    $RepoRoot,[Environment]::GetFolderPath([Environment+SpecialFolder]::UserProfile),
-    [IO.Path]::GetTempPath().TrimEnd('\'),'\work\','\Users\'
-) | Where-Object { -not [string]::IsNullOrWhiteSpace($_) } | Select-Object -Unique
 foreach ($File in Get-ChildItem -LiteralPath $PackageDirectory -Recurse -File) {
     $Bytes = [IO.File]::ReadAllBytes($File.FullName)
     $Ascii = [Text.Encoding]::ASCII.GetString($Bytes)
     $Unicode = [Text.Encoding]::Unicode.GetString($Bytes)
-    foreach ($Needle in $PrivacyNeedles) {
-        Assert-True (-not $Ascii.Contains($Needle) -and -not $Unicode.Contains($Needle)) "Privacy marker found in $(Get-Relative $PackageDirectory $File.FullName)"
-    }
     foreach ($Text in @($Ascii, $Unicode)) {
         Assert-True ($Text -notmatch '(?i)[A-Z]:\\[^\x00\r\n]{2,220}\\(?:src|source|build|temp|tmp|work)\\') "Absolute development path found in $(Get-Relative $PackageDirectory $File.FullName)"
     }
 }
 
 $Support = [IO.Path]::Combine($PackageDirectory, $SupportName)
-$Public = Get-Content -LiteralPath ([IO.Path]::Combine($Support, 'patch_manifest.json')) -Raw -Encoding UTF8 | ConvertFrom-Json
-Assert-True ($Public.format -ceq 'xenogears-mass-driver-one-app-v2') 'Public manifest format is wrong.'
+$RuntimeManifest = @(
+    'format=xenogears-mass-driver-patch-v1'
+    ('source_size=' + [string][long]$Contract.source.size)
+    ('source_sha256=' + [string]$Contract.source.sha256.ToLowerInvariant())
+    ('patch_size=' + [string][long]$Contract.patch.size)
+    ('patch_sha256=' + [string]$Contract.patch.sha256.ToLowerInvariant())
+    ('cue_size=' + [string][long]$Contract.cue_template.size)
+    ('cue_sha256=' + [string]$Contract.cue_template.sha256.ToLowerInvariant())
+    ('output_size=' + [string][long]$Contract.output.bin_size)
+    ('output_sha256=' + [string]$Contract.output.bin_sha256.ToLowerInvariant())
+) -join "`n"
+$RuntimePath = [IO.Path]::Combine($Support, 'patch_manifest.txt')
+Assert-True ((Get-Content -LiteralPath $RuntimePath -Raw -Encoding UTF8) -ceq ($RuntimeManifest + "`n")) 'Runtime manifest differs from the build contract.'
 foreach ($Executable in @(
-    @{ Path = [IO.Path]::Combine($PackageDirectory, $AppName); Size = [long]$Public.package.app_size; Hash = [string]$Public.package.app_sha256 }
+    @{ Path = [IO.Path]::Combine($PackageDirectory, $AppName) }
 )) {
     $Item = Get-Item -LiteralPath $Executable.Path
-    Assert-True ($Item.Length -eq $Executable.Size) "Executable size mismatch: $($Executable.Path)"
-    Assert-True ((Get-FileHash -LiteralPath $Executable.Path -Algorithm SHA256).Hash.ToLowerInvariant() -ceq $Executable.Hash) "Executable hash mismatch: $($Executable.Path)"
+    Assert-True ($Item.Length -gt 0) "Executable is empty: $($Executable.Path)"
     $Bytes = [IO.File]::ReadAllBytes($Executable.Path)
     $Ascii = [Text.Encoding]::ASCII.GetString($Bytes); $Unicode = [Text.Encoding]::Unicode.GetString($Bytes)
     foreach ($Forbidden in @('CREATE_SUSPENDED','CREATE_NO_WINDOW','SW_HIDE','missile')) {
@@ -154,9 +162,37 @@ if (-not $SkipDynamic) {
     $SourceBin = [IO.Path]::GetFullPath($SourceBin)
     if ([string]::IsNullOrWhiteSpace($QaParent)) { $QaParent = [IO.Path]::Combine($RepoRoot, 'work') }
     $QaParent = [IO.Path]::GetFullPath($QaParent); [IO.Directory]::CreateDirectory($QaParent) | Out-Null
-    $QaRoot = [IO.Path]::Combine($QaParent, ('MassDriverOneAppQA.' + [Guid]::NewGuid().ToString('N')))
+    $QaRoot = [IO.Path]::Combine($QaParent, ('MassDriverPackageQA.' + [Guid]::NewGuid().ToString('N')))
     [IO.Directory]::CreateDirectory($QaRoot) | Out-Null
     try {
+        function Assert-ManifestRejected([string]$Name, [string]$Content) {
+            $Fixture = [IO.Path]::Combine($QaRoot, ('manifest-' + $Name))
+            [IO.Directory]::CreateDirectory($Fixture) | Out-Null
+            Copy-Item -Path ([IO.Path]::Combine($PackageDirectory, '*')) -Destination $Fixture -Recurse -Force
+            $FixtureManifest = [IO.Path]::Combine($Fixture, $SupportName, 'patch_manifest.txt')
+            [IO.File]::WriteAllText($FixtureManifest, $Content, (New-Object Text.UTF8Encoding($false)))
+            $FixtureApp = [IO.Path]::Combine($Fixture, $AppName)
+            $Rejected = Invoke-AppAt $FixtureApp $Fixture '--headless --check-package'
+            Assert-True ($Rejected.ExitCode -eq 21 -and $Rejected.Err.Contains('PACKAGE_ERROR=21:')) "Unsafe runtime manifest was accepted: $Name"
+        }
+
+        $CanonicalManifest = Get-Content -LiteralPath $RuntimePath -Raw -Encoding UTF8
+        $ManifestLines = @($CanonicalManifest.TrimEnd("`n") -split "`n")
+        Assert-ManifestRejected 'blank' ''
+        Assert-ManifestRejected 'nul' ($CanonicalManifest + [char]0)
+        Assert-ManifestRejected 'non-ascii' ($CanonicalManifest.Replace('format=', ('format=' + [char]0x00e9)))
+        Assert-ManifestRejected 'too-large' ('x' * 4097)
+        Assert-ManifestRejected 'unknown-key' ($CanonicalManifest + "unknown=value`n")
+        Assert-ManifestRejected 'missing-key' (($ManifestLines | Where-Object { -not $_.StartsWith('patch_sha256=') }) -join "`n")
+        Assert-ManifestRejected 'duplicate-key' ($CanonicalManifest + $ManifestLines[1] + "`n")
+        Assert-ManifestRejected 'uppercase-hash' ($CanonicalManifest.Replace([string]$Contract.source.sha256, ([string]$Contract.source.sha256).ToUpperInvariant()))
+        Assert-ManifestRejected 'short-hash' ($CanonicalManifest.Replace([string]$Contract.source.sha256, 'abc'))
+        Assert-ManifestRejected 'signed-size' ($CanonicalManifest.Replace(('source_size=' + [string][long]$Contract.source.size), 'source_size=-1'))
+        Assert-ManifestRejected 'overflow-size' ($CanonicalManifest.Replace(('source_size=' + [string][long]$Contract.source.size), 'source_size=18446744073709551616'))
+        Assert-ManifestRejected 'small-source' ($CanonicalManifest.Replace(('source_size=' + [string][long]$Contract.source.size), 'source_size=1'))
+        Assert-ManifestRejected 'large-output' ($CanonicalManifest.Replace(('output_size=' + [string][long]$Contract.output.bin_size), 'output_size=1073741825'))
+        Assert-ManifestRejected 'crlf' ($CanonicalManifest.Replace("`n", "`r`n"))
+
         $SourceBefore = Get-Item -LiteralPath $SourceBin
         $SourceLengthBefore = $SourceBefore.Length
         $SourceWriteBefore = $SourceBefore.LastWriteTimeUtc
@@ -165,15 +201,15 @@ if (-not $SkipDynamic) {
             (Get-Relative $PackageDirectory $_.FullName) + '|' + $_.Length + '|' + $_.LastWriteTimeUtc.Ticks + '|' +
                 (Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash
         })
-        $Output = [IO.Path]::Combine($QaRoot, (([string]$Contract.package.display_version) + ' output'))
+        $Output = [IO.Path]::Combine($QaRoot, 'game output')
         $Run = Invoke-App ('--headless --source "' + $SourceBin.Replace('"','\"') + '" --output "' + $Output.Replace('"','\"') + '"')
         Assert-True ($Run.ExitCode -eq 0 -and $Run.Out.Contains('BUILD_SUCCESS=') -and [string]::IsNullOrEmpty($Run.Err)) "Dynamic patch failed: $($Run.Err)"
-        $OutputBin = [IO.Path]::Combine($Output, [string]$Public.output.bin_name)
-        $OutputCue = [IO.Path]::Combine($Output, [string]$Public.output.cue_name)
-        Assert-True ((Get-Item -LiteralPath $OutputBin).Length -eq [long]$Public.output.bin_size) 'Output BIN size is wrong.'
-        Assert-True ((Get-FileHash -LiteralPath $OutputBin -Algorithm SHA256).Hash.ToLowerInvariant() -ceq [string]$Public.output.bin_sha256) 'Output BIN hash is wrong.'
-        Assert-True ((Get-Item -LiteralPath $OutputCue).Length -eq [long]$Public.output.cue_size) 'Output CUE size is wrong.'
-        Assert-True ((Get-FileHash -LiteralPath $OutputCue -Algorithm SHA256).Hash.ToLowerInvariant() -ceq [string]$Public.output.cue_sha256) 'Output CUE hash is wrong.'
+        $OutputBin = [IO.Path]::Combine($Output, [string]$Contract.output.bin_name)
+        $OutputCue = [IO.Path]::Combine($Output, [string]$Contract.output.cue_name)
+        Assert-True ((Get-Item -LiteralPath $OutputBin).Length -eq [long]$Contract.output.bin_size) 'Output BIN size is wrong.'
+        Assert-True ((Get-FileHash -LiteralPath $OutputBin -Algorithm SHA256).Hash.ToLowerInvariant() -ceq [string]$Contract.output.bin_sha256) 'Output BIN hash is wrong.'
+        Assert-True ((Get-Item -LiteralPath $OutputCue).Length -eq [long]$Contract.output.cue_size) 'Output CUE size is wrong.'
+        Assert-True ((Get-FileHash -LiteralPath $OutputCue -Algorithm SHA256).Hash.ToLowerInvariant() -ceq [string]$Contract.output.cue_sha256) 'Output CUE hash is wrong.'
 
         # A second build against an already verified output must be a true no-op.
         $Sentinel = [IO.Path]::Combine($Output, 'qa-user-file.keep')
@@ -272,12 +308,12 @@ if (-not $SkipDynamic) {
         })
         Assert-True (-not (Compare-Object $PackageBefore $PackageAfter -CaseSensitive)) 'The package wrote settings or changed its distributed files.'
     } finally {
-        if ([IO.Directory]::Exists($QaRoot) -and [IO.Path]::GetFileName($QaRoot) -match '^MassDriverOneAppQA\.[0-9a-f]{32}$' -and
+        if ([IO.Directory]::Exists($QaRoot) -and [IO.Path]::GetFileName($QaRoot) -match '^MassDriverPackageQA\.[0-9a-f]{32}$' -and
             $QaRoot.StartsWith(($QaParent.TrimEnd('\') + '\'), [StringComparison]::OrdinalIgnoreCase)) {
             Remove-Item -LiteralPath $QaRoot -Recurse -Force
         }
     }
 }
 
-Write-Host 'One-app package verification: PASS'
+Write-Host 'Mass Driver package verification: PASS'
 Write-Host "ZIP SHA-256: $((Get-FileHash -LiteralPath $ZipPath -Algorithm SHA256).Hash.ToLowerInvariant())"

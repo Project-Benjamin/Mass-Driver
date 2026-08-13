@@ -1,0 +1,41 @@
+{
+  "format": "xenogears-mass-driver-build-v1",
+  "package": {
+    "display_name": "Xenogears Mass Driver",
+    "directory_name": "Xenogears_Mass_Driver",
+    "zip_filename": "Xenogears_Mass_Driver.zip",
+    "app_filename": "Xenogears_Mass_Driver.exe",
+    "support_directory": "MassDriverData",
+    "output_folder": "Mass Driver Game",
+    "staging_prefix": ".MassDriverBuild."
+  },
+  "source": {
+    "description": "Clean USA Xenogears Disc 2 (SLUS-00669), raw MODE2/2352 BIN",
+    "size": 688700880,
+    "sha256": "5eab85c683d4d7087d345b587472db9c44df29b35ce66553c2626d26018b947e"
+  },
+  "patch": {
+    "relative_path": "MassDriverData/patches/Mass_Driver.xdelta",
+    "encoding": "Plain VCDIFF with no secondary compression and no application header",
+    "size": 8565269,
+    "sha256": "a0854b2915847ed16a08664c4a9fdbae7929ed159224c87b58e5c671a46de961"
+  },
+  "decoder": {
+    "name": "Integrated xdelta3 decoder core",
+    "source_commit": "7508fd2a823443b1f0173ca361620f21d62a7d37",
+    "build": "Decode-only xdelta core compiled into the app from the pinned clean Apache-licensed source commit with all secondary compressors disabled; no xdelta helper process, console, or bundled decoder executable"
+  },
+  "cue_template": {
+    "relative_path": "MassDriverData/game/Mass_Driver.cue.template",
+    "size": 84,
+    "sha256": "bec6ef641e9529bbee486b77e2c4ef02815318b181d9c44a22b455c9daa3c0e4"
+  },
+  "output": {
+    "bin_name": "Xenogears_Mass_Driver.bin",
+    "bin_size": 696128496,
+    "bin_sha256": "ea292fcb1b3bc50a112d636e4b37a301a520819cd70c28fc6765787b1ff30b87",
+    "cue_name": "Xenogears_Mass_Driver.cue",
+    "cue_size": 84,
+    "cue_sha256": "bec6ef641e9529bbee486b77e2c4ef02815318b181d9c44a22b455c9daa3c0e4"
+  }
+}

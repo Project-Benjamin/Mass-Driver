@@ -1,6 +1,7 @@
 [CmdletBinding()]
 param(
-    [string]$ReleaseManifest,
+    [string]$BuildManifest,
+    [string]$PackageSource,
     [string]$PatchPath,
     [string]$CuePath,
     [string]$XdeltaSourceDirectory,
@@ -13,13 +14,13 @@ $ErrorActionPreference = 'Stop'
 
 $Here = [IO.Path]::GetFullPath($PSScriptRoot)
 $RepoRoot = [IO.Path]::GetFullPath([IO.Path]::Combine($Here, '..'))
-if ([string]::IsNullOrWhiteSpace($ReleaseManifest)) {
-    $ReleaseManifest = [IO.Path]::Combine($Here, 'release_manifest.json')
+if ([string]::IsNullOrWhiteSpace($BuildManifest)) {
+    $BuildManifest = [IO.Path]::Combine($Here, 'build_manifest.json')
 }
-$ReleaseManifest = [IO.Path]::GetFullPath($ReleaseManifest)
-$Manifest = Get-Content -LiteralPath $ReleaseManifest -Raw -Encoding UTF8 | ConvertFrom-Json
-if ($Manifest.format -ne 'xenogears-mass-driver-one-app-v2') {
-    throw "Unsupported one-app release manifest format: $($Manifest.format)"
+$BuildManifest = [IO.Path]::GetFullPath($BuildManifest)
+$Manifest = Get-Content -LiteralPath $BuildManifest -Raw -Encoding UTF8 | ConvertFrom-Json
+if ($Manifest.format -ne 'xenogears-mass-driver-build-v1') {
+    throw "Unsupported build manifest format: $($Manifest.format)"
 }
 
 function Assert-PlainName([string]$Label, [string]$Value, [string]$Extension = '') {
@@ -52,8 +53,17 @@ Assert-PlainName 'package.support_directory' ([string]$Manifest.package.support_
 Assert-PlainName 'package.output_folder' ([string]$Manifest.package.output_folder)
 Assert-PlainName 'output.bin_name' ([string]$Manifest.output.bin_name) '.bin'
 Assert-PlainName 'output.cue_name' ([string]$Manifest.output.cue_name) '.cue'
-if ([string]$Manifest.package.file_version -notmatch '^\d+\.\d+\.\d+\.\d+$') {
-    throw "package.file_version must contain four numeric parts: $($Manifest.package.file_version)"
+if ([string]$Manifest.package.directory_name -cne 'Xenogears_Mass_Driver' -or
+    [string]$Manifest.package.zip_filename -cne 'Xenogears_Mass_Driver.zip' -or
+    [string]$Manifest.package.app_filename -cne 'Xenogears_Mass_Driver.exe' -or
+    [string]$Manifest.package.support_directory -cne 'MassDriverData' -or
+    [string]$Manifest.package.output_folder -cne 'Mass Driver Game' -or
+    [string]$Manifest.package.staging_prefix -cne '.MassDriverBuild.' -or
+    [string]$Manifest.patch.relative_path -cne 'MassDriverData/patches/Mass_Driver.xdelta' -or
+    [string]$Manifest.cue_template.relative_path -cne 'MassDriverData/game/Mass_Driver.cue.template' -or
+    [string]$Manifest.output.bin_name -cne 'Xenogears_Mass_Driver.bin' -or
+    [string]$Manifest.output.cue_name -cne 'Xenogears_Mass_Driver.cue') {
+    throw 'Package and game filenames are stable and cannot be changed by a build manifest.'
 }
 if ([string]$Manifest.package.staging_prefix -notmatch '^\.[A-Za-z0-9_-]+\.$' -or
     ([string]$Manifest.package.staging_prefix).Length -gt 64) {
@@ -62,16 +72,36 @@ if ([string]$Manifest.package.staging_prefix -notmatch '^\.[A-Za-z0-9_-]+\.$' -o
 Assert-SafeRelative 'patch.relative_path' ([string]$Manifest.patch.relative_path) (([string]$Manifest.package.support_directory) + '/patches/') '.xdelta'
 Assert-SafeRelative 'cue_template.relative_path' ([string]$Manifest.cue_template.relative_path) (([string]$Manifest.package.support_directory) + '/game/') '.template'
 
+$MiB = 1024L * 1024L
+foreach ($Range in @(
+    @{ Label = 'source.size'; Value = [long]$Manifest.source.size; Minimum = 100L * $MiB; Maximum = 1024L * $MiB },
+    @{ Label = 'patch.size'; Value = [long]$Manifest.patch.size; Minimum = 1L; Maximum = 1024L * $MiB },
+    @{ Label = 'cue_template.size'; Value = [long]$Manifest.cue_template.size; Minimum = 1L; Maximum = 4096L },
+    @{ Label = 'output.bin_size'; Value = [long]$Manifest.output.bin_size; Minimum = 100L * $MiB; Maximum = 1024L * $MiB }
+)) {
+    if ($Range.Value -lt $Range.Minimum -or $Range.Value -gt $Range.Maximum) {
+        throw "$($Range.Label) is outside the runtime safety range."
+    }
+}
+if ([long]$Manifest.cue_template.size -ne [long]$Manifest.output.cue_size -or
+    [string]$Manifest.cue_template.sha256 -cne [string]$Manifest.output.cue_sha256) {
+    throw 'The output CUE size and SHA-256 must exactly match the supplied CUE template.'
+}
+
+if ([string]::IsNullOrWhiteSpace($PackageSource)) {
+    $PackageSource = [IO.Path]::Combine($RepoRoot, 'dist', 'Xenogears Mass Driver')
+}
 if ([string]::IsNullOrWhiteSpace($OutputDirectory)) {
     $OutputDirectory = [IO.Path]::Combine($RepoRoot, 'dist')
 }
+$PackageSource = [IO.Path]::GetFullPath($PackageSource)
 $OutputDirectory = [IO.Path]::GetFullPath($OutputDirectory)
 
 if ([string]::IsNullOrWhiteSpace($PatchPath)) {
-    throw 'Supply -PatchPath pointing to the V161 plain-VCDIFF patch from the release package.'
+    $PatchPath = [IO.Path]::Combine($PackageSource, 'patches', [IO.Path]::GetFileName([string]$Manifest.patch.relative_path))
 }
 if ([string]::IsNullOrWhiteSpace($CuePath)) {
-    $CuePath = [IO.Path]::Combine($Here, 'game', [IO.Path]::GetFileName([string]$Manifest.cue_template.relative_path))
+    $CuePath = [IO.Path]::Combine($Here, 'game.cue.template')
 }
 if ([string]::IsNullOrWhiteSpace($XdeltaSourceDirectory)) {
     throw "Supply -XdeltaSourceDirectory pointing to a clean xdelta checkout at commit $($Manifest.decoder.source_commit)."
@@ -104,10 +134,6 @@ function Assert-PinnedCheckout {
     if ($LASTEXITCODE -ne 0 -or $Status.Count -ne 0) {
         throw "$Label source checkout must be clean at pinned commit $Commit."
     }
-}
-
-function Escape-Cpp([string]$Value) {
-    return $Value.Replace('\', '\\').Replace('"', '\"').Replace("`r", '').Replace("`n", '\n')
 }
 
 function Write-Utf8NoBom([string]$Path, [string]$Text) {
@@ -163,12 +189,12 @@ foreach ($Hash in @(
     [string]$Manifest.cue_template.sha256,
     [string]$Manifest.output.bin_sha256, [string]$Manifest.output.cue_sha256
 )) {
-    if ($Hash -notmatch '^[0-9a-fA-F]{64}$') { throw "Invalid SHA-256 in release manifest: $Hash" }
+    if ($Hash -notmatch '^[0-9a-fA-F]{64}$') { throw "Invalid SHA-256 in build manifest: $Hash" }
 }
 foreach ($Commit in @([string]$Manifest.decoder.source_commit)) {
     if ($Commit -notmatch '^[0-9a-f]{40}$') { throw "Invalid source commit in release manifest: $Commit" }
 }
-Assert-PinnedFile "$($Manifest.package.display_version) patch" $PatchPath ([long]$Manifest.patch.size) ([string]$Manifest.patch.sha256)
+Assert-PinnedFile 'game patch' $PatchPath ([long]$Manifest.patch.size) ([string]$Manifest.patch.sha256)
 Assert-PinnedFile 'CUE template' $CuePath ([long]$Manifest.cue_template.size) ([string]$Manifest.cue_template.sha256)
 Assert-PinnedCheckout 'xdelta3' $XdeltaSourceDirectory ([string]$Manifest.decoder.source_commit)
 
@@ -187,7 +213,7 @@ $Cl = (Get-Command cl.exe -ErrorAction Stop).Source
 $Rc = (Get-Command rc.exe -ErrorAction Stop).Source
 
 $BuildRoot = [IO.Path]::Combine($Here, ('.build.' + [Guid]::NewGuid().ToString('N')))
-$StageRoot = [IO.Path]::Combine($OutputDirectory, ('.oneapp.' + [Guid]::NewGuid().ToString('N')))
+$StageRoot = [IO.Path]::Combine($OutputDirectory, ('.package.' + [Guid]::NewGuid().ToString('N')))
 $FinalRoot = [IO.Path]::Combine($OutputDirectory, [string]$Manifest.package.directory_name)
 $ZipPath = [IO.Path]::Combine($OutputDirectory, [string]$Manifest.package.zip_filename)
 [IO.Directory]::CreateDirectory($BuildRoot) | Out-Null
@@ -201,28 +227,6 @@ try {
     $IconExpectedSha256 = '0a91eecc797c1e353ff88b526c78e1ca68b9f9343eac3f7f55dbca8e577838cc'
     Assert-PinnedFile 'code-native app icon' $IconPath $IconExpectedSize $IconExpectedSha256
 
-    $Header = @"
-#pragma once
-#define RELEASE_DISPLAY_VERSION L"$(Escape-Cpp ([string]$Manifest.package.display_version))"
-#define RELEASE_BIN_NAME L"$(Escape-Cpp ([string]$Manifest.output.bin_name))"
-#define RELEASE_CUE_NAME L"$(Escape-Cpp ([string]$Manifest.output.cue_name))"
-#define RELEASE_OUTPUT_FOLDER L"$(Escape-Cpp ([string]$Manifest.package.output_folder))"
-#define RELEASE_STAGE_PREFIX L"$(Escape-Cpp ([string]$Manifest.package.staging_prefix))"
-#define RELEASE_PATCH_RELATIVE L"$(Escape-Cpp (([string]$Manifest.patch.relative_path) -replace '/', '\'))"
-#define RELEASE_CUE_RELATIVE L"$(Escape-Cpp (([string]$Manifest.cue_template.relative_path) -replace '/', '\'))"
-#define RELEASE_APP_FILENAME L"$(Escape-Cpp ([string]$Manifest.package.app_filename))"
-#define RELEASE_SOURCE_SIZE $([long]$Manifest.source.size)ULL
-#define RELEASE_SOURCE_SHA "$(Escape-Cpp ([string]$Manifest.source.sha256.ToLowerInvariant()))"
-#define RELEASE_PATCH_SIZE $([long]$Manifest.patch.size)ULL
-#define RELEASE_PATCH_SHA "$(Escape-Cpp ([string]$Manifest.patch.sha256.ToLowerInvariant()))"
-#define RELEASE_CUE_SIZE $([long]$Manifest.cue_template.size)ULL
-#define RELEASE_CUE_SHA "$(Escape-Cpp ([string]$Manifest.cue_template.sha256.ToLowerInvariant()))"
-#define RELEASE_OUTPUT_SIZE $([long]$Manifest.output.bin_size)ULL
-#define RELEASE_OUTPUT_SHA "$(Escape-Cpp ([string]$Manifest.output.bin_sha256.ToLowerInvariant()))"
-"@
-    $HeaderPath = [IO.Path]::Combine($BuildRoot, 'release_config.h')
-    Write-Utf8NoBom $HeaderPath $Header
-
     $XdeltaConfig = @"
 #ifndef XDELTA3_CONFIG_H
 #define XDELTA3_CONFIG_H
@@ -234,12 +238,7 @@ try {
 "@
     Write-Utf8NoBom ([IO.Path]::Combine($BuildRoot, 'config.h')) $XdeltaConfig
 
-    $FileVersion = [string]$Manifest.package.file_version
-
     $MainRc = [IO.File]::ReadAllText([IO.Path]::Combine($Here, 'resources.rc'), [Text.Encoding]::UTF8)
-    $MainRc = $MainRc.Replace('@@FILE_VERSION_COMMAS@@', ($FileVersion -replace '\.', ','))
-    $MainRc = $MainRc.Replace('@@FILE_VERSION_TEXT@@', $FileVersion)
-    $MainRc = $MainRc.Replace('@@START_FILENAME@@', [string]$Manifest.package.app_filename)
     $MainRcPath = [IO.Path]::Combine($BuildRoot, 'resources.generated.rc')
     Write-Utf8NoBom $MainRcPath $MainRc
     $MainRes = [IO.Path]::Combine($BuildRoot, 'resources.res')
@@ -275,7 +274,7 @@ try {
     & $Cl /nologo "/Fe$StartExe" $MainObj $EmulatorObj $DecoderObj $XdeltaCoreObj $MainRes `
         user32.lib gdi32.lib shell32.lib comdlg32.lib bcrypt.lib ole32.lib version.lib `
         /link /SUBSYSTEM:WINDOWS /MACHINE:X64 /DYNAMICBASE /HIGHENTROPYVA /NXCOMPAT /CETCOMPAT /GUARD:CF /OPT:REF /OPT:ICF /BREPRO
-    if ($LASTEXITCODE -ne 0 -or -not [IO.File]::Exists($StartExe)) { throw 'One-app build failed.' }
+    if ($LASTEXITCODE -ne 0 -or -not [IO.File]::Exists($StartExe)) { throw 'Application build failed.' }
 
     $StartLength = (Get-Item -LiteralPath $StartExe).Length
     $StartHash = (Get-FileHash -LiteralPath $StartExe -Algorithm SHA256).Hash.ToLowerInvariant()
@@ -289,15 +288,23 @@ try {
     Copy-Item -LiteralPath $StartExe -Destination ([IO.Path]::Combine($PackageRoot, [string]$Manifest.package.app_filename))
     Copy-Item -LiteralPath $PatchPath -Destination ([IO.Path]::Combine($PackageRoot, ($Manifest.patch.relative_path -replace '/', '\')))
     Copy-Item -LiteralPath $CuePath -Destination ([IO.Path]::Combine($PackageRoot, ($Manifest.cue_template.relative_path -replace '/', '\')))
-    $PublicManifest = Get-Content -LiteralPath $ReleaseManifest -Raw -Encoding UTF8 | ConvertFrom-Json
-    $PublicManifest.package.app_size = $StartLength
-    $PublicManifest.package.app_sha256 = $StartHash
-    Write-Utf8NoBom ([IO.Path]::Combine($SupportRoot, 'patch_manifest.json')) (($PublicManifest | ConvertTo-Json -Depth 10) + "`n")
-    foreach ($Name in @('README_FIRST.md','RELEASE_NOTES.md','TEST_CHECKLIST.md','FEEDBACK_TEMPLATE.md','CREDITS_AND_LICENSES.md')) {
+    $RuntimeManifest = @(
+        'format=xenogears-mass-driver-patch-v1'
+        ('source_size=' + [string][long]$Manifest.source.size)
+        ('source_sha256=' + [string]$Manifest.source.sha256.ToLowerInvariant())
+        ('patch_size=' + [string][long]$Manifest.patch.size)
+        ('patch_sha256=' + [string]$Manifest.patch.sha256.ToLowerInvariant())
+        ('cue_size=' + [string][long]$Manifest.cue_template.size)
+        ('cue_sha256=' + [string]$Manifest.cue_template.sha256.ToLowerInvariant())
+        ('output_size=' + [string][long]$Manifest.output.bin_size)
+        ('output_sha256=' + [string]$Manifest.output.bin_sha256.ToLowerInvariant())
+    ) -join "`n"
+    Write-Utf8NoBom ([IO.Path]::Combine($SupportRoot, 'patch_manifest.txt')) ($RuntimeManifest + "`n")
+    foreach ($Name in @('README_FIRST.md','CREDITS_AND_LICENSES.md')) {
         Copy-Item -LiteralPath ([IO.Path]::Combine($Here, 'docs', $Name)) -Destination ([IO.Path]::Combine($SupportRoot, 'docs', $Name))
     }
-    Copy-Item -LiteralPath ([IO.Path]::Combine($Here, 'licenses', 'Perfect_Works_GPL-3.0.txt')) -Destination ([IO.Path]::Combine($SupportRoot, 'licenses'))
-    Copy-Item -LiteralPath ([IO.Path]::Combine($Here, 'licenses', 'xdelta-Apache-2.0.txt')) -Destination ([IO.Path]::Combine($SupportRoot, 'licenses'))
+    Copy-Item -LiteralPath ([IO.Path]::Combine($PackageSource, 'licenses', 'Perfect_Works_GPL-3.0.txt')) -Destination ([IO.Path]::Combine($SupportRoot, 'licenses'))
+    Copy-Item -LiteralPath ([IO.Path]::Combine($PackageSource, 'licenses', 'xdelta-Apache-2.0.txt')) -Destination ([IO.Path]::Combine($SupportRoot, 'licenses'))
 
     $Files = Get-ChildItem -LiteralPath $PackageRoot -Recurse -File | Sort-Object { $_.FullName.Substring($PackageRoot.Length + 1).Replace('\','/') }
     $ChecksumLines = foreach ($File in $Files) {
@@ -309,11 +316,8 @@ try {
     $Expected = @(
         [string]$Manifest.package.app_filename,[string]$Manifest.patch.relative_path,
         [string]$Manifest.cue_template.relative_path,
-        (([string]$Manifest.package.support_directory) + '/patch_manifest.json'),
+        (([string]$Manifest.package.support_directory) + '/patch_manifest.txt'),
         (([string]$Manifest.package.support_directory) + '/docs/README_FIRST.md'),
-        (([string]$Manifest.package.support_directory) + '/docs/RELEASE_NOTES.md'),
-        (([string]$Manifest.package.support_directory) + '/docs/TEST_CHECKLIST.md'),
-        (([string]$Manifest.package.support_directory) + '/docs/FEEDBACK_TEMPLATE.md'),
         (([string]$Manifest.package.support_directory) + '/docs/CREDITS_AND_LICENSES.md'),
         (([string]$Manifest.package.support_directory) + '/SHA256SUMS.txt'),
         (([string]$Manifest.package.support_directory) + '/licenses/Perfect_Works_GPL-3.0.txt'),
@@ -322,24 +326,12 @@ try {
     $Actual = Get-ChildItem -LiteralPath $PackageRoot -Recurse -File | ForEach-Object {
         $_.FullName.Substring($PackageRoot.Length + 1).Replace('\','/')
     } | Sort-Object
-    if (Compare-Object $Expected $Actual -CaseSensitive) { throw 'One-app package inventory differs from the release allowlist.' }
+    if (Compare-Object $Expected $Actual -CaseSensitive) { throw 'Package inventory differs from the build allowlist.' }
 
-    $PrivacyNeedles = @(
-        $RepoRoot,
-        [Environment]::GetFolderPath([Environment+SpecialFolder]::UserProfile),
-        [IO.Path]::GetTempPath().TrimEnd('\'),
-        '\work\',
-        '\Users\'
-    ) | Where-Object { -not [string]::IsNullOrWhiteSpace($_) } | Select-Object -Unique
     foreach ($File in Get-ChildItem -LiteralPath $PackageRoot -Recurse -File) {
         $Bytes = [IO.File]::ReadAllBytes($File.FullName)
         $Ascii = [Text.Encoding]::ASCII.GetString($Bytes)
         $Unicode = [Text.Encoding]::Unicode.GetString($Bytes)
-        foreach ($Needle in $PrivacyNeedles) {
-            if ($Ascii.Contains($Needle) -or $Unicode.Contains($Needle)) {
-                throw "Privacy check failed: $(Get-Relative $PackageRoot $File.FullName) contains '$Needle'."
-            }
-        }
         foreach ($Text in @($Ascii, $Unicode)) {
             if ($Text -match '(?i)[A-Z]:\\[^\x00\r\n]{2,220}\\(?:src|source|build|temp|tmp|work)\\') {
                 throw "Privacy check failed: $(Get-Relative $PackageRoot $File.FullName) contains an absolute development path."
@@ -353,10 +345,10 @@ try {
         [IO.Path]::GetDirectoryName($ZipPath) -ine $OutputDirectory -or
         -not $FinalRoot.StartsWith($OutputPrefix, [StringComparison]::OrdinalIgnoreCase) -or
         -not $ZipPath.StartsWith($OutputPrefix, [StringComparison]::OrdinalIgnoreCase)) {
-        throw 'One-app output paths must be direct children of OutputDirectory.'
+        throw 'Package output paths must be direct children of OutputDirectory.'
     }
     if (([IO.Directory]::Exists($FinalRoot) -or [IO.File]::Exists($ZipPath)) -and -not $Force) {
-        throw 'One-app output already exists; use -Force to replace it.'
+        throw 'Package output already exists; use -Force to replace it.'
     }
     if ([IO.Directory]::Exists($FinalRoot)) { Remove-Item -LiteralPath $FinalRoot -Recurse -Force }
     if ([IO.File]::Exists($ZipPath)) { Remove-Item -LiteralPath $ZipPath -Force }
@@ -392,7 +384,7 @@ try {
             $ZipNames = @($ReadArchive.Entries | ForEach-Object FullName)
             $ExpectedZipNames = @($Actual | ForEach-Object { ([string]$Manifest.package.directory_name) + '/' + $_ })
             if ($ZipNames.Count -ne $ExpectedZipNames.Count -or (Compare-Object $ExpectedZipNames $ZipNames -CaseSensitive)) {
-                throw 'ZIP inventory differs from the release allowlist.'
+                throw 'ZIP inventory differs from the build allowlist.'
             }
             $UniqueZipNames = @($ZipNames | Sort-Object -Unique)
             if ($UniqueZipNames.Count -ne $ZipNames.Count) { throw 'ZIP contains duplicate case-insensitive entry names.' }

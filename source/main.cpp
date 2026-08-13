@@ -4,10 +4,12 @@
 #include <bcrypt.h>
 #include <objbase.h>
 #include <atomic>
+#include <charconv>
 #include <cwctype>
 #include <filesystem>
 #include <iomanip>
 #include <iterator>
+#include <map>
 #include <sstream>
 #include <stdexcept>
 #include <string>
@@ -15,7 +17,6 @@
 #include <utility>
 #include <vector>
 #include "resource.h"
-#include "release_config.h"
 #include "emulator.h"
 #include "xdelta_decoder.h"
 
@@ -26,21 +27,28 @@
 namespace fs = std::filesystem;
 
 static const wchar_t* kTitle = L"Xenogears Mass Driver";
-static const wchar_t* kBinName = RELEASE_BIN_NAME;
-static const wchar_t* kCueName = RELEASE_CUE_NAME;
-static const wchar_t* kOutputFolder = RELEASE_OUTPUT_FOLDER;
-static const wchar_t* kStagePrefix = RELEASE_STAGE_PREFIX;
-static const wchar_t* kPatchRelative = RELEASE_PATCH_RELATIVE;
-static const wchar_t* kCueRelative = RELEASE_CUE_RELATIVE;
+static const wchar_t* kBinName = L"Xenogears_Mass_Driver.bin";
+static const wchar_t* kCueName = L"Xenogears_Mass_Driver.cue";
+static const wchar_t* kOutputFolder = L"Mass Driver Game";
+static const wchar_t* kStagePrefix = L".MassDriverBuild.";
+static const wchar_t* kPatchRelative = L"MassDriverData\\patches\\Mass_Driver.xdelta";
+static const wchar_t* kCueRelative = L"MassDriverData\\game\\Mass_Driver.cue.template";
+static const wchar_t* kManifestRelative = L"MassDriverData\\patch_manifest.txt";
+static const wchar_t* kAppFilename = L"Xenogears_Mass_Driver.exe";
 
-static const unsigned long long kSourceSize = RELEASE_SOURCE_SIZE;
-static const char* kSourceSha = RELEASE_SOURCE_SHA;
-static const unsigned long long kPatchSize = RELEASE_PATCH_SIZE;
-static const char* kPatchSha = RELEASE_PATCH_SHA;
-static const unsigned long long kCueSize = RELEASE_CUE_SIZE;
-static const char* kCueSha = RELEASE_CUE_SHA;
-static const unsigned long long kOutputSize = RELEASE_OUTPUT_SIZE;
-static const char* kOutputSha = RELEASE_OUTPUT_SHA;
+struct PatchConfig {
+    unsigned long long sourceSize = 0;
+    unsigned long long patchSize = 0;
+    unsigned long long cueSize = 0;
+    unsigned long long outputSize = 0;
+    std::string sourceSha;
+    std::string patchSha;
+    std::string cueSha;
+    std::string outputSha;
+};
+
+static PatchConfig gConfig;
+static bool gConfigReady = false;
 
 enum ExitCode {
     OK = 0, CLI_USAGE = 2, SOURCE_MISSING = 10, SOURCE_SIZE = 11,
@@ -121,8 +129,15 @@ public:
     bool Open(const fs::path& path) {
         Close();
         handle_ = CreateFileW(path.c_str(), GENERIC_READ, FILE_SHARE_READ, nullptr,
-            OPEN_EXISTING, FILE_FLAG_SEQUENTIAL_SCAN, nullptr);
-        return handle_ != INVALID_HANDLE_VALUE;
+            OPEN_EXISTING, FILE_FLAG_SEQUENTIAL_SCAN | FILE_FLAG_OPEN_REPARSE_POINT, nullptr);
+        if (handle_ == INVALID_HANDLE_VALUE) return false;
+        FILE_ATTRIBUTE_TAG_INFO attributes{};
+        if (!GetFileInformationByHandleEx(handle_, FileAttributeTagInfo, &attributes, sizeof(attributes)) ||
+            (attributes.FileAttributes & (FILE_ATTRIBUTE_DIRECTORY | FILE_ATTRIBUTE_REPARSE_POINT)) != 0) {
+            Close();
+            return false;
+        }
+        return true;
     }
     HANDLE Get() const { return handle_; }
 private:
@@ -135,14 +150,133 @@ private:
     HANDLE handle_ = INVALID_HANDLE_VALUE;
 };
 
-static std::string Sha256File(const fs::path& path) {
+static bool ReadLockedText(HANDLE handle, std::string& text) {
+    LARGE_INTEGER size{};
+    if (!GetFileSizeEx(handle, &size) || size.QuadPart <= 0 || size.QuadPart > 4096) return false;
+    LARGE_INTEGER start{};
+    if (!SetFilePointerEx(handle, start, nullptr, FILE_BEGIN)) return false;
+    text.assign(static_cast<size_t>(size.QuadPart), '\0');
+    DWORD read = 0;
+    if (!ReadFile(handle, text.data(), static_cast<DWORD>(text.size()), &read, nullptr) ||
+        read != text.size()) return false;
+    return true;
+}
+
+static bool SafePackageDirectory(const fs::path& path) {
+    DWORD attributes = GetFileAttributesW(path.c_str());
+    return attributes != INVALID_FILE_ATTRIBUTES && (attributes & FILE_ATTRIBUTE_DIRECTORY) != 0 &&
+        (attributes & FILE_ATTRIBUTE_REPARSE_POINT) == 0;
+}
+
+static bool ParseSize(const std::string& text, unsigned long long minimum,
+    unsigned long long maximum, unsigned long long& result) {
+    if (text.empty()) return false;
+    const char* first = text.data();
+    const char* last = first + text.size();
+    auto parsed = std::from_chars(first, last, result, 10);
+    return parsed.ec == std::errc() && parsed.ptr == last && result >= minimum && result <= maximum;
+}
+
+static bool ValidSha256(const std::string& value) {
+    if (value.size() != 64) return false;
+    for (char character : value)
+        if (!((character >= '0' && character <= '9') || (character >= 'a' && character <= 'f'))) return false;
+    return true;
+}
+
+static bool LoadPatchConfig(std::wstring& error) {
+    try {
+        const fs::path support = gRoot / L"MassDriverData";
+        if (!SafePackageDirectory(support) || !SafePackageDirectory(support / L"patches") ||
+            !SafePackageDirectory(support / L"game")) {
+            error = L"The MassDriverData folder is missing or is not a safe extracted package folder.";
+            return false;
+        }
+        ReadLock manifestLock;
+        if (!manifestLock.Open(gRoot / kManifestRelative)) {
+            error = L"The patch manifest is missing or could not be opened safely.";
+            return false;
+        }
+        std::string content;
+        if (!ReadLockedText(manifestLock.Get(), content) || content.find('\0') != std::string::npos) {
+            error = L"The patch manifest is empty, too large, or malformed.";
+            return false;
+        }
+        std::map<std::string, std::string> fields;
+        size_t start = 0;
+        while (start < content.size()) {
+            size_t end = content.find('\n', start);
+            if (end == std::string::npos) end = content.size();
+            std::string line = content.substr(start, end - start);
+            size_t equals = line.find('=');
+            if (line.empty() || equals == std::string::npos || equals == 0 || equals + 1 >= line.size() ||
+                line.find('=', equals + 1) != std::string::npos) {
+                error = L"The patch manifest contains a malformed line.";
+                return false;
+            }
+            std::string key = line.substr(0, equals);
+            std::string value = line.substr(equals + 1);
+            for (unsigned char character : line) {
+                if (character < 0x21 || character > 0x7e) {
+                    error = L"The patch manifest must contain plain ASCII fields.";
+                    return false;
+                }
+            }
+            if (!fields.emplace(std::move(key), std::move(value)).second) {
+                error = L"The patch manifest contains a duplicate field.";
+                return false;
+            }
+            start = end + 1;
+        }
+        static const char* expected[] = {"format", "source_size", "source_sha256", "patch_size",
+            "patch_sha256", "cue_size", "cue_sha256", "output_size", "output_sha256"};
+        if (fields.size() != std::size(expected)) {
+            error = L"The patch manifest has missing or unsupported fields.";
+            return false;
+        }
+        for (const char* key : expected) {
+            if (fields.find(key) == fields.end()) {
+                error = L"The patch manifest has missing or unsupported fields.";
+                return false;
+            }
+        }
+        if (fields["format"] != "xenogears-mass-driver-patch-v1") {
+            error = L"This patch manifest format is not supported.";
+            return false;
+        }
+        PatchConfig parsed;
+        constexpr unsigned long long MiB = 1024ULL * 1024ULL;
+        if (!ParseSize(fields["source_size"], 100ULL * MiB, 1024ULL * MiB, parsed.sourceSize) ||
+            !ParseSize(fields["patch_size"], 1, 1024ULL * MiB, parsed.patchSize) ||
+            !ParseSize(fields["cue_size"], 1, 4096, parsed.cueSize) ||
+            !ParseSize(fields["output_size"], 100ULL * MiB, 1024ULL * MiB, parsed.outputSize)) {
+            error = L"The patch manifest contains an unsafe or invalid file size.";
+            return false;
+        }
+        parsed.sourceSha = fields["source_sha256"];
+        parsed.patchSha = fields["patch_sha256"];
+        parsed.cueSha = fields["cue_sha256"];
+        parsed.outputSha = fields["output_sha256"];
+        if (!ValidSha256(parsed.sourceSha) || !ValidSha256(parsed.patchSha) ||
+            !ValidSha256(parsed.cueSha) || !ValidSha256(parsed.outputSha)) {
+            error = L"The patch manifest contains an invalid SHA-256 value.";
+            return false;
+        }
+        gConfig = std::move(parsed);
+        gConfigReady = true;
+        return true;
+    } catch (...) {
+        error = L"The patch manifest could not be checked.";
+        return false;
+    }
+}
+
+static std::string Sha256Handle(HANDLE file) {
     BCRYPT_ALG_HANDLE algorithm = nullptr;
     BCRYPT_HASH_HANDLE hash = nullptr;
-    HANDLE file = INVALID_HANDLE_VALUE;
     DWORD objectSize = 0, digestSize = 0, used = 0;
     std::vector<unsigned char> object, digest, buffer(1024 * 1024);
     auto fail = [&]() {
-        if (file != INVALID_HANDLE_VALUE) CloseHandle(file);
         if (hash) BCryptDestroyHash(hash);
         if (algorithm) BCryptCloseAlgorithmProvider(algorithm, 0);
         throw std::runtime_error("SHA-256 operation failed");
@@ -154,17 +288,14 @@ static std::string Sha256File(const fs::path& path) {
         reinterpret_cast<PUCHAR>(&digestSize), sizeof(digestSize), &used, 0) < 0) fail();
     object.resize(objectSize); digest.resize(digestSize);
     if (BCryptCreateHash(algorithm, &hash, object.data(), objectSize, nullptr, 0, 0) < 0) fail();
-    file = CreateFileW(path.c_str(), GENERIC_READ,
-        FILE_SHARE_READ, nullptr,
-        OPEN_EXISTING, FILE_FLAG_SEQUENTIAL_SCAN, nullptr);
-    if (file == INVALID_HANDLE_VALUE) fail();
+    LARGE_INTEGER start{};
+    if (!SetFilePointerEx(file, start, nullptr, FILE_BEGIN)) fail();
     for (;;) {
         DWORD got = 0;
         if (!ReadFile(file, buffer.data(), static_cast<DWORD>(buffer.size()), &got, nullptr)) fail();
         if (!got) break;
         if (BCryptHashData(hash, buffer.data(), got, 0) < 0) fail();
     }
-    CloseHandle(file); file = INVALID_HANDLE_VALUE;
     if (BCryptFinishHash(hash, digest.data(), digestSize, 0) < 0) fail();
     BCryptDestroyHash(hash); BCryptCloseAlgorithmProvider(algorithm, 0);
     std::ostringstream text;
@@ -173,10 +304,19 @@ static std::string Sha256File(const fs::path& path) {
     return text.str();
 }
 
+static bool PinnedHandle(HANDLE handle, unsigned long long size, const char* sha) {
+    try {
+        LARGE_INTEGER length{};
+        return handle != INVALID_HANDLE_VALUE && GetFileSizeEx(handle, &length) && length.QuadPart >= 0 &&
+            static_cast<unsigned long long>(length.QuadPart) == size && Sha256Handle(handle) == sha;
+    } catch (...) { return false; }
+}
+
 static bool Pinned(const fs::path& path, unsigned long long size, const char* sha) {
-    std::error_code error;
-    return fs::is_regular_file(path, error) && !error && fs::file_size(path, error) == size && !error &&
-        Sha256File(path) == sha;
+    try {
+        ReadLock lock;
+        return lock.Open(path) && PinnedHandle(lock.Get(), size, sha);
+    } catch (...) { return false; }
 }
 
 static fs::path Extended(const fs::path& path) {
@@ -229,13 +369,15 @@ static void Status(const std::wstring& message, bool headless) {
 
 static bool ExactOutput(const fs::path& final) {
     try {
-        return Pinned(final / kBinName, kOutputSize, kOutputSha) &&
-            Pinned(final / kCueName, kCueSize, kCueSha);
+        return gConfigReady && SafePackageDirectory(final) &&
+            Pinned(final / kBinName, gConfig.outputSize, gConfig.outputSha.c_str()) &&
+            Pinned(final / kCueName, gConfig.cueSize, gConfig.cueSha.c_str());
     } catch (...) { return false; }
 }
 
 static int CheckPackage(std::wstring& error, std::vector<ReadLock>* retained = nullptr) {
     try {
+        if (!gConfigReady && !LoadPatchConfig(error)) return PACKAGE_BAD;
         const fs::path patch = gRoot / kPatchRelative;
         const fs::path cueTemplate = gRoot / kCueRelative;
         std::vector<ReadLock> localLocks;
@@ -249,8 +391,8 @@ static int CheckPackage(std::wstring& error, std::vector<ReadLock>* retained = n
         }
         locks.push_back(std::move(patchLock));
         locks.push_back(std::move(cueLock));
-        if (!Pinned(patch, kPatchSize, kPatchSha) ||
-            !Pinned(cueTemplate, kCueSize, kCueSha)) {
+        if (!PinnedHandle(locks[0].Get(), gConfig.patchSize, gConfig.patchSha.c_str()) ||
+            !PinnedHandle(locks[1].Get(), gConfig.cueSize, gConfig.cueSha.c_str())) {
             error = L"A patch-kit file is missing or changed. Extract a fresh copy of the complete ZIP.";
             return PACKAGE_BAD;
         }
@@ -271,12 +413,12 @@ static int BuildGame(const fs::path& source, const fs::path& final,
             error = L"Choose the .bin file from your original USA Xenogears Disc 2.";
             return SOURCE_MISSING;
         }
-        if (fs::file_size(source) != kSourceSize) {
+        if (fs::file_size(source) != gConfig.sourceSize) {
             error = L"This is not the supported USA Disc 2 image. Choose an unmodified raw .bin file.";
             return SOURCE_SIZE;
         }
         Status(L"Checking your original Disc 2 BIN...", headless);
-        if (Sha256File(source) != kSourceSha) {
+        if (Sha256Handle(sourceLock.Get()) != gConfig.sourceSha) {
             error = L"This BIN is not the supported unmodified USA Disc 2 image.";
             return SOURCE_HASH;
         }
@@ -289,7 +431,7 @@ static int BuildGame(const fs::path& source, const fs::path& final,
 
         if (fs::exists(final)) {
             if (ExactOutput(final)) {
-                Status(std::wstring(RELEASE_DISPLAY_VERSION) + L" is already ready. Select Play in this app.", headless);
+                Status(L"The game is already ready. Select Play in this app.", headless);
                 return OK;
             }
             error = L"The output folder already exists but does not match this build. Move or rename it, then try again.";
@@ -297,12 +439,12 @@ static int BuildGame(const fs::path& source, const fs::path& final,
         }
         std::error_code fileError;
         fs::create_directories(final.parent_path(), fileError);
-        if (fileError || !fs::is_directory(final.parent_path())) {
+        if (fileError || !SafePackageDirectory(final.parent_path())) {
             error = L"The patch-kit folder is not writable."; return OUTPUT_INVALID;
         }
         ULARGE_INTEGER available{};
         if (!GetDiskFreeSpaceExW(final.parent_path().c_str(), &available, nullptr, nullptr) ||
-            available.QuadPart < kOutputSize + 64ULL * 1024 * 1024) {
+            available.QuadPart < gConfig.outputSize + 64ULL * 1024 * 1024) {
             error = L"There is not enough free space to build the game."; return DISK_SPACE;
         }
         stage = MakeStage(final);
@@ -313,19 +455,19 @@ static int BuildGame(const fs::path& source, const fs::path& final,
         fs::path output = stage / kBinName;
         Status(L"Building the game with the integrated xdelta decoder. This may take several minutes...", headless);
         int decoderResult = DecodeVcdiff(sourceLock.Get(), packageLocks[0].Get(),
-            Extended(output).c_str(), kOutputSize, error);
+            Extended(output).c_str(), gConfig.outputSize, error);
         if (decoderResult != 0) {
             if (error.empty()) error = L"The integrated xdelta decoder could not build the game (error " +
                 std::to_wstring(decoderResult) + L").";
             fs::remove_all(stage, fileError); stageOwned = false; return XDELTA_FAILED;
         }
         Status(L"Checking the finished game...", headless);
-        if (!Pinned(output, kOutputSize, kOutputSha)) {
-            error = L"The finished BIN did not match the expected " + std::wstring(RELEASE_DISPLAY_VERSION) + L" build.";
+        if (!Pinned(output, gConfig.outputSize, gConfig.outputSha.c_str())) {
+            error = L"The finished BIN did not match the expected build.";
             fs::remove_all(stage, fileError); stageOwned = false; return OUTPUT_BAD;
         }
         fs::copy_file(cueTemplate, stage / kCueName, fs::copy_options::none, fileError);
-        if (fileError || !Pinned(stage / kCueName, kCueSize, kCueSha)) {
+        if (fileError || !Pinned(stage / kCueName, gConfig.cueSize, gConfig.cueSha.c_str())) {
             error = L"The CUE file could not be copied or verified.";
             fs::remove_all(stage, fileError); stageOwned = false; return MATERIALIZE_FAILED;
         }
@@ -334,7 +476,7 @@ static int BuildGame(const fs::path& source, const fs::path& final,
             fs::remove_all(stage, fileError); stageOwned = false; return COMMIT_FAILED;
         }
         stageOwned = false;
-        Status(std::wstring(RELEASE_DISPLAY_VERSION) + L" is ready. Select Play in this app.", headless);
+        Status(L"The game is ready. Select Play in this app.", headless);
         return OK;
     } catch (...) {
         std::error_code fileError;
@@ -420,8 +562,7 @@ static LRESULT CALLBACK WindowProc(HWND window, UINT message, WPARAM word, LPARA
             OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, CLEARTYPE_QUALITY, DEFAULT_PITCH, L"Segoe UI");
         HWND title = Child(L"STATIC", L"Xenogears Mass Driver", SS_LEFT, 24, 18, 540, 38, window);
         SetFont(title, gTitleFont);
-        SetFont(Child(L"STATIC", (std::wstring(L"One app builds ") + RELEASE_DISPLAY_VERSION +
-            L" and starts it in your PlayStation emulator.").c_str(),
+        SetFont(Child(L"STATIC", L"Build and start the included Mass Driver update.",
             SS_LEFT, 24, 58, 700, 24, window));
         SetFont(Child(L"STATIC", L"1. Choose the unmodified USA Disc 2 BIN you legally own.",
             SS_LEFT, 24, 104, 700, 24, window));
@@ -436,8 +577,8 @@ static LRESULT CALLBACK WindowProc(HWND window, UINT message, WPARAM word, LPARA
         SetFont(Child(L"STATIC", L"3. Select Play here. The app finds your emulator or asks you to choose it.",
             SS_LEFT, 24, 296, 710, 42, window));
         bool ready = ExactOutput(gFinal);
-        std::wstring readyText = std::wstring(L"The ") + RELEASE_DISPLAY_VERSION +
-            L" game is ready. Select Play, or Browse to build from another clean Disc 2 BIN.";
+        std::wstring readyText =
+            L"The game is ready. Select Play, or Browse to build from another clean Disc 2 BIN.";
         gStatus = Child(L"STATIC", ready ? readyText.c_str() :
             L"Ready. Keep Xenogears_Mass_Driver.exe beside the MassDriverData folder.",
             SS_LEFT, 24, 350, 700, 60, window, IDC_STATUS); SetFont(gStatus);
@@ -529,7 +670,7 @@ static LRESULT CALLBACK WindowProc(HWND window, UINT message, WPARAM word, LPARA
         auto result = reinterpret_cast<std::pair<int, std::wstring>*>(value);
         gBuilding.store(false);
         bool ready = ExactOutput(gFinal);
-        std::wstring text = result->first == OK ? std::wstring(RELEASE_DISPLAY_VERSION) + L" is ready. Select Play." : result->second;
+        std::wstring text = result->first == OK ? L"The game is ready. Select Play." : result->second;
         int code = result->first; delete result;
         SetFinishedUi(ready, text);
         if (code != OK) MessageBoxW(window, text.c_str(), L"Build did not complete", MB_OK | MB_ICONERROR);
@@ -620,7 +761,7 @@ static int Headless(int argc, wchar_t** argv) {
     int result = BuildGame(absoluteSource, final, true, error);
     if (result == OK) {
         WriteConsole(L"BUILD_SUCCESS=" + final.wstring());
-        WriteConsole(L"PLAY_APP=" + (gRoot / RELEASE_APP_FILENAME).wstring());
+        WriteConsole(L"PLAY_APP=" + (gRoot / kAppFilename).wstring());
     } else WriteConsole(L"BUILD_ERROR=" + std::to_wstring(result) + L":" + error, true);
     return result;
 }
@@ -631,7 +772,15 @@ int WINAPI wWinMain(HINSTANCE instance, HINSTANCE, PWSTR, int show) {
     catch (...) { return UNEXPECTED; }
     int argc = 0;
     wchar_t** argv = CommandLineToArgvW(GetCommandLineW(), &argc);
-    if (argv && argc > 1 && std::wstring(argv[1]) == L"--headless") {
+    const bool headless = argv && argc > 1 && std::wstring(argv[1]) == L"--headless";
+    std::wstring configError;
+    if (!LoadPatchConfig(configError)) {
+        if (headless) WriteConsole(L"PACKAGE_ERROR=21:" + configError, true);
+        else MessageBoxW(nullptr, configError.c_str(), L"Patch package could not be opened", MB_OK | MB_ICONERROR);
+        if (argv) LocalFree(argv);
+        return PACKAGE_BAD;
+    }
+    if (headless) {
         int result = Headless(argc, argv); LocalFree(argv); return result;
     }
     if (argv) LocalFree(argv);

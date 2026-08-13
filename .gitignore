@@ -16,5 +16,5 @@
 *.zip
 
 .build.*/
-.oneapp.*/
-MassDriverOneAppQA.*/
+.package.*/
+MassDriverPackageQA.*/
