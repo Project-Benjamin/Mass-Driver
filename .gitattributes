@@ -1,0 +1,15 @@
+* text=auto eol=lf
+*.cpp text eol=lf
+*.h text eol=lf
+*.json text eol=lf
+*.manifest text eol=lf
+*.md text eol=lf
+*.ps1 text eol=lf
+*.rc text eol=lf
+*.template text eol=lf
+*.txt text eol=lf
+
+# These files are copied byte-for-byte into the deterministic release package.
+source/docs/** -text whitespace=-blank-at-eof
+source/game/** -text
+source/licenses/** -text

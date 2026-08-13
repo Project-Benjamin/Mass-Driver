@@ -1,0 +1,49 @@
+{
+  "format": "xenogears-mass-driver-one-app-v1",
+  "release": "v161.2",
+  "package": {
+    "display_name": "Xenogears Mass Driver",
+    "display_version": "V161",
+    "file_version": "1.6.1.2",
+    "directory_name": "Xenogears_Mass_Driver_V161_One_App",
+    "zip_filename": "Xenogears_Mass_Driver_V161.2_One_App.zip",
+    "app_filename": "Xenogears_Mass_Driver.exe",
+    "app_size": null,
+    "app_sha256": null,
+    "support_directory": "MassDriverData",
+    "output_folder": "Xenogears Mass Driver V161",
+    "staging_prefix": ".MassDriverBuild."
+  },
+  "source": {
+    "description": "Clean USA Xenogears Disc 2 (SLUS-00669), raw MODE2/2352 BIN",
+    "size": 688700880,
+    "sha256": "5eab85c683d4d7087d345b587472db9c44df29b35ce66553c2626d26018b947e"
+  },
+  "patch": {
+    "relative_path": "MassDriverData/patches/Xenogears_Mass_Driver_v161_USA_Disc2.xdelta",
+    "encoding": "VCDIFF with LZMA secondary compression and no application header",
+    "size": 6415237,
+    "sha256": "1aab51fd5380e1b89053e42fa521036d4e063ec3e8c4382edd31992bc729a7b1"
+  },
+  "decoder": {
+    "relative_path": "MassDriverData/tools/xdelta3.exe",
+    "name": "xdelta3",
+    "version": "3.2.0",
+    "build": "Reviewed reproducible x64 /MT build from unmodified xdelta 3.2.0 commit ff322e592383227b0d65ddfde7e0e5bbc504dc15 and XZ Utils 5.8.3 commit 4b73f2ec19a99ef465282fbce633e8deb33691b3; REGRESSION_TEST=1, /Brepro, deterministic /pathmap with no private build paths, /guard:cf, /sdl, CET, ASLR, and NX",
+    "size": 416768,
+    "sha256": "a67b7fcaeea48bf0d2e05d8d3ff2f12eddff35f1bd890cd5880baba23292a5b5"
+  },
+  "cue_template": {
+    "relative_path": "MassDriverData/game/Xenogears_PW_CD2_mass_driver_standalone_v161.cue.template",
+    "size": 107,
+    "sha256": "06149bd106fdd02fe1baacbae6b07b001411bb4ecfb6cc501efd199ea0379561"
+  },
+  "output": {
+    "bin_name": "Xenogears_PW_CD2_mass_driver_standalone_v161.bin",
+    "bin_size": 696130848,
+    "bin_sha256": "b010fcb46946e5e1595d7225652bd78f04b91e97a5b6dce0cc8cf0675ed49bf4",
+    "cue_name": "Xenogears_PW_CD2_mass_driver_standalone_v161.cue",
+    "cue_size": 107,
+    "cue_sha256": "06149bd106fdd02fe1baacbae6b07b001411bb4ecfb6cc501efd199ea0379561"
+  }
+}
