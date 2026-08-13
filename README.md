@@ -9,7 +9,7 @@ Download the current package from the
 [V161.2 release](https://github.com/Project-Benjamin/Mass-Driver/releases/tag/v161.2).
 
 1. Extract the complete ZIP to a writable folder.
-2. Open `Xenogears_Mass_Driver.exe`. It is the only app users need to open.
+2. Open `Xenogears_Mass_Driver.exe`. It is the only app you'll need to open.
 3. Browse to an unmodified USA Xenogears Disc 2 raw BIN.
 4. Select **Build game**, then **Play**.
 
