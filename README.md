@@ -5,6 +5,8 @@ Xenogears Mass Driver.
 
 https://github.com/Project-Benjamin/Mass-Driver/releases/download/patcher/Xenogears_Mass_Driver.zip
 
+Install video: https://youtu.be/cG3UCDvokm8
+
 ## Download and use
 
 Download `Xenogears_Mass_Driver.zip` from this repository's Releases page.
