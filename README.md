@@ -7,7 +7,7 @@ https://github.com/Project-Benjamin/Mass-Driver/releases/download/patcher/Xenoge
 
 Install video: https://youtu.be/cG3UCDvokm8
 
-The patcher also acts as a launcher or you may load the ROM manually in your emulator at: *\Xenogears_Mass_Driver\Xenogears_Mass_Driver\Mass Driver Game\Xenogears_Mass_Driver.bin
+The patcher also acts as a launcher or you may load the ROM manually in your emulator at: *\Xenogears_Mass_Driver\Mass Driver Game\Xenogears_Mass_Driver.bin
 
 ## Download and use
 
