@@ -23,5 +23,6 @@ never changes the source BIN.
 
 ***ATTENTION***
 Both the patcher and the modified ROM itself are under development.
+
 Contact: Azarel123@hotmail.com
 
