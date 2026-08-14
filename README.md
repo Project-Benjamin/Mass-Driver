@@ -21,8 +21,5 @@ Download `Xenogears_Mass_Driver.zip` from this repository's Releases page.
 The patcher does not include the Xenogears .bin file, an emulator, or a BIOS. It reads but
 never changes the source BIN.
 
-***ATTENTION***
-Both the patcher and the modified ROM itself are under development.
-
 Contact: Azarel123@hotmail.com
 
