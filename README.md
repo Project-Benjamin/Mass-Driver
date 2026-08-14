@@ -15,5 +15,4 @@ Download `Xenogears_Mass_Driver.zip` from this repository's Releases page.
 4. Select **Build game**, then **Play**.
 
 The patcher does not include Xenogears, an emulator, or a BIOS. It reads but
-never changes the source BIN. Emulator setup is optional until **Play** is
-selected.
+never changes the source BIN.
