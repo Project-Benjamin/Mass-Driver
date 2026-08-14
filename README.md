@@ -1,13 +1,9 @@
 # Xenogears Mass Driver
 
-This repository contains the Windows patcher source and build contract for
-Xenogears Mass Driver.
-
-All you need is the official disc2 .bin, an emulator, and this patcher. 
-
-You do not need any save-state files. 
-
-The game will start near the Mass Driver dungeon after it's patched.
+This executable will patch your official XG Disc 2 .bin file.
+Once patched and launched, the Xenogears main menu will allow you to choose the Mass Driver option.
+Once selected, you will be placed in front of the Mass Driver dungeon.
+No prior save states are necessary.
 
 https://github.com/Project-Benjamin/Mass-Driver/releases/download/patcher/Xenogears_Mass_Driver.zip
 
