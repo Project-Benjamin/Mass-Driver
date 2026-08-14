@@ -18,5 +18,10 @@ Download `Xenogears_Mass_Driver.zip` from this repository's Releases page.
 3. Browse to an unmodified USA Xenogears Disc 2 raw BIN.
 4. Select **Build game**, then **Play**.
 
-The patcher does not include Xenogears, an emulator, or a BIOS. It reads but
+The patcher does not include the Xenogears .bin file, an emulator, or a BIOS. It reads but
 never changes the source BIN.
+
+***ATTENTION***
+Both the patcher and the modified ROM itself are under development.
+Contact: Azarel123@hotmail.com
+
