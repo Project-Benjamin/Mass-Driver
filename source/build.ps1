@@ -328,10 +328,22 @@ try {
     } | Sort-Object
     if (Compare-Object $Expected $Actual -CaseSensitive) { throw 'Package inventory differs from the build allowlist.' }
 
+    $PrivacyNeedles = @(
+        $RepoRoot,
+        [Environment]::GetFolderPath([Environment+SpecialFolder]::UserProfile),
+        [IO.Path]::GetTempPath().TrimEnd('\'),
+        '\work\',
+        '\Users\'
+    ) | Where-Object { -not [string]::IsNullOrWhiteSpace($_) } | Select-Object -Unique
     foreach ($File in Get-ChildItem -LiteralPath $PackageRoot -Recurse -File) {
         $Bytes = [IO.File]::ReadAllBytes($File.FullName)
         $Ascii = [Text.Encoding]::ASCII.GetString($Bytes)
         $Unicode = [Text.Encoding]::Unicode.GetString($Bytes)
+        foreach ($Needle in $PrivacyNeedles) {
+            if ($Ascii.Contains($Needle) -or $Unicode.Contains($Needle)) {
+                throw "Privacy check failed: $(Get-Relative $PackageRoot $File.FullName) contains '$Needle'."
+            }
+        }
         foreach ($Text in @($Ascii, $Unicode)) {
             if ($Text -match '(?i)[A-Z]:\\[^\x00\r\n]{2,220}\\(?:src|source|build|temp|tmp|work)\\') {
                 throw "Privacy check failed: $(Get-Relative $PackageRoot $File.FullName) contains an absolute development path."

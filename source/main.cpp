@@ -62,6 +62,10 @@ static HINSTANCE gInstance = nullptr;
 static HWND gWindow = nullptr;
 static HWND gSourceEdit = nullptr;
 static HWND gStatus = nullptr;
+static HWND gTitle = nullptr;
+static HWND gSubtitle = nullptr;
+static HWND gOptionalLabel = nullptr;
+static HWND gBrowse = nullptr;
 static HWND gBuild = nullptr;
 static HWND gPlay = nullptr;
 static HWND gOpen = nullptr;
@@ -71,11 +75,87 @@ static HWND gGetDuckStation = nullptr;
 static HWND gGetRetroArch = nullptr;
 static HFONT gFont = nullptr;
 static HFONT gTitleFont = nullptr;
+static HBRUSH gBackgroundBrush = nullptr;
+static HBRUSH gPanelBrush = nullptr;
+static HBRUSH gEditBrush = nullptr;
+static HBRUSH gButtonBrush = nullptr;
+static HBRUSH gButtonPressedBrush = nullptr;
+static HBRUSH gButtonDisabledBrush = nullptr;
+static HBRUSH gAccentBrush = nullptr;
+static HBRUSH gAccentPressedBrush = nullptr;
+static HBRUSH gBorderBrush = nullptr;
+static HBRUSH gFocusBrush = nullptr;
+static bool gHighContrast = false;
 static std::atomic<bool> gBuilding(false);
 static std::wstring gSource;
 static fs::path gRoot;
 static fs::path gFinal;
 static Emulator gEmulator;
+
+static constexpr COLORREF kBackgroundColor = RGB(18, 20, 24);
+static constexpr COLORREF kPanelColor = RGB(27, 30, 36);
+static constexpr COLORREF kEditColor = RGB(32, 36, 43);
+static constexpr COLORREF kButtonColor = RGB(45, 50, 60);
+static constexpr COLORREF kButtonPressedColor = RGB(57, 63, 75);
+static constexpr COLORREF kButtonDisabledColor = RGB(34, 37, 44);
+static constexpr COLORREF kAccentColor = RGB(174, 55, 76);
+static constexpr COLORREF kAccentPressedColor = RGB(139, 42, 59);
+static constexpr COLORREF kBorderColor = RGB(75, 82, 96);
+static constexpr COLORREF kFocusColor = RGB(111, 176, 255);
+static constexpr COLORREF kTextColor = RGB(238, 241, 247);
+static constexpr COLORREF kMutedTextColor = RGB(177, 184, 197);
+static constexpr COLORREF kDisabledTextColor = RGB(104, 110, 122);
+
+static bool HighContrastActive() {
+    HIGHCONTRASTW setting{sizeof(setting)};
+    return SystemParametersInfoW(SPI_GETHIGHCONTRAST, sizeof(setting), &setting, 0) &&
+        (setting.dwFlags & HCF_HIGHCONTRASTON) != 0;
+}
+
+static bool CreateThemeResources() {
+    gBackgroundBrush = CreateSolidBrush(kBackgroundColor);
+    gPanelBrush = CreateSolidBrush(kPanelColor);
+    gEditBrush = CreateSolidBrush(kEditColor);
+    gButtonBrush = CreateSolidBrush(kButtonColor);
+    gButtonPressedBrush = CreateSolidBrush(kButtonPressedColor);
+    gButtonDisabledBrush = CreateSolidBrush(kButtonDisabledColor);
+    gAccentBrush = CreateSolidBrush(kAccentColor);
+    gAccentPressedBrush = CreateSolidBrush(kAccentPressedColor);
+    gBorderBrush = CreateSolidBrush(kBorderColor);
+    gFocusBrush = CreateSolidBrush(kFocusColor);
+    return gBackgroundBrush && gPanelBrush && gEditBrush && gButtonBrush &&
+        gButtonPressedBrush && gButtonDisabledBrush && gAccentBrush &&
+        gAccentPressedBrush && gBorderBrush && gFocusBrush;
+}
+
+static void DestroyThemeResources() {
+    for (HBRUSH brush : {gBackgroundBrush, gPanelBrush, gEditBrush, gButtonBrush,
+        gButtonPressedBrush, gButtonDisabledBrush, gAccentBrush, gAccentPressedBrush,
+        gBorderBrush, gFocusBrush}) {
+        if (brush) DeleteObject(brush);
+    }
+    gBackgroundBrush = nullptr; gPanelBrush = nullptr; gEditBrush = nullptr;
+    gButtonBrush = nullptr; gButtonPressedBrush = nullptr; gButtonDisabledBrush = nullptr;
+    gAccentBrush = nullptr; gAccentPressedBrush = nullptr; gBorderBrush = nullptr;
+    gFocusBrush = nullptr;
+}
+
+static void SetDarkTitleBar(HWND window, bool enabled) {
+    // DWMWA_USE_IMMERSIVE_DARK_MODE is 20 on current Windows builds and 19 on
+    // the earliest builds that supported it. Resolve the API at runtime so the
+    // patcher still starts on systems that do not expose this decoration.
+    HMODULE module = LoadLibraryExW(L"dwmapi.dll", nullptr, LOAD_LIBRARY_SEARCH_SYSTEM32);
+    if (!module) return;
+    using SetWindowAttribute = HRESULT (WINAPI*)(HWND, DWORD, LPCVOID, DWORD);
+    auto setWindowAttribute = reinterpret_cast<SetWindowAttribute>(
+        GetProcAddress(module, "DwmSetWindowAttribute"));
+    if (setWindowAttribute) {
+        const BOOL value = enabled ? TRUE : FALSE;
+        if (FAILED(setWindowAttribute(window, 20, &value, sizeof(value))))
+            setWindowAttribute(window, 19, &value, sizeof(value));
+    }
+    FreeLibrary(module);
+}
 
 static std::wstring ErrorText(DWORD value) {
     wchar_t* text = nullptr;
@@ -499,6 +579,133 @@ static void SetFont(HWND control, HFONT font = nullptr) {
     SendMessageW(control, WM_SETFONT, reinterpret_cast<WPARAM>(font ? font : gFont), TRUE);
 }
 
+static void PaintWindowBackground(HWND window, HDC dc) {
+    RECT client{};
+    GetClientRect(window, &client);
+    HBRUSH background = gHighContrast ? GetSysColorBrush(COLOR_WINDOW) : gBackgroundBrush;
+    HBRUSH panel = gHighContrast ? GetSysColorBrush(COLOR_BTNFACE) : gPanelBrush;
+    HBRUSH border = gHighContrast ? GetSysColorBrush(COLOR_WINDOWTEXT) : gBorderBrush;
+    FillRect(dc, &client, background);
+
+    // Keep optional emulator helpers visually separate from the required
+    // build-and-play path without making them look disabled.
+    RECT optional{16, 470, 742, 560};
+    FillRect(dc, &optional, panel);
+    FrameRect(dc, &optional, border);
+}
+
+static bool DrawThemedControl(const DRAWITEMSTRUCT* item) {
+    if (!item) return false;
+    if (item->CtlType == ODT_STATIC && item->CtlID == IDC_STATUS) {
+        SaveDC(item->hDC);
+        HBRUSH fill = gHighContrast ? GetSysColorBrush(COLOR_WINDOW) : gPanelBrush;
+        HBRUSH border = gHighContrast ? GetSysColorBrush(COLOR_WINDOWTEXT) : gBorderBrush;
+        FillRect(item->hDC, &item->rcItem, fill);
+        FrameRect(item->hDC, &item->rcItem, border);
+        RECT textRect = item->rcItem;
+        InflateRect(&textRect, -12, -9);
+        SetBkMode(item->hDC, TRANSPARENT);
+        SetTextColor(item->hDC, gHighContrast ? GetSysColor(COLOR_WINDOWTEXT) : kMutedTextColor);
+        SelectObject(item->hDC, gFont);
+        int length = GetWindowTextLengthW(item->hwndItem);
+        std::vector<wchar_t> text(static_cast<size_t>(length) + 1);
+        GetWindowTextW(item->hwndItem, text.data(), static_cast<int>(text.size()));
+        DrawTextW(item->hDC, text.data(), -1, &textRect,
+            DT_LEFT | DT_TOP | DT_WORDBREAK | DT_NOPREFIX);
+        RestoreDC(item->hDC, -1);
+        return true;
+    }
+    if (item->CtlType != ODT_BUTTON) return false;
+
+    const bool disabled = (item->itemState & ODS_DISABLED) != 0;
+    const bool pressed = (item->itemState & ODS_SELECTED) != 0;
+    const bool primary = item->CtlID == IDC_BUILD;
+
+    SaveDC(item->hDC);
+    if (gHighContrast) {
+        RECT buttonRect = item->rcItem;
+        UINT state = DFCS_BUTTONPUSH;
+        if (pressed) state |= DFCS_PUSHED;
+        if (disabled) state |= DFCS_INACTIVE;
+        DrawFrameControl(item->hDC, &buttonRect, DFC_BUTTON, state);
+    }
+    HBRUSH fill = disabled ? gButtonDisabledBrush :
+        (primary ? (pressed ? gAccentPressedBrush : gAccentBrush) :
+            (pressed ? gButtonPressedBrush : gButtonBrush));
+    if (!gHighContrast) {
+        FillRect(item->hDC, &item->rcItem, fill);
+        FrameRect(item->hDC, &item->rcItem, gBorderBrush);
+    }
+    RECT textRect = item->rcItem;
+    if (pressed) OffsetRect(&textRect, 1, 1);
+    SetBkMode(item->hDC, TRANSPARENT);
+    SetTextColor(item->hDC, gHighContrast ?
+        GetSysColor(disabled ? COLOR_GRAYTEXT : COLOR_BTNTEXT) :
+        (disabled ? kDisabledTextColor : kTextColor));
+    SelectObject(item->hDC, gFont);
+    int length = GetWindowTextLengthW(item->hwndItem);
+    std::vector<wchar_t> text(static_cast<size_t>(length) + 1);
+    GetWindowTextW(item->hwndItem, text.data(), static_cast<int>(text.size()));
+    UINT textFlags = DT_CENTER | DT_VCENTER | DT_SINGLELINE;
+    if ((item->itemState & ODS_NOACCEL) != 0) textFlags |= DT_HIDEPREFIX;
+    DrawTextW(item->hDC, text.data(), -1, &textRect, textFlags);
+    if ((item->itemState & ODS_FOCUS) != 0 &&
+        (item->itemState & ODS_NOFOCUSRECT) == 0 && !disabled) {
+        RECT focus = item->rcItem;
+        InflateRect(&focus, -3, -3);
+        if (gHighContrast) DrawFocusRect(item->hDC, &focus);
+        else FrameRect(item->hDC, &focus, gFocusBrush);
+    }
+    RestoreDC(item->hDC, -1);
+    return true;
+}
+
+static HWND MnemonicTarget(WPARAM key) {
+    switch (key) {
+    case L'B': return gBrowse;
+    case L'G': return gBuild;
+    case L'P': return gPlay;
+    case L'O': return gOpen;
+    case L'C': return gChooseEmulator;
+    case L'A': return gAutoDetectEmulator;
+    case L'D': return gGetDuckStation;
+    case L'R': return gGetRetroArch;
+    default: return nullptr;
+    }
+}
+
+static bool ActivateMnemonic(WPARAM key) {
+    HWND target = MnemonicTarget(key);
+    if (!target) return false;
+    if (target && IsWindowEnabled(target)) {
+        SendMessageW(gWindow, WM_CHANGEUISTATE, MAKEWPARAM(UIS_CLEAR, UISF_HIDEACCEL), 0);
+        SetFocus(target);
+        SendMessageW(target, BM_CLICK, 0, 0);
+    }
+    return true;
+}
+
+static bool HandleAppKeyMessage(const MSG& message) {
+    if (message.message == WM_SYSKEYDOWN &&
+        (message.lParam & (static_cast<LPARAM>(1) << 29)) != 0 &&
+        (GetKeyState(VK_CONTROL) & 0x8000) == 0 && MnemonicTarget(message.wParam)) {
+        // Consume keyboard auto-repeat but activate exactly once per press.
+        if ((message.lParam & (static_cast<LPARAM>(1) << 30)) == 0)
+            ActivateMnemonic(message.wParam);
+        return true;
+    }
+
+    // BS_OWNERDRAW gives the controls a reliable dark face. Preserve the
+    // expected default-button behavior when Enter is pressed in the BIN path.
+    if (message.message == WM_KEYDOWN && message.wParam == VK_RETURN &&
+        GetFocus() == gSourceEdit && gBuild && IsWindowEnabled(gBuild)) {
+        SetFocus(gBuild);
+        SendMessageW(gBuild, BM_CLICK, 0, 0);
+        return true;
+    }
+    return false;
+}
+
 static std::wstring ChooseBin(HWND owner) {
     wchar_t buffer[32768]{};
     OPENFILENAMEW dialog{sizeof(dialog)};
@@ -556,23 +763,24 @@ static LRESULT CALLBACK WindowProc(HWND window, UINT message, WPARAM word, LPARA
     switch (message) {
     case WM_CREATE: {
         gWindow = window;
+        SetDarkTitleBar(window, !gHighContrast);
         gFont = CreateFontW(-17, 0, 0, 0, FW_NORMAL, FALSE, FALSE, FALSE, DEFAULT_CHARSET,
             OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, CLEARTYPE_QUALITY, DEFAULT_PITCH, L"Segoe UI");
         gTitleFont = CreateFontW(-26, 0, 0, 0, FW_SEMIBOLD, FALSE, FALSE, FALSE, DEFAULT_CHARSET,
             OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, CLEARTYPE_QUALITY, DEFAULT_PITCH, L"Segoe UI");
-        HWND title = Child(L"STATIC", L"Xenogears Mass Driver", SS_LEFT, 24, 18, 540, 38, window);
-        SetFont(title, gTitleFont);
-        SetFont(Child(L"STATIC", L"Build and start the included Mass Driver update.",
-            SS_LEFT, 24, 58, 700, 24, window));
+        gTitle = Child(L"STATIC", L"Xenogears Mass Driver", SS_LEFT, 24, 18, 540, 38, window);
+        SetFont(gTitle, gTitleFont);
+        gSubtitle = Child(L"STATIC", L"Build and start the included Mass Driver update.",
+            SS_LEFT, 24, 58, 700, 24, window); SetFont(gSubtitle);
         SetFont(Child(L"STATIC", L"1. Choose the unmodified USA Disc 2 BIN you legally own.",
             SS_LEFT, 24, 104, 700, 24, window));
         gSourceEdit = Child(L"EDIT", L"", ES_AUTOHSCROLL | WS_BORDER | WS_TABSTOP,
             24, 136, 560, 30, window, IDC_SOURCE_PATH); SetFont(gSourceEdit);
-        HWND browse = Child(L"BUTTON", L"&Browse...", BS_PUSHBUTTON | WS_TABSTOP,
-            596, 136, 130, 30, window, IDC_SELECT_SOURCE); SetFont(browse);
+        gBrowse = Child(L"BUTTON", L"&Browse...", BS_OWNERDRAW | WS_TABSTOP,
+            596, 136, 130, 30, window, IDC_SELECT_SOURCE); SetFont(gBrowse);
         SetFont(Child(L"STATIC", L"2. Select Build game. Your source BIN is read only and is never changed.",
             SS_LEFT, 24, 194, 700, 24, window));
-        gBuild = Child(L"BUTTON", L"&Build game", BS_DEFPUSHBUTTON | WS_TABSTOP,
+        gBuild = Child(L"BUTTON", L"Build &game", BS_OWNERDRAW | WS_TABSTOP,
             24, 228, 180, 38, window, IDC_BUILD); SetFont(gBuild);
         SetFont(Child(L"STATIC", L"3. Select Play here. The app finds your emulator or asks you to choose it.",
             SS_LEFT, 24, 296, 710, 42, window));
@@ -581,24 +789,82 @@ static LRESULT CALLBACK WindowProc(HWND window, UINT message, WPARAM word, LPARA
             L"The game is ready. Select Play, or Browse to build from another clean Disc 2 BIN.";
         gStatus = Child(L"STATIC", ready ? readyText.c_str() :
             L"Ready. Keep Xenogears_Mass_Driver.exe beside the MassDriverData folder.",
-            SS_LEFT, 24, 350, 700, 60, window, IDC_STATUS); SetFont(gStatus);
-        gPlay = Child(L"BUTTON", L"&Play", BS_PUSHBUTTON | WS_TABSTOP,
+            SS_OWNERDRAW, 24, 350, 700, 60, window, IDC_STATUS); SetFont(gStatus);
+        gPlay = Child(L"BUTTON", L"&Play", BS_OWNERDRAW | WS_TABSTOP,
             24, 422, 150, 38, window, IDC_PLAY); SetFont(gPlay); EnableWindow(gPlay, ready ? TRUE : FALSE);
-        gOpen = Child(L"BUTTON", L"&Open game folder", BS_PUSHBUTTON | WS_TABSTOP,
+        gOpen = Child(L"BUTTON", L"&Open game folder", BS_OWNERDRAW | WS_TABSTOP,
             188, 422, 190, 38, window, IDC_OPEN_FOLDER); SetFont(gOpen); EnableWindow(gOpen, ready ? TRUE : FALSE);
-        SetFont(Child(L"STATIC", L"Optional: emulator setup", SS_LEFT,
-            24, 478, 700, 24, window));
-        gChooseEmulator = Child(L"BUTTON", L"&Choose emulator...", BS_PUSHBUTTON | WS_TABSTOP,
+        gOptionalLabel = Child(L"STATIC", L"Optional: emulator setup", SS_LEFT,
+            24, 478, 700, 24, window); SetFont(gOptionalLabel);
+        gChooseEmulator = Child(L"BUTTON", L"&Choose emulator...", BS_OWNERDRAW | WS_TABSTOP,
             24, 508, 168, 36, window, IDC_CHOOSE_EMULATOR); SetFont(gChooseEmulator);
-        gAutoDetectEmulator = Child(L"BUTTON", L"&Auto-detect emulator", BS_PUSHBUTTON | WS_TABSTOP,
+        gAutoDetectEmulator = Child(L"BUTTON", L"&Auto-detect emulator", BS_OWNERDRAW | WS_TABSTOP,
             204, 508, 188, 36, window, IDC_AUTO_DETECT_EMULATOR); SetFont(gAutoDetectEmulator);
-        gGetDuckStation = Child(L"BUTTON", L"Get &DuckStation", BS_PUSHBUTTON | WS_TABSTOP,
+        gGetDuckStation = Child(L"BUTTON", L"Get &DuckStation", BS_OWNERDRAW | WS_TABSTOP,
             404, 508, 154, 36, window, IDC_GET_DUCKSTATION); SetFont(gGetDuckStation);
-        gGetRetroArch = Child(L"BUTTON", L"Get &RetroArch", BS_PUSHBUTTON | WS_TABSTOP,
+        gGetRetroArch = Child(L"BUTTON", L"Get &RetroArch", BS_OWNERDRAW | WS_TABSTOP,
             570, 508, 154, 36, window, IDC_GET_RETROARCH); SetFont(gGetRetroArch);
         SetFocus(gSourceEdit);
         return 0;
     }
+    case WM_ERASEBKGND:
+        PaintWindowBackground(window, reinterpret_cast<HDC>(word));
+        return 1;
+    case WM_PAINT: {
+        PAINTSTRUCT paint{};
+        HDC dc = BeginPaint(window, &paint);
+        PaintWindowBackground(window, dc);
+        EndPaint(window, &paint);
+        return 0;
+    }
+    case WM_DRAWITEM:
+        if (DrawThemedControl(reinterpret_cast<DRAWITEMSTRUCT*>(value))) return TRUE;
+        break;
+    case WM_CTLCOLORSTATIC: {
+        HDC dc = reinterpret_cast<HDC>(word);
+        HWND control = reinterpret_cast<HWND>(value);
+        SetBkMode(dc, TRANSPARENT);
+        SetTextColor(dc, gHighContrast ? GetSysColor(
+            control == gOptionalLabel ? COLOR_BTNTEXT : COLOR_WINDOWTEXT) :
+            (control == gTitle ? RGB(241, 105, 128) :
+                (control == gSubtitle ? kMutedTextColor : kTextColor)));
+        return reinterpret_cast<LRESULT>(
+            gHighContrast ? GetSysColorBrush(
+                control == gOptionalLabel ? COLOR_BTNFACE : COLOR_WINDOW) :
+                (control == gOptionalLabel ? gPanelBrush : gBackgroundBrush));
+    }
+    case WM_CTLCOLOREDIT: {
+        HDC dc = reinterpret_cast<HDC>(word);
+        SetBkMode(dc, OPAQUE);
+        SetBkColor(dc, gHighContrast ? GetSysColor(COLOR_WINDOW) : kEditColor);
+        SetTextColor(dc, gHighContrast ? GetSysColor(COLOR_WINDOWTEXT) : kTextColor);
+        return reinterpret_cast<LRESULT>(
+            gHighContrast ? GetSysColorBrush(COLOR_WINDOW) : gEditBrush);
+    }
+    case WM_CTLCOLORBTN:
+        SetBkMode(reinterpret_cast<HDC>(word), TRANSPARENT);
+        SetTextColor(reinterpret_cast<HDC>(word),
+            gHighContrast ? GetSysColor(COLOR_BTNTEXT) : kTextColor);
+        return reinterpret_cast<LRESULT>(
+            gHighContrast ? GetSysColorBrush(COLOR_BTNFACE) : gButtonBrush);
+    case WM_SETTINGCHANGE:
+        if (word == SPI_SETHIGHCONTRAST) {
+            bool highContrast = HighContrastActive();
+            if (highContrast != gHighContrast) {
+                gHighContrast = highContrast;
+                SetClassLongPtrW(window, GCLP_HBRBACKGROUND, reinterpret_cast<LONG_PTR>(
+                    gHighContrast ? GetSysColorBrush(COLOR_WINDOW) : gBackgroundBrush));
+                SetDarkTitleBar(window, !gHighContrast);
+                RedrawWindow(window, nullptr, nullptr,
+                    RDW_INVALIDATE | RDW_ERASE | RDW_ALLCHILDREN | RDW_FRAME);
+            }
+        }
+        break;
+    case WM_SYSCOLORCHANGE:
+        if (gHighContrast)
+            RedrawWindow(window, nullptr, nullptr,
+                RDW_INVALIDATE | RDW_ERASE | RDW_ALLCHILDREN);
+        break;
     case WM_COMMAND:
         switch (LOWORD(word)) {
         case IDC_SELECT_SOURCE: {
@@ -784,24 +1050,40 @@ int WINAPI wWinMain(HINSTANCE instance, HINSTANCE, PWSTR, int show) {
         int result = Headless(argc, argv); LocalFree(argv); return result;
     }
     if (argv) LocalFree(argv);
+    gHighContrast = HighContrastActive();
+    if (!CreateThemeResources()) {
+        DestroyThemeResources();
+        return UNEXPECTED;
+    }
     WNDCLASSEXW cls{sizeof(cls)};
     cls.lpfnWndProc = WindowProc; cls.hInstance = instance;
     cls.hCursor = LoadCursorW(nullptr, IDC_ARROW);
     cls.hIcon = LoadIconW(instance, MAKEINTRESOURCEW(IDI_MASS_DRIVER));
     if (!cls.hIcon) cls.hIcon = LoadIconW(nullptr, IDI_APPLICATION);
-    cls.hIconSm = cls.hIcon; cls.hbrBackground = reinterpret_cast<HBRUSH>(COLOR_WINDOW + 1);
+    cls.hIconSm = cls.hIcon;
+    cls.hbrBackground = gHighContrast ? GetSysColorBrush(COLOR_WINDOW) : gBackgroundBrush;
     cls.lpszClassName = L"XenogearsMassDriver";
-    if (!RegisterClassExW(&cls)) return UNEXPECTED;
+    if (!RegisterClassExW(&cls)) {
+        DestroyThemeResources();
+        return UNEXPECTED;
+    }
     gWindow = CreateWindowExW(0, cls.lpszClassName, kTitle,
-        WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX,
+        WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX | WS_CLIPCHILDREN,
         CW_USEDEFAULT, CW_USEDEFAULT, 778, 620, nullptr, nullptr, instance, nullptr);
-    if (!gWindow) return UNEXPECTED;
+    if (!gWindow) {
+        UnregisterClassW(cls.lpszClassName, instance);
+        DestroyThemeResources();
+        return UNEXPECTED;
+    }
     ShowWindow(gWindow, show); UpdateWindow(gWindow);
     MSG message{};
     while (GetMessageW(&message, nullptr, 0, 0) > 0) {
-        if (!IsDialogMessageW(gWindow, &message)) {
+        if (!HandleAppKeyMessage(message) && !IsDialogMessageW(gWindow, &message)) {
             TranslateMessage(&message); DispatchMessageW(&message);
         }
     }
-    return static_cast<int>(message.wParam);
+    int result = static_cast<int>(message.wParam);
+    UnregisterClassW(cls.lpszClassName, instance);
+    DestroyThemeResources();
+    return result;
 }

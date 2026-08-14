@@ -55,10 +55,17 @@ Assert-True ([IO.Directory]::Exists([IO.Path]::Combine($PackageDirectory, $Suppo
 $PackagedExecutables = @(Get-ChildItem -LiteralPath $PackageDirectory -Recurse -File -Filter '*.exe')
 Assert-True ($PackagedExecutables.Count -eq 1 -and $PackagedExecutables[0].Name -ceq $AppName) 'The app must be the package''s only executable.'
 
+$PrivacyNeedles = @(
+    $RepoRoot,[Environment]::GetFolderPath([Environment+SpecialFolder]::UserProfile),
+    [IO.Path]::GetTempPath().TrimEnd('\'),'\work\','\Users\'
+) | Where-Object { -not [string]::IsNullOrWhiteSpace($_) } | Select-Object -Unique
 foreach ($File in Get-ChildItem -LiteralPath $PackageDirectory -Recurse -File) {
     $Bytes = [IO.File]::ReadAllBytes($File.FullName)
     $Ascii = [Text.Encoding]::ASCII.GetString($Bytes)
     $Unicode = [Text.Encoding]::Unicode.GetString($Bytes)
+    foreach ($Needle in $PrivacyNeedles) {
+        Assert-True (-not $Ascii.Contains($Needle) -and -not $Unicode.Contains($Needle)) "Privacy marker found in $(Get-Relative $PackageDirectory $File.FullName)"
+    }
     foreach ($Text in @($Ascii, $Unicode)) {
         Assert-True ($Text -notmatch '(?i)[A-Z]:\\[^\x00\r\n]{2,220}\\(?:src|source|build|temp|tmp|work)\\') "Absolute development path found in $(Get-Relative $PackageDirectory $File.FullName)"
     }
