@@ -2,7 +2,7 @@
 
 This executable will patch your official XG Disc 2 .bin file.
 Once patched and launched, the Xenogears main menu will allow you to choose the Mass Driver option.
-Once selected, you will be placed in front of the Mass Driver dungeon.
+After selecting the dungeon, you will be placed in front of the Mass Driver.
 No prior save states are necessary.
 
 https://github.com/Project-Benjamin/Mass-Driver/releases/download/patcher/Xenogears_Mass_Driver.zip
