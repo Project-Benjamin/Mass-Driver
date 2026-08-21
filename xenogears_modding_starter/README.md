@@ -6,7 +6,9 @@ Nothing here is a game image, emulator, BIOS, installer, or finished patch. The 
 
 Where to begin
 
-Read docs/xenogears-scripting-and-scene-planning.md first. It explains how the field files are organized, how scripts and dialogue work, and how to approach a new scene without losing track of the original data.
+Start with "START-HERE_technical_shorter.md" -- This will get you through all you need to start modding. 
+
+For a more detailed explanation, refer to the "technical_longer.md" document.
 
 The tools folder contains the reusable low-level pieces:
 
