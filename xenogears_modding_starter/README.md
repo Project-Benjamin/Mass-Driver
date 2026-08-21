@@ -1,10 +1,10 @@
-Xenogears modding starter files
+**Xenogears modding starter files**
 
 This is the small set of tools and notes needed to begin studying and making a Xenogears field modification. It is meant to be copied into a new project and extended as the project grows.
 
 Nothing here is a game image, emulator, BIOS, installer, or finished patch. The person using these files must provide their own clean disc image.
 
-Where to begin
+**Where to begin**
 
 Start with "START-HERE_technical_shorter.md" -- This will get you through all you need to start modding. 
 
@@ -24,7 +24,7 @@ xgdisc.py and xgmode2.py inspect and work with PlayStation disc data.
 
 xenoiso_build.py assembles the changed resources into an image according to a build manifest.
 
-Starting a project
+**Starting a project**
 
 Copy this folder somewhere else and leave the original files untouched. Set the paths in config.example.json for the clean disc files you are working with. Then choose a retail field to use as a donor and make a separate working copy of its decoded resources.
 
