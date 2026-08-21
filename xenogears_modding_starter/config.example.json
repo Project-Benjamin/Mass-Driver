@@ -1,0 +1,6 @@
+{
+  "disc1_source": "C:/path/to/your/clean/Xenogears Disc 1.bin",
+  "disc2_source": "C:/path/to/your/clean/Xenogears Disc 2.bin",
+  "disc2_cue": "C:/path/to/your/clean/Xenogears Disc 2.cue",
+  "output_directory": "output"
+}
