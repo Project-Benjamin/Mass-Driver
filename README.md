@@ -1,8 +1,9 @@
 # Xenogears Mass Driver
 
 This executable will patch your official XG Disc 2 .bin file.
-Once patched and launched, the Xenogears main menu will allow you to choose the Mass Driver option.
-After selecting the dungeon, you will be placed in front of the Mass Driver.
+Once patched and launched, the Xenogears main menu lets you choose either the
+original Mass-Driver route or **Surface Soylent System**. Choose Surface
+Soylent System to begin the reconstructed medical-intake and dungeon campaign.
 No prior save states are necessary.
 
 https://github.com/Project-Benjamin/Mass-Driver/releases/download/patcher/Xenogears_Mass_Driver.zip
@@ -19,6 +20,7 @@ Download `Xenogears_Mass_Driver.zip` from this repository's Releases page.
 2. Open `Xenogears_Mass_Driver.exe`.
 3. Browse to an unmodified USA Xenogears Disc 2 raw BIN.
 4. Select **Build game**, then **Play**.
+5. Start a New Game and choose **Surface Soylent System** from the title menu.
 
 The patcher does not include the Xenogears .bin file, an emulator, or a BIOS. It reads but
 never changes the source BIN.

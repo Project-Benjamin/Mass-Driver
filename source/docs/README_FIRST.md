@@ -1,7 +1,8 @@
 # Xenogears Mass Driver
 
-This package applies the included Mass Driver update to a disc image that you
-provide. It does not contain Xenogears, a PlayStation emulator, or a BIOS.
+This package applies the included Mass Driver and Surface Soylent update to a
+disc image that you provide. It does not contain Xenogears, a PlayStation
+emulator, or a BIOS.
 
 ## What you need
 
@@ -21,6 +22,8 @@ provide. It does not contain Xenogears, a PlayStation emulator, or a BIOS.
 5. Select **Play** in the same app.
 6. If the app cannot find an emulator, choose your emulator's `.exe` or use one
    of its official download links.
+7. Start a New Game and choose **Surface Soylent System** from the two-route
+   title menu to play the reconstructed medical-intake and dungeon campaign.
 
 The patcher reads the original BIN but never changes it. It creates the
 verified game in the `Mass Driver Game` subfolder. The xdelta decoder is built
