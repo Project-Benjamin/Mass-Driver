@@ -17,8 +17,8 @@
   "patch": {
     "relative_path": "MassDriverData/patches/Mass_Driver.xdelta",
     "encoding": "Plain VCDIFF with no secondary compression and no application header",
-    "size": 9307943,
-    "sha256": "10933eaca8f54d10866b38c6f809cffeeba8abbb67ba9d03eb80dff297a95822"
+    "size": 9881495,
+    "sha256": "7c24947a33198d24fcc6f1ffd6b51654604fce0535da6116b255ed618b7620ab"
   },
   "decoder": {
     "name": "Integrated xdelta3 decoder core",
@@ -32,8 +32,8 @@
   },
   "output": {
     "bin_name": "Xenogears_Mass_Driver.bin",
-    "bin_size": 698642784,
-    "bin_sha256": "1660e1a4ff0a90f416a428428e92fadfb05410cbb17d5be6c0b132ec39bc248a",
+    "bin_size": 698816832,
+    "bin_sha256": "8e9020e85760e64555040ea26b73876f0add72a788a3221070e4d57823520394",
     "cue_name": "Xenogears_Mass_Driver.cue",
     "cue_size": 84,
     "cue_sha256": "bec6ef641e9529bbee486b77e2c4ef02815318b181d9c44a22b455c9daa3c0e4"
