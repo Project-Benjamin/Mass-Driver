@@ -26,7 +26,7 @@
 
 namespace fs = std::filesystem;
 
-static const wchar_t* kTitle = L"Xenogears Mass Driver";
+static const wchar_t* kTitle = L"Xenogears Cut Content Patcher";
 static const wchar_t* kBinName = L"Xenogears_Mass_Driver.bin";
 static const wchar_t* kCueName = L"Xenogears_Mass_Driver.cue";
 static const wchar_t* kOutputFolder = L"Mass Driver Game";
@@ -768,7 +768,7 @@ static LRESULT CALLBACK WindowProc(HWND window, UINT message, WPARAM word, LPARA
             OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, CLEARTYPE_QUALITY, DEFAULT_PITCH, L"Segoe UI");
         gTitleFont = CreateFontW(-26, 0, 0, 0, FW_SEMIBOLD, FALSE, FALSE, FALSE, DEFAULT_CHARSET,
             OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, CLEARTYPE_QUALITY, DEFAULT_PITCH, L"Segoe UI");
-        gTitle = Child(L"STATIC", L"Xenogears Mass Driver", SS_LEFT, 24, 18, 540, 38, window);
+        gTitle = Child(L"STATIC", kTitle, SS_LEFT, 24, 18, 540, 38, window);
         SetFont(gTitle, gTitleFont);
         gSubtitle = Child(L"STATIC", L"Build and start the included Mass Driver update.",
             SS_LEFT, 24, 58, 700, 24, window); SetFont(gSubtitle);

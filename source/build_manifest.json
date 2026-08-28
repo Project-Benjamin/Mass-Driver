@@ -1,7 +1,7 @@
 {
   "format": "xenogears-mass-driver-build-v1",
   "package": {
-    "display_name": "Xenogears Mass Driver",
+    "display_name": "Xenogears Cut Content Patcher",
     "directory_name": "Xenogears_Mass_Driver",
     "zip_filename": "Xenogears_Mass_Driver.zip",
     "app_filename": "Xenogears_Mass_Driver.exe",

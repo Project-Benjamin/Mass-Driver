@@ -1,4 +1,4 @@
-# Xenogears Mass Driver
+# Xenogears Cut Content Patcher
 
 This executable will patch your official XG Disc 2 .bin file.
 Once patched and launched, the Xenogears main menu lets you choose either the

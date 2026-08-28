@@ -1,4 +1,4 @@
-# Building the Mass Driver patcher
+# Building the Xenogears Cut Content Patcher
 
 The package has stable public names:
 

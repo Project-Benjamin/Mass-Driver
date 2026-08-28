@@ -1,4 +1,4 @@
-# Xenogears Mass Driver
+# Xenogears Cut Content Patcher
 
 This package applies the included Mass Driver and Surface Soylent update to a
 disc image that you provide. It does not contain Xenogears, a PlayStation

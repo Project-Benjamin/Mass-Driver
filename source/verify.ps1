@@ -322,5 +322,5 @@ if (-not $SkipDynamic) {
     }
 }
 
-Write-Host 'Mass Driver package verification: PASS'
+Write-Host 'Xenogears Cut Content Patcher package verification: PASS'
 Write-Host "ZIP SHA-256: $((Get-FileHash -LiteralPath $ZipPath -Algorithm SHA256).Hash.ToLowerInvariant())"

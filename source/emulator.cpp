@@ -13,7 +13,7 @@
 
 namespace fs = std::filesystem;
 
-static const wchar_t* kTitle = L"Xenogears Mass Driver";
+static const wchar_t* kTitle = L"Xenogears Cut Content Patcher";
 static const wchar_t* kDuckStationUrl = L"https://www.duckstation.org/windl";
 static const wchar_t* kRetroArchUrl = L"https://www.retroarch.com/?page=platforms";
 
@@ -120,7 +120,9 @@ static Emulator DescribeEmulator(const fs::path& path, bool acceptCustom) {
     const std::wstring filename = Lower(absolute.filename().wstring());
     const std::wstring product = ReadVersionValue(absolute, L"ProductName");
     const std::wstring description = ReadVersionValue(absolute, L"FileDescription");
-    if (Contains(product, L"Xenogears Mass Driver") ||
+    if (Contains(product, L"Xenogears Cut Content Patcher") ||
+        Contains(description, L"Xenogears Cut Content Patcher") ||
+        Contains(product, L"Xenogears Mass Driver") ||
         Contains(description, L"Xenogears Mass Driver")) return {};
     const bool duckStation = Contains(product, L"DuckStation") ||
         Contains(description, L"DuckStation") || filename.find(L"duckstation") != std::wstring::npos;
