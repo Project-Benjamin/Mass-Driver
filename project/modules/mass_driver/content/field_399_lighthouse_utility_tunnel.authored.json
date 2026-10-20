@@ -1,0 +1,12 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 56,
+      "height": 5,
+      "text": "CREW TRANSIT LINE B\nMASS DRIVER WORKS<New>REPORT RAIL FAULTS\nTO LINE CONTROL<Close>"
+    }
+  ]
+}

@@ -1,0 +1,300 @@
+{
+  "format": "xenogears-shared-workflow-validation-v1",
+  "release": "workspace-v1",
+  "created_utc": "2026-09-05T18:59:32.598526+00:00",
+  "builds": {
+    "mass_driver": {
+      "status": "built",
+      "finished_utc": "2026-09-05T18:53:49.845949+00:00",
+      "receipt": "builds/mass_driver/workspace-v1/project-build.json",
+      "content_versions": {
+        "mass_driver": "V168"
+      }
+    },
+    "soylent_system": {
+      "status": "built",
+      "finished_utc": "2026-09-05T18:54:32.515265+00:00",
+      "receipt": "builds/soylent_system/workspace-v1/project-build.json",
+      "content_versions": {
+        "soylent_system": "V236"
+      }
+    },
+    "rico": {
+      "status": "built",
+      "finished_utc": "2026-09-05T18:55:29.832572+00:00",
+      "receipt": "builds/rico/workspace-v1/project-build.json",
+      "content_versions": {
+        "rico": "rico-ch2-v1"
+      }
+    },
+    "combined": {
+      "status": "built",
+      "finished_utc": "2026-09-05T18:56:35.056249+00:00",
+      "receipt": "builds/combined/workspace-v1/project-build.json",
+      "content_versions": {
+        "mass_driver": "V168",
+        "soylent_system": "V236",
+        "rico": "rico-ch2-v1"
+      }
+    }
+  },
+  "payload_audit": {
+    "status": "passed",
+    "report": "work/workspace_v1_payload_audit.json",
+    "script": "work/audit_workspace_v1.py",
+    "verified_replacements": 582,
+    "unchanged_content_files": 75,
+    "violations": []
+  },
+  "discs": [
+    {
+      "profile": "mass_driver",
+      "disc": 2,
+      "path": "builds/mass_driver/workspace-v1/Xenogears_Reimagined_mass_driver_workspace-v1_CD2.bin",
+      "size": 696144960,
+      "sha256": "b72f2fd563dea6252b21899d06f81b91489f15b1ea50728545c049faa65aaebd",
+      "baseline": "builds/mass_driver/organized-v1/Xenogears_Reimagined_mass_driver_organized-v1_CD2.bin",
+      "complete_image_byte_identical": true,
+      "verified_replacements": 166,
+      "receipt_matches_physical_image": true
+    },
+    {
+      "profile": "soylent_system",
+      "disc": 2,
+      "path": "builds/soylent_system/workspace-v1/Xenogears_Reimagined_soylent_system_workspace-v1_CD2.bin",
+      "size": 698816832,
+      "sha256": "e228a01d3dac8f491ef96ef5b175b73fb1a2b413e18e03549f2dbd232e562268",
+      "baseline": "builds/soylent_system/organized-v1/Xenogears_Reimagined_soylent_system_organized-v1_CD2.bin",
+      "complete_image_byte_identical": true,
+      "verified_replacements": 34,
+      "receipt_matches_physical_image": true
+    },
+    {
+      "profile": "rico",
+      "disc": 1,
+      "path": "builds/rico/workspace-v1/Xenogears_Rico_Arc_Disc_1.bin",
+      "size": 719267472,
+      "sha256": "c15d1a85a9203ec96d47197611c0a017b168b867524db2af762aa878b775529a",
+      "baseline": "builds/rico/rico-ch2-v1/Xenogears_Rico_Arc_Disc_1.bin",
+      "complete_image_byte_identical": true,
+      "verified_replacements": 66,
+      "receipt_matches_physical_image": true
+    },
+    {
+      "profile": "rico",
+      "disc": 2,
+      "path": "builds/rico/workspace-v1/Xenogears_Rico_Arc_Disc_2.bin",
+      "size": 696638880,
+      "sha256": "ba37b78dec3fbb06e4ba00828ce9dfe5672d45a30d2779d95fce074867e3c2f4",
+      "baseline": "builds/rico/rico-ch2-v1/Xenogears_Rico_Arc_Disc_2.bin",
+      "complete_image_byte_identical": true,
+      "verified_replacements": 66,
+      "receipt_matches_physical_image": true
+    },
+    {
+      "profile": "combined",
+      "disc": 2,
+      "path": "builds/combined/workspace-v1/Xenogears_Reimagined_combined_workspace-v1_CD2.bin",
+      "size": 707568624,
+      "sha256": "386f168d3d344998e9e8ec5b045eb07d4f4f79f4eed437bad8d134fdbe8b169c",
+      "baseline": "builds/combined/rico-ch2-bootfix-probe/Xenogears_Reimagined_combined_rico-ch2-bootfix-probe_CD2.bin",
+      "complete_image_byte_identical": true,
+      "verified_replacements": 250,
+      "receipt_matches_physical_image": true
+    }
+  ],
+  "combined_isolation": {
+    "baseline": "combined/rico-ch2-v1",
+    "resource_count": 250,
+    "changed_canonical_ids": [
+      732
+    ],
+    "unchanged_resources": 249,
+    "owner_counts": {
+      "unified_shared": 8,
+      "mass_driver": 157,
+      "rico_arc": 52,
+      "unified_menu": 2,
+      "surface_soylent": 29,
+      "mass_driver+rico_arc": 2
+    },
+    "authored_content_sources": {
+      "mass_driver": {
+        "files_unchanged": 57
+      },
+      "soylent_system": {
+        "files_unchanged": 2
+      },
+      "rico": {
+        "files_unchanged": 16
+      }
+    },
+    "miang_authored_sha256": "2b0192e5583de560cf50756a9fadd41176dca8b28d9c18930ba43816cb61574b",
+    "complete_central_control_sha256": "67e159ec58689f121a9c4326efdb1b8f6e723595420ebf3ba2386bef8911baeb",
+    "selector_note": "Resource 732 matches the prior route-stop diagnostic correction; display/runtime acceptance remains open."
+  },
+  "shared_toolchain": {
+    "all_four_receipts_identical": true,
+    "shared_source_sha256": "961e5ce886ded8cc622907926b733d83dff180e6fc69fe0f48237f4f796fef91",
+    "snapshot": {
+      "format": "xenogears-toolchain-v1",
+      "python": {
+        "executable": "C:\\Python314\\python.exe",
+        "version": "3.14.5",
+        "implementation": "CPython",
+        "build": "3.14.5 (tags/v3.14.5:5607950, May 10 2026, 10:43:50) [MSC v.1944 64 bit (AMD64)]"
+      },
+      "packages": {
+        "Pillow": "12.3.0",
+        "numpy": "2.5.1"
+      },
+      "shared_tools": {
+        "path": "shared/tools",
+        "exists": true,
+        "file_count": 20,
+        "sha256": "9dd56052e016ecda62bef342f30a3d583a159d7ea86a1c068a3cbb12ea58dee8"
+      },
+      "xenoiso": {
+        "path": "work/xenoiso.exe",
+        "resolved_path": "C:\\Users\\Chad\\Xenogears_Reimagined\\work\\xenoiso.exe",
+        "exists": true,
+        "sha256": "63e485219fbad20679871ba9b915ccf584fd15ef5c8868702f74c38e82acd16a"
+      },
+      "duckstation": {
+        "path": "C:/Users/Chad/AppData/Local/Programs/DuckStation/duckstation-qt-x64-ReleaseLTCG.exe",
+        "resolved_path": "C:\\Users\\Chad\\AppData\\Local\\Programs\\DuckStation\\duckstation-qt-x64-ReleaseLTCG.exe",
+        "exists": true,
+        "sha256": "752338c6548ff607883f30557046e6a7e3933910f0745e1449fc2db42923ab15"
+      },
+      "sha256": "112839ea5f198513ad1d81f84fc8c6fe77721e5e5b87ff82dde16aa1b376f475"
+    }
+  },
+  "full_suite": {
+    "status": "passed",
+    "tests_run": 967,
+    "skipped": 7,
+    "seconds": 293.803,
+    "exit_code": 0,
+    "log": "work/shared_workflow_tests.log",
+    "scope": "Shared tooling and all active module/dependency tests; archived Weltall2 experiment excluded."
+  },
+  "activation": {
+    "status": "passed",
+    "active_registry": "builds/current.json",
+    "profiles": {
+      "mass_driver": {
+        "release": "workspace-v1",
+        "fresh": true,
+        "media_verified": true,
+        "runtime_status": "untested",
+        "media": "C:\\Users\\Chad\\Xenogears_Reimagined\\builds\\mass_driver\\workspace-v1\\Xenogears_Reimagined_mass_driver_workspace-v1_CD2.cue"
+      },
+      "soylent_system": {
+        "release": "workspace-v1",
+        "fresh": true,
+        "media_verified": true,
+        "runtime_status": "untested",
+        "media": "C:\\Users\\Chad\\Xenogears_Reimagined\\builds\\soylent_system\\workspace-v1\\Xenogears_Reimagined_soylent_system_workspace-v1_CD2.cue"
+      },
+      "rico": {
+        "release": "workspace-v1",
+        "fresh": true,
+        "media_verified": true,
+        "runtime_status": "untested",
+        "media": "C:\\Users\\Chad\\Xenogears_Reimagined\\builds\\rico\\workspace-v1\\Xenogears_Rico_Arc.m3u"
+      },
+      "combined": {
+        "release": "workspace-v1",
+        "fresh": true,
+        "media_verified": true,
+        "runtime_status": "known-issue",
+        "media": "C:\\Users\\Chad\\Xenogears_Reimagined\\builds\\combined\\workspace-v1\\Xenogears_Reimagined_combined_workspace-v1_CD2.cue"
+      }
+    },
+    "launch_checks": [
+      {
+        "profile": "mass_driver",
+        "release": "workspace-v1",
+        "media": "C:\\Users\\Chad\\Xenogears_Reimagined\\builds\\mass_driver\\workspace-v1\\Xenogears_Reimagined_mass_driver_workspace-v1_CD2.cue",
+        "receipt": "C:\\Users\\Chad\\Xenogears_Reimagined\\builds\\mass_driver\\workspace-v1\\project-build.json",
+        "fresh": true,
+        "freshness_changes": [],
+        "runtime_status": "untested",
+        "label": "Mass Driver V168",
+        "active": true,
+        "media_verified": true,
+        "command": [
+          "C:\\Users\\Chad\\AppData\\Local\\Programs\\DuckStation\\duckstation-qt-x64-ReleaseLTCG.exe",
+          "-batch",
+          "-fastboot",
+          "--",
+          "C:\\Users\\Chad\\Xenogears_Reimagined\\builds\\mass_driver\\workspace-v1\\Xenogears_Reimagined_mass_driver_workspace-v1_CD2.cue"
+        ]
+      },
+      {
+        "profile": "soylent_system",
+        "release": "workspace-v1",
+        "media": "C:\\Users\\Chad\\Xenogears_Reimagined\\builds\\soylent_system\\workspace-v1\\Xenogears_Reimagined_soylent_system_workspace-v1_CD2.cue",
+        "receipt": "C:\\Users\\Chad\\Xenogears_Reimagined\\builds\\soylent_system\\workspace-v1\\project-build.json",
+        "fresh": true,
+        "freshness_changes": [],
+        "runtime_status": "untested",
+        "label": "Soylent System V236",
+        "active": true,
+        "media_verified": true,
+        "command": [
+          "C:\\Users\\Chad\\AppData\\Local\\Programs\\DuckStation\\duckstation-qt-x64-ReleaseLTCG.exe",
+          "-batch",
+          "-fastboot",
+          "--",
+          "C:\\Users\\Chad\\Xenogears_Reimagined\\builds\\soylent_system\\workspace-v1\\Xenogears_Reimagined_soylent_system_workspace-v1_CD2.cue"
+        ]
+      },
+      {
+        "profile": "rico",
+        "release": "workspace-v1",
+        "media": "C:\\Users\\Chad\\Xenogears_Reimagined\\builds\\rico\\workspace-v1\\Xenogears_Rico_Arc.m3u",
+        "receipt": "C:\\Users\\Chad\\Xenogears_Reimagined\\builds\\rico\\workspace-v1\\project-build.json",
+        "fresh": true,
+        "freshness_changes": [],
+        "runtime_status": "untested",
+        "label": "Rico - expanded Chapter 2",
+        "active": true,
+        "media_verified": true,
+        "command": [
+          "C:\\Users\\Chad\\AppData\\Local\\Programs\\DuckStation\\duckstation-qt-x64-ReleaseLTCG.exe",
+          "-batch",
+          "-fastboot",
+          "--",
+          "C:\\Users\\Chad\\Xenogears_Reimagined\\builds\\rico\\workspace-v1\\Xenogears_Rico_Arc.m3u"
+        ]
+      },
+      {
+        "profile": "combined",
+        "release": "workspace-v1",
+        "media": "C:\\Users\\Chad\\Xenogears_Reimagined\\builds\\combined\\workspace-v1\\Xenogears_Reimagined_combined_workspace-v1_CD2.cue",
+        "receipt": "C:\\Users\\Chad\\Xenogears_Reimagined\\builds\\combined\\workspace-v1\\project-build.json",
+        "fresh": true,
+        "freshness_changes": [],
+        "runtime_status": "known-issue",
+        "label": "Mass Driver V168 + Soylent V236 + Rico Chapter 2",
+        "active": true,
+        "media_verified": true,
+        "command": [
+          "C:\\Users\\Chad\\AppData\\Local\\Programs\\DuckStation\\duckstation-qt-x64-ReleaseLTCG.exe",
+          "-batch",
+          "-fastboot",
+          "--",
+          "C:\\Users\\Chad\\Xenogears_Reimagined\\builds\\combined\\workspace-v1\\Xenogears_Reimagined_combined_workspace-v1_CD2.cue"
+        ]
+      }
+    ],
+    "emulator_opened": false
+  },
+  "runtime_acceptance": {
+    "status": "not_exercised",
+    "combined_issue": "User-reported New Game black screen remains open. Selector resource 732 includes the route-stop correction; no emulator verification establishes that the display failure is fixed.",
+    "save_data": "This audit did not open an emulator or modify memory cards or save states."
+  },
+  "final_verification": "work/workspace_v1_final_verification.json"
+}

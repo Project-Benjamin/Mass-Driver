@@ -1,0 +1,11 @@
+{
+  "bug_fixes": true,
+  "double_xp": true,
+  "encounters": "none",
+  "hd_portraits": false,
+  "max_gold": false,
+  "retranslation": false,
+  "story_mode": false,
+  "weight_fix": false,
+  "yellow_names": true
+}

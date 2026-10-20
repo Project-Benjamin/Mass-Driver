@@ -1,0 +1,12 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 56,
+      "height": 4,
+      "text": "ZEBOIM PUBLIC WORKS\nCOASTAL MAINTENANCE UNDERCROFT<New>Elly\n\"The surface entrance opens\ninto old service tunnels.\nThey should lead below the\nfacility.\"<New>Emeralda\n\"The air is moving. The old\nmachines still breathe.\"<Close>"
+    }
+  ]
+}

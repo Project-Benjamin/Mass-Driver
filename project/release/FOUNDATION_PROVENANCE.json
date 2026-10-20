@@ -1,0 +1,363 @@
+{
+  "format": "xenogears-pw0102-foundation-recovery-v1",
+  "date": "2026-10-19",
+  "result": "new_rebuilt_foundation_verified; previous_image_not_recovered",
+  "previous_expected": {
+    "bytes": 688456272,
+    "sha256": "505f4ac038ca40db5675d37717f261cd016ef14df39b1d4b713ae1e51ec496f2",
+    "available": false,
+    "exact_recipe_recovered": false
+  },
+  "rebuilt_foundation": {
+    "path": "work/mass-driver-release-20261019/upstream/cd2_story_script_no_deathblow_levels.bin",
+    "bytes": 688456272,
+    "sha256": "7585d2ebadab82f9d982d871e05c02a9fb930167e8fe85d249c266a0e1885d8e",
+    "matches_previous_expected": false,
+    "persistent_input": true
+  },
+  "official_release": {
+    "url": "https://github.com/PWBuild-Team/Perfect_Works_Build/releases/download/0.10.2/Xenogears_Perfect_Works_Patches_0.10.2.7z",
+    "bytes": 43496263,
+    "sha256": "c99160c8a127506554e77f989cf23face6241636ca3c0ecbceae9e87e15cc8f9",
+    "expected_sha256": "c99160c8a127506554e77f989cf23face6241636ca3c0ecbceae9e87e15cc8f9",
+    "source": "Official GitHub release0.10.2; patchdata only"
+  },
+  "verified_retail": {
+    "path": "Xenogears (Disc 2).bin",
+    "bytes": 688700880,
+    "sha256": "5eab85c683d4d7087d345b587472db9c44df29b35ce66553c2626d26018b947e"
+  },
+  "official_patch": {
+    "path": "work/mass-driver-release-20261019/upstream/pw0102/pw_patches/cd2_story_mode_script.xdelta",
+    "bytes": 3545135,
+    "sha256": "e23442af8686d4b09d51ff142d47bec2e374832ad0c256b95134535d8177d72e"
+  },
+  "tool_version_scope": "Provided 0.11.4 folder supplies only the standalone xdelta/xenopack executables used here. No 0.11.4 game patch, executable, dialogue, translation, or balance was applied.",
+  "official_algorithm": {
+    "repository": "https://github.com/PWBuild-Team/Perfect_Works_Build",
+    "cached_git_head": "88e59ad432b562fba39b551efdb0b5a4221d88c3",
+    "source": {
+      "path": "work/weight_research/Perfect_Works_Build/source/partyStatEditor.cpp",
+      "bytes": 1510,
+      "sha256": "09676f83eeaaf61acabdca5d310a150550dcd24f357ce169da0d66f8585305ab"
+    },
+    "methods": "partyStatEditor::deathblowLevels (lines 11-41), popData (43-53)",
+    "option_dispatch_source": {
+      "path": "work/mass-driver-release-20261019/upstream/pw0102-source/fileEditor.cpp",
+      "bytes": 6455,
+      "sha256": "e6e61641ef58823c8db672f7253a0f7ecd8d7ff3a87ffa59315549c70e5ee3c2"
+    },
+    "dispatch_scope": "Official 0.10.2 fileEditor.cpp invokes partyStatEditor::deathblowLevels for the no-deathblow-levels option."
+  },
+  "recipe": [
+    {
+      "step": 1,
+      "operation": "Apply official PW 0.10.2 cd2_story_mode_script.xdelta to verified clean US Disc 2 using xdelta3 -d -s.",
+      "output": {
+        "path": "work/mass-driver-release-20261019/upstream/cd2_story_mode_script.bin",
+        "bytes": 688456272,
+        "sha256": "08c5d6a876488a53b19efb548810d8ee6dfbf6303c348628071a51121adc7bc2"
+      }
+    },
+    {
+      "step": 2,
+      "operation": "Extract canonical resource 2607 using shared.tools.xgdisc.Mode2Image (Disc 2 physical FAT index canonical_id - 5).",
+      "input_bytes": 31444,
+      "input_sha256": "99e9ebe35b44f2fda25ce3e6fe0697efc3b8b25e25f4505f78e84fcdf06488f8"
+    },
+    {
+      "step": 3,
+      "operation": "Unpack 2607.unk4 with xenopack -u; perform official partyStatEditor::deathblowLevels/popData edits to unpacked file0; preserve file1-file3. Repack with xenopack -p.",
+      "level_table_offsets": [
+        "0x100",
+        "0x210",
+        "0x320",
+        "0x430",
+        "0x540",
+        "0x650",
+        "0x760",
+        "0xa90",
+        "0xba0"
+      ],
+      "edits": [
+        {
+          "offset": "0x100",
+          "before": [
+            5,
+            10,
+            16,
+            22,
+            30,
+            38,
+            46,
+            50,
+            50,
+            50,
+            50,
+            70,
+            80
+          ],
+          "after": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "sentinel": 0
+        },
+        {
+          "offset": "0x210",
+          "before": [
+            5,
+            10,
+            16,
+            22,
+            30,
+            38,
+            46,
+            50,
+            50,
+            50,
+            50
+          ],
+          "after": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "sentinel": 255
+        },
+        {
+          "offset": "0x320",
+          "before": [
+            5,
+            10,
+            16,
+            22,
+            30,
+            38,
+            46,
+            50,
+            50,
+            50,
+            50
+          ],
+          "after": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "sentinel": 255
+        },
+        {
+          "offset": "0x430",
+          "before": [
+            5,
+            10,
+            16,
+            22,
+            30,
+            38,
+            46,
+            50,
+            50,
+            50,
+            50
+          ],
+          "after": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "sentinel": 255
+        },
+        {
+          "offset": "0x540",
+          "before": [
+            5,
+            10,
+            16,
+            22,
+            30,
+            38,
+            46,
+            50,
+            50,
+            50
+          ],
+          "after": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "sentinel": 255
+        },
+        {
+          "offset": "0x650",
+          "before": [
+            5,
+            10,
+            16,
+            22,
+            30,
+            38,
+            46,
+            50,
+            50,
+            50
+          ],
+          "after": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "sentinel": 255
+        },
+        {
+          "offset": "0x760",
+          "before": [
+            5,
+            10,
+            16,
+            22,
+            30,
+            38,
+            46,
+            50,
+            50,
+            50
+          ],
+          "after": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "sentinel": 255
+        },
+        {
+          "offset": "0xa90",
+          "before": [
+            5,
+            10,
+            16,
+            22,
+            30,
+            38,
+            46,
+            50,
+            50,
+            50,
+            50
+          ],
+          "after": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "sentinel": 255
+        },
+        {
+          "offset": "0xba0",
+          "before": [
+            5,
+            10,
+            16,
+            22,
+            30,
+            38,
+            46,
+            50,
+            50,
+            50
+          ],
+          "after": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "sentinel": 255
+        }
+      ],
+      "output_bytes": 31436,
+      "output_sha256": "aa9319a251700da9e25af71567628109f86268fb8a310af5abb2b5bf52adf03f"
+    },
+    {
+      "step": 4,
+      "operation": "Build replacement 2607 only through canonical shared.tools.xenoiso_build.command_build using Xenoiso 0.95, cd2fix namespace; output is new and input preserved.",
+      "output": {
+        "path": "work/mass-driver-release-20261019/upstream/cd2_story_script_no_deathblow_levels.bin",
+        "bytes": 688456272,
+        "sha256": "7585d2ebadab82f9d982d871e05c02a9fb930167e8fe85d249c266a0e1885d8e"
+      }
+    }
+  ]
+}

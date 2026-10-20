@@ -1,0 +1,13 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "GALLERY RECORD TERMINAL B\nEMERGENCY SECURITY ORDER<New>Strategic alerts are rising\nacross every military bloc.\nEach launch drill is being\nread as preparation for a\nfirst strike.<New>If command links are lost,\ncustodian units will seal\nand guard all launch assets.\nHuman launch authority is\nnot transferred.<New>Recognized personnel must\nstill issue every launch\norder. Custodians cannot\nselect or release a weapon.<New><Citan>\n\"The custodian guards the\nweapons. It cannot decide to\nlaunch them. That still\nrequires human authority.\"<New><Emeralda>\n\"No people... but old guard\nstill follows the order.\"<New><Citan>\n\"The far bulkhead leads to\nthe final gallery.\"<Close>"
+    }
+  ]
+}

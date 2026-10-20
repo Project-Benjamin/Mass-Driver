@@ -1,0 +1,29 @@
+{
+  "format": "xenogears-source-companion-release-v1",
+  "profile": "mass_driver",
+  "release": "mass-driver-v176-release-candidate-20261019",
+  "receipt_status": "built",
+  "content_versions": {
+    "mass_driver": "V176"
+  },
+  "workstation_source_snapshot_sha256": "9b1fd6e8a6e6b3ddd07f42cd7f6dcfc542a66438a6909b1f9a77e7db640bbfd4",
+  "source_snapshot_note": "Development reference screenshots are deliberately omitted. The packaged tree does not claim the workstation tree's complete source fingerprint.",
+  "runtime_acceptance": "See docs/mass-driver-release-qa.md for version-attributed gameplay coverage and limits. Source packaging does not itself establish runtime acceptance.",
+  "outputs": [
+    {
+      "path": "stage/manifest.json",
+      "size": 274885,
+      "sha256": "c03b89422c0187ca1e9a46c2495a3dad0e3a0e2075a29f227b5aaa1ccb465ad4"
+    },
+    {
+      "path": "Xenogears_Reimagined_mass_driver_mass-driver-v176-release-candidate-20261019_CD2.bin",
+      "size": 696140256,
+      "sha256": "0dc54a5306e97f41989ddd519daec860821af1038817c29f35b5d4b5d8ad87f8"
+    },
+    {
+      "path": "Xenogears_Reimagined_mass_driver_mass-driver-v176-release-candidate-20261019_CD2.cue",
+      "size": 143,
+      "sha256": "4c56a42f2011d4630d3e531850f694f0b8b1c81da2dd0145eec07c7ff725d690"
+    }
+  ]
+}

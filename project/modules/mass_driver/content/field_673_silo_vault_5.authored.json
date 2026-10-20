@@ -1,0 +1,13 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 52,
+      "height": 4,
+      "manual_wrap": true,
+      "text": "RESERVE MAGAZINE 05 / 05\nTarget data: lost.\nCentral Control: north\nexit.<New><Elly>\n\"Here in the dark... they\nlook like tombstones.\"<Close>"
+    }
+  ]
+}

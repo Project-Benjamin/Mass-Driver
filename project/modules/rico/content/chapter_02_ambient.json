@@ -1,0 +1,168 @@
+{
+  "format": "xenogears-rico-chapter-two-ambient-v1",
+  "rooms": {
+    "bar": {
+      "7": {
+        "key": "ambient_bar_latina",
+        "speaker": "Latina",
+        "native_dialogue_ids": [
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "blocks": [
+          "Latina\nRico! Make yourself\ncomfortable. I'll be\nwith you in a minute.<Close>"
+        ]
+      },
+      "11": {
+        "key": "ambient_bar_last_drink",
+        "speaker": null,
+        "native_dialogue_ids": [
+          43
+        ],
+        "blocks": [
+          "Latina... one more.\nOh. Rico. You're\nblocking the light.<Close>"
+        ]
+      },
+      "12": {
+        "key": "ambient_bar_admirer",
+        "speaker": null,
+        "native_dialogue_ids": [
+          44
+        ],
+        "blocks": [
+          "Latina's strong enough\nto run this place and\nfight in the arena.\nI can barely get off\nthis stool.<Close>"
+        ]
+      },
+      "13": {
+        "key": "ambient_bar_profiteer",
+        "speaker": null,
+        "native_dialogue_ids": [
+          45,
+          46,
+          47
+        ],
+        "blocks": [
+          "The sewers pay in\nmonster parts. I turn\nthose parts into G.<Close>"
+        ]
+      },
+      "14": {
+        "key": "ambient_bar_homeland",
+        "speaker": null,
+        "native_dialogue_ids": [
+          48
+        ],
+        "blocks": [
+          "I'll probably never\nsee my homeland again.\n...Sorry, Rico. You\ncame here for a drink.<Close>"
+        ]
+      },
+      "15": {
+        "key": "ambient_bar_sorrows",
+        "speaker": null,
+        "native_dialogue_ids": [
+          49
+        ],
+        "blocks": [
+          "A drink takes the edge\noff. Then the edge\ncomes back.\n...Don't mind me, Champ.<Close>"
+        ]
+      },
+      "16": {
+        "key": "ambient_bar_powerless",
+        "speaker": null,
+        "native_dialogue_ids": [
+          50
+        ],
+        "blocks": [
+          "A man with no strength\nlearns to get out of\neverybody's way.<Close>"
+        ]
+      },
+      "17": {
+        "key": "ambient_bar_quiet_drink",
+        "speaker": null,
+        "native_dialogue_ids": [
+          51,
+          52
+        ],
+        "blocks": [
+          "They can keep the\nBattling results. I just\nwant a quiet drink.<Close>"
+        ]
+      },
+      "18": {
+        "key": "ambient_bar_reassigned_guard",
+        "speaker": null,
+        "native_dialogue_ids": [
+          53,
+          54
+        ],
+        "blocks": [
+          "One mistake on duty,\nand they sent me here.\n...Maybe I'm not cut\nout for this work.<Close>"
+        ]
+      },
+      "19": {
+        "key": "ambient_bar_hammer_prices",
+        "speaker": null,
+        "native_dialogue_ids": [
+          55,
+          56
+        ],
+        "blocks": [
+          "Hammer says his prices\nare the lowest. He says\nit before I even ask.<Close>"
+        ]
+      }
+    },
+    "street": {
+      "36": {
+        "key": "ambient_street_roof_repair",
+        "speaker": null,
+        "native_dialogue_ids": [
+          24,
+          25
+        ],
+        "blocks": [
+          "I'm no fighter, Rico.\nBut I've got steady\nhands. Fixing roofs\npays almost as well\nas sewer work.<Close>"
+        ]
+      },
+      "37": {
+        "key": "ambient_street_sewer_gatekeeper",
+        "speaker": null,
+        "native_dialogue_ids": [
+          26,
+          27,
+          28,
+          33,
+          34,
+          35
+        ],
+        "blocks": [
+          "Those bounty hunters\nmake their money in\nthe sewers, Rico.\nThen they complain\nabout my little fee!<Close>"
+        ]
+      },
+      "39": {
+        "key": "ambient_street_dorm_observer",
+        "speaker": null,
+        "native_dialogue_ids": [
+          41,
+          42,
+          43
+        ],
+        "blocks": [
+          "The bar keeps its old\nfaces. The dorm keeps\ngetting new Battlers.<Close>"
+        ]
+      },
+      "51": {
+        "key": "ambient_street_duct_repair",
+        "speaker": null,
+        "native_dialogue_ids": [
+          63
+        ],
+        "blocks": [
+          "People see me in a duct\nand call me a thief.\nI was fixing the thing.<Close>"
+        ]
+      }
+    }
+  }
+}

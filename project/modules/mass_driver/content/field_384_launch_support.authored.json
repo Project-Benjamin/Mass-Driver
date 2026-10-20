@@ -1,0 +1,41 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "CENTRAL GATE\nOpening inhibited.\nAuxiliary supply unavailable.<New>SUPPLY CONTROL\nControl and Research Annex\nAuxiliary grid floor controls<New>Both the auxiliary supply and\naccelerator power are\nrequired to open this gate.<Close>"
+    },
+    {
+      "id": 1,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "CENTRAL GATE\nOpening inhibited.\nAccelerator supply\nunavailable.<New>SUPPLY CONTROL\nArchive Console D\nAccelerator interlock<New>Both the auxiliary supply and\naccelerator power are\nrequired to open this gate.<Close>"
+    },
+    {
+      "id": 2,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "CENTRAL GATE CONTROL\nAUXILIARY POWER REQUIRED\nACCELERATOR POWER REQUIRED<New>Power opens this gate.\nThe launch records do not.<New>AUTHORIZATION TERMINAL\nDEFENSE ARCHIVE\nBEYOND THIS GATE<Close>"
+    },
+    {
+      "id": 3,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "CENTRAL GATE CONTROL\nPOWER INTERLOCKS READY<New>EAST SERVICE STAIRS\nDEFENSE ARCHIVE BEYOND<Close>"
+    },
+    {
+      "id": 4,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "CENTRAL GATE OPEN<New>EAST SERVICE STAIRS\nTO DEFENSE ARCHIVE<Close>"
+    }
+  ]
+}

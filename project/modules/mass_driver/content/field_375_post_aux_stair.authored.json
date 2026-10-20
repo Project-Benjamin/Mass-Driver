@@ -1,0 +1,36 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 48,
+      "height": 3,
+      "text": "SAFETY LOCK ACTIVE\nReset emergency status at the\nnearest terminal.<Close>"
+    },
+    {
+      "id": 1,
+      "width": 54,
+      "height": 4,
+      "text": "<Opcode:01:FF>EMERGENCY STATUS\nCONTAINMENT ALERT<New><Opcode:01:FF>A containment alarm remains\nin effect.<New><Opcode:01:FF>Before passing the seal,\nperform a local safety scan.<New><Opcode:01:FF>After clearance, reset the\nemergency status at the next\nterminal.<Close>"
+    },
+    {
+      "id": 2,
+      "width": 40,
+      "height": 3,
+      "text": "<Opcode:01:FF>Initiate local safety scan?\n     Begin scan\n     Cancel<Close>"
+    },
+    {
+      "id": 3,
+      "width": 44,
+      "height": 4,
+      "text": "<Opcode:01:FF>SCAN COMPLETE\nNo active contamination\nfound.<New><Opcode:01:FF>PASSAGE CLEAR\nReset emergency status at\nthe nearest terminal.<Close>"
+    },
+    {
+      "id": 4,
+      "width": 42,
+      "height": 3,
+      "text": "<Opcode:01:FF>SAFETY CLEARANCE NEEDED\nComplete the local scan\nbefore passing the seal.<Close>"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 42,
+      "height": 2,
+      "text": "VERTICAL SERVICE SHAFT\nTO MAGNETIC CONDUIT<Close>"
+    }
+  ]
+}

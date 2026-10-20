@@ -1,0 +1,34 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "CONTROL AND RESEARCH\nCIRCUIT DIRECTORY<New>The floor controls supply\nGuidance, Control, and Launch\nSafety through the auxiliary\ngrid.<New>The accelerator banks use a\nseparate supply. Their\ninterlock is at Archive\nConsole D.<New>MAINTENANCE RECORD / 6081\nCommand-line test\nConnection lost for eleven\nminutes. Local guidance\nremained powered.<New>SAFETY REVIEW\nA launch order could remain\nin local memory while the\ncommand line was unable to\nreceive a recall.<New>DIRECTIVE 0320<New>During a strategic alert,\nloss of contact does not\ncancel a pending launch\norder. Proceed unless a\nrecall has been received.<New>INSTALLATION NOTE\nDo not connect the auxiliary\ngrid to the accelerator\nsupply. The two circuits must\nremain separate.<Close>"
+    },
+    {
+      "id": 1,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "AUXILIARY GRID\nManual bypass accepted.<New>Guidance, Control, and Launch\nSafety are now receiving\npower.\nCentral Gate auxiliary\nsupply: ready.<New>Accelerator supply is\ncontrolled separately at\nArchive Console D.<Close>"
+    },
+    {
+      "id": 2,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "EMERGENCY DIRECTIVE\n0320<New>For launch authorization,\nenter this number at the\nDefense Archive terminal\nbeyond Central Gate.<Close>"
+    },
+    {
+      "id": 3,
+      "width": 48,
+      "height": 3,
+      "manual_wrap": true,
+      "text": "<Opcode:01:FF>AUXILIARY RECORDS\n  Close\n  Read maintenance log<Close>"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "format": "xenogears-field-dialogue-replacements-v1",
+  "source_size": 465,
+  "source_sha256": "4a4590d9b12b127521ef5338d78e82b5c16b24b9e27d45be99fcfe43515d9f85",
+  "block_count": 6,
+  "replacements": [
+    {
+      "id": 0,
+      "width": 46,
+      "height": 2,
+      "text": "Mass driver launch gate\nis unlocked.<Close>"
+    },
+    {
+      "id": 1,
+      "width": 40,
+      "height": 3,
+      "text": "Launch safety system\nactivated.<Close>"
+    },
+    {
+      "id": 2,
+      "text": "Charging magnetic\nlaunch rails.<Close>"
+    },
+    {
+      "id": 3,
+      "width": 38,
+      "height": 2,
+      "text": "Trajectory solution\ncomplete.<Close>"
+    },
+    {
+      "id": 4,
+      "width": 58,
+      "height": 5,
+      "text": "Citan\n\"That was the last defense.\nThe control system is intact.<New>This machine once sent\nmaterials and instruments\ntoward space. We can fit\nthe Nanoassembler pod to\none of its rockets.<New>I will set the trajectory.\nElly, start the magnetic\nrail.\"<Close>"
+    },
+    {
+      "id": 5,
+      "text": "Launch gate sealed.\nComplete the central control\nsequence before leaving.<Close><Close>"
+    }
+  ]
+}

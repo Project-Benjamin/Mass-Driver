@@ -1,0 +1,31 @@
+{
+  "format": "xenogears-rico-chapter-v1",
+  "id": 3,
+  "title": "The Locked Room",
+  "disc": 1,
+  "target_field": 723,
+  "donor_field": 236,
+  "music": 47,
+  "selection_exposition": "After Fei wins the Battling tournament but before the escape from Kislev, a sealed room tied to Anne draws Rico into Nortune's Imperial residence.<New>The questions waiting there lead directly to Kaiser Sigmund.<Close>",
+  "blocks": [
+    "CHAPTER 3\nTHE LOCKED ROOM<New>Nortune Central District.<Close>",
+    "[Rico enters a sealed chamber in\nthe Imperial residence. The lock\nopens at the touch of his hand.]<Close>",
+    "SYSTEM\nFAMILY SEAL ACCEPTED.\nANNE BANDERAS HOUSEHOLD RECORD\nACCESS RESTORED.<Close>",
+    "<Rico>\nAnne...<New>This was my mother's room.<Close>",
+    "<Citan>\nThis security system is quite old,\nbut its response was unmistakable.<New>It recognized you, Rico.<Close>",
+    "<Fei>\nThen the Kaiser has to know who you\nare.<Close>",
+    "[Sigmund enters with the palace\nguard. His eyes move from Rico to\nthe open family seal.]<Close>",
+    "Sigmund\nThis chamber is restricted. Remove\nthe intruders.<Close>",
+    "<Rico>\nThe door opened for me.<New>You know why.<Close>",
+    "Sigmund\nThe mechanism is decades old. Its\nrecognition circuit has failed.<Close>",
+    "<Rico>\nLook at me and say that.<Close>",
+    "Sigmund\nReturn him to Committee custody.\nThe others are to leave Nortune.<Close>",
+    "<Fei>\nKaiser, the scanner record can be\nchecked. You don't have to do this.<Close>",
+    "Sigmund\nMy order stands.<Close>",
+    "[The guards close around Rico. He\nlooks once at the room, waiting for\nSigmund to stop them.]<Close>",
+    "<Rico>\nMother spent her life giving you a\nreason.<New>You did not even need to believe\nher. You only had to look.<Close>",
+    "[Sigmund says nothing. The family\ndoor closes, and Rico is returned\nto the people who condemned him.]<Close>",
+    "<Rico>\nMaybe he did not know before.<New>He knows now.<Close>",
+    "CHAPTER 3 COMPLETE<Close>"
+  ]
+}

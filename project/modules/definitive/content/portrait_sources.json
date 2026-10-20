@@ -1,0 +1,1650 @@
+{
+  "format": "xenogears-definitive-portrait-sources-v1",
+  "audited_on": "2026-09-07",
+  "site_mapping_url": "https://xenoverse.world/assets/xenogearsAssets-Beid9jBB.js",
+  "site_mapping_sha256": "416912108bde6c28356b02074e7349b0d7abdc60ffa16f919cf3e4bffdbae908",
+  "native_palette_expansion": "(component5 * 255 + 15) // 31; alpha zero only for palette word zero",
+  "duckstation_version": "0.1.11515",
+  "duckstation_source": "https://github.com/stenzek/duckstation/blob/f1e08937459c463f586bdb9cd9c1c9ad55aeb262/src/core/gpu_hw_texture_cache.cpp",
+  "assets": [
+    {
+      "index": 0,
+      "id": "portrait-0",
+      "name": "Fei",
+      "canonical_id": 492,
+      "disc2_physical_id": 487,
+      "selectors": [
+        0
+      ],
+      "tim_sha256": "79dbb4dc3504c018a4f268bf7bf43f10cc17e8e9b48a811ae42da3974f12ec78",
+      "original_url": "https://xenoverse.world/asset-images/head0.png",
+      "original_png_sha256": "0c79d328ee01278b75675385a137be1b3c6a66aabf905f67de3c347c6397647c",
+      "original_rgba_sha256": "703505837ffcb7a43a35938cf3c52ee7562d86a41470b7357ea68924a916f7e6",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "9B4F48508CD98C87",
+      "palette_xxh3": "E6EE9AB7B8BBFAFA"
+    },
+    {
+      "index": 1,
+      "id": "portrait-1",
+      "name": "Fei",
+      "canonical_id": 493,
+      "disc2_physical_id": 488,
+      "selectors": [
+        32
+      ],
+      "tim_sha256": "568816c91cb5b3d12dcabf8ef2e6265934c7b2f8dffde71a2f3b0414d110d3ce",
+      "original_url": "https://xenoverse.world/asset-images/head1.png",
+      "original_png_sha256": "2300486aa7de9677526022a939cbaa0d9643ff28e7255f83c020b7c0a7461749",
+      "original_rgba_sha256": "ad3b1a1432098d8118638a6eb292fcb006889459f875896a294d068b2a7d4e44",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "3148ECBD841EB414",
+      "palette_xxh3": "C1AB2CA9011D9525"
+    },
+    {
+      "index": 2,
+      "id": "portrait-2",
+      "name": "Kim",
+      "canonical_id": 494,
+      "disc2_physical_id": 489,
+      "selectors": [
+        33
+      ],
+      "tim_sha256": "502287e1161d494311d6e16cda6abbe23532181d91504e563c96c7029a75c687",
+      "original_url": "https://xenoverse.world/asset-images/head2.png",
+      "original_png_sha256": "d217bfce8ba61021043b9775a420a8242b932b635f526a720151bf617b7da05f",
+      "original_rgba_sha256": "0119f6693965ffa6d0fd779a971311dc6517c0272e468c1906ed97b987131d2f",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "BC5EB0F0397ADF8A",
+      "palette_xxh3": "21DE1301164F7E54"
+    },
+    {
+      "index": 3,
+      "id": "portrait-3",
+      "name": "Kim",
+      "canonical_id": 495,
+      "disc2_physical_id": 490,
+      "selectors": [
+        34
+      ],
+      "tim_sha256": "fa81fd0d9506f93fc212eca2fffcdb65a6c34d4210a5c8dfa7ad82dfeda96e0b",
+      "original_url": "https://xenoverse.world/asset-images/head3.png",
+      "original_png_sha256": "6c57cac6a5ea875a8b92f725d42d3fa29414896521ab8f55e6fd0b51c492ae5a",
+      "original_rgba_sha256": "56401e87056019df4423724e68948d8aebd6976c17306f69a97c6b42fbbf8a43",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "AE545C57EAFB7383",
+      "palette_xxh3": "5D852A699AD3F64F"
+    },
+    {
+      "index": 4,
+      "id": "portrait-4",
+      "name": "Fei",
+      "canonical_id": 496,
+      "disc2_physical_id": 491,
+      "selectors": [
+        35
+      ],
+      "tim_sha256": "79dbb4dc3504c018a4f268bf7bf43f10cc17e8e9b48a811ae42da3974f12ec78",
+      "original_url": "https://xenoverse.world/asset-images/head4.png",
+      "original_png_sha256": "0c79d328ee01278b75675385a137be1b3c6a66aabf905f67de3c347c6397647c",
+      "original_rgba_sha256": "703505837ffcb7a43a35938cf3c52ee7562d86a41470b7357ea68924a916f7e6",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "9B4F48508CD98C87",
+      "palette_xxh3": "E6EE9AB7B8BBFAFA"
+    },
+    {
+      "index": 5,
+      "id": "portrait-5",
+      "name": "Fei",
+      "canonical_id": 497,
+      "disc2_physical_id": 492,
+      "selectors": [
+        36
+      ],
+      "tim_sha256": "e7a70d61404417f881b7c16422865bb14b2111234c50c27fa0debdb27a107255",
+      "original_url": "https://xenoverse.world/asset-images/head5.png",
+      "original_png_sha256": "9a9a69f5795e89a3a8ded843f59b3dac96665a7c177a8847f49b984ca34b7f57",
+      "original_rgba_sha256": "a8b2137f8acc3ffe5d9dc5a5f5b09d9a699359f058861c058d804157a346c31b",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "359FC49D19CC4170",
+      "palette_xxh3": "14377B6921AF7B1F"
+    },
+    {
+      "index": 6,
+      "id": "portrait-6",
+      "name": "Elly",
+      "canonical_id": 498,
+      "disc2_physical_id": 493,
+      "selectors": [
+        1
+      ],
+      "tim_sha256": "d52fa09296c79983028cae39f517b0c7383e882a83775329c6e2e4afcc0e25e4",
+      "original_url": "https://xenoverse.world/asset-images/head6.png",
+      "original_png_sha256": "b2095112c3bdfb00b00ca0536904aa8422231a0691215bd1b869043108d3e546",
+      "original_rgba_sha256": "046368e7640fdb1e6d720b9bf63f81a87014faf44421772adfef0ce3854e9779",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "0FE53E017434E3DF",
+      "palette_xxh3": "921CC26E321D02AD"
+    },
+    {
+      "index": 7,
+      "id": "portrait-7",
+      "name": "Elly",
+      "canonical_id": 499,
+      "disc2_physical_id": 494,
+      "selectors": [
+        37
+      ],
+      "tim_sha256": "14d0a5eb9e3a6b1509afc6b499c24ddccf19b940726ffb80b20c3ae3c6fa2be3",
+      "original_url": "https://xenoverse.world/asset-images/head7.png",
+      "original_png_sha256": "21be731192e80d325c6d4d0023f2d8f257fde46460b8a2141d0a0dde0f3a7773",
+      "original_rgba_sha256": "04f59a3ddc5e10f71e677a0d893dea53892d73c73fbfae00576a49d11fd2ae2b",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "F085BF9CBA3F6D74",
+      "palette_xxh3": "06DDAC71F7268ABB"
+    },
+    {
+      "index": 8,
+      "id": "portrait-8",
+      "name": "Elly",
+      "canonical_id": 500,
+      "disc2_physical_id": 495,
+      "selectors": [
+        38
+      ],
+      "tim_sha256": "4eb50a0c28293e73b110cde0827966c620ec92a24c0163098a4de88b4aab9bb6",
+      "original_url": "https://xenoverse.world/asset-images/head8.png",
+      "original_png_sha256": "b6bc56ee9999425826a4bac2350bc1bf395694e0b04b70a5a37275665ccb084f",
+      "original_rgba_sha256": "58a2ee6eefe6d679a3fe051534b4a447752f15d9aeaef679bd82cc83fac2dbf1",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "AB75B179C0C4B568",
+      "palette_xxh3": "B193400E70EAFE10"
+    },
+    {
+      "index": 9,
+      "id": "portrait-9",
+      "name": "Elly",
+      "canonical_id": 501,
+      "disc2_physical_id": 496,
+      "selectors": [
+        39
+      ],
+      "tim_sha256": "3a34cc383c4554778a649819e2fce4ef0cb009c3ff519b2a073ede55a43cf393",
+      "original_url": "https://xenoverse.world/asset-images/head9.png",
+      "original_png_sha256": "3c8770d89df2b1d104b6b1d480e2323795b21e957babba34a64b1e456dd523d9",
+      "original_rgba_sha256": "be48351cebe9584c90aff578643feb6d25b5e2ed255443d7f9c094d67fc4675c",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "67A0DAB003AC1B66",
+      "palette_xxh3": "6F8010836714E329"
+    },
+    {
+      "index": 10,
+      "id": "portrait-10",
+      "name": "Unknown",
+      "canonical_id": 502,
+      "disc2_physical_id": 497,
+      "selectors": [
+        40
+      ],
+      "tim_sha256": "2223f290cff1400eb6b1696291508fea8fa5d750ac8b63dec9fef04d3070dbe8",
+      "original_url": "https://xenoverse.world/asset-images/head10.png",
+      "original_png_sha256": "c1508e49d83199d4c89c1cf5a109be11b394bd6975cc7f827e1146ab776f2b29",
+      "original_rgba_sha256": "ad1f0b279e28147049590d42083ca1f3c8c865c104ae5a1a402c34045897cec2",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "5D48D78155A63E32",
+      "palette_xxh3": "FF11F5098FB61D50"
+    },
+    {
+      "index": 11,
+      "id": "portrait-11",
+      "name": "Sophia",
+      "canonical_id": 503,
+      "disc2_physical_id": 498,
+      "selectors": [
+        41
+      ],
+      "tim_sha256": "332868e349d0273dda31138644e130a0054ed9211c2e0e196cef17aed898c3d1",
+      "original_url": "https://xenoverse.world/asset-images/head11.png",
+      "original_png_sha256": "4ab09a398cf925eb9b87fa30b126b4eaa9cd8cd0223cfb85b390ab5be2c106b0",
+      "original_rgba_sha256": "17ec318ccd1fb65664b8cbca9ed13aaa628c8de79db794cf73cb87807db97527",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "148BECE62099A67D",
+      "palette_xxh3": "2598078D807BAEF2"
+    },
+    {
+      "index": 12,
+      "id": "portrait-12",
+      "name": "Sophia",
+      "canonical_id": 504,
+      "disc2_physical_id": 499,
+      "selectors": [
+        42
+      ],
+      "tim_sha256": "8cf90ab3be52097427d7cdbffd50476897a5ae5ed1d473ccfc39fd0d9ca2e8ff",
+      "original_url": "https://xenoverse.world/asset-images/head12.png",
+      "original_png_sha256": "6951bf93a13dd1e9a8a0f30b4353cf6daab763318d1db04f27f4123467af79a4",
+      "original_rgba_sha256": "7b9717dc7221517acaf3c9e803eeb1d215c3464a81adb9b74aea616b602c510c",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "D58342DC422A4FD6",
+      "palette_xxh3": "2598078D807BAEF2"
+    },
+    {
+      "index": 13,
+      "id": "portrait-13",
+      "name": "Elly",
+      "canonical_id": 505,
+      "disc2_physical_id": 500,
+      "selectors": [
+        43
+      ],
+      "tim_sha256": "999cf039e0173731e334b4089f506c0d4518101e19dc31e35f546cee7e1179c8",
+      "original_url": "https://xenoverse.world/asset-images/head13.png",
+      "original_png_sha256": "75fa1bc9b81f3f64c29178cd10f12b6c0d20dca57b25118d4f6d64001f361a53",
+      "original_rgba_sha256": "a8a37697dd051d77511d288b5e4dee5e201b50a90e411c0db29d206ea11bc919",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "E19D2D42E8103DA5",
+      "palette_xxh3": "1055038F9FCCCCCB"
+    },
+    {
+      "index": 14,
+      "id": "portrait-14",
+      "name": "Miang",
+      "canonical_id": 506,
+      "disc2_physical_id": 501,
+      "selectors": [
+        44
+      ],
+      "tim_sha256": "800a08ea068c42d2e9bd41b1a0f16905c0a595d11d628859f0ca619a2206c1c6",
+      "original_url": "https://xenoverse.world/asset-images/head14.png",
+      "original_png_sha256": "8f050e115114dd9d3f12978e0460a80d996cfe9d6a5237b9be5f1502af480106",
+      "original_rgba_sha256": "d718aeb6cfaad9db40b0bafd5b45d84dcc3455dccf38e5709829034960604506",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "58C705D020CC5F53",
+      "palette_xxh3": "71557B63F880B6A9"
+    },
+    {
+      "index": 15,
+      "id": "portrait-15",
+      "name": "Elly",
+      "canonical_id": 507,
+      "disc2_physical_id": 502,
+      "selectors": [
+        45
+      ],
+      "tim_sha256": "9128bb3e9750d22db8939b9c88ba9c5eec3f372fcb6e182c9b86d4445bdf32aa",
+      "original_url": "https://xenoverse.world/asset-images/head15.png",
+      "original_png_sha256": "a290f3a6194ca5b88940f426db95f050a4aff48d5ceb526d5ddf646029933f65",
+      "original_rgba_sha256": "6153bc5cafdc4515244b838fd33d7c79d516f14134b073d7377d22394f1ecde2",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "AD6481521AC3BF7C",
+      "palette_xxh3": "698BB2BA33BC8790"
+    },
+    {
+      "index": 16,
+      "id": "portrait-16",
+      "name": "Hammer",
+      "canonical_id": 508,
+      "disc2_physical_id": 503,
+      "selectors": [
+        46
+      ],
+      "tim_sha256": "57f7bae43143d098d459bd98010850f6db81a1722dc0ab5dd78e9d3b4fa3c270",
+      "original_url": "https://xenoverse.world/asset-images/head16.png",
+      "original_png_sha256": "b77aae495610edcfe675e3cb1dd156dd05fb71d672cd69130f4e3b4e404c7c13",
+      "original_rgba_sha256": "73753f4c9c9ea6c5daf6fe4d1c396711b984d5edb3b893975858334ee1e787b6",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "E64B0EA34C3AD5E1",
+      "palette_xxh3": "66C14DD434D17385"
+    },
+    {
+      "index": 17,
+      "id": "portrait-17",
+      "name": "Citan",
+      "canonical_id": 509,
+      "disc2_physical_id": 504,
+      "selectors": [
+        2,
+        9
+      ],
+      "tim_sha256": "1c94bbfc0703581cc604ae506c81e6b96059e7ff26311fb0c8149b199eaf79c4",
+      "original_url": "https://xenoverse.world/asset-images/head17.png",
+      "original_png_sha256": "0ec7f8a902e65c6ea9e37a777e069de3591d545b789f4700f94b33c4532cd171",
+      "original_rgba_sha256": "fded567e491d7c6fc947a2d8ccb2848139b4360d835ff916676da4f63ea5bcb7",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "856ECEBFC5F3C04B",
+      "palette_xxh3": "21726B659EEAB3FF"
+    },
+    {
+      "index": 18,
+      "id": "portrait-18",
+      "name": "Ramsus",
+      "canonical_id": 510,
+      "disc2_physical_id": 505,
+      "selectors": [
+        47
+      ],
+      "tim_sha256": "ca123b67f977f3276d715afd4603c1b6cc1f0a754a978c8f41512e54e9389ef2",
+      "original_url": "https://xenoverse.world/asset-images/head18.png",
+      "original_png_sha256": "c2b4074aaacb2245b24bbe019f72cbc79b0eb6ac63050b053000375ff291d3b8",
+      "original_rgba_sha256": "6aaef65714a6fd52060bbf3864e43737565dc852048425e06b8347727d142c43",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "5F2FBDF75A1B8DC4",
+      "palette_xxh3": "F6BAACF612F483E6"
+    },
+    {
+      "index": 19,
+      "id": "portrait-19",
+      "name": "Bart",
+      "canonical_id": 511,
+      "disc2_physical_id": 506,
+      "selectors": [
+        3
+      ],
+      "tim_sha256": "8054f0e95dd51f2f8c0d33dc894c439a329d40767521167a05ed09caa69e7bbe",
+      "original_url": "https://xenoverse.world/asset-images/head19.png",
+      "original_png_sha256": "f77a384e520cd326ed1f508ea6bd80948d0deb05c1b2b3ad5958ad6f7e348bf5",
+      "original_rgba_sha256": "ceecf43ac78070d4848beac957160f105b185a7a83441b3d15fcecb50f0b5001",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "F37377A23799C5B2",
+      "palette_xxh3": "F9817C1120C83573"
+    },
+    {
+      "index": 20,
+      "id": "portrait-20",
+      "name": "Bart",
+      "canonical_id": 512,
+      "disc2_physical_id": 507,
+      "selectors": [
+        3
+      ],
+      "tim_sha256": "f0f5df54f107f1244879e3987827269000cd6f9f525c4a9a84ec6ec7f3bc7f7d",
+      "original_url": "https://xenoverse.world/asset-images/head20.png",
+      "original_png_sha256": "f329a7df9747d97391b61d5cf4b3bf174b1f2e8b41a9cc9ea66ce2b0d0d71c48",
+      "original_rgba_sha256": "bf55df8923699ad82392f704e7de5a0ad57f846a0cb90a8bb6f38f15a8d19528",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "1275D5840E7A11C4",
+      "palette_xxh3": "4E95D6EC3DC38599"
+    },
+    {
+      "index": 21,
+      "id": "portrait-21",
+      "name": "Billy",
+      "canonical_id": 513,
+      "disc2_physical_id": 508,
+      "selectors": [
+        4
+      ],
+      "tim_sha256": "846f5ec0c4305f290e3afb6cf8c10a62af7f917889aee902ea6e91d7442225c1",
+      "original_url": "https://xenoverse.world/asset-images/head21.png",
+      "original_png_sha256": "ddd95dccf8b0af98df2994307c7af6c67da99e1ceb927f770ea84ac7b6acb84e",
+      "original_rgba_sha256": "5abc4684e03f84b5fbe7bbb472ae5ef401f23afb721907ad6235794ee760b25f",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "AD68C5293DD63445",
+      "palette_xxh3": "72F3A6004BEE9D3E"
+    },
+    {
+      "index": 22,
+      "id": "portrait-22",
+      "name": "Sigurd",
+      "canonical_id": 514,
+      "disc2_physical_id": 509,
+      "selectors": [
+        60
+      ],
+      "tim_sha256": "d0bf69067243f8996bfc15b242e519e4a3f01e4bdf5a97d584495649b7164690",
+      "original_url": "https://xenoverse.world/asset-images/head22.png",
+      "original_png_sha256": "925726025198526ba13923b01276ba801c97c3f8b80b3de28b22eec9811fd147",
+      "original_rgba_sha256": "da261917303857e25f28182f0183538aac5a9b91fe60d43cc44f637022e993c0",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "3C3DE78F23A480C5",
+      "palette_xxh3": "C1F1764302F17DE2"
+    },
+    {
+      "index": 23,
+      "id": "portrait-23",
+      "name": "Rico",
+      "canonical_id": 515,
+      "disc2_physical_id": 510,
+      "selectors": [
+        5
+      ],
+      "tim_sha256": "4659d3202581dbe3984987039ff3127d6fef9fb5a7470a51a7a8de413b0c428e",
+      "original_url": "https://xenoverse.world/asset-images/head23.png",
+      "original_png_sha256": "d68b2b0182e27447037e0cf44058d5d2ef4ba5916170a68c2e3c531ac0297ae9",
+      "original_rgba_sha256": "ad22da039e46ba53dbc52b0e5592032814eac42de0094170bbe60d52261d113e",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "967D24668403E514",
+      "palette_xxh3": "C4EB776212D16AED"
+    },
+    {
+      "index": 24,
+      "id": "portrait-24",
+      "name": "Emeralda",
+      "canonical_id": 516,
+      "disc2_physical_id": 511,
+      "selectors": [
+        6
+      ],
+      "tim_sha256": "0fafcba2af65f96d9295ece47c6264104502d50c3acb816762bb585b77948272",
+      "original_url": "https://xenoverse.world/asset-images/head24.png",
+      "original_png_sha256": "53835be5425af800e6b6f14877657f8355c3c88f9660f2b02846bc713fde0f88",
+      "original_rgba_sha256": "66e288ce06270886cb265d7796d5239cd2d4db19949a08b3db9386f0946e43ca",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "736A6D452DDB9A2D",
+      "palette_xxh3": "3FB1D73EB8821B05"
+    },
+    {
+      "index": 25,
+      "id": "portrait-25",
+      "name": "Emeralda",
+      "canonical_id": 517,
+      "disc2_physical_id": 512,
+      "selectors": [
+        10
+      ],
+      "tim_sha256": "ad4700a39dd2bddc6de52d4eca220fe418e80c515485342cd49b52e8c5b9bcca",
+      "original_url": "https://xenoverse.world/asset-images/head25.png",
+      "original_png_sha256": "4b18ebdaddc4e22f3340da88423b3000f479fc6c8333b4cd311dd934fcc4115e",
+      "original_rgba_sha256": "d279d27e5225127e05d17935f81a57c0a76844c968ce256f87abf466ce99c277",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "5387A546D0B15F3E",
+      "palette_xxh3": "DC2159D235DAB495"
+    },
+    {
+      "index": 26,
+      "id": "portrait-26",
+      "name": "Margie",
+      "canonical_id": 518,
+      "disc2_physical_id": 513,
+      "selectors": [
+        18
+      ],
+      "tim_sha256": "a3ef96b1dbc4b0398928564f38f042596c30fc7ec903502bb5e3185c20ed09fd",
+      "original_url": "https://xenoverse.world/asset-images/head26.png",
+      "original_png_sha256": "1c6caa7f5645fe389eada73eb1cf34e29da8ad91ee5de348bf9b01601e8c59be",
+      "original_rgba_sha256": "5db3ef83db9b8f6bc0a44c81e8b300037dddf1c7a2c8702c0662e7ea58b76498",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "52F65FF2D7ED8005",
+      "palette_xxh3": "E306CDD951ABFE44"
+    },
+    {
+      "index": 27,
+      "id": "portrait-27",
+      "name": "Maria",
+      "canonical_id": 519,
+      "disc2_physical_id": 514,
+      "selectors": [
+        8
+      ],
+      "tim_sha256": "3b44c5b0e8955c414f6a1e380657b224b632928271cb261ab61f2cb7c6749cca",
+      "original_url": "https://xenoverse.world/asset-images/head27.png",
+      "original_png_sha256": "308ac7a958a1d13cba3bd1de845dff12dc2713f6b7f53e79efee45cbb6db66ee",
+      "original_rgba_sha256": "4abaafe674101e545369025222a665c35c450b1eced386ea07b12b08d22d2984",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "89135F40EF3E563F",
+      "palette_xxh3": "087AB2F60825ACC9"
+    },
+    {
+      "index": 28,
+      "id": "portrait-28",
+      "name": "Chu Chu",
+      "canonical_id": 520,
+      "disc2_physical_id": 515,
+      "selectors": [
+        7
+      ],
+      "tim_sha256": "9b116fc817bc7518d443e0fa12cd743d7399e19e42d6c44f759df6e9c208dae7",
+      "original_url": "https://xenoverse.world/asset-images/head28.png",
+      "original_png_sha256": "ef6d39a687e015a044ca0e6bd22977998f93db3fcffaeeec305ef53e66c43805",
+      "original_rgba_sha256": "941ac8b992c7fd1a925ec3e85610670d63b89b6583b8e6333d9989e856063664",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "9E26DE58376A33EC",
+      "palette_xxh3": "794CD34209AEA503"
+    },
+    {
+      "index": 29,
+      "id": "portrait-29",
+      "name": "Id",
+      "canonical_id": 521,
+      "disc2_physical_id": 516,
+      "selectors": [
+        25
+      ],
+      "tim_sha256": "04e61f6d8121acdc6111ef1c40b06c05d26ff55b4492135a4b9d446a715fa762",
+      "original_url": "https://xenoverse.world/asset-images/head29.png",
+      "original_png_sha256": "1f186d915a0fc047ddbd0b0d57f31c7246b7b6b6b888aa5c475865b53a10594e",
+      "original_rgba_sha256": "4d14d58ebd42f2f1beac4c6ce8920fb68fccd5f1f8cc52ce43911cf8e2871851",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "46530D41392EE76C",
+      "palette_xxh3": "D00F1161293ACD66"
+    },
+    {
+      "index": 30,
+      "id": "portrait-30",
+      "name": "Bishop Stone",
+      "canonical_id": 522,
+      "disc2_physical_id": 517,
+      "selectors": [
+        48
+      ],
+      "tim_sha256": "ce101d07eb561251ea2bc1b75e91dd9a1a2c9cb698dcd33e4b5e9a4757cd57eb",
+      "original_url": "https://xenoverse.world/asset-images/head30.png",
+      "original_png_sha256": "3e0d50ef7c16600aeb50e1532ea18e082a6d5a5b1ec345c6ad8183098775948a",
+      "original_rgba_sha256": "119e37cdfa2389886c83acb24d6385a46755d3f8e786fbf2b8fbdc1e699a66c5",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "1B399925248BB45D",
+      "palette_xxh3": "E69F258781A55E2E"
+    },
+    {
+      "index": 31,
+      "id": "portrait-31",
+      "name": "Sophia",
+      "canonical_id": 523,
+      "disc2_physical_id": 518,
+      "selectors": [
+        49
+      ],
+      "tim_sha256": "97e2981548dbf4e36ed28ac2ed4585222cd04119abb1983d555c63817025d15e",
+      "original_url": "https://xenoverse.world/asset-images/head31.png",
+      "original_png_sha256": "8cee7aeaed8d3b601aba683d30c9247cc4f6fcf1a11b3e9f4f5451aea4488cca",
+      "original_rgba_sha256": "a9c705c5facdd410d4f0029c75624b6071e485b7152365ef83efca62dc4f377c",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "778BA320D9EE1CE2",
+      "palette_xxh3": "348898C095DABDAB"
+    },
+    {
+      "index": 32,
+      "id": "portrait-32",
+      "name": "Gazel",
+      "canonical_id": 524,
+      "disc2_physical_id": 519,
+      "selectors": [
+        50
+      ],
+      "tim_sha256": "a9c02945fd70245cf3251ac4ce7600aadb366b1e5a11152873215991766b19d5",
+      "original_url": "https://xenoverse.world/asset-images/head32.png",
+      "original_png_sha256": "e34cd3506cb032888d149606a387394166f6f206e6fabaeae40b01cd6a2e5ec0",
+      "original_rgba_sha256": "a59add293578e22a749829903572e3a9bc9656d57964d0648a62eb4b2dc1dc70",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "D31ABB80175240B2",
+      "palette_xxh3": "3008F6B46F2192C6"
+    },
+    {
+      "index": 33,
+      "id": "portrait-33",
+      "name": "Big Joe",
+      "canonical_id": 525,
+      "disc2_physical_id": 520,
+      "selectors": [
+        23
+      ],
+      "tim_sha256": "1c0589f424db4610b72b0f96fe0c3a28ca891b4483ae5730067bc6d5f39a4d48",
+      "original_url": "https://xenoverse.world/asset-images/head33.png",
+      "original_png_sha256": "cd82d1a5db09f59ecdff82e2577a21cc77e50fc9fd293ccbf9e1f5ebd32bdff8",
+      "original_rgba_sha256": "baf345507e2c8aa3bab69aea9d35b4c33a914e7d10771e6afd79f4d8fcc593a2",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "4400DC6713720EB7",
+      "palette_xxh3": "1226B18E6A161509"
+    },
+    {
+      "index": 34,
+      "id": "portrait-34",
+      "name": "Dominia",
+      "canonical_id": 526,
+      "disc2_physical_id": 521,
+      "selectors": [
+        11
+      ],
+      "tim_sha256": "974e0c98261cfafbdcd734099c2ff230e5554bd777d6dfab0d69595a87fb9ea6",
+      "original_url": "https://xenoverse.world/asset-images/head34.png",
+      "original_png_sha256": "c91c19dac623ad3091b30d80fc662f8b3c13b8682c0d76bf713f4c78bc53cb3b",
+      "original_rgba_sha256": "efd5247d389b4c6f2470ec7f921f94de980b00d03e66fe7c1697a9decf1b501f",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "CF5E8BF60D2D7DF9",
+      "palette_xxh3": "668E56F71E3CE8E5"
+    },
+    {
+      "index": 35,
+      "id": "portrait-35",
+      "name": "Seraphita",
+      "canonical_id": 527,
+      "disc2_physical_id": 522,
+      "selectors": [
+        12
+      ],
+      "tim_sha256": "4e331d63378adabc2887b16f460d675f17be2b5af9942bbd97d29630f361166d",
+      "original_url": "https://xenoverse.world/asset-images/head35.png",
+      "original_png_sha256": "808d7fe9e78ec83037b8dbad48a8f06a387abfff25e1f4e02460cb240a28e598",
+      "original_rgba_sha256": "cb225f458058287441fe2306ba8d0b58aa8d0c62beeb5928da4c60579c572b77",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "3CEBAF96811C33B9",
+      "palette_xxh3": "351D9C3186D4CD4F"
+    },
+    {
+      "index": 36,
+      "id": "portrait-36",
+      "name": "Tolone",
+      "canonical_id": 528,
+      "disc2_physical_id": 523,
+      "selectors": [
+        13
+      ],
+      "tim_sha256": "df62f9a646f0d7d35986868ccc0bd3b6c19222f9c8f71ecb09a81443966ba82f",
+      "original_url": "https://xenoverse.world/asset-images/head36.png",
+      "original_png_sha256": "9792a7ad1c16aec284aa03ea111f976511aac26ec04b4b0bc7c74f8ef3f34397",
+      "original_rgba_sha256": "c7029df2bcfad4dae3e00fa72642930b86035a960883cee705048b95216528d6",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "2634A694FA4B1295",
+      "palette_xxh3": "39597DDFF925BD7F"
+    },
+    {
+      "index": 37,
+      "id": "portrait-37",
+      "name": "Kelvena",
+      "canonical_id": 529,
+      "disc2_physical_id": 524,
+      "selectors": [
+        14
+      ],
+      "tim_sha256": "c7942bb0118265a54d1cb56a9a9dbed13dd2d4a92632b87ad987c81ccf2fd06d",
+      "original_url": "https://xenoverse.world/asset-images/head37.png",
+      "original_png_sha256": "5d9a27f720b493a19a55dbd747f0e40c78d8ea52b72d227846ab3e9bf619b6c3",
+      "original_rgba_sha256": "32083159b1484b25474597925559b413bc726521def2f86170531512579b3962",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "B80961920A2285FA",
+      "palette_xxh3": "1E7FA04E19D53118"
+    },
+    {
+      "index": 38,
+      "id": "portrait-38",
+      "name": "Krelian",
+      "canonical_id": 530,
+      "disc2_physical_id": 525,
+      "selectors": [
+        31
+      ],
+      "tim_sha256": "203ae11cae6bcc43866d0eb8490ea11b1793e4ba75129b87ed75c212ba7d280b",
+      "original_url": "https://xenoverse.world/asset-images/head38.png",
+      "original_png_sha256": "3af9d5920b2bf19cfa324d458a33bf64b657e68c46bcadc4f158bfacf1dbf26f",
+      "original_rgba_sha256": "c82ce2bd49eb652a822098fe7ed07eb4d8eb7e37548b2e54dcbd60ff8ef2597b",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "698957B0E907A16C",
+      "palette_xxh3": "D6D85D6C84D2A02D"
+    },
+    {
+      "index": 39,
+      "id": "portrait-39",
+      "name": "Krelian",
+      "canonical_id": 531,
+      "disc2_physical_id": 526,
+      "selectors": [
+        51
+      ],
+      "tim_sha256": "4eff6d8ff9f832d4dc2424cc5b20c4daa8f92a26c998584cf8d70ab86e9cff09",
+      "original_url": "https://xenoverse.world/asset-images/head39.png",
+      "original_png_sha256": "4c32e22d43c714518a38769ad3358e12409f978feae0273083a397685edcbc0d",
+      "original_rgba_sha256": "2f8203898c276b332b3e8391afd43e0f4d8487c2f989d57ad0d3a7203a0400f9",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "E6DEE76547A7CDFD",
+      "palette_xxh3": "2598C23DD8CDE0F1"
+    },
+    {
+      "index": 40,
+      "id": "portrait-40",
+      "name": "Hammer",
+      "canonical_id": 532,
+      "disc2_physical_id": 527,
+      "selectors": [
+        52
+      ],
+      "tim_sha256": "ccb65915ca881fff9e7d28c7647c20341227357912dc087da5dd8d9125925d4c",
+      "original_url": "https://xenoverse.world/asset-images/head40.png",
+      "original_png_sha256": "8eec27afdc6de39cd9f7c8376eaedeb87879a79d9924c955fd8f821bf484ab42",
+      "original_rgba_sha256": "13a536b4f72b3bb8f268a82d912a85f9d3e5828ee2b99e1519272830ed756ced",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "B22B8B824DADE82A",
+      "palette_xxh3": "51403E921CE5FBD1"
+    },
+    {
+      "index": 41,
+      "id": "portrait-41",
+      "name": "Grahf",
+      "canonical_id": 533,
+      "disc2_physical_id": 528,
+      "selectors": [
+        24
+      ],
+      "tim_sha256": "11beb1be310c522908df42577accfed905418749196a28b372c8996decbed1fa",
+      "original_url": "https://xenoverse.world/asset-images/head41.png",
+      "original_png_sha256": "eb46dedf227e555309c4f674f4b6702ee4b21e3f73fb40131653c3e157428563",
+      "original_rgba_sha256": "50df8b26e18d6c725cf4e663bbf3b7212dd644d64203603adee37f157168a206",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "185BCCB26B9FFDCB",
+      "palette_xxh3": "628C94E56998D786"
+    },
+    {
+      "index": 42,
+      "id": "portrait-42",
+      "name": "Miang",
+      "canonical_id": 534,
+      "disc2_physical_id": 529,
+      "selectors": [
+        28
+      ],
+      "tim_sha256": "9f3bffb7d6bdc8e4551f396cdc01b392d3d784dd718a4b2f32d64950780a2641",
+      "original_url": "https://xenoverse.world/asset-images/head42.png",
+      "original_png_sha256": "71914d7eb11e35d01ee49ffa2e79c9d247e57313c683c04f02116c1bcab27b1b",
+      "original_rgba_sha256": "edec9ebc16ad6118942a9ce436e85869797ada268294355ddf5c65228e02dd87",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "E5B9C80EB6414BB8",
+      "palette_xxh3": "55B82DCF723CD123"
+    },
+    {
+      "index": 43,
+      "id": "portrait-43",
+      "name": "Ramsus",
+      "canonical_id": 535,
+      "disc2_physical_id": 530,
+      "selectors": [
+        26
+      ],
+      "tim_sha256": "65de5888ea8f4dcb486205a69796313512f606a8d782815cec3ef59be1108496",
+      "original_url": "https://xenoverse.world/asset-images/head43.png",
+      "original_png_sha256": "9be72e4252f1fee8f268571c8e6b9a93ee4d0d1d6fc886857e1a726c749601cf",
+      "original_rgba_sha256": "b5745d5e1eb7921db60e786e7a34482eb858701269c1069ed2cd26bbca8faf04",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "67952453B98BC1F4",
+      "palette_xxh3": "2CE2D792A45128A0"
+    },
+    {
+      "index": 44,
+      "id": "portrait-44",
+      "name": "Executioner",
+      "canonical_id": 536,
+      "disc2_physical_id": 531,
+      "selectors": [
+        53
+      ],
+      "tim_sha256": "b1aeecadd2652b3d5bf105e994f222cfc91ee31614e2e762d86a946afa3d5b8b",
+      "original_url": "https://xenoverse.world/asset-images/head44.png",
+      "original_png_sha256": "b9101641df7ff4299ff727bd8d5e834c63c773479e705976f101eb5e1a15d9ba",
+      "original_rgba_sha256": "64c1558088e37474d55bad864f1ccceaabfcc7cab8fa0ddb51d939d38f91536e",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "93C2B6EC239E12B5",
+      "palette_xxh3": "7B40336B95982733"
+    },
+    {
+      "index": 45,
+      "id": "portrait-45",
+      "name": "Cain",
+      "canonical_id": 537,
+      "disc2_physical_id": 532,
+      "selectors": [
+        54
+      ],
+      "tim_sha256": "ff063d28e442be4493bc58e87272f58f9eba62cda5039fba73a8b8c8463195d4",
+      "original_url": "https://xenoverse.world/asset-images/head45.png",
+      "original_png_sha256": "50f57bf4064cd6b62be7ab0d22de6bb42d799eb9f27a6acc090c27473500dced",
+      "original_rgba_sha256": "a6d4ccecc7970f8899540c09847a67fc123b7ed407d5035578c6ee9a195ab32c",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "662034E07B0BCF00",
+      "palette_xxh3": "A449C3CE8E7481E1"
+    },
+    {
+      "index": 46,
+      "id": "portrait-46",
+      "name": "Gazel",
+      "canonical_id": 538,
+      "disc2_physical_id": 533,
+      "selectors": [
+        55
+      ],
+      "tim_sha256": "6a71761e395411336d87b5f299a725d71c1fcd6aa8eb0a231e4bed2fa0061351",
+      "original_url": "https://xenoverse.world/asset-images/head46.png",
+      "original_png_sha256": "222a98d75205781c5b7b147c6cb31e854782f630975d51aed968d2d2220f7de8",
+      "original_rgba_sha256": "504dd53e943f02f0da33484e8053b895a0d1e10831cf658dabc2169d1f8eeeaf",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "6C63E2B2FEADD2D0",
+      "palette_xxh3": "5CCA6E66A6CC3636"
+    },
+    {
+      "index": 47,
+      "id": "portrait-47",
+      "name": "Khan",
+      "canonical_id": 539,
+      "disc2_physical_id": 534,
+      "selectors": [
+        56
+      ],
+      "tim_sha256": "e240e63752b41625813b432042995f81fae1faa90d702e4934322b72a0214f8d",
+      "original_url": "https://xenoverse.world/asset-images/head47.png",
+      "original_png_sha256": "6881e653299b78c8470f2192e90358f3a9399d12d1d69ad88e5cef9c146404b3",
+      "original_rgba_sha256": "2ea9a6caaf9fa329a01cae537799e5a3da30189e5e89b02185e69e37925e8fd4",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "351C9CE6E0C5C75C",
+      "palette_xxh3": "86DF7F3A671166EA"
+    },
+    {
+      "index": 48,
+      "id": "portrait-48",
+      "name": "Karen",
+      "canonical_id": 540,
+      "disc2_physical_id": 535,
+      "selectors": [
+        57
+      ],
+      "tim_sha256": "ae71bcdb9c300eb05653d75ed17d34f2e091939e09dddbfcfa16d0cfdfc85a07",
+      "original_url": "https://xenoverse.world/asset-images/head48.png",
+      "original_png_sha256": "9c2d3214b83e16eb2e7e6b07f3021892544f6ebe3ff288e39de62352f12a119c",
+      "original_rgba_sha256": "3cdb69189e299a48c845a3ef7c373bb835c266a1dd2ffafd798985d846edf4c3",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "D2953E87E6297F1E",
+      "palette_xxh3": "64B2EF82F0DB7F41"
+    },
+    {
+      "index": 49,
+      "id": "portrait-49",
+      "name": "Wiseman",
+      "canonical_id": 541,
+      "disc2_physical_id": 536,
+      "selectors": [
+        58
+      ],
+      "tim_sha256": "e94ef543409785691003389b63cdc9b744bff867720e2587bdbbfec568ed4ea8",
+      "original_url": "https://xenoverse.world/asset-images/head49.png",
+      "original_png_sha256": "bfe8d2a117632238927ab0f3aacd31cd8aeafce337d247617146e880b6c26263",
+      "original_rgba_sha256": "69066469892eb7433c92e7a70ceb7740e894f142f556e4e0b1152092df767bff",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "4663B438FEF91D87",
+      "palette_xxh3": "34AF0E0A9D64F4C1"
+    },
+    {
+      "index": 50,
+      "id": "portrait-50",
+      "name": "Sigurd",
+      "canonical_id": 542,
+      "disc2_physical_id": 537,
+      "selectors": [
+        27
+      ],
+      "tim_sha256": "2303bf790b8a3f839fa22149785df2a3c230b393919cb7b1d13455aac3225c87",
+      "original_url": "https://xenoverse.world/asset-images/head50.png",
+      "original_png_sha256": "d37d47f14291dbb4c81d66b4eed4d9b09900ffd0f15ce54c44e7b597d70e99c3",
+      "original_rgba_sha256": "5dc6b98e16f45a33063875cd63ac257fd6b98d55e4b7e0a6a3aca7ec6cc89106",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "A86F6FD402BA7AB8",
+      "palette_xxh3": "CDF8FC2EB07C1418"
+    },
+    {
+      "index": 51,
+      "id": "portrait-51",
+      "name": "Sigurd",
+      "canonical_id": 543,
+      "disc2_physical_id": 538,
+      "selectors": [
+        27
+      ],
+      "tim_sha256": "321c4fd488f56aa9093994b094d05822119fcf0108300820b70647de6166e336",
+      "original_url": "https://xenoverse.world/asset-images/head51.png",
+      "original_png_sha256": "0254807d196723bb6077c7ff38fa3d93d23b9bd82bc6941740e5b18c6babeb46",
+      "original_rgba_sha256": "edac443ab7d203ba4d29a455c4c7105db1fed94d03c3cb8fedc9300ddb12db6a",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "EF0E73CD7A1E965E",
+      "palette_xxh3": "87E3180EAB424E9C"
+    },
+    {
+      "index": 52,
+      "id": "portrait-52",
+      "name": "Maison",
+      "canonical_id": 544,
+      "disc2_physical_id": 539,
+      "selectors": [
+        19
+      ],
+      "tim_sha256": "de0ac639ad6f2d2228a677c667147d273ff383d26892140a9badd77162679ad9",
+      "original_url": "https://xenoverse.world/asset-images/head52.png",
+      "original_png_sha256": "45c935f5652d76eb5406989b0b2a6970a35ca8e513a1fa67405fb93a25080bd2",
+      "original_rgba_sha256": "918d6523c40c34dd96b60b57c341b4546362924224832a7441fc0b644d31d8e5",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "F98FEE02FDA345FA",
+      "palette_xxh3": "46B8E0F91BFFA2F3"
+    },
+    {
+      "index": 53,
+      "id": "portrait-53",
+      "name": "Jessie",
+      "canonical_id": 545,
+      "disc2_physical_id": 540,
+      "selectors": [
+        29
+      ],
+      "tim_sha256": "d0790cb9fd09ff90224957929da1380a35ccab5513e398fe8564dfb2f418941b",
+      "original_url": "https://xenoverse.world/asset-images/head53.png",
+      "original_png_sha256": "bfb335c3a314e63dcdb0b2c7faf59f92235dea9b6da197c7b892c05da8f13b94",
+      "original_rgba_sha256": "257d7835c3f162ed0d7703d34c32a1b000a138d9a06fdd3b7241d05c191c7efd",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "1736BD4B822BA533",
+      "palette_xxh3": "B6B470237492E5DA"
+    },
+    {
+      "index": 54,
+      "id": "portrait-54",
+      "name": "Primera",
+      "canonical_id": 546,
+      "disc2_physical_id": 541,
+      "selectors": [
+        59
+      ],
+      "tim_sha256": "049c3ac7d8a9eca2750881ea88322de022c752491755913c4cc7d6d58b173cd1",
+      "original_url": "https://xenoverse.world/asset-images/head54.png",
+      "original_png_sha256": "0ab1b6871d1aeafbd43e7ad0fd7b43a80217b393f0be40d230ba32b6bab123bd",
+      "original_rgba_sha256": "7b4fe40fd6ac14b95c4fdccab652628c7534628f0b4d0ca2e0c65411127b66f7",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "D66379346F52DA18",
+      "palette_xxh3": "C085E5327BA8284C"
+    },
+    {
+      "index": 55,
+      "id": "portrait-55",
+      "name": "Gazel",
+      "canonical_id": 547,
+      "disc2_physical_id": 542,
+      "selectors": [
+        82
+      ],
+      "tim_sha256": "86fddf51fb8028a81aa5dd53331dbcc013b3afae2e8d32d82006ba144e09fda0",
+      "original_url": "https://xenoverse.world/asset-images/head55.png",
+      "original_png_sha256": "5707980f7981544e8f5d5d3f80cafd0c01a0a6bb5310733025e49e50dad432c7",
+      "original_rgba_sha256": "08fa69d777a2fc4b3cd123c0c1a389cc22b018d1ac7a5064abc86c4b7f9376ad",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "9B45869288385F4D",
+      "palette_xxh3": "09DEEB36240181A4"
+    },
+    {
+      "index": 56,
+      "id": "portrait-56",
+      "name": "Roni",
+      "canonical_id": 548,
+      "disc2_physical_id": 543,
+      "selectors": [
+        30
+      ],
+      "tim_sha256": "76d36e0a5fe5b87687eb197f424c5385a2d03334d3cc2ccb7f6c8e41b816f8c1",
+      "original_url": "https://xenoverse.world/asset-images/head56.png",
+      "original_png_sha256": "5f6a918d808f38d584ef26760640e797c4db5313bfa5d20417983ba8f319f77f",
+      "original_rgba_sha256": "8a4780d18c47055fe3f1ad8c77a4ef0aa534ff8a1051dafc626b0700b1dc59e8",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "B7CC11DC7907C818",
+      "palette_xxh3": "3349A6C028825BE8"
+    },
+    {
+      "index": 57,
+      "id": "portrait-57",
+      "name": "Rene",
+      "canonical_id": 549,
+      "disc2_physical_id": 544,
+      "selectors": [
+        61
+      ],
+      "tim_sha256": "f4a3018b7924141bd7fe043f83b39f4a0614241c498ccd13aa10d31743ae82e9",
+      "original_url": "https://xenoverse.world/asset-images/head57.png",
+      "original_png_sha256": "547bbaf856798cec9724004cbd736199d2761744c10168e83cf68001a13af8f1",
+      "original_rgba_sha256": "205a226182676c56b4e094241ab3f5a6a3a4bdd07a205f4cff7efba4867d4198",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "F81CFD728052F6A9",
+      "palette_xxh3": "9D448BB35024DBF1"
+    },
+    {
+      "index": 58,
+      "id": "portrait-58",
+      "name": "Bishop Stone",
+      "canonical_id": 550,
+      "disc2_physical_id": 545,
+      "selectors": [
+        62
+      ],
+      "tim_sha256": "92b89616478dc8007eddae80abe333a83d79311ec04427814d8f4455787aa7ab",
+      "original_url": "https://xenoverse.world/asset-images/head58.png",
+      "original_png_sha256": "a5350199839a9f7caf7af0034c338188d5e2d5777a1fe3cbd558c36d6bedad01",
+      "original_rgba_sha256": "27e5c9d8a3a42caa1ee0d6b09379c0c1e59c57da5666a16bdf6430910e14a106",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "99682128B9C0B24F",
+      "palette_xxh3": "E6A428F5690A07CA"
+    },
+    {
+      "index": 59,
+      "id": "portrait-59",
+      "name": "Vanderkam",
+      "canonical_id": 551,
+      "disc2_physical_id": 546,
+      "selectors": [
+        63
+      ],
+      "tim_sha256": "24d8e153eea9aafdc9670ab341d757752140d3761cafdbae25836922a1fa1947",
+      "original_url": "https://xenoverse.world/asset-images/head59.png",
+      "original_png_sha256": "815c16ddb382fabce151c66b600daa10143ede871936143b655c33f6ad7bfb9d",
+      "original_rgba_sha256": "0eabb1497be94dbb1ef9dfda8cd5ac6f00dab283c2200ac8095be96d9b4d8c4d",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "08F99D1392797F41",
+      "palette_xxh3": "DDB1BB40C982524D"
+    },
+    {
+      "index": 60,
+      "id": "portrait-60",
+      "name": "Shakhan",
+      "canonical_id": 552,
+      "disc2_physical_id": 547,
+      "selectors": [
+        64
+      ],
+      "tim_sha256": "a4e00da94d48a934e056d1f7c6685c6258513b1a29e3689c663845ab336e478c",
+      "original_url": "https://xenoverse.world/asset-images/head60.png",
+      "original_png_sha256": "1de19ee7b6b33ef7193662eedbff90a27c6f5a13acd49e58813cdfe1b433e20a",
+      "original_rgba_sha256": "d2b547f87dcb1ebaca961bb5f50d252741a39467cecc92a4e44f62ec64d30fed",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "2DD3CF3C6771036D",
+      "palette_xxh3": "2F4EA062B77A54C1"
+    },
+    {
+      "index": 61,
+      "id": "portrait-61",
+      "name": "Renk",
+      "canonical_id": 553,
+      "disc2_physical_id": 548,
+      "selectors": [
+        65
+      ],
+      "tim_sha256": "ea739b702ae70a4873ee8c4798de9ed78859630dbc1bc535848bc1abd0d5c879",
+      "original_url": "https://xenoverse.world/asset-images/head61.png",
+      "original_png_sha256": "3e4fac7619779559cb31a7c470af96d471efeaab02a737d4a65889665c2ef76a",
+      "original_rgba_sha256": "978a005aa49b064d9612e487ef1aaf9ced06c2c6ad0ce1e1195c797835955c8e",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "DF88473DCA71F2C4",
+      "palette_xxh3": "3B8702BE0D36B158"
+    },
+    {
+      "index": 62,
+      "id": "portrait-62",
+      "name": "Broyer",
+      "canonical_id": 554,
+      "disc2_physical_id": 549,
+      "selectors": [
+        66
+      ],
+      "tim_sha256": "f60ed826e1372ec7bdc841a17c7652a67dea68687b707b1d5831cebdfde83d98",
+      "original_url": "https://xenoverse.world/asset-images/head62.png",
+      "original_png_sha256": "2a20285723aa99de7cec540175b8d89eab918ede2a1db15fcea5207b95d3bbd3",
+      "original_rgba_sha256": "5a0b37f6eb383073ae7cb813bb3243607950adce30f28de62f1148a443a45138",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "E4C3285F4AF85C4B",
+      "palette_xxh3": "E84608C86681049B"
+    },
+    {
+      "index": 63,
+      "id": "portrait-63",
+      "name": "Stratski",
+      "canonical_id": 555,
+      "disc2_physical_id": 550,
+      "selectors": [
+        67
+      ],
+      "tim_sha256": "691eed69a06e9f071bfff3b607c6ff5524c36455db4f87ef7693cab28efc3285",
+      "original_url": "https://xenoverse.world/asset-images/head63.png",
+      "original_png_sha256": "89e152954ea6d222753be8ba57edf3ac7c3bdba3f28f47f151b42e5f87dddbc0",
+      "original_rgba_sha256": "ff12192d9bd791351beeeefcbca453782612820ead47922a27e093e496332710",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "699756BB8B0E3432",
+      "palette_xxh3": "3969E98B188EF928"
+    },
+    {
+      "index": 64,
+      "id": "portrait-64",
+      "name": "Vance",
+      "canonical_id": 556,
+      "disc2_physical_id": 551,
+      "selectors": [
+        68
+      ],
+      "tim_sha256": "f99e457e17deb6e9a39d1c63e85e2a51f80f6d0f21fa6487fc3c5a2ddac8c176",
+      "original_url": "https://xenoverse.world/asset-images/head64.png",
+      "original_png_sha256": "e1cb01072d3d229861d85a82daa40ba427258027de7a59c9fd8c3de7f449048e",
+      "original_rgba_sha256": "3cfdb4faada0a3c07dd2de6651dea23d28a7abbca5a4e672fa5fc1ae7fdc0610",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "B9A04F0B90F049B1",
+      "palette_xxh3": "EDB89069042411C3"
+    },
+    {
+      "index": 65,
+      "id": "portrait-65",
+      "name": "Helmholz",
+      "canonical_id": 557,
+      "disc2_physical_id": 552,
+      "selectors": [
+        69
+      ],
+      "tim_sha256": "db3c0164b7030a1e5ffcea6491eb9b0cc2efec66635c7a74fa3c685f60d98aa6",
+      "original_url": "https://xenoverse.world/asset-images/head65.png",
+      "original_png_sha256": "c55555e6f6fb50064724a1232a7f553f1a87e901a6121c808ed16fefb25b6710",
+      "original_rgba_sha256": "c97bb8decb3cf386509f5b22ee4162f6f033bda3e7286f0050f3074f39907dd7",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "43447B848755EBCB",
+      "palette_xxh3": "B44684F1EC0857F6"
+    },
+    {
+      "index": 66,
+      "id": "portrait-66",
+      "name": "Erich",
+      "canonical_id": 558,
+      "disc2_physical_id": 553,
+      "selectors": [
+        70
+      ],
+      "tim_sha256": "e05a5872cd06cc596950967ad7a9dd7a78d6cad0fca91f19059848dc07bcca54",
+      "original_url": "https://xenoverse.world/asset-images/head66.png",
+      "original_png_sha256": "891a46ead7f636282494d2199a3ea5aedfd67c19014ee3a99833be8be1768e18",
+      "original_rgba_sha256": "f43eb788a6e14444811154eb38dcdbd727841fdb24e02e75e9ae4f2e01654f56",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "78B98E2BB96B6E8E",
+      "palette_xxh3": "5A583CF01043897E"
+    },
+    {
+      "index": 67,
+      "id": "portrait-67",
+      "name": "Medena",
+      "canonical_id": 559,
+      "disc2_physical_id": 554,
+      "selectors": [
+        71
+      ],
+      "tim_sha256": "d4a2c731352430938a048f82c9a3f6556e914a4707003e39f44a43e62848121c",
+      "original_url": "https://xenoverse.world/asset-images/head67.png",
+      "original_png_sha256": "23507e0ba93018d24e23d0e1058c9b6373af159cbbfd5b03180f764e33e13242",
+      "original_rgba_sha256": "b923411371c8d27cf1fe7ee6d6f1ebec4e8dcf4744f46a33a111b06ad3d41d82",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "FEAD956D170D375F",
+      "palette_xxh3": "29F3FD21A9988CEF"
+    },
+    {
+      "index": 68,
+      "id": "portrait-68",
+      "name": "Zephyr",
+      "canonical_id": 560,
+      "disc2_physical_id": 555,
+      "selectors": [
+        72
+      ],
+      "tim_sha256": "0f9ff1dcf63f9c5b5ae3e0377ed1ebd82f74e6d1c3bb905611ac6f96c82166ce",
+      "original_url": "https://xenoverse.world/asset-images/head68.png",
+      "original_png_sha256": "fdf37ed18c45b693ca2c5df10de72361fcd043b3fd96510c648dbf09c2760eb9",
+      "original_rgba_sha256": "82603e529ad1e307647270a9731f2b91d317ad03a70458bff068bc4c25ef6bb1",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "224CB0B99484D3B7",
+      "palette_xxh3": "FC2AD090039B8548"
+    },
+    {
+      "index": 69,
+      "id": "portrait-69",
+      "name": "Gaspar",
+      "canonical_id": 561,
+      "disc2_physical_id": 556,
+      "selectors": [
+        73
+      ],
+      "tim_sha256": "9b3d5b70b35d400f821cf8771224488cef1a211147fc3eb19ce5eeaf4c950d88",
+      "original_url": "https://xenoverse.world/asset-images/head69.png",
+      "original_png_sha256": "cc6b752e9af6fc2e294c7a7a1a6088853b5c4641893f9352b6996dbfc1dd6d63",
+      "original_rgba_sha256": "5408bce31bcb26f90a7fef117b76b990fa71336d34e42ecec7ce374177855d36",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "4EABE50EC6ED648D",
+      "palette_xxh3": "958FF3325ED65AAD"
+    },
+    {
+      "index": 70,
+      "id": "portrait-70",
+      "name": "Isaac",
+      "canonical_id": 562,
+      "disc2_physical_id": 557,
+      "selectors": [
+        74
+      ],
+      "tim_sha256": "83043325e1d9a2630c1607e678d34e4eee27cc535bf262773d2193f7f1e294e1",
+      "original_url": "https://xenoverse.world/asset-images/head70.png",
+      "original_png_sha256": "9a41afaff34e42ea5e58b1bffbb05ec35532ba3385c660deb3291d187fd1c8da",
+      "original_rgba_sha256": "03cc375370fc82b5b8807bba4f8e259f25f7646a1031e6163da9f17405ab6ebb",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "EDCF40484DF672D1",
+      "palette_xxh3": "0F85D3640FE29F2A"
+    },
+    {
+      "index": 71,
+      "id": "portrait-71",
+      "name": "Taura",
+      "canonical_id": 563,
+      "disc2_physical_id": 558,
+      "selectors": [
+        75
+      ],
+      "tim_sha256": "4336f6d7a5036130af9d92debc2f8212b84da33de4a5996c796c77767d8dbb2b",
+      "original_url": "https://xenoverse.world/asset-images/head71.png",
+      "original_png_sha256": "fd8a08d21806fe923ccb9124ca24151c57f634ff2030e17eb54f00420281ad10",
+      "original_rgba_sha256": "e3c56ded13b633911ba8ec4bfb7d4a87c2b0d3d4299ce23fd6fef15b31456232",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "5E3F1D5342F02C63",
+      "palette_xxh3": "33D561C665909856"
+    },
+    {
+      "index": 72,
+      "id": "portrait-72",
+      "name": "Sigmund",
+      "canonical_id": 564,
+      "disc2_physical_id": 559,
+      "selectors": [
+        76
+      ],
+      "tim_sha256": "44d693b792b35d3b010683443a58ce6dc8996aa7b1013fcfd571304e3768e70c",
+      "original_url": "https://xenoverse.world/asset-images/head72.png",
+      "original_png_sha256": "b94ab2590b87c76846dcead95d362e8457f08c59884f1895ce6180af380ea861",
+      "original_rgba_sha256": "dfacf990a818f30a37884a314314cec7fb2c4b4af0830461139a66df779a74ed",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "5D7149F60E7B8F24",
+      "palette_xxh3": "422CFBF2F76E5A88"
+    },
+    {
+      "index": 73,
+      "id": "portrait-73",
+      "name": "Nikolai",
+      "canonical_id": 565,
+      "disc2_physical_id": 560,
+      "selectors": [
+        77
+      ],
+      "tim_sha256": "f416aa15bee284bef2be3ac46752ae49cdc89df7658dc840fe5d030a1198f535",
+      "original_url": "https://xenoverse.world/asset-images/head73.png",
+      "original_png_sha256": "4423f27a40224fbe2458b6dad2dc7b47ae00ee4f980e4886d95aa5fd44117b32",
+      "original_rgba_sha256": "69b74df06947045d3e455df06c95ed8ef03bdacbd5b06a89243be96f36b4d4d8",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "D6A180E39BF5854F",
+      "palette_xxh3": "BE8505BD1154A7AB"
+    },
+    {
+      "index": 74,
+      "id": "portrait-74",
+      "name": "Hammer",
+      "canonical_id": 566,
+      "disc2_physical_id": 561,
+      "selectors": [
+        78
+      ],
+      "tim_sha256": "ef1e78b752d507228d97101fd52d959b9728df415ba8adbbb88ad4cb5aa7a3ac",
+      "original_url": "https://xenoverse.world/asset-images/head74.png",
+      "original_png_sha256": "b2e68a82c6fa1f4590e672125ae6065f714715ecd2d36229a39f0984de85a0ec",
+      "original_rgba_sha256": "f9e98f7ca7bc525903850180bc57ae1c756507b34040e149cdae01fb229b2b44",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "66938B758F8C28D9",
+      "palette_xxh3": "9130EEE7757570F0"
+    },
+    {
+      "index": 75,
+      "id": "portrait-75",
+      "name": "Franz",
+      "canonical_id": 567,
+      "disc2_physical_id": 562,
+      "selectors": [
+        79
+      ],
+      "tim_sha256": "c41e5767ec02972bd67c995e62f7070f2a63fe9037ed7e678a16b2d1918cc40f",
+      "original_url": "https://xenoverse.world/asset-images/head75.png",
+      "original_png_sha256": "24e87db12d5b4407fe5bcd566667f584ad8a4bc5cb07a3b284bba47bc49836f7",
+      "original_rgba_sha256": "a51e76848385d5a2bf2269d913553ad9509c3cecdfc5135408f4819c8fc8bc90",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "C1BAEE2487708B43",
+      "palette_xxh3": "BBD902BD75D4FD94"
+    },
+    {
+      "index": 76,
+      "id": "portrait-76",
+      "name": "Thames Captain",
+      "canonical_id": 568,
+      "disc2_physical_id": 563,
+      "selectors": [
+        80
+      ],
+      "tim_sha256": "2a1a6e1094a9933e814104cb348571b304a0c30d1a440c11561df750c013e4c1",
+      "original_url": "https://xenoverse.world/asset-images/head76.png",
+      "original_png_sha256": "8b1e7667672c853b184bd5ce5e1d7ea61092bedd6216d0d383567875873869ea",
+      "original_rgba_sha256": "cf6be8cddad153dedf856051c5dc06ece8a0dd4731969415e080f126b4206c84",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "D6320F129F5284BB",
+      "palette_xxh3": "FAF206F0AE7EE2D0"
+    },
+    {
+      "index": 77,
+      "id": "portrait-77",
+      "name": "Yui",
+      "canonical_id": 569,
+      "disc2_physical_id": 564,
+      "selectors": [
+        21
+      ],
+      "tim_sha256": "b37d962016084571b51792e8595ee3382c5efb47e92cf13859bbc30ce4202bfc",
+      "original_url": "https://xenoverse.world/asset-images/head77.png",
+      "original_png_sha256": "81a93f33b2caf6539eeff018d9d211c66a2213219d8023caa877ba6c8f0e3bae",
+      "original_rgba_sha256": "a4e1dddfb8cd3be51a7646e46ee694ac55109fef4fbf1f9e60925dee750628ed",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "3A4BE6AD71E801B5",
+      "palette_xxh3": "34C96D1D9D468ED0"
+    },
+    {
+      "index": 78,
+      "id": "portrait-78",
+      "name": "Midori",
+      "canonical_id": 570,
+      "disc2_physical_id": 565,
+      "selectors": [
+        22
+      ],
+      "tim_sha256": "5ef04f8f566d51d4f777aac748fa676e5c50490fc3364cf300bffb63d28155f7",
+      "original_url": "https://xenoverse.world/asset-images/head78.png",
+      "original_png_sha256": "4f36e5456f9829a8be749cd70eb90982c7e0cc88c27a9ea351b2bb404ae80745",
+      "original_rgba_sha256": "68a175ddb68c3d6ed86a97eb2cdcc39e39503da862ffaf149c39797409ea315f",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "C9267BED01E9191D",
+      "palette_xxh3": "E3C939746FEBBD2E"
+    },
+    {
+      "index": 79,
+      "id": "portrait-79",
+      "name": "Chief Lee",
+      "canonical_id": 571,
+      "disc2_physical_id": 566,
+      "selectors": [
+        15
+      ],
+      "tim_sha256": "a0ad358708ca55658e35608d9a74947f480af805d23b402ebed56d4b0ff316df",
+      "original_url": "https://xenoverse.world/asset-images/head79.png",
+      "original_png_sha256": "7d4500b4c975f5b16887301adebc3c5d2ff624b594d06a13241ee5d1fc2bfbf1",
+      "original_rgba_sha256": "7550e922d84ddaa79e73499df0e727bfa4a9b8e3729ad8df4a40315153c21d33",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "98DA06B29B0D2838",
+      "palette_xxh3": "7FAB7166BBC8DE91"
+    },
+    {
+      "index": 80,
+      "id": "portrait-80",
+      "name": "Gazel",
+      "canonical_id": 572,
+      "disc2_physical_id": 567,
+      "selectors": [
+        81
+      ],
+      "tim_sha256": "c2f7e516fa838b642795b3b2e4cce17c3e7714bb28d6eb4ab17c4712f1875fc6",
+      "original_url": "https://xenoverse.world/asset-images/head80.png",
+      "original_png_sha256": "185555f289aa3ed4188cf10ab1d8c04ed9900f3e83bbf7eb42322eec673322c9",
+      "original_rgba_sha256": "c54833dd6daf31d379e98998aa5553afd7cee1fe585d3707d5ba69f14fbbf7bf",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "DEDCBD063413B04E",
+      "palette_xxh3": "C5E2C97B48D76FDC"
+    },
+    {
+      "index": 81,
+      "id": "portrait-81",
+      "name": "Alice",
+      "canonical_id": 573,
+      "disc2_physical_id": 568,
+      "selectors": [
+        20
+      ],
+      "tim_sha256": "d6dd9cc3ee0813ada5ca7a45612c3e00eac0a52bcca3b0265908bcf7f9fcab06",
+      "original_url": "https://xenoverse.world/asset-images/head81.png",
+      "original_png_sha256": "28f8a4fd0ff9d6808ecc63ef2250e7cb9c77bad2cbaa833be979e78c16b925eb",
+      "original_rgba_sha256": "8b9ad73afa85ae43c84892d73a41d252a49cbd59c4931e4fa07d1b0bf6db870e",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "B65112A76F6275A9",
+      "palette_xxh3": "4F5E3F2A65FC4F51"
+    },
+    {
+      "index": 82,
+      "id": "portrait-82",
+      "name": "Dan",
+      "canonical_id": 574,
+      "disc2_physical_id": 569,
+      "selectors": [
+        16
+      ],
+      "tim_sha256": "baa62047dd5d0721254631964747458569dca3d8c23536daa1fbb2675de6aee6",
+      "original_url": "https://xenoverse.world/asset-images/head82.png",
+      "original_png_sha256": "97acb8b59c3028b9aee7ba29f036aa33055fe8dc752fa1a1468e5b99c24cc438",
+      "original_rgba_sha256": "49ea88497a8d205c533493484dfae65fcefe954cd3440dc0412bf5a74d788ab0",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "F49AF34425753FF1",
+      "palette_xxh3": "273D545DBC07305F"
+    },
+    {
+      "index": 83,
+      "id": "portrait-83",
+      "name": "Timothy",
+      "canonical_id": 575,
+      "disc2_physical_id": 570,
+      "selectors": [
+        17
+      ],
+      "tim_sha256": "4d6c3c9c461aa8764488774001738866da3dec48027377970806dd0c2077c828",
+      "original_url": "https://xenoverse.world/asset-images/head83.png",
+      "original_png_sha256": "59a765223aeeda4b1b6e98c857849e24c83a112f31c4470d8c76e8f61f3e8e7a",
+      "original_rgba_sha256": "43a6801ce81d8f876206d885e699398b4ef977a742fc39c400139683acc9cbf3",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "613670E181782A4B",
+      "palette_xxh3": "D6D821B86219E288"
+    },
+    {
+      "index": 84,
+      "id": "portrait-84",
+      "name": "Gazel",
+      "canonical_id": 576,
+      "disc2_physical_id": 571,
+      "selectors": [
+        83
+      ],
+      "tim_sha256": "6935083ed9de497f99d4cdc670619e775cb1694d9dc3e811edffa3b246190f33",
+      "original_url": "https://xenoverse.world/asset-images/head84.png",
+      "original_png_sha256": "799857fecb1e3042d466da7eed63651631c311f2247f5b8b0a987493fb177bac",
+      "original_rgba_sha256": "7d789affbcbd31c1e1a25f8ba34134ceffd1ae63d822e64e235cced129f5b269",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "62FA9CC637EDC064",
+      "palette_xxh3": "CCE46F4827DCC1FE"
+    },
+    {
+      "index": 85,
+      "id": "portrait-85",
+      "name": "Gazel",
+      "canonical_id": 577,
+      "disc2_physical_id": 572,
+      "selectors": [
+        84
+      ],
+      "tim_sha256": "3bb62cbb7bc5e3b63d6a54db2a22d08b6ac6b3957c40b02aa72be0bd9f8be555",
+      "original_url": "https://xenoverse.world/asset-images/head85.png",
+      "original_png_sha256": "603691a849ece76e9403dc8a92c9336060de736678f403cab7232db2822f2073",
+      "original_rgba_sha256": "16ed3147b27bc0853e3433d2ed62d746b95b27f6ce29a399eec689e24c0dd92f",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "8340128E1645B398",
+      "palette_xxh3": "8ED230AFD67554C3"
+    },
+    {
+      "index": 86,
+      "id": "portrait-86",
+      "name": "Gazel",
+      "canonical_id": 578,
+      "disc2_physical_id": 573,
+      "selectors": [
+        85
+      ],
+      "tim_sha256": "76ee6d6bcf87aeb82cb2143480057558f3fd502dfab73bbe6d970163ea07066e",
+      "original_url": "https://xenoverse.world/asset-images/head86.png",
+      "original_png_sha256": "b37e9a8d4803c8dd34b3b4d1872296939d6ffc329215a3112a940b93867d1e41",
+      "original_rgba_sha256": "4049d6cd08ea2a37f55b5be4cb947802e45ad786a30bb8e22e175a51d6971d8e",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "4E3376E593E68538",
+      "palette_xxh3": "08775270C397052F"
+    },
+    {
+      "index": 87,
+      "id": "portrait-87",
+      "name": "Gazel",
+      "canonical_id": 579,
+      "disc2_physical_id": 574,
+      "selectors": [
+        86
+      ],
+      "tim_sha256": "c011926ba9e8ef687c1b4ebc1f94150c16d3bb3aa07cef4865059fc8ef6deb3d",
+      "original_url": "https://xenoverse.world/asset-images/head87.png",
+      "original_png_sha256": "6f53943d25e141a13066e78c4d46b64cfe8b69f07700ffb02a85e1b34566eae0",
+      "original_rgba_sha256": "903e61eaf9edc904b1f2738ae2667f2b3f4f99f3769087764ec37ee2e0324c32",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "67C74A5A95B0C076",
+      "palette_xxh3": "EB0A99E8DC3387A9"
+    },
+    {
+      "index": 88,
+      "id": "portrait-88",
+      "name": "Ramsus",
+      "canonical_id": 580,
+      "disc2_physical_id": 575,
+      "selectors": [
+        87
+      ],
+      "tim_sha256": "b601cff273fbb68d3663cdf4304f21b0772d526b6a5a2becf569093b471d9555",
+      "original_url": "https://xenoverse.world/asset-images/head88.png",
+      "original_png_sha256": "4d21b05cf009d5f9d69da679b5b3d83697a2c10f004c8ef6a5e40cd86d908ff3",
+      "original_rgba_sha256": "0ef4b674cb204e521c785713a03d915f4a74493c65a6392e5a73d9f0e8c175f3",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "271EC5A186A1F208",
+      "palette_xxh3": "71F4D276DD252854"
+    },
+    {
+      "index": 89,
+      "id": "portrait-89",
+      "name": "Miang",
+      "canonical_id": 581,
+      "disc2_physical_id": 576,
+      "selectors": [
+        88
+      ],
+      "tim_sha256": "ab79d5d65d275d7ae7226e697c50db125202f9cd1588dd1ea0ac7d5c552a9b05",
+      "original_url": "https://xenoverse.world/asset-images/head89.png",
+      "original_png_sha256": "a96fab1e8ec3f93cdb37bd599b486833450530b61affdd642f677ebf97c933f2",
+      "original_rgba_sha256": "8891efb38cf471da71a946521e50f7aeb9c431c057efca10afc5d844e1565784",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "B3EEF46F441CACC7",
+      "palette_xxh3": "4C59241E005AC3B7"
+    },
+    {
+      "index": 90,
+      "id": "portrait-90",
+      "name": "Blank slot",
+      "canonical_id": 582,
+      "disc2_physical_id": 577,
+      "selectors": [
+        89
+      ],
+      "tim_sha256": "0977af648c2cfd3792cf4bf040c56e7974384416e1e6cf31b0a334102b9a22ff",
+      "original_url": "https://xenoverse.world/asset-images/head90.png",
+      "original_png_sha256": "01723aeae3ce3b5195a8f42e3eb6e9018a8c08b7acda4ed382b31341811f0a8a",
+      "original_rgba_sha256": "4fe7b59af6de3b665b67788cc2f99892ab827efae3a467342b3bb4e3bc8e5bfe",
+      "original_pixel_match": true,
+      "disc_tim_bytes_identical": true,
+      "index_xxh3": "93D76FE148C689BA",
+      "palette_xxh3": "09032EB4E72130A8"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "GUIDANCE DATA STATION\nARCHIVED FILE INDEX / 6079\nLAUNCH COURSES<New>SURVEY CARRIER THREE\nTransferred to civil archive.\nWEATHER PACKAGE\nTransferred to civil archive.<New>STRATEGIC TARGET TABLES\nLoaded for testing.<New>GUIDANCE NOTE / LENA<New>The new tables use the same\ncarrier numbers as the survey\nflights. The name on the\nscreen no longer tells us\nwhat we're launching.<New>Request separate names for\nthe strategic loads. Until\nthen, check the payload\nmanifest against the course\nfile before every test.<Close>"
+    },
+    {
+      "id": 1,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "GUIDANCE CONTROL DESK\nARCHIVED HANDOVER / 6081\nFROM: LENA / GUIDANCE<New>Bank Two's bearing display\nlagged during the alignment\ntest. The position sensor was\ncorrect.<New>The display has been replaced\nand the test repeated.\nDo not copy the test results\nto Bank Four. That bank has\nnot been checked.<New>COMMAND REQUEST\nReport both banks ready. Bank\nFour passed its previous\ninspection.<New>LENA / GUIDANCE<New>That was before the power\nfailure. Bank Two passed\nthen, too. I'm leaving Bank\nFour off the report until\nsomeone checks it.<Close>"
+    }
+  ]
+}

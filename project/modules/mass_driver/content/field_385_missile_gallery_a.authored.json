@@ -1,0 +1,13 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "GALLERY RECORD TERMINAL A\nSTRATEGIC COMMAND ORDER<New>Space-program magazines\n01-08 are transferred to\nmilitary authority.<New>Remove instrument mounts.\nInstall missile cradles,\narmored control links, and\npayload locks.<New>The launch network will now\ncarry strategic missiles.\nAll exploration launches\nare suspended.<New><Elly>\n\"They made the road itself\nserve the weapons.\"<New><Citan>\n\"The rail did not change.\nOnly its purpose and those\nwho commanded it changed.\"<New><Citan>\n\"The far bulkhead leads\nthrough the remaining\nmagazines. Central Control\nlies beyond them.\"<Close>"
+    }
+  ]
+}

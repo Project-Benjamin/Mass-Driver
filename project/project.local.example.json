@@ -1,0 +1,14 @@
+{
+  "sources": {
+    "pw_disc1": {"path": "C:/GameSources/Xenogears_PW_CD1.bin", "sha256": null},
+    "pw_disc2": {"path": "C:/GameSources/Xenogears_PW_CD2.bin", "sha256": null},
+    "retail_disc1": {"path": "C:/GameSources/Xenogears_Retail_CD1.bin", "sha256": null},
+    "retail_disc2": {"path": "C:/GameSources/Xenogears_Retail_CD2.bin", "sha256": null},
+    "mass_driver_base": {"path": "output/Xenogears_PW_CD2_mass_driver_standalone_v166.bin", "sha256": null}
+  },
+  "tools": {
+    "duckstation": "C:/GameTools/DuckStation/duckstation-qt-x64-ReleaseLTCG.exe",
+    "xenoiso": "C:/GameTools/Xenoiso.exe",
+    "input_root": "work"
+  }
+}

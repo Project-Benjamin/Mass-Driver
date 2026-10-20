@@ -1,0 +1,1873 @@
+{
+  "format": "xenogears-weight-verification-2026-09-07",
+  "audited_release": "foundation-ui-v2",
+  "gameplay_status": "untested",
+  "discs": {
+    "1": {
+      "installed_before": {
+        "format": "xenogears-native-weight-audit-v1",
+        "spans": [
+          {
+            "routine": "body_item",
+            "canonical_id": 2599,
+            "start": "0x1e484",
+            "end_exclusive": "0x1e510",
+            "sha256": "49cdc88184b86320a49cae940681c02ec349f1471a0f56b3065fc2517b0913ee",
+            "variant": "retail"
+          },
+          {
+            "routine": "body_display",
+            "canonical_id": 2599,
+            "start": "0x128ec",
+            "end_exclusive": "0x1293c",
+            "sha256": "a95a1a2a46c7c53727c300cf16425bd1613dd1fbdcbf2b0ef65ff84bffa7ec07",
+            "variant": "retail"
+          },
+          {
+            "routine": "body_save_copy",
+            "canonical_id": 2599,
+            "start": "0x1fa28",
+            "end_exclusive": "0x1fab4",
+            "sha256": "b9737f6d1427ecf5ef67d0a3b37e850de1b17943a2308cb6354f692d3d75f080",
+            "variant": "retail"
+          },
+          {
+            "routine": "body_load_copy",
+            "canonical_id": 2599,
+            "start": "0x1fd10",
+            "end_exclusive": "0x1fdbc",
+            "sha256": "49f282c1ca1ba1207325c5f402718c43e36ddd26abe7751c07aab43e03b6acf5",
+            "variant": "retail"
+          },
+          {
+            "routine": "gear_penalty",
+            "canonical_id": 2602,
+            "start": "0x1190c",
+            "end_exclusive": "0x1197c",
+            "sha256": "3b9d16dbf519831e62b986577f59e4b0b0474e62c9e98cc7d5192745cda4c719",
+            "variant": "retail"
+          },
+          {
+            "routine": "gear_battle_agility",
+            "canonical_id": 38,
+            "start": "0x287c0",
+            "end_exclusive": "0x287e4",
+            "sha256": "2f665c6b0e89854f12e79028e5787b830c7ee571d9d0cc22a17a44e54b856ba3",
+            "variant": "retail"
+          },
+          {
+            "routine": "battle_atb",
+            "canonical_id": 38,
+            "start": "0x29008",
+            "end_exclusive": "0x2917c",
+            "sha256": "5ebb37bc38bf501c619fb46173513b551b7527b3bf42b4e72803247dba76257d",
+            "variant": "retail"
+          },
+          {
+            "routine": "field_weight_set",
+            "canonical_id": 36,
+            "start": "0x1ab84",
+            "end_exclusive": "0x1abc0",
+            "sha256": "835e0ca96bf098c0eb82c351c1085d6d100997ca1137c212aedf8951a9bcbc3f",
+            "variant": "retail"
+          }
+        ],
+        "menu_variants_identical": {
+          "39": true,
+          "2597": true,
+          "2603": true
+        },
+        "body_items": [
+          {
+            "item_id": 72,
+            "native_whole_change": -2,
+            "pound_change": -4.4,
+            "cases": 201,
+            "mutable_range": [
+              0,
+              200
+            ],
+            "failed_inputs": []
+          },
+          {
+            "item_id": 73,
+            "native_whole_change": -4,
+            "pound_change": -8.8,
+            "cases": 201,
+            "mutable_range": [
+              0,
+              200
+            ],
+            "failed_inputs": []
+          },
+          {
+            "item_id": 74,
+            "native_whole_change": 2,
+            "pound_change": 4.4,
+            "cases": 201,
+            "mutable_range": [
+              0,
+              200
+            ],
+            "failed_inputs": []
+          },
+          {
+            "item_id": 75,
+            "native_whole_change": 4,
+            "pound_change": 8.8,
+            "cases": 201,
+            "mutable_range": [
+              0,
+              200
+            ],
+            "failed_inputs": []
+          }
+        ],
+        "body_display": {
+          "cases": 550,
+          "failed_inputs": [],
+          "formula": "hundredths_lb = 22 * (10 * (fixed + mutable) + tenths)"
+        },
+        "body_gain_cap_regression": {
+          "rows": [
+            {
+              "item_id": 74,
+              "mutable_before": 201,
+              "mutable_after": 200,
+              "gain_item_reduced_weight": true,
+              "field_total_at_fixed26": 227,
+              "within_observed_food_total_cap255": true
+            },
+            {
+              "item_id": 75,
+              "mutable_before": 201,
+              "mutable_after": 200,
+              "gain_item_reduced_weight": true,
+              "field_total_at_fixed26": 227,
+              "within_observed_food_total_cap255": true
+            },
+            {
+              "item_id": 74,
+              "mutable_before": 229,
+              "mutable_after": 200,
+              "gain_item_reduced_weight": true,
+              "field_total_at_fixed26": 255,
+              "within_observed_food_total_cap255": true
+            },
+            {
+              "item_id": 75,
+              "mutable_before": 229,
+              "mutable_after": 200,
+              "gain_item_reduced_weight": true,
+              "field_total_at_fixed26": 255,
+              "within_observed_food_total_cap255": true
+            },
+            {
+              "item_id": 74,
+              "mutable_before": 251,
+              "mutable_after": 200,
+              "gain_item_reduced_weight": true,
+              "field_total_at_fixed26": 277,
+              "within_observed_food_total_cap255": false
+            },
+            {
+              "item_id": 75,
+              "mutable_before": 251,
+              "mutable_after": 200,
+              "gain_item_reduced_weight": true,
+              "field_total_at_fixed26": 277,
+              "within_observed_food_total_cap255": false
+            },
+            {
+              "item_id": 74,
+              "mutable_before": 252,
+              "mutable_after": 200,
+              "gain_item_reduced_weight": true,
+              "field_total_at_fixed26": 278,
+              "within_observed_food_total_cap255": false
+            },
+            {
+              "item_id": 75,
+              "mutable_before": 252,
+              "mutable_after": 0,
+              "gain_item_reduced_weight": true,
+              "field_total_at_fixed26": 278,
+              "within_observed_food_total_cap255": false
+            },
+            {
+              "item_id": 74,
+              "mutable_before": 255,
+              "mutable_after": 1,
+              "gain_item_reduced_weight": true,
+              "field_total_at_fixed26": 281,
+              "within_observed_food_total_cap255": false
+            },
+            {
+              "item_id": 75,
+              "mutable_before": 255,
+              "mutable_after": 3,
+              "gain_item_reduced_weight": true,
+              "field_total_at_fixed26": 281,
+              "within_observed_food_total_cap255": false
+            }
+          ],
+          "remaining_bug": true,
+          "finding": "Gain items lower weight after field food raises mutable weight above 200"
+        },
+        "body_save_buffer": {
+          "characters": 11,
+          "record_size": 164,
+          "save_buffer_record_offset": "0x290",
+          "bytes_roundtripped": 1804,
+          "passed": true,
+          "limit": "Native RAM-to-save-buffer and inverse copy only; no memory-card I/O"
+        },
+        "gear_penalty": {
+          "cases": 322,
+          "failed_inputs": [],
+          "capacity_bytes": [
+            0,
+            3,
+            4,
+            5,
+            6,
+            8,
+            10
+          ],
+          "equipment_weight_inputs": [
+            0,
+            1,
+            119,
+            120,
+            121,
+            239,
+            240,
+            241,
+            359,
+            360,
+            361,
+            479,
+            480,
+            481,
+            599,
+            600,
+            601,
+            719,
+            720,
+            721,
+            839,
+            840,
+            841,
+            959,
+            960,
+            961,
+            1079,
+            1080,
+            1081,
+            1199,
+            1200,
+            1201,
+            1319,
+            1320,
+            1321,
+            1439,
+            1440,
+            1441,
+            1559,
+            1560,
+            1561,
+            1679,
+            1680,
+            1681,
+            1799,
+            1800
+          ],
+          "max_accessory_weight": 600,
+          "max_three_slot_weight": 1800,
+          "formula": "max(0, trunc((floor(accessory_weight / 120) - gear[0x75]) / 2))"
+        },
+        "gear_battle": {
+          "cases": 96,
+          "failures": 0,
+          "behavior": "Native battle preparation subtracts stored accessory penalty from Gear agility"
+        },
+        "atb": {
+          "cases": 30,
+          "rows": [
+            {
+              "gear_mode": false,
+              "agility": 4,
+              "readiness_input_for_three_body_weights": [
+                36,
+                36,
+                36
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": false,
+              "agility": 8,
+              "readiness_input_for_three_body_weights": [
+                72,
+                72,
+                72
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": false,
+              "agility": 10,
+              "readiness_input_for_three_body_weights": [
+                90,
+                90,
+                90
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": false,
+              "agility": 12,
+              "readiness_input_for_three_body_weights": [
+                108,
+                108,
+                108
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": false,
+              "agility": 16,
+              "readiness_input_for_three_body_weights": [
+                144,
+                144,
+                144
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": true,
+              "agility": 4,
+              "readiness_input_for_three_body_weights": [
+                36,
+                36,
+                36
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": true,
+              "agility": 8,
+              "readiness_input_for_three_body_weights": [
+                72,
+                72,
+                72
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": true,
+              "agility": 10,
+              "readiness_input_for_three_body_weights": [
+                90,
+                90,
+                90
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": true,
+              "agility": 12,
+              "readiness_input_for_three_body_weights": [
+                108,
+                108,
+                108
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": true,
+              "agility": 16,
+              "readiness_input_for_three_body_weights": [
+                144,
+                144,
+                144
+              ],
+              "passed": true
+            }
+          ],
+          "body_weight_changes_readiness": false,
+          "limit": "Native deterministic pre-RNG block; not hardware timing"
+        },
+        "field_boundaries": {
+          "rows": [
+            {
+              "requested_whole_weight": 0,
+              "mutable_result": 0,
+              "native_expected": 0
+            },
+            {
+              "requested_whole_weight": 25,
+              "mutable_result": 0,
+              "native_expected": 0
+            },
+            {
+              "requested_whole_weight": 26,
+              "mutable_result": 0,
+              "native_expected": 0
+            },
+            {
+              "requested_whole_weight": 76,
+              "mutable_result": 50,
+              "native_expected": 50
+            },
+            {
+              "requested_whole_weight": 226,
+              "mutable_result": 200,
+              "native_expected": 200
+            },
+            {
+              "requested_whole_weight": 281,
+              "mutable_result": 255,
+              "native_expected": 255
+            },
+            {
+              "requested_whole_weight": 282,
+              "mutable_result": 0,
+              "native_expected": 0
+            }
+          ],
+          "finding": "Field setter floors at the fixed part but has no upper clamp; byte overflow remains possible",
+          "scope": "Injected boundary operands; no claim that a particular retail meal reaches overflow"
+        },
+        "gameplay_status": "untested",
+        "whole_weight_system_certified": false,
+        "body_weight_combat_fix_installed": false,
+        "coverage": "Native consumable, display, save-buffer, equipment-penalty and battle-consumer blocks",
+        "tested_blocks_passed": true
+      },
+      "corrected_candidate": {
+        "format": "xenogears-native-weight-audit-v1",
+        "spans": [
+          {
+            "routine": "body_item",
+            "canonical_id": 2599,
+            "start": "0x1e484",
+            "end_exclusive": "0x1e510",
+            "sha256": "5ef0e1fed275b51ca693a7ebe689c398cfc3ee35f2727fc7049651b144853c2b",
+            "variant": "gain_cap_corrected"
+          },
+          {
+            "routine": "body_display",
+            "canonical_id": 2599,
+            "start": "0x128ec",
+            "end_exclusive": "0x1293c",
+            "sha256": "a95a1a2a46c7c53727c300cf16425bd1613dd1fbdcbf2b0ef65ff84bffa7ec07",
+            "variant": "retail"
+          },
+          {
+            "routine": "body_save_copy",
+            "canonical_id": 2599,
+            "start": "0x1fa28",
+            "end_exclusive": "0x1fab4",
+            "sha256": "b9737f6d1427ecf5ef67d0a3b37e850de1b17943a2308cb6354f692d3d75f080",
+            "variant": "retail"
+          },
+          {
+            "routine": "body_load_copy",
+            "canonical_id": 2599,
+            "start": "0x1fd10",
+            "end_exclusive": "0x1fdbc",
+            "sha256": "49f282c1ca1ba1207325c5f402718c43e36ddd26abe7751c07aab43e03b6acf5",
+            "variant": "retail"
+          },
+          {
+            "routine": "gear_penalty",
+            "canonical_id": 2602,
+            "start": "0x1190c",
+            "end_exclusive": "0x1197c",
+            "sha256": "3b9d16dbf519831e62b986577f59e4b0b0474e62c9e98cc7d5192745cda4c719",
+            "variant": "retail"
+          },
+          {
+            "routine": "gear_battle_agility",
+            "canonical_id": 38,
+            "start": "0x287c0",
+            "end_exclusive": "0x287e4",
+            "sha256": "2f665c6b0e89854f12e79028e5787b830c7ee571d9d0cc22a17a44e54b856ba3",
+            "variant": "retail"
+          },
+          {
+            "routine": "battle_atb",
+            "canonical_id": 38,
+            "start": "0x29008",
+            "end_exclusive": "0x2917c",
+            "sha256": "5ebb37bc38bf501c619fb46173513b551b7527b3bf42b4e72803247dba76257d",
+            "variant": "retail"
+          },
+          {
+            "routine": "field_weight_set",
+            "canonical_id": 36,
+            "start": "0x1ab84",
+            "end_exclusive": "0x1abc0",
+            "sha256": "835e0ca96bf098c0eb82c351c1085d6d100997ca1137c212aedf8951a9bcbc3f",
+            "variant": "retail"
+          }
+        ],
+        "menu_variants_identical": {
+          "39": true,
+          "2597": true,
+          "2603": true
+        },
+        "body_items": [
+          {
+            "item_id": 72,
+            "native_whole_change": -2,
+            "pound_change": -4.4,
+            "cases": 201,
+            "mutable_range": [
+              0,
+              200
+            ],
+            "failed_inputs": []
+          },
+          {
+            "item_id": 73,
+            "native_whole_change": -4,
+            "pound_change": -8.8,
+            "cases": 201,
+            "mutable_range": [
+              0,
+              200
+            ],
+            "failed_inputs": []
+          },
+          {
+            "item_id": 74,
+            "native_whole_change": 2,
+            "pound_change": 4.4,
+            "cases": 201,
+            "mutable_range": [
+              0,
+              200
+            ],
+            "failed_inputs": []
+          },
+          {
+            "item_id": 75,
+            "native_whole_change": 4,
+            "pound_change": 8.8,
+            "cases": 201,
+            "mutable_range": [
+              0,
+              200
+            ],
+            "failed_inputs": []
+          }
+        ],
+        "body_display": {
+          "cases": 550,
+          "failed_inputs": [],
+          "formula": "hundredths_lb = 22 * (10 * (fixed + mutable) + tenths)"
+        },
+        "body_gain_cap_regression": {
+          "rows": [
+            {
+              "item_id": 74,
+              "mutable_before": 201,
+              "mutable_after": 201,
+              "gain_item_reduced_weight": false,
+              "field_total_at_fixed26": 227,
+              "within_observed_food_total_cap255": true
+            },
+            {
+              "item_id": 75,
+              "mutable_before": 201,
+              "mutable_after": 201,
+              "gain_item_reduced_weight": false,
+              "field_total_at_fixed26": 227,
+              "within_observed_food_total_cap255": true
+            },
+            {
+              "item_id": 74,
+              "mutable_before": 229,
+              "mutable_after": 229,
+              "gain_item_reduced_weight": false,
+              "field_total_at_fixed26": 255,
+              "within_observed_food_total_cap255": true
+            },
+            {
+              "item_id": 75,
+              "mutable_before": 229,
+              "mutable_after": 229,
+              "gain_item_reduced_weight": false,
+              "field_total_at_fixed26": 255,
+              "within_observed_food_total_cap255": true
+            },
+            {
+              "item_id": 74,
+              "mutable_before": 251,
+              "mutable_after": 251,
+              "gain_item_reduced_weight": false,
+              "field_total_at_fixed26": 277,
+              "within_observed_food_total_cap255": false
+            },
+            {
+              "item_id": 75,
+              "mutable_before": 251,
+              "mutable_after": 251,
+              "gain_item_reduced_weight": false,
+              "field_total_at_fixed26": 277,
+              "within_observed_food_total_cap255": false
+            },
+            {
+              "item_id": 74,
+              "mutable_before": 252,
+              "mutable_after": 252,
+              "gain_item_reduced_weight": false,
+              "field_total_at_fixed26": 278,
+              "within_observed_food_total_cap255": false
+            },
+            {
+              "item_id": 75,
+              "mutable_before": 252,
+              "mutable_after": 252,
+              "gain_item_reduced_weight": false,
+              "field_total_at_fixed26": 278,
+              "within_observed_food_total_cap255": false
+            },
+            {
+              "item_id": 74,
+              "mutable_before": 255,
+              "mutable_after": 255,
+              "gain_item_reduced_weight": false,
+              "field_total_at_fixed26": 281,
+              "within_observed_food_total_cap255": false
+            },
+            {
+              "item_id": 75,
+              "mutable_before": 255,
+              "mutable_after": 255,
+              "gain_item_reduced_weight": false,
+              "field_total_at_fixed26": 281,
+              "within_observed_food_total_cap255": false
+            }
+          ],
+          "remaining_bug": false,
+          "finding": "Gain items preserve weight already at/above the native inventory cap"
+        },
+        "body_save_buffer": {
+          "characters": 11,
+          "record_size": 164,
+          "save_buffer_record_offset": "0x290",
+          "bytes_roundtripped": 1804,
+          "passed": true,
+          "limit": "Native RAM-to-save-buffer and inverse copy only; no memory-card I/O"
+        },
+        "gear_penalty": {
+          "cases": 322,
+          "failed_inputs": [],
+          "capacity_bytes": [
+            0,
+            3,
+            4,
+            5,
+            6,
+            8,
+            10
+          ],
+          "equipment_weight_inputs": [
+            0,
+            1,
+            119,
+            120,
+            121,
+            239,
+            240,
+            241,
+            359,
+            360,
+            361,
+            479,
+            480,
+            481,
+            599,
+            600,
+            601,
+            719,
+            720,
+            721,
+            839,
+            840,
+            841,
+            959,
+            960,
+            961,
+            1079,
+            1080,
+            1081,
+            1199,
+            1200,
+            1201,
+            1319,
+            1320,
+            1321,
+            1439,
+            1440,
+            1441,
+            1559,
+            1560,
+            1561,
+            1679,
+            1680,
+            1681,
+            1799,
+            1800
+          ],
+          "max_accessory_weight": 600,
+          "max_three_slot_weight": 1800,
+          "formula": "max(0, trunc((floor(accessory_weight / 120) - gear[0x75]) / 2))"
+        },
+        "gear_battle": {
+          "cases": 96,
+          "failures": 0,
+          "behavior": "Native battle preparation subtracts stored accessory penalty from Gear agility"
+        },
+        "atb": {
+          "cases": 30,
+          "rows": [
+            {
+              "gear_mode": false,
+              "agility": 4,
+              "readiness_input_for_three_body_weights": [
+                36,
+                36,
+                36
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": false,
+              "agility": 8,
+              "readiness_input_for_three_body_weights": [
+                72,
+                72,
+                72
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": false,
+              "agility": 10,
+              "readiness_input_for_three_body_weights": [
+                90,
+                90,
+                90
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": false,
+              "agility": 12,
+              "readiness_input_for_three_body_weights": [
+                108,
+                108,
+                108
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": false,
+              "agility": 16,
+              "readiness_input_for_three_body_weights": [
+                144,
+                144,
+                144
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": true,
+              "agility": 4,
+              "readiness_input_for_three_body_weights": [
+                36,
+                36,
+                36
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": true,
+              "agility": 8,
+              "readiness_input_for_three_body_weights": [
+                72,
+                72,
+                72
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": true,
+              "agility": 10,
+              "readiness_input_for_three_body_weights": [
+                90,
+                90,
+                90
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": true,
+              "agility": 12,
+              "readiness_input_for_three_body_weights": [
+                108,
+                108,
+                108
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": true,
+              "agility": 16,
+              "readiness_input_for_three_body_weights": [
+                144,
+                144,
+                144
+              ],
+              "passed": true
+            }
+          ],
+          "body_weight_changes_readiness": false,
+          "limit": "Native deterministic pre-RNG block; not hardware timing"
+        },
+        "field_boundaries": {
+          "rows": [
+            {
+              "requested_whole_weight": 0,
+              "mutable_result": 0,
+              "native_expected": 0
+            },
+            {
+              "requested_whole_weight": 25,
+              "mutable_result": 0,
+              "native_expected": 0
+            },
+            {
+              "requested_whole_weight": 26,
+              "mutable_result": 0,
+              "native_expected": 0
+            },
+            {
+              "requested_whole_weight": 76,
+              "mutable_result": 50,
+              "native_expected": 50
+            },
+            {
+              "requested_whole_weight": 226,
+              "mutable_result": 200,
+              "native_expected": 200
+            },
+            {
+              "requested_whole_weight": 281,
+              "mutable_result": 255,
+              "native_expected": 255
+            },
+            {
+              "requested_whole_weight": 282,
+              "mutable_result": 0,
+              "native_expected": 0
+            }
+          ],
+          "finding": "Field setter floors at the fixed part but has no upper clamp; byte overflow remains possible",
+          "scope": "Injected boundary operands; no claim that a particular retail meal reaches overflow"
+        },
+        "gameplay_status": "untested",
+        "whole_weight_system_certified": false,
+        "body_weight_combat_fix_installed": false,
+        "coverage": "Native consumable, display, save-buffer, equipment-penalty and battle-consumer blocks",
+        "tested_blocks_passed": true
+      },
+      "patch": {
+        "id": "body_weight_gain_monotonic",
+        "title": "Bulimy weight-gain cap correction",
+        "behavior": "Gain items preserve already-at/above-cap weight and cannot wrap a byte",
+        "native_mutable_cap": 200,
+        "changed_decoded_span": [
+          "0x1e4b0",
+          "0x1e4e0"
+        ],
+        "before": "780082900c0003920000000021104300780082a07800829000000000c900422c0f004014c8000234448d0708780082a0",
+        "after": "780082900c000392c800412c140020100000000021104300c900412c0200201400000000c8000234448d0708780082a0",
+        "resources": [
+          {
+            "canonical_id": 39,
+            "source_sha256": "f3b8d9516c519ee7b1580716c653c54804f205f43eaef3567355700e45d13261",
+            "output_sha256": "c2894756004ebe71757972dfac4c43b152a3847c158131026b692b05fcd78cce",
+            "decoded_output_sha256": "afd6c12aae31bba3e6c9e5f74157ba8aead2bd9886a697d93040135a76a9f294"
+          },
+          {
+            "canonical_id": 2597,
+            "source_sha256": "82f84a24ac1fd1979754e1cc9c861405fb59ce95dd78db00a76f00c8f1bd177d",
+            "output_sha256": "afd6c12aae31bba3e6c9e5f74157ba8aead2bd9886a697d93040135a76a9f294",
+            "decoded_output_sha256": "afd6c12aae31bba3e6c9e5f74157ba8aead2bd9886a697d93040135a76a9f294"
+          },
+          {
+            "canonical_id": 2599,
+            "source_sha256": "82f84a24ac1fd1979754e1cc9c861405fb59ce95dd78db00a76f00c8f1bd177d",
+            "output_sha256": "afd6c12aae31bba3e6c9e5f74157ba8aead2bd9886a697d93040135a76a9f294",
+            "decoded_output_sha256": "afd6c12aae31bba3e6c9e5f74157ba8aead2bd9886a697d93040135a76a9f294"
+          },
+          {
+            "canonical_id": 2603,
+            "source_sha256": "82f84a24ac1fd1979754e1cc9c861405fb59ce95dd78db00a76f00c8f1bd177d",
+            "output_sha256": "afd6c12aae31bba3e6c9e5f74157ba8aead2bd9886a697d93040135a76a9f294",
+            "decoded_output_sha256": "afd6c12aae31bba3e6c9e5f74157ba8aead2bd9886a697d93040135a76a9f294"
+          }
+        ],
+        "unchanged": [
+          "field food",
+          "weight loss",
+          "fixed and fractional weight bytes",
+          "body display",
+          "save format",
+          "Gear weight",
+          "combat formulas"
+        ],
+        "gameplay_status": "untested",
+        "evidence": "Native CPU regression: original gain items reduce mutable229 to200; corrected preserves229"
+      }
+    },
+    "2": {
+      "installed_before": {
+        "format": "xenogears-native-weight-audit-v1",
+        "spans": [
+          {
+            "routine": "body_item",
+            "canonical_id": 2599,
+            "start": "0x1e484",
+            "end_exclusive": "0x1e510",
+            "sha256": "49cdc88184b86320a49cae940681c02ec349f1471a0f56b3065fc2517b0913ee",
+            "variant": "retail"
+          },
+          {
+            "routine": "body_display",
+            "canonical_id": 2599,
+            "start": "0x128ec",
+            "end_exclusive": "0x1293c",
+            "sha256": "a95a1a2a46c7c53727c300cf16425bd1613dd1fbdcbf2b0ef65ff84bffa7ec07",
+            "variant": "retail"
+          },
+          {
+            "routine": "body_save_copy",
+            "canonical_id": 2599,
+            "start": "0x1fa28",
+            "end_exclusive": "0x1fab4",
+            "sha256": "b9737f6d1427ecf5ef67d0a3b37e850de1b17943a2308cb6354f692d3d75f080",
+            "variant": "retail"
+          },
+          {
+            "routine": "body_load_copy",
+            "canonical_id": 2599,
+            "start": "0x1fd10",
+            "end_exclusive": "0x1fdbc",
+            "sha256": "49f282c1ca1ba1207325c5f402718c43e36ddd26abe7751c07aab43e03b6acf5",
+            "variant": "retail"
+          },
+          {
+            "routine": "gear_penalty",
+            "canonical_id": 2602,
+            "start": "0x1190c",
+            "end_exclusive": "0x1197c",
+            "sha256": "3b9d16dbf519831e62b986577f59e4b0b0474e62c9e98cc7d5192745cda4c719",
+            "variant": "retail"
+          },
+          {
+            "routine": "gear_battle_agility",
+            "canonical_id": 38,
+            "start": "0x287c0",
+            "end_exclusive": "0x287e4",
+            "sha256": "2f665c6b0e89854f12e79028e5787b830c7ee571d9d0cc22a17a44e54b856ba3",
+            "variant": "retail"
+          },
+          {
+            "routine": "battle_atb",
+            "canonical_id": 38,
+            "start": "0x29008",
+            "end_exclusive": "0x2917c",
+            "sha256": "5ebb37bc38bf501c619fb46173513b551b7527b3bf42b4e72803247dba76257d",
+            "variant": "retail"
+          },
+          {
+            "routine": "field_weight_set",
+            "canonical_id": 36,
+            "start": "0x1ab84",
+            "end_exclusive": "0x1abc0",
+            "sha256": "835e0ca96bf098c0eb82c351c1085d6d100997ca1137c212aedf8951a9bcbc3f",
+            "variant": "retail"
+          }
+        ],
+        "menu_variants_identical": {
+          "39": true,
+          "2597": true,
+          "2603": true
+        },
+        "body_items": [
+          {
+            "item_id": 72,
+            "native_whole_change": -2,
+            "pound_change": -4.4,
+            "cases": 201,
+            "mutable_range": [
+              0,
+              200
+            ],
+            "failed_inputs": []
+          },
+          {
+            "item_id": 73,
+            "native_whole_change": -4,
+            "pound_change": -8.8,
+            "cases": 201,
+            "mutable_range": [
+              0,
+              200
+            ],
+            "failed_inputs": []
+          },
+          {
+            "item_id": 74,
+            "native_whole_change": 2,
+            "pound_change": 4.4,
+            "cases": 201,
+            "mutable_range": [
+              0,
+              200
+            ],
+            "failed_inputs": []
+          },
+          {
+            "item_id": 75,
+            "native_whole_change": 4,
+            "pound_change": 8.8,
+            "cases": 201,
+            "mutable_range": [
+              0,
+              200
+            ],
+            "failed_inputs": []
+          }
+        ],
+        "body_display": {
+          "cases": 550,
+          "failed_inputs": [],
+          "formula": "hundredths_lb = 22 * (10 * (fixed + mutable) + tenths)"
+        },
+        "body_gain_cap_regression": {
+          "rows": [
+            {
+              "item_id": 74,
+              "mutable_before": 201,
+              "mutable_after": 200,
+              "gain_item_reduced_weight": true,
+              "field_total_at_fixed26": 227,
+              "within_observed_food_total_cap255": true
+            },
+            {
+              "item_id": 75,
+              "mutable_before": 201,
+              "mutable_after": 200,
+              "gain_item_reduced_weight": true,
+              "field_total_at_fixed26": 227,
+              "within_observed_food_total_cap255": true
+            },
+            {
+              "item_id": 74,
+              "mutable_before": 229,
+              "mutable_after": 200,
+              "gain_item_reduced_weight": true,
+              "field_total_at_fixed26": 255,
+              "within_observed_food_total_cap255": true
+            },
+            {
+              "item_id": 75,
+              "mutable_before": 229,
+              "mutable_after": 200,
+              "gain_item_reduced_weight": true,
+              "field_total_at_fixed26": 255,
+              "within_observed_food_total_cap255": true
+            },
+            {
+              "item_id": 74,
+              "mutable_before": 251,
+              "mutable_after": 200,
+              "gain_item_reduced_weight": true,
+              "field_total_at_fixed26": 277,
+              "within_observed_food_total_cap255": false
+            },
+            {
+              "item_id": 75,
+              "mutable_before": 251,
+              "mutable_after": 200,
+              "gain_item_reduced_weight": true,
+              "field_total_at_fixed26": 277,
+              "within_observed_food_total_cap255": false
+            },
+            {
+              "item_id": 74,
+              "mutable_before": 252,
+              "mutable_after": 200,
+              "gain_item_reduced_weight": true,
+              "field_total_at_fixed26": 278,
+              "within_observed_food_total_cap255": false
+            },
+            {
+              "item_id": 75,
+              "mutable_before": 252,
+              "mutable_after": 0,
+              "gain_item_reduced_weight": true,
+              "field_total_at_fixed26": 278,
+              "within_observed_food_total_cap255": false
+            },
+            {
+              "item_id": 74,
+              "mutable_before": 255,
+              "mutable_after": 1,
+              "gain_item_reduced_weight": true,
+              "field_total_at_fixed26": 281,
+              "within_observed_food_total_cap255": false
+            },
+            {
+              "item_id": 75,
+              "mutable_before": 255,
+              "mutable_after": 3,
+              "gain_item_reduced_weight": true,
+              "field_total_at_fixed26": 281,
+              "within_observed_food_total_cap255": false
+            }
+          ],
+          "remaining_bug": true,
+          "finding": "Gain items lower weight after field food raises mutable weight above 200"
+        },
+        "body_save_buffer": {
+          "characters": 11,
+          "record_size": 164,
+          "save_buffer_record_offset": "0x290",
+          "bytes_roundtripped": 1804,
+          "passed": true,
+          "limit": "Native RAM-to-save-buffer and inverse copy only; no memory-card I/O"
+        },
+        "gear_penalty": {
+          "cases": 322,
+          "failed_inputs": [],
+          "capacity_bytes": [
+            0,
+            3,
+            4,
+            5,
+            6,
+            8,
+            10
+          ],
+          "equipment_weight_inputs": [
+            0,
+            1,
+            119,
+            120,
+            121,
+            239,
+            240,
+            241,
+            359,
+            360,
+            361,
+            479,
+            480,
+            481,
+            599,
+            600,
+            601,
+            719,
+            720,
+            721,
+            839,
+            840,
+            841,
+            959,
+            960,
+            961,
+            1079,
+            1080,
+            1081,
+            1199,
+            1200,
+            1201,
+            1319,
+            1320,
+            1321,
+            1439,
+            1440,
+            1441,
+            1559,
+            1560,
+            1561,
+            1679,
+            1680,
+            1681,
+            1799,
+            1800
+          ],
+          "max_accessory_weight": 600,
+          "max_three_slot_weight": 1800,
+          "formula": "max(0, trunc((floor(accessory_weight / 120) - gear[0x75]) / 2))"
+        },
+        "gear_battle": {
+          "cases": 96,
+          "failures": 0,
+          "behavior": "Native battle preparation subtracts stored accessory penalty from Gear agility"
+        },
+        "atb": {
+          "cases": 30,
+          "rows": [
+            {
+              "gear_mode": false,
+              "agility": 4,
+              "readiness_input_for_three_body_weights": [
+                36,
+                36,
+                36
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": false,
+              "agility": 8,
+              "readiness_input_for_three_body_weights": [
+                72,
+                72,
+                72
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": false,
+              "agility": 10,
+              "readiness_input_for_three_body_weights": [
+                90,
+                90,
+                90
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": false,
+              "agility": 12,
+              "readiness_input_for_three_body_weights": [
+                108,
+                108,
+                108
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": false,
+              "agility": 16,
+              "readiness_input_for_three_body_weights": [
+                144,
+                144,
+                144
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": true,
+              "agility": 4,
+              "readiness_input_for_three_body_weights": [
+                36,
+                36,
+                36
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": true,
+              "agility": 8,
+              "readiness_input_for_three_body_weights": [
+                72,
+                72,
+                72
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": true,
+              "agility": 10,
+              "readiness_input_for_three_body_weights": [
+                90,
+                90,
+                90
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": true,
+              "agility": 12,
+              "readiness_input_for_three_body_weights": [
+                108,
+                108,
+                108
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": true,
+              "agility": 16,
+              "readiness_input_for_three_body_weights": [
+                144,
+                144,
+                144
+              ],
+              "passed": true
+            }
+          ],
+          "body_weight_changes_readiness": false,
+          "limit": "Native deterministic pre-RNG block; not hardware timing"
+        },
+        "field_boundaries": {
+          "rows": [
+            {
+              "requested_whole_weight": 0,
+              "mutable_result": 0,
+              "native_expected": 0
+            },
+            {
+              "requested_whole_weight": 25,
+              "mutable_result": 0,
+              "native_expected": 0
+            },
+            {
+              "requested_whole_weight": 26,
+              "mutable_result": 0,
+              "native_expected": 0
+            },
+            {
+              "requested_whole_weight": 76,
+              "mutable_result": 50,
+              "native_expected": 50
+            },
+            {
+              "requested_whole_weight": 226,
+              "mutable_result": 200,
+              "native_expected": 200
+            },
+            {
+              "requested_whole_weight": 281,
+              "mutable_result": 255,
+              "native_expected": 255
+            },
+            {
+              "requested_whole_weight": 282,
+              "mutable_result": 0,
+              "native_expected": 0
+            }
+          ],
+          "finding": "Field setter floors at the fixed part but has no upper clamp; byte overflow remains possible",
+          "scope": "Injected boundary operands; no claim that a particular retail meal reaches overflow"
+        },
+        "gameplay_status": "untested",
+        "whole_weight_system_certified": false,
+        "body_weight_combat_fix_installed": false,
+        "coverage": "Native consumable, display, save-buffer, equipment-penalty and battle-consumer blocks",
+        "tested_blocks_passed": true
+      },
+      "corrected_candidate": {
+        "format": "xenogears-native-weight-audit-v1",
+        "spans": [
+          {
+            "routine": "body_item",
+            "canonical_id": 2599,
+            "start": "0x1e484",
+            "end_exclusive": "0x1e510",
+            "sha256": "5ef0e1fed275b51ca693a7ebe689c398cfc3ee35f2727fc7049651b144853c2b",
+            "variant": "gain_cap_corrected"
+          },
+          {
+            "routine": "body_display",
+            "canonical_id": 2599,
+            "start": "0x128ec",
+            "end_exclusive": "0x1293c",
+            "sha256": "a95a1a2a46c7c53727c300cf16425bd1613dd1fbdcbf2b0ef65ff84bffa7ec07",
+            "variant": "retail"
+          },
+          {
+            "routine": "body_save_copy",
+            "canonical_id": 2599,
+            "start": "0x1fa28",
+            "end_exclusive": "0x1fab4",
+            "sha256": "b9737f6d1427ecf5ef67d0a3b37e850de1b17943a2308cb6354f692d3d75f080",
+            "variant": "retail"
+          },
+          {
+            "routine": "body_load_copy",
+            "canonical_id": 2599,
+            "start": "0x1fd10",
+            "end_exclusive": "0x1fdbc",
+            "sha256": "49f282c1ca1ba1207325c5f402718c43e36ddd26abe7751c07aab43e03b6acf5",
+            "variant": "retail"
+          },
+          {
+            "routine": "gear_penalty",
+            "canonical_id": 2602,
+            "start": "0x1190c",
+            "end_exclusive": "0x1197c",
+            "sha256": "3b9d16dbf519831e62b986577f59e4b0b0474e62c9e98cc7d5192745cda4c719",
+            "variant": "retail"
+          },
+          {
+            "routine": "gear_battle_agility",
+            "canonical_id": 38,
+            "start": "0x287c0",
+            "end_exclusive": "0x287e4",
+            "sha256": "2f665c6b0e89854f12e79028e5787b830c7ee571d9d0cc22a17a44e54b856ba3",
+            "variant": "retail"
+          },
+          {
+            "routine": "battle_atb",
+            "canonical_id": 38,
+            "start": "0x29008",
+            "end_exclusive": "0x2917c",
+            "sha256": "5ebb37bc38bf501c619fb46173513b551b7527b3bf42b4e72803247dba76257d",
+            "variant": "retail"
+          },
+          {
+            "routine": "field_weight_set",
+            "canonical_id": 36,
+            "start": "0x1ab84",
+            "end_exclusive": "0x1abc0",
+            "sha256": "835e0ca96bf098c0eb82c351c1085d6d100997ca1137c212aedf8951a9bcbc3f",
+            "variant": "retail"
+          }
+        ],
+        "menu_variants_identical": {
+          "39": true,
+          "2597": true,
+          "2603": true
+        },
+        "body_items": [
+          {
+            "item_id": 72,
+            "native_whole_change": -2,
+            "pound_change": -4.4,
+            "cases": 201,
+            "mutable_range": [
+              0,
+              200
+            ],
+            "failed_inputs": []
+          },
+          {
+            "item_id": 73,
+            "native_whole_change": -4,
+            "pound_change": -8.8,
+            "cases": 201,
+            "mutable_range": [
+              0,
+              200
+            ],
+            "failed_inputs": []
+          },
+          {
+            "item_id": 74,
+            "native_whole_change": 2,
+            "pound_change": 4.4,
+            "cases": 201,
+            "mutable_range": [
+              0,
+              200
+            ],
+            "failed_inputs": []
+          },
+          {
+            "item_id": 75,
+            "native_whole_change": 4,
+            "pound_change": 8.8,
+            "cases": 201,
+            "mutable_range": [
+              0,
+              200
+            ],
+            "failed_inputs": []
+          }
+        ],
+        "body_display": {
+          "cases": 550,
+          "failed_inputs": [],
+          "formula": "hundredths_lb = 22 * (10 * (fixed + mutable) + tenths)"
+        },
+        "body_gain_cap_regression": {
+          "rows": [
+            {
+              "item_id": 74,
+              "mutable_before": 201,
+              "mutable_after": 201,
+              "gain_item_reduced_weight": false,
+              "field_total_at_fixed26": 227,
+              "within_observed_food_total_cap255": true
+            },
+            {
+              "item_id": 75,
+              "mutable_before": 201,
+              "mutable_after": 201,
+              "gain_item_reduced_weight": false,
+              "field_total_at_fixed26": 227,
+              "within_observed_food_total_cap255": true
+            },
+            {
+              "item_id": 74,
+              "mutable_before": 229,
+              "mutable_after": 229,
+              "gain_item_reduced_weight": false,
+              "field_total_at_fixed26": 255,
+              "within_observed_food_total_cap255": true
+            },
+            {
+              "item_id": 75,
+              "mutable_before": 229,
+              "mutable_after": 229,
+              "gain_item_reduced_weight": false,
+              "field_total_at_fixed26": 255,
+              "within_observed_food_total_cap255": true
+            },
+            {
+              "item_id": 74,
+              "mutable_before": 251,
+              "mutable_after": 251,
+              "gain_item_reduced_weight": false,
+              "field_total_at_fixed26": 277,
+              "within_observed_food_total_cap255": false
+            },
+            {
+              "item_id": 75,
+              "mutable_before": 251,
+              "mutable_after": 251,
+              "gain_item_reduced_weight": false,
+              "field_total_at_fixed26": 277,
+              "within_observed_food_total_cap255": false
+            },
+            {
+              "item_id": 74,
+              "mutable_before": 252,
+              "mutable_after": 252,
+              "gain_item_reduced_weight": false,
+              "field_total_at_fixed26": 278,
+              "within_observed_food_total_cap255": false
+            },
+            {
+              "item_id": 75,
+              "mutable_before": 252,
+              "mutable_after": 252,
+              "gain_item_reduced_weight": false,
+              "field_total_at_fixed26": 278,
+              "within_observed_food_total_cap255": false
+            },
+            {
+              "item_id": 74,
+              "mutable_before": 255,
+              "mutable_after": 255,
+              "gain_item_reduced_weight": false,
+              "field_total_at_fixed26": 281,
+              "within_observed_food_total_cap255": false
+            },
+            {
+              "item_id": 75,
+              "mutable_before": 255,
+              "mutable_after": 255,
+              "gain_item_reduced_weight": false,
+              "field_total_at_fixed26": 281,
+              "within_observed_food_total_cap255": false
+            }
+          ],
+          "remaining_bug": false,
+          "finding": "Gain items preserve weight already at/above the native inventory cap"
+        },
+        "body_save_buffer": {
+          "characters": 11,
+          "record_size": 164,
+          "save_buffer_record_offset": "0x290",
+          "bytes_roundtripped": 1804,
+          "passed": true,
+          "limit": "Native RAM-to-save-buffer and inverse copy only; no memory-card I/O"
+        },
+        "gear_penalty": {
+          "cases": 322,
+          "failed_inputs": [],
+          "capacity_bytes": [
+            0,
+            3,
+            4,
+            5,
+            6,
+            8,
+            10
+          ],
+          "equipment_weight_inputs": [
+            0,
+            1,
+            119,
+            120,
+            121,
+            239,
+            240,
+            241,
+            359,
+            360,
+            361,
+            479,
+            480,
+            481,
+            599,
+            600,
+            601,
+            719,
+            720,
+            721,
+            839,
+            840,
+            841,
+            959,
+            960,
+            961,
+            1079,
+            1080,
+            1081,
+            1199,
+            1200,
+            1201,
+            1319,
+            1320,
+            1321,
+            1439,
+            1440,
+            1441,
+            1559,
+            1560,
+            1561,
+            1679,
+            1680,
+            1681,
+            1799,
+            1800
+          ],
+          "max_accessory_weight": 600,
+          "max_three_slot_weight": 1800,
+          "formula": "max(0, trunc((floor(accessory_weight / 120) - gear[0x75]) / 2))"
+        },
+        "gear_battle": {
+          "cases": 96,
+          "failures": 0,
+          "behavior": "Native battle preparation subtracts stored accessory penalty from Gear agility"
+        },
+        "atb": {
+          "cases": 30,
+          "rows": [
+            {
+              "gear_mode": false,
+              "agility": 4,
+              "readiness_input_for_three_body_weights": [
+                36,
+                36,
+                36
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": false,
+              "agility": 8,
+              "readiness_input_for_three_body_weights": [
+                72,
+                72,
+                72
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": false,
+              "agility": 10,
+              "readiness_input_for_three_body_weights": [
+                90,
+                90,
+                90
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": false,
+              "agility": 12,
+              "readiness_input_for_three_body_weights": [
+                108,
+                108,
+                108
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": false,
+              "agility": 16,
+              "readiness_input_for_three_body_weights": [
+                144,
+                144,
+                144
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": true,
+              "agility": 4,
+              "readiness_input_for_three_body_weights": [
+                36,
+                36,
+                36
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": true,
+              "agility": 8,
+              "readiness_input_for_three_body_weights": [
+                72,
+                72,
+                72
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": true,
+              "agility": 10,
+              "readiness_input_for_three_body_weights": [
+                90,
+                90,
+                90
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": true,
+              "agility": 12,
+              "readiness_input_for_three_body_weights": [
+                108,
+                108,
+                108
+              ],
+              "passed": true
+            },
+            {
+              "gear_mode": true,
+              "agility": 16,
+              "readiness_input_for_three_body_weights": [
+                144,
+                144,
+                144
+              ],
+              "passed": true
+            }
+          ],
+          "body_weight_changes_readiness": false,
+          "limit": "Native deterministic pre-RNG block; not hardware timing"
+        },
+        "field_boundaries": {
+          "rows": [
+            {
+              "requested_whole_weight": 0,
+              "mutable_result": 0,
+              "native_expected": 0
+            },
+            {
+              "requested_whole_weight": 25,
+              "mutable_result": 0,
+              "native_expected": 0
+            },
+            {
+              "requested_whole_weight": 26,
+              "mutable_result": 0,
+              "native_expected": 0
+            },
+            {
+              "requested_whole_weight": 76,
+              "mutable_result": 50,
+              "native_expected": 50
+            },
+            {
+              "requested_whole_weight": 226,
+              "mutable_result": 200,
+              "native_expected": 200
+            },
+            {
+              "requested_whole_weight": 281,
+              "mutable_result": 255,
+              "native_expected": 255
+            },
+            {
+              "requested_whole_weight": 282,
+              "mutable_result": 0,
+              "native_expected": 0
+            }
+          ],
+          "finding": "Field setter floors at the fixed part but has no upper clamp; byte overflow remains possible",
+          "scope": "Injected boundary operands; no claim that a particular retail meal reaches overflow"
+        },
+        "gameplay_status": "untested",
+        "whole_weight_system_certified": false,
+        "body_weight_combat_fix_installed": false,
+        "coverage": "Native consumable, display, save-buffer, equipment-penalty and battle-consumer blocks",
+        "tested_blocks_passed": true
+      },
+      "patch": {
+        "id": "body_weight_gain_monotonic",
+        "title": "Bulimy weight-gain cap correction",
+        "behavior": "Gain items preserve already-at/above-cap weight and cannot wrap a byte",
+        "native_mutable_cap": 200,
+        "changed_decoded_span": [
+          "0x1e4b0",
+          "0x1e4e0"
+        ],
+        "before": "780082900c0003920000000021104300780082a07800829000000000c900422c0f004014c8000234448d0708780082a0",
+        "after": "780082900c000392c800412c140020100000000021104300c900412c0200201400000000c8000234448d0708780082a0",
+        "resources": [
+          {
+            "canonical_id": 39,
+            "source_sha256": "f3b8d9516c519ee7b1580716c653c54804f205f43eaef3567355700e45d13261",
+            "output_sha256": "c2894756004ebe71757972dfac4c43b152a3847c158131026b692b05fcd78cce",
+            "decoded_output_sha256": "afd6c12aae31bba3e6c9e5f74157ba8aead2bd9886a697d93040135a76a9f294"
+          },
+          {
+            "canonical_id": 2597,
+            "source_sha256": "82f84a24ac1fd1979754e1cc9c861405fb59ce95dd78db00a76f00c8f1bd177d",
+            "output_sha256": "afd6c12aae31bba3e6c9e5f74157ba8aead2bd9886a697d93040135a76a9f294",
+            "decoded_output_sha256": "afd6c12aae31bba3e6c9e5f74157ba8aead2bd9886a697d93040135a76a9f294"
+          },
+          {
+            "canonical_id": 2599,
+            "source_sha256": "82f84a24ac1fd1979754e1cc9c861405fb59ce95dd78db00a76f00c8f1bd177d",
+            "output_sha256": "afd6c12aae31bba3e6c9e5f74157ba8aead2bd9886a697d93040135a76a9f294",
+            "decoded_output_sha256": "afd6c12aae31bba3e6c9e5f74157ba8aead2bd9886a697d93040135a76a9f294"
+          },
+          {
+            "canonical_id": 2603,
+            "source_sha256": "82f84a24ac1fd1979754e1cc9c861405fb59ce95dd78db00a76f00c8f1bd177d",
+            "output_sha256": "afd6c12aae31bba3e6c9e5f74157ba8aead2bd9886a697d93040135a76a9f294",
+            "decoded_output_sha256": "afd6c12aae31bba3e6c9e5f74157ba8aead2bd9886a697d93040135a76a9f294"
+          }
+        ],
+        "unchanged": [
+          "field food",
+          "weight loss",
+          "fixed and fractional weight bytes",
+          "body display",
+          "save format",
+          "Gear weight",
+          "combat formulas"
+        ],
+        "gameplay_status": "untested",
+        "evidence": "Native CPU regression: original gain items reduce mutable229 to200; corrected preserves229"
+      }
+    }
+  }
+}

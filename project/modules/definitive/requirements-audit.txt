@@ -1,0 +1,2 @@
+# Optional CPU-block verification only; not required to launch or build patches.
+unicorn==2.1.4

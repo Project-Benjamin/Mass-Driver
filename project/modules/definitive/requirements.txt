@@ -1,0 +1,2 @@
+# Optional HD portrait sidecar exporter; native field/disc tools stay unchanged.
+xxhash==4.0.1

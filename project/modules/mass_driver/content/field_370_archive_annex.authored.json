@@ -1,0 +1,20 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "AUXILIARY POWER STATION\nARCHIVED INSPECTION / 6081\nSTANDBY GENERATORS<New>Two portable units tested\nunder load. Both started\nnormally and held their\noutput for the full test.<New>One outlet cover is missing.\nReplacement requested. Cables\nand fuel lines have been\npacked with the units.<New>DESTINATION: CAPITAL CLINICS\nPrepared for collection.\nTransport release pending.<New>HANDOVER NOTE<New>The clinic crew needs the\ncables as well as the\ngenerators. They cannot use\nthe units without them. Check\nboth crates before loading.<Close>"
+    },
+    {
+      "id": 1,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "EQUIPMENT DISPATCH DESK\nARCHIVED TRANSFER / 6081\nTWO STANDBY GENERATORS<New>REQUEST: MEDICAL BUREAU<New>The capital's clinics cannot\nrely on the damaged power\ngrid. Please release the two\nunits prepared for\ncollection.<New>DISPATCH STATUS<New>Transfer cancelled by\nCommand. Units retained for\ncontrol-room backup power.\nClinic crew departed without\nequipment.<New>MARA / PAYLOAD SAFETY\nThe units were tested and\npacked. Remove 'equipment\nunavailable' from the reply.\nCommand decided to keep them.<Close>"
+    }
+  ]
+}

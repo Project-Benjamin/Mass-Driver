@@ -1,0 +1,37 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 50,
+      "height": 3,
+      "text": "OPERATIONS JUNCTION\nMAIN SERVICE HUB AHEAD<Close>"
+    },
+    {
+      "id": 1,
+      "width": 52,
+      "height": 3,
+      "text": "EAST PASSAGE\nGUIDANCE AND MATERIALS<Close>"
+    },
+    {
+      "id": 2,
+      "width": 52,
+      "height": 3,
+      "text": "WEST PASSAGE\nVERTICAL SERVICE SHAFT<Close>"
+    },
+    {
+      "id": 3,
+      "width": 52,
+      "height": 3,
+      "text": "CENTRAL PASSAGE\nLAUNCH SUPPORT WORKS<Close>"
+    },
+    {
+      "id": 4,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "PERSONNEL DESK\nSTORED SHIFT NOTICE<New>Clock in before reporting to\nyour section. Record your\ndeparture at the end of the\nshift.<New>If your relief does not\narrive, contact the shift\nsupervisor. Do not leave an\noperating control station\nunattended.<New>Do not lend access badges.\nReport a missing badge before\nreturning to work.<Close>"
+    }
+  ]
+}

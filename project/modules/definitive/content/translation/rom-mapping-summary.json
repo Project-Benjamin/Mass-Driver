@@ -1,0 +1,46 @@
+{
+  "disc1": {
+    "format": "xenogears-definitive-rom-translation-audit-v1",
+    "field_slots": 768,
+    "parsed_fields": 730,
+    "empty_field_slots": 38,
+    "placeholder_field_slots": 0,
+    "parsed_dialogue_blocks": 18182,
+    "candidate_block_count": 6805,
+    "unique_candidate_block_count": 6279,
+    "verified_rom_replacements": 0,
+    "runtime_verified": false,
+    "errors": [],
+    "limitations": [
+      "Exact normalized transcript matching is candidate evidence, not an approved replacement.",
+      "Short repeated dialogue and scene variants need field/script context review.",
+      "This audit covers field component 07 only; other text stores and FMVs are outside this scan."
+    ],
+    "full_audit_sha256": "8d549bce063cb5d6dfff47fb83371a721a7d55a7b98a4486f9c923a2def81144"
+  },
+  "disc2": {
+    "format": "xenogears-definitive-rom-translation-audit-v1",
+    "field_slots": 768,
+    "parsed_fields": 205,
+    "empty_field_slots": 38,
+    "placeholder_field_slots": 525,
+    "parsed_dialogue_blocks": 6154,
+    "candidate_block_count": 2002,
+    "unique_candidate_block_count": 1828,
+    "verified_rom_replacements": 0,
+    "runtime_verified": false,
+    "errors": [],
+    "limitations": [
+      "Exact normalized transcript matching is candidate evidence, not an approved replacement.",
+      "Short repeated dialogue and scene variants need field/script context review.",
+      "This audit covers field component 07 only; other text stores and FMVs are outside this scan."
+    ],
+    "full_audit_sha256": "6c077c1fccd332d20c7aff8327a6937b135a8c1192cec3f3a39fb89cd58d9ae0"
+  },
+  "compiler_proof": {
+    "mapping": "modules/definitive/content/translation/reviewed-example-field014.json",
+    "statically_reviewed_blocks": 2,
+    "included_in_complete_retranslation": false,
+    "runtime_status": "not_playtested"
+  }
+}

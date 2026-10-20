@@ -1,0 +1,494 @@
+{
+  "format": "rico-dialogue-portraits-v1",
+  "image_encoding": {
+    "border_connected_black_matte_max_channel": 8,
+    "reason": "Generated PNG sources have opaque near-black mattes. Key only border-connected source pixels with every RGB channel at most 8 before resizing; preserve enclosed black details and existing alpha. Native TIM palette word zero is transparent."
+  },
+  "native_format": {
+    "width": 64,
+    "height": 64,
+    "bits_per_pixel": 8,
+    "palette_entries": 256,
+    "tim_bytes": 4640,
+    "portrait_id_count": 90,
+    "canonical_base": 492,
+    "loader_directory": 4,
+    "loader_first_local_file": 70,
+    "cache_slots": 3
+  },
+  "scope": "Rico anthology and current combined chapters only. Reserved IDs replace existing alternate native portrait assets; they do not expand the native 90-entry portrait table. Native retail continuation outside the current chapter graph is not covered.",
+  "native_evidence": [
+    "work/noah-decomp/NoahLib/field/opcodes.cpp: OP_SET_DIALOG_PORTRAIT",
+    "work/noah-decomp/NoahLib/field/field.cpp: getCharacter",
+    "work/noah-decomp/NoahLib/field/fieldScriptSupport.cpp: portraitMapping and isDialogAvatarLoaded",
+    "work/noah-decomp/NoahLib/field/dialogWindows.cpp: createDialogWindow",
+    "modules/rico/build.py: DiscReader.canonical"
+  ],
+  "allocation_audit": {
+    "method": "Conservative scan of every byte in decompressed ATEL components for FE 0D operand patterns; retaining all immediate matches, including unreachable donor scripts. False positives only reduce available IDs.",
+    "mass_driver": {
+      "release": "workspace-v1",
+      "replacement_fields_scanned": 33,
+      "immediate_native_portrait_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        28,
+        31,
+        57
+      ]
+    },
+    "soylent_system": {
+      "release": "workspace-v1",
+      "replacement_fields_scanned": 18,
+      "immediate_native_portrait_ids": [
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        49
+      ],
+      "party_selectors": [
+        253,
+        254,
+        255
+      ]
+    },
+    "rico": {
+      "release": "rico-ch2-opening-v2",
+      "replacement_fields_scanned": 23,
+      "immediate_native_portrait_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        35,
+        36,
+        39,
+        46,
+        58,
+        76,
+        78
+      ],
+      "note": "Retained donor variable-based portrait selectors exist; authored presentation sets explicit selectors at emitted windows. Native party IDs and named Hammer/Sigmund portraits remain intact."
+    },
+    "protected_scene": "No Miang portrait ID, Miang portrait asset, or Mass Driver scene resource is replaced.",
+    "runtime_status": "Asset mapping and byte-level source identities checked; native rendering acceptance pending.",
+    "latina_addition": {
+      "baseline": "rico-ch2-route-v8-fixed",
+      "portrait_id": 59,
+      "canonical_id": 546,
+      "evidence": "work/rico_suzarn_closeup_v9/latina_slot_audit.json",
+      "method": "Whole-ATEL immediate FE0D scan of both Rico discs and current Mass Driver/Soylent retained fields, including dead bytes; native paired/aliased mapping and all protected Miang assets excluded.",
+      "native_mapping": [
+        54,
+        54
+      ],
+      "asset_alias_selectors": [
+        59
+      ]
+    }
+  },
+  "assets": [
+    {
+      "slug": "young_rico",
+      "portrait_id": 32,
+      "native_asset_index": 1,
+      "canonical_id": 493,
+      "disc1_fat_index": 493,
+      "disc2_fat_index": 488,
+      "source_png": "sources/young_rico.png",
+      "accepted_source_sha256": [
+        "568816c91cb5b3d12dcabf8ef2e6265934c7b2f8dffde71a2f3b0414d110d3ce",
+        "616d7da973d65d5dccd1e82323ce4056127c74331c3cd7961e4254df829ef75b"
+      ],
+      "source_identity": {
+        "retail_disc1": "568816c91cb5b3d12dcabf8ef2e6265934c7b2f8dffde71a2f3b0414d110d3ce",
+        "retail_disc2": "568816c91cb5b3d12dcabf8ef2e6265934c7b2f8dffde71a2f3b0414d110d3ce",
+        "pw_disc1": "616d7da973d65d5dccd1e82323ce4056127c74331c3cd7961e4254df829ef75b",
+        "pw_disc2": "616d7da973d65d5dccd1e82323ce4056127c74331c3cd7961e4254df829ef75b"
+      }
+    },
+    {
+      "slug": "anne",
+      "portrait_id": 33,
+      "native_asset_index": 2,
+      "canonical_id": 494,
+      "disc1_fat_index": 494,
+      "disc2_fat_index": 489,
+      "source_png": "sources/anne.png",
+      "accepted_source_sha256": [
+        "36436b7bd4e7581c8461049a7a700922b719c82d04e4c3ecf7414599e510e121",
+        "502287e1161d494311d6e16cda6abbe23532181d91504e563c96c7029a75c687"
+      ],
+      "source_identity": {
+        "retail_disc1": "502287e1161d494311d6e16cda6abbe23532181d91504e563c96c7029a75c687",
+        "retail_disc2": "502287e1161d494311d6e16cda6abbe23532181d91504e563c96c7029a75c687",
+        "pw_disc1": "36436b7bd4e7581c8461049a7a700922b719c82d04e4c3ecf7414599e510e121",
+        "pw_disc2": "36436b7bd4e7581c8461049a7a700922b719c82d04e4c3ecf7414599e510e121"
+      }
+    },
+    {
+      "slug": "ethos_priest",
+      "portrait_id": 34,
+      "native_asset_index": 3,
+      "canonical_id": 495,
+      "disc1_fat_index": 495,
+      "disc2_fat_index": 490,
+      "source_png": "sources/ethos_priest.png",
+      "accepted_source_sha256": [
+        "ef8af6662651d7f7c7a7aee394a7f33650dea02a067bde33753fbe0803c2930e",
+        "fa81fd0d9506f93fc212eca2fffcdb65a6c34d4210a5c8dfa7ad82dfeda96e0b"
+      ],
+      "source_identity": {
+        "retail_disc1": "fa81fd0d9506f93fc212eca2fffcdb65a6c34d4210a5c8dfa7ad82dfeda96e0b",
+        "retail_disc2": "fa81fd0d9506f93fc212eca2fffcdb65a6c34d4210a5c8dfa7ad82dfeda96e0b",
+        "pw_disc1": "ef8af6662651d7f7c7a7aee394a7f33650dea02a067bde33753fbe0803c2930e",
+        "pw_disc2": "ef8af6662651d7f7c7a7aee394a7f33650dea02a067bde33753fbe0803c2930e"
+      }
+    },
+    {
+      "slug": "suzarn",
+      "portrait_id": 37,
+      "native_asset_index": 7,
+      "canonical_id": 499,
+      "disc1_fat_index": 499,
+      "disc2_fat_index": 494,
+      "source_png": "sources/suzarn.png",
+      "accepted_source_sha256": [
+        "0ffd3e009e9bc682c34a6b686255a599efa0c10a87e2daccf3257e7047df5855",
+        "14d0a5eb9e3a6b1509afc6b499c24ddccf19b940726ffb80b20c3ae3c6fa2be3"
+      ],
+      "source_identity": {
+        "retail_disc1": "14d0a5eb9e3a6b1509afc6b499c24ddccf19b940726ffb80b20c3ae3c6fa2be3",
+        "retail_disc2": "14d0a5eb9e3a6b1509afc6b499c24ddccf19b940726ffb80b20c3ae3c6fa2be3",
+        "pw_disc1": "0ffd3e009e9bc682c34a6b686255a599efa0c10a87e2daccf3257e7047df5855",
+        "pw_disc2": "0ffd3e009e9bc682c34a6b686255a599efa0c10a87e2daccf3257e7047df5855"
+      }
+    },
+    {
+      "slug": "rue",
+      "portrait_id": 38,
+      "native_asset_index": 8,
+      "canonical_id": 500,
+      "disc1_fat_index": 500,
+      "disc2_fat_index": 495,
+      "source_png": "sources/rue.png",
+      "accepted_source_sha256": [
+        "4eb50a0c28293e73b110cde0827966c620ec92a24c0163098a4de88b4aab9bb6",
+        "e04c3913c24f669ed0c4b32f6e787c838015d0da8278928b32c42aa749de0134"
+      ],
+      "source_identity": {
+        "retail_disc1": "4eb50a0c28293e73b110cde0827966c620ec92a24c0163098a4de88b4aab9bb6",
+        "retail_disc2": "4eb50a0c28293e73b110cde0827966c620ec92a24c0163098a4de88b4aab9bb6",
+        "pw_disc1": "e04c3913c24f669ed0c4b32f6e787c838015d0da8278928b32c42aa749de0134",
+        "pw_disc2": "e04c3913c24f669ed0c4b32f6e787c838015d0da8278928b32c42aa749de0134"
+      }
+    },
+    {
+      "slug": "leonardo",
+      "portrait_id": 40,
+      "native_asset_index": 10,
+      "canonical_id": 502,
+      "disc1_fat_index": 502,
+      "disc2_fat_index": 497,
+      "source_png": "sources/leonardo.png",
+      "accepted_source_sha256": [
+        "2223f290cff1400eb6b1696291508fea8fa5d750ac8b63dec9fef04d3070dbe8"
+      ],
+      "source_identity": {
+        "retail_disc1": "2223f290cff1400eb6b1696291508fea8fa5d750ac8b63dec9fef04d3070dbe8",
+        "retail_disc2": "2223f290cff1400eb6b1696291508fea8fa5d750ac8b63dec9fef04d3070dbe8",
+        "pw_disc1": "2223f290cff1400eb6b1696291508fea8fa5d750ac8b63dec9fef04d3070dbe8",
+        "pw_disc2": "2223f290cff1400eb6b1696291508fea8fa5d750ac8b63dec9fef04d3070dbe8"
+      }
+    },
+    {
+      "slug": "gramps",
+      "portrait_id": 41,
+      "native_asset_index": 11,
+      "canonical_id": 503,
+      "disc1_fat_index": 503,
+      "disc2_fat_index": 498,
+      "source_png": "sources/gramps.png",
+      "accepted_source_sha256": [
+        "286c790ad8c42c8a15ce3942d9b764be5a46fefe220a14e4cf65b693e3673c84",
+        "332868e349d0273dda31138644e130a0054ed9211c2e0e196cef17aed898c3d1"
+      ],
+      "source_identity": {
+        "retail_disc1": "332868e349d0273dda31138644e130a0054ed9211c2e0e196cef17aed898c3d1",
+        "retail_disc2": "332868e349d0273dda31138644e130a0054ed9211c2e0e196cef17aed898c3d1",
+        "pw_disc1": "286c790ad8c42c8a15ce3942d9b764be5a46fefe220a14e4cf65b693e3673c84",
+        "pw_disc2": "286c790ad8c42c8a15ce3942d9b764be5a46fefe220a14e4cf65b693e3673c84"
+      }
+    },
+    {
+      "slug": "guard",
+      "portrait_id": 42,
+      "native_asset_index": 12,
+      "canonical_id": 504,
+      "disc1_fat_index": 504,
+      "disc2_fat_index": 499,
+      "source_png": "sources/guard.png",
+      "accepted_source_sha256": [
+        "5ec3f117c1accbbb6730a32f13bec463a08376f4b5401cb8e8b5e6c0b96a0219",
+        "8cf90ab3be52097427d7cdbffd50476897a5ae5ed1d473ccfc39fd0d9ca2e8ff"
+      ],
+      "source_identity": {
+        "retail_disc1": "8cf90ab3be52097427d7cdbffd50476897a5ae5ed1d473ccfc39fd0d9ca2e8ff",
+        "retail_disc2": "8cf90ab3be52097427d7cdbffd50476897a5ae5ed1d473ccfc39fd0d9ca2e8ff",
+        "pw_disc1": "5ec3f117c1accbbb6730a32f13bec463a08376f4b5401cb8e8b5e6c0b96a0219",
+        "pw_disc2": "5ec3f117c1accbbb6730a32f13bec463a08376f4b5401cb8e8b5e6c0b96a0219"
+      }
+    },
+    {
+      "slug": "infirmary_attendant",
+      "portrait_id": 43,
+      "native_asset_index": 13,
+      "canonical_id": 505,
+      "disc1_fat_index": 505,
+      "disc2_fat_index": 500,
+      "source_png": "sources/infirmary_attendant.png",
+      "accepted_source_sha256": [
+        "999cf039e0173731e334b4089f506c0d4518101e19dc31e35f546cee7e1179c8",
+        "e34d022747fbb784cf6484514663b07714bb58d03615879e8525a1f70e8a5d4e"
+      ],
+      "source_identity": {
+        "retail_disc1": "999cf039e0173731e334b4089f506c0d4518101e19dc31e35f546cee7e1179c8",
+        "retail_disc2": "999cf039e0173731e334b4089f506c0d4518101e19dc31e35f546cee7e1179c8",
+        "pw_disc1": "e34d022747fbb784cf6484514663b07714bb58d03615879e8525a1f70e8a5d4e",
+        "pw_disc2": "e34d022747fbb784cf6484514663b07714bb58d03615879e8525a1f70e8a5d4e"
+      }
+    },
+    {
+      "slug": "worker",
+      "portrait_id": 45,
+      "native_asset_index": 15,
+      "canonical_id": 507,
+      "disc1_fat_index": 507,
+      "disc2_fat_index": 502,
+      "source_png": "sources/worker.png",
+      "accepted_source_sha256": [
+        "9128bb3e9750d22db8939b9c88ba9c5eec3f372fcb6e182c9b86d4445bdf32aa",
+        "eb6c2d566cd6027a6780f5b6326e7d95ddde27a50f7b13f103d23771afc02186"
+      ],
+      "source_identity": {
+        "retail_disc1": "9128bb3e9750d22db8939b9c88ba9c5eec3f372fcb6e182c9b86d4445bdf32aa",
+        "retail_disc2": "9128bb3e9750d22db8939b9c88ba9c5eec3f372fcb6e182c9b86d4445bdf32aa",
+        "pw_disc1": "eb6c2d566cd6027a6780f5b6326e7d95ddde27a50f7b13f103d23771afc02186",
+        "pw_disc2": "eb6c2d566cd6027a6780f5b6326e7d95ddde27a50f7b13f103d23771afc02186"
+      }
+    },
+    {
+      "slug": "prisoner",
+      "portrait_id": 47,
+      "native_asset_index": 18,
+      "canonical_id": 510,
+      "disc1_fat_index": 510,
+      "disc2_fat_index": 505,
+      "source_png": "sources/prisoner.png",
+      "accepted_source_sha256": [
+        "72e6c1e2c6d7f8d586406dffce8e8cea6c7e06700642bd600dae83682d4c9fdb",
+        "ca123b67f977f3276d715afd4603c1b6cc1f0a754a978c8f41512e54e9389ef2"
+      ],
+      "source_identity": {
+        "retail_disc1": "ca123b67f977f3276d715afd4603c1b6cc1f0a754a978c8f41512e54e9389ef2",
+        "retail_disc2": "ca123b67f977f3276d715afd4603c1b6cc1f0a754a978c8f41512e54e9389ef2",
+        "pw_disc1": "72e6c1e2c6d7f8d586406dffce8e8cea6c7e06700642bd600dae83682d4c9fdb",
+        "pw_disc2": "72e6c1e2c6d7f8d586406dffce8e8cea6c7e06700642bd600dae83682d4c9fdb"
+      }
+    },
+    {
+      "slug": "battler",
+      "portrait_id": 48,
+      "native_asset_index": 30,
+      "canonical_id": 522,
+      "disc1_fat_index": 522,
+      "disc2_fat_index": 517,
+      "source_png": "sources/battler.png",
+      "accepted_source_sha256": [
+        "ce101d07eb561251ea2bc1b75e91dd9a1a2c9cb698dcd33e4b5e9a4757cd57eb",
+        "d0e3b3fd02e69b8a81783cf05ca53c1e79201144fcb0eac77bd816e7fad2574d"
+      ],
+      "source_identity": {
+        "retail_disc1": "ce101d07eb561251ea2bc1b75e91dd9a1a2c9cb698dcd33e4b5e9a4757cd57eb",
+        "retail_disc2": "ce101d07eb561251ea2bc1b75e91dd9a1a2c9cb698dcd33e4b5e9a4757cd57eb",
+        "pw_disc1": "d0e3b3fd02e69b8a81783cf05ca53c1e79201144fcb0eac77bd816e7fad2574d",
+        "pw_disc2": "d0e3b3fd02e69b8a81783cf05ca53c1e79201144fcb0eac77bd816e7fad2574d"
+      }
+    },
+    {
+      "slug": "arena_official",
+      "portrait_id": 50,
+      "native_asset_index": 32,
+      "canonical_id": 524,
+      "disc1_fat_index": 524,
+      "disc2_fat_index": 519,
+      "source_png": "sources/arena_official.png",
+      "accepted_source_sha256": [
+        "a9c02945fd70245cf3251ac4ce7600aadb366b1e5a11152873215991766b19d5",
+        "b05033c22ab5fa0dda756e4abc110f9eac38bfaf1890b4c038bf727b532304e1"
+      ],
+      "source_identity": {
+        "retail_disc1": "a9c02945fd70245cf3251ac4ce7600aadb366b1e5a11152873215991766b19d5",
+        "retail_disc2": "a9c02945fd70245cf3251ac4ce7600aadb366b1e5a11152873215991766b19d5",
+        "pw_disc1": "b05033c22ab5fa0dda756e4abc110f9eac38bfaf1890b4c038bf727b532304e1",
+        "pw_disc2": "b05033c22ab5fa0dda756e4abc110f9eac38bfaf1890b4c038bf727b532304e1"
+      }
+    },
+    {
+      "slug": "clerk",
+      "portrait_id": 51,
+      "native_asset_index": 39,
+      "canonical_id": 531,
+      "disc1_fat_index": 531,
+      "disc2_fat_index": 526,
+      "source_png": "sources/clerk.png",
+      "accepted_source_sha256": [
+        "4eff6d8ff9f832d4dc2424cc5b20c4daa8f92a26c998584cf8d70ab86e9cff09",
+        "c00a1fe4bfc0aab09e0488c2f3013aa94ff22c95e2232c0a46372d1c358ef4be"
+      ],
+      "source_identity": {
+        "retail_disc1": "4eff6d8ff9f832d4dc2424cc5b20c4daa8f92a26c998584cf8d70ab86e9cff09",
+        "retail_disc2": "4eff6d8ff9f832d4dc2424cc5b20c4daa8f92a26c998584cf8d70ab86e9cff09",
+        "pw_disc1": "c00a1fe4bfc0aab09e0488c2f3013aa94ff22c95e2232c0a46372d1c358ef4be",
+        "pw_disc2": "c00a1fe4bfc0aab09e0488c2f3013aa94ff22c95e2232c0a46372d1c358ef4be"
+      }
+    },
+    {
+      "slug": "adjutant",
+      "portrait_id": 52,
+      "native_asset_index": 40,
+      "canonical_id": 532,
+      "disc1_fat_index": 532,
+      "disc2_fat_index": 527,
+      "source_png": "sources/adjutant.png",
+      "accepted_source_sha256": [
+        "3c4875becb882b6cbcfbc2c914880cf015bf70387a68754f8874b19ffde1cc46",
+        "ccb65915ca881fff9e7d28c7647c20341227357912dc087da5dd8d9125925d4c"
+      ],
+      "source_identity": {
+        "retail_disc1": "ccb65915ca881fff9e7d28c7647c20341227357912dc087da5dd8d9125925d4c",
+        "retail_disc2": "ccb65915ca881fff9e7d28c7647c20341227357912dc087da5dd8d9125925d4c",
+        "pw_disc1": "3c4875becb882b6cbcfbc2c914880cf015bf70387a68754f8874b19ffde1cc46",
+        "pw_disc2": "3c4875becb882b6cbcfbc2c914880cf015bf70387a68754f8874b19ffde1cc46"
+      }
+    },
+    {
+      "slug": "archivist",
+      "portrait_id": 53,
+      "native_asset_index": 44,
+      "canonical_id": 536,
+      "disc1_fat_index": 536,
+      "disc2_fat_index": 531,
+      "source_png": "sources/archivist.png",
+      "accepted_source_sha256": [
+        "1eefc2e4c5030584b8ccfde0ac605fba9704f159d5c5bc94fd40ff991acec261",
+        "b1aeecadd2652b3d5bf105e994f222cfc91ee31614e2e762d86a946afa3d5b8b"
+      ],
+      "source_identity": {
+        "retail_disc1": "b1aeecadd2652b3d5bf105e994f222cfc91ee31614e2e762d86a946afa3d5b8b",
+        "retail_disc2": "b1aeecadd2652b3d5bf105e994f222cfc91ee31614e2e762d86a946afa3d5b8b",
+        "pw_disc1": "1eefc2e4c5030584b8ccfde0ac605fba9704f159d5c5bc94fd40ff991acec261",
+        "pw_disc2": "1eefc2e4c5030584b8ccfde0ac605fba9704f159d5c5bc94fd40ff991acec261"
+      }
+    },
+    {
+      "slug": "security_captain",
+      "portrait_id": 54,
+      "native_asset_index": 45,
+      "canonical_id": 537,
+      "disc1_fat_index": 537,
+      "disc2_fat_index": 532,
+      "source_png": "sources/security_captain.png",
+      "accepted_source_sha256": [
+        "c93d6d7fcd6e065dfe99845261240d03a00ba984a409ed0cd9c516f2c84194dd",
+        "ff063d28e442be4493bc58e87272f58f9eba62cda5039fba73a8b8c8463195d4"
+      ],
+      "source_identity": {
+        "retail_disc1": "ff063d28e442be4493bc58e87272f58f9eba62cda5039fba73a8b8c8463195d4",
+        "retail_disc2": "ff063d28e442be4493bc58e87272f58f9eba62cda5039fba73a8b8c8463195d4",
+        "pw_disc1": "c93d6d7fcd6e065dfe99845261240d03a00ba984a409ed0cd9c516f2c84194dd",
+        "pw_disc2": "c93d6d7fcd6e065dfe99845261240d03a00ba984a409ed0cd9c516f2c84194dd"
+      }
+    },
+    {
+      "slug": "demi_human_worker",
+      "portrait_id": 55,
+      "native_asset_index": 46,
+      "canonical_id": 538,
+      "disc1_fat_index": 538,
+      "disc2_fat_index": 533,
+      "source_png": "sources/demi_human_worker.png",
+      "accepted_source_sha256": [
+        "352ec13813142bc986db3731ce4f029196ffd607d3dac9368a33ff89c440a751",
+        "6a71761e395411336d87b5f299a725d71c1fcd6aa8eb0a231e4bed2fa0061351"
+      ],
+      "source_identity": {
+        "retail_disc1": "6a71761e395411336d87b5f299a725d71c1fcd6aa8eb0a231e4bed2fa0061351",
+        "retail_disc2": "6a71761e395411336d87b5f299a725d71c1fcd6aa8eb0a231e4bed2fa0061351",
+        "pw_disc1": "352ec13813142bc986db3731ce4f029196ffd607d3dac9368a33ff89c440a751",
+        "pw_disc2": "352ec13813142bc986db3731ce4f029196ffd607d3dac9368a33ff89c440a751"
+      }
+    },
+    {
+      "slug": "old_prisoner",
+      "portrait_id": 56,
+      "native_asset_index": 47,
+      "canonical_id": 539,
+      "disc1_fat_index": 539,
+      "disc2_fat_index": 534,
+      "source_png": "sources/old_prisoner.png",
+      "accepted_source_sha256": [
+        "b787265726b2565dd88da1d489a111ffc37c8ab0f16b07326034a70e2af3e565",
+        "e240e63752b41625813b432042995f81fae1faa90d702e4934322b72a0214f8d"
+      ],
+      "source_identity": {
+        "retail_disc1": "e240e63752b41625813b432042995f81fae1faa90d702e4934322b72a0214f8d",
+        "retail_disc2": "e240e63752b41625813b432042995f81fae1faa90d702e4934322b72a0214f8d",
+        "pw_disc1": "b787265726b2565dd88da1d489a111ffc37c8ab0f16b07326034a70e2af3e565",
+        "pw_disc2": "b787265726b2565dd88da1d489a111ffc37c8ab0f16b07326034a70e2af3e565"
+      }
+    },
+    {
+      "slug": "latina",
+      "portrait_id": 59,
+      "native_asset_index": 54,
+      "canonical_id": 546,
+      "disc1_fat_index": 546,
+      "disc2_fat_index": 541,
+      "source_png": "sources/latina.png",
+      "accepted_source_sha256": [
+        "049c3ac7d8a9eca2750881ea88322de022c752491755913c4cc7d6d58b173cd1",
+        "d28caa955680823077ebc611fc18e97bbf87b0d26ed77c320b28f01f09eac43c"
+      ],
+      "source_identity": {
+        "retail_disc1": "049c3ac7d8a9eca2750881ea88322de022c752491755913c4cc7d6d58b173cd1",
+        "retail_disc2": "049c3ac7d8a9eca2750881ea88322de022c752491755913c4cc7d6d58b173cd1",
+        "pw_disc1": "d28caa955680823077ebc611fc18e97bbf87b0d26ed77c320b28f01f09eac43c",
+        "pw_disc2": "d28caa955680823077ebc611fc18e97bbf87b0d26ed77c320b28f01f09eac43c"
+      }
+    }
+  ]
+}

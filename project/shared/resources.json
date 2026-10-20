@@ -1,0 +1,636 @@
+{
+  "format": "xenogears-resource-ledger-v1",
+  "scope": "Current standalone modules and the combined Disc 2 composition",
+  "authority": {
+    "purpose": "Index field ownership, shared-resource merge rules, and state reuse before adding another module.",
+    "enforcement": "The canonical builders and their identity/compatibility checks enforce these contracts. This ledger does not allocate resources by itself.",
+    "complete_inventory": "Each generated stage/manifest.json contains the exact replacement IDs, owners, sizes, and hashes for that build.",
+    "source_snapshot": "Each project-build.json records the included current module/shared source hashes, source-disc IDs, and actual extracted-input reads."
+  },
+  "field_allocations": [
+    {
+      "owner": "shared_selector",
+      "profile": "combined",
+      "fields": [
+        63
+      ],
+      "bundle_ids": [
+        732
+      ],
+      "graphics_ids": [
+        733
+      ],
+      "purpose": "New Game content selector; Mass Driver, Soylent System, and Rico are selectable. The Mahanon card is visible but disabled.",
+      "evidence": [
+        "shared/tools/build_combined.py:CONTENT_MENU_FIELD",
+        "shared/tools/xgcontent_menu_field.py:build_content_menu_field"
+      ]
+    },
+    {
+      "owner": "mass_driver",
+      "profiles": [
+        "mass_driver",
+        "combined"
+      ],
+      "fields": [
+        360,
+        361,
+        362,
+        363,
+        364,
+        366,
+        367,
+        368,
+        369,
+        370,
+        371,
+        372,
+        375,
+        376,
+        377,
+        378,
+        379,
+        382,
+        383,
+        384,
+        385,
+        386,
+        387,
+        720,
+        721,
+        722,
+        723,
+        724,
+        725,
+        726,
+        727,
+        728,
+        729
+      ],
+      "count": 33,
+      "entry_bootstrap_field": 728,
+      "route_order": [
+        729,
+        364,
+        360,
+        720,
+        721,
+        363,
+        362,
+        727,
+        372,
+        361,
+        722,
+        723,
+        375,
+        387,
+        725,
+        726,
+        366,
+        367,
+        385,
+        386,
+        368,
+        369,
+        370,
+        371,
+        724,
+        376,
+        384,
+        377,
+        378,
+        379,
+        382,
+        383,
+        728
+      ],
+      "notes": "The explicit field list is authoritative; gaps between listed fields are not claims of availability. Elly uses Vierge and Emeralda uses Crescens.",
+      "evidence": [
+        "modules/mass_driver/build.py:CLONES",
+        "modules/mass_driver/build.py:ROUTE",
+        "modules/mass_driver/build.py:BOOTSTRAP_FIELD"
+      ]
+    },
+    {
+      "owner": "soylent_system",
+      "profiles": [
+        "soylent_system",
+        "combined"
+      ],
+      "fields": [
+        549,
+        550,
+        565,
+        567,
+        588,
+        589,
+        590,
+        591,
+        592,
+        593,
+        594,
+        620,
+        621,
+        622,
+        623,
+        624,
+        625,
+        626
+      ],
+      "entry_field": 623,
+      "native_spine_fields": [
+        620,
+        621,
+        622,
+        623,
+        624,
+        625,
+        626
+      ],
+      "notes": "V237 restores the field-620 diagnostic completion gate and full eighteen-field route. Production choices use existing field-local state and existing completion flags; field 590 adds recovery/native saving without new state or actors. Source and automated progression coverage do not establish emulator acceptance or combined-selector acceptance.",
+      "evidence": [
+        "modules/soylent_system/build.py:CAMPAIGN_FINAL_IDENTITIES",
+        "modules/soylent_system/tools/surface_soylent_campaign_blueprint.py:CURRENT_RELEASE_VERSION"
+      ]
+    },
+    {
+      "owner": "rico",
+      "profile": "combined",
+      "fields": [
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        229,
+        230,
+        231,
+        232,
+        233,
+        234,
+        235,
+        236
+      ],
+      "hub_field": 229,
+      "chapter_fields": [
+        230,
+        231,
+        232,
+        233,
+        234,
+        235,
+        236
+      ],
+      "chapter_one_ancillary_fields": {
+        "firewood": 64,
+        "aftermath": 65,
+        "funeral": 66
+      },
+      "chapter_two_bedroom_field": 67,
+      "notes": "Combined-specific ancillary relocation avoids Mass Driver field ownership. The standalone Rico profile retains its builder's standalone disc allocations.",
+      "evidence": [
+        "modules/rico/build.py:UNIFIED_DISC2_CHAPTER_ONE_ANCILLARY_FIELDS",
+        "modules/rico/build.py:UNIFIED_DISC2_CHAPTER_TWO_BEDROOM_FIELD",
+        "shared/tools/build_combined.py:_verify_rico_field_pairs",
+        "modules/rico/chapter_two_resources.py:WORLD_FIELDS"
+      ],
+      "chapter_two_world_fields": {
+        "intake": 68,
+        "commons": 69,
+        "baptism": 70,
+        "prep": 71,
+        "sewer_entry": 72,
+        "sewer_hub": 73,
+        "sewer_key": 74,
+        "sewer_drain": 75,
+        "central": 76,
+        "arena": 77,
+        "bar": 78,
+        "street": 79
+      }
+    }
+  ],
+  "field_resource_addressing": {
+    "disc": 2,
+    "canonical_bundle_formula": "606 + 2 * field_id",
+    "canonical_graphics_formula": "canonical_bundle_id + 1",
+    "reserved_dummy_canonical_ids": [
+      732,
+      733,
+      734,
+      735,
+      736,
+      737,
+      738,
+      739,
+      740,
+      741,
+      742,
+      743,
+      744,
+      745,
+      746,
+      747,
+      748,
+      749,
+      750,
+      751,
+      752,
+      753,
+      754,
+      755,
+      756,
+      757,
+      758,
+      759,
+      760,
+      761,
+      762,
+      763,
+      764,
+      765
+    ],
+    "required_source_dummy_sha256": "aafefb97ceb8e4667c719b99c4250b286e03087315b61848d196300140a95a2c",
+    "policy": "The combined builder checks all thirty-four exact Disc 2 CDMAKE dummies for fields 63 through 79. Chapter 2 fields 68 through 79 are explicitly disposable pinned retail Disc 1 slots in the standalone anthology.",
+    "evidence": [
+      "shared/tools/build_combined.py:_verify_reserved_dummies",
+      "modules/rico/build.py:_field_bundle_id"
+    ]
+  },
+  "composition": {
+    "default_conflict_policy": "Reject duplicate canonical IDs except byte-identical 2622 and the eight pinned Chapter 2 battle/cinematic dependencies. Differing bytes always fail.",
+    "current_source_policy": "Prepare Mass Driver from its current module sources, prepare Soylent content without standalone title replacements, prepare Rico from its current chapter sources, then compose once.",
+    "shared_resources": [
+      {
+        "canonical_ids": [
+          29
+        ],
+        "owner": "shared_merge",
+        "resolution": "Start with Mass Driver's Video Disk names; merge young-Rico keepsake names into their separate indexed table; verify both survive.",
+        "evidence": "shared/tools/xgunified_resources.py:merge_system_names"
+      },
+      {
+        "canonical_ids": [
+          38
+        ],
+        "owner": "mass_driver",
+        "resolution": "Keep Mass Driver's Disc 2 battle overlay with body-weight and native-target-yaw behavior. Skip Rico's competing replacement."
+      },
+      {
+        "canonical_ids": [
+          47,
+          2614
+        ],
+        "owner": "mass_driver",
+        "resolution": "Keep the normal-combat Disc 2 versions. Verify Rico's arena runtime span, Redrum's complete attack entry 3, and player Gear attack regions 27, 31, and 33 before composition.",
+        "evidence": "shared/tools/build_combined.py:_verify_rico_battle_compatibility"
+      },
+      {
+        "canonical_ids": [
+          1586
+        ],
+        "owner": "shared_selector",
+        "resolution": "Patch native New Game to field 63. Preserve native Continue and Sound behavior."
+      },
+      {
+        "canonical_ids": [
+          1587
+        ],
+        "owner": "source_disc",
+        "resolution": "Retain source title graphics byte-for-byte; the combined replacement map must not contain this ID."
+      },
+      {
+        "canonical_ids": [
+          2593
+        ],
+        "owner": "shared_merge",
+        "resolution": "Combine native title labels/font, Mass Driver Repair Bot shop records, and the young-Rico portrait while preserving unrelated archive entries.",
+        "evidence": "shared/tools/xgunified_resources.py:merge_menu_archive_with_young_rico"
+      },
+      {
+        "canonical_ids": [
+          2594
+        ],
+        "owner": "shared_merge",
+        "resolution": "Retain Video Disk data while adding Rico's Memento balance and keepsake descriptions.",
+        "evidence": "shared/tools/xgunified_resources.py:merge_system_data"
+      },
+      {
+        "canonical_ids": [
+          2595
+        ],
+        "owner": "shared_merge",
+        "resolution": "Start from current Mass Driver GameState; grant on-foot deathblows and add Rico profiles/membership. Preserve Vierge, the module-neutral live party/frame, and source character levels.",
+        "evidence": "shared/tools/xgunified_resources.py:merge_initial_gamestate"
+      },
+      {
+        "canonical_ids": [
+          2597,
+          2603
+        ],
+        "owner": "shared_merge",
+        "resolution": "Apply per-character weight-range enforcement to the source Disc 2 overlays."
+      },
+      {
+        "canonical_ids": [
+          2599
+        ],
+        "owner": "shared_merge",
+        "resolution": "Compose the native title/Continue Disc 2 gate with weight-range enforcement."
+      },
+      {
+        "canonical_ids": [
+          2622
+        ],
+        "owner": "mass_driver+rico",
+        "resolution": "Accept the duplicate only when both prepared payloads are byte-identical."
+      },
+      {
+        "canonical_ids": [
+          2623
+        ],
+        "owner": "rico",
+        "resolution": "Retain Rico's non-conflicting battle dependency."
+      }
+    ],
+    "clinic_normalization": {
+      "canonical_ids": [
+        2684,
+        2685,
+        2871,
+        2872
+      ],
+      "combined_policy": "Pass the current Mass Driver-prepared normalized resources directly to Soylent prepare_campaign as clinic_resource_overrides.",
+      "standalone_soylent_policy": "Use the explicitly pinned mass_driver_base source identified in project.json/project.local.json. Its existing normalized combat and title GameState identities are checked by the standalone builder; do not replace it with raw Perfect Works Disc 2 or silently upgrade it.",
+      "evidence": [
+        "shared/tools/build_combined.py:prepare_unified_replacements",
+        "modules/soylent_system/build.py:CLINIC_SECURITY_NORMALIZED_CD2_RESOURCES"
+      ]
+    }
+  },
+  "rico_dialogue_presentation": {
+    "profiles": [
+      "rico",
+      "combined"
+    ],
+    "scope": "All seven Rico chapters and their ancillary/world fields; Mass Driver and Soylent field bundles are not passed through the presentation compiler.",
+    "portrait_canonical_ids": [
+      493,
+      494,
+      495,
+      499,
+      500,
+      502,
+      503,
+      504,
+      505,
+      507,
+      510,
+      522,
+      524,
+      531,
+      532,
+      536,
+      537,
+      538,
+      539,
+      546
+    ],
+    "portrait_selector_ids": [
+      32,
+      33,
+      34,
+      37,
+      38,
+      40,
+      41,
+      42,
+      43,
+      45,
+      47,
+      48,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      59
+    ],
+    "portrait_policy": "Reuse verified native 64x64 TIM slots unused by the current anthology's retained portrait instructions. Preserve native Fei, Citan, Bart, Rico, Hammer, Sigmund and protected Miang portraits. Exact source identities and selector-to-asset mapping are enforced by the Rico portrait manifest. These slots replace retail alternate portraits; this is not an allocation for a complete retail campaign.",
+    "executable_canonical_id": 22,
+    "renderer_policy": "Checked USA kernel code compaction at RAM 0x80034188..0x80034260; reuse the old escape-0B handler at 0x80034380..0x8003439C. No new RAM, state word, file growth, or guessed zero cave. Marker 0F 0B FE opts in the first row of a spoken window; the marker resets for each queued block. Unmarked dialogue retains native rendering.",
+    "evidence": [
+      "modules/rico/content/assets/dialogue_portraits/manifest.json",
+      "modules/rico/portrait_assets.py",
+      "modules/rico/dialogue_name_color.py",
+      "modules/rico/release_presentation.py"
+    ]
+  },
+  "state_allocations": {
+    "addressing": "ATEL operands are byte addresses. Operands 0x0000 through 0x03FE address persistent words; 0x0400 through 0x07FE are field-local and cleared on field loads.",
+    "persistent": [
+      {
+        "operand": "0x03FA",
+        "policy": "Partitioned by bit for field operations, with explicit module-start resets.",
+        "owners": [
+          {
+            "module": "mass_driver",
+            "mask": "0x000F",
+            "bits": {
+              "0": "Annex treasure A opened",
+              "1": "Annex treasure B opened",
+              "2": "West bulkhead opened",
+              "3": "Video Disk acquired"
+            }
+          },
+          {
+            "module": "soylent_system",
+            "mask": "0xFFF0",
+            "bits": {
+              "4-6": "Packed appointment phase, mask 0x0070; not independent objective flags",
+              "7": "Intake check-in complete",
+              "8": "Quarantine diagnostics complete",
+              "9": "Quarantine introduction seen",
+              "10": "Transient finale epilogue pending; legacy shortcut bit, not a current progression award",
+              "11": "Living-subject interface cutoff armed",
+              "12": "Molecular sorter complete",
+              "13": "M-Project core safe",
+              "14": "Meld witnessed",
+              "15": "Facility secured"
+            }
+          }
+        ],
+        "reset_semantics": [
+          "Selecting Mass Driver zeroes the entire 0x03FA word, along with 0x03FC and 0x03FE.",
+          "Selecting Soylent clears its bits 4 through 15 and leaves the low four Mass Driver bits untouched.",
+          "The current Soylent relay-selection scratch was moved out of bits 4 through 7 into field-local 0x07D0."
+        ],
+        "evidence": [
+          "modules/mass_driver/build.py:ANNEX_TREASURE_VARIABLE",
+          "modules/soylent_system/build.py:APPOINTMENT_PHASE_MASK",
+          "shared/tools/xgcontent_menu_field.py:_mass_driver_route_body",
+          "shared/tools/xgcontent_menu_field.py:_surface_soylent_route_body"
+        ]
+      },
+      {
+        "operand": "0x03EE",
+        "policy": "Context reuse, not simultaneous ownership or bit partition.",
+        "owners": [
+          {
+            "module": "soylent_system",
+            "mask": "0xFFFF",
+            "meaning": "Appointment alias in bits 14-15; low fourteen bits hold the timer snapshot, then the office substage."
+          },
+          {
+            "module": "rico",
+            "mask": "0x0001",
+            "meaning": "Chapter 2 Hammer arrival bit 0."
+          }
+        ],
+        "reset_semantics": [
+          "Selecting Soylent explicitly zeroes the whole word before its entry field.",
+          "Launching Rico Chapter 2 zeroes 0x03EE and 0x03EC.",
+          "Returning from a Rico chapter to its hub through _hub_launch_body zeroes both words.",
+          "Selecting the Rico card itself clears only local 0x07D0; the relevant chapter/hub paths own the persistent resets."
+        ],
+        "limitation": "A Soylent appointment is not retained as a suspended independent campaign across Rico Chapter 2/hub resets. This allocation does not establish connected cross-module save progression.",
+        "evidence": [
+          "modules/soylent_system/build.py:APPOINTMENT_OPERAND",
+          "modules/soylent_system/tools/surface_soylent_campaign_title.py:APPOINTMENT_STATE_CLEAR",
+          "modules/rico/build.py:_chapter_launch_body",
+          "modules/rico/build.py:_hub_launch_body"
+        ]
+      },
+      {
+        "operand": "0x03EC",
+        "owner": "rico",
+        "meaning": "Current Chapter 2 narrated interludes: cumulative phase availability bits 0 through 5; seen-scene bits 8 through 13. Used only in the five anthology locations (main room, bedroom, bar, street, dormitory), with local mirror 0x07D0. Historical expansion objective masks are not compatible with this phase layout.",
+        "reset_semantics": "Zeroed on a fresh Chapter 2 launch and on chapter-to-hub return. Enter through Chapter Select to initialize the current format; no original campaign event flags are advanced by narration."
+      },
+      {
+        "operands": [
+          "0x03F0",
+          "0x03F2",
+          "0x03F4",
+          "0x03F6",
+          "0x03F8"
+        ],
+        "owner": "mass_driver",
+        "meaning": "Nuke/Missile Command saved score, initials, level/wave, and format signature. Packed subfields are defined by the arcade constants and migration helpers.",
+        "evidence": "modules/mass_driver/build.py:NUKE_HIGH_SCORE_VARIABLE"
+      },
+      {
+        "operand": "0x03FC",
+        "owner": "mass_driver",
+        "meaning": "Persistent inclined-lift state.",
+        "reset_semantics": "Zeroed on a fresh Mass Driver selection."
+      },
+      {
+        "operand": "0x03FE",
+        "owner": "mass_driver",
+        "mask": "0xFFFF",
+        "bits": {
+          "0": "Auxiliary grid restored",
+          "1": "Accelerator interlock restored",
+          "2": "Directive record recovered",
+          "3": "Four-point authority record recovered",
+          "4": "Launch authorization accepted",
+          "5": "Guardian defeated",
+          "6": "Launch completed",
+          "7": "Citan final arrival",
+          "8-10": "Legacy magazine record allocations retained",
+          "11": "Elly Gear staged",
+          "12": "Historical memory seen",
+          "13": "Repair Bot reflection seen",
+          "14": "Materials chest opened",
+          "15": "Crescens staged"
+        },
+        "notes": "Fully allocated; no new module may claim a bit here. The staging bits retain historical aliases for archived El-Regulus work.",
+        "reset_semantics": "Zeroed on a fresh Mass Driver selection."
+      }
+    ],
+    "retail_reused_soylent_words": {
+      "0x021A": "Security/quarantine credential and retail route flags",
+      "0x021C": "Retail facility route flags",
+      "0x021E": "Retail route/tone flags",
+      "0x0222": "Retail route flag",
+      "policy": "Retain the precise masks in SURFACE_STATE_RESET_ROUTINE and blueprint.FLAGS; these are not exclusively allocated whole words."
+    },
+    "field_local_context_reuse": [
+      {
+        "operand": "0x07D0",
+        "owners": [
+          "soylent_system",
+          "rico"
+        ],
+        "meaning": "Soylent puzzle/clinic scratch or Rico playable chapter state, according to the current field.",
+        "policy": "Field-local storage is cleared on field changes. Rico Chapter 2 commits interlude phases and seen-scene bits to 0x03EC and restores its local mirror at every field entry, phase change and transition."
+      },
+      {
+        "range": [
+          "0x0500",
+          "0x0710"
+        ],
+        "owner": "mass_driver",
+        "meaning": "Arcade working variables and helper state; the range is an index, not a promise that every address is allocated.",
+        "policy": "Consult the individual NUKE_/MISSILE_ constants before adding another worker in the same field."
+      },
+      {
+        "range": [
+          "0x07C0",
+          "0x07CA"
+        ],
+        "owner": "soylent_system",
+        "meaning": "Appointment clock, scratch, doctor-busy, and clinic-door local state."
+      }
+    ]
+  },
+  "module_start_and_save_contract": {
+    "composition_model": "Independent selectable chapters sharing one Disc 2 runtime.",
+    "native_title": "New Game opens the selector; Continue retains its native save loading.",
+    "starts": "Each selector route installs its intended party and applies that module's explicit start resets.",
+    "rico_return": "The Rico hub memory cube can save or return to the selector without restarting. A canceled native save does not automatically change module.",
+    "not_claimed": "No automatic connected chronology, cross-module quest persistence, universal return route, or old-savestate migration is established by registry consolidation.",
+    "future_module_rule": "New modules start disabled. Allocate fields, global resources, state, and reset behavior explicitly, add conflict checks, and review the selector separately before enabling them."
+  },
+  "independent_campaign_profiles": {
+    "definitive": {
+      "sources": [
+        "retail_disc1",
+        "retail_disc2"
+      ],
+      "composable_with": [],
+      "new_fields": [],
+      "new_global_records": [],
+      "new_state_words": [],
+      "transient_overlay_bytes": [
+        {
+          "owner": "definitive",
+          "canonical_resource": 38,
+          "address": "0x800C2048",
+          "decoded_offset": "0x52558",
+          "bytes": 1,
+          "purpose": "Optional Mahanon Deus HP-halving camera guard",
+          "lifetime": "Battle command capture, consume and reset; never persisted",
+          "allocation": "Verified unused alignment padding following the final battle function",
+          "evidence": "docs/definitive/deus-fix-verification.md"
+        }
+      ],
+      "policy": "Standalone original retail campaign. Existing resource edits are option-selected and recorded in definitive-build-manifest.json. Never merge these replacements into chapter profiles or alter their donors.",
+      "module_manifest": "modules/definitive/module.json"
+    }
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "format": "xenogears-field-dialogue-replacements-v1",
+  "source_size": 815,
+  "source_sha256": "d40d0c513da019993b42abca25cd90aec5e429c32f4ed5ecfe9c0e6d60b25bce",
+  "block_count": 21,
+  "replacements": [
+    {
+      "id": 0,
+      "width": 52,
+      "height": 4,
+      "text": "Elly\n\"Directive 0320...\nThis is the archive access\ncode we need.\"<Close>"
+    },
+    {
+      "id": 1,
+      "text": "Elly\n\"The damaged relay\nhas been replaced.\"<Close>"
+    },
+    {
+      "id": 2,
+      "text": "Elly\n\"This power relay\nhas burned out.\"<Close>"
+    },
+    {
+      "id": 3,
+      "text": "Elly\n\"Nothing we can use\nin this cabinet.\"<Close>"
+    },
+    {
+      "id": 4,
+      "width": 42,
+      "height": 3,
+      "text": "Emeralda\n\"Found a spare relay.\nStill shiny!\"<Close>"
+    },
+    {
+      "id": 5,
+      "width": 48,
+      "height": 3,
+      "text": "Elly\n\"These are parts for the\narchive power circuit.\"<Close>"
+    },
+    {
+      "id": 6,
+      "width": 38,
+      "height": 3,
+      "text": "Elly\n\"The archive has no\npower.\"<Close>"
+    },
+    {
+      "id": 7,
+      "width": 44,
+      "height": 4,
+      "text": "Elly\n\"We need a replacement\nfor that relay.\"<Close>"
+    },
+    {
+      "id": 8,
+      "width": 38,
+      "height": 3,
+      "text": "Emeralda\n\"Maybe parts in the\nservice room?\"<Close>"
+    },
+    {
+      "id": 9,
+      "width": 44,
+      "height": 4,
+      "text": "Emeralda\n\"Elly...<Delay:30> something is\nglowing behind there.\"<Close>"
+    },
+    {
+      "id": 10,
+      "width": 44,
+      "height": 4,
+      "text": "Elly\n\"Hmm.<Delay:10> The archive lock\nneeds local power.\"<Close>"
+    },
+    {
+      "id": 11,
+      "width": 50,
+      "height": 3,
+      "text": "Elly\n\"Let us search the nearby\nservice cabinets.\"<Close>"
+    },
+    {
+      "id": 12,
+      "width": 34,
+      "height": 2,
+      "text": "ARCHIVE LOCK\n   DIRECTIVE 0320<Close>"
+    },
+    {
+      "id": 13,
+      "width": 34,
+      "height": 2,
+      "text": "ARCHIVE LOCK\n   DIRECTIVE 0320<Close>"
+    },
+    {
+      "id": 14,
+      "width": 34,
+      "height": 2,
+      "text": "ARCHIVE LOCK\n   DIRECTIVE 0320<Close>"
+    },
+    {
+      "id": 15,
+      "width": 44,
+      "height": 1,
+      "text": "Archive 0320 unlocked.<Close>"
+    },
+    {
+      "id": 16,
+      "width": 42,
+      "height": 2,
+      "text": "Zeboim launch archive\nonline.<Close>"
+    },
+    {
+      "id": 17,
+      "width": 34,
+      "height": 2,
+      "text": "Opening Directive\n0320.<Close>"
+    },
+    {
+      "id": 18,
+      "width": 38,
+      "height": 2,
+      "text": "Archive access code\n0320 recovered.<Close>"
+    },
+    {
+      "id": 19,
+      "text": "You cannot carry\n<Opcode:04:14>.<Close>"
+    },
+    {
+      "id": 20,
+      "text": " \n Recovered <Opcode:04:14><Close><Close>"
+    }
+  ]
+}

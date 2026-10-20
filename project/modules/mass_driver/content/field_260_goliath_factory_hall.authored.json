@@ -1,0 +1,62 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "GOLIATH FACTORY / LOWER WORKS\nDEFENSE BAY 03<New>AUTONOMOUS DEFENSE INTERFACE\nSTATUS: STANDBY\nLOCAL DRIVE CONTROL ONLY<Close>"
+    },
+    {
+      "id": 1,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "VIERGE\nPILOT LINK: ELLY\nREADY<Close>"
+    },
+    {
+      "id": 2,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "CRESCENS\nPILOT LINK: EMERALDA\nREADY<Close>"
+    },
+    {
+      "id": 3,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "<Elly>\n\"There they are. Citan got\nthem inside.\"<New><Emeralda>\n\"Crescens!\"<New>GUARDIAN CONTROL\nDefense inhibit rejected.\nCustodian frame deploying.<New><Elly>\n\"Emeralda, get to Crescens!\"<New><Emeralda>\n\"Hurry, Elly!\"<New><Elly>\n\"I'm coming!\"<Close>"
+    },
+    {
+      "id": 4,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "<Elly>\n\"Emeralda, are you all\nright?\"<New><Emeralda>\n\"I'm all right. Elly?\"<New><Elly>\n\"Yes...\"<New>Custodian core offline.\nWest bulkhead release\nenabled.<New><Elly>\n\"We can open the west\nbulkhead now. The control\npanel is upstairs.\"<New><Elly>\n\"We'll have to leave the\nGears here. They won't fit\nthrough the passage\nupstairs.\"<New><Elly>\n\"We'll come back for them\nafter the launch.\"<Close>"
+    },
+    {
+      "id": 5,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "NORTH TRANSFER DOOR\nLocal controls unavailable.\nDoor cannot be opened here.<Close>"
+    },
+    {
+      "id": 6,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "SOUTH PERSONNEL ACCESS\nCLEARANCE: HUMAN SCALE ONLY<Close>"
+    },
+    {
+      "id": 7,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "<Emeralda>\n\"Elly! Emeralda want to tell\nFei!\"<New><Elly>\n\"So do I... Come on. Citan's\ngone on ahead.\"<Close>"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "format": "xenogears-field-dialogue-replacements-v1",
+  "source_size": 639,
+  "source_sha256": "93de8261413501720be34f089bf47253e9bb04253e431b289888f311aab4c37e",
+  "block_count": 10,
+  "replacements": [
+    {
+      "id": 0,
+      "width": 60,
+      "height": 5,
+      "text": "Citan\n\"Elly! Emeralda! I found\na service route around\nthe sealed lift.\nI am going with you.\"<New>ZEBOIM DEFENSE UNIT ZD-808\nCENTRAL CONTROL GUARDIAN<New>Citan\n\"It has sealed the terminal.\nStay together!\"<New>Emeralda\n\"Citan came! Now there are\nthree of us.\"<New>Citan\n\"Four thousand years later,\nit still obeys its final\nmilitary order.\"<New>ZD-808\n\"Launch control is a\nmilitary asset.\"<New>ZD-808\n\"Directive 0320 is void\nunder emergency law.\nWithdraw or be terminated.\"<New>ZD-808\n\"Human command authority\nexpired four thousand\nyears ago.\"<New>ZD-808\n\"Autonomous defense remains\nin force. Target lock\ncomplete.\"<New>Elly\n\"It is overriding our\nauthorization!\"<New>Citan\n\"Its barrier draws power\nfrom the rail capacitors.\"<New>Emeralda\n\"Emeralda protects Elly\nand Citan!\"<New>Citan\n\"When the capacitors\ndischarge, its barrier\nwill fall.\"<New>Citan\n\"Strike the core together.\nWe must keep it from\nthe terminal!\"<Close>"
+    },
+    {
+      "id": 1,
+      "width": 56,
+      "height": 5,
+      "text": "ZEBOIM DEFENSE UNIT ZD-808\nCENTRAL CONTROL GUARDIAN\nCitan\n\"It has sealed the terminal.\nStay together!\"<Close>"
+    },
+    {
+      "id": 2,
+      "width": 52,
+      "height": 3,
+      "text": "Emeralda\n\"Citan came! Now there are\nthree of us.\"<Close>"
+    },
+    {
+      "id": 3,
+      "width": 58,
+      "height": 4,
+      "text": "Citan\n\"Four thousand years later,\nit still obeys its final\nmilitary order.\"<Close>"
+    },
+    {
+      "id": 4,
+      "text": "ZD-808\n\"Launch control is a\nmilitary asset.<New>Directive 0320 is void\nunder emergency law.<New>Withdraw or be<Byte:64>\nterminated.\"<Close>"
+    },
+    {
+      "id": 5,
+      "width": 52,
+      "height": 4,
+      "text": "ZD-808\n\"Human command authority\nexpired four thousand\nyears ago.<New>Autonomous defense remains\nin force.<New>Target lock<Byte:64>\ncomplete.\"<Close>"
+    },
+    {
+      "id": 6,
+      "width": 42,
+      "height": 3,
+      "text": "Elly\n\"It is overriding our\nauthorization!\"<Close>"
+    },
+    {
+      "id": 7,
+      "width": 52,
+      "height": 4,
+      "text": "Citan\n\"Its barrier draws power\nfrom the rail capacitors.\"<Close>"
+    },
+    {
+      "id": 8,
+      "width": 58,
+      "height": 3,
+      "text": "Emeralda\n\"Emeralda protects Elly\nand Citan!\"<Close>"
+    },
+    {
+      "id": 9,
+      "width": 56,
+      "height": 4,
+      "text": "Citan\n\"When the capacitors\ndischarge, its barrier\nwill fall.<New>Strike the core together.\nWe must keep it from\nthe terminal!\"<Close><Close>"
+    }
+  ]
+}

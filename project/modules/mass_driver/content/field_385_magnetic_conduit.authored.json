@@ -1,0 +1,20 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "LAUNCH-WORKS CONDUIT\nREMOTE BANK CONTROL<New>ARCHIVE CONSOLE D\nACCELERATOR INTERLOCK<Close>"
+    },
+    {
+      "id": 1,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "MAGNETIC JUNCTION\nCENTRAL GATE AHEAD\nDEFENSE ARCHIVE BEYOND<Close>"
+    }
+  ]
+}

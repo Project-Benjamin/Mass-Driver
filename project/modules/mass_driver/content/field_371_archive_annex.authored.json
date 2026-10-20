@@ -1,0 +1,20 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "PAYLOAD SAFETY STATION\nARCHIVED INSPECTION / 6079\nINSPECTOR: MARA<New>A loaded cradle was moved\nwhile a technician was still\nchecking its locks. No injury\nreported.<New>The movement was ordered from\nthe control desk.<New>The operator could see the\ncradle on the monitor. He\ncould not see the technician\nbehind it.<New>Do not accept a camera check\nin place of clearance from\nthe loading crew.<New>Keep the movement key at the\ncradle until the inspection\nis finished.<New>FOLLOW-UP<New>Movement key retained by the\nloading crew during the next\ntest. No further movement\norders received before\nclearance.<Close>"
+    },
+    {
+      "id": 1,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "PERSONNEL ACCESS DESK\nARCHIVED REGISTER / 6081\nSTRATEGIC LOADING AREA<New>ACCESS LIST REVISED\nCivil project passes no\nlonger permit entry.\nStrategic Command must\napprove each visit.<New>ENTRY REFUSED\nLena / Guidance\nPurpose: recover survey\nequipment.<New>DESK NOTE<New>Her name is on the equipment\nrecord, but not the access\nlist. Stores has confirmed\nthat the equipment belongs to\nthe civil project.<New>Request sent to Command. No\nreply recorded before the end\nof the shift.<Close>"
+    }
+  ]
+}

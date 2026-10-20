@@ -1,0 +1,36 @@
+{
+  "format": "xenogears-definitive-reviewed-translation-v1",
+  "disc": 1,
+  "field_id": 14,
+  "fat_index": 634,
+  "review_status": "static-reviewed",
+  "review_evidence": "Lahan chief house painting opening: exact website official rows chapter-01-r0008/r0009 match retail field 14 blocks 0/1; Fan passage wording preserved with line wrapping and displayed closing quotes. Existing Delay:20, Close and block IDs preserved. Widths expanded from 44 to 54 and 26 to 32 to fit the Fan wording within the original 3/4 row counts. All nine components compared after rebuild; only dialogue changes. Emulator scene and box placement remain unverified.",
+  "source_field_sha256": "effa431ffd4cf8c547924c3523666891e7b036ebdb5ba859fc218e441cd7a1fd",
+  "source_dialogue_sha256": "8c6a6045901d571013be96d94dfaad61184dc6b377fc66381981c0dee981e947",
+  "runtime_status": "not_playtested",
+  "scope": "Two-block compiler proof only; excluded from complete retranslation option.",
+  "blocks": [
+    {
+      "block_id": 0,
+      "source_payload_sha256": "b9c08361878156ae01378792aa2fdbb6c7cdbb959199fd0b6c2ad26ce2a60669",
+      "fan_unit_ids": [
+        "story01-b003-u001"
+      ],
+      "fan_units_sha256": "4922f8dddf7289b7e313c47578d2761a6356c46e513f4fe288c36035eaaa6fa3",
+      "text": "Fei\n\"Whew!<Delay:20>\nThat should about do it...\"<Close>",
+      "width": 54,
+      "height": 3
+    },
+    {
+      "block_id": 1,
+      "source_payload_sha256": "06c65089ae2ab57930d680ed22ec626e2e02cb4c1a7ab037574fc507ebb0b3cd",
+      "fan_unit_ids": [
+        "story01-b003-u002"
+      ],
+      "fan_units_sha256": "34a836a541499f12537dba1d94bfd0f5b54307ab45422691ce8dfd6667c8d9fd",
+      "text": "Fei\n\"All right...\nGuess I'll take\na little break.\"<Close>",
+      "width": 32,
+      "height": 4
+    }
+  ]
+}

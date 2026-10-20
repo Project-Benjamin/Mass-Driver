@@ -1,0 +1,3 @@
+# Versions used by the V169 candidate; install in the project .venv.
+Pillow==12.3.0
+numpy==2.5.1

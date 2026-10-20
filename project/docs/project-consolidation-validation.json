@@ -1,0 +1,93 @@
+{
+  "format": "xenogears-consolidation-audit-v1",
+  "runtime_acceptance": "pending",
+  "prepared_payloads_match_pre_move_baseline": true,
+  "discs": [
+    {
+      "profile": "mass_driver",
+      "disc": 2,
+      "path": "builds/mass_driver/organized-v1/Xenogears_Reimagined_mass_driver_organized-v1_CD2.bin",
+      "size": 696144960,
+      "sha256": "b72f2fd563dea6252b21899d06f81b91489f15b1ea50728545c049faa65aaebd",
+      "replacement_payloads_verified": 166,
+      "replacement_sectors_verified": 5877,
+      "native_title_boot_lba": 172938
+    },
+    {
+      "profile": "soylent_system",
+      "disc": 2,
+      "path": "builds/soylent_system/organized-v1/Xenogears_Reimagined_soylent_system_organized-v1_CD2.bin",
+      "size": 698816832,
+      "sha256": "e228a01d3dac8f491ef96ef5b175b73fb1a2b413e18e03549f2dbd232e562268",
+      "replacement_payloads_verified": 34,
+      "replacement_sectors_verified": 1640,
+      "native_title_boot_lba": 172938
+    },
+    {
+      "profile": "rico",
+      "disc": 1,
+      "path": "builds/rico/organized-v1/Xenogears_Rico_Arc_Disc_1.bin",
+      "size": 719175744,
+      "sha256": "39e48aacfbc98422d30cb3c1c08cb2383b2de062a15a52eae27a9103099d1fd8",
+      "replacement_payloads_verified": 38,
+      "replacement_sectors_verified": 2245
+    },
+    {
+      "profile": "rico",
+      "disc": 2,
+      "path": "builds/rico/organized-v1/Xenogears_Rico_Arc_Disc_2.bin",
+      "size": 692205360,
+      "sha256": "0dc39d87f0520b2309dda46df30e6284e8d2a097cd4b3d7064a6d3583810693b",
+      "replacement_payloads_verified": 38,
+      "replacement_sectors_verified": 2245
+    },
+    {
+      "profile": "combined",
+      "disc": 2,
+      "path": "builds/combined/organized-v1/Xenogears_Reimagined_combined_organized-v1_CD2.bin",
+      "size": 703135104,
+      "sha256": "4b9a056d64c847d2c0b5ce66651f65f1e31a62ffc183b4c5612bfaec246dd907",
+      "replacement_payloads_verified": 223,
+      "replacement_sectors_verified": 9312,
+      "native_title_boot_lba": 172938
+    }
+  ],
+  "protected_miang_memory_sha256": "2b0192e5583de560cf50756a9fadd41176dca8b28d9c18930ba43816cb61574b",
+  "tests": {
+    "total": 912,
+    "passed": 906,
+    "skipped": 6,
+    "elapsed_seconds": 261.76,
+    "command": "python -m unittest discover -s tests -q"
+  },
+  "entrypoints": {
+    "legacy_module_aliases_verified": 89,
+    "outside_project_cli_help_verified": [
+      "project.py",
+      "modules/mass_driver/build.py",
+      "modules/soylent_system/build.py",
+      "modules/soylent_system/base.py",
+      "modules/rico/build.py",
+      "shared/tools/build_combined.py",
+      "modules/mass_driver/tools/build_mass_driver_graybox.py",
+      "modules/mass_driver/tools/export_mass_driver_dialogue.py",
+      "modules/mass_driver/tools/prepare_mass_driver_normal_combat.py",
+      "shared/tools/xgworldmap.py",
+      "shared/tools/xenoiso_build.py",
+      "tools/build_mass_driver_dungeon.py",
+      "tools/build_surface_soylent_campaign.py",
+      "tools/build_rico_arc.py",
+      "tools/build_unified_content_disc.py",
+      "archive/repairs/rico/migrate_rico_arc_intro_slot1.py",
+      "archive/repairs/soylent_system/migrate_surface_soylent_v233_slot1_to_v235.py"
+    ]
+  },
+  "source_content_preservation": {
+    "byte_identical_files": 79,
+    "path_reference_only_changes": [
+      "modules/mass_driver/content/reconstruction_metadata.json",
+      "modules/soylent_system/content/dungeon_plan.json"
+    ],
+    "original_readme_byte_identical": true
+  }
+}

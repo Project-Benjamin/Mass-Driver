@@ -1,0 +1,47 @@
+{
+  "format": "mass-driver-public-player-release-v1",
+  "content_version": "V176",
+  "source": {
+    "description": "Clean USA Xenogears Disc 2 (SLUS-00669), raw MODE2/2352 BIN",
+    "size": 688700880,
+    "sha256": "5eab85c683d4d7087d345b587472db9c44df29b35ce66553c2626d26018b947e"
+  },
+  "game": {
+    "bin_name": "Xenogears_Mass_Driver.bin",
+    "bin_size": 696140256,
+    "bin_sha256": "0dc54a5306e97f41989ddd519daec860821af1038817c29f35b5d4b5d8ad87f8",
+    "cue_name": "Xenogears_Mass_Driver.cue",
+    "cue_size": 84,
+    "cue_sha256": "bec6ef641e9529bbee486b77e2c4ef02815318b181d9c44a22b455c9daa3c0e4"
+  },
+  "runtime": {
+    "tag": "v0.1-7371",
+    "commit": "b2577ef8bdaae99840874b6dae8146f0316357b4",
+    "archive_sha256": "b1036ea9dbf91609cef77daf03bdf2efce19b03ed3d6b4ea7c5c3396f5fc3b96",
+    "exe_sha256": "10d0d2db84e93b7c1700e2e9a20f1a34a3511f735952565c26714334825967c6",
+    "license": "GPL-3.0",
+    "source_archive_sha256": "38a4fa18425a175b66cbe29b29bbd92336715fa0a6fbf08a99ac9d636cf1f489"
+  },
+  "bios": {
+    "size": 524288,
+    "ntsc_u_md5s": [
+      "924e392ed05558ffdb115408c263dccf",
+      "dc2b9bf8da62ec93e868cfd29f0d067d",
+      "da27e8b6dab242d8f91a9b25d80c63b8",
+      "490f666e1afb15b7362b406ed1cea246",
+      "1e68c231d0896b7eadcad1d7d8e76129",
+      "9a09ab7e49b422c007e6d54d7c49b965",
+      "6e3735ff4c7dc899ee98981385f6f3d0"
+    ],
+    "source": "https://github.com/stenzek/duckstation/blob/b2577ef8bdaae99840874b6dae8146f0316357b4/src/core/bios.cpp"
+  },
+  "required_system_vc_dlls": [
+    "msvcp140.dll",
+    "msvcp140_1.dll",
+    "msvcp140_2.dll",
+    "vcruntime140.dll",
+    "vcruntime140_1.dll"
+  ],
+  "microsoft_runtime_download": "https://aka.ms/vs/17/release/vc_redist.x64.exe",
+  "microsoft_binaries_included": false
+}

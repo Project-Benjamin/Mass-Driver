@@ -1,0 +1,27 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "DEFENSE BAY 03\nLAUNCH AUTHORITY VERIFIED\nDEFENSE INHIBIT REJECTED\nEMERGENCY LAW STILL ACTIVE\nCUSTODIAN FRAME DEPLOYING<New><Elly>\n\"I can't believe this robot\nis still operational after\nall this time...\"<New><Elly>\n\"The Custodian Core must have\ntransferred into it. It is\nguarding our Gears.\"<New><Elly>\n\"The code opened the bay, but\nit still considers us\nintruders. Board quickly.\nKeep launch control intact.\"<New><Emeralda>\n\"Then Emeralda shuts down\nvery old robot!\"<Close>"
+    },
+    {
+      "id": 1,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "CUSTODIAN CORE OFFLINE\nDEFENSE LOOP ENDED\nLAUNCH AUTHORIZATION ACTIVE\nWEST BULKHEAD UNLOCKED<New><Emeralda>\n\"Old robot finally stopped!\"<New><Elly>\n\"The defense loop has ended.\nWe can go back through the\nfactory and return upstairs.\nThen use the west bulkhead.\"<Close>"
+    },
+    {
+      "id": 2,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "DEFENSE BAY ACCESS DENIED\nLAUNCH AUTHORITY NOT FOUND<New>Return to the archive above\nand complete authorization\nat the wall console.<Close>"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "<Elly>\n\"The directory is still\nlegible. Control and Research\nis west. Materials Storage\nis below the east wing.\"<New><Elly>\n\"The accelerator interlock\nis north, at Archive Console\nD. Central Gate lies beyond\nit.\"<Close>"
+    },
+    {
+      "id": 1,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "<Elly>\n\"Two separate systems power\nthe Central Gate: the\nAuxiliary Grid and the\naccelerator banks.\"<New><Elly>\n\"There is an authorization\nstation beyond it. The old\nrecords in these wings may\ntell us what it expects.\"<Close>"
+    },
+    {
+      "id": 2,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "SERVICE DIRECTORY<New>CONTROL AND RESEARCH\nANNEX - WEST WING<New>FOUR-POINT AUTHORITY\nMATERIALS STORAGE\nLOWER EAST<Close>"
+    },
+    {
+      "id": 3,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "SERVICE DIRECTORY\nNORTH PASSAGE\nACCELERATOR CONDUIT<New>BEYOND THE CONDUIT\nLAUNCH SUPPORT\nCENTRAL GATE<Close>"
+    },
+    {
+      "id": 4,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "CENTRAL GATE\nAUXILIARY GRID: NO POWER\nACCELERATOR BANKS: NO POWER<Close>"
+    },
+    {
+      "id": 5,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "EMERGENCY DIRECTIVE\nCONTROL AND RESEARCH ANNEX\nWEST WING<Close>"
+    },
+    {
+      "id": 6,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "FOUR-POINT AUTHORITY\nMATERIALS STORAGE\nLOWER EAST<Close>"
+    },
+    {
+      "id": 7,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "ACCELERATOR POWER\nARCHIVE CONSOLE D\nMAGNETIC BANK INTERLOCK<Close>"
+    },
+    {
+      "id": 8,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "AUTHORIZATION TERMINAL\nDEFENSE ARCHIVE\nBEYOND CENTRAL GATE<New>CENTRAL CONTROL\nBEYOND FIVE PAYLOAD VAULTS<Close>"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "<Elly>\n\"So this is the Mass\nDriver... The power is still\non.\"<New><Elly>\n\"The hangar has an entrance\noutside. Citan will bring our\nGears in that way.\"<New><Elly>\n\"He'll meet us at Central\nControl.\"<New><Elly>\n\"We have to send Taura's\ncapsule into the upper\natmosphere.\"<New><Elly>\n\"Once the nanomachines\nspread, they should remove\nthe Limiter.\"<New><Emeralda>\n\"Emeralda ready! Come on,\nElly!\"<New><Elly>\n\"All right. Let's go.\"<Close>"
+    },
+    {
+      "id": 1,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "<Elly>\n\"The controls should be\nsomewhere below us.\nLet's look for a directory.\"<Close>"
+    },
+    {
+      "id": 2,
+      "width": 50,
+      "height": 4,
+      "text": "<Emeralda>\n\"Even after all this time...\nthe old lift still moves.\"<Close>"
+    },
+    {
+      "id": 3,
+      "width": 30,
+      "height": 2,
+      "text": "SURFACE ACCESS LIFT\nDESCENT CIRCUIT ACTIVE<Close>"
+    },
+    {
+      "id": 4,
+      "width": 50,
+      "height": 4,
+      "text": "LIFT CONTROL\nLOWER LANDING SELECTED<Close>"
+    },
+    {
+      "id": 5,
+      "width": 48,
+      "height": 4,
+      "text": "CAUTION\nStand clear of the platform edge.<Close>"
+    },
+    {
+      "id": 6,
+      "width": 46,
+      "height": 1,
+      "text": "AUTHORIZED PERSONNEL ONLY<Close>"
+    },
+    {
+      "id": 7,
+      "width": 46,
+      "height": 2,
+      "text": "LIFT IN MOTION\nKEEP CLEAR<Close>"
+    },
+    {
+      "id": 8,
+      "width": 46,
+      "height": 1,
+      "text": "AUTHORIZED PERSONNEL ONLY<Close>"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "format": "xenogears-rico-anthology-v1",
+  "title": "Rico: Emotion and Resolve",
+  "chapter_hubs": {
+    "disc1": 720,
+    "disc2": 229
+  },
+  "chapters": [
+    "chapter_01_mothers_promise.json",
+    "chapter_02_the_champ.json",
+    "chapter_03_the_locked_room.json",
+    "chapter_04_the_buried_ship.json",
+    "chapter_05_protocol_b.json",
+    "chapter_06_things_left_to_do.json",
+    "chapter_07_resolve.json"
+  ],
+  "notes": [
+    "This is a standalone Rico-focused anthology, not a replacement chronology for an ordinary retail save.",
+    "Both patched discs contain all seven self-contained chapters.",
+    "Every chapter is directly selectable. No cross-disc save dependency is required.",
+    "The chapter hub never requires a live disc swap; Xenogears keeps its archive table resident until restart."
+  ]
+}

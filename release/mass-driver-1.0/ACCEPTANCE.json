@@ -1,0 +1,53 @@
+{
+  "format": "mass-driver-1.0-release-evidence-v1",
+  "content_version": "V176",
+  "disc_sha256": "0dc54a5306e97f41989ddd519daec860821af1038817c29f35b5d4b5d8ad87f8",
+  "profile_tests": {
+    "run": 426,
+    "passed": 424,
+    "existing_skips": 2
+  },
+  "fresh_main_route": {
+    "version": "V176",
+    "firmware": "Unmodified supported USA Sony BIOS",
+    "core": "PCSX-ReARMed r26 c881679",
+    "core_sha256": "07ca19b6164a2dffaaa182c7b4303387c0edb9adbf37b7751d2093f597ef8702",
+    "native_steps": 109,
+    "result": "NewGame through Guardian victory, protected memory, full launch, recovered Gears and exterior movement; ordinary save and cold Continue in a separate legitimate branch."
+  },
+  "finite_graph_coverage": {
+    "version": "V175",
+    "firmware": "HLE",
+    "fields": 33,
+    "directed_connections": 66,
+    "missing_fields": [],
+    "missing_connections": [],
+    "carry_forward": "All final disc bytes outside field376 resource1358 unchanged; that script changes only four Missile Command button-mask bytes."
+  },
+  "final_native_minigame": "V176 Sony Triangle controls, waveclear, loss, retry and400point/wave2 record nativeSave/coldContinue passed.",
+  "other_scopes": [
+    "Allthree native random formations victory/Escape",
+    "Native shops and recovery",
+    "Fivewrong authorization branches and recovery",
+    "Guardian defeat/retry",
+    "Completed revisits and parkedGears boarding",
+    "Seven archive video clips",
+    "NUKE full mission8930/level19, nativeSave/coldContinue record",
+    "Bothpower operation orders and no-clue hints"
+  ],
+  "public_package": {
+    "payload_files": 357,
+    "raw_game_bios_or_user_data_included": false,
+    "microsoft_binaries_included": false,
+    "code_signed": false,
+    "installer_sha256": "80bf9a93b08bc4d38eda76d2f709dfafbf010c8574d8b102cf8f673f8ccdbc1c",
+    "reproducible": true
+  },
+  "limitations": [
+    "Finite acceptance rather than every possible action/timing/hardware configuration.",
+    "Complete main route tested in native libretro core; Windows packaged frontend received separate integration checks.",
+    "Physical controller hardware and clean Windows VM were not tested.",
+    "Official Microsoft download/signature path verified; its installer not executed."
+  ],
+  "proprietary_test_materials_published": false
+}

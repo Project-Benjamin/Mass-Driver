@@ -1,0 +1,37 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 44,
+      "height": 2,
+      "text": "MASS DRIVER WORKS\nPERSONNEL PRESSURE LOCK<Close>"
+    },
+    {
+      "id": 1,
+      "width": 48,
+      "height": 4,
+      "text": "SERVICE VESTIBULE\nPRESSURE LOCK AHEAD<Close>"
+    },
+    {
+      "id": 2,
+      "width": 52,
+      "height": 4,
+      "text": "CREW TRANSIT LINE\nPLATFORM ACCESS<Close>"
+    },
+    {
+      "id": 3,
+      "width": 46,
+      "height": 3,
+      "text": "LOCAL TERMINAL OFFLINE\nROUTE CONTROL UNAVAILABLE<Close>"
+    },
+    {
+      "id": 4,
+      "width": 52,
+      "height": 4,
+      "text": "PRESSURE-LOCK STATION\nARCHIVED DUTY LOG<New>Shift transfer suspended.\nCommand line: no response.\nPressure lock: sealed.<New>Release authorization:\npending.<New>DUTY OFFICER<New>Request release for the\npersonnel still in the\nvestibule.<New>The next shift cannot\nenter while they are held\nhere.<New>No later entry stored.<Close>",
+      "manual_wrap": true
+    }
+  ]
+}

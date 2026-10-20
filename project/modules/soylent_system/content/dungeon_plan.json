@@ -1,0 +1,976 @@
+{
+  "format": "xenogears-surface-soylent-campaign-plan-v2",
+  "title": "Ignas Surface Soylent System",
+  "final_release": {
+    "content_version": "1.1",
+    "revision": 240,
+    "release": "soylent-v240-polish-20260926",
+    "status": "Final authored content; native runtime acceptance pending",
+    "one_hit_kills": true,
+    "combat_choice": "User explicitly requested keeping one-hit kills in the final release.",
+    "keycard_room": "Field 593 remains NPC-empty; the Quarantine keycard terminal and native exit remain intact.",
+    "finishing_changes": [
+      "Explicit completion epilogue and repeat acknowledgement with save and emergency-return guidance",
+      "All seventeen Generation Hall survivor conversations respond to the completed local shutdown",
+      "Accepted Quarantine ring visuals persist when local selection state resets",
+      "Written five-direction resonance clue and clear permanently decommissioned shaft notice"
+    ],
+    "preserved": "Eighteen rooms, native battles, doors, save handoffs, rewards, state ownership and reciprocal return route",
+    "polish_changes": [
+      "Sorting/Core controls show current status immediately with optional Review instructions",
+      "Clinic memoranda remain available after shutdown; Current status is a separate option",
+      "The field-591 physician offers an optional post-shutdown care plan with Citan",
+      "The sealed-shaft panel provides a service directory; the Ward offers Next objective",
+      "Sorting material movement stops on reentry after its existing diversion is committed"
+    ],
+    "current_notes": "docs/soylent-system-polish-1.1.md",
+    "player_guide": "docs/soylent-system-player-guide.md"
+  },
+  "current_expansion": {
+    "version": 238,
+    "release": "soylent-v238-discoveries-20260926",
+    "status": "Implemented; full emulator playthrough pending",
+    "quarantine": "Four pod controls report INCLUDED or EXCLUDED after each toggle, explain biological readings versus caste, and show read-only accepted results after completion. The native solution and both exits remain intact.",
+    "ward": "A fifth Clearance report option lists missing production authorizations and their locations without awarding them. Existing entry, HP/EP recovery, native save and Leave choices retain their indices.",
+    "clinical_discoveries": {
+      "fields": [591, 592, 594],
+      "terminal_choices": ["Patient record", "Staff memorandum", "Leave"],
+      "reward": "Optional staff notes provide Sorting and Core clues and personal details about the patients.",
+      "aftermath": "Patient and doctor dialogue changes after Meld is witnessed and again after the local facility is secured; memoranda then report halted transfers.",
+      "writes_state": false
+    },
+    "preserved": "Field 593 stays NPC-empty; both keycards, all native doors, battles and the eighteen-field route remain. One-hit testing stays enabled.",
+    "current_notes": "docs/soylent-system-v238.md"
+  },
+  "status": "Historical V233 baseline; current_release below retains its frozen V233 evidence. V233 activates the visible workstation in the NPC-empty field-567 examination room. Three narrow, facing-gated X carriers cover only the actual side computer bank and repeatably report that no patient is loaded, without writing progression state. V232's distinct two-page patient records in fields 591-594, saved aisle position rejection, field-593 Quarantine-keycard choice and post-pickup record, V230 Classification Archive correction, occupied doctors and hopeful patients, field-550 story office and 100% PERFECT FIT record, field-620 end notice, keycard topology, aperture-coplanar Intake leaves, and all deliberate-X door contracts remained unchanged at that baseline. Current room occupancy is recorded in rooms and private_treatment_population: V237 removes the field-593 patient and doctor while preserving the keycard terminal and stored diagnostic record.",
+  "source_of_truth": {
+    "blueprint": "tools/surface_soylent_campaign_blueprint.py",
+    "builder": "tools/build_surface_soylent_campaign.py",
+    "foundation": "tools/build_surface_soylent_dungeon.py (v173 reciprocal-door conversion)",
+    "reserved_room_donors": "modules/soylent_system/content/reserved_room_donors.json"
+  },
+  "current_release": {
+    "version": 233,
+    "bin": {"path": "output/Xenogears_PW_CD2_mass_driver_surface_soylent_v233.bin", "size": 698816832, "sha256": "f50fa064e8d466bde46e0946a4c1ea7dc556a6a94d85f4632de201934318a72b"},
+    "cue": {"path": "output/Xenogears_PW_CD2_mass_driver_surface_soylent_v233.cue", "size": 112, "sha256": "106149772cdd6b12a460be98858e59d268fb1e01008d12b81f3eda80dd04ca28"},
+    "repeat_manifest": {"path": "work/v233r_stage/manifest.json", "size": 136361, "sha256": "b79d7a866ba29ad9a5f488bf6e004310f5a5a2c32ed73aaf676eee3154ac4d1a"},
+    "field_549": {
+      "bundle": {"size": 23332, "sha256": "8bdb39fab5c1e7dbd201c0f0d53368c3a754d36bf698fa717558202852bdeefe"},
+      "script": {"size": 3841, "sha256": "2dd2804d33004a52b66e676adb3ba9d978532ad21c80ca6da4d84f9ba1e3c999"},
+      "dialogue": {"size": 2125, "sha256": "57ed56cde500d327df72112d7d47823b0e66ba25c969b90ce5d9c259a5c7401b"},
+      "archive_return_seal": {"entity": 16, "center": [-244, 248], "radius_script_units": 8, "effective_player_contact_radius": 32, "southwest_ray_clearance_world_units": 5.639441995778888, "closed_cut_triangles": [6, 10, 11, 12, 13]},
+      "archive_return_x": {"entity": 6, "script": 2, "center": [-240, 240], "effective_half_extents_world_units": [36, 40], "automatic_proximity_action": false}
+    },
+    "field_550": {
+      "bundle": {"size": 78024, "sha256": "b75339d2fdefc2291f2e130329adddafc29a3ca42941c5a24487b3ea6ab9a698"},
+      "script": {"size": 5414, "sha256": "83329cf20bf5bd16e217e7fb445d399ccb2301b612e54c4910a3f19ec91d9a85"},
+      "header": {"size": 1008, "sha256": "438e5449e97b1de003fde24bf40ecf8b68f9a14a612e6fb58a53b4f9dbfa1db6"},
+      "dialogue": {"size": 6056, "sha256": "3c1f8cc6906384c6a9a0bb23ee5710bde6a524f656baa4b6ac8c49659d51bc4e"},
+      "walkmesh": {"size": 1948, "sha256": "abea233198e3a4430536a2e736d39c7a86bc1eb27da44a8d8cca4238393571df"}
+    },
+    "field_567": {
+      "bundle": {"size": 83548, "sha256": "6f4be9fa9932c77094b2ff09875ee5a035e145662efd83ba50b1b879d5c36999"},
+      "script": {"size": 3281, "sha256": "24eb53d1aaa10678f2815cf5fe89e80455c592319d6d69712932f4941793790d"},
+      "header": {"size": 944, "sha256": "daa0e99244adbe653367a2257024add96d21d40af973c879e2c18a2bebb925b9"},
+      "dialogue": {"size": 5232, "sha256": "2f15ffdeda92ec407a983737cd0acf550856725718b4fb6a05df046e47f2d8fd"},
+      "walkmesh": {"size": 1948, "sha256": "abea233198e3a4430536a2e736d39c7a86bc1eb27da44a8d8cca4238393571df"},
+      "terminal": {"carrier_entities": [4, 5, 6], "init_pcs": [1102, 1131, 1717], "action_pc": 1746, "dialogue_id": 53, "positions": [[80, -167], [116, -167], [152, -167]], "triangles": [31, 6, 6], "half_extents_script_units": [1, 15], "effective_half_reach_world_units": [18, 46], "requires_facing": true, "repeatable": true, "read_only": true, "writes_state": false, "doctor": null, "patient": null, "text": "PATIENT RECORD\nNo patient is loaded\nfor this room.<Close>"}
+    },
+    "field_352_family": {
+      "scenes": [550, 567, 591, 592, 593, 594],
+      "automatic_forward_poll": false,
+      "x_button_required": true,
+      "global_update": {"entity": 0, "script": 1, "opcode": "STOP", "pc": "0x068C"},
+      "retired_automatic_cavity": {"span": ["0x044E", "0x04A5"], "size": 87, "source_sha256": "85581a31b32134e75912714f1e71cbe0957721e289f114f954a98ed7c4ca8824", "empty_room_sha256": "dd87cc07ee6313fe77431e34af52c9158d41a59498f9abf056013feac490a400", "byte_identical_scenes": [550], "side_terminal_carrier_scenes": [567, 591, 592, 593, 594], "side_terminal_init_entry_points": [{"entity": 4, "script": 0, "pc": "0x044E"}, {"entity": 5, "script": 0, "pc": "0x046B"}], "field567_third_carrier": {"entity": 6, "script": 0, "pc": "0x06B5"}, "other_active_entry_points": 0},
+      "seal_center": [0, 266],
+      "seal_half_extents_script_units": [24, 8],
+      "walkmesh_size": 1948,
+      "walkmesh_sha256": "abea233198e3a4430536a2e736d39c7a86bc1eb27da44a8d8cca4238393571df"
+    },
+    "retained_field_621": {
+      "bundle": {"size": 135644, "sha256": "168fb1fb14a0c4745725396aae8d5831d931cd30d0d1c67eb6e8d654708eb2bd"},
+      "script": {"size": 10895, "sha256": "a7c52258a56f10a1bea9e8ee7cdc9c7730b78bd1c21f524a12a108302a2172f2"},
+      "header": {"size": 1408, "sha256": "2d05178f666806c9eaed864d63c44ec41822adeb1164d13e69e50e9cde55432d"}
+    },
+    "occupied_patient_records": {
+      "policy": "each occupied field-352 treatment room has one repeatable, read-only two-page diagnostic record for the demihuman patient beside its bed; field 593's one-time Quarantine-keycard prompt remains before its post-acquisition record",
+      "terminal_interaction": {"static_model_index": 3, "source_header_node": 22, "authored_header_node": 23, "model_size": 1436, "model_sha256": "bc7ed77986a3133bed3e6f3de6d4b7c59ca4f92c4ef45f69130bef34946baa28", "carrier_entities": [19, 4, 5], "positions": [[80, -167], [116, -167], [152, -167]], "triangles": [31, 6, 6], "half_extents_script_units": [1, 15], "effective_half_reach_world_units": [18, 46], "requires_facing": true, "init_facing_opcode": "F8 03 04 00", "saved_slot_1_rejected": {"field": 593, "position": [75.00785827636719, -77.75068664550781], "triangle": 8, "yaw": "0x0400"}, "frontage_proof": {"reachable_points": 1201, "workstation_yaw": "0x0400", "bed_yaw": "0x0800", "bed_yaw_accepted_points": 0}},
+      "591": {"dialogue_id": 53, "patient_id": "H-591-04", "type": "long-muzzled demihuman", "bundle": {"size": 63640, "sha256": "bb852caeac217e5ab0d5c26fbd9ebbfb6caf21f6c21a64798022a6cee5e89297"}, "script": {"size": 3455, "sha256": "c7f7fbc7bd5a82b006e6e351121dde668f15ec167f66d47b6ac4c31df1dc71a1"}, "dialogue": {"size": 5547, "sha256": "f17545e5f7dce86a4fd857341428ec6dfcc454a77641f92d6a6693fadfcf00ef"}},
+      "592": {"dialogue_id": 53, "patient_id": "N-592-07", "type": "cream-furred demihuman", "bundle": {"size": 64184, "sha256": "9398ec12f0164f543321c14e40dbcd9c156403b33c245bd707b1d22442ff65df"}, "script": {"size": 3455, "sha256": "429ad93c0fd8becd2b9fa456507d1f5fd586c323badf40611bf2f3d07a4df2d4"}, "dialogue": {"size": 5551, "sha256": "c774f221679530eca7b78cdcd0c0686cab9d281fc1048419c992c45de8cf1eb9"}},
+      "593": {"dialogue_id": 55, "patient_id": "A-593-12", "type": "shelled demihuman", "bundle": {"size": 69676, "sha256": "e60e85c8f0bc6225adb78b4c25fabf9411520f32610bf6fe926e85f7253e50e1"}, "script": {"size": 3515, "sha256": "8669b5754be76c7928026bfc40e8e84e4ae0a1797dfef802f06a2b0756c43785"}, "dialogue": {"size": 5766, "sha256": "92d7f6d9ab86a53e8cabd300bc7bb84d8bbb04142f9aa9c4f91a9bd5578b828e"}},
+      "594": {"dialogue_id": 53, "patient_id": "T-594-03", "type": "fin-armed demihuman", "bundle": {"size": 72116, "sha256": "194613b51b0e7b30140f7181d8a3779f612c6cfb4c7a8b4bd38699ea5226669b"}, "script": {"size": 3453, "sha256": "637b1c0d04691b2dd3e693607d5e007cec4b259e59434bff09ad278e2f3771d1"}, "dialogue": {"size": 5550, "sha256": "699a16a2e6764a798109fbe89e530a7e07876454357c048e65437a927f0d6829"}}
+    },
+    "migration": {
+      "source": {"path": "work/save_candidates/SLUS-00669_1_v231_field593_terminal_proximity_6adde32f.sav", "size": 1839559, "sha256": "6adde32f8351a7e6201bb6d40dafc7b11d00910bf13f33066a905549047fbe48"},
+      "candidate": {"path": "work/save_candidates/SLUS-00669_1_v232_from_6adde32f_field593_terminal_proximity.sav", "size": 1661998, "sha256": "eae5680680e2a197d2333524ce254483cd921b8f12bfab4b325ac2b9269be45f"},
+      "report": {"path": "work/save_candidates/SLUS-00669_1_v232_from_6adde32f_field593_terminal_proximity.json", "size": 3913, "sha256": "bdaa558f721cbd720ee5682f37adc8db28a2bd0d8493179092e25af62a178858"},
+      "decompressed_payload": {"size": 3819109, "sha256": "87e80394311c328302d8ec21f6526129f3c42cb5f1a3902d1b7a0be2aa7d17b1", "bytes_changed": 112, "triplet_sha256": "7abe4ec67aa7cb8a61365df698ab1c35c4d8282f952668a6f407793c3fce47d1", "breakdown": {"archive_table": 4, "resident_script": 84, "resident_cached_header": 1, "terminal_runtime": 23}},
+      "compressed_payload": {"size": 1620309, "sha256": "7632b5c01a7165092b70195573938288448ab441939b98270aff4eb9c6adc701"},
+      "resident_hashes": {"ram": "a11ad580783f9940f467d7992eeed01bc34c309277d970cbcbf0f8b58ddea00c", "archive_table": "194ecb959cc2af747bc3286f28dc1a54b07c33beb714183eea4938764a1ec2c6", "field_593_script": "8669b5754be76c7928026bfc40e8e84e4ae0a1797dfef802f06a2b0756c43785", "field_593_header_hybrid": "fda02b034ab1c11419710906c4ee3e114c95c62a0ee84582be135848e51feba6", "prepared_media_header": "eb74bc65af5847bca1b039064a61c7398e2b1013c5c739d913d7edb024308108", "dialogue": "92d7f6d9ab86a53e8cabd300bc7bb84d8bbb04142f9aa9c4f91a9bd5578b828e", "walkmesh": "abea233198e3a4430536a2e736d39c7a86bc1eb27da44a8d8cca4238393571df"},
+      "resident_terminal_projection": {"entities": [19, 4, 5], "positions": [[80, -167], [116, -167], [152, -167]], "triangles": [31, 6, 6], "half_extents_script_units": [1, 15], "requires_facing": true, "shared_action_pc": "0x06E0", "queued_initializers": {"e4": "0x044E", "e5": "0x046B"}, "primary_runtime_bytes_changed": 9, "auxiliary_runtime_bytes_changed": 14, "old_aisle_carrier_disabled": true},
+      "preservation": {"field_variables": true, "fei_party_gamestate_camera": true, "patient_doctor_and_unrelated_actor_state": true, "dialogue_and_windows": true, "security_and_quarantine_keycards": true, "resident_component_sizes": true, "resident_v231_packed_stream_offsets": true, "resident_archive_volatile_tail": true, "allocator_safe": true, "round_trip_verified": true},
+      "policy": "apply only to the exact V231 field-593 Save 1 identity; rebuild the resident archive table for V232 while preserving its volatile tail, install V232's equal-size resident ATEL, preserve the live V231 packed-stream offsets and patch only e19's cached-header Z coordinate, directly normalize the stopped e19 carrier, queue dormant e4/e5 through their new initializers, and preserve Fei's exact saved aisle stance, party, GameState, field variables, camera, keycards, dialogue, windows, patient, doctor, every unrelated actor, component boundaries, and heap neighbors; a cold field reload uses the ordinary V232 header and scripts"
+    },
+    "v232_to_v233_migration": {
+      "helper": {"path": "tools/migrate_surface_soylent_v232_slot1_to_v233.py", "size": 75617, "sha256": "3c7fe81b7657213c97090b8ba0a96d7551ea2a22dbb66cbc7fc5a65b484ea13f"},
+      "source": {"path": "work/save_backups/SLUS-00669_1_v232_field567_empty_terminal_3f09a8ce.sav", "size": 1607991, "sha256": "3f09a8cea70ce09c87b2bc0892ad8e427cc90d7fcf1759b8677413927c20b022"},
+      "candidate": {"path": "work/save_candidates/SLUS-00669_1_v233_from_3f09a8ce_field567_empty_terminal_native_init.sav", "size": 1457268, "sha256": "b9b41cbc756300f6567a7c1cdc6b304e44bc57e025f1a4a51ff74aae84742acf"},
+      "report": {"path": "work/save_candidates/SLUS-00669_1_v233_from_3f09a8ce_field567_empty_terminal_native_init.json", "size": 6393, "sha256": "c870d9f441933eb0170fb0ce5accf0ca78013acef1cab66095870533da22575a"},
+      "decompressed_payload": {"size": 3819109, "sha256": "805b6f3e2a57aba686f2ce21e1192f9746127843cb06dd5b6903f5ad042016a0", "bytes_changed": 456, "triplet_sha256": "e3d450721d6fea821459867123810a4c43676364cda74338aa921d86e02c2d16", "breakdown": {"archive_table": 1, "resident_script": 127, "relocated_dialogue": 307, "terminal_scheduler": 21}},
+      "compressed_payload": {"size": 1404452, "sha256": "b79a9c75dfc4163341d035afa4d4a88c5896494f0c95b8e5f17f4977bf4de0e6"},
+      "resident_hashes": {"ram": "976b6da70c96c9833e1ba6d548c3a3824977cdd9db26d91caae34dfec1f6dd51", "archive_table": "0e44380e3f69290b581d40209a0161e2a50defb7ab5d37323fdde4c0c00e97a2", "field_567_compat_script": "65077c3176cf791bf9b5c4adb7fc3b11fa37b741d3b34a1613c4f42eacef8b82", "field_567_compat_dialogue": "32711760eb45436f7f1dcdd9bc83a5918a9928c7c223447168b363f4d0648494", "field_567_header": "05b1d2423392975ca0c4f7b5c0fd98458aea16010da0926630edc1e04c5c7820", "walkmesh": "abea233198e3a4430536a2e736d39c7a86bc1eb27da44a8d8cca4238393571df"},
+      "resident_terminal_projection": {"entities": [4, 5, 6], "positions_after_native_init": [[80, -167], [116, -167], [152, -167]], "initializer_pcs": ["0x044E", "0x046B", "0x0488"], "initializer_cavity": "0x044E..0x04A4", "shared_action_pc": "0x05BD", "action_span": "0x05BD..0x05E3", "relocated_dialogue_id": 45, "normal_v233_dialogue_id": 53, "half_extents_script_units": [1, 15], "requires_facing": true, "native_surface_fallback": {"triangle": 0, "material_flag": "0x00400000", "normal": [0, 0, 0], "elevation": 0}, "saved_stance": [72.25076293945312, -141.23121643066406, 512], "saved_stance_is_within_terminal_reach": true},
+      "control_flow_proof": {"source_reachable_instructions": 52, "target_reachable_instructions": 93, "runtime_current_and_slot_pcs_scanned": 180, "source_runtime_pcs_in_replaced_spans": 0, "retired_id45_owner": "e16:s4", "retired_id45_reference_pc": "0x05C2", "retired_id45_reference_overwritten": true},
+      "preservation": {"field_variables": true, "fei_party_gamestate_camera": true, "dialogue_windows": true, "unrelated_actor_state": true, "resident_component_sizes": true, "resident_header_and_heap_layout": true, "resident_archive_volatile_tail": true, "offline_sprite_actor_bytes_changed": 0, "native_allocator_pointer_reuse_proven": true, "native_callback_list_effect_proven": true, "allocator_safe": true, "round_trip_verified": true},
+      "policy": "apply only to the exact preserved V232 field-567 Slot 1 identity while DuckStation is fully closed; rebuild the resident archive table for V233, keep V232's resident component sizes and header allocation, queue exact native V233 initializer bodies for retired entities 4, 5, and 6 in the verified 87-byte cavity, place the fixed-size read-only action in the control-flow-dead former e16:s4 span that contained the retired ID45 reference, relocate the new no-patient record into unreachable retail dialogue ID 45, and preserve Fei, party, GameState, field variables, camera, dialogue windows, every unrelated actor, and all offline sprite bytes; a cold field reload uses ordinary V233 ID 53 and full media components"
+    }
+  },
+  "historical_releases": {
+    "v230": {
+      "version": 230,
+      "bin": {"path": "output/Xenogears_PW_CD2_mass_driver_surface_soylent_v230.bin", "size": 698814480, "sha256": "140921144d691e81ed1d7f7340bef3c45a1753d18f5be9c81db5f8b0c7e1c79e"},
+      "cue": {"path": "output/Xenogears_PW_CD2_mass_driver_surface_soylent_v230.cue", "size": 112, "sha256": "c3dc7220ce01a0f55457d8e2652f7c54a235adfa5baafdd10a18503a2bcfbf3a"},
+      "repeat_manifest": {"path": "work/v230r_stage/manifest.json", "size": 129959, "sha256": "9a8be0713439ad4c140ac0a8ab43f950555305e897fc087ff4aea204c16d9d07"},
+      "field_549": {
+        "bundle": {"size": 23332, "sha256": "8bdb39fab5c1e7dbd201c0f0d53368c3a754d36bf698fa717558202852bdeefe"},
+        "script": {"size": 3841, "sha256": "2dd2804d33004a52b66e676adb3ba9d978532ad21c80ca6da4d84f9ba1e3c999"},
+        "dialogue": {"size": 2125, "sha256": "57ed56cde500d327df72112d7d47823b0e66ba25c969b90ce5d9c259a5c7401b"},
+        "archive_return_seal": {"entity": 16, "center": [-244, 248], "radius_script_units": 8, "effective_player_contact_radius": 32, "southwest_ray_clearance_world_units": 5.639441995778888, "closed_cut_triangles": [6, 10, 11, 12, 13]},
+        "archive_return_x": {"entity": 6, "script": 2, "center": [-240, 240], "effective_half_extents_world_units": [36, 40], "automatic_proximity_action": false}
+      },
+      "field_550": {
+        "bundle": {"size": 78024, "sha256": "b75339d2fdefc2291f2e130329adddafc29a3ca42941c5a24487b3ea6ab9a698"},
+        "script": {"size": 5414, "sha256": "83329cf20bf5bd16e217e7fb445d399ccb2301b612e54c4910a3f19ec91d9a85"},
+        "header": {"size": 1008, "sha256": "438e5449e97b1de003fde24bf40ecf8b68f9a14a612e6fb58a53b4f9dbfa1db6"},
+        "dialogue": {"size": 6056, "sha256": "3c1f8cc6906384c6a9a0bb23ee5710bde6a524f656baa4b6ac8c49659d51bc4e"},
+        "walkmesh": {"size": 1948, "sha256": "abea233198e3a4430536a2e736d39c7a86bc1eb27da44a8d8cca4238393571df"}
+      },
+      "field_352_family": {
+        "scenes": [550, 567, 591, 592, 593, 594],
+        "automatic_forward_poll": false,
+        "x_button_required": true,
+        "global_update": {"entity": 0, "script": 1, "opcode": "STOP", "pc": "0x068C"},
+        "retired_automatic_cavity": {"span": ["0x044E", "0x04A5"], "size": 87, "sha256": "85581a31b32134e75912714f1e71cbe0957721e289f114f954a98ed7c4ca8824", "active_entry_points": 0},
+        "seal_center": [0, 266],
+        "seal_half_extents_script_units": [24, 8],
+        "walkmesh_size": 1948,
+        "walkmesh_sha256": "abea233198e3a4430536a2e736d39c7a86bc1eb27da44a8d8cca4238393571df"
+      },
+      "retained_field_621": {
+        "bundle": {"size": 135644, "sha256": "168fb1fb14a0c4745725396aae8d5831d931cd30d0d1c67eb6e8d654708eb2bd"},
+        "script": {"size": 10895, "sha256": "a7c52258a56f10a1bea9e8ee7cdc9c7730b78bd1c21f524a12a108302a2172f2"},
+        "header": {"size": 1408, "sha256": "2d05178f666806c9eaed864d63c44ec41822adeb1164d13e69e50e9cde55432d"}
+      },
+      "migration": {
+        "source": {"path": "work/save_candidates/SLUS-00669_1_v229_roundtrip_stuck_09d68876.sav", "size": 1615526, "sha256": "09d68876b0c2ebf50f2b130d97f26bc6b8bd242aa84c154e96f8ef9e7ae17e5c"},
+        "candidate": {"path": "work/save_candidates/SLUS-00669_1_v230_from_09d68876_field549_shifted_seal.sav", "size": 1466492, "sha256": "36e5bbaf509f9cdeb4c86a3555175c5dd880002d9964eb73cf7cf69f4bfc070e"},
+        "report": {"path": "work/save_candidates/SLUS-00669_1_v230_from_09d68876_field549_shifted_seal.json", "size": 2496, "sha256": "ca74e80180a9c7dfcebbe45b8105d95b40cd59e3b0d70442bec023e094520504"},
+        "decompressed_payload": {"size": 3819109, "sha256": "7cd05bcf4fc79c7d204812a9c6c42c6371da5cdf5f17033bdfae824318a1dc6c", "bytes_changed": 7, "changed_offsets": ["0x148DE", "0x10C73A", "0x10C73C", "0x112180", "0x112188", "0x1EF676", "0x1EF67A"], "breakdown": {"archive_table": 1, "resident_script_position": 2, "runtime_e16_position": 2, "cached_header_position": 2}},
+        "compressed_payload": {"size": 1419163, "sha256": "e3e765712039941a0e484c40f90590bb7b8be91c7355d7af625591e90a789ca8"},
+        "resident_hashes": {"ram": "f092899a0be6915cc83ababb133daf1c527c8f92ef6a1f27552452130e1541b9", "archive_table": "ad54b3917aaa84e84eabb8751a56df8a3311b708fc2da1fd690b4011068206c4", "field_549_script": "2dd2804d33004a52b66e676adb3ba9d978532ad21c80ca6da4d84f9ba1e3c999", "cached_header": "f842bd2febf7f2c21d5ea63cefeafe065a19e063ae8665fa400ef907cac84698", "prepared_media_header": "27432b47d36a1d08438aa843146bfeccbae0efbd0370167ccbf00871a9914a21", "e16_actor_data": "89b3816fce60b16c13e220c55b92ad4f35c209dd0a5c535942ccff8ca3f6a159"},
+        "preservation": {"field_variables": true, "fei_party_gamestate_camera_windows": true, "all_unrelated_actor_runtime": true, "resident_archive_table_rebuilt_for_v230": true, "v229_v230_media_archive_table_bytes_changed": 1, "resident_archive_volatile_tail": true, "resident_cached_header_keeps_v229_component_offsets": true, "runtime_e16_collision_volume": true, "allocator_safe": true, "round_trip_verified": true},
+        "policy": "apply only to the exact V229 field-549 returning Slot 1 identity; rebuild the resident archive table from V230 while preserving its volatile tail, patch only e16's two resident ATEL coordinate bytes, two live ActorData coordinate bytes, and two cached-header coordinate bytes, retain the cached V229 component offsets rather than copying V230 media offsets into the allocated heap, and preserve Fei, party, GameState, field variables, camera, windows, collision volume, and every unrelated actor byte; every other state must cold-load field 549 from V230 media"
+      }
+    },
+    "v229": {
+      "version": 229,
+      "bin": {"path": "output/Xenogears_PW_CD2_mass_driver_surface_soylent_v229.bin", "size": 698814480, "sha256": "436ecb3a053df1c6860aaedc356fa6db55d2749a27f51b4812166b117500ddc4"},
+      "cue": {"path": "output/Xenogears_PW_CD2_mass_driver_surface_soylent_v229.cue", "size": 112, "sha256": "73812b56b1cb84b57cd8a8b1f9ecd5f67c1b983c475777dabee9d3f042c1083d"},
+      "repeat_manifest": {"path": "work/v229r_stage/manifest.json", "size": 129207, "sha256": "2dfba5b96913771b7cf97827d11d08c67336db190c9ebf208609dccf2d7749bf"},
+      "field_549": {
+        "bundle": {"size": 23336, "sha256": "4ac69db0dc2abb254135a548ae882ea97334ba72f99ee62ec4d9176afc8d8a6f"},
+        "script": {"size": 3841, "sha256": "04512b30bb15c4188cbe33ed714682c7d579260c5a4b42cc8ff71f9136c0a185"},
+        "dialogue": {"size": 2125, "sha256": "57ed56cde500d327df72112d7d47823b0e66ba25c969b90ce5d9c259a5c7401b"},
+        "archive_return_seal": {"entity": 16, "radius_script_units": 8, "effective_player_contact_radius": 32},
+        "archive_return_x": {"entity": 6, "script": 2, "effective_half_extents_world_units": [36, 40], "automatic_proximity_action": false}
+      },
+      "field_550": {
+        "bundle": {"size": 78024, "sha256": "b75339d2fdefc2291f2e130329adddafc29a3ca42941c5a24487b3ea6ab9a698"},
+        "script": {"size": 5414, "sha256": "83329cf20bf5bd16e217e7fb445d399ccb2301b612e54c4910a3f19ec91d9a85"},
+        "header": {"size": 1008, "sha256": "438e5449e97b1de003fde24bf40ecf8b68f9a14a612e6fb58a53b4f9dbfa1db6"},
+        "dialogue": {"size": 6056, "sha256": "3c1f8cc6906384c6a9a0bb23ee5710bde6a524f656baa4b6ac8c49659d51bc4e"},
+        "walkmesh": {"size": 1948, "sha256": "abea233198e3a4430536a2e736d39c7a86bc1eb27da44a8d8cca4238393571df"}
+      },
+      "field_352_family": {
+        "scenes": [550, 567, 591, 592, 593, 594],
+        "automatic_forward_poll": false,
+        "x_button_required": true,
+        "global_update": {"entity": 0, "script": 1, "opcode": "STOP", "pc": "0x068C"},
+        "retired_automatic_cavity": {"span": ["0x044E", "0x04A5"], "size": 87, "sha256": "85581a31b32134e75912714f1e71cbe0957721e289f114f954a98ed7c4ca8824", "active_entry_points": 0},
+        "seal_center": [0, 266],
+        "seal_half_extents_script_units": [24, 8],
+        "walkmesh_size": 1948,
+        "walkmesh_sha256": "abea233198e3a4430536a2e736d39c7a86bc1eb27da44a8d8cca4238393571df"
+      },
+      "retained_field_621": {
+        "bundle": {"size": 135644, "sha256": "168fb1fb14a0c4745725396aae8d5831d931cd30d0d1c67eb6e8d654708eb2bd"},
+        "script": {"size": 10895, "sha256": "a7c52258a56f10a1bea9e8ee7cdc9c7730b78bd1c21f524a12a108302a2172f2"},
+        "header": {"size": 1408, "sha256": "2d05178f666806c9eaed864d63c44ec41822adeb1164d13e69e50e9cde55432d"}
+      },
+      "migration": {
+        "source": {"path": "work/save_candidates/SLUS-00669_1_v228_source_cd84f8b5_field549.sav", "size": 1632883, "sha256": "cd84f8b59d80398f81dc10f153633f4105be152f2c4f79b2fa73a33174debfa8"},
+        "candidate": {"path": "work/save_candidates/SLUS-00669_1_v229_from_cd84f8b5_field549_seal.sav", "size": 1485222, "sha256": "13ae2d667d8edd24ef60c1465f3e1771363823bcc4fd78c09064564a90eba21c"},
+        "report": {"path": "work/save_candidates/SLUS-00669_1_v229_from_cd84f8b5_field549_seal.json", "size": 2030, "sha256": "8927c34eb57f296b4804953d65a88c22920f2fd5865ff6e334ddf6807a6ba181"},
+        "decompressed_payload": {"size": 3819109, "sha256": "6c05487dfbf434f01ecf2c7a11fa6a9784c4d74df0be6e1947365788e06c698e", "bytes_changed": 2, "changed_offsets": ["0x10C74D", "0x11217C"], "breakdown": {"archive_table": 0, "resident_script": 1, "runtime_e16_radius": 1}},
+        "compressed_payload": {"size": 1438158, "sha256": "0f3a002be787eafc2595fd5599cac9a0e7ccf1cd75c709c0d6b7d3ed16ca051f"},
+        "resident_hashes": {"ram": "b9a8b4e8aed436bf6b0bf2ce00b499afda537db715073f4424c08f730aa48a5d", "archive_table": "13d23b9b2f983cba4b0883e58cd2b083126642284957fe752ae821e9b0c5a727", "field_549_script": "04512b30bb15c4188cbe33ed714682c7d579260c5a4b42cc8ff71f9136c0a185", "e16_actor_data": "017e3a25acfc41e687ad0bc97c24c2347191dc952b0d826d4bfb9bb4ec14efe7"},
+        "preservation": {"field_variables": true, "fei_party_gamestate_camera_windows": true, "all_unrelated_actor_runtime": true, "resident_archive_table_rebuilt_for_v229": true, "v228_v229_media_archive_tables_identical": true, "resident_archive_volatile_tail": true, "allocator_safe": true, "round_trip_verified": true},
+        "policy": "apply only to the exact V228 field-549 Classification Archive Slot 1 identity; validate the byte-identical V229 media archive table while preserving its volatile resident tail, patch only the resident field-549 entity-16 seal operand from 0x0E to 0x08 and its loaded runtime radius low byte from 0x1C to 0x10, and preserve Fei, party, GameState, field variables, camera, windows, and every unrelated actor byte; every other state must cold-load field 549 from V229 media"
+      }
+    },
+    "v228": {
+      "version": 228,
+      "bin": {"path": "output/Xenogears_PW_CD2_mass_driver_surface_soylent_v228.bin", "size": 698814480, "sha256": "7bdb5fd17970abb15fc36f32a0907aafd132f80eae818e79ba21473380621deb"},
+      "cue": {"path": "output/Xenogears_PW_CD2_mass_driver_surface_soylent_v228.cue", "size": 112, "sha256": "0c3e3672f69969a0e1ced0e04d8dfc2f2298e706acf42b1c58292b4689c714fb"},
+      "repeat_manifest": {"path": "work/v228r_stage/manifest.json", "size": 128038, "sha256": "39e5b82647ecece73fb61784eae7b3cdcf490e411887765b72a58ea8ed592244"},
+      "field_550": {
+        "bundle": {"size": 78024, "sha256": "b75339d2fdefc2291f2e130329adddafc29a3ca42941c5a24487b3ea6ab9a698"},
+        "script": {"size": 5414, "sha256": "83329cf20bf5bd16e217e7fb445d399ccb2301b612e54c4910a3f19ec91d9a85"},
+        "header": {"size": 1008, "sha256": "438e5449e97b1de003fde24bf40ecf8b68f9a14a612e6fb58a53b4f9dbfa1db6"},
+        "dialogue": {"size": 6056, "sha256": "3c1f8cc6906384c6a9a0bb23ee5710bde6a524f656baa4b6ac8c49659d51bc4e"},
+        "walkmesh": {"size": 1948, "sha256": "abea233198e3a4430536a2e736d39c7a86bc1eb27da44a8d8cca4238393571df"}
+      },
+      "field_352_family": {
+        "scenes": [550, 567, 591, 592, 593, 594],
+        "automatic_forward_poll": false,
+        "x_button_required": true,
+        "global_update": {"entity": 0, "script": 1, "opcode": "STOP", "pc": "0x068C"},
+        "retired_automatic_cavity": {"span": ["0x044E", "0x04A5"], "size": 87, "sha256": "85581a31b32134e75912714f1e71cbe0957721e289f114f954a98ed7c4ca8824", "active_entry_points": 0},
+        "seal_center": [0, 266],
+        "seal_half_extents_script_units": [24, 8],
+        "walkmesh_size": 1948,
+        "walkmesh_sha256": "abea233198e3a4430536a2e736d39c7a86bc1eb27da44a8d8cca4238393571df"
+      },
+      "retained_field_621": {
+        "bundle": {"size": 135644, "sha256": "168fb1fb14a0c4745725396aae8d5831d931cd30d0d1c67eb6e8d654708eb2bd"},
+        "script": {"size": 10895, "sha256": "a7c52258a56f10a1bea9e8ee7cdc9c7730b78bd1c21f524a12a108302a2172f2"},
+        "header": {"size": 1408, "sha256": "2d05178f666806c9eaed864d63c44ec41822adeb1164d13e69e50e9cde55432d"}
+      },
+      "migration": {
+        "source": {"path": "work/save_backups/SLUS-00669_1_v227_private_clinic_source_23221b34.sav", "size": 1735278, "sha256": "23221b3468b77096fb9a8e07a11a32203fbd51e4c92d0b7fd203b036e30c1950"},
+        "candidate": {"path": "work/save_candidates/SLUS-00669_1_v228_from_23221b34_clinic_aid.sav", "size": 1735287, "sha256": "a991c4f8779bf0ce877fd6ef90806c757e08cde97abc2b2d05c692972164df64"},
+        "report": {"path": "work/save_candidates/SLUS-00669_1_v228_from_23221b34_clinic_aid.json", "size": 1804, "sha256": "05d28f4752bc365e54539dc50a9a762f01a724d5787ae8910f8a5c172fc5c8b0"},
+        "decompressed_payload": {"size": 3819109, "sha256": "79c55c9400f47672f60010cc59bb961875107882e358d0510d7ad3f4268ae83c", "bytes_changed": 2464, "breakdown": {"archive_table": 2464, "resident_script": 0, "loaded_header": 0, "runtime_actor_pc": 0}},
+        "compressed_payload": {"size": 1694118, "sha256": "4dea5b870cafd121c655eda68bc68bfe7cf1fc1fe2d79dd301e6820ba5917960"},
+        "resident_hashes": {"ram": "9f1c0865fe38aed3b63328fee4a9e278e49a17181c77ad10aa47f63670cccbac", "archive_table": "13d23b9b2f983cba4b0883e58cd2b083126642284957fe752ae821e9b0c5a727"},
+        "preservation": {"field_variables": true, "gamestate_party_camera_windows": true, "all_actor_runtime": true, "resident_script": true, "loaded_header": true, "resident_route": true, "resident_archive_volatile_tail": true, "allocator_safe": true, "round_trip_verified": true},
+        "policy": "apply only to the exact V227 field-621 Intake Slot 1 identity; rebuild only the serialized archive-table entries for off-resident field bundles 591-594 from V228 media while preserving the resident field-621 route, script, hybrid V226 header, actor runtime, camera, variables, and volatile archive tail; every other state must cold-load the affected rooms from V228 media"
+      }
+    },
+    "v227": {
+      "version": 227,
+      "bin": {"path": "output/Xenogears_PW_CD2_mass_driver_surface_soylent_v227.bin", "size": 698885040, "sha256": "108c753b964831ae6be61ca05fb8cbcd47240d27c0d4f376135828b4945596ed"},
+      "cue": {"path": "output/Xenogears_PW_CD2_mass_driver_surface_soylent_v227.cue", "size": 112, "sha256": "df061663cd9053e195513221997f4042d37c8d23fba9268e9d10bdafa577c134"},
+      "repeat_manifest": {"path": "work/v227r_stage/manifest.json", "size": 122987, "sha256": "3a56b3ac97ce837c9356207df6a14d488a26cc0a63524472ba903bbae557fb67"},
+      "field_550": {
+        "bundle": {"size": 78024, "sha256": "b75339d2fdefc2291f2e130329adddafc29a3ca42941c5a24487b3ea6ab9a698"},
+        "script": {"size": 5414, "sha256": "83329cf20bf5bd16e217e7fb445d399ccb2301b612e54c4910a3f19ec91d9a85"},
+        "header": {"size": 1008, "sha256": "438e5449e97b1de003fde24bf40ecf8b68f9a14a612e6fb58a53b4f9dbfa1db6"},
+        "dialogue": {"size": 6056, "sha256": "3c1f8cc6906384c6a9a0bb23ee5710bde6a524f656baa4b6ac8c49659d51bc4e"},
+        "walkmesh": {"size": 1948, "sha256": "abea233198e3a4430536a2e736d39c7a86bc1eb27da44a8d8cca4238393571df"}
+      },
+      "field_352_family": {
+        "scenes": [550, 567, 591, 592, 593, 594],
+        "automatic_forward_poll": false,
+        "x_button_required": true,
+        "global_update": {"entity": 0, "script": 1, "opcode": "STOP", "pc": "0x068C"},
+        "retired_automatic_cavity": {"span": ["0x044E", "0x04A5"], "size": 87, "sha256": "85581a31b32134e75912714f1e71cbe0957721e289f114f954a98ed7c4ca8824", "active_entry_points": 0},
+        "seal_center": [0, 266],
+        "seal_half_extents_script_units": [24, 8],
+        "walkmesh_size": 1948,
+        "walkmesh_sha256": "abea233198e3a4430536a2e736d39c7a86bc1eb27da44a8d8cca4238393571df"
+      },
+      "retained_field_621": {
+        "bundle": {"size": 135644, "sha256": "168fb1fb14a0c4745725396aae8d5831d931cd30d0d1c67eb6e8d654708eb2bd"},
+        "script": {"size": 10895, "sha256": "a7c52258a56f10a1bea9e8ee7cdc9c7730b78bd1c21f524a12a108302a2172f2"},
+        "header": {"size": 1408, "sha256": "2d05178f666806c9eaed864d63c44ec41822adeb1164d13e69e50e9cde55432d"}
+      },
+      "migration": {
+        "source": {"path": "work/save_backups/SLUS-00669_1_v226_intake_door_room_change_9436ef84.sav", "size": 1910685, "sha256": "9436ef847164e1c850828da3c6f90a28ba1ea931763a3b691c6117e376333c82"},
+        "candidate": {"path": "work/save_candidates/SLUS-00669_1_v227_from_9436ef84_treatment_preparation.sav", "size": 1735278, "sha256": "23221b3468b77096fb9a8e07a11a32203fbd51e4c92d0b7fd203b036e30c1950"},
+        "report": {"path": "work/save_candidates/SLUS-00669_1_v227_from_9436ef84_treatment_preparation.json", "size": 1809, "sha256": "ee5e4952da80a7eef27af2e39f88b824675c80a5ff1571b9816d7f44fcf003e4"},
+        "decompressed_payload": {"size": 3819109, "sha256": "378c7d8a3fe297927ba5823fcdb77eb7c362c4840eb27f1c1f806d604a3858a4", "bytes_changed": 3033, "breakdown": {"archive_table": 3031, "resident_script": 2, "runtime_actor_pc": 0}},
+        "compressed_payload": {"size": 1694109, "sha256": "799caec8ddb776d60bd03ecbccabfdd5974f5435d90de9719470291ad0c93796"},
+        "resident_hashes": {"ram": "3aa5febe630f91612e4905ffe6d8f198e46a30cfaa03a78c40285e1235ab4591", "archive_table": "bdf07517cbcfb3ad6676aa1deda27086707aa75f7e67c54cf002afac9ef45ada"},
+        "preservation": {"field_variables": true, "gamestate_party_camera_windows": true, "all_actor_runtime": true, "fei_e26_e34_idle": true, "loaded_header": true, "dialogue_walkmesh_neighbors": true, "resident_archive_volatile_tail": true, "allocator_safe": true, "round_trip_verified": true},
+        "policy": "apply only to the exact V226 field-621 Intake e26 Slot 1 identity; reconstruct the resident archive table for V227 media and patch only the retained e26 CHANGE_FIELD operand from field 565/p3 to field 594/p0 without changing any runtime actor PC; every other state must cold-load field 621 from V227 media"
+      }
+    },
+    "v226": {
+      "version": 226,
+      "bin": {"path": "output/Xenogears_PW_CD2_mass_driver_surface_soylent_v226.bin", "size": 698642784, "sha256": "8a916111d1557c98c904ed95431d973a0d460aa71b52fc3eba56093e9127dda6"},
+      "cue": {"path": "output/Xenogears_PW_CD2_mass_driver_surface_soylent_v226.cue", "size": 112, "sha256": "ee95f0b73bf490e5718b6b3023366f03e385008a46f681c19b7f142ad4cbbcee"},
+      "repeat_manifest": {"path": "work/v226r_stage/manifest.json", "size": 119802, "sha256": "8c223274a187197e74b06f94edccd74ce7e33b287c3afbed87a6ce471f621f74"},
+      "field_550": {
+        "bundle": {"size": 78024, "sha256": "b75339d2fdefc2291f2e130329adddafc29a3ca42941c5a24487b3ea6ab9a698"},
+        "script": {"size": 5414, "sha256": "83329cf20bf5bd16e217e7fb445d399ccb2301b612e54c4910a3f19ec91d9a85"},
+        "header": {"size": 1008, "sha256": "438e5449e97b1de003fde24bf40ecf8b68f9a14a612e6fb58a53b4f9dbfa1db6"},
+        "dialogue": {"size": 6056, "sha256": "3c1f8cc6906384c6a9a0bb23ee5710bde6a524f656baa4b6ac8c49659d51bc4e"},
+        "walkmesh": {"size": 1948, "sha256": "abea233198e3a4430536a2e736d39c7a86bc1eb27da44a8d8cca4238393571df"}
+      },
+      "field_352_family": {
+        "scenes": [550, 567, 591, 592, 593],
+        "automatic_forward_poll": false,
+        "x_button_required": true,
+        "global_update": {"entity": 0, "script": 1, "opcode": "STOP", "pc": "0x068C"},
+        "retired_automatic_cavity": {"span": ["0x044E", "0x04A5"], "size": 87, "sha256": "85581a31b32134e75912714f1e71cbe0957721e289f114f954a98ed7c4ca8824", "active_entry_points": 0},
+        "seal_center": [0, 266],
+        "seal_half_extents_script_units": [24, 8],
+        "walkmesh_size": 1948,
+        "walkmesh_sha256": "abea233198e3a4430536a2e736d39c7a86bc1eb27da44a8d8cca4238393571df"
+      },
+      "retained_field_621": {
+        "bundle": {"size": 135648, "sha256": "011be9593a2c565e6c3bb5f325ef64ac47811592794945ce529fcb3b6eb36677"},
+        "script": {"size": 10895, "sha256": "a362a56e04f91240e4209cb93cdb36a63c31d57bdf2e03c25fca52f202845ea7"},
+        "header": {"size": 1408, "sha256": "bd8be9feef57bff074c81c885d66b329ed20456e42d3a11c6b8e03b18550598f"}
+      },
+      "migration": {
+        "source": {"path": "work/save_backups/SLUS-00669_1_v225_auto_open_408a5dc9.sav", "size": 1855939, "sha256": "408a5dc96f5a2633079f8a41b09eefe669400b71a455bd5312fa9e0fc6cb22b9"},
+        "candidate": {"path": "work/save_candidates/SLUS-00669_1_v226_from_408a5dc9_field592_x_only.sav", "size": 1680239, "sha256": "a3aa3752e1b4b035b1f05f7cc0495bc4d4acd61f988923401e3ee8e30876e7bb"},
+        "report": {"path": "work/save_candidates/SLUS-00669_1_v226_from_408a5dc9_field592_x_only.json", "size": 1629, "sha256": "bde8fc1e9c71a7036372ee26223914d549b4c0ffc811501b7849d279b5552b45"},
+        "decompressed_payload": {"size": 3819109, "sha256": "3a256a7d4632d79fedd13488d1e7b95fecb038490f1cd1496e7db4abe25602cb", "bytes_changed": 70, "breakdown": {"archive_table": 4, "resident_script": 62, "runtime_e0": 4}},
+        "compressed_payload": {"size": 1635031, "sha256": "d8e3cadf0ac9bbb80026c306c41212b8151147b4773127862ed5e8769000ef6f"},
+        "resident_hashes": {"ram": "4a52a6df97f29cb9eb7a4aadbb48c86962bb08d0600853b9f81186f2fbf903bf", "archive_table": "3ee67d330d7a2c4b2bbdd8188dfa38a4a0152bea3950be3276d40a6ce8862a47"},
+        "preservation": {"field_variables": true, "gamestate_party_camera_windows": true, "all_noncontroller_actor_runtime": true, "fei": true, "e17_carrier": true, "e18_closed_leaf": true, "e20_rectangle": true, "loaded_header": true, "walkmesh": true, "native_x_action": true, "resident_archive_volatile_tail": true, "allocator_safe": true, "round_trip_verified": true},
+        "policy": "apply only to the exact V225 field-592 automatic-entry Slot 1 identity; restore the full retired 87-byte automatic-poll cavity and reset both e0:s1 runtime PCs to shared STOP 0x068C while preserving the native X action; every other state must cold-load the affected room from V226 media"
+      }
+    },
+    "v225": {
+      "version": 225,
+      "bin": {"path": "output/Xenogears_PW_CD2_mass_driver_surface_soylent_v225.bin", "size": 698642784, "sha256": "539e2e33266d71337666c84d9d3a153dfd7555d8db933efadc49376483e6e1ff"},
+      "cue": {"path": "output/Xenogears_PW_CD2_mass_driver_surface_soylent_v225.cue", "size": 112, "sha256": "6a289550cec7003e9742d75f862db41d37214afe499d0dcddab1892839f6b8fd"},
+      "repeat_manifest": {"path": "work/v225r_stage/manifest.json", "size": 119944, "sha256": "2f6d433e9c257455e70fbc028a07335ec5b84790c646d7ff397f544a8ca1bb99"},
+      "field_550": {
+        "bundle": {"size": 78024, "sha256": "da2db7cac3f81a400ae01115ea0c57aff6c5ff558703ab52fddb07336f9e2564"},
+        "script": {"size": 5414, "sha256": "3e8b9942cc6c75eacec771df36d8f322ae9b831f4fd2017b1b5266d47087e134"},
+        "header": {"size": 1008, "sha256": "438e5449e97b1de003fde24bf40ecf8b68f9a14a612e6fb58a53b4f9dbfa1db6"},
+        "dialogue": {"size": 6056, "sha256": "3c1f8cc6906384c6a9a0bb23ee5710bde6a524f656baa4b6ac8c49659d51bc4e"},
+        "walkmesh": {"size": 1948, "sha256": "abea233198e3a4430536a2e736d39c7a86bc1eb27da44a8d8cca4238393571df"}
+      },
+      "field_352_family": {"scenes": [550, 567, 591, 592, 593], "forward_poll_minimum_z": 228, "forward_poll_size": 63, "seal_center": [0, 266], "seal_half_extents_script_units": [24, 8], "walkmesh_size": 1948, "walkmesh_sha256": "abea233198e3a4430536a2e736d39c7a86bc1eb27da44a8d8cca4238393571df"},
+      "retained_field_621": {
+        "bundle": {"size": 135648, "sha256": "011be9593a2c565e6c3bb5f325ef64ac47811592794945ce529fcb3b6eb36677"},
+        "script": {"size": 10895, "sha256": "a362a56e04f91240e4209cb93cdb36a63c31d57bdf2e03c25fca52f202845ea7"},
+        "header": {"size": 1408, "sha256": "bd8be9feef57bff074c81c885d66b329ed20456e42d3a11c6b8e03b18550598f"}
+      },
+      "migration": {
+        "source": {"path": "work/save_backups/SLUS-00669_1_v224_field550_door_clip_6df7129d.sav", "size": 1851504, "sha256": "6df7129d144f7b9efe785f24749ca68512f10dda04ca8d4022cadf757c9b5dae"},
+        "candidate": {"path": "work/save_candidates/SLUS-00669_1_v225_from_6df7129d_field550_clearance.sav", "size": 1672710, "sha256": "b8638edcf76e2c19a829711b57cc7c0beded7a89c60871e2cc8aaac60616f9eb"},
+        "report": {"path": "work/save_candidates/SLUS-00669_1_v225_from_6df7129d_field550_clearance.json", "size": 1810, "sha256": "4d5c253f890f2840d2ad343c8740ab86362f9999c82998ac4836d310df142bcb"},
+        "decompressed_payload": {"size": 3819109, "sha256": "f27cebfc3eb00498cbb76d339d78ee98779c2b2c8868559254f474969f0243ed", "bytes_changed": 87, "breakdown": {"archive_table": 6, "resident_script": 68, "loaded_header": 2, "runtime_e19": 11}},
+        "compressed_payload": {"size": 1628725, "sha256": "a1d542be06f0b474b5c2c4d9703b92aec62b7cbed79221d990e3522f36a1c9fd"},
+        "resident_hashes": {"ram": "60d52d04106554e57b1f444a53f3a6e5a77fbc88a5092429f5c441c4edaea2e1", "archive_table": "337607d4873dcc0f5c2eee5cd69f7d61f130badb074b3441e09a60cd0e801eb9", "loaded_header": "a061c2a01a90675b62add0f4f36021cba9101bdf6dbf7835a770c89193e0c347"},
+        "preservation": {"field_variables": true, "gamestate_party": true, "doctor_security_runtime": true, "controller_runtime": true, "closed_leaf": true, "camera": true, "dialogue_windows": true, "dialogue": true, "walkmesh": true, "native_cross_action": true, "allocator_safe": true, "round_trip_verified": true},
+        "policy": "apply only to the exact V224 field-550 doorway-clipping Slot 1 identity; normalize field 621's nonvolatile resident FAT size byte and preserve only the volatile table tail; every other state must cold-load the affected room from V225 media"
+      }
+    },
+    "v224": {
+    "version": 224,
+    "bin": {"path": "output/Xenogears_PW_CD2_mass_driver_surface_soylent_v224.bin", "size": 698642784, "sha256": "6d0854e878f677eee7e8c57fd5084d0f28b9cc776b758934925ef353da30022d"},
+    "cue": {"path": "output/Xenogears_PW_CD2_mass_driver_surface_soylent_v224.cue", "size": 112, "sha256": "4cd7c8be1096148c00d619f776754e6e15cf55dffcc9a3cc97b8887af333944d"},
+    "repeat_manifest": {"path": "work/v224r_stage/manifest.json", "size": 119788, "sha256": "9296f347064f271df10370feb5c433baa49093b717c58fa374a0bca1cb2fae91"},
+    "field_621": {
+      "bundle": {"size": 135648, "sha256": "011be9593a2c565e6c3bb5f325ef64ac47811592794945ce529fcb3b6eb36677"},
+      "script": {"size": 10895, "sha256": "a362a56e04f91240e4209cb93cdb36a63c31d57bdf2e03c25fca52f202845ea7"},
+      "header": {"size": 1408, "sha256": "bd8be9feef57bff074c81c885d66b329ed20456e42d3a11c6b8e03b18550598f"}
+    },
+    "migration": {
+      "source": {"path": "work/save_backups/SLUS-00669_1_v223_persistent_bottom_left_clip_b9624646.sav", "size": 1672493, "sha256": "b962464676e5c2b9a59918a5b9247d5d747276ab6ec0fc4a36c1f5f48ae96d24"},
+      "candidate": {"path": "work/save_candidates/SLUS-00669_1_v224_from_b9624646_single_threshold_quad.sav", "size": 1513683, "sha256": "fab19182ff32d0ec0e25f8ef334f1e3604ee407dea29fcf180c3cd2dd14156bb"},
+      "report": {"path": "work/save_candidates/SLUS-00669_1_v224_from_b9624646_single_threshold_quad.json", "size": 1655, "sha256": "06d409e29b2f2dd6aba2b761b0c39e721a1eb16bbe82e007b9d674e1eb858317"},
+      "decompressed_payload": {"size": 3819109, "sha256": "b74fea8bf8be9d12394afe99afb9ed0c21f6451b273c8c6d94cdff4a412971b3", "bytes_changed": 418, "breakdown": {"model20_topology": 38, "six_packet_arenas": 380, "packet_arena_diff_counts": [67, 65, 62, 62, 62, 62], "resident_archive_table": 0}},
+      "resident_hashes": {"ram": "b2a4cd510c004f7b6ed4b9934f2f8098d56f58bc87768ef179854e9793662a53", "model20": "af389e6da468c4a5875d2bd4271574654a34fcd2ca6f62e235771fddfc03c03d", "packet_arena": "3c03f04c72c2424d4a5faa272ef4d8e855dd647360b00e210bcbe02f6e0bd508", "packet_arenas": "5574ecb24ef25954a3ecb136ea9def40b82e94d4de4927f9c1e552d2bab13680", "archive_table": "3eacc1ac53db105f07c987a3eeb20cfbbca9df9fefe21a8c7a4c4750e14dfba0"},
+      "preservation": {"model20_allocation": true, "packet_arena_allocations": true, "packet_arenas_reinitialized_for_topology": true, "field_header": true, "scripts": true, "actors": true, "collision": true, "player": true, "camera": true, "game_state": true, "dialogue": true, "walkmesh": true, "resident_archive_table": true, "round_trip_verified": true},
+      "policy": "apply only to the exact V223 persistent-bottom-left-clipping Slot 1 identity; every other state must cold-load field 621 from V224 media"
+    }
+    },
+    "v223": {
+      "version": 223,
+      "bin": {"path": "output/Xenogears_PW_CD2_mass_driver_surface_soylent_v223.bin", "size": 698642784, "sha256": "4cd47686c8a7cc2b5be331f03b73f3e58bfd5e5e23b850ad7547abac917dc7e8"},
+      "cue": {"path": "output/Xenogears_PW_CD2_mass_driver_surface_soylent_v223.cue", "size": 112, "sha256": "bbc6dce43108fe5afc233d91acf6e0e11107833824c2216560abcc663c0e2e4a"},
+      "repeat_manifest": {"path": "work/v223r_stage/manifest.json", "size": 119807, "sha256": "4d09092cfa36149cf7823c4d72fc9786233200bbd447f8d8bcfb05141b7e01e4"},
+      "field_621": {
+        "bundle": {"size": 135652, "sha256": "d96a1dad2085ab1b0099c62ab7180ece7e52c93862faaa199b6ae7f3119a4c3f"},
+        "script": {"size": 10895, "sha256": "a362a56e04f91240e4209cb93cdb36a63c31d57bdf2e03c25fca52f202845ea7"},
+        "header": {"size": 1408, "sha256": "bc016d4404b7cd5f31a4eb7aac91315b594152ca17ea640104bc6f8fdc4790df"}
+      },
+      "migration": {
+        "source": {"path": "work/save_backups/SLUS-00669_1_v222_bottom_left_clip_a714c8e8.sav", "size": 1677622, "sha256": "a714c8e830ee539157288d9407a22fc38ff670149a276acf9c02c3c69acba9e8"},
+        "candidate": {"path": "work/save_candidates/SLUS-00669_1_v223_from_a714c8e8_threshold_uv.sav", "size": 1519504, "sha256": "075b239d04e3781464f0a3e739ea8e65f8ba5086492eab0b9cdd87f71c797872"},
+        "report": {"path": "work/save_candidates/SLUS-00669_1_v223_from_a714c8e8_threshold_uv.json", "size": 1374, "sha256": "6ebf15ab51cf2a6d1158a789fd464ef557e6b78edfb8f17e11b4f326e44963b3"},
+        "decompressed_payload": {"size": 3819109, "sha256": "7012e08113286a05bd613a3b789b583d70c17343a28bbb302aa89ed7c9da6c3e", "bytes_changed": 28, "breakdown": {"model20_uv": 4, "six_packet_arenas_uv": 24, "resident_archive_table": 0}},
+        "resident_hashes": {"ram": "065b299d971001cafbbedfa2ba172a76e9769a94f68e3b2557973a23ed23d893", "model20": "6f477079b5f55bedfbd2b438883b4a15026bdee4924b28aca242c5daedf5e9fa", "packet_arenas": "92e6cec844d9f5a318e4dd9210efd5ae5db2d54386aec27329db7a20dcfa3ec1", "archive_table": "3eacc1ac53db105f07c987a3eeb20cfbbca9df9fefe21a8c7a4c4750e14dfba0"},
+        "preservation": {"model20_topology_and_allocation": true, "packet_arena_allocations": true, "field_header": true, "scripts": true, "actors": true, "collision": true, "player": true, "camera": true, "game_state": true, "dialogue": true, "walkmesh": true, "resident_archive_table": true, "round_trip_verified": true},
+        "policy": "apply only to the exact V222 bottom-left-clipping Slot 1 identity; every other state must cold-load field 621 from V223 media"
+      }
+    },
+    "v222": {
+      "version": 222,
+      "bin": {"path": "output/Xenogears_PW_CD2_mass_driver_surface_soylent_v222.bin", "size": 698642784, "sha256": "4d386649f85a873003235ec8fc3082eb3e036aa5dbbc306c8cabdf84c8c80d03"},
+      "cue": {"path": "output/Xenogears_PW_CD2_mass_driver_surface_soylent_v222.cue", "size": 112, "sha256": "a2ab49791fbd65b34964361d8603e85e6cea5fb79430e852440af6e582f3220e"},
+      "repeat_manifest": {"path": "work/v222r_stage/manifest.json", "size": 119703, "sha256": "d317d62ddb4ccaeb8cbcd12e80db38e0a65dbb25cd95f44e52cf1336d1b352dc"},
+      "field_621": {
+        "bundle": {"size": 135656, "sha256": "acf5c09f99d67ee157c4049c31fe1f48026819e6a39e041284bd1912e6e4a039"},
+        "script": {"size": 10895, "sha256": "a362a56e04f91240e4209cb93cdb36a63c31d57bdf2e03c25fca52f202845ea7"},
+        "header": {"size": 1408, "sha256": "a673a4079dddfd4d908f63f8fedee227e9c23f033c6652b8aace86de08900887"}
+      },
+      "migration": {
+        "source": {"size": 1521337, "sha256": "27710b20903e4eb6be1c818b3e3aaf8bf4050c7cc709575a73f5c2fb7f9d3581"},
+        "candidate": {"path": "work/save_candidates/SLUS-00669_1_v222_from_27710b20_flush_doors.sav", "size": 1521338, "sha256": "66bbf32915c4181aefc7518b8d73c57979a132b24d3c5b6098d0951a6c104427"},
+        "report": {"path": "work/save_candidates/SLUS-00669_1_v222_from_27710b20_flush_doors.json", "size": 2132, "sha256": "3cf42861256efd701ec1c1a298a55c2ded6d44d5d9cfdf82bd28e0b274606fe6"},
+        "decompressed_payload": {"bytes_changed": 204, "breakdown": {"header": 14, "script": 129, "actors": 49, "actor_data": 8, "sprite": 4, "archive_table": 0}},
+        "preservation": {"models": true, "camera": true, "game_state": true, "dialogue": true, "walkmesh": true, "collision": true, "unrelated_actors": true, "packet_arenas": true, "archive_table": true},
+        "policy": "apply only to the exact V221 candidate source identity; every other state must cold-load field 621 from V222 media"
+      }
+    },
+    "v221": {
+      "version": 221,
+      "bin": {"path": "output/Xenogears_PW_CD2_mass_driver_surface_soylent_v221.bin", "size": 698642784, "sha256": "577519db3fb4228c17f0555466866b271c265587a5fdc01515d9ff3f78f6827a"},
+      "cue": {"path": "output/Xenogears_PW_CD2_mass_driver_surface_soylent_v221.cue", "size": 112, "sha256": "a4134fcf3f5bee22530aa90aed6cd691a29983483eb8438828af5caa30ba1163"},
+      "repeat_manifest": {"path": "work/v221r_stage/manifest.json", "size": 119665, "sha256": "ff8acf4b520034bc401dd8c88d7d051a5c90f4169b38d20648e0efea780e25b1"},
+      "migration": {
+      "source": {"size": 1679306, "sha256": "e4aea385a822c19b74040bb442c1766ad122be1a95009a24d9bec51429198c54"},
+      "candidate": {"path": "work/save_candidates/SLUS-00669_1_v221_from_e4aea385_native_threshold_aprons.sav", "size": 1521337, "sha256": "27710b20903e4eb6be1c818b3e3aaf8bf4050c7cc709575a73f5c2fb7f9d3581"},
+      "decompressed_payload": {"size": 3819109, "sha256": "88525715b23bc3c13c1c39b1e25d9d06cb7772cd02560a9234d0ca722e97a816", "bytes_changed": 1025, "breakdown": {"archive_table": 1, "model20": 113, "six_packet_arenas": 911}},
+      "resident_hashes": {"archive_table": "3eacc1ac53db105f07c987a3eeb20cfbbca9df9fefe21a8c7a4c4750e14dfba0", "model2": "749800fc048b59c2e89028b558846f375f9009ff01e0c2a0cc2bcf2b07857ba8", "model20": "81b45178684dbd87fcaf71c4cba3f43bccb2932106aa2245fa2048303f0cb8bb", "packet_arenas": "8225f199051718510efad5f75e8a69ecc58a8a283f043eafa16b2c3235553d7e"},
+      "preservation": {"actor_header_game_camera_script_collision": true, "model2": true, "model20_allocation": true, "packet_arena_allocations": true, "volatile_archive_table_byte": true, "packet_arenas_reinitialized_for_topology": true, "round_trip_verified": true},
+      "policy": "apply only to the exact source identity; every other state must cold-load field 621 from V221 media"
+      }
+    }
+  },
+  "identity": {
+    "facility": "The worldwide Surface Soylent installation shown during the Disc 2 narration",
+    "not_the_same_location_as": "The playable Disc 1 Etrenank Soylent System",
+    "continuity": "The Verus crisis after the limiter's collapse and Krelian's virus, before the Gaetia Key",
+    "scope": "One Ignas processing node in a larger surface network",
+    "canonical_outcome": "The party secures this node after confronting the Sufal Mass; other Surface systems remain"
+  },
+  "design_pillars": [
+    "Every traversable doorway is an X-button interaction with a reciprocal destination",
+    "Every arrival is on the correct side of its matching door and outside held-X retrigger range",
+    "Fields 620-626 retain the visual identity, machinery, survivors, Meld, and Sufal climax of the cut sequence",
+    "Disc 1 Solaris rooms remain specialist annexes and service circulation; field 567 remains the single empty Ethos exploration annex, fields 591-593 are occupied bright examination rooms, field 594 is an occupied self-contained bright treatment-preparation room, and the preserved Krelian Lab ward is recovered separately at logical field 590",
+    "No new claim contradicts the limiter, Verus, M Project, Meld, or worldwide Soylent continuity",
+    "Clinic security's keycard opens the Intake patient-service corridor, Treatment Preparation Room, and three examination rooms; field 593's visible terminal supplies the distinct Quarantine keycard for Intake entity 22 and Service entity 10, while field 588 arms only the independent bio-interface cutoff",
+    "The field-565 Krelian Lab corridor cue continues through all eighteen rooms without same-track restarts",
+    "Every reconstructed dialogue block is explicitly laid out on the retail font grid without splitting words",
+    "The saved field-620 east threshold marks the current-content boundary without opening, animating, changing fields, or trapping the party; the west Intake return remains usable"
+  ],
+  "rooms": [
+    {"field": 623, "name": "Tissue Transfer Vestibule", "origin": "native Disc 2", "role": "Entrance threshold and post-finale emergency return"},
+    {"field": 621, "name": "Intake and Triage Reception", "origin": "native Disc 2", "role": "Primary survivor hub; saved-stance entity-13 receptionist; public, patient, service, and three-room examination circulation"},
+    {"field": 549, "name": "Classification Systems Archive", "origin": "Disc 1 Solaris donor", "role": "One-time intake registration and repeatable patient vitals with retained six-panel terminal presentation"},
+    {"field": 550, "name": "Intake Examination Office", "origin": "Disc 1 Ethos infirmary donor", "role": "Alias-aware live patient record and perfect biological-compatibility readout, bloodwork refusal sequence, Solaris security confrontation, and security-keycard recovery"},
+    {"field": 620, "name": "Quarantine Diagnostics", "origin": "native Disc 2", "role": "Four biological-relay identity puzzle and current east-side content boundary"},
+    {"field": 565, "name": "Service Distribution Manifold", "origin": "Disc 1 Solaris donor", "role": "Maintenance crossroads, restored Intake and scanner-annex spokes, native input passage, and ward circulation"},
+    {"field": 567, "name": "Unassigned Medical Examination Room", "origin": "Disc 1 Ethos donor", "role": "Optional NPC-empty exploration annex with one examination bed and a repeatable read-only workstation stating that no patient is loaded; no combat, gate, or progression logic"},
+    {"field": 591, "name": "Hematology Examination Room", "origin": "Disc 1 field 352 clinic donor installed into an unused Disc 2 field pair", "role": "Occupied bright examination room with a bed, a physician administering aid, a pale long-muzzled demihuman patient, and a repeatable Solaris hematology terminal"},
+    {"field": 592, "name": "Nanomachine Examination Room", "origin": "Disc 1 field 352 clinic donor installed into an unused Disc 2 field pair", "role": "Occupied bright examination room with a bed, a physician administering aid, a tall cream-furred demihuman patient, and a repeatable Solaris nanomachine-assay terminal"},
+    {"field": 593, "name": "Authorization Examination Room", "origin": "Disc 1 field 352 clinic donor installed into an unused Disc 2 field pair", "role": "NPC-empty bright examination room with a bed and a visible terminal holding the one-time Quarantine keycard; its stored diagnostic record remains available after pickup"},
+    {"field": 594, "name": "Treatment Preparation Room", "origin": "Disc 1 field 352 clinic donor installed into an unused Disc 2 field pair", "role": "Occupied bright preoperative room with a bed, a physician administering aid, a teal-crested demihuman patient, and a repeatable read-only Solaris preparation terminal"},
+    {"field": 589, "name": "Organic Resonance Annex", "origin": "Disc 1 Solaris donor", "role": "Authentic five-tone clue for the field-565 service input panel; clue playback does not grant authorization"},
+    {"field": 588, "name": "Bio-interface Load Test Annex", "origin": "Disc 1 donor installed into an unused Disc 2 field pair", "role": "Service-Manifold scanner annex that arms only the independent bio-interface cutoff"},
+    {"field": 590, "name": "Clinical Stabilization Ward", "origin": "Disc 1 field 567 Krelian Lab donor installed into an unused Disc 2 field pair", "role": "Recovered three-door clinical bridge between service circulation and production; its retired surgery event remains neutralized"},
+    {"field": 624, "name": "Molecular Sorting Floor", "origin": "native Disc 2", "role": "Three-feed diversion puzzle"},
+    {"field": 626, "name": "M-Project Ring Core", "origin": "native Disc 2", "role": "Fusion, pattern, and containment safe-state puzzle"},
+    {"field": 625, "name": "Meld Containment", "origin": "native Disc 2", "role": "Meld is revealed as an amalgamation of people"},
+    {"field": 622, "name": "Sufal Generation Hall", "origin": "native Disc 2", "role": "Save point, Sufal Mass confrontation, local shutdown, and return loop"}
+  ],
+  "door_pairs": [
+    {"id": "transfer_intake", "a": "623/p1", "b": "621/p6", "class": "main"},
+    {"id": "intake_quarantine", "a": "621/p2", "b": "620/p0", "class": "main", "gate": "quarantine_keycard", "role": "direct keycard-controlled Quarantine entrance"},
+    {"id": "intake_archive", "a": "621/p0", "b": "549/p0", "class": "annex"},
+    {"id": "intake_scanner", "a": "621/p3", "b": "550/p0", "class": "annex"},
+    {"id": "intake_service_patient", "a": "621/p1", "b": "565/p0", "class": "internal", "gate": "security_keycard"},
+    {"id": "intake_medical_examination", "a": "621/p4", "b": "567/p0", "class": "annex"},
+    {"id": "intake_treatment_preparation", "a": "621/p5", "b": "594/p0", "class": "annex", "gate": "security_keycard", "role": "bright self-contained treatment-preparation room; no deeper laboratory handoff"},
+    {"id": "intake_exam_a", "a": "621/p7", "b": "591/p0", "class": "annex", "gate": "security_keycard", "role": "bright hematology examination room"},
+    {"id": "intake_exam_b", "a": "621/p8", "b": "592/p0", "class": "annex", "gate": "security_keycard", "role": "bright nanomachine examination room"},
+    {"id": "intake_exam_c", "a": "621/p9", "b": "593/p0", "class": "annex", "gate": "security_keycard", "role": "bright authorization examination room and Quarantine-keycard source"},
+    {"id": "quarantine_service", "a": "620/p1", "b": "565/p6", "class": "main", "gate": "quarantine_keycard", "planned_topology": true, "current_field_620_override": "entity 24 displays the current-content notice and does not open or transition"},
+    {"id": "service_resonance", "a": "565/p4", "b": "589/p0", "class": "annex"},
+    {"id": "service_interface_annex", "a": "565/p5", "b": "588/p0", "class": "annex", "role": "bright scanner annex that arms only the bio-interface cutoff"},
+    {"id": "service_stabilization_production", "a": "565/p1", "b": "590/p0", "class": "internal", "role": "primary Service Manifold circulation route into the ward"},
+    {"id": "service_stabilization_staff", "a": "565/p2", "b": "590/p1", "class": "internal", "role": "parallel staff circulation route into the ward"},
+    {"id": "stabilization_sorting", "a": "590/p2", "b": "624/p0", "class": "main", "gate": "production_clearance", "role": "four-clearance ward production bulkhead"},
+    {"id": "sorting_m_core", "a": "624/p1", "b": "626/p0", "class": "main", "gate": "sorter_complete"},
+    {"id": "m_core_meld", "a": "626/p1", "b": "625/p0", "class": "main", "gate": "m_core_safe"},
+    {"id": "meld_generation", "a": "625/p1", "b": "622/p0", "class": "main", "gate": "meld_witnessed"},
+    {"id": "generation_transfer_shortcut", "a": "622/p1", "b": "623/p0", "class": "shortcut", "gate": "facility_secured"}
+  ],
+  "progression": [
+    {
+      "stage": 1,
+      "name": "Intake investigation",
+      "topologically_available": [623, 621, 549, 567],
+      "locked_until_registration": [550],
+      "locked_until_security_keycard": ["intake_service_patient", "intake_treatment_preparation", "intake_exam_a", "intake_exam_b", "intake_exam_c"],
+      "locked_until_quarantine_keycard": ["intake_quarantine", "quarantine_service"],
+      "objectives": [
+        "Register an intake alias to unlock the timed physician appointment in field 550",
+        "Defeat clinic security and recover the keycard that opens the patient-service route, Treatment Preparation Room, and three Intake examination rooms"
+      ]
+    },
+    {"stage": 2, "name": "Clinic security keycard", "available_after_registration": [550], "new_rooms": [565, 588, 589, 590, 591, 592, 593, 594], "unlocked_doors": ["intake_service_patient", "intake_treatment_preparation", "intake_exam_a", "intake_exam_b", "intake_exam_c"], "objectives": ["Defeat the called Solaris security team and receive the security-keycard dialogue and item sound", "Open all three new Intake examination-room doors and the Treatment Preparation Room", "Use the patient-service threshold to enter the Service Manifold; field-565 entity 7 remains sealed as a future laboratory handoff"]},
+    {"stage": 3, "name": "Quarantine keycard", "interaction_room": 593, "requires": "security_keycard", "unlocked_doors": ["intake_quarantine", "quarantine_service"], "objectives": ["Inspect the visibly occupied authorization-terminal slot", "Explicitly accept the distinct Quarantine keycard for its one-time item sound and receipt, or leave it without changing progression", "Use the new credential at Intake entity 22 or Service entity 10 to enter Quarantine"]},
+    {"stage": 4, "name": "Service authorizations", "available": [565, 588, 589, 590], "objectives": ["Visit field 589 to hear and record the authentic five-tone clue", "Enter Up, Down, Up, Left, Right at field-565 entity 12", "Use field-588's Service-side scanner to arm only the bio-interface cutoff"]},
+    {"stage": 5, "name": "Quarantine diagnostics", "available": [620], "objectives": ["Explore the four biological relays", "Reach east entity 24 and receive the current-content notice"], "current_build_endpoint": true},
+    {"stage": 6, "name": "Production shutdown", "available": [624], "route": "590/p2 <-> 624/p0 through stabilization_sorting after production_clearance", "objective": "Divert all three molecular feeds away from production"},
+    {"stage": 7, "name": "M-Project containment", "available": [626], "objective": "Disable fusion and pattern alignment while retaining containment"},
+    {"stage": 8, "name": "Meld witness", "available": [625], "objective": "Recognize the people held within Meld and commit to stopping the line"},
+    {"stage": 9, "name": "Sufal generation finale", "available": [622], "objective": "Save, confront the Sufal Mass, secure this node, and unlock the emergency return"}
+  ],
+  "intake_checkin": {
+    "receptionist": {
+      "field": 621,
+      "entity": 13,
+      "identification": "the receptionist selected from the user's saved reception-desk stance, not the nearby survivor",
+      "interaction": "the saved stance is 131.61 units across the counter; V183 replaces the inadequate native 64-unit circular reach with a ghosted no-facing rectangle whose effective X/Z half-extents are 80/144 units",
+      "rear_door": "field 621 entity 21 directly behind the stance enters field 549 parameter 0"
+    },
+    "first_use": {
+      "terminal_field": 549,
+      "aliases": ["Aron Voss", "Noel Ardan", "Kiro Dalen"],
+      "behavior": "one accepted full cover identity records the persistent intake-registration flag; Cancel leaves it clear",
+      "visual_sequence": "every interaction replays the retained staggered six-panel screen opening on entities 8-13 before the check-in menu; custom paths launch the matching native panel-close scripts"
+    },
+    "repeat_use": {
+      "patient_records": ["Fei", "Elly", "Citan"],
+      "weight_source": "retail EX69 reads the selected character's mutable live Status weight; field math applies the game's x2.20 conversion and formats decimal pounds on demand",
+      "clean_status_weight_hundredths_lb": {"Fei": 16720, "Elly": 9240, "Citan": 15840},
+      "other_vitals": "height is fixed character-profile data; pulse, blood pressure, temperature, respiration, and observations are authored facility readouts",
+      "menu": ["Fei", "Elly", "Citan", "Exit"],
+      "binary_archive_menu": "unreachable; the retained six-panel opening and closing presentation remains, but unlock-code, input-process, and code-schema choices are not exposed"
+    },
+    "appointment": {
+      "delay_seconds": 60,
+      "timer_start": "leaving field 549 after accepting an alias",
+      "call": "the exact field-550 physician actor and sprite exit the office door, walk to reception, and call the persisted alias",
+      "movement": "Fei remains under player control throughout the 60-second wait and every physician walk; both physician actors are collision-ghosted only while hidden or walking through scripted doorways, and are solid and immovable whenever visibly waiting; input is locked for dialogue, the short security entrance cinematic, and battle",
+      "dialogue_serialization": "field-local mutex 07CC wraps all nine retained survivor actions, the receptionist, the clinic-door denial, the Quarantine-keycard gate, and both security-keycard door denials; the automatic alias call waits while it is set and locks before its actor-dialog reset",
+      "follow": "after a fresh X-button conversation, the physician says Follow me, opens the lobby leaf, enters, and leaves it visibly open; Fei follows manually through a direct entered-phase transition that does not close or replay the leaf",
+      "office": "Disc 1 field 352 Ethos infirmary transplanted into logical field 550",
+      "office_terminal": {
+        "version": 214,
+        "static_node": 27,
+        "static_model": 3,
+        "carrier_entity": 4,
+        "carrier_entities": [4, 5, 6],
+        "operator_position": [80, -167],
+        "operator_positions": [[80, -167], [116, -167], [152, -167]],
+        "operator_triangle": 31,
+        "operator_triangles": [31, 30, 6, 7],
+        "runtime_carrier_triangle": 0,
+        "runtime_carrier_triangles": [0, 0, 0],
+        "interaction_half_extents_script_units": [1, 15],
+        "requires_facing": true,
+        "accepted_heading": "0x0400 toward the terminal bank",
+        "rejected_saved_heading": "0x0800 toward the examination bed",
+        "selected_name_source": "persistent alias bits 14-15 at 0x03EE",
+        "weight_source": "live Fei Status weight read with FE69 and converted with the game's x2.20 convention",
+        "vitals": {"pulse_bpm": 64, "blood_pressure": "118/72", "temperature_c": "36.8", "respiration_per_min": 14, "observation": "Neural activity: elevated."},
+        "biological_compatibility": {"index_percent": 100, "classification": "PERFECT FIT", "lore_role": "Sufal Mass integration suitability"},
+        "behavior": "repeatable and read-only; missing alias data fails closed; three overlapping narrow rectangular volumes are anchored at x=80/116/152 along the side computer bank's room-facing plane and cover every accessible x=70..164 point on triangles 31/30/6/7, while native +/-699-unit facing selection rejects bed-facing use throughout the full frontage; all three off-mesh carriers safely resolve to runtime triangle 0, remain stationary and collision-ghosted, share one record action, and stay disjoint from the physician's X volume"
+      },
+      "briefing": "automatic bloodwork and injection dialogue begins the appointment; trying to leave first reports that the door is locked, then gives the doctor's repeatable insistence that the procedure continue",
+      "refusal": "two distinct X-button conversations advance Fei's refusal and the doctor's final warning; held Cross cannot collapse them into one interaction",
+      "security": "the retained office leaf opens, two exact overworld Security Cubes and two Solaris Guards snap while hidden to the exterior threshold, receive actor-local 0x0038 permission, cross naturally on 0/6/12/18-frame staggers with 16-step movement bounds, clear that permission at deep interior position (0,200), dynamically face Fei, and let the leaf close before their fixed no-escape on-foot battle in bright technological arena 0x30; victory alone presents keycard-recovery dialogue, plays an item-retrieval sound, and grants the security-keycard flag",
+      "escape": "after victory the doctor follows an edge-connected route while Fei remains controllable, opens the retained office leaf at the threshold, receives actor-local 0x0038 permission, crosses fully outside with 16-step threshold bounds, remains visible while the leaf reverse-closes behind him, then hides and clears that permission; the exit enables only when his escape completes",
+      "legacy_v183": "one-time alias confirmation because V183 persisted completion but not the selected name"
+    }
+  },
+  "persistent_state": {
+    "03EE": "selected alias in bits14-15; bits0-13 hold the appointment timestamp until office entry, then the refusal/battle/escape substage",
+    "03FA_bits4_6": "appointment phase from registered through office-active and security-resolved",
+    "03FA_bit7": "intake registration complete",
+    "021A_bit0": "security keycard recovered after the clinic security victory",
+    "021A_bit8": "distinct Quarantine keycard explicitly accepted once from field-593 entity 19's Solaris terminal",
+    "021E_bit8": "field-589 authentic five-tone clue observed; clue state alone grants no access",
+    "021E_bit9": "native field-565 entity-12 five-tone service input authorized",
+    "03FA_bit8": "quarantine diagnostics complete",
+    "03FA_bit10": "transient finale_epilogue_pending handoff; inactive for reachability and never awarded by a progression stage",
+    "03FA_bit11": "bio-interface cutoff armed",
+    "03FA_bit12": "molecular sorter complete",
+    "03FA_bit13": "M-Project core calibrated safe",
+    "03FA_bit14": "Meld witnessed",
+    "03FA_bit15": "facility secured"
+  },
+  "production_clearance": [
+    "security keycard recovered after the clinic security victory",
+    "native field-565 service-input tone authorized",
+    "quarantine diagnostics complete",
+    "bio-interface cutoff armed"
+  ],
+  "implementation_invariants": {
+    "doors": "20 planned topological pairs and 40 physical X-button foundations; field-620 entity 24 is the explicit dialogue-only current-content override, while the security keycard gates field-621 entities 24, 26, and 43-45; entity 26 enters field 594/p0 and field-594 entity 17 returns to field 621/p5; field-565 entity 7 is sealed and dormant for a future laboratory handoff rather than serving as a transition endpoint; field-565 entity 9 and field-588 form the reciprocal interface annex; native field-565 entity 12 retains its five-direction solve; field-593 alone supplies the Quarantine keycard for Intake entity 22 and Service entity 10; and no reachable coordinate auto-warps remain",
+    "intake_room_swap": "V209: field 621 p2 west-side threshold owns field-620 p0 Quarantine Diagnostics and releases its preserved authentic opening action when the dedicated Quarantine keycard is present; p0 north threshold owns field-549 p0 Classification Archive; p1 north-center threshold owns the Security-keycard-gated field-565 p0 patient-service route",
+    "classification_archive_return_collision": {
+      "version": 230,
+      "field": 549,
+      "controller_entity": 6,
+      "physical_seal_entity": 16,
+      "center": [-244, 248],
+      "action_center": [-240, 240],
+      "shape": "rotation-invariant circle",
+      "radius_script_units": 8,
+      "radius_world_units": 16,
+      "effective_player_contact_radius": 32,
+      "saved_approach": {
+        "position_fixed": [-12702524, 0, 16007409],
+        "position_world": [-193.82513427734375, 0.0, 244.25367736816406],
+        "triangle": 10
+      },
+      "round_trip_saved_approach": {
+        "position_fixed": [-13485612, 0, 15269605],
+        "position_world": [-205.77410888671875, 0.0, 232.9956817626953],
+        "triangle": 10,
+        "yaw": "0x0600",
+        "travel_direction": "southwest (-X,-Z)",
+        "ray_clearance_world_units": 5.639441995778888
+      },
+      "closed_cut_triangles": [6, 10, 11, 12, 13],
+      "diagonal_seam_intersection_margins_world_units": [12.48625560742041, 15.741379398790173],
+      "deliberate_x": {
+        "carrier_entity": 6,
+        "script": 2,
+        "action_half_extents_script_units": [10, 12],
+        "effective_cross_half_extents_world_units": [36, 40],
+        "automatic_proximity_action": false,
+        "required": true
+      },
+      "policy": "keep the shifted circle entirely within deliberate-X reach, clear the exact southwest corridor ray, intersect both diagonal aperture seams across triangles 6, 10, 11, 12, and 13 while closed, and never open from Forward alone"
+    },
+    "current_content_boundary": {
+      "version": 232,
+      "field": 620,
+      "entity": 24,
+      "side": "east continuation threshold",
+      "slot_1_sha256": "9b5839c678df0b81b1bb8148af41486df968b76ed12843b7d8eb3298b1942cf3",
+      "slot_1_position": [332.1297912597656, -25.0, -1.27581787109375],
+      "slot_1_triangle": 182,
+      "slot_1_facing": 0,
+      "controller": [352, 0],
+      "action_pc": "0x0C42",
+      "dialogue_id": 24,
+      "dialogue": "This is the end for now.\nThe rest is coming soon...",
+      "behavior": {"repeatable": true, "cross_release_drains": 2, "plays_sound": false, "animates_leaf": false, "opens": false, "transitions": false, "writes_state": false},
+      "former_destination": [565, 6],
+      "preserved_return": {"entity": 23, "destination": [621, 2]},
+      "policy": "replace only the east entity-24 action; retain its controller, visible leaf, physical seal, dormant native gate foundation, and the usable west return"
+    },
+    "unassigned_medical_examination_room": "V233: field 621 p4 and field 567 p0 remain this room's only reciprocal route; the room has no NPCs and its actual side workstation repeatably says no patient is loaded without writing state; it has no route to field 565/p2, cutscene, combat, gate, or progression state",
+    "clinical_stabilization_ward": {
+      "version": 201,
+      "field": 590,
+      "source": "preserved Disc 1 field 567 compact Krelian Lab stabilization ward",
+      "target_resources": [1786, 1787],
+      "entries": {
+        "0": {"position": [140, 300], "triangle": 88},
+        "1": {"position": [830, -360], "triangle": 51},
+        "2": {"position": [890, -125], "triangle": 52}
+      },
+      "interaction_half_extent_script_units": 36,
+      "routes": [
+        {"pair": "service_stabilization_production", "a": "565/p1", "b": "590/p0"},
+        {"pair": "service_stabilization_staff", "a": "565/p2", "b": "590/p1"},
+        {"pair": "stabilization_sorting", "a": "590/p2", "b": "624/p0", "gate": "production_clearance"}
+      ],
+      "policy": "retain all three native paired-leaf thresholds, use wide ghost X targets with bounce-safe audited arrivals, keep the retired retail surgery scene and random encounters inactive, and preserve logical field 567 as the separate empty Ethos examination annex"
+    },
+    "intake_checkin": "V209: field 621 e13 retains its visible sprite and ghosted no-facing 0x20/0x40 rectangular X target covering the saved receptionist stance; rear e21 reaches field 549, where e4 offers the persistent full aliases Aron Voss, Noel Ardan, and Kiro Dalen, replays the exact retained six-panel terminal opening before every check-in interaction, closes those panels through their native scripts, and exposes only Fei, Elly, Citan, and Exit on repeat use; the unrelated retail binary-code menu is unreachable",
+    "intake_quarantine_lock": {
+      "version": 209,
+      "field": 621,
+      "entity": 22,
+      "slot_1_marker": {"position": [69.98291015625, 840], "triangle": 18, "facing": 0},
+      "dialogue": "QUARANTINE ACCESS SEALED. A Quarantine keycard is required for entry.",
+      "eventual_destination": [620, 0],
+      "unlock_trigger": "quarantine_keycard at operand 0x021A bit 8, removed only from field-593 entity 19",
+      "policy": "deny from Intake until the dedicated Quarantine keycard is present; afterward release the original sound, leaf-helper call, and field transition preserved byte-identically at PC 0x0D52"
+    },
+    "intake_service_patient_keycard": {
+      "version": 197,
+      "field": 621,
+      "entity": 24,
+      "route": {"pair": "intake_service_patient", "local_entry": 1, "destination": [565, 0]},
+      "unlock_trigger": "security_keycard at operand 0x021A bit 0",
+      "policy": "deny Intake-side patient-service access before the clinic security victory; preserve the reciprocal Service return"
+    },
+    "intake_treatment_preparation": {
+      "version": 232,
+      "field": 621,
+      "entity": 26,
+      "slot_1_marker": {"position": [1645, 396], "facing": "west"},
+      "route": {"pair": "intake_treatment_preparation", "local_entry": 5, "destination": [594, 0]},
+      "dialogue": "The door is locked. A security keycard is required.",
+      "unlock_trigger": "security_keycard at operand 0x021A bit 0, awarded only after victory over the field-550 security team",
+      "room": {
+        "field": 594,
+        "source_field": 352,
+        "source_resources": [1315, 1316],
+        "target_resources": [1794, 1795],
+        "entry_parameter": 0,
+        "role": "bright Solaris treatment-preparation room",
+        "return": {"entity": 17, "helper": 18, "destination": [621, 5]},
+                    "terminal": {
+                      "entities": [19, 4, 5],
+                      "model_index": 3,
+                      "positions": [[80, -167], [116, -167], [152, -167]],
+                      "triangles": [31, 6, 6],
+                      "half_extents_script_units": [1, 15],
+                      "effective_half_reach_world_units": [18, 46],
+                      "requires_facing": true,
+                      "interaction": "repeatable read-only X interaction",
+                      "cross_release_drains": 2,
+                      "dialogue": "PATIENT RECORD: T-594-03\nType: fin-armed demihuman\nPulse 76 bpm / BP 108/68\nTemp 37.0 C / Resp. 18/min<New>Hydration: NOMINAL\nMetabolic response: 91%\nInjection uptake: STABLE\nPrognosis: IMPROVING.<Close>",
+                      "writes_progression": false
+        },
+        "encounters": "disabled"
+      },
+      "retired_handoff": {"field": 565, "entity": 7, "local_entry": 3, "state": "sealed and dormant", "destination": null, "role": "reserved future laboratory handoff"},
+      "policy": "before the keycard, deny access without playing the door sound or opening the leaf; after the keycard, run the preserved sound and leaf-helper call, then enter the self-contained field-594 treatment room; its native entity-17 exit returns only to field 621/p5, and this Intake door never exposes field 565 or Krelian's Lab"
+    },
+    "intake_examination_rooms": {
+      "version": 232,
+      "field": 621,
+      "saved_example": {"position": [1656.65, 1252.67], "triangle": 77, "door_entity": 43},
+      "doors": [
+        {"entity": 43, "helper": 46, "threshold_header_node": 60, "local_entry": 7, "destination": [591, 0], "door_model": 3, "controller": [1650, 1246], "return": [1598, 1194], "model_origin": [3088, 0, 1463], "threshold_placement": [512, 1645, 0, 1307]},
+        {"entity": 44, "helper": 47, "threshold_header_node": 61, "local_entry": 8, "destination": [592, 0], "door_model": 6, "controller": [1774, 840], "return": [1720, 840], "model_origin": [1733, 0, 0], "threshold_placement": [1024, 1821, 0, 882]},
+        {"entity": 45, "helper": 48, "threshold_header_node": 62, "local_entry": 9, "destination": [593, 0], "door_model": 7, "controller": [1774, 396], "return": [1720, 396], "model_origin": [1733, 0, 0], "threshold_placement": [1024, 1821, 0, 441]}
+      ],
+      "patient_records": {
+        "591": {"dialogue_id": 53, "text": "PATIENT RECORD: H-591-04\nType: long-muzzled demihuman\nPulse 74 bpm / BP 102/64\nTemp 37.1 C / Resp. 16/min<New>Hemoglobin: BELOW BASELINE\nMarrow response: IMPROVING\nTonic uptake: 93%\nPrognosis: STABLE.<Close>"},
+        "592": {"dialogue_id": 53, "text": "PATIENT RECORD: N-592-07\nType: cream-furred demihuman\nPulse 68 bpm / BP 110/70\nTemp 36.9 C / Resp. 15/min<New>Joint inflammation: MODERATE\nNanomachine uptake: 96%\nPain response: IMPROVING\nPrognosis: STABLE.<Close>"},
+        "593": {"dialogue_id": 55, "text": "PATIENT RECORD: A-593-12\nType: shelled demihuman\nPulse 58 bpm / BP 124/76\nTemp 36.5 C / Resp. 11/min<New>Shell density: NOMINAL\nMineral balance: 98%\nTreatment response: STRONG\nClearance: APPROVED.<Close>"}
+      },
+      "terminal_interaction": {"static_model_index": 3, "source_header_node": 22, "authored_header_node": 23, "model_size": 1436, "model_sha256": "bc7ed77986a3133bed3e6f3de6d4b7c59ca4f92c4ef45f69130bef34946baa28", "carrier_entities": [19, 4, 5], "positions": [[80, -167], [116, -167], [152, -167]], "triangles": [31, 6, 6], "half_extents_script_units": [1, 15], "effective_half_reach_world_units": [18, 46], "requires_facing": true, "saved_slot_1_rejected": {"field": 593, "position": [75.00785827636719, -77.75068664550781], "triangle": 8, "yaw": "0x0400"}, "frontage_proof": {"reachable_points": 1201, "workstation_yaw": "0x0400", "bed_yaw": "0x0800", "bed_yaw_accepted_points": 0}},
+      "native_threshold_source": {"field": 621, "door_entity": 24, "door_model_index": 4, "door_model_size": 172, "door_model_sha256": "1c585299d3b1e67826303f5b668ed7cc04eede7f02b65174a4134c4ba0ae6e25", "door_plane": {"x": 1645, "z": [793, 882]}, "apron_model_index": 19, "apron_header_node": 59, "apron_model_size": 560, "apron_model_sha256": "7d2aab285a01c5561182f1a3db7f6f5eaefc1e806c22ecec256413315109a502", "model_counts": {"vertices": 34, "POLY_FT4": 10, "mesh_groups": 1}, "model_offsets": {"vertices": "0x48", "normals": "0x48", "meshes": "0x158", "display": "0x1AC"}, "gpu_packet_arena": "0x190", "primitive": {"type": "POLY_FT4", "ordinal": 4, "dimensions": [89, 44], "vertices": [[1601, 0, 793], [1601, 0, 882], [1645, 0, 882], [1645, 0, 793]], "indices": [1, 2, 0, 3], "texture_state": ["A8 00 00 C4", "00 79 00 C8"], "packet": "00 00 00 2D B6 95 B6 89 97 95 97 89"}, "proof": "retail entity 24/model 4 is only the leaf; the short visible pathway beyond it is model 19 FT4 ordinal 4, retained at shifted header node 59"},
+      "threshold_model": {"model_index": 20, "size": 396, "sha256": "8ef50d3f377c7b8caf2fdcfa0fcaecebe3d25ce5a51a90dfa0f14a734fdf3b52", "source": "one retail model-19 entity-24 apron normalized as one whole-width FT4", "counts": {"vertices": 15, "primitives": 15, "mesh_groups": 2}, "offsets": {"vertices": "0x48", "normals": "0x48", "meshes": "0xC0", "display": "0x140"}, "gpu_packet_arena": "0x140", "visible_primitives": {"type": "POLY_FT4", "count": 1, "packets": ["00 00 00 2D 97 89 97 8D B6 89 B6 8D"]}, "disabled_primitives": {"type": "POLY_F3", "count": 14, "method": "degenerate vertex-index records"}, "local_bounds": {"x": [0, 89], "y": [0, 0], "z": [0, 44]}, "rendering": "far-side top-facing floor only; local negative-Z is the accessible hall and remains empty, so model 20 shares only the aperture edge with model 1's hall floor and has no positive-area overlap or vertical near-plane ribbon; the retail one-FT4 topology keeps the whole apron behind a closed leaf in the PS1 ordering table; the far-depth V endpoint remains capped at cyan-shadow row 0x8D before the source texture's near-black tail"},
+      "historical_v220_inert_reveal_model": {"model_index": 20, "size": 396, "sha256": "501971ffbbfa09a28c8f3be10f546630cb9ab6cf52b31c3b28882679388cbb39", "disabled_primitives": {"type": "POLY_F3", "count": 16, "method": "degenerate vertex-index records"}, "rendering": "V220 allocation-preserving inert compatibility model retained header nodes, placements, model size, counts, display layout, and pointers but rendered no finite rear surface"},
+      "model_archive": {"size": 39292, "sha256": "b06e38c58fcd5e1ce5033e1135f0ae7c7d745b9ef37575f44b0cba4c936c52aa"},
+      "field_bundle": {"size": 135648, "sha256": "011be9593a2c565e6c3bb5f325ef64ac47811592794945ce529fcb3b6eb36677"},
+      "script": {"size": 10895, "sha256": "a362a56e04f91240e4209cb93cdb36a63c31d57bdf2e03c25fca52f202845ea7"},
+      "header": {"size": 1408, "sha256": "bc016d4404b7cd5f31a4eb7aac91315b594152ca17ea640104bc6f8fdc4790df"},
+      "camera_occluder_model": {"model_index": 2, "size": 4836, "native_sha256": "b093460d49974a083f191442a2aaafb75983da7ed5ad78201b3d46f5b4b2bdd3", "sha256": "2d0b40fb67720162fe93bb3fa522d33c3cf3db8333865f3f8d7c897688fad5d3", "disabled_groups": [0, 2], "disabled_primitives": {"POLY_F3": 4, "POLY_F4": 134}, "preserved_groups": [1, 3], "rendering": "native flat-black corner-cap and ceiling-fascia index records are degenerate; textured shell groups, packets, counts, offsets, pointers, allocation, and collision remain"},
+      "unlock_trigger": "security_keycard at operand 0x021A bit 0",
+      "rooms": "all three preserve the bright field-352 clinic shell, examination bed, illuminated Solaris side computer bank, native animated exit, and zero-weight encounter table",
+      "policy": "three narrow, facing-gated X carriers span only the actual model-3 side computer bank; the exact saved field-593 aisle position is outside every carrier, all 1,201 reachable frontage points are covered while facing the workstation, and none accepts bed-facing yaw; all three leaves are coplanar with their true carved apertures; model 20 supplies exactly one native-style 89-by-44 far-side threshold apron at each retained node and placement, sharing only the leaf-plane edge with model 1's accessible hall floor and never overlapping it in area; its single whole-width top-facing FT4 matches the retail doorway topology so no nearer lateral half can sort in front of a closed leaf, has no hall-side or vertical surface that can clip the near plane, and keeps its far-depth UVs at cyan-shadow row 0x8D before near-black atlas rows; V220's model-2 cleanup remains unchanged, including textured groups 1 and 3; Doors B/C remain 444 units apart; no overlapping invisible seal is added; only field 593's terminal holds the removable Quarantine keycard"
+    },
+    "service_interface_annex": {
+      "version": 216,
+      "field": 565,
+      "endpoints": [
+        {"entity": 9, "local_entry": 5, "destination": [588, 0]},
+        {"field": 588, "entity": 17, "local_entry": 0, "destination": [565, 5]}
+      ],
+      "policy": "the two model-backed thresholds retain their native animations, wide X targets, physical seals, and bounce-safe arrivals; the scanner annex awards only the bio-interface cutoff"
+    },
+    "service_tone_gate": {
+      "version": 202,
+      "field": 565,
+      "entity": 12,
+      "saved_slot_1_target": true,
+      "native_action_pc": "0x03AC",
+      "input_sequence": ["Up", "Down", "Up", "Left", "Right"],
+      "authorization": "tone_authorized at operand 0x021E bit 9",
+      "leaf_helper_entity": 21,
+      "physical_seal_entity": 30,
+      "policy": "retain the complete native directional-input action and all failure behavior; only either native success exit releases both the authentic carrier and the separate physical seal"
+    },
+    "organic_resonance_clue": {
+      "version": 202,
+      "field": 589,
+      "entity": 9,
+      "tone_order": ["Up", "Down", "Up", "Left", "Right"],
+      "clue_seen": "operand 0x021E bit 8",
+      "policy": "play the authentic five tones and record the pattern clue, but never set tone_authorized; the player must repeat the sequence at field-565 entity 12"
+    },
+    "quarantine_keycard_terminal": {
+      "version": 232,
+      "field": 593,
+      "entities": [19, 4, 5],
+      "model_index": 3,
+      "positions": [[80, -167], [116, -167], [152, -167]],
+      "triangles": [31, 6, 6],
+      "half_extents_script_units": [1, 15],
+      "effective_half_reach_world_units": [18, 46],
+      "requires_facing": true,
+      "requires": "security_keycard at operand 0x021A bit 0 to enter the room",
+      "awards": ["Quarantine keycard at operand 0x021A bit 8"],
+      "item_sound": "0x37",
+      "policy": "all text fits the retail font grid; only an X press while Fei is directly in front of and facing the illuminated Solaris side computer bank can report the seated card; Leave grants nothing and keeps the prompt repeatable, while Accept plays the item sound, shows the receipt, commits the credential, and makes subsequent interactions display the room's patient diagnostics"
+    },
+    "interface_cutoff_scanner": {
+      "version": 208,
+      "field": 588,
+      "entity": 4,
+      "position": [-300, -300],
+      "requires": "none after reaching the Service-side annex",
+      "awards": ["bio-interface cutoff armed at operand 0x03FA bit 11"],
+      "policy": "the active scanner action and the complete staged field bytecode contain no Quarantine-keycard write"
+    },
+    "quarantine_service_keycard": {
+      "version": 202,
+      "field": 565,
+      "entity": 10,
+      "route": {"pair": "quarantine_service", "local_entry": 6, "destination": [620, 1]},
+      "dialogue": "A quarantine keycard is required.",
+      "unlock_trigger": "quarantine_keycard at operand 0x021A bit 8, removed only from field-593 entity 19",
+      "local_exit_policy": "V212 retains field-620 entity 24 as the repeatable current-content notice; its native relay gate remains dormant for a future continuation, and field-620 entity 23 remains the usable return"
+    },
+    "intake_lobby_movement": {
+      "version": 198,
+      "field": 621,
+      "entities": [6, 7, 8, 9, 10, 11, 12, 14, 15],
+      "random_walk": "retained slot-1 WALK_RANDOM_DIRECTION opcode 59 00",
+      "collision_radius": 16,
+      "walkmesh_halo": 24,
+      "minimum_zone_separation": 50,
+      "center_aisle": [824, 946],
+      "minimum_doctor_clearance": 80,
+      "archive_door": {"entity": 21, "position": [867, 1832], "interior_clearance": 162, "clearance_after_halo": 138},
+      "movement_zones": [
+        {"entity": 6, "start": [617, 1450], "corners": [[570, 1470], [650, 1470], [650, 1415], [570, 1415]]},
+        {"entity": 7, "start": [1122, 1600], "corners": [[1100, 1635], [1145, 1635], [1145, 1560], [1100, 1560]]},
+        {"entity": 8, "start": [1020, 1650], "corners": [[985, 1670], [1050, 1670], [1050, 1630], [985, 1630]]},
+        {"entity": 9, "start": [650, 1635], "corners": [[615, 1650], [680, 1650], [680, 1620], [615, 1620]]},
+        {"entity": 10, "start": [1020, 1550], "corners": [[985, 1580], [1050, 1580], [1050, 1525], [985, 1525]]},
+        {"entity": 11, "start": [1090, 1450], "corners": [[1060, 1475], [1120, 1475], [1120, 1425], [1060, 1425]]},
+        {"entity": 12, "start": [760, 1460], "corners": [[720, 1490], [800, 1490], [800, 1420], [720, 1420]]},
+        {"entity": 14, "start": [760, 1580], "corners": [[730, 1610], [790, 1610], [790, 1550], [730, 1550]]},
+        {"entity": 15, "start": [595, 1545], "corners": [[565, 1570], [625, 1570], [625, 1520], [565, 1520]]}
+      ],
+      "policy": "all nine survivor initializers install distinct clockwise OP17 microzones whose 24-unit halos remain on the waiting-room walkmesh; the zones cannot collide or converge, keep the central player aisle open, and stay clear of the physician route and Archive door"
+    },
+    "intake_lobby_dialogue": {
+      "version": 189,
+      "field": 621,
+      "hopeful_adult_entities": [6, 7, 8, 9, 10, 12, 14, 15],
+      "hopeful_dialogue_ids": [2, 3, 4, 5, 6, 8, 9, 10],
+      "knowledge_boundary": "waiting patients sincerely believe the staff, screening, and treatment will help them and do not yet know the Soylent system's purpose",
+      "preserved_boy": {"entity": 11, "dialogue_id": 7, "text": "I like turtles!"}
+    },
+    "arrivals": "walkmesh-audited, correctly oriented, outside reciprocal held-X volumes",
+    "closed_panels": "broad ghost X targets paired with action-disabled immovable seals until a successful native or finite door animation",
+    "transfer_north_bulkhead": "field 623 reuses its native model 10/11 paired blue leaves at the north threshold with a 180-degree Y facing correction, sound 0x77, and a 32-frame opening",
+    "music": "all eighteen rooms initialize the field-565 Krelian Lab corridor cue, music ID 0x3D; ID 0x3C is excluded as the Kislev/Nortune infiltration cue; existing Disc 2 wave/sequence assets are reused",
+    "appointment": "V192 retains Fei's control during the 60-second wait and every physician walk, gives the lobby actor the exact field-550 physician assets, changes his handoff instruction to Follow me, and leaves the field-621 office leaf open after he enters; a field-local open flag permits direct follow-through without a close/reopen cycle while a true lobby reload safely falls back to the native opening action. V199 keeps both physician actors ghosted only while hidden or crossing their still-solid doorway seals, restores a 32-unit rectangular solid/immovable body while each is visibly stationary, and reconstructs that collision state on phase-aware field reloads. V200 gives only the doctor and security actors a scoped native 0x0038 override while crossing field 550's deliberately non-walkable exterior doorway strip, clears it after safe traversal, bounds the doctor's threshold legs to 16 updates, and keeps him visible until the leaf closes behind him. The two office refusals, visible four-actor security entrance, bright no-Escape battle, victory gate, and separate field-550 physician escape remain intact",
+    "physician_collision": {
+      "version": 199,
+      "lobby": {"field": 621, "entity": 35, "solid_phase": "called and visibly waiting", "ghost_phases": "hidden staging plus outbound and return routes"},
+      "office": {"field": 550, "entity": 16, "solid_phases": "all visible unresolved appointment phases", "ghost_phases": "hidden states plus post-battle escape"},
+      "bounding_volume_opcode": "18 10 10 00 00",
+      "runtime_half_extents": [32, 32],
+      "retained_collision_radius": 16,
+      "transit_flags_opcode": "20 01 80",
+      "stationary_flags_opcode": "20 0C 80",
+      "policy": "the transit ghost is removed only after a walk/door sequence completes and is restored before player control resumes for the next scripted walk, preventing both pass-through and doorway stalls"
+    },
+    "clinic_doorway_traversal": {
+      "version": 200,
+      "field": 550,
+      "walkmesh_size": 1948,
+      "walkmesh_sha256": "abea233198e3a4430536a2e736d39c7a86bc1eb27da44a8d8cca4238393571df",
+      "exterior_triangles": [34, 35],
+      "exterior_material": 0,
+      "exterior_material_flags": "0x00800000",
+      "actor_local_override": "0x0038",
+      "override_set_opcode": "F8 02 38 00",
+      "override_clear_opcode": "F8 06 38 00",
+      "security_clear_position": [0, 200],
+      "security_waypoint_max_steps": 16,
+      "doctor_threshold_max_steps": 16,
+      "policy": "the leaf opens before actor-local permission is set; security crosses from exterior triangle 34 to deep interior floor before clearing it; the doctor crosses outside, remains visible for the blocking close, hides, then clears it; Fei's solid seal and the global walkmesh never change"
+    },
+    "field352_exam_room_doorways": {
+      "version": 226,
+      "fields": [550, 567, 591, 592, 593, 594],
+      "collision": "aperture-aligned thin rectangular seal",
+      "automatic_entry": false,
+      "interaction": "one fresh deliberate X press on the unchanged broad carrier is required to invoke the native door action",
+      "controller_update": "entity 0 script 1 resolves to the shared STOP and the retired field-352 cavity has no active entry point",
+      "walkmesh": "the retail field-352 walkmesh remains byte-identical",
+      "policy": "the seal blocks only the physical doorway aperture instead of clipping Fei against an oversized radial volume; Forward alone cannot open a leaf or display doctor-office dialogue, while a fresh X press reaches the unchanged native animated-door action"
+    },
+    "private_treatment_population": {
+      "version": 237,
+      "empty_bed_rooms": [567, 593],
+      "occupied_rooms": [591, 592, 594],
+      "entities": {"patient": 13, "doctor": 16},
+      "positions": {"patient": [76, -16], "doctor": [76, 24]},
+      "triangles": {"patient": 8, "doctor": 13},
+      "solid_talkable": true,
+      "mutual_bedside_facing": true,
+      "patient_assets_scope": "active NPC assets in occupied rooms; field 593 retains its asset banks but keeps both occupants hidden and inactive",
+      "patient_assets": [
+        {"field": 591, "source": [620, 2], "appearance": "crouched pale long-muzzled demihuman"},
+        {"field": 592, "source": [620, 3], "appearance": "tall cream-and-pink-furred demihuman"},
+        {"field": 594, "source": [621, 3], "appearance": "teal-crested fin-armed demihuman"}
+      ],
+      "policy": "in occupied rooms each doctor and patient can be addressed independently; every doctor uses unique private-area redirection dialogue, every patient remains hopeful before the Soylent revelation, and neither interaction writes progression state. Field 593 has no patient or doctor; its Quarantine keycard, terminal, stored diagnostic record, bed, and return route remain. Historical V228 patient assets for field 593 remain recorded in the frozen release evidence."
+    },
+    "dialogue": "V233 adds field 567's repeatable PATIENT RECORD / No patient is loaded for this room readout on the actual side workstation, with no item or state write. V228 adds four distinct native Soylent demihuman patients receiving bedside aid in fields 591-594, with unique private-area redirection from each physician and hopeful repeatable dialogue from each patient; field 567 remains the sole NPC-empty bed room. V227 adds field 594's repeatable read-only Treatment Preparation status without writing a credential or progression flag and seals field-565 entity 7 as a dormant future laboratory handoff. V216 replaces field 593's post-keycard empty-slot notice with Fei's established pulse, blood-pressure, temperature, respiration, and neural-activity diagnostics. V213 repurposes retired field-550 dialogue IDs 2, 10, and 33 for alias-specific patient records and ID 45 for the missing-record response; unreachable trailing Close controls in retired ID 50 preserve the exact resident component size while active clinic IDs 53-60 remain byte-identical at the same offsets. V212 gives the field-550 doctor-office exit gate a private field-local scratch word, so the doctor's next-frame update cannot turn the locked notice into the native exit. V211 adds the 74th audited Surface-authored block: field-620 east entity 24 says This is the end for now. The rest is coming soon... and drains both the opening and closing Cross presses. V209 removes the unrelated retail binary-code branch from the repeat check-in menu while retaining its six-panel presentation, and changes Intake entity 22's denial to require the dedicated Quarantine keycard. V208 adds repeatable hematology and nanomachine terminal readouts plus field 593's inserted-card pickup and post-pickup response; field 588 now exposes only its bio-interface text. V204 retains the then-current audit of 73 Surface-authored blocks and 49 word-boundary repairs; V183 adds 11 explicitly sized receptionist/check-in blocks; V184 adds nine appointment/clinic blocks; V186 adds six explicitly sized refusal/security/escape blocks; V189 gives all eight adult field-621 waiting-room NPCs hopeful pre-revelation dialogue while field 621 entity 11 still says I like turtles! exactly; V190 makes office exit dialogue ID 54 first state that the door is locked and then has the doctor insist the procedure continue; V191 expands all three aliases to two-part cover identities and independently audits every affected appointment block against its retail grid; V193 adds the Quarantine-door denial; V196 specifies post-battle security-keycard recovery and the freight-service denial; V197 establishes the integrated patient-service topology; V202 makes field 589 clue-only and restores field-565 entity 12's native five-direction authorization; V203 makes receptionist dialogue ID 12 acknowledge completed sign-in and instruct the player to wait for the registered name to be called; unrelated retained retail blocks remain byte-identical",
+    "graphics": "retained source graphics remain byte-for-byte except that field 621 bank 6 is deliberately replaced by the exact field-352 bank-3 physician actor/sprite and its former civilian user moves to existing bank 3; logical field 550 uses field 352's infirmary graphics archive with exact Disc 1 Security Cube and Solaris Guard banks; logical fields 567 and 591-594 use the intact bright field-352 medical archive; logical field 588 uses the bright field-550 scanner archive; logical field 590 reuses the preserved Disc 1 field-567 ward graphics",
+    "geometry": "retained source walkmesh/model streams remain byte-for-byte except for field 621's three carved examination apertures, allocation-preserved custom model 20, and native model 2's degenerate flat-black groups 0 and 2; fields 550, 567, and 591-594 use field 352's intact infirmary geometry, with fields 567 and 591-594 preserving both the examination bed and illuminated workstation; field 567 reuses retired entities 4, 5, and 6 as narrow facing-gated carriers without adding a header record. V225 applied the aperture-aligned thin rectangular seal and a debounced forward poll to the then-current five field-352 rooms without changing their walkmesh; V226 retains the rectangle but removes every automatic forward-poll entry point, so only deliberate X invokes the unchanged door action; field 594 inherits that same X-only doorway contract. V220 made model 20 inert and disabled model 2's flat-black groups 0 and 2; V221 introduced model 20's normalized copy of retail model-19 FT4 ordinal 4 inside the same 396-byte allocation, split into two top-facing texture-continuous halves plus twelve degenerate F3 records. V222 restores V209's leaf/wall co-planarity and reverses nodes 60-62 so local positive Z extends only to the far side of each aperture; local negative Z is the accessible hall and remains empty. V223 caps the four far-depth V endpoints at cyan-shadow row 0x8D, excluding the near-black texture tail. V224 replaces the two lateral FT4 halves with the retail doorway's one whole-width FT4 plus fourteen degenerate F3 records, preserving the exact 396-byte model and 0x140 GPU allocation while preventing the nearer half from ordering in front of a closed leaf. Each apron shares only its leaf-plane edge with model 1's retained hall floor, with no positive-area overlap, black reveal border, vertical rear plate, or camera-facing ribbon; field 588 retains its compact scanner room; field 590 retains the preserved Krelian Lab ward geometry",
+    "encounters": "random encounters remain disabled; field 550 zeros all weights and installs the checked field-551 two-Cube/two-Guard formation in disabled slot 15 with Escape forbidden; fields 567 and 591-594 retain zero-weight clinic tables with no replacement formations; field 588 remains encounter-free; field 590 keeps its retired surgery event and encounter path inactive; field 622 uses its native Sufal battle configuration",
+    "title": "Surface start clears only its owned campaign state, installs Fei, Elly, and Citan, and grants every native on-foot deathblow without changing levels or stats; Chu-Chu and Maria retain no invented commands",
+    "save": "field 622 exposes the retained native save-menu sequence before the boss"
+  },
+  "acceptance": [
+    "Start from a fresh title selection rather than a legacy field savestate",
+    "Push-test and X-test both sides of every closed door",
+    "Verify every reciprocal arrival, camera, and return after a room reload",
+    "Enter field 567 from field 621/p4, verify the unassigned Ethos examination room has no NPCs, press X only while facing the actual side workstation and confirm PATIENT RECORD / No patient is loaded for this room appears repeatably, verify the bed and aisle do not trigger it, confirm no cutscene, combat, gate, item, or progression state occurs, and return only through field 567/p0 to field 621/p4",
+    "After reloading field 565 from the current image, traverse service_stabilization_production in both directions through 565/p1 and 590/p0, including a fresh X press from the former production-bulkhead stance",
+    "After reloading field 565 from the current image, traverse service_stabilization_staff in both directions through 565/p2 and 590/p1, including a fresh X press at field-565 entity 6 from the earlier recorded Slot-1 stance",
+    "At field 590/p2, verify each missing production clearance gives a repeatable denial without opening the leaf or changing fields; after all four clearances, traverse stabilization_sorting to field 624/p0 and return to field 590/p2",
+    "Verify each missing production clearance gives a repeatable denial",
+    "From the saved reception-desk stance, verify field 621 entity 13 directs the party through rear entity 21 to field 549",
+    "After loading a pre-V198 savestate, reload field 621 from another room, move and wait while all nine survivors roam, and confirm they retain random walking and dialogue without walking into walls, bunching together, blocking the central aisle, obstructing the physician route, or entering the closed north entity-21 Archive leaf",
+    "After reloading field 621, talk to all eight adult waiting-room NPCs and confirm their dialogue is hopeful about legitimate care with no premature Soylent revelation; confirm entity 11 still says I like turtles! exactly",
+    "Before removing the Quarantine keycard, from Slot-1 marker position (69.98291015625,840), face east and press X on field 621 entity 22; verify it reports that the Quarantine keycard is required, never plays the door sound or opening animation, never enters field 620, restores movement, and does not reopen from the same held press",
+    "After accepting the Quarantine keycard in field 593 while quarantine_complete is still clear, return to field 621 entity 22; verify it runs the preserved door sound, leaf-helper action, and field-620/p0 transition",
+    "Before the clinic security victory, press X at field 621 entity 24; verify the patient-service route denies access and does not enter field 565/p0, then verify the same preserved route succeeds after the keycard award",
+    "Before the clinic security victory, load the current Slot 1 at position (1645,396), face west, and press X on field 621 entity 26; verify it requires a security keycard, never plays the door sound or opening animation, never enters field 594/p0, restores movement, and does not reopen from the same held press",
+    "Before the clinic security victory, test Intake examination doors 43-45 and verify each gives the same keycard denial without opening; after victory, verify all three panels are visible from the hallway, open with sound 0x77, and enter fields 591-593 respectively",
+    "At the saved diagonal-wall stance (1656.65,1252.67), verify entity 43 is selectable without sidestepping, its model-3 rendered face points southwest toward Fei, and its closed leaf is coplanar with the diagonal aperture with no black outline; verify entities 44 and 45 are coplanar with the straight x=1821 wall and visibly spaced into separate bays",
+    "At field-621's original east entity-24 doorway, open the retail leaf and use the complete camera orbit to verify model-19 FT4 ordinal 4 forms the short 89-by-44 textured pathway beyond the leaf before the native black clear",
+    "Orbit the field-621 camera around Doors A, B, and C with every leaf closed and open; verify each model-20 apron begins exactly at the leaf plane, extends only onto the far side, matches the original entity-24 threshold's depth and texture continuity, and shares no positive area with model 1's accessible hall floor; the one whole-width FT4 remains continuous without a center seam or flicker; no hall-side slab, black leaf border, vertical/rear face, near-plane black ribbon, triangular tear, or native ceiling-fascia band appears",
+    "Interact before registration and verify the original six terminal panels stagger open before the full-name menu, then close through their original animation after Cancel or an accepted choice",
+    "Register once as Aron Voss, Noel Ardan, or Kiro Dalen; return to confirm the receptionist says I see you have signed in and instructs the party to wait until their name is called, then confirm the doctor later calls the exact selected full name",
+    "After leaving registration, move Fei throughout the 60-second wait and physician walk; verify the physician has the exact office appearance, calls the selected alias, and does not treat the call-closing press as a new conversation",
+    "After reloading field 621 in the called phase, walk Fei into the stationary physician from each side and confirm his normal-sized body blocks passage without being pushed; then talk to him and confirm his ghost transition occurs before the player-controlled return walk so he crosses the office doorway without stalling",
+    "While the physician is walking to reception, hold a survivor or receptionist dialogue open; verify the alias call waits until that window closes and never overlaps it",
+    "Talk to the physician with a fresh press; verify he says Follow me, keep moving while he opens and enters the east office, confirm the lobby leaf remains visibly open after he disappears, then follow manually into field 550 without a close/reopen animation",
+    "Try the office exit and verify page one says the door is locked and page two has the doctor insist that the procedure continue, without a held-X dialogue loop",
+    "In field 550, confirm the visibly waiting physician blocks Fei with the same normal-sized body, then verify he becomes non-blocking only for his post-battle doorway escape and leaves no invisible blocker after hiding",
+    "Talk to the doctor twice with distinct presses; verify both refusals, the office leaf opening, two visible Security Cubes and two visible Solaris Guards promptly crossing from outside on short staggers without walking in place, all four dynamically facing Fei, the leaf closing, and the no-escape battle beginning only afterward; confirm defeat does not grant clearance",
+    "Verify the security battle uses bright silver-white technological arena 0x30 and check all four enemies, floor contact, opening and attack cameras, victory return, and doctor escape",
+    "After the security victory, verify dialogue announces the recovered security keycard, an item-retrieval sound plays exactly once, and operand 0x021A bit 0 is set; defeat must not award it",
+    "Return to the Slot-1 field-621 entity-26 door after receiving the security keycard; verify X plays the door sound, opens the leaf, enters field 594/p0, and never enters field 565 or Krelian's Lab",
+    "In field 594, verify the bright field-352 treatment room preserves its examination bed and illuminated side computer bank; from the aisle Save-1 position X must do nothing, then stand directly in front of and face each reachable section of the bank and verify the loaded T-594-03 fin-armed-demihuman record shows vitals, hydration, metabolic response, injection uptake, and improving prognosis without changing any credential or progression flag; hold the closing X press and confirm it is drained without reopening the terminal",
+    "Use field-594 entity 17 and verify its native animated exit returns only to field 621/p5; separately verify field-565 entity 7 at local entry 3 is sealed, dormant, and has no active transition destination",
+    "In field 565, verify entity 9 at local p5 enters field 588/p0 and field 588's animated exit returns only to field 565/p5; verify both directions retain native leaf animation, wide X targets, physical seals, and bounce-safe arrivals",
+    "In field 589, activate entity 9 and verify the authentic tones play Up, Down, Up, Left, Right, a clue receipt appears, operand 0x021E bit 8 is set, and tone authorization at bit 9 remains clear",
+    "At the current Slot-1 target in field 565, verify entity 12 retains its native input interaction: a wrong sequence does not release the passage, while Up, Down, Up, Left, Right sets operand 0x021E bit 9 and releases both its native carrier and physical seal",
+    "Enter fields 591, 592, and 594 and verify each bed has one visibly distinct demihuman patient receiving aid from one physician; confirm both actors are solid and independently talkable, each physician faces Fei while delivering different private-area redirection dialogue and then resumes facing the patient, and each patient faces Fei while giving unique hopeful dialogue and then resumes facing the physician; verify fields 567 and 593 have no patient, doctor, or invisible occupant collision",
+    "Enter fields 591 and 592 and verify their illuminated Solaris side computer banks provide repeatable hematology and nanomachine-assay status without changing operand 0x021A bit 8; X from the center aisle or while facing the bed must do nothing",
+    "Enter field 593 and stand directly in front of and face the side computer bank; verify every line fits its window, Leave it restores control with no sound or state write and remains repeatable, Accept it plays item sound 0x37 once, announces acquisition, sets operand 0x021A bit 8 without changing bit 0, and displays the loaded A-593-12 shelled-demihuman record on every repeat interaction",
+    "In occupied rooms 591, 592, and 594, verify the three narrow carriers cover every reachable section of the actual side computer bank but not the saved aisle position or bed-facing heading; each bank loads the distinct patient record for the demihuman beside that room's bed, each record has two font-grid-safe pages with an identifier, type, vitals, room-specific findings, and treatment response, and none reports an empty queue or Fei's office record; field 593 retains the same terminal targeting and stored A-593-12 record without a visible patient or doctor",
+    "In fields 550, 567, 591, 592, 593, and 594, approach the shared field-352 doctor-office doorway from every reachable lateral offset and hold Forward without pressing X; verify the aperture-aligned thin rectangular seal permits a centered approach to its z=250 inner plane but no leaf opens and no doctor-office dialogue appears automatically; from the exact Slot-1 field-550 stance at z=228, verify one fresh X press reaches the unchanged broad carrier, runs the correct gate exactly once, preserves the native leaf animation and destination, and leaves the retail walkmesh unchanged",
+    "Enter field 588 from field-565 entity 9 and use entity 4; verify it arms only operand 0x03FA bit 11, is repeatable, plays no keycard sound, never sets operand 0x021A bit 8, and the complete staged field-588 bytecode contains no keycard writer",
+    "Before the distinct Quarantine keycard is accepted in field 593, verify field 565 entity 10 denies Service-side Quarantine access; after operand 0x021A bit 8 is set and while quarantine_complete is still clear, verify it enters field 620/p1",
+    "From the current Slot-1 field-620 stance on triangle 182, press X on east entity 24 and verify it says This is the end for now. The rest is coming soon..., plays no sound, does not animate or open the leaf, does not change fields or state, restores control, remains repeatable without reopening from the closing press, and leaves west entity 23 usable for the return to Intake",
+    "After victory, verify the doctor reaches the threshold without walking in place, opens the office leaf, crosses fully outside while Fei remains controllable, stays visible while the leaf closes behind him, disappears only afterward, and only then enables the reciprocal return door",
+    "Reopen field 549 records for Fei, Elly, and Citan, verify the original six screens appear before every repeat menu, verify clean weights 167.20/92.40/158.40 lbs, and verify each custom path closes the screens natively",
+    "At the earlier field-549 approach position (-193.82513427734375,0,244.25367736816406) on triangle 10, verify Fei reaches the shifted 32-world-unit contact circle and one fresh X press still reaches entity 6's unchanged 36-by-40 effective action shell and runs the native return action exactly once",
+    "From exact returning Slot 1 at (-205.77410888671875,0,232.9956817626953) on triangle 10 with yaw 0x0600, hold Forward southwest past the closed door without pressing X; verify Fei continues along the corridor with at least 5.639 world units of effective clearance, does not snag or clip, and the door does not open automatically",
+    "Verify the repeat terminal menu contains only Fei, Elly, Citan, and Exit; confirm no Unlock codes, Input process, Code schema, 0101, 1001, or 1111 screen is reachable, and Exit closes all six panels natively",
+    "Verify sorter and core require all three local controls",
+    "Verify the Sufal battle returns to the field and cannot be repeated after victory",
+    "Save and reload in field 622 with all campaign flags intact",
+    "Traverse the post-finale 622-623 loop in both directions",
+    "Complete ten full round trips and a thirty-minute emulator soak"
+  ]
+}

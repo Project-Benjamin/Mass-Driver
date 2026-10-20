@@ -1,0 +1,1179 @@
+#include <windows.h>
+#include <commdlg.h>
+#include <shellapi.h>
+#include <bcrypt.h>
+#include <objbase.h>
+#include <shobjidl.h>
+#include <atomic>
+#include <charconv>
+#include <cwctype>
+#include <filesystem>
+#include <iomanip>
+#include <iterator>
+#include <map>
+#include <sstream>
+#include <stdexcept>
+#include <string>
+#include <thread>
+#include <utility>
+#include <vector>
+#include "resource.h"
+#include "emulator.h"
+#include "xdelta_decoder.h"
+#include "embedded_data.h"
+
+#pragma comment(lib, "bcrypt.lib")
+#pragma comment(lib, "comdlg32.lib")
+#pragma comment(lib, "shell32.lib")
+
+namespace fs = std::filesystem;
+
+static const wchar_t* kTitle = L"Xenogears Mass Driver";
+static const wchar_t* kBinName = L"Xenogears_Mass_Driver.bin";
+static const wchar_t* kCueName = L"Xenogears_Mass_Driver.cue";
+static const wchar_t* kOutputFolder = L"Mass Driver Game";
+static const wchar_t* kStagePrefix = L".MassDriverBuild.";
+static const wchar_t* kPatchRelative = L"MassDriverData\\patches\\Mass_Driver.xdelta";
+static const wchar_t* kCueRelative = L"MassDriverData\\game\\Mass_Driver.cue.template";
+static const wchar_t* kManifestRelative = L"MassDriverData\\patch_manifest.txt";
+static const wchar_t* kAppFilename = L"Xenogears_Mass_Driver.exe";
+
+struct PatchConfig {
+    unsigned long long sourceSize = 0;
+    unsigned long long patchSize = 0;
+    unsigned long long cueSize = 0;
+    unsigned long long outputSize = 0;
+    std::string sourceSha;
+    std::string patchSha;
+    std::string cueSha;
+    std::string outputSha;
+};
+
+static PatchConfig gConfig;
+static bool gConfigReady = false;
+
+enum ExitCode {
+    OK = 0, CLI_USAGE = 2, SOURCE_MISSING = 10, SOURCE_SIZE = 11,
+    SOURCE_HASH = 12, PACKAGE_MISSING = 20, PACKAGE_BAD = 21,
+    OUTPUT_INVALID = 30, DISK_SPACE = 31, XDELTA_FAILED = 40,
+    OUTPUT_BAD = 41, MATERIALIZE_FAILED = 42, COMMIT_FAILED = 50,
+    UNEXPECTED = 60, CANCELLED = 61
+};
+
+static HINSTANCE gInstance = nullptr;
+static HWND gWindow = nullptr;
+static HWND gSourceEdit = nullptr;
+static HWND gStatus = nullptr;
+static HWND gTitle = nullptr;
+static HWND gSubtitle = nullptr;
+static HWND gOptionalLabel = nullptr;
+static HWND gBrowse = nullptr;
+static HWND gBuild = nullptr;
+static HWND gCancelBuild = nullptr;
+static HWND gOutputLocation = nullptr;
+static HWND gOutputPath = nullptr;
+static HWND gPlay = nullptr;
+static HWND gOpen = nullptr;
+static HWND gChooseEmulator = nullptr;
+static HWND gAutoDetectEmulator = nullptr;
+static HWND gGetDuckStation = nullptr;
+static HWND gGetRetroArch = nullptr;
+static HFONT gFont = nullptr;
+static HFONT gTitleFont = nullptr;
+static HBRUSH gBackgroundBrush = nullptr;
+static HBRUSH gPanelBrush = nullptr;
+static HBRUSH gEditBrush = nullptr;
+static HBRUSH gButtonBrush = nullptr;
+static HBRUSH gButtonPressedBrush = nullptr;
+static HBRUSH gButtonDisabledBrush = nullptr;
+static HBRUSH gAccentBrush = nullptr;
+static HBRUSH gAccentPressedBrush = nullptr;
+static HBRUSH gBorderBrush = nullptr;
+static HBRUSH gFocusBrush = nullptr;
+static bool gHighContrast = false;
+static std::atomic<bool> gBuilding(false);
+static std::atomic<bool> gCancel(false);
+static std::wstring gSource;
+static fs::path gRoot;
+static fs::path gDataRoot;
+static fs::path gFinal;
+static bool gEmbedded = false;
+static Emulator gEmulator;
+
+static constexpr COLORREF kBackgroundColor = RGB(18, 20, 24);
+static constexpr COLORREF kPanelColor = RGB(27, 30, 36);
+static constexpr COLORREF kEditColor = RGB(32, 36, 43);
+static constexpr COLORREF kButtonColor = RGB(45, 50, 60);
+static constexpr COLORREF kButtonPressedColor = RGB(57, 63, 75);
+static constexpr COLORREF kButtonDisabledColor = RGB(34, 37, 44);
+static constexpr COLORREF kAccentColor = RGB(174, 55, 76);
+static constexpr COLORREF kAccentPressedColor = RGB(139, 42, 59);
+static constexpr COLORREF kBorderColor = RGB(75, 82, 96);
+static constexpr COLORREF kFocusColor = RGB(111, 176, 255);
+static constexpr COLORREF kTextColor = RGB(238, 241, 247);
+static constexpr COLORREF kMutedTextColor = RGB(177, 184, 197);
+static constexpr COLORREF kDisabledTextColor = RGB(104, 110, 122);
+
+static bool HighContrastActive() {
+    HIGHCONTRASTW setting{sizeof(setting)};
+    return SystemParametersInfoW(SPI_GETHIGHCONTRAST, sizeof(setting), &setting, 0) &&
+        (setting.dwFlags & HCF_HIGHCONTRASTON) != 0;
+}
+
+static bool CreateThemeResources() {
+    gBackgroundBrush = CreateSolidBrush(kBackgroundColor);
+    gPanelBrush = CreateSolidBrush(kPanelColor);
+    gEditBrush = CreateSolidBrush(kEditColor);
+    gButtonBrush = CreateSolidBrush(kButtonColor);
+    gButtonPressedBrush = CreateSolidBrush(kButtonPressedColor);
+    gButtonDisabledBrush = CreateSolidBrush(kButtonDisabledColor);
+    gAccentBrush = CreateSolidBrush(kAccentColor);
+    gAccentPressedBrush = CreateSolidBrush(kAccentPressedColor);
+    gBorderBrush = CreateSolidBrush(kBorderColor);
+    gFocusBrush = CreateSolidBrush(kFocusColor);
+    return gBackgroundBrush && gPanelBrush && gEditBrush && gButtonBrush &&
+        gButtonPressedBrush && gButtonDisabledBrush && gAccentBrush &&
+        gAccentPressedBrush && gBorderBrush && gFocusBrush;
+}
+
+static void DestroyThemeResources() {
+    for (HBRUSH brush : {gBackgroundBrush, gPanelBrush, gEditBrush, gButtonBrush,
+        gButtonPressedBrush, gButtonDisabledBrush, gAccentBrush, gAccentPressedBrush,
+        gBorderBrush, gFocusBrush}) {
+        if (brush) DeleteObject(brush);
+    }
+    gBackgroundBrush = nullptr; gPanelBrush = nullptr; gEditBrush = nullptr;
+    gButtonBrush = nullptr; gButtonPressedBrush = nullptr; gButtonDisabledBrush = nullptr;
+    gAccentBrush = nullptr; gAccentPressedBrush = nullptr; gBorderBrush = nullptr;
+    gFocusBrush = nullptr;
+}
+
+static void SetDarkTitleBar(HWND window, bool enabled) {
+    // DWMWA_USE_IMMERSIVE_DARK_MODE is 20 on current Windows builds and 19 on
+    // the earliest builds that supported it. Resolve the API at runtime so the
+    // patcher still starts on systems that do not expose this decoration.
+    HMODULE module = LoadLibraryExW(L"dwmapi.dll", nullptr, LOAD_LIBRARY_SEARCH_SYSTEM32);
+    if (!module) return;
+    using SetWindowAttribute = HRESULT (WINAPI*)(HWND, DWORD, LPCVOID, DWORD);
+    auto setWindowAttribute = reinterpret_cast<SetWindowAttribute>(
+        GetProcAddress(module, "DwmSetWindowAttribute"));
+    if (setWindowAttribute) {
+        const BOOL value = enabled ? TRUE : FALSE;
+        if (FAILED(setWindowAttribute(window, 20, &value, sizeof(value))))
+            setWindowAttribute(window, 19, &value, sizeof(value));
+    }
+    FreeLibrary(module);
+}
+
+static std::wstring ErrorText(DWORD value) {
+    wchar_t* text = nullptr;
+    FormatMessageW(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM |
+        FORMAT_MESSAGE_IGNORE_INSERTS, nullptr, value, 0,
+        reinterpret_cast<wchar_t*>(&text), 0, nullptr);
+    std::wstring result = text ? text : L"Unknown Windows error";
+    if (text) LocalFree(text);
+    while (!result.empty() && (result.back() == L'\r' || result.back() == L'\n')) result.pop_back();
+    return result;
+}
+
+static void WriteConsole(const std::wstring& value, bool error = false) {
+    HANDLE handle = GetStdHandle(error ? STD_ERROR_HANDLE : STD_OUTPUT_HANDLE);
+    if (!handle || handle == INVALID_HANDLE_VALUE) return;
+    int length = WideCharToMultiByte(CP_UTF8, 0, value.c_str(), static_cast<int>(value.size()),
+        nullptr, 0, nullptr, nullptr);
+    if (length <= 0) return;
+    std::string utf8(static_cast<size_t>(length), '\0');
+    WideCharToMultiByte(CP_UTF8, 0, value.c_str(), static_cast<int>(value.size()),
+        utf8.data(), length, nullptr, nullptr);
+    utf8 += "\r\n";
+    DWORD written = 0;
+    WriteFile(handle, utf8.data(), static_cast<DWORD>(utf8.size()), &written, nullptr);
+}
+
+static fs::path ExecutableDirectory() {
+    std::vector<wchar_t> buffer(32768);
+    DWORD size = GetModuleFileNameW(nullptr, buffer.data(), static_cast<DWORD>(buffer.size()));
+    if (!size || size >= buffer.size()) throw std::runtime_error("Cannot determine program path");
+    return fs::path(std::wstring(buffer.data(), size)).parent_path();
+}
+
+class ReadLock {
+public:
+    ReadLock() = default;
+    ~ReadLock() { Close(); }
+    ReadLock(const ReadLock&) = delete;
+    ReadLock& operator=(const ReadLock&) = delete;
+    ReadLock(ReadLock&& other) noexcept : handle_(other.handle_) {
+        other.handle_ = INVALID_HANDLE_VALUE;
+    }
+    ReadLock& operator=(ReadLock&& other) noexcept {
+        if (this != &other) {
+            Close();
+            handle_ = other.handle_;
+            other.handle_ = INVALID_HANDLE_VALUE;
+        }
+        return *this;
+    }
+    bool Open(const fs::path& path) {
+        Close();
+        handle_ = CreateFileW(path.c_str(), GENERIC_READ, FILE_SHARE_READ, nullptr,
+            OPEN_EXISTING, FILE_FLAG_SEQUENTIAL_SCAN | FILE_FLAG_OPEN_REPARSE_POINT, nullptr);
+        if (handle_ == INVALID_HANDLE_VALUE) return false;
+        FILE_ATTRIBUTE_TAG_INFO attributes{};
+        if (!GetFileInformationByHandleEx(handle_, FileAttributeTagInfo, &attributes, sizeof(attributes)) ||
+            (attributes.FileAttributes & (FILE_ATTRIBUTE_DIRECTORY | FILE_ATTRIBUTE_REPARSE_POINT)) != 0) {
+            Close();
+            return false;
+        }
+        return true;
+    }
+    HANDLE Get() const { return handle_; }
+private:
+    void Close() {
+        if (handle_ != INVALID_HANDLE_VALUE) {
+            CloseHandle(handle_);
+            handle_ = INVALID_HANDLE_VALUE;
+        }
+    }
+    HANDLE handle_ = INVALID_HANDLE_VALUE;
+};
+
+static bool ReadLockedText(HANDLE handle, std::string& text) {
+    LARGE_INTEGER size{};
+    if (!GetFileSizeEx(handle, &size) || size.QuadPart <= 0 || size.QuadPart > 4096) return false;
+    LARGE_INTEGER start{};
+    if (!SetFilePointerEx(handle, start, nullptr, FILE_BEGIN)) return false;
+    text.assign(static_cast<size_t>(size.QuadPart), '\0');
+    DWORD read = 0;
+    if (!ReadFile(handle, text.data(), static_cast<DWORD>(text.size()), &read, nullptr) ||
+        read != text.size()) return false;
+    return true;
+}
+
+static bool SafePackageDirectory(const fs::path& path) {
+    DWORD attributes = GetFileAttributesW(path.c_str());
+    return attributes != INVALID_FILE_ATTRIBUTES && (attributes & FILE_ATTRIBUTE_DIRECTORY) != 0 &&
+        (attributes & FILE_ATTRIBUTE_REPARSE_POINT) == 0;
+}
+
+static bool ParseSize(const std::string& text, unsigned long long minimum,
+    unsigned long long maximum, unsigned long long& result) {
+    if (text.empty()) return false;
+    const char* first = text.data();
+    const char* last = first + text.size();
+    auto parsed = std::from_chars(first, last, result, 10);
+    return parsed.ec == std::errc() && parsed.ptr == last && result >= minimum && result <= maximum;
+}
+
+static bool ValidSha256(const std::string& value) {
+    if (value.size() != 64) return false;
+    for (char character : value)
+        if (!((character >= '0' && character <= '9') || (character >= 'a' && character <= 'f'))) return false;
+    return true;
+}
+
+static bool LoadPatchConfig(std::wstring& error) {
+    try {
+        const fs::path support = gDataRoot / L"MassDriverData";
+        if (!SafePackageDirectory(support) || !SafePackageDirectory(support / L"patches") ||
+            !SafePackageDirectory(support / L"game")) {
+            error = L"The MassDriverData folder is missing or is not a safe extracted package folder.";
+            return false;
+        }
+        ReadLock manifestLock;
+        if (!manifestLock.Open(gDataRoot / kManifestRelative)) {
+            error = L"The patch manifest is missing or could not be opened safely.";
+            return false;
+        }
+        std::string content;
+        if (!ReadLockedText(manifestLock.Get(), content) || content.find('\0') != std::string::npos) {
+            error = L"The patch manifest is empty, too large, or malformed.";
+            return false;
+        }
+        std::map<std::string, std::string> fields;
+        size_t start = 0;
+        while (start < content.size()) {
+            size_t end = content.find('\n', start);
+            if (end == std::string::npos) end = content.size();
+            std::string line = content.substr(start, end - start);
+            size_t equals = line.find('=');
+            if (line.empty() || equals == std::string::npos || equals == 0 || equals + 1 >= line.size() ||
+                line.find('=', equals + 1) != std::string::npos) {
+                error = L"The patch manifest contains a malformed line.";
+                return false;
+            }
+            std::string key = line.substr(0, equals);
+            std::string value = line.substr(equals + 1);
+            for (unsigned char character : line) {
+                if (character < 0x21 || character > 0x7e) {
+                    error = L"The patch manifest must contain plain ASCII fields.";
+                    return false;
+                }
+            }
+            if (!fields.emplace(std::move(key), std::move(value)).second) {
+                error = L"The patch manifest contains a duplicate field.";
+                return false;
+            }
+            start = end + 1;
+        }
+        static const char* expected[] = {"format", "source_size", "source_sha256", "patch_size",
+            "patch_sha256", "cue_size", "cue_sha256", "output_size", "output_sha256"};
+        if (fields.size() != std::size(expected)) {
+            error = L"The patch manifest has missing or unsupported fields.";
+            return false;
+        }
+        for (const char* key : expected) {
+            if (fields.find(key) == fields.end()) {
+                error = L"The patch manifest has missing or unsupported fields.";
+                return false;
+            }
+        }
+        if (fields["format"] != "xenogears-mass-driver-patch-v1") {
+            error = L"This patch manifest format is not supported.";
+            return false;
+        }
+        PatchConfig parsed;
+        constexpr unsigned long long MiB = 1024ULL * 1024ULL;
+        if (!ParseSize(fields["source_size"], 100ULL * MiB, 1024ULL * MiB, parsed.sourceSize) ||
+            !ParseSize(fields["patch_size"], 1, 1024ULL * MiB, parsed.patchSize) ||
+            !ParseSize(fields["cue_size"], 1, 4096, parsed.cueSize) ||
+            !ParseSize(fields["output_size"], 100ULL * MiB, 1024ULL * MiB, parsed.outputSize)) {
+            error = L"The patch manifest contains an unsafe or invalid file size.";
+            return false;
+        }
+        parsed.sourceSha = fields["source_sha256"];
+        parsed.patchSha = fields["patch_sha256"];
+        parsed.cueSha = fields["cue_sha256"];
+        parsed.outputSha = fields["output_sha256"];
+        if (!ValidSha256(parsed.sourceSha) || !ValidSha256(parsed.patchSha) ||
+            !ValidSha256(parsed.cueSha) || !ValidSha256(parsed.outputSha)) {
+            error = L"The patch manifest contains an invalid SHA-256 value.";
+            return false;
+        }
+        gConfig = std::move(parsed);
+        gConfigReady = true;
+        return true;
+    } catch (...) {
+        error = L"The patch manifest could not be checked.";
+        return false;
+    }
+}
+
+static std::string Sha256Handle(HANDLE file) {
+    BCRYPT_ALG_HANDLE algorithm = nullptr;
+    BCRYPT_HASH_HANDLE hash = nullptr;
+    DWORD objectSize = 0, digestSize = 0, used = 0;
+    std::vector<unsigned char> object, digest, buffer(1024 * 1024);
+    auto fail = [&]() {
+        if (hash) BCryptDestroyHash(hash);
+        if (algorithm) BCryptCloseAlgorithmProvider(algorithm, 0);
+        throw std::runtime_error("SHA-256 operation failed");
+    };
+    if (BCryptOpenAlgorithmProvider(&algorithm, BCRYPT_SHA256_ALGORITHM, nullptr, 0) < 0) fail();
+    if (BCryptGetProperty(algorithm, BCRYPT_OBJECT_LENGTH,
+        reinterpret_cast<PUCHAR>(&objectSize), sizeof(objectSize), &used, 0) < 0) fail();
+    if (BCryptGetProperty(algorithm, BCRYPT_HASH_LENGTH,
+        reinterpret_cast<PUCHAR>(&digestSize), sizeof(digestSize), &used, 0) < 0) fail();
+    object.resize(objectSize); digest.resize(digestSize);
+    if (BCryptCreateHash(algorithm, &hash, object.data(), objectSize, nullptr, 0, 0) < 0) fail();
+    LARGE_INTEGER start{};
+    if (!SetFilePointerEx(file, start, nullptr, FILE_BEGIN)) fail();
+    for (;;) {
+        DWORD got = 0;
+        if (!ReadFile(file, buffer.data(), static_cast<DWORD>(buffer.size()), &got, nullptr)) fail();
+        if (!got) break;
+        if (BCryptHashData(hash, buffer.data(), got, 0) < 0) fail();
+    }
+    if (BCryptFinishHash(hash, digest.data(), digestSize, 0) < 0) fail();
+    BCryptDestroyHash(hash); BCryptCloseAlgorithmProvider(algorithm, 0);
+    std::ostringstream text;
+    for (unsigned char value : digest)
+        text << std::hex << std::setfill('0') << std::setw(2) << static_cast<int>(value);
+    return text.str();
+}
+
+static bool PinnedHandle(HANDLE handle, unsigned long long size, const char* sha) {
+    try {
+        LARGE_INTEGER length{};
+        return handle != INVALID_HANDLE_VALUE && GetFileSizeEx(handle, &length) && length.QuadPart >= 0 &&
+            static_cast<unsigned long long>(length.QuadPart) == size && Sha256Handle(handle) == sha;
+    } catch (...) { return false; }
+}
+
+static bool Pinned(const fs::path& path, unsigned long long size, const char* sha) {
+    try {
+        ReadLock lock;
+        return lock.Open(path) && PinnedHandle(lock.Get(), size, sha);
+    } catch (...) { return false; }
+}
+
+static fs::path Extended(const fs::path& path) {
+    std::error_code error;
+    std::wstring absolute = fs::absolute(path, error).wstring();
+    if (error || absolute.empty()) throw std::runtime_error("Cannot make extended path");
+    if (absolute.rfind(L"\\\\?\\", 0) == 0) return absolute;
+    if (absolute.rfind(L"\\\\", 0) == 0) return fs::path(L"\\\\?\\UNC\\" + absolute.substr(2));
+    return fs::path(L"\\\\?\\" + absolute);
+}
+
+static std::wstring Quote(const std::wstring& value) {
+    std::wstring result = L"\"";
+    unsigned slashes = 0;
+    for (wchar_t character : value) {
+        if (character == L'\\') { ++slashes; continue; }
+        if (character == L'\"') {
+            result.append(slashes * 2 + 1, L'\\'); result += L'\"'; slashes = 0; continue;
+        }
+        result.append(slashes, L'\\'); slashes = 0; result += character;
+    }
+    result.append(slashes * 2, L'\\'); result += L'\"';
+    return result;
+}
+
+static std::wstring EmulatorCommand(const Emulator& emulator, const fs::path& cue) {
+    std::wstring command = Quote(emulator.path.wstring());
+    if (emulator.kind == EmulatorKind::DuckStation)
+        return command + L" -nofullscreen -fastboot -- " + Quote(cue.wstring());
+    if (emulator.kind == EmulatorKind::RetroArch)
+        return command + L" -L " + Quote(emulator.core.wstring()) + L" " + Quote(cue.wstring());
+    return command + L" " + Quote(cue.wstring());
+}
+
+static fs::path MakeStage(const fs::path& final) {
+    GUID id{};
+    if (CoCreateGuid(&id) != S_OK) throw std::runtime_error("Cannot create build identifier");
+    wchar_t text[33]{};
+    swprintf_s(text, L"%08x%04x%04x%02x%02x%02x%02x%02x%02x%02x%02x",
+        id.Data1, id.Data2, id.Data3, id.Data4[0], id.Data4[1], id.Data4[2], id.Data4[3],
+        id.Data4[4], id.Data4[5], id.Data4[6], id.Data4[7]);
+    return final.parent_path() / (std::wstring(kStagePrefix) + text);
+}
+
+static void Status(const std::wstring& message, bool headless) {
+    if (headless) WriteConsole(message);
+    else if (gWindow) PostMessageW(gWindow, WM_BUILD_STATUS, 0,
+        reinterpret_cast<LPARAM>(new std::wstring(message)));
+}
+
+static bool ExactOutput(const fs::path& final) {
+    try {
+        return gConfigReady && SafePackageDirectory(final) &&
+            Pinned(final / kBinName, gConfig.outputSize, gConfig.outputSha.c_str()) &&
+            Pinned(final / kCueName, gConfig.cueSize, gConfig.cueSha.c_str());
+    } catch (...) { return false; }
+}
+
+static int CheckPackage(std::wstring& error, std::vector<ReadLock>* retained = nullptr) {
+    try {
+        if (!gConfigReady && !LoadPatchConfig(error)) return PACKAGE_BAD;
+        const fs::path patch = gDataRoot / kPatchRelative;
+        const fs::path cueTemplate = gDataRoot / kCueRelative;
+        std::vector<ReadLock> localLocks;
+        std::vector<ReadLock>& locks = retained ? *retained : localLocks;
+        locks.clear();
+        locks.reserve(2);
+        ReadLock patchLock, cueLock;
+        if (!patchLock.Open(patch) || !cueLock.Open(cueTemplate)) {
+            error = L"A patch-kit file is missing, busy, or could not be locked for a safe build.";
+            return PACKAGE_BAD;
+        }
+        locks.push_back(std::move(patchLock));
+        locks.push_back(std::move(cueLock));
+        if (!PinnedHandle(locks[0].Get(), gConfig.patchSize, gConfig.patchSha.c_str()) ||
+            !PinnedHandle(locks[1].Get(), gConfig.cueSize, gConfig.cueSha.c_str())) {
+            error = L"A patch-kit file is missing or changed. Extract a fresh copy of the complete ZIP.";
+            return PACKAGE_BAD;
+        }
+        return OK;
+    } catch (...) {
+        error = L"The patch-kit files could not be checked.";
+        return PACKAGE_BAD;
+    }
+}
+
+static int BuildGame(const fs::path& source, const fs::path& final,
+    bool headless, std::wstring& error, bool cancelBeforeDecode = false) {
+    fs::path stage;
+    bool stageOwned = false;
+    auto cancelled = [&]() {
+        if (!gCancel.load()) return false;
+        std::error_code cleanupError;
+        if (stageOwned) { fs::remove_all(stage, cleanupError); stageOwned = false; }
+        error = L"The game build was cancelled. Select Build game to try again.";
+        return true;
+    };
+    try {
+        if (cancelled()) return CANCELLED;
+        ReadLock sourceLock;
+        if (!sourceLock.Open(source) || !fs::is_regular_file(source)) {
+            error = L"Choose the .bin file from your original USA Xenogears Disc 2.";
+            return SOURCE_MISSING;
+        }
+        if (fs::file_size(source) != gConfig.sourceSize) {
+            error = L"This is not the supported USA Disc 2 image. Choose an unmodified raw .bin file.";
+            return SOURCE_SIZE;
+        }
+        Status(L"Checking your original Disc 2 BIN...", headless);
+        if (Sha256Handle(sourceLock.Get()) != gConfig.sourceSha) {
+            error = L"This BIN is not the supported unmodified USA Disc 2 image.";
+            return SOURCE_HASH;
+        }
+        if (cancelled()) return CANCELLED;
+
+        Status(L"Checking the patch-kit files...", headless);
+        std::vector<ReadLock> packageLocks;
+        int packageResult = CheckPackage(error, &packageLocks);
+        if (packageResult != OK) return packageResult;
+        if (cancelled()) return CANCELLED;
+        const fs::path cueTemplate = gDataRoot / kCueRelative;
+
+        if (fs::exists(final)) {
+            if (ExactOutput(final)) {
+                Status(L"The game is already ready. Select Play in this app.", headless);
+                return OK;
+            }
+            error = L"The output folder already exists but does not match this build. Move or rename it, then try again.";
+            return OUTPUT_INVALID;
+        }
+        std::error_code fileError;
+        fs::create_directories(final.parent_path(), fileError);
+        if (fileError || !SafePackageDirectory(final.parent_path())) {
+            error = L"The patch-kit folder is not writable."; return OUTPUT_INVALID;
+        }
+        ULARGE_INTEGER available{};
+        if (!GetDiskFreeSpaceExW(final.parent_path().c_str(), &available, nullptr, nullptr) ||
+            available.QuadPart < gConfig.outputSize + 64ULL * 1024 * 1024) {
+            error = L"There is not enough free space to build the game."; return DISK_SPACE;
+        }
+        stage = MakeStage(final);
+        if (!fs::create_directory(stage)) {
+            error = L"Windows could not create the temporary output folder."; return OUTPUT_INVALID;
+        }
+        stageOwned = true;
+        fs::path output = stage / kBinName;
+        Status(L"Building the game with the integrated xdelta decoder. This may take several minutes...", headless);
+        // Deterministic headless QA exercises the same cancellation flag used
+        // by the GUI, after staging exists but before any result is committed.
+        if (cancelBeforeDecode) gCancel.store(true);
+        int decoderResult = DecodeVcdiff(sourceLock.Get(), packageLocks[0].Get(),
+            Extended(output).c_str(), gConfig.outputSize, error, &gCancel);
+        if (cancelled()) return CANCELLED;
+        if (decoderResult != 0) {
+            if (error.empty()) error = L"The integrated xdelta decoder could not build the game (error " +
+                std::to_wstring(decoderResult) + L").";
+            fs::remove_all(stage, fileError); stageOwned = false; return XDELTA_FAILED;
+        }
+        Status(L"Checking the finished game...", headless);
+        if (!Pinned(output, gConfig.outputSize, gConfig.outputSha.c_str())) {
+            error = L"The finished BIN did not match the expected build.";
+            fs::remove_all(stage, fileError); stageOwned = false; return OUTPUT_BAD;
+        }
+        if (cancelled()) return CANCELLED;
+        fs::copy_file(cueTemplate, stage / kCueName, fs::copy_options::none, fileError);
+        if (fileError || !Pinned(stage / kCueName, gConfig.cueSize, gConfig.cueSha.c_str())) {
+            error = L"The CUE file could not be copied or verified.";
+            fs::remove_all(stage, fileError); stageOwned = false; return MATERIALIZE_FAILED;
+        }
+        if (cancelled()) return CANCELLED;
+        if (!MoveFileExW(stage.c_str(), final.c_str(), MOVEFILE_WRITE_THROUGH)) {
+            error = L"The verified game folder could not be moved into place: " + ErrorText(GetLastError());
+            fs::remove_all(stage, fileError); stageOwned = false; return COMMIT_FAILED;
+        }
+        stageOwned = false;
+        Status(L"The game is ready. Select Play in this app.", headless);
+        return OK;
+    } catch (...) {
+        std::error_code fileError;
+        if (stageOwned && !stage.empty() && stage.parent_path() == final.parent_path() &&
+            stage.filename().wstring().rfind(kStagePrefix, 0) == 0)
+            fs::remove_all(stage, fileError);
+        error = L"The patcher stopped because of an unexpected Windows error.";
+        return UNEXPECTED;
+    }
+}
+
+static HWND Child(const wchar_t* cls, const wchar_t* text, DWORD style,
+    int x, int y, int width, int height, HWND parent, int id = 0) {
+    return CreateWindowExW(0, cls, text, WS_CHILD | WS_VISIBLE | style,
+        x, y, width, height, parent,
+        id ? reinterpret_cast<HMENU>(static_cast<INT_PTR>(id)) : nullptr, gInstance, nullptr);
+}
+
+static void SetFont(HWND control, HFONT font = nullptr) {
+    SendMessageW(control, WM_SETFONT, reinterpret_cast<WPARAM>(font ? font : gFont), TRUE);
+}
+
+static void PaintWindowBackground(HWND window, HDC dc) {
+    RECT client{};
+    GetClientRect(window, &client);
+    HBRUSH background = gHighContrast ? GetSysColorBrush(COLOR_WINDOW) : gBackgroundBrush;
+    HBRUSH panel = gHighContrast ? GetSysColorBrush(COLOR_BTNFACE) : gPanelBrush;
+    HBRUSH border = gHighContrast ? GetSysColorBrush(COLOR_WINDOWTEXT) : gBorderBrush;
+    FillRect(dc, &client, background);
+
+    // Keep optional emulator helpers visually separate from the required
+    // build-and-play path without making them look disabled.
+    RECT optional{16, 470, 742, 560};
+    FillRect(dc, &optional, panel);
+    FrameRect(dc, &optional, border);
+}
+
+static bool DrawThemedControl(const DRAWITEMSTRUCT* item) {
+    if (!item) return false;
+    if (item->CtlType == ODT_STATIC && item->CtlID == IDC_STATUS) {
+        SaveDC(item->hDC);
+        HBRUSH fill = gHighContrast ? GetSysColorBrush(COLOR_WINDOW) : gPanelBrush;
+        HBRUSH border = gHighContrast ? GetSysColorBrush(COLOR_WINDOWTEXT) : gBorderBrush;
+        FillRect(item->hDC, &item->rcItem, fill);
+        FrameRect(item->hDC, &item->rcItem, border);
+        RECT textRect = item->rcItem;
+        InflateRect(&textRect, -12, -9);
+        SetBkMode(item->hDC, TRANSPARENT);
+        SetTextColor(item->hDC, gHighContrast ? GetSysColor(COLOR_WINDOWTEXT) : kMutedTextColor);
+        SelectObject(item->hDC, gFont);
+        int length = GetWindowTextLengthW(item->hwndItem);
+        std::vector<wchar_t> text(static_cast<size_t>(length) + 1);
+        GetWindowTextW(item->hwndItem, text.data(), static_cast<int>(text.size()));
+        DrawTextW(item->hDC, text.data(), -1, &textRect,
+            DT_LEFT | DT_TOP | DT_WORDBREAK | DT_NOPREFIX);
+        RestoreDC(item->hDC, -1);
+        return true;
+    }
+    if (item->CtlType != ODT_BUTTON) return false;
+
+    const bool disabled = (item->itemState & ODS_DISABLED) != 0;
+    const bool pressed = (item->itemState & ODS_SELECTED) != 0;
+    const bool primary = item->CtlID == IDC_BUILD;
+
+    SaveDC(item->hDC);
+    if (gHighContrast) {
+        RECT buttonRect = item->rcItem;
+        UINT state = DFCS_BUTTONPUSH;
+        if (pressed) state |= DFCS_PUSHED;
+        if (disabled) state |= DFCS_INACTIVE;
+        DrawFrameControl(item->hDC, &buttonRect, DFC_BUTTON, state);
+    }
+    HBRUSH fill = disabled ? gButtonDisabledBrush :
+        (primary ? (pressed ? gAccentPressedBrush : gAccentBrush) :
+            (pressed ? gButtonPressedBrush : gButtonBrush));
+    if (!gHighContrast) {
+        FillRect(item->hDC, &item->rcItem, fill);
+        FrameRect(item->hDC, &item->rcItem, gBorderBrush);
+    }
+    RECT textRect = item->rcItem;
+    if (pressed) OffsetRect(&textRect, 1, 1);
+    SetBkMode(item->hDC, TRANSPARENT);
+    SetTextColor(item->hDC, gHighContrast ?
+        GetSysColor(disabled ? COLOR_GRAYTEXT : COLOR_BTNTEXT) :
+        (disabled ? kDisabledTextColor : kTextColor));
+    SelectObject(item->hDC, gFont);
+    int length = GetWindowTextLengthW(item->hwndItem);
+    std::vector<wchar_t> text(static_cast<size_t>(length) + 1);
+    GetWindowTextW(item->hwndItem, text.data(), static_cast<int>(text.size()));
+    UINT textFlags = DT_CENTER | DT_VCENTER | DT_SINGLELINE;
+    if ((item->itemState & ODS_NOACCEL) != 0) textFlags |= DT_HIDEPREFIX;
+    DrawTextW(item->hDC, text.data(), -1, &textRect, textFlags);
+    if ((item->itemState & ODS_FOCUS) != 0 &&
+        (item->itemState & ODS_NOFOCUSRECT) == 0 && !disabled) {
+        RECT focus = item->rcItem;
+        InflateRect(&focus, -3, -3);
+        if (gHighContrast) DrawFocusRect(item->hDC, &focus);
+        else FrameRect(item->hDC, &focus, gFocusBrush);
+    }
+    RestoreDC(item->hDC, -1);
+    return true;
+}
+
+static HWND MnemonicTarget(WPARAM key) {
+    switch (key) {
+    case L'B': return gBrowse;
+    case L'G': return gBuild;
+    case L'P': return gPlay;
+    case L'O': return gOpen;
+    case L'C': return gBuilding.load() ? gCancelBuild : gChooseEmulator;
+    case L'A': return gAutoDetectEmulator;
+    case L'D': return gGetDuckStation;
+    case L'R': return gGetRetroArch;
+    case L'L': return gOutputLocation;
+    default: return nullptr;
+    }
+}
+
+static bool ActivateMnemonic(WPARAM key) {
+    HWND target = MnemonicTarget(key);
+    if (!target) return false;
+    if (target && IsWindowEnabled(target)) {
+        SendMessageW(gWindow, WM_CHANGEUISTATE, MAKEWPARAM(UIS_CLEAR, UISF_HIDEACCEL), 0);
+        SetFocus(target);
+        SendMessageW(target, BM_CLICK, 0, 0);
+    }
+    return true;
+}
+
+static bool HandleAppKeyMessage(const MSG& message) {
+    if (message.message == WM_SYSKEYDOWN &&
+        (message.lParam & (static_cast<LPARAM>(1) << 29)) != 0 &&
+        (GetKeyState(VK_CONTROL) & 0x8000) == 0 && MnemonicTarget(message.wParam)) {
+        // Consume keyboard auto-repeat but activate exactly once per press.
+        if ((message.lParam & (static_cast<LPARAM>(1) << 30)) == 0)
+            ActivateMnemonic(message.wParam);
+        return true;
+    }
+
+    // BS_OWNERDRAW gives the controls a reliable dark face. Preserve the
+    // expected default-button behavior when Enter is pressed in the BIN path.
+    if (message.message == WM_KEYDOWN && message.wParam == VK_RETURN &&
+        GetFocus() == gSourceEdit && gBuild && IsWindowEnabled(gBuild)) {
+        SetFocus(gBuild);
+        SendMessageW(gBuild, BM_CLICK, 0, 0);
+        return true;
+    }
+    return false;
+}
+
+static std::wstring ChooseBin(HWND owner) {
+    wchar_t buffer[32768]{};
+    OPENFILENAMEW dialog{sizeof(dialog)};
+    dialog.hwndOwner = owner;
+    dialog.lpstrFilter = L"Disc image (*.bin)\0*.bin\0All files (*.*)\0*.*\0";
+    dialog.lpstrFile = buffer;
+    dialog.nMaxFile = static_cast<DWORD>(std::size(buffer));
+    dialog.lpstrTitle = L"Choose your original USA Xenogears Disc 2 BIN";
+    dialog.Flags = OFN_FILEMUSTEXIST | OFN_PATHMUSTEXIST | OFN_NOCHANGEDIR | OFN_DONTADDTORECENT;
+    return GetOpenFileNameW(&dialog) ? std::wstring(buffer) : L"";
+}
+
+static void ChooseOutputLocation(HWND owner) {
+    IFileDialog* dialog = nullptr;
+    HRESULT initialized = CoInitializeEx(nullptr, COINIT_APARTMENTTHREADED);
+    if (SUCCEEDED(CoCreateInstance(CLSID_FileOpenDialog, nullptr, CLSCTX_INPROC_SERVER,
+        IID_PPV_ARGS(&dialog)))) {
+        DWORD options = 0;
+        dialog->GetOptions(&options);
+        dialog->SetOptions(options | FOS_PICKFOLDERS | FOS_FORCEFILESYSTEM | FOS_PATHMUSTEXIST | FOS_DONTADDTORECENT);
+        dialog->SetTitle(L"Choose where to create the Mass Driver Game folder");
+        if (SUCCEEDED(dialog->Show(owner))) {
+            IShellItem* item = nullptr;
+            PWSTR selected = nullptr;
+            if (SUCCEEDED(dialog->GetResult(&item))) {
+                if (SUCCEEDED(item->GetDisplayName(SIGDN_FILESYSPATH, &selected))) {
+                    gFinal = fs::path(selected) / kOutputFolder;
+                    CoTaskMemFree(selected);
+                    SetWindowTextW(gOutputPath, (L"Game folder: " + gFinal.wstring()).c_str());
+                    bool ready = ExactOutput(gFinal);
+                    EnableWindow(gPlay, ready); EnableWindow(gOpen, ready);
+                    SetWindowTextW(gStatus, ready ? L"The game is ready here. Select Play." : L"Game location selected. Choose your original Disc 2 BIN and select Build game.");
+                }
+                item->Release();
+            }
+        }
+        dialog->Release();
+    }
+    if (SUCCEEDED(initialized)) CoUninitialize();
+}
+
+static void SetFinishedUi(bool ready, const std::wstring& message) {
+    SetWindowTextW(gStatus, message.c_str());
+    EnableWindow(gBuild, TRUE);
+    EnableWindow(gOutputLocation, TRUE);
+    ShowWindow(gCancelBuild, SW_HIDE);
+    EnableWindow(gSourceEdit, TRUE);
+    EnableWindow(GetDlgItem(gWindow, IDC_SELECT_SOURCE), TRUE);
+    EnableWindow(gPlay, ready ? TRUE : FALSE);
+    EnableWindow(gOpen, ready ? TRUE : FALSE);
+}
+
+static bool StartGame(HWND owner) {
+    if (!ExactOutput(gFinal)) {
+        MessageBoxW(owner, L"Build the game from your original Disc 2 BIN before selecting Play.",
+            kTitle, MB_OK | MB_ICONINFORMATION);
+        SetFinishedUi(false, L"The finished game is missing or changed. Choose your original Disc 2 BIN to build it again.");
+        return false;
+    }
+    std::wstring error;
+    Emulator emulator = gEmulator;
+    if (emulator.kind == EmulatorKind::None) emulator = DetectEmulator();
+    if (emulator.kind == EmulatorKind::None) {
+        int choice = MessageBoxW(owner,
+            L"No compatible PlayStation emulator was found.\r\n\r\nSelect Yes to choose an emulator you already installed.\r\nSelect No to return and use an official download button.",
+            kTitle, MB_YESNOCANCEL | MB_ICONINFORMATION);
+        if (choice != IDYES) return false;
+        bool canceled = false;
+        emulator = ChooseEmulator(owner, canceled, error);
+        if (emulator.kind == EmulatorKind::None) {
+            if (!canceled && !error.empty()) MessageBoxW(owner, error.c_str(), kTitle, MB_OK | MB_ICONERROR);
+            return false;
+        }
+    }
+    gEmulator = emulator;
+    if (!LaunchGame(gEmulator, gFinal / kCueName, error)) {
+        gEmulator = {};
+        MessageBoxW(owner, error.c_str(), L"The game could not start", MB_OK | MB_ICONERROR);
+        return false;
+    }
+    SetWindowTextW(gStatus, (L"Game started with " + emulator.name + L". You can keep this app open or close it.").c_str());
+    return true;
+}
+
+static LRESULT CALLBACK WindowProc(HWND window, UINT message, WPARAM word, LPARAM value) {
+    switch (message) {
+    case WM_CREATE: {
+        gWindow = window;
+        SetDarkTitleBar(window, !gHighContrast);
+        gFont = CreateFontW(-17, 0, 0, 0, FW_NORMAL, FALSE, FALSE, FALSE, DEFAULT_CHARSET,
+            OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, CLEARTYPE_QUALITY, DEFAULT_PITCH, L"Segoe UI");
+        gTitleFont = CreateFontW(-26, 0, 0, 0, FW_SEMIBOLD, FALSE, FALSE, FALSE, DEFAULT_CHARSET,
+            OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, CLEARTYPE_QUALITY, DEFAULT_PITCH, L"Segoe UI");
+        gTitle = Child(L"STATIC", L"Xenogears Mass Driver", SS_LEFT, 24, 18, 540, 38, window);
+        SetFont(gTitle, gTitleFont);
+        gSubtitle = Child(L"STATIC", L"Build and start the included Mass Driver update.",
+            SS_LEFT, 24, 58, 700, 24, window); SetFont(gSubtitle);
+        SetFont(Child(L"STATIC", L"1. Choose the unmodified USA Disc 2 BIN you legally own.",
+            SS_LEFT, 24, 104, 700, 24, window));
+        gSourceEdit = Child(L"EDIT", L"", ES_AUTOHSCROLL | WS_BORDER | WS_TABSTOP,
+            24, 136, 560, 30, window, IDC_SOURCE_PATH); SetFont(gSourceEdit);
+        gBrowse = Child(L"BUTTON", L"&Browse...", BS_OWNERDRAW | WS_TABSTOP,
+            596, 136, 130, 30, window, IDC_SELECT_SOURCE); SetFont(gBrowse);
+        SetFont(Child(L"STATIC", L"2. Select Build game. Your source BIN is read only and is never changed.",
+            SS_LEFT, 24, 194, 700, 24, window));
+        gBuild = Child(L"BUTTON", L"Build &game", BS_OWNERDRAW | WS_TABSTOP,
+            24, 228, 180, 38, window, IDC_BUILD); SetFont(gBuild);
+        gCancelBuild = Child(L"BUTTON", L"&Cancel build", BS_OWNERDRAW | WS_TABSTOP,
+            220, 228, 180, 38, window, IDC_CANCEL_BUILD); SetFont(gCancelBuild);
+        ShowWindow(gCancelBuild, SW_HIDE);
+        gOutputLocation = Child(L"BUTTON", L"Choose game &location...", BS_OWNERDRAW | WS_TABSTOP,
+            420, 228, 250, 38, window, IDC_OUTPUT_LOCATION); SetFont(gOutputLocation);
+        gOutputPath = Child(L"STATIC", (L"Game folder: " + gFinal.wstring()).c_str(),
+            SS_LEFT | SS_PATHELLIPSIS, 24, 272, 700, 20, window, IDC_OUTPUT_PATH); SetFont(gOutputPath);
+        SetFont(Child(L"STATIC", L"3. Select Play here. The app finds your emulator or asks you to choose it.",
+            SS_LEFT, 24, 296, 710, 42, window));
+        bool ready = ExactOutput(gFinal);
+        std::wstring readyText =
+            L"The game is ready. Select Play, or Browse to build from another clean Disc 2 BIN.";
+        gStatus = Child(L"STATIC", ready ? readyText.c_str() :
+            (gEmbedded ? L"Ready. The patch is included. Choose your original Disc 2 BIN to build the game." : L"Ready. Keep Xenogears_Mass_Driver.exe beside the MassDriverData folder."),
+            SS_OWNERDRAW, 24, 350, 700, 60, window, IDC_STATUS); SetFont(gStatus);
+        gPlay = Child(L"BUTTON", L"&Play", BS_OWNERDRAW | WS_TABSTOP,
+            24, 422, 150, 38, window, IDC_PLAY); SetFont(gPlay); EnableWindow(gPlay, ready ? TRUE : FALSE);
+        gOpen = Child(L"BUTTON", L"&Open game folder", BS_OWNERDRAW | WS_TABSTOP,
+            188, 422, 190, 38, window, IDC_OPEN_FOLDER); SetFont(gOpen); EnableWindow(gOpen, ready ? TRUE : FALSE);
+        gOptionalLabel = Child(L"STATIC", L"Optional: emulator setup", SS_LEFT,
+            24, 478, 700, 24, window); SetFont(gOptionalLabel);
+        gChooseEmulator = Child(L"BUTTON", L"&Choose emulator...", BS_OWNERDRAW | WS_TABSTOP,
+            24, 508, 168, 36, window, IDC_CHOOSE_EMULATOR); SetFont(gChooseEmulator);
+        gAutoDetectEmulator = Child(L"BUTTON", L"&Auto-detect emulator", BS_OWNERDRAW | WS_TABSTOP,
+            204, 508, 188, 36, window, IDC_AUTO_DETECT_EMULATOR); SetFont(gAutoDetectEmulator);
+        gGetDuckStation = Child(L"BUTTON", L"Get &DuckStation", BS_OWNERDRAW | WS_TABSTOP,
+            404, 508, 154, 36, window, IDC_GET_DUCKSTATION); SetFont(gGetDuckStation);
+        gGetRetroArch = Child(L"BUTTON", L"Get &RetroArch", BS_OWNERDRAW | WS_TABSTOP,
+            570, 508, 154, 36, window, IDC_GET_RETROARCH); SetFont(gGetRetroArch);
+        SetFocus(gSourceEdit);
+        return 0;
+    }
+    case WM_ERASEBKGND:
+        PaintWindowBackground(window, reinterpret_cast<HDC>(word));
+        return 1;
+    case WM_PAINT: {
+        PAINTSTRUCT paint{};
+        HDC dc = BeginPaint(window, &paint);
+        PaintWindowBackground(window, dc);
+        EndPaint(window, &paint);
+        return 0;
+    }
+    case WM_DRAWITEM:
+        if (DrawThemedControl(reinterpret_cast<DRAWITEMSTRUCT*>(value))) return TRUE;
+        break;
+    case WM_CTLCOLORSTATIC: {
+        HDC dc = reinterpret_cast<HDC>(word);
+        HWND control = reinterpret_cast<HWND>(value);
+        SetBkMode(dc, TRANSPARENT);
+        SetTextColor(dc, gHighContrast ? GetSysColor(
+            control == gOptionalLabel ? COLOR_BTNTEXT : COLOR_WINDOWTEXT) :
+            (control == gTitle ? RGB(241, 105, 128) :
+                (control == gSubtitle ? kMutedTextColor : kTextColor)));
+        return reinterpret_cast<LRESULT>(
+            gHighContrast ? GetSysColorBrush(
+                control == gOptionalLabel ? COLOR_BTNFACE : COLOR_WINDOW) :
+                (control == gOptionalLabel ? gPanelBrush : gBackgroundBrush));
+    }
+    case WM_CTLCOLOREDIT: {
+        HDC dc = reinterpret_cast<HDC>(word);
+        SetBkMode(dc, OPAQUE);
+        SetBkColor(dc, gHighContrast ? GetSysColor(COLOR_WINDOW) : kEditColor);
+        SetTextColor(dc, gHighContrast ? GetSysColor(COLOR_WINDOWTEXT) : kTextColor);
+        return reinterpret_cast<LRESULT>(
+            gHighContrast ? GetSysColorBrush(COLOR_WINDOW) : gEditBrush);
+    }
+    case WM_CTLCOLORBTN:
+        SetBkMode(reinterpret_cast<HDC>(word), TRANSPARENT);
+        SetTextColor(reinterpret_cast<HDC>(word),
+            gHighContrast ? GetSysColor(COLOR_BTNTEXT) : kTextColor);
+        return reinterpret_cast<LRESULT>(
+            gHighContrast ? GetSysColorBrush(COLOR_BTNFACE) : gButtonBrush);
+    case WM_SETTINGCHANGE:
+        if (word == SPI_SETHIGHCONTRAST) {
+            bool highContrast = HighContrastActive();
+            if (highContrast != gHighContrast) {
+                gHighContrast = highContrast;
+                SetClassLongPtrW(window, GCLP_HBRBACKGROUND, reinterpret_cast<LONG_PTR>(
+                    gHighContrast ? GetSysColorBrush(COLOR_WINDOW) : gBackgroundBrush));
+                SetDarkTitleBar(window, !gHighContrast);
+                RedrawWindow(window, nullptr, nullptr,
+                    RDW_INVALIDATE | RDW_ERASE | RDW_ALLCHILDREN | RDW_FRAME);
+            }
+        }
+        break;
+    case WM_SYSCOLORCHANGE:
+        if (gHighContrast)
+            RedrawWindow(window, nullptr, nullptr,
+                RDW_INVALIDATE | RDW_ERASE | RDW_ALLCHILDREN);
+        break;
+    case WM_COMMAND:
+        switch (LOWORD(word)) {
+        case IDC_SELECT_SOURCE: {
+            std::wstring selected = ChooseBin(window);
+            if (!selected.empty()) { gSource = selected; SetWindowTextW(gSourceEdit, selected.c_str()); }
+            return 0;
+        }
+        case IDC_BUILD: {
+            int length = GetWindowTextLengthW(gSourceEdit);
+            std::vector<wchar_t> buffer(static_cast<size_t>(length) + 1);
+            GetWindowTextW(gSourceEdit, buffer.data(), static_cast<int>(buffer.size()));
+            gSource = buffer.data();
+            if (gSource.empty()) {
+                MessageBoxW(window, L"Choose your original Disc 2 BIN first.", kTitle, MB_OK | MB_ICONINFORMATION);
+                return 0;
+            }
+            gCancel.store(false); gBuilding.store(true);
+            ShowWindow(gCancelBuild, SW_SHOW); EnableWindow(gCancelBuild, TRUE);
+            EnableWindow(gBuild, FALSE); EnableWindow(gSourceEdit, FALSE);
+            EnableWindow(gOutputLocation, FALSE);
+            EnableWindow(GetDlgItem(window, IDC_SELECT_SOURCE), FALSE);
+            EnableWindow(gPlay, FALSE); EnableWindow(gOpen, FALSE);
+            SetWindowTextW(gStatus, L"Starting checks...");
+            std::wstring source = gSource;
+            std::thread([source]() {
+                std::wstring error;
+                std::error_code absoluteError;
+                fs::path absolute = fs::absolute(source, absoluteError);
+                int result = absoluteError ? UNEXPECTED : BuildGame(absolute, gFinal, false, error);
+                if (absoluteError) error = L"Windows could not read the selected BIN path.";
+                PostMessageW(gWindow, WM_BUILD_COMPLETE, 0,
+                    reinterpret_cast<LPARAM>(new std::pair<int, std::wstring>(result, error)));
+            }).detach();
+            return 0;
+        }
+        case IDC_CANCEL_BUILD:
+            if (gBuilding.load()) {
+                gCancel.store(true);
+                EnableWindow(gCancelBuild, FALSE);
+                SetWindowTextW(gStatus, L"Cancelling safely... Please wait.");
+            }
+            return 0;
+        case IDC_OUTPUT_LOCATION:
+            if (!gBuilding.load()) ChooseOutputLocation(window);
+            return 0;
+        case IDC_PLAY: {
+            StartGame(window);
+            return 0;
+        }
+        case IDC_OPEN_FOLDER:
+            if (reinterpret_cast<INT_PTR>(ShellExecuteW(window, L"open", gFinal.c_str(), nullptr,
+                gRoot.c_str(), SW_SHOWNORMAL)) <= 32)
+                MessageBoxW(window, L"The game folder could not be opened.", kTitle, MB_OK | MB_ICONERROR);
+            return 0;
+        case IDC_CHOOSE_EMULATOR: {
+            bool canceled = false;
+            std::wstring error;
+            Emulator chosen = ChooseEmulator(window, canceled, error);
+            if (chosen.kind != EmulatorKind::None) {
+                gEmulator = chosen;
+                SetWindowTextW(gStatus, (L"Using " + chosen.name + L" for this session. Select Play when the game is ready.").c_str());
+            } else if (!canceled && !error.empty()) MessageBoxW(window, error.c_str(), kTitle, MB_OK | MB_ICONERROR);
+            return 0;
+        }
+        case IDC_AUTO_DETECT_EMULATOR:
+            gEmulator = DetectEmulator();
+            if (gEmulator.kind == EmulatorKind::None)
+                MessageBoxW(window, L"No compatible emulator was found. Choose its .exe file or use an official download button.",
+                    kTitle, MB_OK | MB_ICONINFORMATION);
+            else SetWindowTextW(gStatus, (L"Found " + gEmulator.name + L". Select Play when the game is ready.").c_str());
+            return 0;
+        case IDC_GET_DUCKSTATION: OpenDuckStationPage(window); return 0;
+        case IDC_GET_RETROARCH: OpenRetroArchPage(window); return 0;
+        }
+        break;
+    case WM_BUILD_STATUS: {
+        auto text = reinterpret_cast<std::wstring*>(value);
+        SetWindowTextW(gStatus, text->c_str()); delete text; return 0;
+    }
+    case WM_BUILD_COMPLETE: {
+        auto result = reinterpret_cast<std::pair<int, std::wstring>*>(value);
+        gBuilding.store(false);
+        bool ready = ExactOutput(gFinal);
+        std::wstring text = result->first == OK ? L"The game is ready. Select Play." : result->second;
+        int code = result->first; delete result;
+        SetFinishedUi(ready, text);
+        if (code != OK && code != CANCELLED)
+            MessageBoxW(window, text.c_str(), L"Build did not complete", MB_OK | MB_ICONERROR);
+        return code;
+    }
+    case WM_CLOSE:
+        if (gBuilding.load()) {
+            MessageBoxW(window, L"Select Cancel build or wait for the build to finish before closing this window.", kTitle,
+                MB_OK | MB_ICONINFORMATION); return 0;
+        }
+        DestroyWindow(window); return 0;
+    case WM_DESTROY:
+        if (gTitleFont) DeleteObject(gTitleFont);
+        if (gFont) DeleteObject(gFont);
+        PostQuitMessage(0); return 0;
+    }
+    return DefWindowProcW(window, message, word, value);
+}
+
+static int Headless(int argc, wchar_t** argv) {
+    std::wstring source, output;
+    std::wstring emulatorPath;
+    std::wstring gamePath;
+    bool sourceSeen = false, outputSeen = false, checkPackage = false;
+    bool cancelBeforeDecode = false;
+    bool playCheck = false, noEmulator = false, emulatorSeen = false, gameSeen = false;
+    for (int index = 2; index < argc; ++index) {
+        std::wstring argument = argv[index];
+        if (argument == L"--source" && index + 1 < argc && !sourceSeen && !checkPackage && !playCheck) {
+            source = argv[++index]; sourceSeen = true;
+        }
+        else if (argument == L"--output" && index + 1 < argc && !outputSeen && !checkPackage && !playCheck) {
+            output = argv[++index]; outputSeen = true;
+        }
+        else if (argument == L"--cancel-before-decode" && !cancelBeforeDecode && !checkPackage && !playCheck) {
+            cancelBeforeDecode = true;
+        }
+        else if (argument == L"--check-package" && !checkPackage && !sourceSeen && !outputSeen && !playCheck && !cancelBeforeDecode) {
+            checkPackage = true;
+        }
+        else if (argument == L"--play-check" && !playCheck && !checkPackage && !sourceSeen && !outputSeen && !cancelBeforeDecode) {
+            playCheck = true;
+        }
+        else if (argument == L"--no-emulator" && playCheck && !noEmulator && !emulatorSeen) {
+            noEmulator = true;
+        }
+        else if (argument == L"--emulator" && playCheck && index + 1 < argc && !emulatorSeen && !noEmulator) {
+            emulatorPath = argv[++index]; emulatorSeen = !emulatorPath.empty();
+            if (!emulatorSeen) { WriteConsole(L"ERROR: invalid command line", true); return CLI_USAGE; }
+        }
+        else if (argument == L"--game" && playCheck && index + 1 < argc && !gameSeen) {
+            gamePath = argv[++index]; gameSeen = !gamePath.empty();
+            if (!gameSeen) { WriteConsole(L"ERROR: invalid command line", true); return CLI_USAGE; }
+        }
+        else { WriteConsole(L"ERROR: invalid command line", true); return CLI_USAGE; }
+    }
+    if (checkPackage) {
+        std::wstring error;
+        int result = CheckPackage(error);
+        if (result == OK) {
+            WriteConsole(L"PACKAGE_OK");
+            if (gEmbedded) WriteConsole(L"EMBEDDED_DATA_ROOT=" + gDataRoot.wstring());
+        }
+        else WriteConsole(L"PACKAGE_ERROR=" + std::to_wstring(result) + L":" + error, true);
+        return result;
+    }
+    if (playCheck) {
+        fs::path game = gFinal;
+        if (gameSeen) {
+            std::error_code gameError;
+            game = fs::absolute(gamePath, gameError);
+            if (gameError) { WriteConsole(L"ERROR: invalid game path", true); return CLI_USAGE; }
+        }
+        if (!ExactOutput(game)) { WriteConsole(L"GAME_NOT_FOUND"); return OUTPUT_INVALID; }
+        fs::path cue = game / kCueName;
+        WriteConsole(L"GAME_CUE=" + cue.wstring());
+        Emulator emulator = noEmulator ? Emulator{} :
+            (emulatorSeen ? DescribeEmulatorForDiagnostics(emulatorPath) : DetectEmulator());
+        if (emulator.kind == EmulatorKind::None) { WriteConsole(L"EMULATOR_REQUIRED"); return 4; }
+        WriteConsole(L"EMULATOR_NAME=" + emulator.name);
+        WriteConsole(L"EMULATOR_PATH=" + emulator.path.wstring());
+        WriteConsole(L"EMULATOR_COMMAND=" + EmulatorCommand(emulator, cue));
+        return OK;
+    }
+    if (source.empty()) {
+        WriteConsole(L"Usage: --headless --check-package | --headless --play-check [--game <OUTPUT_FOLDER>] [--no-emulator|--emulator <EXE>] | --headless --source <BIN> [--output <EXACT_OUTPUT_FOLDER>]", true);
+        return CLI_USAGE;
+    }
+    std::error_code absoluteError;
+    fs::path absoluteSource = fs::absolute(source, absoluteError);
+    if (absoluteError) { WriteConsole(L"BUILD_ERROR=60:Windows could not read the selected BIN path.", true); return UNEXPECTED; }
+    fs::path final = output.empty() ? gFinal : fs::absolute(output, absoluteError);
+    if (absoluteError) { WriteConsole(L"BUILD_ERROR=60:Windows could not read the output path.", true); return UNEXPECTED; }
+    std::wstring error;
+    int result = BuildGame(absoluteSource, final, true, error, cancelBeforeDecode);
+    if (result == OK) {
+        WriteConsole(L"BUILD_SUCCESS=" + final.wstring());
+        WriteConsole(L"PLAY_APP=" + (gRoot / kAppFilename).wstring());
+    } else WriteConsole(L"BUILD_ERROR=" + std::to_wstring(result) + L":" + error, true);
+    return result;
+}
+
+int WINAPI wWinMain(HINSTANCE instance, HINSTANCE, PWSTR, int show) {
+    gInstance = instance;
+    try { gRoot = ExecutableDirectory(); gDataRoot = gRoot; gFinal = gRoot / kOutputFolder; }
+    catch (...) { return UNEXPECTED; }
+    int argc = 0;
+    wchar_t** argv = CommandLineToArgvW(GetCommandLineW(), &argc);
+    const bool headless = argv && argc > 1 && std::wstring(argv[1]) == L"--headless";
+    std::wstring configError;
+    gEmbedded = HasEmbeddedData(instance);
+    if (gEmbedded && !PrepareEmbeddedData(instance, gDataRoot, gFinal, configError)) {
+        if (headless) WriteConsole(L"PACKAGE_ERROR=21:" + configError, true);
+        else MessageBoxW(nullptr, configError.c_str(), L"Embedded patch data could not be opened", MB_OK | MB_ICONERROR);
+        if (argv) LocalFree(argv);
+        return PACKAGE_BAD;
+    }
+    if (!LoadPatchConfig(configError)) {
+        if (headless) WriteConsole(L"PACKAGE_ERROR=21:" + configError, true);
+        else MessageBoxW(nullptr, configError.c_str(), L"Patch package could not be opened", MB_OK | MB_ICONERROR);
+        if (argv) LocalFree(argv);
+        return PACKAGE_BAD;
+    }
+    if (headless) {
+        int result = Headless(argc, argv); LocalFree(argv); return result;
+    }
+    if (argv) LocalFree(argv);
+    gHighContrast = HighContrastActive();
+    if (!CreateThemeResources()) {
+        DestroyThemeResources();
+        return UNEXPECTED;
+    }
+    WNDCLASSEXW cls{sizeof(cls)};
+    cls.lpfnWndProc = WindowProc; cls.hInstance = instance;
+    cls.hCursor = LoadCursorW(nullptr, IDC_ARROW);
+    cls.hIcon = LoadIconW(instance, MAKEINTRESOURCEW(IDI_MASS_DRIVER));
+    if (!cls.hIcon) cls.hIcon = LoadIconW(nullptr, IDI_APPLICATION);
+    cls.hIconSm = cls.hIcon;
+    cls.hbrBackground = gHighContrast ? GetSysColorBrush(COLOR_WINDOW) : gBackgroundBrush;
+    cls.lpszClassName = L"XenogearsMassDriver";
+    if (!RegisterClassExW(&cls)) {
+        DestroyThemeResources();
+        return UNEXPECTED;
+    }
+    gWindow = CreateWindowExW(0, cls.lpszClassName, kTitle,
+        WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX | WS_CLIPCHILDREN,
+        CW_USEDEFAULT, CW_USEDEFAULT, 778, 620, nullptr, nullptr, instance, nullptr);
+    if (!gWindow) {
+        UnregisterClassW(cls.lpszClassName, instance);
+        DestroyThemeResources();
+        return UNEXPECTED;
+    }
+    ShowWindow(gWindow, show); UpdateWindow(gWindow);
+    MSG message{};
+    while (GetMessageW(&message, nullptr, 0, 0) > 0) {
+        if (!HandleAppKeyMessage(message) && !IsDialogMessageW(gWindow, &message)) {
+            TranslateMessage(&message); DispatchMessageW(&message);
+        }
+    }
+    int result = static_cast<int>(message.wParam);
+    UnregisterClassW(cls.lpszClassName, instance);
+    DestroyThemeResources();
+    return result;
+}

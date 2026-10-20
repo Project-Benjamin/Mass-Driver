@@ -1,0 +1,920 @@
+{
+  "format": "xenogears-definitive-portrait-audit-v1",
+  "pack": "C:\\Users\\Chad\\Xenogears_Reimagined\\upscaled sprites",
+  "metadata_sha256": "09378680e7374d8044c917af897a70d5b6f85775b72321edd8bbcf1bca05f035",
+  "asset_count": 91,
+  "assets": [
+    {
+      "id": "portrait-0",
+      "name": "Fei",
+      "filename": "portrait-0-upscaled.webp",
+      "size": 61052,
+      "sha256": "81589c6c3c624d1675913ab1d030d99ea7e928de594099f17a485b12dafd521d",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-1",
+      "name": "Fei",
+      "filename": "portrait-1-upscaled.webp",
+      "size": 58176,
+      "sha256": "6d736f5cec7ccfb14884416fbc2564ef6785698f13d3de0409837933fcff7442",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-2",
+      "name": "Kim",
+      "filename": "portrait-2-upscaled.webp",
+      "size": 61602,
+      "sha256": "ef6b02d46e2ff3b48872b08344b0d99dfb5bb8157286eadb564784900e490cd7",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-3",
+      "name": "Kim",
+      "filename": "portrait-3-upscaled.webp",
+      "size": 62500,
+      "sha256": "51ad186230bd15d7c96051eb8f64b4039df7eb21812431e063618e786a257791",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-4",
+      "name": "Fei",
+      "filename": "portrait-4-upscaled.webp",
+      "size": 61052,
+      "sha256": "81589c6c3c624d1675913ab1d030d99ea7e928de594099f17a485b12dafd521d",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-5",
+      "name": "Fei",
+      "filename": "portrait-5-upscaled.webp",
+      "size": 68580,
+      "sha256": "df2353c6afbaa7ad094cc2109d4040962ca52bf80fd219f27280da979513bf70",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-6",
+      "name": "Elly",
+      "filename": "portrait-6-upscaled.webp",
+      "size": 72880,
+      "sha256": "87f778cde6e1bf1a29ce80b6be2c39ae1f85fbd37280926a7f7dc0b1e442a185",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-7",
+      "name": "Elly",
+      "filename": "portrait-7-upscaled.webp",
+      "size": 73000,
+      "sha256": "af695482511013e2b6b717b27e5c93f1b3b5b45c78b8cbbd3d09d431457bbf56",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-8",
+      "name": "Elly",
+      "filename": "portrait-8-upscaled.webp",
+      "size": 67822,
+      "sha256": "c3ecfced5f5a4b5fad64029f8ec608e44e01fc969c66687b117e02b1c4797f14",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-9",
+      "name": "Elly",
+      "filename": "portrait-9-upscaled.webp",
+      "size": 72332,
+      "sha256": "dd10f7751b5f7b6678dbaba92caf852161d0b067d88cdfa4cd839aee7e13541c",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-10",
+      "name": "Unknown",
+      "filename": "portrait-10-upscaled.webp",
+      "size": 28494,
+      "sha256": "8435b5cc06d8d458e42773417ada8d86a9ba7498bb9813d340f7d72ca38d847d",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-11",
+      "name": "Sophia",
+      "filename": "portrait-11-upscaled.webp",
+      "size": 73980,
+      "sha256": "07eb16325683d91a08fe4cf12a5365a85d16551e9fa23898ba89266e92b0c4c2",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-12",
+      "name": "Sophia",
+      "filename": "portrait-12-upscaled.webp",
+      "size": 74702,
+      "sha256": "3fa834b2153d0ead09a4db2af36d9c521aaea2562dc01b7403471c59f6e90399",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-13",
+      "name": "Elly",
+      "filename": "portrait-13-upscaled.webp",
+      "size": 77134,
+      "sha256": "b39efafee4c0074b8aec5cc4f5b18d899df35fcdbfafde138df6f4cf1c65b526",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-14",
+      "name": "Miang",
+      "filename": "portrait-14-upscaled.webp",
+      "size": 65286,
+      "sha256": "69e37a59a1483038c11d2d15ba58f1e258c91c26dba46e44f9e73e1a58e06077",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-15",
+      "name": "Elly",
+      "filename": "portrait-15-upscaled.webp",
+      "size": 74812,
+      "sha256": "ad53b37f0c54eb2bdd9204f023bf24bdb745de4e57c467fc31ab4ebc30bedf03",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-16",
+      "name": "Hammer",
+      "filename": "portrait-16-upscaled.webp",
+      "size": 71770,
+      "sha256": "a63b8d207dc7451df6e48650a02ac217861a494ac108a905e8eaccfdee25664f",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-17",
+      "name": "Citan",
+      "filename": "portrait-17-upscaled.webp",
+      "size": 69102,
+      "sha256": "6e66fb0632afd8af495145c7befbb891b9b0becde1383d63c8195b0214febeae",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-18",
+      "name": "Ramsus",
+      "filename": "portrait-18-upscaled.webp",
+      "size": 62712,
+      "sha256": "f9bd56805f47d06365ea73649f5ad1bb06e06b6a5fc43cf71f31a203dc549bac",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-19",
+      "name": "Bart",
+      "filename": "portrait-19-upscaled.webp",
+      "size": 88982,
+      "sha256": "9020f15e046a70d4fddb4ef5c260cef29137f42824ba8fe06f1bb8a3cd744895",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-20",
+      "name": "Bart",
+      "filename": "portrait-20-upscaled.webp",
+      "size": 90052,
+      "sha256": "f0054c2b223ef9b5f59dacd4c7d38b659a4d3fe71847ec27d8ad79ed764cd5c9",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-21",
+      "name": "Billy",
+      "filename": "portrait-21-upscaled.webp",
+      "size": 63566,
+      "sha256": "9203a468ec19e6503c0a00a3fd5a314e4d5b6cc6e16ea10ae4b9906e760ae84d",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-22",
+      "name": "Sigurd",
+      "filename": "portrait-22-upscaled.webp",
+      "size": 71886,
+      "sha256": "cb412de0ac5f33c171cef56a481734100398239481633653de4233366e25cbba",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-23",
+      "name": "Rico",
+      "filename": "portrait-23-upscaled.webp",
+      "size": 77066,
+      "sha256": "49f5e839ad1d997fe447c2e8243fcc71282101f1429bbc513507a9c8b8e3cab3",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-24",
+      "name": "Emeralda",
+      "filename": "portrait-24-upscaled.webp",
+      "size": 86468,
+      "sha256": "e6dc1d47646c18ed472df365f88914b7abc81bf6a4af582c764f040dbcfa94e8",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-25",
+      "name": "Emeralda",
+      "filename": "portrait-25-upscaled.webp",
+      "size": 92508,
+      "sha256": "4bd87364a45dd1c1766dc02437aacae51fe2cf0ff63258474010c06239e13daa",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-26",
+      "name": "Margie",
+      "filename": "portrait-26-upscaled.webp",
+      "size": 79628,
+      "sha256": "c5d1b6af4c78ac86b1e6a47da41dbab18ccb38ecb6192d34b310f2d1dd495e60",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-27",
+      "name": "Maria",
+      "filename": "portrait-27-upscaled.webp",
+      "size": 84360,
+      "sha256": "e6b5c020634b4693a19a9f5f0ddae7c7f2a0d14733ae481bce22b26835d94c93",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-28",
+      "name": "Chu Chu",
+      "filename": "portrait-28-upscaled.webp",
+      "size": 66614,
+      "sha256": "24af4fae4f944d3a83dfe99f4fc9bbd3d741f09d6fe2de54aac088feaee723f6",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-29",
+      "name": "Id",
+      "filename": "portrait-29-upscaled.webp",
+      "size": 86162,
+      "sha256": "1b223743a10061a0b6225db9d6d29427b9ca6dbb02fa0c1ea2e8dcfef1eccb34",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-30",
+      "name": "Bishop Stone",
+      "filename": "portrait-30-upscaled.webp",
+      "size": 67708,
+      "sha256": "5c09bae85a561a5d8238f3b9cb8ecf035f3506e4f7d644ecda50238f2e175486",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-31",
+      "name": "Sophia",
+      "filename": "portrait-31-upscaled.webp",
+      "size": 74304,
+      "sha256": "1d279584f84c65d0804e3ebb771fab7d1edb26afe6dcf8d48381fd0f3002484a",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-32",
+      "name": "Gazel",
+      "filename": "portrait-32-upscaled.webp",
+      "size": 56674,
+      "sha256": "952c70baea6e2b5da0f58b781152a3932eedd63c231c6bcfc76013027224430a",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-33",
+      "name": "Big Joe",
+      "filename": "portrait-33-upscaled.webp",
+      "size": 82180,
+      "sha256": "00ed47b583f1965844263ff776e5454986db563e5027f4b4620a164d849b8d1c",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-34",
+      "name": "Dominia",
+      "filename": "portrait-34-upscaled.webp",
+      "size": 76004,
+      "sha256": "b2668bd1f5a2cacd5ae6784c1b095625e22f48366f792bc3d35cf6b75cead51d",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-35",
+      "name": "Seraphita",
+      "filename": "portrait-35-upscaled.webp",
+      "size": 70830,
+      "sha256": "8e009271fbefc28a4aaef752c4d913de0cbc0c86362f76cb3d36989341e0d177",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-36",
+      "name": "Tolone",
+      "filename": "portrait-36-upscaled.webp",
+      "size": 69762,
+      "sha256": "cb63f4d90a97cc603bade38eb7429666be23001e1e77bb7caf98cade729e4031",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-37",
+      "name": "Kelvena",
+      "filename": "portrait-37-upscaled.webp",
+      "size": 68704,
+      "sha256": "e76c13c313808d01efc6f48fc5f82ea3172e98aea602484f0b0765bee1a78391",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-38",
+      "name": "Krelian",
+      "filename": "portrait-38-upscaled.webp",
+      "size": 68946,
+      "sha256": "462b5ae434e007af91b51526a967ff7d54fd3a8f0ad247422e633bed447cb8b4",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-39",
+      "name": "Krelian",
+      "filename": "portrait-39-upscaled.webp",
+      "size": 60222,
+      "sha256": "ec8ea77d3c3592c68f2c793f141178d572428264d140b9c595783c9d829501b1",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-40",
+      "name": "Hammer",
+      "filename": "portrait-40-upscaled.webp",
+      "size": 57902,
+      "sha256": "e3cb0193c7ec3592ff2442d5b8959b73e5c12542be39e21c961bb048f5004e6c",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-41",
+      "name": "Grahf",
+      "filename": "portrait-41-upscaled.webp",
+      "size": 59960,
+      "sha256": "717d7b2e6ff24406668f39c83573464a8fc0300cb8148aa61b5b8b73819f108f",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-42",
+      "name": "Miang",
+      "filename": "portrait-42-upscaled.webp",
+      "size": 72024,
+      "sha256": "0c1f838f530367b1f2d7a43a16e73359d7785b05e34d0dea7d8896d00c3b1b02",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-43",
+      "name": "Ramsus",
+      "filename": "portrait-43-upscaled.webp",
+      "size": 64648,
+      "sha256": "fb9cf2d86980a181b67cc0003ee1b1c93091ab7c674cd08f07155cb4ca17b527",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-44",
+      "name": "Executioner",
+      "filename": "portrait-44-upscaled.webp",
+      "size": 63726,
+      "sha256": "a52deea02cddfb3e90c897621c02aab00fb59f4e5c2ccff35d6dbf10589b7b15",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-45",
+      "name": "Cain",
+      "filename": "portrait-45-upscaled.webp",
+      "size": 73276,
+      "sha256": "ca763d37865fadbc50ffa9d815f00a383f3aabf0ad1cc284a44a94f3a77badac",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-46",
+      "name": "Gazel",
+      "filename": "portrait-46-upscaled.webp",
+      "size": 49300,
+      "sha256": "4eab7ea22e36c8519487086539f6afd4e5c3a741e61eaf16b79c394c217f8ff3",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-47",
+      "name": "Khan",
+      "filename": "portrait-47-upscaled.webp",
+      "size": 70714,
+      "sha256": "f0de1672cdb45cdbb0eef729c1d8289bc8c9e7bf8ebe26cfadb33e86991b0c46",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-48",
+      "name": "Karen",
+      "filename": "portrait-48-upscaled.webp",
+      "size": 57834,
+      "sha256": "f1bb338d7b7f5c1d8fa2aa8f1dc07c1da81eaaedbeee370824ec48e903025367",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-49",
+      "name": "Wiseman",
+      "filename": "portrait-49-upscaled.webp",
+      "size": 55310,
+      "sha256": "793d2923a5a68a95e285453dd760045f30aa0e08fa753afc11ad10af8548f448",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-50",
+      "name": "Sigurd",
+      "filename": "portrait-50-upscaled.webp",
+      "size": 75854,
+      "sha256": "55d91fb97b3f01b7fd6c45f5904daec3003d6543a5be9d6c0b441db224ce6c8e",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-51",
+      "name": "Sigurd",
+      "filename": "portrait-51-upscaled.webp",
+      "size": 76494,
+      "sha256": "d595cbe9e541cafe245b33bb2a60b78b2011490367d80b4b438d6bd244a265f4",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-52",
+      "name": "Maison",
+      "filename": "portrait-52-upscaled.webp",
+      "size": 64522,
+      "sha256": "0d22a18de64a62d6c2335681754e449067e465d56fbf365d8e0bc65f87e75a73",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-53",
+      "name": "Jessie",
+      "filename": "portrait-53-upscaled.webp",
+      "size": 82242,
+      "sha256": "5b8d685d1f6c3814dec2684dface7a1e9d535eeb566ddd24d4f65caa0f7144cf",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-54",
+      "name": "Primera",
+      "filename": "portrait-54-upscaled.webp",
+      "size": 77144,
+      "sha256": "857e37bcb1ca3079b93579c9915e4981b8aa597955312ef6a137d762ebad840c",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-55",
+      "name": "Gazel",
+      "filename": "portrait-55-upscaled.webp",
+      "size": 50678,
+      "sha256": "0dda39716ccf24b59b6a83d8a250aed049cbd5eccc2a9841acfb007f45c557a9",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-56",
+      "name": "Roni",
+      "filename": "portrait-56-upscaled.webp",
+      "size": 88302,
+      "sha256": "7d1f479cbbf647cb886ac1c9160e38f94ef40d6d0817591f599b3bd7d3e3a90c",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-57",
+      "name": "Rene",
+      "filename": "portrait-57-upscaled.webp",
+      "size": 69796,
+      "sha256": "4a568b81ca1ffeaff24e9caad1f5ffddf2dd3a94ede947b20b5caa0494934790",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-58",
+      "name": "Bishop Stone",
+      "filename": "portrait-58-upscaled.webp",
+      "size": 58510,
+      "sha256": "1c9ebd796cddd9c2aa9f9a16d03eeecb6d06ac707d6c0538a7de9fb8b967897f",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-59",
+      "name": "Vanderkam",
+      "filename": "portrait-59-upscaled.webp",
+      "size": 62802,
+      "sha256": "4002be8e648e67f14c3743584ea2ee4e013b0627c42dfb255092fd0d26797540",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-60",
+      "name": "Shakhan",
+      "filename": "portrait-60-upscaled.webp",
+      "size": 66210,
+      "sha256": "209941fe5c5c0bd9732e7ab45cb9203b1e0d306631521c693baa26a7e3011f64",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-61",
+      "name": "Renk",
+      "filename": "portrait-61-upscaled.webp",
+      "size": 67670,
+      "sha256": "34f013c2b0f0bd024372aa9f74cba97c25b8a489e71e571657e2c810bc615b22",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-62",
+      "name": "Broyer",
+      "filename": "portrait-62-upscaled.webp",
+      "size": 64936,
+      "sha256": "6d9dc05191cf35cbb7e44470c5863d386bebcf18fd683c677281e4cfea2551a4",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-63",
+      "name": "Stratski",
+      "filename": "portrait-63-upscaled.webp",
+      "size": 66042,
+      "sha256": "12d45836ce7ba085bf4b5c1a45213a13434be21b0afe2439dddfa5031094fa1d",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-64",
+      "name": "Vance",
+      "filename": "portrait-64-upscaled.webp",
+      "size": 75124,
+      "sha256": "913284e0be03682d0efae68ef5df2196c3a7522047665a676ca2dc7dc6775807",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-65",
+      "name": "Helmholz",
+      "filename": "portrait-65-upscaled.webp",
+      "size": 69578,
+      "sha256": "85b0d34f7e362a5ceff724721cbe8f480e10cb19ecd1494bae5cff19602729f0",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-66",
+      "name": "Erich",
+      "filename": "portrait-66-upscaled.webp",
+      "size": 68410,
+      "sha256": "439a6d918541f849eb3c69067ccd8303e215ba87f4f2cfa1cae3ed811ebf1350",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-67",
+      "name": "Medena",
+      "filename": "portrait-67-upscaled.webp",
+      "size": 73340,
+      "sha256": "3d5b1948b612170e4aa0029d96ce899166b6cfa48f2992e6fcb1ebeed8980582",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-68",
+      "name": "Zephyr",
+      "filename": "portrait-68-upscaled.webp",
+      "size": 72086,
+      "sha256": "cc45f8cf9f27f7f160efb803b9d9e3e2ab65d1bd729a9d79c3e0bb0f7c3077d9",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-69",
+      "name": "Gaspar",
+      "filename": "portrait-69-upscaled.webp",
+      "size": 84962,
+      "sha256": "47f23ea647c549c9e344256cca62848e2b4c6ccc3b2e076baefc8ec0fef9cdb6",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-70",
+      "name": "Isaac",
+      "filename": "portrait-70-upscaled.webp",
+      "size": 88626,
+      "sha256": "5c3eba08c9354034b4fa8d7a148e06069bfccf07623b7c341cc59e2920c90ed9",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-71",
+      "name": "Taura",
+      "filename": "portrait-71-upscaled.webp",
+      "size": 66466,
+      "sha256": "069a368adf57502648daed01527971e36fb42f83ee816889ef89cc7f62dd4344",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-72",
+      "name": "Sigmund",
+      "filename": "portrait-72-upscaled.webp",
+      "size": 76204,
+      "sha256": "8449e36df483b139fe0058816bbbe26189b776c917f34a82e39bfedaa79b1c13",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-73",
+      "name": "Nikolai",
+      "filename": "portrait-73-upscaled.webp",
+      "size": 76072,
+      "sha256": "dfcea8bfb79ff581048c956d3bf60aaad31fddb5cee333ae25f74d2acd0b0b32",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-74",
+      "name": "Hammer",
+      "filename": "portrait-74-upscaled.webp",
+      "size": 73666,
+      "sha256": "52f5d9491fccf4da1d79e7297b9d1f3487afeffb62cc5b9cbd555199751c2d63",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-75",
+      "name": "Franz",
+      "filename": "portrait-75-upscaled.webp",
+      "size": 48402,
+      "sha256": "e7b1bc7e7a25b49958960ee91d2d77835aab440397f1c1157880db440d51e0de",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-76",
+      "name": "Thames Captain",
+      "filename": "portrait-76-upscaled.webp",
+      "size": 63968,
+      "sha256": "5eb717605cc8fd2a2b7e3321c6f6314751d29cb5cb44b554cbecd5ddf9d39287",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-77",
+      "name": "Yui",
+      "filename": "portrait-77-upscaled.webp",
+      "size": 72838,
+      "sha256": "c573c74b43ce2d763205fc5a0341b21b9c74d618cb159380f6d420c1a07b54c3",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-78",
+      "name": "Midori",
+      "filename": "portrait-78-upscaled.webp",
+      "size": 81696,
+      "sha256": "61176f5adabada8cad5744a05560d2dadf624d444545a06836da6c5043660e7a",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-79",
+      "name": "Chief Lee",
+      "filename": "portrait-79-upscaled.webp",
+      "size": 66110,
+      "sha256": "b7785c8420c086488b370d221cf8678dc5be136f4f3b447865ba157a06bba982",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-80",
+      "name": "Gazel",
+      "filename": "portrait-80-upscaled.webp",
+      "size": 50902,
+      "sha256": "2c83bb4b83837721efd17b783a2bb46d6388d1d9af93ffea20fc59f660ecca10",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-81",
+      "name": "Alice",
+      "filename": "portrait-81-upscaled.webp",
+      "size": 57688,
+      "sha256": "8e5a37fe4d45fcbe1021fd17c81694beb87a45f0d6d153ff84dbf9ab6303b11c",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-82",
+      "name": "Dan",
+      "filename": "portrait-82-upscaled.webp",
+      "size": 77922,
+      "sha256": "9735c68770e329ae501302e2b1c7fb13695c4acfd41711ebd237cbdfd2dc36f3",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-83",
+      "name": "Timothy",
+      "filename": "portrait-83-upscaled.webp",
+      "size": 59792,
+      "sha256": "b7510ff0bf800c18a2585608eb5b2a0d12b91f7e71d380c9ace1e19e92d28521",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-84",
+      "name": "Gazel",
+      "filename": "portrait-84-upscaled.webp",
+      "size": 47006,
+      "sha256": "25187921e5ffcf1562650ef604a6c1bf566057d7a3d7d83cc81a72eeb69539c0",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-85",
+      "name": "Gazel",
+      "filename": "portrait-85-upscaled.webp",
+      "size": 49434,
+      "sha256": "7993c82cdc662c0e18531a08af4834f91a38d88c0dd51867951003dc27ad4a3e",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-86",
+      "name": "Gazel",
+      "filename": "portrait-86-upscaled.webp",
+      "size": 56392,
+      "sha256": "7d131e0af24b4c336dd773e0a7e10dec16b1e18d2c5427985349c63af2115d50",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-87",
+      "name": "Gazel",
+      "filename": "portrait-87-upscaled.webp",
+      "size": 47400,
+      "sha256": "1e1319e06b9e87934527600c6a5bc432bb656c6a415d5b3406c559220832acc6",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-88",
+      "name": "Ramsus",
+      "filename": "portrait-88-upscaled.webp",
+      "size": 59180,
+      "sha256": "a5775a177990c1e44c82b12def2e679872a0626985fe0c5ff26ad915e31a8066",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-89",
+      "name": "Miang",
+      "filename": "portrait-89-upscaled.webp",
+      "size": 65116,
+      "sha256": "fb85f874f9fee6f645a50775b8bebd1fb13a4e770ea38a8476eb0ae1e7d9ca71",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": false
+    },
+    {
+      "id": "portrait-90",
+      "name": "Blank slot",
+      "filename": "portrait-90-upscaled.webp",
+      "size": 42,
+      "sha256": "8eff5d6bcd0fe68d06288bc4e29ecf7e220ce0234ff9fe1a09d8b29a871b8f7b",
+      "width": 256,
+      "height": 256,
+      "transparent_placeholder": true
+    }
+  ],
+  "installation_status": "texture_mapping_required",
+  "note": "Artwork IDs are not native portrait selectors or DuckStation texture hashes."
+}

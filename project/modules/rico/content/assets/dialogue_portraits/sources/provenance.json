@@ -1,0 +1,284 @@
+{
+  "format": "xenogears-rico-dialogue-portrait-provenance-v1",
+  "entries": [
+    {
+      "slug": "guard",
+      "prompt": "Use case: stylized-concept.\nAsset type: a single square 64x64 dialogue portrait source for a Xenogears fan game.\nImage1 is the EXACT native Kislev guard sprite atlas and is the authority for this character's appearance. Image2 is native Xenogears dialogue portraits, for drawing style/framing only; ignore its grid/labels and do not copy another named character.\nCreate a faithful head-and-upper-chest interpretation of the guard visible in Image1. Study multiple visible head and torso pieces: compact dark charcoal/olive military helmet with a small red-orange side marking; conspicuous pale-rimmed rectangular goggles worn OVER THE EYES with dark lenses; slate-blue uniform with brighter blue shoulder/sleeve panels, dark webbing/harness, and small red-orange shoulder insignia. The native sprite has a blue cloth section at the lower face/neck: retain that blue covering and exposed tan skin wherever the sprite shows it. The guard must clearly read as blue-uniformed with goggles, not a generic green-uniform soldier with bare eyes. No bomb collar for this guard.\nMatch late-1990s Xenogears PlayStation anime portraits: clean dark contours, limited cel-shaded color shapes, no photoreal texture, restrained practical design, readable after native64 downsampling. Three-quarter view facing screen-right; helmet and head nearly fill frame, upper chest/shoulders at bottom. One character on pure solid black background; no text, border, grid, logos or UI. Preserve the reference sprite's distinctive dark helmet, goggles and BLUE uniform; do not substitute a modern tactical costume or helmet from another character.",
+      "generated_source": "C:\\Users\\Chad\\.codex\\generated_images\\01a076fb-45ed-7c33-8b75-ce8911632580\\exec-3e855070-130a-4c8f-ae4a-c7b1bc6d97f4.png",
+      "tool": "built-in image_gen",
+      "references": [
+        "C:\\Users\\Chad\\Xenogears_Reimagined\\work\\rico_npc_portrait_audit_v7\\guard_field230_bank0_palette0_3x.png",
+        "C:\\Users\\Chad\\Xenogears_Reimagined\\work\\rico_npc_portrait_audit_v7\\guard_native_head_region_palette0_16x.png",
+        "C:\\Users\\Chad\\Documents\\Codex\\2026-09-06\\st\\work\\native_portrait_atlas.png"
+      ],
+      "native_identity": "Retail field230 canonical1066 bank0 palette0; identical actor and atlas installed as field68 entity10 bank0 in active v6. No palette override. See guard_installed_reference.json.",
+      "visual_review": "Compared actual palette0 atlas and head crop with generated source: dark helmet, pale goggles over eyes, blue lower-face/neck cloth and blue uniform with orange-red markings. User's goggles and blue uniform corrections are preserved.",
+      "path": "C:\\Users\\Chad\\Xenogears_Reimagined\\modules\\rico\\content\\assets\\dialogue_portraits\\sources\\guard.png",
+      "source_sha256": "204aaed4d346b882a03b228462fac139f62493c8abc80b19d44963ee2f70fd9b",
+      "native_tim_sha256": "97ea7ed7740d974e23c74582aba8f5695852be8fd140e8102dbb5e81e477564c",
+      "native_tim_bytes": 4640
+    },
+    {
+      "slug": "infirmary_attendant",
+      "prompt": "Use case: stylized-concept.\nAsset type: single square 64x64 native dialogue portrait source for a Xenogears fan game.\nImage1 is the exact retail213 bank2 palette1 sprite atlas of the infirmary's female doctor; Image2 is its enlarged contiguous head and upper-body region. These are the authority for her identity. Image3 is a sheet of native Xenogears portraits for style and framing only, ignore labels/grid.\nCreate one faithful face-and-upper-chest portrait of this woman, interpreting the actual sprite rather than inventing a generic nurse. She has pale silver-gray hair, center/side-parted and swept back neatly from her face, a warm light/tan complexion, a practical calm adult female face. Her native clothes are dark burgundy/maroon-brown with a broad pale gray/cream collar/shoulder and chest panel; preserve those strong contrasting costume colors. Study the head shapes in the sprite closely. No white nurse cap, no chestnut hair, no modern doctor's coat, no invented stethoscope or accessories. Let the sprite guide the age and facial structure; restrained mature appearance with a calm medical expression.\nMatch 1998 Xenogears dialogue portraits with crisp anime contours and limited cel-shaded color planes, simple readable facial detail at64x64. Three-quarter view facing screen-right, head nearly filling square and only upper chest/shoulders visible. One subject, solid pure black background, no text, border, logos or UI.",
+      "generated_source": "C:\\Users\\Chad\\.codex\\generated_images\\01a076fb-45ed-7c33-8b75-ce8911632580\\exec-119589a7-1998-408c-8375-ba4c84389f51.png",
+      "tool": "built-in image_gen",
+      "initial_generated_source": "C:\\Users\\Chad\\.codex\\generated_images\\01a076fb-45ed-7c33-8b75-ce8911632580\\exec-0d7038c3-9e3a-4b15-9764-1cbe82b2c651.png",
+      "edit_prompt": "Use case: precise-object-edit.\nImage1 is the portrait candidate to correct. Image2 is the exact native female-doctor sprite head/upper-body crop. Image3 is the complete native sprite atlas.\nCorrect only the head treatment to follow the native sprite: the broad pale-gray rounded/swept mass should read as a soft gray-white medical head covering, with a small amount of dark reddish-brown hair visible at the sides and lower back, not a full silver hairstyle. Remove the obvious individual silver hair strands. Keep the broad silhouette matching the native gray head area, including the swept/gathered shape at the back; do not substitute a tiny white nurse cap.\nKeep the same visible female face, warm skin, calm expression, native64-readable anime contours, burgundy/maroon garment with broad pale collar and shoulder/chest panel, camera angle and composition. Pure black background; one character; no text, accessories or UI. The actual sprite is the authority for shapes and clothing; do not add a stethoscope or modern coat.",
+      "references": [
+        "C:\\Users\\Chad\\Xenogears_Reimagined\\work\\rico_npc_portrait_audit_v7\\field213_b2_p1_3x.png",
+        "C:\\Users\\Chad\\Xenogears_Reimagined\\work\\rico_npc_portrait_audit_v7\\field213_b2_p1_head_parts_6x.png",
+        "C:\\Users\\Chad\\Documents\\Codex\\2026-09-06\\st\\work\\native_portrait_atlas.png"
+      ],
+      "native_identity": "Retail field213 bank2 palette1 used by the active attendant. Native e8 identified as Doctor; same sprite e9 is lady-doctor Diana. Pale rounded head area with dark reddish-brown side/back detail interpreted as soft gray head covering over auburn hair; tiny atlas pixels do not establish fine fabric construction.",
+      "visual_review": "Pale broad head silhouette, auburn side/back hair, warm uncovered female face, maroon-brown garment with broad light collar/shoulder/chest panel. Corrects the generic tiny nurse cap and all-gray uniform.",
+      "path": "C:\\Users\\Chad\\Xenogears_Reimagined\\modules\\rico\\content\\assets\\dialogue_portraits\\sources\\infirmary_attendant.png",
+      "source_sha256": "f21ea1286d3a9c4aee963e0b17797d7e7677449b0b9d9a2211652c1f47951136",
+      "native_tim_sha256": "b1a9fa969870ed09b7d1903a275adfb16302af58f8238fbec8729e619aaecda3",
+      "native_tim_bytes": 4640
+    },
+    {
+      "tool": "built-in image_gen",
+      "prompt": "Use case: stylized-concept. Asset type: ONE native-style head-and-upper-chest dialogue portrait for 1998 PlayStation Xenogears, intended to be converted to 64x64 pixels. Input1 is the exact retail field211 bank0 palette0 sprite atlas; Input2 is a literal enlarged crop of its native head/upper-body pixels; Input3 is the native portrait contact sheet for STYLE ONLY, ignore its labels and grid. This character sprite is used in the project for a D-Block worker, prisoner and generic battler; make ONE consistent identity that matches that exact sprite instead of inventing a profession-based costume. Follow the distinctive rounded INDIGO/BLUE head silhouette, short broad swept blue shapes over the brow and around the sides, and the narrow PALE CYAN/CREAM strip immediately ABOVE a RED strip slanting across the brow as shown in Input2. Keep the band on the brow, not goggles: do not invent lenses, eye cups, a mask, military helmet hardware, a brown work cap or new ornaments. Preserve the visible warm tan/ochre face, small dark eyes beneath the brow-band, unobscured nose, mouth and chin, and the sturdy adult face suggested by the sprite. Study the original sprite's dark navy/charcoal upper clothing, pale gray/cyan/cream small collar/neck details and warm tan upper chest; reproduce its simple cut and color placement, not generic modern overalls. Portrait framed as one three-quarter bust facing screen-right, including the full head silhouette, shoulders and upper chest. Neutral wary working-person expression; no added scar, stubble, beard, jewelry or props. Match the native portrait style: restrained 1990s anime contours, strong readable cel-shaded shapes and limited muted palette, designed to remain legible at64x64, no gritty texture, noise, dithering or grain. Flat pure BLACK RGB0 background, no text, border, UI, grid, collage, extra character or full body. The native sprite is authoritative for visible design; ambiguous tiny details should remain simple rather than become invented equipment.",
+      "references": [
+        "C:\\Users\\Chad\\Xenogears_Reimagined\\work\\rico_npc_portrait_audit_v7\\field211_b0_p0_3x.png",
+        "C:\\Users\\Chad\\Xenogears_Reimagined\\work\\rico_npc_portrait_audit_v7\\field211_b0_p0_head_parts_6x.png",
+        "C:\\Users\\Chad\\Documents\\Codex\\2026-09-06\\st\\work\\native_portrait_atlas.png"
+      ],
+      "generated_source": "C:\\Users\\Chad\\.codex\\generated_images\\01a076fc-4eb8-75d0-a535-73815a0bcc05\\exec-8f3f8ccd-de1a-4032-ab9d-87e6b10e0461.png",
+      "source_sha256": "eab48bc43aa9e66fa9dfe83e50abbc31e501912a99ff25074e855b2bc7504824",
+      "native_tim_sha256": "ce61a3f92c715a73e23dbc3ab2dc7f4dbea2d49ac728d97b84ea15f73fb05b26",
+      "native_tim_bytes": 4640,
+      "slug": "worker",
+      "native_identity": "Retail field211 bank0 palette0: Worker and Prisoner use this identity; generic Battler lines use the prisoner/after-defense bank0 identity. Named Leonardo retains his separate native bank1 and portrait.",
+      "visual_review": "Reviewed the exact native head crop against decoded 64x64 candidate: blue rounded hair, pale-over-red brow band, tan uncovered face, dark navy upper garment and pale neckline. Reused consistently for the three labels that share this sprite identity.",
+      "path": "C:\\Users\\Chad\\Xenogears_Reimagined\\modules\\rico\\content\\assets\\dialogue_portraits\\sources\\worker.png"
+    },
+    {
+      "tool": "built-in image_gen",
+      "prompt": "Use case: stylized-concept. Asset type: ONE native-style head-and-upper-chest dialogue portrait for 1998 PlayStation Xenogears, intended to be converted to 64x64 pixels. Input1 is the exact retail field211 bank0 palette0 sprite atlas; Input2 is a literal enlarged crop of its native head/upper-body pixels; Input3 is the native portrait contact sheet for STYLE ONLY, ignore its labels and grid. This character sprite is used in the project for a D-Block worker, prisoner and generic battler; make ONE consistent identity that matches that exact sprite instead of inventing a profession-based costume. Follow the distinctive rounded INDIGO/BLUE head silhouette, short broad swept blue shapes over the brow and around the sides, and the narrow PALE CYAN/CREAM strip immediately ABOVE a RED strip slanting across the brow as shown in Input2. Keep the band on the brow, not goggles: do not invent lenses, eye cups, a mask, military helmet hardware, a brown work cap or new ornaments. Preserve the visible warm tan/ochre face, small dark eyes beneath the brow-band, unobscured nose, mouth and chin, and the sturdy adult face suggested by the sprite. Study the original sprite's dark navy/charcoal upper clothing, pale gray/cyan/cream small collar/neck details and warm tan upper chest; reproduce its simple cut and color placement, not generic modern overalls. Portrait framed as one three-quarter bust facing screen-right, including the full head silhouette, shoulders and upper chest. Neutral wary working-person expression; no added scar, stubble, beard, jewelry or props. Match the native portrait style: restrained 1990s anime contours, strong readable cel-shaded shapes and limited muted palette, designed to remain legible at64x64, no gritty texture, noise, dithering or grain. Flat pure BLACK RGB0 background, no text, border, UI, grid, collage, extra character or full body. The native sprite is authoritative for visible design; ambiguous tiny details should remain simple rather than become invented equipment.",
+      "references": [
+        "C:\\Users\\Chad\\Xenogears_Reimagined\\work\\rico_npc_portrait_audit_v7\\field211_b0_p0_3x.png",
+        "C:\\Users\\Chad\\Xenogears_Reimagined\\work\\rico_npc_portrait_audit_v7\\field211_b0_p0_head_parts_6x.png",
+        "C:\\Users\\Chad\\Documents\\Codex\\2026-09-06\\st\\work\\native_portrait_atlas.png"
+      ],
+      "generated_source": "C:\\Users\\Chad\\.codex\\generated_images\\01a076fc-4eb8-75d0-a535-73815a0bcc05\\exec-8f3f8ccd-de1a-4032-ab9d-87e6b10e0461.png",
+      "source_sha256": "eab48bc43aa9e66fa9dfe83e50abbc31e501912a99ff25074e855b2bc7504824",
+      "native_tim_sha256": "ce61a3f92c715a73e23dbc3ab2dc7f4dbea2d49ac728d97b84ea15f73fb05b26",
+      "native_tim_bytes": 4640,
+      "slug": "prisoner",
+      "native_identity": "Retail field211 bank0 palette0: Worker and Prisoner use this identity; generic Battler lines use the prisoner/after-defense bank0 identity. Named Leonardo retains his separate native bank1 and portrait.",
+      "visual_review": "Reviewed the exact native head crop against decoded 64x64 candidate: blue rounded hair, pale-over-red brow band, tan uncovered face, dark navy upper garment and pale neckline. Reused consistently for the three labels that share this sprite identity.",
+      "path": "C:\\Users\\Chad\\Xenogears_Reimagined\\modules\\rico\\content\\assets\\dialogue_portraits\\sources\\prisoner.png"
+    },
+    {
+      "slug": "ethos_priest",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: stylized-concept. Asset type: single native-style 64x64 dialogue portrait source for a Xenogears fan game. Use the attached native portrait contact sheet ONLY as style/framing reference, ignore all its labels and grid. Create ONE square head-and-upper-shoulders portrait of the subject described below. Match the actual 1998 PlayStation Xenogears portrait style: crisp anime contour drawing, limited warm palette, bold cel-shaded pixel clusters and tiny facial detail, no gradients or smooth painting. Three-quarter view facing screen-right. Head nearly fills the square; only collar and tops of shoulders visible. Full opaque solid pure black background. No text, no border, no UI, no collage, no additional person. Design must remain clearly legible when reduced to 64x64 pixels. Subject: An elderly human Ethos village priest conducting a poor mother's funeral: kind solemn narrow face, thinning gray hair, simple muted dark blue clerical robe with a pale collar and modest cloth stole. Humble, compassionate and weary, no ornate crown and no weapon.",
+      "references": [
+        "C:\\Users\\Chad\\Documents\\Codex\\2026-09-06\\st\\work\\native_portrait_atlas.png"
+      ],
+      "generated_source": "C:\\Users\\Chad\\.codex\\generated_images\\01a076fc-2d56-7202-a470-1ad92abb4922\\exec-bcf38c08-ec64-4110-b55c-be8d4b4cd87c.png",
+      "path": "C:\\Users\\Chad\\Xenogears_Reimagined\\modules\\rico\\content\\assets\\dialogue_portraits\\sources\\ethos_priest.png",
+      "visual_review": "Inspected source/contact sheet: single right-facing bust, native-style cel shading, black background, no text or borders."
+    },
+    {
+      "tool": "built-in image_gen",
+      "prompt": "Use case: stylized-concept. Asset type: ONE native-style head-and-upper-chest dialogue portrait for 1998 PlayStation Xenogears, intended to be converted to 64x64 pixels. Input1 is the exact retail field211 bank0 palette0 sprite atlas; Input2 is a literal enlarged crop of its native head/upper-body pixels; Input3 is the native portrait contact sheet for STYLE ONLY, ignore its labels and grid. This character sprite is used in the project for a D-Block worker, prisoner and generic battler; make ONE consistent identity that matches that exact sprite instead of inventing a profession-based costume. Follow the distinctive rounded INDIGO/BLUE head silhouette, short broad swept blue shapes over the brow and around the sides, and the narrow PALE CYAN/CREAM strip immediately ABOVE a RED strip slanting across the brow as shown in Input2. Keep the band on the brow, not goggles: do not invent lenses, eye cups, a mask, military helmet hardware, a brown work cap or new ornaments. Preserve the visible warm tan/ochre face, small dark eyes beneath the brow-band, unobscured nose, mouth and chin, and the sturdy adult face suggested by the sprite. Study the original sprite's dark navy/charcoal upper clothing, pale gray/cyan/cream small collar/neck details and warm tan upper chest; reproduce its simple cut and color placement, not generic modern overalls. Portrait framed as one three-quarter bust facing screen-right, including the full head silhouette, shoulders and upper chest. Neutral wary working-person expression; no added scar, stubble, beard, jewelry or props. Match the native portrait style: restrained 1990s anime contours, strong readable cel-shaded shapes and limited muted palette, designed to remain legible at64x64, no gritty texture, noise, dithering or grain. Flat pure BLACK RGB0 background, no text, border, UI, grid, collage, extra character or full body. The native sprite is authoritative for visible design; ambiguous tiny details should remain simple rather than become invented equipment.",
+      "references": [
+        "C:\\Users\\Chad\\Xenogears_Reimagined\\work\\rico_npc_portrait_audit_v7\\field211_b0_p0_3x.png",
+        "C:\\Users\\Chad\\Xenogears_Reimagined\\work\\rico_npc_portrait_audit_v7\\field211_b0_p0_head_parts_6x.png",
+        "C:\\Users\\Chad\\Documents\\Codex\\2026-09-06\\st\\work\\native_portrait_atlas.png"
+      ],
+      "generated_source": "C:\\Users\\Chad\\.codex\\generated_images\\01a076fc-4eb8-75d0-a535-73815a0bcc05\\exec-8f3f8ccd-de1a-4032-ab9d-87e6b10e0461.png",
+      "source_sha256": "eab48bc43aa9e66fa9dfe83e50abbc31e501912a99ff25074e855b2bc7504824",
+      "native_tim_sha256": "ce61a3f92c715a73e23dbc3ab2dc7f4dbea2d49ac728d97b84ea15f73fb05b26",
+      "native_tim_bytes": 4640,
+      "slug": "battler",
+      "native_identity": "Retail field211 bank0 palette0: Worker and Prisoner use this identity; generic Battler lines use the prisoner/after-defense bank0 identity. Named Leonardo retains his separate native bank1 and portrait.",
+      "visual_review": "Reviewed the exact native head crop against decoded 64x64 candidate: blue rounded hair, pale-over-red brow band, tan uncovered face, dark navy upper garment and pale neckline. Reused consistently for the three labels that share this sprite identity.",
+      "path": "C:\\Users\\Chad\\Xenogears_Reimagined\\modules\\rico\\content\\assets\\dialogue_portraits\\sources\\battler.png"
+    },
+    {
+      "slug": "arena_official",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: stylized-concept. Asset type: single native-style 64x64 dialogue portrait source for a Xenogears fan game. Use the attached native portrait contact sheet ONLY as style/framing reference, ignore all its labels and grid. Create ONE square head-and-upper-shoulders portrait of the subject described below. Match the actual 1998 PlayStation Xenogears portrait style: crisp anime contour drawing, limited warm palette, bold cel-shaded pixel clusters and tiny facial detail, no gradients or smooth painting. Three-quarter view facing screen-right. Head nearly fills the square; only collar and tops of shoulders visible. Full opaque solid pure black background. No text, no border, no UI, no collage, no additional person. Design must remain clearly legible when reduced to 64x64 pixels. Subject: A Kislev Battling arena official and announcer: middle-aged human man with neatly combed dark hair and a thin mustache, navy high-collared uniform with muted bronze trim, composed businesslike expression. Small clipped plain shoulder epaulets. No microphone, text, medals or headset.",
+      "references": [
+        "C:\\Users\\Chad\\Documents\\Codex\\2026-09-06\\st\\work\\native_portrait_atlas.png"
+      ],
+      "generated_source": "C:\\Users\\Chad\\.codex\\generated_images\\01a076fc-2d56-7202-a470-1ad92abb4922\\exec-8a70ebc3-5bdf-4f2e-8875-b2fc41410473.png",
+      "path": "C:\\Users\\Chad\\Xenogears_Reimagined\\modules\\rico\\content\\assets\\dialogue_portraits\\sources\\arena_official.png",
+      "visual_review": "Inspected source/contact sheet: single right-facing bust, native-style cel shading, black background, no text or borders."
+    },
+    {
+      "tool": "built-in image_gen",
+      "prompt": "Use case: precise-object-edit. Input1 is the approved native-style infirmary attendant portrait to edit; input2 is the ACTUAL retail field221 bank4 PALETTE0 arena Receptionist sprite atlas. This native receptionist uses the exact same face/clothing sprite geometry as the infirmary attendant, but a different embedded color palette. Create ONE corresponding Clerk portrait by changing ONLY the head covering and broad shoulder/chest over-garment from pale warm gray/cream to the muted DARK TEAL and lighter turquoise cel-shaded palette clearly shown in input2. Preserve input1's face, warm tan skin, brown/auburn hair, eyes, nose, mouth, expression, three-quarter right-facing head-and-upper-chest framing, maroon/brown undergarment, clean simple contours, pixel-art finish and solid black backdrop exactly. Let the source sprite determine color placement: teal covers the broad rounded head covering and broad yoke/cape-like shoulder garment; brown hair/skin and dark burgundy body accents remain distinct. Keep small lighter edging only where supported by the original sprite. No invented jewelry, goggles, white nurse badge, text, border or props. This is a source for the native64x64 PlayStation Xenogears dialogue display, so use simple broad cel-shaded color clusters that survive reduction. No extra person, grid, full body or background. Do not repaint this as a different face, modern nurse or glamorous character.",
+      "references": [
+        "C:\\Users\\Chad\\Xenogears_Reimagined\\modules\\rico\\content\\assets\\dialogue_portraits\\sources\\infirmary_attendant.png",
+        "C:\\Users\\Chad\\Xenogears_Reimagined\\work\\rico_npc_portrait_audit_v7\\field221_b4_p0_receptionist_3x.png"
+      ],
+      "generated_source": "C:\\Users\\Chad\\.codex\\generated_images\\01a076fc-4eb8-75d0-a535-73815a0bcc05\\exec-11e09a82-35fc-4922-89db-87ebceb33294.png",
+      "source_sha256": "73df727b382591217e670f17578096e93e96959cf9fbfb35695b0d7c3bf9ed8e",
+      "native_tim_sha256": "22752959888e9fcfe01b5d6e064bd4c4e694efa5ea8220d45e3c61b58f2992a7",
+      "native_tim_bytes": 4640,
+      "native_identity": "Retail field221 entity7, actor bank4 palette0; native Receptionist dialogue10; installed as commons field69 entity10 bank2 palette0 by chapter_two_clerk helper.",
+      "slug": "clerk",
+      "path": "C:\\Users\\Chad\\Xenogears_Reimagined\\modules\\rico\\content\\assets\\dialogue_portraits\\sources\\clerk.png",
+      "visual_review": "Reviewed native palette0 atlas against decoded64: teal head covering and shoulder/chest garment, auburn hair, tan female face and burgundy undergarment. Matches the installed native arena receptionist instead of the previous Hammer clone."
+    },
+    {
+      "slug": "adjutant",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: stylized-concept. Asset type: single native-style 64x64 dialogue portrait source for a Xenogears fan game. Use the attached native portrait contact sheet ONLY as style/framing reference, ignore all its labels and grid. Create ONE square head-and-upper-shoulders portrait of the subject described below. Match the actual 1998 PlayStation Xenogears portrait style: crisp anime contour drawing, limited warm palette, bold cel-shaded pixel clusters and tiny facial detail, no gradients or smooth painting. Three-quarter view facing screen-right. Head nearly fills the square; only collar and tops of shoulders visible. Full opaque solid pure black background. No text, no border, no UI, no collage, no additional person. Design must remain clearly legible when reduced to 64x64 pixels. Subject: A Kislev Imperial adjutant: adult human man in his forties, close-cropped chestnut hair, angular disciplined face, sober expression, dark forest-green military coat with burgundy stand collar and restrained brass shoulder trim. No helmet, no large medals or fancy armor.",
+      "references": [
+        "C:\\Users\\Chad\\Documents\\Codex\\2026-09-06\\st\\work\\native_portrait_atlas.png"
+      ],
+      "generated_source": "C:\\Users\\Chad\\.codex\\generated_images\\01a076fc-2d56-7202-a470-1ad92abb4922\\exec-3d652475-fd92-4f80-9bab-4c04e5bcabb6.png",
+      "path": "C:\\Users\\Chad\\Xenogears_Reimagined\\modules\\rico\\content\\assets\\dialogue_portraits\\sources\\adjutant.png",
+      "visual_review": "Inspected source/contact sheet: single right-facing bust, native-style cel shading, black background, no text or borders."
+    },
+    {
+      "slug": "archivist",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: stylized-concept. Asset type: single native-style 64x64 dialogue portrait source for a Xenogears fan game. Use the attached native portrait contact sheet ONLY as style/framing reference, ignore all its labels and grid. Create ONE square head-and-upper-shoulders portrait of the subject described below. Match the actual 1998 PlayStation Xenogears portrait style: crisp anime contour drawing, limited warm palette, bold cel-shaded pixel clusters and tiny facial detail, no gradients or smooth painting. Three-quarter view facing screen-right. Head nearly fills the square; only collar and tops of shoulders visible. Full opaque solid pure black background. No text, no border, no UI, no collage, no additional person. Design must remain clearly legible when reduced to 64x64 pixels. Subject: A Kislev elderly human archivist: silver hair pulled back neatly, fine lined face, small oval spectacles, thoughtful wary eyes, dusty olive and beige high-collared robe. Serious and scholarly, visibly distinct from Citan; no beard, no props.",
+      "references": [
+        "C:\\Users\\Chad\\Documents\\Codex\\2026-09-06\\st\\work\\native_portrait_atlas.png"
+      ],
+      "generated_source": "C:\\Users\\Chad\\.codex\\generated_images\\01a076fc-2d56-7202-a470-1ad92abb4922\\exec-49c5e11c-5efd-4930-bde5-056514d92d76.png",
+      "path": "C:\\Users\\Chad\\Xenogears_Reimagined\\modules\\rico\\content\\assets\\dialogue_portraits\\sources\\archivist.png",
+      "visual_review": "Inspected source/contact sheet: single right-facing bust, native-style cel shading, black background, no text or borders."
+    },
+    {
+      "slug": "security_captain",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: stylized-concept. Asset type: single native-style 64x64 dialogue portrait source for a Xenogears fan game. Use the attached native portrait contact sheet ONLY as style/framing reference, ignore all its labels and grid. Create ONE square head-and-upper-shoulders portrait of the subject described below. Match the actual 1998 PlayStation Xenogears portrait style: crisp anime contour drawing, limited warm palette, bold cel-shaded pixel clusters and tiny facial detail, no gradients or smooth painting. Three-quarter view facing screen-right. Head nearly fills the square; only collar and tops of shoulders visible. Full opaque solid pure black background. No text, no border, no UI, no collage, no additional person. Design must remain clearly legible when reduced to 64x64 pixels. Subject: A Kislev security captain: mature human man with broad severe face, salt-and-pepper short hair and close-cropped mustache, dark gray military cap, armored dark olive high collar with small subdued brass rank bars. Firm commanding gaze, one faded cheek scar. No giant weapons or futuristic visor.",
+      "references": [
+        "C:\\Users\\Chad\\Documents\\Codex\\2026-09-06\\st\\work\\native_portrait_atlas.png"
+      ],
+      "generated_source": "C:\\Users\\Chad\\.codex\\generated_images\\01a076fc-2d56-7202-a470-1ad92abb4922\\exec-65f245c3-bcd6-4155-b340-7c2c33953496.png",
+      "path": "C:\\Users\\Chad\\Xenogears_Reimagined\\modules\\rico\\content\\assets\\dialogue_portraits\\sources\\security_captain.png",
+      "visual_review": "Inspected source/contact sheet: single right-facing bust, native-style cel shading, black background, no text or borders."
+    },
+    {
+      "slug": "demi_human_worker",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: stylized-concept. Asset type: single native-style 64x64 dialogue portrait source for a Xenogears fan game. Use the attached native portrait contact sheet ONLY as style/framing reference, ignore all its labels and grid. Create ONE square head-and-upper-shoulders portrait of the subject described below. Match the actual 1998 PlayStation Xenogears portrait style: crisp anime contour drawing, limited warm palette, bold cel-shaded pixel clusters and tiny facial detail, no gradients or smooth painting. Three-quarter view facing screen-right. Head nearly fills the square; only collar and tops of shoulders visible. Full opaque solid pure black background. No text, no border, no UI, no collage, no additional person. Design must remain clearly legible when reduced to 64x64 pixels. Subject: A kind exhausted adult demi-human industrial worker from Xenogears' Kislev: sturdy humanlike face with muted olive-green skin, broad nose, short brown hair, modest pointed ears, heavy brows, and ordinary intelligent eyes. Plain patched charcoal-gray work shirt and brown overall straps. Clearly a sympathetic person, not a monster, no horns, no tusks, no fangs.",
+      "references": [
+        "C:\\Users\\Chad\\Documents\\Codex\\2026-09-06\\st\\work\\native_portrait_atlas.png"
+      ],
+      "generated_source": "C:\\Users\\Chad\\.codex\\generated_images\\01a076fc-2d56-7202-a470-1ad92abb4922\\exec-38ecb860-6ac5-4827-b7c8-374c6d4c50a9.png",
+      "path": "C:\\Users\\Chad\\Xenogears_Reimagined\\modules\\rico\\content\\assets\\dialogue_portraits\\sources\\demi_human_worker.png",
+      "visual_review": "Inspected source/contact sheet: single right-facing bust, native-style cel shading, black background, no text or borders."
+    },
+    {
+      "slug": "old_prisoner",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: stylized-concept. Asset type: single native-style 64x64 dialogue portrait source for a Xenogears fan game. Use the attached native portrait contact sheet ONLY as style/framing reference, ignore all its labels and grid. Create ONE square head-and-upper-shoulders portrait of the subject described below. Match the actual 1998 PlayStation Xenogears portrait style: crisp anime contour drawing, limited warm palette, bold cel-shaded pixel clusters and tiny facial detail, no gradients or smooth painting. Three-quarter view facing screen-right. Head nearly fills the square; only collar and tops of shoulders visible. Full opaque solid pure black background. No text, no border, no UI, no collage, no additional person. Design must remain clearly legible when reduced to 64x64 pixels. Subject: An elderly Kislev D Block human prisoner: lined gaunt tan face, thinning white hair, short scruffy gray-white beard, wary eyes with quiet dignity, faded slate prison tunic with ragged brown collar. Upright face despite fatigue. No shackles, no bars, no props.",
+      "references": [
+        "C:\\Users\\Chad\\Documents\\Codex\\2026-09-06\\st\\work\\native_portrait_atlas.png"
+      ],
+      "generated_source": "C:\\Users\\Chad\\.codex\\generated_images\\01a076fc-2d56-7202-a470-1ad92abb4922\\exec-04cf27ef-75c0-460b-9c65-5a8454e3d54c.png",
+      "path": "C:\\Users\\Chad\\Xenogears_Reimagined\\modules\\rico\\content\\assets\\dialogue_portraits\\sources\\old_prisoner.png",
+      "visual_review": "Inspected source/contact sheet: single right-facing bust, native-style cel shading, black background, no text or borders."
+    },
+    {
+      "slug": "young_rico",
+      "tool": "reuse existing authored source without conceptual edits",
+      "prompt": null,
+      "references": [
+        "modules/rico/content/assets/young_rico_menu_portrait_source.png"
+      ],
+      "path": "C:\\Users\\Chad\\Xenogears_Reimagined\\modules\\rico\\content\\assets\\dialogue_portraits\\sources\\young_rico.png",
+      "visual_review": "Existing young Rico source inspected; matches project child design. Binary compiler owns technical 64x64 conversion."
+    },
+    {
+      "slug": "anne",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: stylized-concept. Asset type: single native-style 64x64 dialogue portrait source for a Xenogears fan game. Use the attached native portrait contact sheet ONLY as style/framing reference, ignore all its labels and grid. Create ONE square head-and-upper-shoulders portrait of the subject described below. Match the actual 1998 PlayStation Xenogears portrait style: crisp anime contour drawing, limited warm palette, bold cel-shaded pixel clusters and tiny facial detail, no gradients or smooth painting. Three-quarter view facing screen-right. Head nearly fills the square; only collar and tops of shoulders visible. Full opaque solid pure black background. No text, no border, no UI, no collage, no additional person. Design must remain clearly legible when reduced to 64x64 pixels. Input image 1: native portrait style reference only. Input image 2: actual retail Anne sprite atlas, identity and clothing reference. Subject: Anne Banderas, young Rico's human mother. Follow her actual sprite's muted olive-blonde shoulder-length hair with long swept bangs, pale delicate face, faded blue dress with a plain cream neckline. An adult mother in her thirties, visibly tired and ill with gentle caring eyes and a restrained maternal smile. Keep her hair color and simple poor-settlement clothing consistent with the native sprite; do not use the bed/sheets or atlas grid in the portrait. Her shoulders are upright in this dialogue bust, no bed, no blanket, no other person.",
+      "references": [
+        "C:\\Users\\Chad\\Documents\\Codex\\2026-09-06\\st\\work\\native_portrait_atlas.png",
+        "C:\\Users\\Chad\\Xenogears_Reimagined\\work\\anna_bank0_atlas_3x.png"
+      ],
+      "generated_source": "C:\\Users\\Chad\\.codex\\generated_images\\01a076fc-2d56-7202-a470-1ad92abb4922\\exec-a1c082f0-1bdf-4688-82d0-49a5b6addc97.png",
+      "path": "C:\\Users\\Chad\\Xenogears_Reimagined\\modules\\rico\\content\\assets\\dialogue_portraits\\sources\\anne.png",
+      "native_identity": "Actual retail Anne actor bank0 atlas from field229; original hair and blue/cream clothing colors retained.",
+      "visual_review": "Inspected generated source: one right-facing bust on black, source identity colors preserved, no text, border or UI."
+    },
+    {
+      "prompt": "Use case: precise-object-edit.\nImage1 is the EDIT TARGET: the currently approved Suzarn illustration. Image2 is the original game's Rico/Fei/Elly dialogue portraits and is a COMPOSITION REFERENCE only.\nChange only the portrait framing. Make Suzarn a tight FACE AND NECK close-up like the native game portraits. Her feminine face and goggles must be much larger. Crop off most of the large helmet crown at the upper edge, preserving the helmet's recognizable olive-gold ribs and lower rim. It is correct for the crown to extend beyond the image. Her face, cheek, nose, mouth and chin should dominate the square; show the neck bomb collar near the lower edge. Show barely any upper chest, just very small fragments of the open charcoal jacket at the lower corners. Do NOT show a broad bust or large chest area. If the cream tube top is below the tighter crop, leave it naturally out of frame; do not change its design or raise its neckline to force it into view.\nInvariants: same adult FEMALE character and facial identity, natural feminine cheeks/tapered jaw/fine nose and lips, warm tan skin, fully uncovered nose mouth and chin, no mask, same restrained serious expression and three-quarter direction, same olive-gold ribbed helmet and cream-rimmed dark goggles with red bridge accent. Keep the separate dark charcoal bomb collar and spaced cream rectangular lights; show as much of the collar as fits naturally around the neck at the bottom edge. Keep the underlying open gray jacket and cream tube top unchanged even where outside the frame.\nSquare composition, solid pure black background, clean silhouette, same muted cel-shaded 1998 Japanese RPG illustration style. No text, labels, frame, extra items or watermark. Closely match the face-and-neck scale of reference2; tighter crop is the entire purpose of the edit.",
+      "referenced_image_paths": [
+        "C:\\Users\\Chad\\Xenogears_Reimagined\\modules\\rico\\content\\assets\\dialogue_portraits\\sources\\suzarn.png",
+        "C:\\Users\\Chad\\Xenogears_Reimagined\\work\\rico_suzarn_closeup_v9\\references\\native_framing_comparison_4x.png"
+      ],
+      "tool": "built-in image_gen",
+      "generated_source": "C:\\Users\\Chad\\.codex\\generated_images\\01a076fb-45ed-7c33-8b75-ce8911632580\\exec-5ce9b956-7791-4092-a916-d7345b4285f4.png",
+      "slug": "suzarn",
+      "source_sha256": "3b65f9ff9e21363cc1786f4bce6f4eb4541cc7feffe9406c8d15f70cfd6ba252",
+      "native_tim_sha256": "048f5bd3a624a6fc10b2ccf9f67c41023ec52a2f95f07a80b83047d8eaa8870f",
+      "native_tim_bytes": 4640,
+      "path": "C:\\Users\\Chad\\Xenogears_Reimagined\\modules\\rico\\content\\assets\\dialogue_portraits\\sources\\suzarn.png",
+      "native_identity": "Retail field218 entity4 bank0 palette0. Framing follows original Rico/Fei/Elly dialogue portraits.",
+      "visual_review": "Adult female identity and approved helmet/goggles/lamp collar preserved. Tight face and neck framing crops helmet crown and almost all upper chest; open jacket/tube top outfit is unchanged outside frame.",
+      "native_reference": "work/rico_suzarn_v8/native_reference.json"
+    },
+    {
+      "slug": "rue",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: stylized-concept. Asset type: single native-style 64x64 dialogue portrait source for a Xenogears fan game. Use the attached native portrait contact sheet ONLY as style/framing reference, ignore all its labels and grid. Create ONE square head-and-upper-shoulders portrait of the subject described below. Match the actual 1998 PlayStation Xenogears portrait style: crisp anime contour drawing, limited warm palette, bold cel-shaded pixel clusters and tiny facial detail, no gradients or smooth painting. Three-quarter view facing screen-right. Head nearly fills the square; only collar and tops of shoulders visible. Full opaque solid pure black background. No text, no border, no UI, no collage, no additional person. Design must remain clearly legible when reduced to 64x64 pixels. Input image1 is portrait style reference; image2 is exact retail sprite identity reference. Subject: Rue Cohen, Xenogears' Imperial Battling Committee administrator. Image2 is her exact retail field218 actor-bank3 sprite atlas (entity23 speaks native Rue dialogue13). Human adult woman, straight medium brown shoulder-length hair framed by the sprite's wide pale cream headband, pale face, reserved professional eyes. Muted deep teal-green dress with cream collar and shoulder trim, matching native sprite colors. Restrained administrative expression, not smiling brightly. Preserve the simple headband and natural straight hair.",
+      "references": [
+        "C:\\Users\\Chad\\Documents\\Codex\\2026-09-06\\st\\work\\native_portrait_atlas.png",
+        "C:\\Users\\Chad\\Xenogears_Reimagined\\work\\rico_portrait_refs\\field218_bank3.png"
+      ],
+      "generated_source": "C:\\Users\\Chad\\.codex\\generated_images\\01a076fc-2d56-7202-a470-1ad92abb4922\\exec-c7b0e998-da63-483e-86de-1b422fedef69.png",
+      "path": "C:\\Users\\Chad\\Xenogears_Reimagined\\modules\\rico\\content\\assets\\dialogue_portraits\\sources\\rue.png",
+      "native_identity": "Retail Disc1 field218 actor/sprite bank3; entity23 initializer selects bank3 then action begins native dialogue13, explicitly labelled Rue.",
+      "visual_review": "Inspected generated source: one right-facing bust on black, source identity colors preserved, no text, border or UI."
+    },
+    {
+      "slug": "leonardo",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: stylized-concept. Asset type: single native-style 64x64 dialogue portrait source for a Xenogears fan game. Use the attached native portrait contact sheet ONLY as style/framing reference, ignore all its labels and grid. Create ONE square head-and-upper-shoulders portrait of the subject described below. Match the actual 1998 PlayStation Xenogears portrait style: crisp anime contour drawing, limited warm palette, bold cel-shaded pixel clusters and tiny facial detail, no gradients or smooth painting. Three-quarter view facing screen-right. Head nearly fills the square; only collar and tops of shoulders visible. Full opaque solid pure black background. No text, no border, no UI, no collage, no additional person. Design must remain clearly legible when reduced to 64x64 pixels. Input image1 is portrait style reference; image2 is exact retail sprite identity reference. Subject: Leonardo, the Xenogears Kislev D Block Battler. Image2 is his actual retail actor sprite atlas, field218bank2, byte-identical actor identity to field211bank1 used by this project. Preserve the distinctly shaggy pink/salmon hair falling over one side, dark tawny skin, heavy broad brow, rugged angular masculine face, and dark olive-gray fighter clothing with exposed upper chest at the neckline shown in the sprite. A tough adult demi-human arena fighter with a suspicious sideways glance; do not replace his native pink hair with brown or blond.",
+      "references": [
+        "C:\\Users\\Chad\\Documents\\Codex\\2026-09-06\\st\\work\\native_portrait_atlas.png",
+        "C:\\Users\\Chad\\Xenogears_Reimagined\\work\\rico_portrait_refs\\field218_bank2.png"
+      ],
+      "generated_source": "C:\\Users\\Chad\\.codex\\generated_images\\01a076fc-2d56-7202-a470-1ad92abb4922\\exec-6eae6bff-8fed-4676-8d6d-92c1fb8b8c71.png",
+      "path": "C:\\Users\\Chad\\Xenogears_Reimagined\\modules\\rico\\content\\assets\\dialogue_portraits\\sources\\leonardo.png",
+      "native_identity": "Retail Disc1 field218 actor/sprite bank2. Actor bank SHA prefix9fc3b8feb83b1349 is identical to field211 bank1, the current Chapter2 Leonardo NPC source.",
+      "visual_review": "Inspected generated source: one right-facing bust on black, source identity colors preserved, no text, border or UI."
+    },
+    {
+      "slug": "gramps",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: stylized-concept. Asset type: single native-style 64x64 dialogue portrait source for a Xenogears fan game. Use the attached native portrait contact sheet ONLY as style/framing reference, ignore all its labels and grid. Create ONE square head-and-upper-shoulders portrait of the subject described below. Match the actual 1998 PlayStation Xenogears portrait style: crisp anime contour drawing, limited warm palette, bold cel-shaded pixel clusters and tiny facial detail, no gradients or smooth painting. Three-quarter view facing screen-right. Head nearly fills the square; only collar and tops of shoulders visible. Full opaque solid pure black background. No text, no border, no UI, no collage, no additional person. Design must remain clearly legible when reduced to 64x64 pixels. Input image1 is portrait style reference; image2 is exact retail sprite identity reference. Subject: Gramps, the small green mutant living in Xenogears' Kislev sewers. Image2 is his exact native base sprite atlas from field240bank0. IMPORTANT: retail then applies a strong green color tint (red30 green100 blue30) and nonuniform sprite scaling (horizontal5000, vertical2048, depth4096) to this older bald man's sprite to create the squat wide mutant seen in the actual game. Adapt that visible result: an old, bald, very broad squat wrinkled green humanoid face with tiny wisps of pale hair at the sides, narrowed pale eyes, broad low nose, wide elderly mouth; a hunched neck emerging from a dark drab robe with subdued red-brown neckline. Kindly but cranky sewer resident, clearly intelligent. This is NOT a normal human old man or a cartoon frog; preserve the old-man facial structure but make him broad-faced and strongly green.",
+      "references": [
+        "C:\\Users\\Chad\\Documents\\Codex\\2026-09-06\\st\\work\\native_portrait_atlas.png",
+        "C:\\Users\\Chad\\Xenogears_Reimagined\\work\\rico_portrait_refs\\field240_bank0.png"
+      ],
+      "generated_source": "C:\\Users\\Chad\\.codex\\generated_images\\01a076fc-2d56-7202-a470-1ad92abb4922\\exec-71832cb2-0c4d-4fe9-8527-a6a42636a187.png",
+      "path": "C:\\Users\\Chad\\Xenogears_Reimagined\\modules\\rico\\content\\assets\\dialogue_portraits\\sources\\gramps.png",
+      "native_identity": "Retail Disc1 field240 actor/sprite bank0, entity42. Native FE5F03 applies RGB30/100/30 tint; FE08 applies X/Y/Z scale5000/2048/4096. Dialogue86 explicitly identifies him as mutant. Portrait adapts the broad green in-game result, not the unmodified human-colored base atlas.",
+      "visual_review": "Inspected generated source: one right-facing bust on black, source identity colors preserved, no text, border or UI."
+    },
+    {
+      "prompt": "Use case: style-transfer / sprite-to-dialogue-portrait.\nTransform the adult female NPC shown in images1 and2 (exact original game sprite head and neck crops) into a coherent illustrated dialogue portrait. Image3 is the complete sprite atlas for costume continuity. Image4 is the original game's Rico/Fei/Elly portraits; use it for tight face/neck framing, subdued 1998 Japanese RPG drawing style and proportions, not for character identity.\nCharacter: Latina, the D Block bar host and Battler. Her sprite has salmon/dusty pink chin-length bobbed hair, heavy separated side fringe framing the face, short outward-turning side tufts, and a dark olive horizontal headband exposed across the upper forehead. Warm golden tan skin. Visible feminine face, uncovered nose mouth and chin, dark reddish-brown eyes; no glasses, no mask. A composed, familiar, slightly wry expression, very subtle closed-mouth smile.\nCostume: a narrow dark olive/charcoal prisoner neck collar with separated small pale rectangular inserts matching the sprite. Only a small edge of the dark olive outfit at the lower corners. No white waitress blouse, apron, cap, earrings or invented accessories.\nComposition: square CLOSE-UP FACE AND NECK portrait like reference4. Face takes most of the frame; pink hair naturally crops against top and sides, collar at bottom, barely any upper chest. Three-quarter view facing gently toward image right. Keep the distinctive pink bob, dark forehead band, warm tan face and narrow rectangular-insert collar obvious after reduction to64x64.\nStyle: restrained hand-drawn cel shading, simple expressive facial planes, fine dark outlines, muted colors, slight painted texture compatible with original Xenogears dialogue portraits. One character only against solid pure black background with a clean silhouette. No text, no nameplate, no border or watermark. Interpret the literal sprite pixels faithfully as a face, not a generic bartender costume.",
+      "referenced_image_paths": [
+        "C:\\Users\\Chad\\Xenogears_Reimagined\\work\\rico_latina_v9\\front_head_variants_12x.png",
+        "C:\\Users\\Chad\\Xenogears_Reimagined\\work\\rico_latina_v9\\head_neck_variants_12x.png",
+        "C:\\Users\\Chad\\Xenogears_Reimagined\\work\\rico_latina_v9\\latina_atlas_4x.png",
+        "C:\\Users\\Chad\\Xenogears_Reimagined\\work\\rico_suzarn_closeup_v9\\references\\native_framing_comparison_4x.png"
+      ],
+      "tool": "built-in image_gen",
+      "generated_source": "C:\\Users\\Chad\\.codex\\generated_images\\01a076fb-45ed-7c33-8b75-ce8911632580\\exec-9a63d76a-5475-4b26-b251-da8262c70543.png",
+      "slug": "latina",
+      "source_sha256": "3a5bbaab10c3fdb107f5e7bb227d8ebd5a30ad6aff0333201697070f75c5f744",
+      "native_tim_sha256": "f22332a893405e3587792a095d4f8be625050e3cc0838836ef548afd186b36cc",
+      "native_tim_bytes": 4640,
+      "path": "C:\\Users\\Chad\\Xenogears_Reimagined\\modules\\rico\\content\\assets\\dialogue_portraits\\sources\\latina.png",
+      "native_identity": "Retail field217 entity7 bank1 palette0, actor CLUT0, VRAM896,0:64x141 words.",
+      "visual_review": "Female tan face, salmon-pink chin-length bob and side fringe, dark olive forehead band, narrow dark collar with pale rectangular inserts. Tight native-style face/neck crop; no generic waitress costume.",
+      "native_reference": "work/rico_latina_v9/reference.json",
+      "allocation_reference": "work/rico_suzarn_closeup_v9/latina_slot_audit.json"
+    }
+  ]
+}

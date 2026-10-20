@@ -13,3 +13,7 @@
 source/docs/** -text whitespace=-blank-at-eof
 source/game/** -text
 source/licenses/** -text
+
+# Preserve the verified source-companion bytes, including verbatim upstream notices.
+project/** -text
+release/source-companions/** -text

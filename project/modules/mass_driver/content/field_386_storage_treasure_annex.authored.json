@@ -1,0 +1,25 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 34,
+      "height": 2,
+      "text": "You have too many\n<Opcode:04:14><Close>"
+    },
+    {
+      "id": 1,
+      "width": 40,
+      "height": 2,
+      "text": " \n Received <Opcode:04:14><Close><Close>"
+    },
+    {
+      "id": 2,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "STRATEGIC PAYLOAD STORES\nARCHIVED RECEIPT / 6079\nMC-4 CRADLE ASSEMBLY<New>Received from Strategic\nCommand. Shipping seals\nintact. Mounting points\nchecked against the Bank Two\ndrawings.<New>SAFETY REVIEW / MARA\nMechanical fit is acceptable.\nLaunch certification is\nrefused.<New>MC-4 replaces a civil\ninstrument bay with a\nstrategic warhead cradle, in\nviolation of Launch Charter\n11.<New>TRANSFER RECORD\nAssembly issued to Bank Two\nunder alternate approval.\nSafety refusal retained with\nreceipt.<New>STORES NOTE<New>The civil cradle came back in\nthe same crate. Its packing\nlist still says MC-4. Please\ncorrect the label before\nanyone sends it out again.<Close>"
+    }
+  ]
+}

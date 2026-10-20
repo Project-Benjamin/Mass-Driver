@@ -1,0 +1,214 @@
+{
+  "format": "xenogears-surface-soylent-reserved-room-donors-v1",
+  "purpose": "Preserve exact, previously verified room-donor identities and record when a reserved donor is recovered into the active campaign topology.",
+  "donors": [
+    {
+      "reservation_id": "v194_disc1_field567_clinical_stabilization_ward",
+      "status": "recovered and packaged in V201 at logical field 590",
+      "historical_active_campaign_version": 194,
+      "recovered_source_topology_version": 201,
+      "name": "Clinical Stabilization Ward",
+      "logical_field_in_v194": 567,
+      "retail_origin": "Disc 1 field 567 compact Krelian Lab Wels surgery room",
+      "implementation_module": "tools/surface_soylent_campaign_donor567.py",
+      "source_disc": {
+        "file": "Xenogears_PW_CD1.bin",
+        "field": 567,
+        "bundle_resource_id": 1745,
+        "graphics_resource_id": 1746
+      },
+      "v194_target": {
+        "base_disc": "Xenogears_PW_CD2_mass_driver_standalone_v163.bin",
+        "output_disc": "Xenogears_PW_CD2_mass_driver_surface_soylent_v194.bin",
+        "field": 567,
+        "bundle_resource_id": 1740,
+        "graphics_resource_id": 1741
+      },
+      "verified_source_identities": {
+        "bundle": {
+          "size": 84648,
+          "sha256": "c9648040ebd58d16218f2a1c75651cf2c34bda83fd8b9aa68b93115e3848b75d"
+        },
+        "graphics": {
+          "size": 165888,
+          "sha256": "29462f01559383a600dd55ff25f67530e64cd2c2b1e15f831ad8868b6fafe4d1"
+        },
+        "atel_script": {
+          "size": 4496,
+          "sha256": "887a46dcf43b749ae1fd4698193a4a2ae2aab12a6f88927cc287feeabba26975"
+        },
+        "header": {
+          "size": 896,
+          "sha256": "a6913dafa91709c9a2f81144abcb72528b1712752804ae99933540c645d6762b"
+        },
+        "dialogue": {
+          "size": 51,
+          "sha256": "37a4b87f4393f9ce6ffc87b8a63cc0d300dcfb907096d46938d810e407406eb1"
+        },
+        "atel_entity_count": 22,
+        "header_actor_count": 31,
+        "bytecode_size": 2956
+      },
+      "prepared_donor_identities": {
+        "bundle": {
+          "size": 84724,
+          "sha256": "b1ca6fbe63f7afa345a78669e125853447252d99ffb6bfcbda1e3dd817b31630"
+        },
+        "atel_script": {
+          "size": 4642,
+          "sha256": "00c1e177a6467fe76f70df7ca0597800daa7e1e86194051153fe5e511a645f18"
+        },
+        "header": {
+          "size": 896,
+          "sha256": "6f6d0ac4953b10f0618735ee06a6b312218a4f49259777a1810fb5030f21bed2"
+        },
+        "dialogue": {
+          "size": 133,
+          "sha256": "f24c1fc70cd7f66d4edb630154faef6ee276d60220c73234112cc1b045bb1374"
+        }
+      },
+      "installed_v194_identities": {
+        "bundle": {
+          "path": "work/surface_soylent_campaign_v194_stage/replacements/1740_field_567_donor.bin",
+          "size": 84884,
+          "sha256": "d61857fe79f7ffa885490b7126ec655f279149eaccf277f32ffeb1e0df13b344"
+        },
+        "graphics": {
+          "path": "work/surface_soylent_campaign_v194_stage/replacements/1741_field_567_graphics.bin",
+          "size": 165888,
+          "sha256": "29462f01559383a600dd55ff25f67530e64cd2c2b1e15f831ad8868b6fafe4d1"
+        },
+        "header": {
+          "path": "work/surface_soylent_campaign_v194_stage/clones/field_567_disc1_donor/header.bin",
+          "size": 944,
+          "sha256": "c29cb76c5281e7b0dd7c31148e2563ffabd8602ff74f2b3175137b8c0e074766"
+        },
+        "atel_script": {
+          "path": "work/surface_soylent_campaign_v194_stage/clones/field_567_disc1_donor/05_scripts.bin",
+          "size": 5074,
+          "sha256": "cd2ef0b771fb9b9e3b39507986f4726e8fa2458fca62590306e2867c96a163c7"
+        },
+        "dialogue": {
+          "path": "work/surface_soylent_campaign_v194_stage/clones/field_567_disc1_donor/07_dialogue.bin",
+          "size": 133,
+          "sha256": "f24c1fc70cd7f66d4edb630154faef6ee276d60220c73234112cc1b045bb1374"
+        },
+        "atel_entity_count": 25,
+        "header_actor_count": 34
+      },
+      "module_constants": {
+        "SCENE": 567,
+        "DONOR567_SOURCE_IDS": [1745, 1746],
+        "DONOR567_TARGET_IDS": [1740, 1741],
+        "ENTRY_PARAMETERS": [0, 1],
+        "ENTRY_WALKMESH": 0,
+        "entries": {
+          "0": {
+            "position": [140, 350],
+            "triangle": 88,
+            "camera_direction": 1,
+            "actor_direction": 1
+          },
+          "1": {
+            "position": [860, -360],
+            "triangle": 51,
+            "camera_direction": 5,
+            "actor_direction": 5
+          }
+        },
+        "controllers": {
+          "lobby": {
+            "entity": 4,
+            "position": [65, 435],
+            "triangle": 89,
+            "destination": [621, 4],
+            "paired_leaf_helpers": [7, 8],
+            "prepared_action_pc": "0x0BDD"
+          },
+          "service": {
+            "entity": 5,
+            "position": [935, -440],
+            "triangle": 45,
+            "destination": [565, 2],
+            "paired_leaf_helpers": [11, 12],
+            "prepared_action_pc": "0x0BF1"
+          },
+          "restricted_procedure": {
+            "entity": 6,
+            "position": [1000, -125],
+            "triangle": 48,
+            "destination": null,
+            "paired_leaf_helpers": [9, 10],
+            "sealed_action_pc": "0x0C05"
+          }
+        },
+        "controller_interaction_half_extents": [30, 30],
+        "door_helper_script_index": 4,
+        "door_helper_pcs": {
+          "7": "0x013D",
+          "8": "0x0146",
+          "9": "0x014F",
+          "10": "0x0158",
+          "11": "0x0161",
+          "12": "0x016A"
+        },
+        "neutral_story_entities": [13, 14, 15, 16, 17, 18, 19, 20, 21],
+        "neutral_story_init_pc": "0x0B8C",
+        "music_pc": "0x0017",
+        "music_opcode": "75 3D 80",
+        "no_random_encounters_pc": "0x001A",
+        "no_random_encounters_opcode": "F7 2C 81 00 80"
+      },
+      "v194_topology": {
+        "intake_route": "621/p4 <-> 567/p0",
+        "staff_route": "567/p1 <-> 565/p2",
+        "restricted_procedure_door": "sealed and non-topological"
+      },
+      "v201_recovery": {
+        "logical_field": 590,
+        "implementation_module": "tools/surface_soylent_campaign_stabilization590.py",
+        "target_resources": {
+          "bundle_resource_id": 1786,
+          "graphics_resource_id": 1787,
+          "preinstall_state": "checked Disc 2 CDMAKE dummy pair"
+        },
+        "entries": {
+          "0": {"position": [140, 300], "triangle": 88, "route": "service_stabilization_production"},
+          "1": {"position": [830, -360], "triangle": 51, "route": "service_stabilization_staff"},
+          "2": {"position": [890, -125], "triangle": 52, "route": "stabilization_sorting"}
+        },
+        "active_topology": {
+          "production_service_route": "565/p1 <-> 590/p0",
+          "staff_route": "565/p2 <-> 590/p1",
+          "sorting_route": "590/p2 <-> 624/p0",
+          "sorting_gate": "production_clearance"
+        },
+        "interaction_half_extent_script_units": 36,
+        "behavior": "All three native paired-leaf thresholds remain in use with wide ghost X targets and bounce-safe arrivals; the retail surgery story actors and event remain neutralized and random encounters remain disabled.",
+        "release_identity": {
+          "bundle": {
+            "size": 85000,
+            "sha256": "898b0d287277e9f3e6e0a4ecc1f9545cd8b7dbd28be9508af63ae3b9e24cdb30"
+          },
+          "graphics": {
+            "size": 165888,
+            "sha256": "29462f01559383a600dd55ff25f67530e64cd2c2b1e15f831ad8868b6fafe4d1"
+          },
+          "atel_script": {
+            "size": 5169,
+            "sha256": "6bf51c67bbe7871cb9fbecde8d47d686eeccbe8e464efae9bd1da8bd75335b2a"
+          },
+          "dialogue": {
+            "size": 181,
+            "sha256": "6d19d08fc0fb9f361b04d6d5e735282f84196c6b7f45450aaae8d1ae15c82325"
+          },
+          "header": {
+            "size": 944,
+            "sha256": "6ca5bfae424e92084131545cb045bd71ac862c429ff55c8975445aa747bce6b0"
+          }
+        }
+      },
+      "reservation_note": "V195 preserved this complete donor while logical field 567 became the separate empty Ethos examination annex. V201 recovers the ward at logical field 590 without changing field 567 or reviving the retired surgery scene."
+    }
+  ]
+}

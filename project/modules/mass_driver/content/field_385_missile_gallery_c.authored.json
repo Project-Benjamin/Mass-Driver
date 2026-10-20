@@ -1,0 +1,13 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "GALLERY RECORD TERMINAL C\nFINAL SILO LOG<New>Verified human launch order\nwas not received. Remaining\nwarheads are secured in\nmaintenance isolation.<New>Central power unstable.\nEvacuation incomplete.\nCustodian seal engaged.\nHold until recognized\ncommand authority returns.<New>FINAL MAINTENANCE NOTE\nEvery weapon left here marks\none launch the world was\nspared.<New><Emeralda>\n\"Someone chose not to launch\nthem.\"<New><Elly>\n\"Missiles standing in rows...\nlike tombstones in a\ngraveyard.\"<New><Elly>\n\"Monuments to Zeboim's pride\nand arrogance.\"<New><Citan>\n\"And one unopened path to the\nsky. What we send through it\nwill decide what this machine\nmeans today.\"<New><Citan>\n\"Central Control is beyond\nthe far bulkhead.\"<Close>"
+    }
+  ]
+}

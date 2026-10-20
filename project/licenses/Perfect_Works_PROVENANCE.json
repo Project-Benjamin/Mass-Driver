@@ -1,0 +1,10 @@
+{
+  "repository": "https://github.com/PWBuild-Team/Perfect_Works_Build",
+  "tag": "0.10.2",
+  "commit": "e1ac051221f111bd4bdad2109de03eaf79778ca9",
+  "license_url": "https://raw.githubusercontent.com/PWBuild-Team/Perfect_Works_Build/e1ac051221f111bd4bdad2109de03eaf79778ca9/LICENSE",
+  "license_size": 35149,
+  "license_sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "license": "GNU General Public License version 3",
+  "review": "Full license retained verbatim; sections4-6 inspected for notices and source-distribution requirements. No opinion about ownership of underlying game content is implied."
+}

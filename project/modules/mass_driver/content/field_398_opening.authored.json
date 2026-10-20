@@ -1,0 +1,36 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 56,
+      "height": 4,
+      "text": "ZEBOIM RAPID TRANSIT\nMASS DRIVER SERVICE LINE<New>Elly\n\"This subway was built with\nthe facility. The access\ntunnels should lead inside.\"<New>Emeralda\n\"Emeralda remembers these\nwalls. They are Zeboim.\"<Close>"
+    },
+    {
+      "id": 1,
+      "width": 52,
+      "height": 3,
+      "text": "Elly\n\"The transit grid still has\npower. The service line runs\nbeneath this corridor.\"<Close>"
+    },
+    {
+      "id": 2,
+      "width": 46,
+      "height": 3,
+      "text": "Emeralda\n\"Old Zeboim place...\nbut it is still awake.\"<Close>"
+    },
+    {
+      "id": 3,
+      "width": 44,
+      "height": 4,
+      "text": "Elly\n\"The launch control is\nat the far end. Stay\nclose, Emeralda.\"<Close>"
+    },
+    {
+      "id": 4,
+      "width": 52,
+      "height": 3,
+      "text": "Emeralda\n\"Emeralda stays with Elly.\nWe find the way.\"<Close>"
+    }
+  ]
+}

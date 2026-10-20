@@ -1,0 +1,12 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 56,
+      "height": 4,
+      "text": "DECONTAMINATION SEAL\nCLEAN TRANSFER CYCLE\nCOMPLETE<Close>"
+    }
+  ]
+}

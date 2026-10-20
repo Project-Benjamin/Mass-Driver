@@ -1,0 +1,173 @@
+{
+  "format": "xenogears-project-v1",
+  "title": "Xenogears Reimagined",
+  "build_root": "builds",
+  "resource_ledger": "shared/resources.json",
+  "sources": {
+    "pw_disc1": {
+      "kind": "disc",
+      "description": "Perfect Works Disc 1",
+      "path": null,
+      "sha256": null
+    },
+    "pw_disc2": {
+      "kind": "disc",
+      "description": "Perfect Works Disc 2",
+      "path": null,
+      "sha256": null
+    },
+    "retail_disc1": {
+      "kind": "disc",
+      "description": "Retail Disc 1",
+      "path": null,
+      "sha256": null
+    },
+    "retail_disc2": {
+      "kind": "disc",
+      "description": "Retail Disc 2",
+      "path": null,
+      "sha256": null
+    },
+    "mass_driver_base": {
+      "kind": "disc",
+      "description": "Normalized Mass Driver Disc 2 base for standalone Soylent",
+      "path": null,
+      "sha256": null,
+      "provenance": {
+        "module": "mass_driver",
+        "release": "v166",
+        "role": "normalized_base"
+      }
+    }
+  },
+  "tools": {
+    "xenoiso": null,
+    "input_root": "work",
+    "duckstation": null
+  },
+  "modules": {
+    "mass_driver": {
+      "title": "Mass Driver Facility",
+      "content_version": "V176",
+      "path": "modules/mass_driver",
+      "builder": "modules/mass_driver/build.py",
+      "content": "modules/mass_driver/content",
+      "enabled": true,
+      "status": "active",
+      "build_dependencies": [],
+      "source_ids": [
+        "pw_disc1",
+        "pw_disc2",
+        "retail_disc1",
+        "retail_disc2"
+      ]
+    },
+      "soylent_system": {
+        "title": "Soylent System",
+        "content_version": "V240",
+      "path": "modules/soylent_system",
+      "builder": "modules/soylent_system/build.py",
+      "content": "modules/soylent_system/content",
+      "enabled": true,
+      "status": "active",
+      "build_dependencies": [
+        "mass_driver"
+      ],
+      "source_ids": [
+        "pw_disc1",
+        "pw_disc2",
+        "mass_driver_base"
+      ]
+    },
+    "rico": {
+      "title": "Rico: Emotion and Resolve",
+      "content_version": "rico-ch2-v1",
+      "path": "modules/rico",
+      "builder": "modules/rico/build.py",
+      "content": "modules/rico/content",
+      "enabled": true,
+      "status": "active",
+      "build_dependencies": [
+        "mass_driver",
+        "soylent_system"
+      ],
+      "source_ids": [
+        "retail_disc1",
+        "retail_disc2"
+      ]
+    },
+    "definitive": {
+      "title": "Xenogears Definitive",
+      "path": "modules/definitive",
+      "builder": "modules/definitive/build.py",
+      "content": "modules/definitive/content",
+      "enabled": true,
+      "status": "active",
+      "source_ids": [
+        "retail_disc1",
+        "retail_disc2"
+      ],
+      "build_dependencies": [],
+      "content_version": "foundation-v1"
+    }
+  },
+  "profiles": {
+    "mass_driver": {
+      "modules": [
+        "mass_driver"
+      ],
+      "builder": "modules/mass_driver/build.py",
+      "adapter": "mass_driver",
+      "source_ids": [
+        "pw_disc2"
+      ]
+    },
+    "soylent_system": {
+      "modules": [
+        "soylent_system"
+      ],
+      "builder": "modules/soylent_system/build.py",
+      "adapter": "soylent_system",
+      "source_ids": [
+        "pw_disc1",
+        "mass_driver_base"
+      ]
+    },
+    "rico": {
+      "modules": [
+        "rico"
+      ],
+      "builder": "modules/rico/build.py",
+      "adapter": "rico",
+      "source_ids": [
+        "retail_disc1",
+        "retail_disc2"
+      ]
+    },
+    "combined": {
+      "modules": [
+        "mass_driver",
+        "soylent_system",
+        "rico"
+      ],
+      "builder": "shared/tools/build_combined.py",
+      "adapter": "combined",
+      "source_ids": [
+        "pw_disc1",
+        "pw_disc2",
+        "retail_disc1"
+      ]
+    },
+    "definitive": {
+      "modules": [
+        "definitive"
+      ],
+      "builder": "modules/definitive/build.py",
+      "adapter": "definitive",
+      "source_ids": [
+        "retail_disc1",
+        "retail_disc2"
+      ]
+    }
+  }
+}

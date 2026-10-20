@@ -1,0 +1,36 @@
+{
+  "decoder_repository": "https://github.com/jmacd/xdelta",
+  "decoder_commit": "7508fd2a823443b1f0173ca361620f21d62a7d37",
+  "decoder_source": "https://github.com/jmacd/xdelta/tree/7508fd2a823443b1f0173ca361620f21d62a7d37",
+  "decoder_license_sha256": "df0b155f45ac44a82f9f0fabd4f95a003e4727e981d320f4701f4d8b47a0fe85",
+  "official_tool_downloads": [
+    {
+      "repository": "mstorsjo/llvm-mingw",
+      "release": "20261006",
+      "url": "https://github.com/mstorsjo/llvm-mingw/releases/download/20261006/llvm-mingw-20261006-ucrt-x86_64.zip",
+      "archive": "llvm-mingw-20261006-ucrt-x86_64.zip",
+      "sha256": "317492c456aa27ee607a5919f1d2d38dcdc1112516a24d0bf4b00d078f52d17a",
+      "size": 190836485,
+      "hash_provenance": "GitHub official release asset API digest"
+    },
+    {
+      "repository": "jmacd/xdelta",
+      "release": "v3.2.0",
+      "url": "https://github.com/jmacd/xdelta/releases/download/v3.2.0/xdelta3-3.2.0-windows-x86_64.zip",
+      "archive": "xdelta3-3.2.0-windows-x86_64.zip",
+      "sha256": "8aca331c3d49ec4465ee8f3f7e3afb92e06d36e32fdec422c3252aaa813a7d2a",
+      "size": 184417,
+      "hash_provenance": "GitHub official release asset API digest"
+    }
+  ],
+  "perfect_works": {
+    "repository": "https://github.com/PWBuild-Team/Perfect_Works_Build",
+    "tag": "0.10.2",
+    "commit": "e1ac051221f111bd4bdad2109de03eaf79778ca9",
+    "license_url": "https://raw.githubusercontent.com/PWBuild-Team/Perfect_Works_Build/e1ac051221f111bd4bdad2109de03eaf79778ca9/LICENSE",
+    "license_size": 35149,
+    "license_sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+    "license": "GNU General Public License version 3",
+    "review": "Full license retained verbatim; sections4-6 inspected for notices and source-distribution requirements. No opinion about ownership of underlying game content is implied."
+  }
+}

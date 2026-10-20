@@ -1,0 +1,37 @@
+# Original and patched disc images
+*.bin
+*.cue
+*.iso
+*.img
+*.chd
+*.ecm
+
+# Extracted copyrighted game data
+/input/
+/work/
+/build/
+/output/*
+!/output/CONTINUE_MASS_DRIVER_V54.cmd
+!/output/CONTINUE_MASS_DRIVER_V55.cmd
+!/output/CONTINUE_MASS_DRIVER_V56.cmd
+!/output/TEST_V131_MISSILE.cmd
+/vendor/game-data/
+
+# Emulator state and memory cards
+*.mcd
+*.srm
+*.sav
+*.state
+*.state.*
+
+# Local machine configuration
+config.local.json
+project.local.json
+/builds/
+*.log
+
+# Generated caches
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/

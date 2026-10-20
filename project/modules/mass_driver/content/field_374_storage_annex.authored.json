@@ -1,0 +1,75 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 34,
+      "height": 2,
+      "text": "You have too many\n<Opcode:04:14><Close>"
+    },
+    {
+      "id": 1,
+      "width": 40,
+      "height": 2,
+      "text": " \n Received <Opcode:04:14><Close><Close>"
+    },
+    {
+      "id": 2,
+      "width": 52,
+      "height": 3,
+      "text": "DIRECTIVE RECORD REQUIRED\nGUIDANCE ARCHIVE:\nCONTROL AND RESEARCH<Close>"
+    },
+    {
+      "id": 3,
+      "width": 54,
+      "height": 3,
+      "text": "FOUR-POINT AUTHORITY\nNOT RECOVERED\nRead this room's record.<Close>"
+    },
+    {
+      "id": 4,
+      "width": 48,
+      "height": 3,
+      "text": "DIRECTIVE 0320 RECORDED\nAWAITING FOUR-POINT AUTHORITY<Close>"
+    },
+    {
+      "id": 5,
+      "width": 52,
+      "height": 4,
+      "text": "<Opcode:01:FF>FOUR-POINT AUTHORITY\n  A-2  B-5  C-8  D-4\n  A-4  B-8  C-5  D-2\n  A-5  B-2  C-4  D-8<Close>"
+    },
+    {
+      "id": 6,
+      "width": 50,
+      "height": 3,
+      "text": "DIRECTIVE 0320 ACCEPTED\nFOUR-POINT AUTHORITY VERIFIED<Close>"
+    },
+    {
+      "id": 7,
+      "width": 48,
+      "height": 3,
+      "text": "AUTHORIZATION REJECTED\nEntry does not match\narchive record.<Close>"
+    },
+    {
+      "id": 8,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "MATERIALS CONTROL\nPAYLOAD TRANSFER RECORD /\n6079<New>University weather package:\nremoved from launch queue.\nNext survey carrier: removed\nfrom launch queue.<New>Replacement cargo: sealed.\nReceiving authority:\nStrategic Command.\nTransfer ordered by the\nAdviser's Office.<New>MANIFEST CORRECTION<New>The public schedule still\nlists the survey carrier. Its\ncradle has been removed.\nRetain both schedules with\nthis transfer record.<New>LAUNCH CREDENTIAL REGISTER\nDIRECTIVE 0320\nA-2 B-5 C-8 D-4<New>Payload, Guidance, Safety,\nand Accelerator Control each\nhold one authority code. No\noffice may hold more than\none.<New>EMERGENCY HANDOVER<New>The Executive Office may\nappoint replacements for\nunavailable personnel.\nDuplicate credentials are\nheld at Defense Archive.<New>SAFETY POST / 09:10\nMara recorded as unavailable.\nReplacement: Strategic\nCommand officer.\nAuthorization signed.<New>ATTACHED CORRECTION / MARA\nI was at my post at 09:10. I\ndid not authorize a\nreplacement. Please correct\nthe duty record.<New>Correction request: closed.\nReceipt and closure times are\nidentical.<New>DEFENSE ARCHIVE TERMINAL\nEnter 0320 first. Then enter\nA-2, B-5, C-8, and D-4\nseparately.<Close>"
+    },
+    {
+      "id": 9,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "LAUNCH CREDENTIAL REGISTER\nA-2 B-5 C-8 D-4<New>At the Defense Archive\nterminal, enter Directive\n0320 first. Then enter each\nauthority code separately.<Close>"
+    },
+    {
+      "id": 10,
+      "width": 48,
+      "height": 3,
+      "manual_wrap": true,
+      "text": "<Opcode:01:FF>MATERIALS RECORDS\n  Close\n  Read transfer record<Close>"
+    }
+  ]
+}

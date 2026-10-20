@@ -1,0 +1,56 @@
+{
+  "format": "xenogears-module-v1",
+  "id": "definitive",
+  "title": "Xenogears Definitive",
+  "status": "active",
+  "enabled": true,
+  "source_ids": [
+    "retail_disc1",
+    "retail_disc2"
+  ],
+  "build_dependencies": [],
+  "resource_claims": [
+    {
+      "profile": "definitive",
+      "canonical_ids": [
+        22,
+        36,
+        37,
+        38,
+        39,
+        2594,
+        2597,
+        2599,
+        2602,
+        2603,
+        2746
+      ],
+      "purpose": "Optional renderer, random-encounter suppression and isolated retail bug fixes"
+    },
+    {
+      "profile": "definitive",
+      "canonical_range": [
+        2618,
+        2768
+      ],
+      "stride": 2,
+      "purpose": "Optional XP reward scaling"
+    },
+    {
+      "profile": "definitive",
+      "purpose": "Existing field dialogue component7 only; exact changed IDs recorded in build receipt"
+    }
+  ],
+  "state_claims": [
+    {
+      "profile": "definitive",
+      "address": "0x800C2048",
+      "bytes": 1,
+      "resource": 38,
+      "decoded_offset": "0x52558",
+      "purpose": "Transient Mahanon Deus camera-suppression flag in verified alignment padding",
+      "lifetime": "Captured from command, consumed and reset inside battle overlay; never saved",
+      "evidence": "docs/definitive/deus-fix-verification.md"
+    }
+  ]
+}

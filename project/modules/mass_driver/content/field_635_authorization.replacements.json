@@ -1,0 +1,286 @@
+{
+  "format": "xenogears-field-dialogue-replacements-v1",
+  "source_size": 2363,
+  "source_sha256": "1a1f3744654cca652220ef200d9f4e13f461cadea5a6cb051e55a82f17a781a4",
+  "block_count": 49,
+  "replacements": [
+    {
+      "id": 0,
+      "width": 52,
+      "height": 4,
+      "text": "Elly\n\"Four terminals... one for\neach address in the\nauthorization record.\"<Close>"
+    },
+    {
+      "id": 1,
+      "text": "Emeralda\n\"The other console said\nA-2, B-5, C-8, D-4.\"<Close>"
+    },
+    {
+      "id": 2,
+      "width": 44,
+      "height": 2,
+      "text": "Launch lock has\nalready been released.<Close>"
+    },
+    {
+      "id": 3,
+      "width": 42,
+      "height": 1,
+      "text": "Enter Address A code.<Close>"
+    },
+    {
+      "id": 4,
+      "text": "<Opcode:01:FF>Address A\n    1\n    2\n    3\n    4\n    5\n    6\n    7\n    8\n    9\n    Cancel<Close>"
+    },
+    {
+      "id": 5,
+      "width": 52,
+      "height": 2,
+      "text": "<Opcode:01:FF>Address A rejected.\nSelect a different number.<Close>"
+    },
+    {
+      "id": 6,
+      "width": 54,
+      "height": 2,
+      "text": "<Opcode:01:FF>That number is unavailable.\nSelect a different number.<Close>"
+    },
+    {
+      "id": 7,
+      "width": 52,
+      "height": 2,
+      "text": "<Opcode:01:FF>Authorization conflict.\nSelect a different number.<Close>"
+    },
+    {
+      "id": 8,
+      "width": 52,
+      "height": 2,
+      "text": "<Opcode:01:FF>Address A not verified.\nSelect a different number.<Close>"
+    },
+    {
+      "id": 9,
+      "width": 64,
+      "height": 2,
+      "text": "<Opcode:01:FF>Entry locked by another address.\nSelect a different number.<Close>"
+    },
+    {
+      "id": 10,
+      "width": 46,
+      "height": 2,
+      "text": "Address A authorization\naccepted.<Close>"
+    },
+    {
+      "id": 11,
+      "width": 42,
+      "height": 1,
+      "text": "Enter Address B code.<Close>"
+    },
+    {
+      "id": 12,
+      "text": "<Opcode:01:FF>Address B\n    1\n    2\n    3\n    4\n    5\n    6\n    7\n    8\n    9\n    Cancel<Close>"
+    },
+    {
+      "id": 13,
+      "width": 52,
+      "height": 2,
+      "text": "<Opcode:01:FF>Address B rejected.\nSelect a different number.<Close>"
+    },
+    {
+      "id": 14,
+      "width": 54,
+      "height": 2,
+      "text": "<Opcode:01:FF>That number is unavailable.\nSelect a different number.<Close>"
+    },
+    {
+      "id": 15,
+      "width": 52,
+      "height": 2,
+      "text": "<Opcode:01:FF>Authorization conflict.\nSelect a different number.<Close>"
+    },
+    {
+      "id": 16,
+      "width": 52,
+      "height": 2,
+      "text": "<Opcode:01:FF>Address B not verified.\nSelect a different number.<Close>"
+    },
+    {
+      "id": 17,
+      "width": 64,
+      "height": 2,
+      "text": "<Opcode:01:FF>Entry locked by another address.\nSelect a different number.<Close>"
+    },
+    {
+      "id": 18,
+      "width": 46,
+      "height": 2,
+      "text": "Address B authorization\naccepted.<Close>"
+    },
+    {
+      "id": 19,
+      "width": 42,
+      "height": 1,
+      "text": "Enter Address C code.<Close>"
+    },
+    {
+      "id": 20,
+      "text": "<Opcode:01:FF>Address C\n    1\n    2\n    3\n    4\n    5\n    6\n    7\n    8\n    9\n    Cancel<Close>"
+    },
+    {
+      "id": 21,
+      "width": 52,
+      "height": 2,
+      "text": "<Opcode:01:FF>Address C rejected.\nSelect a different number.<Close>"
+    },
+    {
+      "id": 22,
+      "width": 54,
+      "height": 2,
+      "text": "<Opcode:01:FF>That number is unavailable.\nSelect a different number.<Close>"
+    },
+    {
+      "id": 23,
+      "width": 52,
+      "height": 2,
+      "text": "<Opcode:01:FF>Authorization conflict.\nSelect a different number.<Close>"
+    },
+    {
+      "id": 24,
+      "width": 52,
+      "height": 2,
+      "text": "<Opcode:01:FF>Address C not verified.\nSelect a different number.<Close>"
+    },
+    {
+      "id": 25,
+      "width": 64,
+      "height": 2,
+      "text": "<Opcode:01:FF>Entry locked by another address.\nSelect a different number.<Close>"
+    },
+    {
+      "id": 26,
+      "width": 46,
+      "height": 2,
+      "text": "Address C authorization\naccepted.<Close>"
+    },
+    {
+      "id": 27,
+      "width": 42,
+      "height": 1,
+      "text": "Enter Address D code.<Close>"
+    },
+    {
+      "id": 28,
+      "text": "<Opcode:01:FF>Address D\n    1\n    2\n    3\n    4\n    5\n    6\n    7\n    8\n    9\n    Cancel<Close>"
+    },
+    {
+      "id": 29,
+      "width": 52,
+      "height": 2,
+      "text": "<Opcode:01:FF>Address D rejected.\nSelect a different number.<Close>"
+    },
+    {
+      "id": 30,
+      "width": 54,
+      "height": 2,
+      "text": "<Opcode:01:FF>That number is unavailable.\nSelect a different number.<Close>"
+    },
+    {
+      "id": 31,
+      "width": 52,
+      "height": 2,
+      "text": "<Opcode:01:FF>Authorization conflict.\nSelect a different number.<Close>"
+    },
+    {
+      "id": 32,
+      "width": 52,
+      "height": 2,
+      "text": "<Opcode:01:FF>Address D not verified.\nSelect a different number.<Close>"
+    },
+    {
+      "id": 33,
+      "width": 64,
+      "height": 2,
+      "text": "<Opcode:01:FF>Entry locked by another address.\nSelect a different number.<Close>"
+    },
+    {
+      "id": 34,
+      "width": 46,
+      "height": 2,
+      "text": "Address D authorization\naccepted.<Close>"
+    },
+    {
+      "id": 35,
+      "text": "    <Opcode:01:FF>Current code entries\n    Review addresses\n    Release launch lock<Close>"
+    },
+    {
+      "id": 36,
+      "width": 68,
+      "height": 6,
+      "text": "<Opcode:01:FF>    Address B-<Opcode:0A:01>\n \nAddress A-<Opcode:0A:00>\nAddress C-<Opcode:0A:02>\n \n    Address D-<Opcode:0A:03><Close>"
+    },
+    {
+      "id": 37,
+      "width": 30,
+      "height": 6,
+      "text": "<Opcode:01:FF>    Address B-5\n \nAddress A-2\nAddress C-8\n \n    Address D-4<Close>"
+    },
+    {
+      "id": 38,
+      "text": "Launch lock\nreleased.<Close>"
+    },
+    {
+      "id": 39,
+      "width": 42,
+      "height": 2,
+      "text": "Proceed to the\ncentral control room.<Close>"
+    },
+    {
+      "id": 40,
+      "width": 38,
+      "height": 2,
+      "text": "Launch lock release\nconfirmed.<Close>"
+    },
+    {
+      "id": 41,
+      "width": 38,
+      "height": 2,
+      "text": "The central control\nroute is now open.<Close>"
+    },
+    {
+      "id": 42,
+      "width": 36,
+      "height": 2,
+      "text": "All four addresses\nauthorized.<Close>"
+    },
+    {
+      "id": 43,
+      "width": 42,
+      "height": 2,
+      "text": "Proceed to the\ncentral control room.<Close>"
+    },
+    {
+      "id": 44,
+      "width": 42,
+      "height": 2,
+      "text": "Launch control access\ngranted.<Close>"
+    },
+    {
+      "id": 45,
+      "width": 38,
+      "height": 2,
+      "text": "The central control\nroute is now open.<Close>"
+    },
+    {
+      "id": 46,
+      "width": 50,
+      "height": 1,
+      "text": "Authorization code error.<Close>"
+    },
+    {
+      "id": 47,
+      "text": "    UP\n    DOWN<Close>"
+    },
+    {
+      "id": 48,
+      "width": 66,
+      "height": 2,
+      "text": "A '0' means no entry.\nIt is not part of Directive 0320.<Close><Close>"
+    }
+  ]
+}

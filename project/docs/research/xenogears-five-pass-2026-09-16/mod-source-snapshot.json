@@ -1,0 +1,179 @@
+{
+  "recorded": "2026-09-16",
+  "purpose": "Read-only review baseline; active dialogue source hashes independently checked against V168 transcript. Not a runtime validation.",
+  "files": [
+    {
+      "file": "modules/mass_driver/content/field_361_zeboim_access_tunnel.authored.json",
+      "sha256": "791bdce4b7b8cc7e2d2d7359f5eea1ece08d0c0ff08a8674c6eb500e5f6b988d",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/content/field_362_inclined_service_tunnel.authored.json",
+      "sha256": "c82f8a3404bd3639bd9fb7743707269bab56ef7f70e59442d35310677088b644",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/content/field_398_curved_transit_tunnel.authored.json",
+      "sha256": "3989b46082211c1f5fcd81e28f39edb5088687da2b72d6b5f3ec513f32e5d515",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/content/field_399_lighthouse_utility_tunnel.authored.json",
+      "sha256": "8935bc33be0484a576e9bca64c94ff3c4d88a0e6dbce3c77b42207e6645c5bef",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/content/field_397_subway_end.authored.json",
+      "sha256": "bf13aca180ac0ba8acea179f59b6b8b00650874ba2bc5e9e700173890bb979a1",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/content/field_363_zeboim_service_junction.authored.json",
+      "sha256": "e265c18e8456f9b52de0bb0cf5ea82e383505a0deeb130a0da94b581b3911f8c",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/content/field_376_transfer_airlock.authored.json",
+      "sha256": "70df593278af5d0b804330802cababbafad7ce9f570e27eec7142d116afbf008",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/content/field_377_inner_access.authored.json",
+      "sha256": "cb51dad083c2c3b387305cabd5d6a009bbd39a8cbeca6806a1f6fe5198465aae",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/content/field_372_service_hub.authored.json",
+      "sha256": "dd6064497b64d864d7c916d9253fdd3764d2978a933b9a2db41ba820dc756cd7",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/content/field_373_control_research_annex.authored.json",
+      "sha256": "8bcb1a9e2d44b3c65e33549d7993aa67b0ab2c9d9dfd3f71687f8b7f48b964c8",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/content/field_374_storage_annex.authored.json",
+      "sha256": "9b3b4e9cf198220c2c56b1117a08f9ec27de610dbcadb65ee0b4db21baf23565",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/content/field_375_service_connector.authored.json",
+      "sha256": "430a77ee4b4a3b5c03023663128e6b6402c4d77a75f76816e7212a5b21d06e66",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/content/field_375_post_aux_stair.authored.json",
+      "sha256": "430a77ee4b4a3b5c03023663128e6b6402c4d77a75f76816e7212a5b21d06e66",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/content/field_387_vertical_connector.authored.json",
+      "sha256": "3f161c1e5cc5dfa0c2d51bef293e1fa6f376104c4f5af801fd568a5acf0120a9",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/content/field_385_magnetic_conduit.authored.json",
+      "sha256": "b8f76031b8383207b36bb7eeaa9f861f59d99c44c1b2a658be2a69c2f67c79a7",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/content/field_384_launch_support.authored.json",
+      "sha256": "5a8e9aea835b77588f737570d9d1efb710ac5b110e0c2ea0b3a047e4b17d0484",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/content/field_366_archive_annex.authored.json",
+      "sha256": "f91ba82d6019850b19724adf19217734589c51ec999c7774c13bad20c202b6a0",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/content/field_367_archive_junction.authored.json",
+      "sha256": "b982dbd375ba2c6b9d9e2abbd780cd7aa95569cd59a5045ae5adbde58e022f8e",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/content/field_385_storage_treasure_annex.authored.json",
+      "sha256": "c80e906cfec1bff1804b63a4b8a270604592f9dc4ca4e715175fb7ecddc852de",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/content/field_386_storage_treasure_annex.authored.json",
+      "sha256": "008f356bd3b47484c762cdb1cc3bf17f309c88c8f3ae0d20f0b324d415849534",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/content/field_368_archive_annex.authored.json",
+      "sha256": "43d095c3a7f4d037705a0f27108b6b6ed803b52e41043ec6c5246b7736e83ce1",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/content/field_369_archive_annex.authored.json",
+      "sha256": "4c7f46ab57120e1806022a50e3876075957f1f93364aa6a2804e1002d7c8533b",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/content/field_370_archive_annex.authored.json",
+      "sha256": "c8ac50bc9d20f50a26cf6bb5732f960187cd2f194b090aa6089c6ac8c0beacd0",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/content/field_371_archive_annex.authored.json",
+      "sha256": "cb15fc94e069b7c23bf22a5a6f593870902a06237866d1ade075644b2bd801c7",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/content/field_724_archive_annex.authored.json",
+      "sha256": "cbbd0e243917913f4d86b3bd92a933c7189744300133bb27126f4408b8f93867",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/content/field_394_defense_archive.authored.json",
+      "sha256": "54a1f1d44a30c7d8dd64d1e0ce7d211bfe48ff53c54f408e4e9a707eef38d3fb",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/content/field_260_goliath_factory_hall.authored.json",
+      "sha256": "5ee6718c66e1c919088f8cc7b614ebe8938ad426c395e13dc0b66e100245b0b2",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/content/field_673_silo_vault_1.authored.json",
+      "sha256": "2e6d9917ad4e30811202dd857b9fa0f4b45d10406e9b8ac8b4ae7ee70f9ad56b",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/content/field_673_silo_vault_2.authored.json",
+      "sha256": "008c159dd05e228641c1e0f824fd43fca0facbb2ae5e81bfe562ed82034bc7d3",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/content/field_673_silo_vault_3.authored.json",
+      "sha256": "95aa6c09c3f06458909e5f6fc1d9a153409cfb001076a6de9c51ea8317384fc8",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/content/field_673_silo_vault_4.authored.json",
+      "sha256": "7baf3cfdd4a23f2a58ff685564465009aebb7add854d1840813775ea4e0f4456",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/content/field_673_silo_vault_5.authored.json",
+      "sha256": "8fdce9a409f8ed99343a2961b3e03addc73b98c89ae2fc6106e3a3290ffe6a88",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/content/field_369_archive_control.authored.json",
+      "sha256": "c85b3343b73bf46f56efcc6427e0962f2138dbe1e46547d0c05454c1e970bb96",
+      "matches_v168": true
+    },
+    {
+      "file": "modules/mass_driver/build.py",
+      "sha256": "370d6beedbc774361936359ec02ca42452f4230df1eb83786a78e599c2736540"
+    },
+    {
+      "file": "project.local.json",
+      "sha256": "a207b1ccde105ae07df9a42302b32c1dc888f5525f04b0dfd1642f7868f91c17"
+    }
+  ]
+}

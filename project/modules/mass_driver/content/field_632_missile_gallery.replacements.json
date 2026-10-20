@@ -1,0 +1,164 @@
+{
+  "format": "xenogears-field-dialogue-replacements-v1",
+  "source_size": 3004,
+  "source_sha256": "89c2555eaa77c475aab399eb7974c36483cb60b88a36123709ba3444058cd8bd",
+  "block_count": 30,
+  "replacements": [
+    {
+      "id": 0,
+      "width": 60,
+      "height": 4,
+      "text": "Emeralda\n\"Missiles and giant rockets...\nThey go all the way into\nthe dark.\"<New>Elly\n\"The Mass Driver once sent\nmaterials and instruments\ntoward space.\"<New>Elly\n\"During the Zeboim war,\nthe military made it a\nlauncher for missiles.\"<New>Elly\n\"Missiles standing in rows...\nLike tombstones in a\ngraveyard...\"<New>Elly\n\"Monuments to Zeboim's\npride and arrogance.\"<New>Emeralda\n\"People used all this\nto hurt each other?\"<New>Elly\n\"They believed their power\nmade them secure.\"<New>Elly\n\"Each weapon only demanded\na greater one.\"<New>Elly\n\"That arrogance left nothing\nbut a graveyard.\"<Close>"
+    },
+    {
+      "id": 1,
+      "width": 56,
+      "height": 4,
+      "text": "Elly\n\"The Mass Driver once sent\nmaterials and instruments\ntoward space.<New>During the Zeboim war,\nthe military made it a\nlauncher for missiles.\"<Close>"
+    },
+    {
+      "id": 2,
+      "width": 60,
+      "height": 4,
+      "text": "Elly\n\"Missiles standing in rows...<New>Like tombstones in a\ngraveyard... monuments to\nZeboim's pride and arrogance.\"<Close>"
+    },
+    {
+      "id": 3,
+      "width": 42,
+      "height": 4,
+      "text": "Emeralda\n\"People used all this<Delay:30>\nto hurt each other?\"<Close>"
+    },
+    {
+      "id": 4,
+      "width": 54,
+      "height": 4,
+      "text": "Elly\n\"They believed their power\nmade them secure.<New>Each weapon only demanded\na greater one.<New>That arrogance left nothing\nbut a graveyard.\"<Close>"
+    },
+    {
+      "id": 5,
+      "text": "Emeralda\n\"Then we make it do\nsomething good.\"<Close>"
+    },
+    {
+      "id": 6,
+      "width": 34,
+      "height": 3,
+      "text": "Elly\n\"Yes. That is why\nwe came.\"<Close>"
+    },
+    {
+      "id": 7,
+      "width": 54,
+      "height": 4,
+      "text": "SPACE DEVELOPMENT LAUNCH ARRAY<New>MAGNETIC LAUNCH RAIL ONLINE<New>MILITARY CONTROL OVERRIDE\nREMAINS IN EFFECT<New>UNAUTHORIZED PERSONNEL\nWILL BE INTERCEPTED<Close>"
+    },
+    {
+      "id": 8,
+      "width": 42,
+      "height": 4,
+      "text": "Emeralda\n\"Elly...<Delay:30> something is\nmoving above us.\"<Close>"
+    },
+    {
+      "id": 9,
+      "text": "DEFENSE GRID ALERT<New>SERVICE DRONES ARMED<New>PROTECT LAUNCH ASSETS<Close>"
+    },
+    {
+      "id": 10,
+      "text": "Emeralda\n\"Can Emeralda break\nthem?\"<Close>"
+    },
+    {
+      "id": 11,
+      "width": 48,
+      "height": 3,
+      "text": "Elly\n\"The machines, yes.\nDo not damage the rail.\"<Close>"
+    },
+    {
+      "id": 12,
+      "width": 60,
+      "height": 4,
+      "text": "TARGETS ACQUIRED<New>PAYLOAD MAGAZINE SEALED<New>COUNTERMEASURES DEPLOYED<New>DEFENSE AUTHORITY - ZD COMMAND<Close>"
+    },
+    {
+      "id": 13,
+      "width": 52,
+      "height": 4,
+      "text": "Elly\n\"These machines are from\nZeboim. They're very old.\"<Close>"
+    },
+    {
+      "id": 14,
+      "text": "Elly\n\"Watch their searchlights.<New>They fire when the beam\nturns red.<New>Move between the launch\ncradles.\"<Close>"
+    },
+    {
+      "id": 15,
+      "text": "EMERGENCY PROTOCOL<New>MAGNETIC COILS PROTECTED<New>LIVE AMMUNITION SECURED<New>INTRUDER TERMINATION\nAUTHORIZED<Close>"
+    },
+    {
+      "id": 16,
+      "width": 54,
+      "height": 4,
+      "text": "Emeralda\n\"Old soldiers still obeying\neven when nobody is here.\"<Close>"
+    },
+    {
+      "id": 17,
+      "text": "Elly\n\"Yes...<Delay:30> the war ended,\nbut their final order\nnever did.<New>We have to pass them.\"<Close>"
+    },
+    {
+      "id": 18,
+      "width": 44,
+      "height": 3,
+      "text": "Emeralda\n\"Emeralda will protect\nElly!\"<Opcode:02:1E><Close>"
+    },
+    {
+      "id": 19,
+      "text": "Emeralda\n\"They stopped...<Delay:20>\nbut bigger footsteps are\nfurther ahead.<New>Something is guarding\nthe control room.\"<Close>"
+    },
+    {
+      "id": 20,
+      "width": 50,
+      "height": 3,
+      "text": "Elly\n\"First we need the launch\nauthorization code.\"<Close>"
+    },
+    {
+      "id": 21,
+      "width": 66,
+      "height": 4,
+      "text": "DIRECTIVE LOG 0320<New>AUTHORIZATION ARCHIVE TRANSFERRED\nTO RECORDS CONTROL<Close>"
+    },
+    {
+      "id": 22,
+      "width": 48,
+      "height": 3,
+      "text": "Elly\n\"Record 0320...<New>That should be the key.<Delay:20>\nThe archive must be near\nthe service level.\"<Close>"
+    },
+    {
+      "id": 23,
+      "text": "Elly\n\"A machine has no wish\nof its own.<New>It carries food or weapons\naccording to the hands\nthat guide it.<New>The people who built this\nplace could not choose\nwhat came after them.<New>But we can choose what\nwe do with it now.<New>We can use their rocket\nto carry hope.<New>That choice belongs\nto us.\"<Close>"
+    },
+    {
+      "id": 24,
+      "width": 42,
+      "height": 3,
+      "text": "Emeralda\n\"Then old rocket gets\na new job.\"<Close>"
+    },
+    {
+      "id": 25,
+      "text": "Elly\n\"A better one.\"<Close>"
+    },
+    {
+      "id": 26,
+      "text": "Elly\n\"We find the archive first.<New>Then we open the way to\ncentral control.\"<Close>"
+    },
+    {
+      "id": 27,
+      "width": 40,
+      "height": 2,
+      "text": "Missile gallery gate\n     OPEN<Close>"
+    },
+    {
+      "id": 28,
+      "text": "You cannot carry\n<Opcode:04:14>.<Close>"
+    },
+    {
+      "id": 29,
+      "text": " \n Recovered <Opcode:04:14><Close><Close>"
+    }
+  ]
+}

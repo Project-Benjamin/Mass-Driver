@@ -1,0 +1,250 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "<Elly>\n\"Central Control...\"<Close>"
+    },
+    {
+      "id": 1,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "<Elly>\n\"This one... It doesn't look\nlike the other terminals.\"<Close>"
+    },
+    {
+      "id": 2,
+      "width": 46,
+      "height": 2,
+      "text": "ARCHIVE INDEX 02\nLaunch weather records.<Close>"
+    },
+    {
+      "id": 3,
+      "width": 46,
+      "height": 2,
+      "text": "ARCHIVE INDEX 03\nSpace-program guidance.<Close>"
+    },
+    {
+      "id": 4,
+      "width": 46,
+      "height": 2,
+      "text": "ARCHIVE INDEX 04\nGuidance calibration.<Close>"
+    },
+    {
+      "id": 5,
+      "width": 46,
+      "height": 2,
+      "text": "ARCHIVE INDEX 05\nEmergency power transfer.<Close>"
+    },
+    {
+      "id": 6,
+      "width": 46,
+      "height": 2,
+      "text": "ARCHIVE INDEX 06\nPersonnel evacuation.<Close>"
+    },
+    {
+      "id": 7,
+      "width": 46,
+      "height": 2,
+      "text": "ARCHIVE INDEX 07\nPayload inventory.<Close>"
+    },
+    {
+      "id": 8,
+      "width": 46,
+      "height": 2,
+      "text": "ARCHIVE INDEX 08\nNetwork failure report.<Close>"
+    },
+    {
+      "id": 9,
+      "width": 46,
+      "height": 2,
+      "text": "ARCHIVE INDEX 09\nFinal maintenance order.<Close>"
+    },
+    {
+      "id": 10,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "CAPSULE CRADLE\nNANOMACHINE PAYLOAD SECURED\nLAUNCH CONSOLE READY<Close>"
+    },
+    {
+      "id": 11,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "LAUNCH CONTROL\nRelease authorization not\nreceived.<New>Authorize at the Defense\nArchive wall console.\nDirective: 0320\nCodes: A-2 / B-5 / C-8 / D-4<New>ACCESS ROUTE\nReturn through the five\nreserve magazines.<Close>"
+    },
+    {
+      "id": 12,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "NANOMACHINE CAPSULE SECURED\nLaunch authorization\nconfirmed.\nPayload link established.<New>Guidance power normal.\nMagnetic banks ready.\nAscent path clear.<New><Elly>\n\"The capsule's connected.\nNow, the guidance...\"<New><Emeralda>\n\"Elly?\"<New><Elly>\n\"It keeps drifting. If we\nlaunch like this, we could\nlose the capsule.\"<New><Elly>\n\"Citan should be here soon.\nI'd like him to look at it.\"<Close>"
+    },
+    {
+      "id": 13,
+      "width": 52,
+      "height": 3,
+      "text": "The terminal requests an emergency Directive number.\nSearch the Control and Research Annex archive.<Close>"
+    },
+    {
+      "id": 14,
+      "width": 54,
+      "height": 3,
+      "text": "The terminal requires all four authority points.\nSearch the Materials Storage archive.<Close>"
+    },
+    {
+      "id": 15,
+      "width": 48,
+      "height": 3,
+      "text": "DIRECTIVE 0320\nLAUNCH AUTHORIZATION ACTIVE<Close>"
+    },
+    {
+      "id": 16,
+      "width": 34,
+      "height": 4,
+      "text": "<Opcode:01:FF>DIRECTIVE NUMBER\n  0320\n  0302\n  3200<Close>"
+    },
+    {
+      "id": 17,
+      "width": 54,
+      "height": 4,
+      "text": "<Opcode:01:FF>FOUR-POINT AUTHORITY\n  A-2  B-5  C-8  D-4\n  A-4  B-8  C-5  D-2\n  A-5  B-2  C-4  D-8<Close>"
+    },
+    {
+      "id": 18,
+      "width": 50,
+      "height": 3,
+      "text": "DIRECTIVE 0320 ACCEPTED\nFOUR-POINT AUTHORITY VERIFIED\nLaunch control released.<Close>"
+    },
+    {
+      "id": 19,
+      "width": 48,
+      "height": 3,
+      "text": "AUTHORIZATION REJECTED\nThe Directive or one of the four points is invalid.<Close>"
+    },
+    {
+      "id": 20,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "LAUNCH COMPLETE\nCapsule clear.\nAtmospheric dispersal active.<New>No further capsule available.<New><Elly>\n\"The nanomachines... They\nshould be spreading by now.\"<Close>"
+    },
+    {
+      "id": 21,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "<Elly>\n\"Wait...\"<New><Emeralda>\n\"Elly...? What's wrong?\"<New><Elly>\n\"The room... it is changing.\nTwo officers are at the\nconsole. I can hear them...\"<New><Emeralda>\n\"Emeralda sees no one.\nThe room is empty.\"<Close>"
+    },
+    {
+      "id": 22,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "LAUNCH DIRECTOR\n\"Directive 0320 confirmed.\nTarget data is loaded.\nThe Prime Minister has\nauthorized release.\"<Close>"
+    },
+    {
+      "id": 23,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "SYSTEMS OFFICER\n\"The warning net contradicts\nitself. We have no confirmed\nenemy launch. If we fire\nnow... we begin it.\"<Close>"
+    },
+    {
+      "id": 24,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "LAUNCH DIRECTOR\n\"And they will answer.\nEvery major city will be\nlost... ours included.\"<Close>"
+    },
+    {
+      "id": 25,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "MIANG\n\"Do not blame yourself.\nYou did everything possible\nto preserve the peace.\"<Close>"
+    },
+    {
+      "id": 26,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "SYSTEMS OFFICER\n\"Fallout projections exceed\nevery shelter limit. Once we\nopen the banks, there is\nno recall.\"<Close>"
+    },
+    {
+      "id": 27,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "MIANG\n\"That is why the Prime\nMinister entrusted this to\nyou. He knows you will\nprotect them.\"<Close>"
+    },
+    {
+      "id": 28,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "LAUNCH DIRECTOR\n\"Protect them...?\nThere may be no one left\nto protect.\"<Close>"
+    },
+    {
+      "id": 29,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "MIANG\n\"If you hesitate, the enemy\nwill choose for you.\nIs that what you want?\"<Close>"
+    },
+    {
+      "id": 30,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "SYSTEMS OFFICER\n\"All four authority points\naccepted. Cradles are open.\nDirector... we need your\nfinal order.\"<Close>"
+    },
+    {
+      "id": 31,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "LAUNCH DIRECTOR\n\"...Open the banks.\nExecute Directive 0320.\"<Close>"
+    },
+    {
+      "id": 32,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "<Emeralda>\n\"Elly...\"<New><Elly>\n(Why does this feel so\nfamiliar?)<New><Emeralda>\n\"Elly?\"<New><Elly>\n(I remember that...from a\ndream?)<New><Elly>\n\"But no matter, we have a\njob to do.\"<Close>"
+    },
+    {
+      "id": 33,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "<Emeralda>\n\"Was it a dream?\"<New><Elly>\n\"It felt like one of my\ndreams... but the memory\nwas not mine.\"<New><Elly>\n\"The archives name Miang.\nThat voice was hers. This\nwas her memory.\"<New><Emeralda>\n\"But Miang did not give\norder.\"<New><Elly>\n\"No. She turned every doubt\ninto another reason to fire.\nShe made the choice feel\nlike their own.\"<Close>"
+    },
+    {
+      "id": 34,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "<Emeralda>\n\"And now... we use the same\nmachine?\"<New><Elly>\n\"Yes. Once, it was used to\ndestroy life. Now... we will\nuse it to heal.\"<New><Elly>\n\"The Limiter was forced upon\nthem. We can give back what\nwas taken.\"<New><Emeralda>\n\"Then... let us do it.\"<New><Elly>\n\"The console is ready. We\nwill activate it when we are\nprepared.\"<Close>"
+    },
+    {
+      "id": 35,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "<Citan>\n\"Elly! You have the capsule\nconnected, then?\"<New><Elly>\n\"Yes. But I can't get the\nguidance to hold steady.\"<New><Citan>\n\"Let me see... I can adjust\nit from here. Will you take\nthe launch controls?\"<New><Elly>\n\"I'm ready.\"<New>LAUNCH SEQUENCE ARMED\nMagnetic banks synchronized.\nCapsule ascent ready.\nAccelerator charging.<New><Citan>\n\"There... The course is\nholding. Elly, now!\"<New><Elly>\n\"Please... let it reach\neveryone.\"<New><Emeralda>\n\"Go!\"<Close>"
+    },
+    {
+      "id": 36,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "MIANG\n\"You did what was\nnecessary.\"<Close>"
+    }
+  ]
+}

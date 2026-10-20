@@ -1,0 +1,636 @@
+{
+  "format": "xenogears-definitive-validation-v1",
+  "profile": "definitive",
+  "date": "2026-09-07",
+  "tests": [
+    {
+      "command": "python project.py test definitive",
+      "tests": 287,
+      "skipped": 1,
+      "result": "passed",
+      "scope": "Restoration source suite with native CPU checks, optional dependency handling and installed-resource corruption rejection",
+      "log": "output/definitive/verification/deus-restoration-v2-tests.log"
+    },
+    {
+      "command": "python project.py test definitive",
+      "tests": 244,
+      "skipped": 1,
+      "result": "passed",
+      "scope": "Current-source suite including single-page layout checks at 100%, 150% and 200% DPI and completion with output action visible; one explicit skip"
+    },
+    {
+      "command": "python project.py test rico",
+      "tests": 1084,
+      "skipped": 7,
+      "result": "passed",
+      "scope": "chapter regressions after shared renderer extraction"
+    }
+  ],
+  "runtime_status": "untested",
+  "computer_use": "Patcher layout inspected; user stopped Computer Use with physical Escape. No further UI interaction or emulator launch.",
+  "builds": [
+    {
+      "release": "foundation-v2",
+      "status": "built",
+      "activated": true,
+      "finished_utc": "2026-09-07T13:15:47.136026+00:00",
+      "receipt": "builds/definitive/foundation-v2/project-build.json",
+      "manifest": "builds/definitive/foundation-v2/definitive-build-manifest.json",
+      "options": {
+        "bug_fixes": true,
+        "yellow_names": true,
+        "double_xp": false,
+        "encounters": "normal",
+        "hd_portraits": false,
+        "retranslation": false,
+        "story_mode": false,
+        "max_gold": false,
+        "weight_fix": false
+      },
+      "outputs": [
+        {
+          "path": "definitive-build-manifest.json",
+          "size": 85761,
+          "sha256": "8c3938d063e8e34032b2d5c6936077df83e3ad74f79c30af270242f0c54ba9dd"
+        },
+        {
+          "path": "Xenogears_Definitive.m3u",
+          "size": 60,
+          "sha256": "696d3bd229389b41e531d38520550023e29d97338488882f296b650575aad465"
+        },
+        {
+          "path": "Xenogears_Definitive_CD1.bin",
+          "size": 718383120,
+          "sha256": "6d59e4444be32da45ecbe1327ba689d3b39f1d03a290d33c4ba5b850c48a2dbb"
+        },
+        {
+          "path": "Xenogears_Definitive_CD1.cue",
+          "size": 87,
+          "sha256": "217eb558a23b23760335672ab61812fe9850a9cf57048bf386dc12f3622e9981"
+        },
+        {
+          "path": "Xenogears_Definitive_CD2.bin",
+          "size": 688345728,
+          "sha256": "d631cd78340630bbeaf8ff805b2ceab4b333a78ca6a44a6cbbac15cc415ebe9d"
+        },
+        {
+          "path": "Xenogears_Definitive_CD2.cue",
+          "size": 87,
+          "sha256": "81c5bc703c4d86772c3a77a782b8913a8a7215edec0c48a27acbcda9e80e266a"
+        }
+      ],
+      "discs": {
+        "1": {
+          "replacement_resources": 382,
+          "resource_files_verified": 3710,
+          "raw_xa_movies_verified": 17,
+          "boot": {
+            "canonical_id": 22,
+            "physical_id": 22,
+            "boot_file": "SLUS_006.64;1",
+            "sector": 108606,
+            "size": 303104,
+            "embedded_fat_entries": 4152,
+            "sha256": "53c6b8fe6b8f688d17f6af3c6c52b2e46dcf03289584ce577b6f744505237923"
+          },
+          "runtime_status": "untested",
+          "note": "Byte verification is not an emulator playthrough."
+        },
+        "2": {
+          "replacement_resources": 109,
+          "resource_files_verified": 3710,
+          "raw_xa_movies_verified": 12,
+          "boot": {
+            "canonical_id": 22,
+            "physical_id": 17,
+            "boot_file": "SLUS_006.69;1",
+            "sector": 172918,
+            "size": 303104,
+            "embedded_fat_entries": 4147,
+            "sha256": "c0be611c490c1b07819bd2c5f842179a6e462cbc99afa9500b77f916eba36932"
+          },
+          "runtime_status": "untested",
+          "note": "Byte verification is not an emulator playthrough."
+        }
+      },
+      "launch_identity": {
+        "command": "python project.py play definitive --release foundation-v2 --check-only",
+        "result": "passed",
+        "emulator_opened": false
+      },
+      "runtime_status": "untested",
+      "active": false
+    },
+    {
+      "release": "supported-options-v2",
+      "status": "built",
+      "activated": false,
+      "finished_utc": "2026-09-07T13:15:48.526103+00:00",
+      "receipt": "builds/definitive/supported-options-v2/project-build.json",
+      "manifest": "builds/definitive/supported-options-v2/definitive-build-manifest.json",
+      "options": {
+        "bug_fixes": true,
+        "yellow_names": true,
+        "double_xp": true,
+        "encounters": "none",
+        "hd_portraits": false,
+        "retranslation": false,
+        "story_mode": false,
+        "max_gold": false,
+        "weight_fix": false
+      },
+      "outputs": [
+        {
+          "path": "definitive-build-manifest.json",
+          "size": 112120,
+          "sha256": "ee6d7590f0a94807b76c3f41b95a44c3457dc786a056fb0973ee4203b62d8b23"
+        },
+        {
+          "path": "Xenogears_Definitive.m3u",
+          "size": 60,
+          "sha256": "696d3bd229389b41e531d38520550023e29d97338488882f296b650575aad465"
+        },
+        {
+          "path": "Xenogears_Definitive_CD1.bin",
+          "size": 718378416,
+          "sha256": "639ed83d3169ede304fff8ccaa0e5a345116fabd2f7bd86cd61bac0c20600909"
+        },
+        {
+          "path": "Xenogears_Definitive_CD1.cue",
+          "size": 87,
+          "sha256": "217eb558a23b23760335672ab61812fe9850a9cf57048bf386dc12f3622e9981"
+        },
+        {
+          "path": "Xenogears_Definitive_CD2.bin",
+          "size": 688341024,
+          "sha256": "d93d1592d0811646f156cc3567f4d9a92559ae2e3f28445d27495ab2b0ddf63b"
+        },
+        {
+          "path": "Xenogears_Definitive_CD2.cue",
+          "size": 87,
+          "sha256": "81c5bc703c4d86772c3a77a782b8913a8a7215edec0c48a27acbcda9e80e266a"
+        }
+      ],
+      "discs": {
+        "1": {
+          "replacement_resources": 460,
+          "resource_files_verified": 3710,
+          "raw_xa_movies_verified": 17,
+          "boot": {
+            "canonical_id": 22,
+            "physical_id": 22,
+            "boot_file": "SLUS_006.64;1",
+            "sector": 108606,
+            "size": 303104,
+            "embedded_fat_entries": 4152,
+            "sha256": "3fc1e6c2670f07446c3a0ec32c702464d2e04062fd2f417d271dccf90ce5e489"
+          },
+          "runtime_status": "untested",
+          "note": "Byte verification is not an emulator playthrough."
+        },
+        "2": {
+          "replacement_resources": 187,
+          "resource_files_verified": 3710,
+          "raw_xa_movies_verified": 12,
+          "boot": {
+            "canonical_id": 22,
+            "physical_id": 17,
+            "boot_file": "SLUS_006.69;1",
+            "sector": 172918,
+            "size": 303104,
+            "embedded_fat_entries": 4147,
+            "sha256": "6233f8365624dd8c34528b9eda74a5c43b733641aaa1d4477fdffba6e5e9ad4a"
+          },
+          "runtime_status": "untested",
+          "note": "Byte verification is not an emulator playthrough."
+        }
+      },
+      "launch_identity": {
+        "command": "python project.py play definitive --release supported-options-v2 --check-only",
+        "result": "passed",
+        "emulator_opened": false
+      },
+      "runtime_status": "untested",
+      "active": false
+    },
+    {
+      "release": "foundation-ui-v1",
+      "status": "built",
+      "activated": true,
+      "active": false,
+      "finished_utc": "2026-09-07T14:57:33.067994+00:00",
+      "receipt": "builds/definitive/foundation-ui-v1/project-build.json",
+      "manifest": "builds/definitive/foundation-ui-v1/definitive-build-manifest.json",
+      "options": {
+        "bug_fixes": true,
+        "yellow_names": true,
+        "double_xp": false,
+        "encounters": "normal",
+        "hd_portraits": false,
+        "retranslation": false,
+        "story_mode": false,
+        "max_gold": false,
+        "weight_fix": false
+      },
+      "outputs": [
+        {
+          "path": "definitive-build-manifest.json",
+          "size": 85761,
+          "sha256": "8c3938d063e8e34032b2d5c6936077df83e3ad74f79c30af270242f0c54ba9dd"
+        },
+        {
+          "path": "Xenogears_Definitive.m3u",
+          "size": 60,
+          "sha256": "696d3bd229389b41e531d38520550023e29d97338488882f296b650575aad465"
+        },
+        {
+          "path": "Xenogears_Definitive_CD1.bin",
+          "size": 718383120,
+          "sha256": "6d59e4444be32da45ecbe1327ba689d3b39f1d03a290d33c4ba5b850c48a2dbb"
+        },
+        {
+          "path": "Xenogears_Definitive_CD1.cue",
+          "size": 87,
+          "sha256": "217eb558a23b23760335672ab61812fe9850a9cf57048bf386dc12f3622e9981"
+        },
+        {
+          "path": "Xenogears_Definitive_CD2.bin",
+          "size": 688345728,
+          "sha256": "d631cd78340630bbeaf8ff805b2ceab4b333a78ca6a44a6cbbac15cc415ebe9d"
+        },
+        {
+          "path": "Xenogears_Definitive_CD2.cue",
+          "size": 87,
+          "sha256": "81c5bc703c4d86772c3a77a782b8913a8a7215edec0c48a27acbcda9e80e266a"
+        }
+      ],
+      "discs": {
+        "1": {
+          "replacement_resources": 382,
+          "resource_files_verified": 3710,
+          "raw_xa_movies_verified": 17,
+          "boot": {
+            "canonical_id": 22,
+            "physical_id": 22,
+            "boot_file": "SLUS_006.64;1",
+            "sector": 108606,
+            "size": 303104,
+            "embedded_fat_entries": 4152,
+            "sha256": "53c6b8fe6b8f688d17f6af3c6c52b2e46dcf03289584ce577b6f744505237923"
+          },
+          "runtime_status": "untested",
+          "note": "Byte verification is not an emulator playthrough."
+        },
+        "2": {
+          "replacement_resources": 109,
+          "resource_files_verified": 3710,
+          "raw_xa_movies_verified": 12,
+          "boot": {
+            "canonical_id": 22,
+            "physical_id": 17,
+            "boot_file": "SLUS_006.69;1",
+            "sector": 172918,
+            "size": 303104,
+            "embedded_fat_entries": 4147,
+            "sha256": "c0be611c490c1b07819bd2c5f842179a6e462cbc99afa9500b77f916eba36932"
+          },
+          "runtime_status": "untested",
+          "note": "Byte verification is not an emulator playthrough."
+        }
+      },
+      "launch_identity": {
+        "command": "python project.py play definitive --check-only",
+        "result": "passed",
+        "emulator_opened": false
+      },
+      "runtime_status": "untested",
+      "disc_images_identical_to": "foundation-v2"
+    },
+    {
+      "release": "foundation-ui-v2",
+      "status": "built",
+      "activated": true,
+      "active": false,
+      "finished_utc": "2026-09-07T15:12:41.105256+00:00",
+      "receipt": "builds/definitive/foundation-ui-v2/project-build.json",
+      "manifest": "builds/definitive/foundation-ui-v2/definitive-build-manifest.json",
+      "options": {
+        "bug_fixes": true,
+        "yellow_names": true,
+        "double_xp": false,
+        "encounters": "normal",
+        "hd_portraits": false,
+        "retranslation": false,
+        "story_mode": false,
+        "max_gold": false,
+        "weight_fix": false
+      },
+      "outputs": [
+        {
+          "path": "definitive-build-manifest.json",
+          "size": 85761,
+          "sha256": "8c3938d063e8e34032b2d5c6936077df83e3ad74f79c30af270242f0c54ba9dd"
+        },
+        {
+          "path": "Xenogears_Definitive.m3u",
+          "size": 60,
+          "sha256": "696d3bd229389b41e531d38520550023e29d97338488882f296b650575aad465"
+        },
+        {
+          "path": "Xenogears_Definitive_CD1.bin",
+          "size": 718383120,
+          "sha256": "6d59e4444be32da45ecbe1327ba689d3b39f1d03a290d33c4ba5b850c48a2dbb"
+        },
+        {
+          "path": "Xenogears_Definitive_CD1.cue",
+          "size": 87,
+          "sha256": "217eb558a23b23760335672ab61812fe9850a9cf57048bf386dc12f3622e9981"
+        },
+        {
+          "path": "Xenogears_Definitive_CD2.bin",
+          "size": 688345728,
+          "sha256": "d631cd78340630bbeaf8ff805b2ceab4b333a78ca6a44a6cbbac15cc415ebe9d"
+        },
+        {
+          "path": "Xenogears_Definitive_CD2.cue",
+          "size": 87,
+          "sha256": "81c5bc703c4d86772c3a77a782b8913a8a7215edec0c48a27acbcda9e80e266a"
+        }
+      ],
+      "discs": {
+        "1": {
+          "replacement_resources": 382,
+          "resource_files_verified": 3710,
+          "raw_xa_movies_verified": 17,
+          "boot": {
+            "canonical_id": 22,
+            "physical_id": 22,
+            "boot_file": "SLUS_006.64;1",
+            "sector": 108606,
+            "size": 303104,
+            "embedded_fat_entries": 4152,
+            "sha256": "53c6b8fe6b8f688d17f6af3c6c52b2e46dcf03289584ce577b6f744505237923"
+          },
+          "runtime_status": "untested",
+          "note": "Byte verification is not an emulator playthrough."
+        },
+        "2": {
+          "replacement_resources": 109,
+          "resource_files_verified": 3710,
+          "raw_xa_movies_verified": 12,
+          "boot": {
+            "canonical_id": 22,
+            "physical_id": 17,
+            "boot_file": "SLUS_006.69;1",
+            "sector": 172918,
+            "size": 303104,
+            "embedded_fat_entries": 4147,
+            "sha256": "c0be611c490c1b07819bd2c5f842179a6e462cbc99afa9500b77f916eba36932"
+          },
+          "runtime_status": "untested",
+          "note": "Byte verification is not an emulator playthrough."
+        }
+      },
+      "launch_identity": {
+        "command": "python project.py play definitive --check-only",
+        "result": "passed",
+        "emulator_opened": false
+      },
+      "runtime_status": "untested",
+      "disc_images_identical_to": "foundation-v2"
+    },
+    {
+      "release": "deus-restoration-v1",
+      "status": "built",
+      "activated": true,
+      "active": false,
+      "finished_utc": "2026-09-08T01:12:57.945718+00:00",
+      "receipt": "builds/definitive/deus-restoration-v1/project-build.json",
+      "manifest": "builds/definitive/deus-restoration-v1/definitive-build-manifest.json",
+      "options": {
+        "bug_fixes": true,
+        "yellow_names": true,
+        "double_xp": false,
+        "encounters": "normal",
+        "hd_portraits": false,
+        "retranslation": false,
+        "story_mode": false,
+        "max_gold": false,
+        "weight_fix": false
+      },
+      "outputs": [
+        {
+          "path": "definitive-build-manifest.json",
+          "size": 87877,
+          "sha256": "8faab3a64f31e2e021f375b43285925b93f8163594ce2800651bd7712c3ce613"
+        },
+        {
+          "path": "Xenogears_Definitive.m3u",
+          "size": 60,
+          "sha256": "696d3bd229389b41e531d38520550023e29d97338488882f296b650575aad465"
+        },
+        {
+          "path": "Xenogears_Definitive_CD1.bin",
+          "size": 718383120,
+          "sha256": "f0276e623432d2eaf71123754fe5c58ea70ab568f20dbc2091de83be1bce963c"
+        },
+        {
+          "path": "Xenogears_Definitive_CD1.cue",
+          "size": 87,
+          "sha256": "217eb558a23b23760335672ab61812fe9850a9cf57048bf386dc12f3622e9981"
+        },
+        {
+          "path": "Xenogears_Definitive_CD2.bin",
+          "size": 688345728,
+          "sha256": "cb01f4d5cf72681ae1f7f9c2898ce03122b90eff13102aef060f53f1345f6a9d"
+        },
+        {
+          "path": "Xenogears_Definitive_CD2.cue",
+          "size": 87,
+          "sha256": "81c5bc703c4d86772c3a77a782b8913a8a7215edec0c48a27acbcda9e80e266a"
+        }
+      ],
+      "runtime_status": "untested",
+      "discs": {
+        "1": {
+          "replacement_resources": 388,
+          "resource_files_verified": 3710,
+          "raw_xa_movies_verified": 17,
+          "boot": {
+            "canonical_id": 22,
+            "physical_id": 22,
+            "boot_file": "SLUS_006.64;1",
+            "sector": 108606,
+            "size": 303104,
+            "embedded_fat_entries": 4152,
+            "sha256": "f3970f51ae3623e49978f5b9b72cc574d908c265632a771de226fc8a86c598d2"
+          },
+          "runtime_status": "untested",
+          "note": "Byte verification is not an emulator playthrough."
+        },
+        "2": {
+          "replacement_resources": 115,
+          "resource_files_verified": 3710,
+          "raw_xa_movies_verified": 12,
+          "boot": {
+            "canonical_id": 22,
+            "physical_id": 17,
+            "boot_file": "SLUS_006.69;1",
+            "sector": 172918,
+            "size": 303104,
+            "embedded_fat_entries": 4147,
+            "sha256": "dec6e7045b29ff3d3e4ad24ee1835cf9e0e96ec1f8c7fe507c3cf29134160630"
+          },
+          "runtime_status": "untested",
+          "note": "Byte verification is not an emulator playthrough."
+        }
+      }
+    },
+    {
+      "release": "deus-restoration-v2",
+      "status": "built",
+      "activated": true,
+      "active": true,
+      "finished_utc": "2026-09-08T01:16:08.997775+00:00",
+      "receipt": "builds/definitive/deus-restoration-v2/project-build.json",
+      "manifest": "builds/definitive/deus-restoration-v2/definitive-build-manifest.json",
+      "options": {
+        "bug_fixes": true,
+        "yellow_names": true,
+        "double_xp": false,
+        "encounters": "normal",
+        "hd_portraits": false,
+        "retranslation": false,
+        "story_mode": false,
+        "max_gold": false,
+        "weight_fix": false
+      },
+      "outputs": [
+        {
+          "path": "definitive-build-manifest.json",
+          "size": 87877,
+          "sha256": "8faab3a64f31e2e021f375b43285925b93f8163594ce2800651bd7712c3ce613"
+        },
+        {
+          "path": "Xenogears_Definitive.m3u",
+          "size": 60,
+          "sha256": "696d3bd229389b41e531d38520550023e29d97338488882f296b650575aad465"
+        },
+        {
+          "path": "Xenogears_Definitive_CD1.bin",
+          "size": 718383120,
+          "sha256": "f0276e623432d2eaf71123754fe5c58ea70ab568f20dbc2091de83be1bce963c"
+        },
+        {
+          "path": "Xenogears_Definitive_CD1.cue",
+          "size": 87,
+          "sha256": "217eb558a23b23760335672ab61812fe9850a9cf57048bf386dc12f3622e9981"
+        },
+        {
+          "path": "Xenogears_Definitive_CD2.bin",
+          "size": 688345728,
+          "sha256": "cb01f4d5cf72681ae1f7f9c2898ce03122b90eff13102aef060f53f1345f6a9d"
+        },
+        {
+          "path": "Xenogears_Definitive_CD2.cue",
+          "size": 87,
+          "sha256": "81c5bc703c4d86772c3a77a782b8913a8a7215edec0c48a27acbcda9e80e266a"
+        }
+      ],
+      "runtime_status": "untested",
+      "discs": {
+        "1": {
+          "replacement_resources": 388,
+          "resource_files_verified": 3710,
+          "raw_xa_movies_verified": 17,
+          "boot": {
+            "canonical_id": 22,
+            "physical_id": 22,
+            "boot_file": "SLUS_006.64;1",
+            "sector": 108606,
+            "size": 303104,
+            "embedded_fat_entries": 4152,
+            "sha256": "f3970f51ae3623e49978f5b9b72cc574d908c265632a771de226fc8a86c598d2"
+          },
+          "runtime_status": "untested",
+          "note": "Byte verification is not an emulator playthrough."
+        },
+        "2": {
+          "replacement_resources": 115,
+          "resource_files_verified": 3710,
+          "raw_xa_movies_verified": 12,
+          "boot": {
+            "canonical_id": 22,
+            "physical_id": 17,
+            "boot_file": "SLUS_006.69;1",
+            "sector": 172918,
+            "size": 303104,
+            "embedded_fat_entries": 4147,
+            "sha256": "dec6e7045b29ff3d3e4ad24ee1835cf9e0e96ec1f8c7fe507c3cf29134160630"
+          },
+          "runtime_status": "untested",
+          "note": "Byte verification is not an emulator playthrough."
+        }
+      },
+      "disc_images_identical_to": "deus-restoration-v1",
+      "launch_identity": {
+        "command": "python project.py play definitive --check-only",
+        "result": "passed",
+        "emulator_opened": false
+      },
+      "restoration_verification": "docs/definitive/restoration-verification.json"
+    }
+  ],
+  "source_policy": "Pinned retail discs read only; user saves and memory cards were not modified.",
+  "full_game_complete": false,
+  "initial_build_attempts": [
+    {
+      "release": "foundation-v1",
+      "status": "failed",
+      "activated": false,
+      "reason": "Initial verifier treated XA movie payload size as ordinary file size; corrected and rebuilt under v2 names"
+    },
+    {
+      "release": "supported-options-v1",
+      "status": "failed",
+      "activated": false,
+      "reason": "Initial verifier treated XA movie payload size as ordinary file size; corrected and rebuilt under v2 names"
+    }
+  ],
+  "active_release": "deus-restoration-v2",
+  "active_verification": {
+    "command": "python project.py status definitive --verify",
+    "result": "current",
+    "runtime_status": "untested"
+  },
+  "patcher_ui": {
+    "date": "2026-09-07",
+    "scope": "Single-page patcher UI; no disc patch algorithms changed",
+    "changes": [
+      "Removed main canvas, scrollbar, expanding section and scrolling handlers",
+      "Two disc inputs and four checkboxes on one page",
+      "HD pack export, log, output folder and build actions share a compact footer",
+      "Height comes from measured content; vertical shrinking cannot hide controls",
+      "Feature coverage and unfinished work moved to Patch notes"
+    ],
+    "measured_client_sizes": {
+      "100_percent": [
+        620,
+        388
+      ],
+      "150_percent": [
+        929,
+        574
+      ],
+      "200_percent": [
+        1239,
+        750
+      ]
+    },
+    "code_checks": "Native Tk requested geometry checked without opening a window, including output action visibility. All existing workflow tests pass.",
+    "visual_review": "No desktop interaction during this revision.",
+    "media_rebuilt": true,
+    "media_result": "Both disc SHA-256 hashes exactly match foundation-v2; current-source release activated."
+  },
+  "restoration_verification": "docs/definitive/restoration-verification.json"
+}

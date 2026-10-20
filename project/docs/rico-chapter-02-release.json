@@ -1,0 +1,48 @@
+{
+  "format": "xenogears-rico-chapter-two-release-v1",
+  "release": "rico-ch2-v1",
+  "implementation": "12 rooms, 53 scene hooks, 244 dialogue blocks",
+  "tests": {
+    "discovered": 950,
+    "seconds": 368.851,
+    "skipped": 6,
+    "command": "python -m unittest discover -s tests -q",
+    "status": "passed"
+  },
+  "runtime_acceptance": "pending fresh emulator playthrough",
+  "discs": [
+    {
+      "profile": "rico",
+      "disc": 1,
+      "path": "builds/rico/rico-ch2-v1/Xenogears_Rico_Arc_Disc_1.bin",
+      "size": 719267472,
+      "sha256": "c15d1a85a9203ec96d47197611c0a017b168b867524db2af762aa878b775529a",
+      "verified_replacements": 66,
+      "verified_sectors": 4388,
+      "source_snapshot_current": true
+    },
+    {
+      "profile": "rico",
+      "disc": 2,
+      "path": "builds/rico/rico-ch2-v1/Xenogears_Rico_Arc_Disc_2.bin",
+      "size": 696638880,
+      "sha256": "ba37b78dec3fbb06e4ba00828ce9dfe5672d45a30d2779d95fce074867e3c2f4",
+      "verified_replacements": 66,
+      "verified_sectors": 4388,
+      "source_snapshot_current": true
+    },
+    {
+      "profile": "combined",
+      "disc": 2,
+      "path": "builds/combined/rico-ch2-v1/Xenogears_Reimagined_combined_rico-ch2-v1_CD2.bin",
+      "size": 707568624,
+      "sha256": "ff27393fa3370ab4c612d3db92d03b07beb4dc38a4311e61d5fe665c2860bd67",
+      "verified_replacements": 250,
+      "verified_sectors": 11452,
+      "source_snapshot_current": true,
+      "native_title_boot_lba": 172938
+    }
+  ],
+  "isolation_report": "work/rico_chapter2_audit/combined_release_isolation.json",
+  "launcher": "PLAY_XENOGEARS_REIMAGINED.cmd"
+}

@@ -1,0 +1,490 @@
+{
+  "format": "xenogears-rico-chapter-two-expansion-v1",
+  "chapter_id": 2,
+  "title": "The Champ",
+  "scenes": {
+    "arrival_delivery": [
+      "Infirmary Attendant\nHow long has he been\nunconscious?<Close>",
+      "Guard\nHe was like this when we\nfound him.<Close>",
+      "Infirmary Attendant\nDid he wake up at all on\nthe way here?<Close>",
+      "Guard\nNot once.<Close>",
+      "Infirmary Attendant\nHis breathing's steady.\nLeave him with me.<Close>",
+      "Guard\nHe's not to leave D Block.\nSend word when he wakes.<Close>",
+      "Infirmary Attendant\nI will. He needs rest for\nnow.<Close>"
+    ],
+    "room_first": [
+      "Four days later.\nThe Champion's rooms.<Close>",
+      "Suzarn\nThey sent the card for your\nnext bout.<Close>",
+      "<Rico>\nPut it with the others.<Close>",
+      "Suzarn\nDon't you want to know who\nyou're fighting?<Close>",
+      "<Rico>\nIs Stier ready?<Close>",
+      "Suzarn\nHammer says so.<Close>",
+      "<Rico>\nThen I'll find out in the\nring.<Close>"
+    ],
+    "room_bed_before": [
+      "The blankets are clean.\nDownstairs, three men share a\nbunk.<Close>",
+      "<Rico>\nUsed to think I'd sleep\nbetter up here.<Close>"
+    ],
+    "room_schedule_before": [
+      "Stier. Title defense. Report\nto the preparation bay.<Close>",
+      "<Rico>\nAnother name on the card.<Close>"
+    ],
+    "room_exit_before": [
+      "Suzarn\nHammer came looking for you,\nChamp. Hear him out first.<Close>",
+      "<Rico>\nThen he'd better get to it.<Close>"
+    ],
+    "hammer_report": [
+      "Hammer\nMaster Rico! The new\nprisoner's awake!<Close>",
+      "<Rico>\nThe Gear pilot? Come up\nhere.<Close>",
+      "Hammer\nThat's him. Fei Fong Wong.<Close>",
+      "Suzarn\nTook him long enough.<Close>",
+      "Hammer\nHe was unconscious, Suzarn.<Close>",
+      "<Rico>\nYou've spoken to him?<Close>",
+      "Hammer\nHe wanted to know where he\nwas. I filled him in.<Close>",
+      "Suzarn\nAnd what did that cost him?<Close>",
+      "Hammer\nNothing! I was only talking\nto him.<Close>",
+      "<Rico>\nWhat did he say about the\nGear?<Close>",
+      "Hammer\nNot much. He says he's a\npainter.<Close>",
+      "Suzarn\nA painter? What's he doing\nin a Gear?<Close>",
+      "Hammer\nI didn't get that far.<Close>",
+      "<Rico>\nBring him to the yard.<Close>",
+      "Hammer\nToday? He's only just got\nout of bed.<Close>",
+      "<Rico>\nCan he walk?<Close>",
+      "Hammer\nYes, but...<Close>",
+      "<Rico>\nThen he can come and meet\nus.<Close>",
+      "Suzarn\nThe others are waiting\ndown there.<Close>",
+      "Hammer\nI'll go with him.<Close>"
+    ],
+    "room_hammer_before_baptism": [
+      "Hammer\nI'll bring Fei to the yard.\nSuzarn's men are there.<Close>",
+      "<Rico>\nMake sure they wait for me.<Close>"
+    ],
+    "room_suzarn_before": [
+      "Suzarn\nThey'll be waiting in the\nyard, Champ.<Close>",
+      "<Rico>\nLet them wait.<Close>",
+      "Suzarn\nYou never made time for the\nlast new prisoner.<Close>",
+      "<Rico>\nThe last one didn't arrive\nin a Gear.<Close>"
+    ],
+    "room_suzarn_after_baptism": [
+      "Suzarn\nRank A. After he talked to\nyou like that?<Close>",
+      "<Rico>\nHe got back up.<Close>",
+      "Suzarn\nWe all saw it.<Close>",
+      "<Rico>\nThen don't make me explain\nit to you.<Close>"
+    ],
+    "room_hammer_after_redrum": [
+      "Hammer\n...I still listen for\nSuzarn's boots on the stairs.<Close>",
+      "<Rico>\nThe room's too quiet.<Close>",
+      "Hammer\nI can stay, Master Rico.<Close>",
+      "<Rico>\nGet some sleep, Hammer.<Close>"
+    ],
+    "room_hammer_after_title": [
+      "Hammer\nThe clerk wants these rooms\nready for Fei.<Close>",
+      "<Rico>\nThen get them ready.\nHe won them.<Close>",
+      "Hammer\nWhat about you, Master Rico?<Close>",
+      "<Rico>\nI'll manage.<Close>",
+      "Hammer\nYou said that about your\narm, too.<Close>",
+      "<Rico>\nAnd you tied that knot too\ntight.<Close>"
+    ],
+    "baptism_before": [
+      "Suzarn\nHere he is, Champ.<Close>",
+      "<Rico>\nYou got a name, kid?<Close>",
+      "<Fei>\nFei Fong Wong. What is yours?<Close>",
+      "Suzarn\nYou're speaking to the Champ!<Close>",
+      "<Rico>\nLet him ask. It's Rico.<Close>",
+      "<Rico>\nYou live in D Block now. We\nneed to know where you stand.<Close>",
+      "<Fei>\nI just woke up here. I\nhaven't done anything to you.<Close>",
+      "<Rico>\nYou still have to face us.<Close>",
+      "<Rico>\nGet ready.<Close>"
+    ],
+    "baptism_exchange": [
+      "Fei is made to face the other\nBattlers. Rico waits for his\nturn.<Close>",
+      "<Rico>\nStill on your feet. Now face\nme.<Close>",
+      "<Fei>\nWhat does hurting each other\nprove?<Close>",
+      "<Rico>\nYou think that question will\nstop a fist?<Close>",
+      "<Fei>\nI don't want to fight you.<Close>",
+      "<Rico>\nThen you're going to learn\nwhat happens when you refuse.<Close>"
+    ],
+    "baptism_after": [
+      "Fei lies on the ground. Rico\nstands over him.<Close>",
+      "Suzarn\nThat's enough. He is down.<Close>",
+      "<Rico>\nTake him back to the\ninfirmary.<Close>",
+      "Suzarn\nWhat rank?<Close>",
+      "<Rico>\nRank A. Put it on his record.<Close>",
+      "The other Battlers fall\nsilent.<Close>"
+    ],
+    "dblock_worker_before": [
+      "Worker\nVargas wants this winch fixed\nbefore his sewer shift.<Close>",
+      "<Rico>\nThen fix it.<Close>",
+      "Worker\nI need a coupling. Stores\nwon't give me one.<Close>",
+      "<Rico>\nAsk Hammer. Tell him it's for\nthe sewer crew.<Close>",
+      "Worker\nAll right. They might listen\nto your name.<Close>"
+    ],
+    "dblock_battler_before": [
+      "Leonardo\nHeard the new kid has a Gear,\nChamp. Wants to enter the\nGames.<Close>",
+      "<Rico>\nThen he can enter.<Close>",
+      "Leonardo\nYou'd let him enter?<Close>",
+      "<Rico>\nIf he gets that far, I'll\ndeal with him in the ring.<Close>"
+    ],
+    "dblock_prisoner_before": [
+      "Prisoner\nSorry, Champ. I didn't see\nyou. I'll move.<Close>",
+      "<Rico>\nThe stairs are wide enough.<Close>",
+      "Prisoner\nRight. Of course.<Close>",
+      "The prisoner waits for Rico\nto pass before moving again.<Close>"
+    ],
+    "dblock_hammer_before": [
+      "Hammer\nStier's ready, Master Rico.\nThey've posted your bout.<Close>",
+      "<Rico>\nI'll check it myself.<Close>"
+    ],
+    "pardon_question": [
+      "Prisoner\nYou could have walked out\nwith a pardon, Champ.<Close>",
+      "<Rico>\nYou got a question?<Close>",
+      "Prisoner\nJust wondered why you stayed.<Close>",
+      "<Rico>\nKeep wondering. You're due in\nthe ring.<Close>"
+    ],
+    "prep_stier": [
+      "Hammer\nLeft grip is set. I checked\nthe feed twice.<Close>",
+      "<Rico>\nAnd the knee?<Close>",
+      "Hammer\nReplaced the joint pin. Try\nthe weight on it.<Close>",
+      "<Rico>\n...Better.<Close>",
+      "Hammer\nI kept the old pin. I can\nshow stores why we need\nproper spares.<Close>",
+      "<Rico>\nBout is starting. Clear the\nbay.<Close>"
+    ],
+    "defense_before": [
+      "Arena Official\nStier, take your mark.<Close>",
+      "<Rico>\nAll right. Come and take it.<Close>"
+    ],
+    "defense_after": [
+      "Arena Official\nThe Champion retains the\ntitle!<Close>",
+      "Hammer\nNot even a loose fitting. I\ntold you that knee would\nhold.<Close>",
+      "<Rico>\nCheck it again before the\nnext bout.<Close>",
+      "Hammer\nYes, Master Rico.<Close>"
+    ],
+    "fei_explosion_report": [
+      "Hammer\nWeltall blew during Fei's\nbout. He is back in the\ninfirmary.<Close>",
+      "<Rico>\nAlive?<Close>",
+      "Hammer\nYes. The doctor says he was\nlucky. A lesser Gear...<Close>",
+      "<Rico>\nFind Leonardo and Heinrich. I\nwant them here.<Close>",
+      "Hammer\nI'll look for them.<Close>"
+    ],
+    "dblock_worker_missing": [
+      "Worker\nThe winch works now. Vargas\nnever came to collect it.<Close>",
+      "<Rico>\nWhen was he due back?<Close>",
+      "Worker\nHours ago. I kept his tools\nhere.<Close>",
+      "<Rico>\nLeave them there. I'll find\nout.<Close>"
+    ],
+    "dblock_battler_missing": [
+      "Battler\nHeinrich and Leonardo didn't\nreport this morning.<Close>",
+      "<Rico>\nDid anyone go down after\nthem?<Close>",
+      "Battler\nWe sent a man to the\nentrance. He came straight\nback.<Close>",
+      "<Rico>\nWhere is he now?<Close>"
+    ],
+    "dblock_worker_after_redrum": [
+      "Worker\nThe winch runs fine now.\nNo one comes to use it.<Close>",
+      "<Rico>\nKeep it running.<Close>",
+      "Worker\nFor who?<Close>",
+      "<Rico>\nFor the ones still here.<Close>"
+    ],
+    "dblock_battler_after_redrum": [
+      "Battler\nThey told us to cross their\nnames off the roster.<Close>",
+      "<Rico>\nCopy them onto a clean\nsheet first.<Close>",
+      "Battler\nWhat for?<Close>",
+      "<Rico>\nBring it to my room.<Close>"
+    ],
+    "murders_report": [
+      "Hammer\nThey found another one below.\nSuzarn.\nThat makes five.<Close>",
+      "<Rico>\n...You saw?<Close>",
+      "Hammer\nYes, Master Rico.<Close>",
+      "Hammer\nPeople are saying Fei did it.\nThe men who tried to kill him\nare dead.<Close>",
+      "<Rico>\nSaying it does not make it\ntrue.<Close>",
+      "Hammer\nWhat do I tell the crew?<Close>",
+      "<Rico>\nNobody goes down alone. I'm\ngoing to speak to Fei.<Close>",
+      "Hammer\nI'll keep them here.<Close>"
+    ],
+    "investigation_request": [
+      "<Rico>\nFei. We need to talk about\nthe explosion in your Gear.<Close>",
+      "<Fei>\nYou know what happened?<Close>",
+      "<Rico>\nMy men set it up. They meant\nto kill you.<Close>",
+      "<Fei>\nYour men?<Close>",
+      "<Rico>\nI didn't order it. They did\nit anyway. I'm sorry.<Close>",
+      "<Citan>\nAnd now those men have been\nfound dead.<Close>",
+      "<Fei>\nYou think I killed them?<Close>",
+      "<Rico>\nI don't know. Neither does\nanyone else who is talking.<Close>",
+      "<Rico>\nThere's a story about a\nmonster in the sewers. I'm\ngoing to look.<Close>",
+      "<Fei>\nThen I'm coming with you.<Close>",
+      "<Citan>\nSo am I. We should examine\nwhat is there before judging\nanyone.<Close>",
+      "<Rico>\nStay close. I know the way\ndown.<Close>"
+    ],
+    "sewer_entry": [
+      "<Rico>\nKeep to the walkway. The\nwater drops sharply past that\nedge.<Close>",
+      "<Fei>\nYou've worked down here?<Close>",
+      "<Rico>\nEveryone gets a turn. Some of\nus don't come back.<Close>",
+      "<Citan>\nLet us start where the first\nman was found.<Close>"
+    ],
+    "sewer_burnt": [
+      "<Rico>\nThat smell again. Something\nburnt.<Close>",
+      "<Fei>\nThere are marks on the stone.<Close>",
+      "<Citan>\nBurnt, you say...<Close>",
+      "<Rico>\nCan you tell what did it?<Close>",
+      "<Citan>\nNot from this alone. Keep\nlooking.<Close>"
+    ],
+    "sewer_slime": [
+      "<Fei>\nThis stuff is fresh.<Close>",
+      "<Rico>\nWatch your hand. It runs up\ninto the drain.<Close>",
+      "<Citan>\nWe should compare it with the\nother sites.<Close>",
+      "<Rico>\nThe next one is beyond the\nbend.<Close>"
+    ],
+    "sewer_message": [
+      "<Citan>\nThere is writing here. A red\nmonster...<Close>",
+      "<Rico>\nHe used what strength he had\nleft to warn us.<Close>",
+      "<Fei>\nA red monster?<Close>",
+      "<Citan>\n...Let us keep moving.<Close>"
+    ],
+    "sewer_gramps": [
+      "Gramps\nWatch where you step. I live\nhere.<Close>",
+      "<Rico>\nYou live down here alone?<Close>",
+      "Gramps\nThe monster leaves me be.\nLately, though, things keep\ngetting broken.<Close>",
+      "<Fei>\nHave you heard a bell?<Close>",
+      "Gramps\nYou've heard it too? Ask what\nyou need. I'd like some\npeace.<Close>",
+      "<Rico>\nThe treatment room. How do we\nget in?<Close>",
+      "Gramps\nYou need the sewer passkey.\nTry the walkway by the\nwaterfall.<Close>",
+      "Gramps\nA ringing sound brings it\nclose. Try it near an open\ndrain. Keep your feet clear.<Close>"
+    ],
+    "sewer_key": [
+      "<Fei>\nThere. Under the grating.<Close>",
+      "<Rico>\nI can reach it. Hold the\nlight steady.<Close>",
+      "Recovered the sewer passkey.<Close>",
+      "<Rico>\nThat opens the treatment\nroom. Back to the waterfall.<Close>"
+    ],
+    "sewer_bell": [
+      "<Citan>\nA bell. This must be what we\nheard.<Close>",
+      "<Fei>\nWhy would it be in here?<Close>",
+      "<Rico>\nTake it. We can ask the old\nman.<Close>",
+      "Recovered the small bell.<Close>"
+    ],
+    "sewer_drain": [
+      "<Fei>\nThe old man said to ring it\nnear an open drain.<Close>",
+      "<Citan>\nThis drain has fresh slime.\nNo one was found beside it.<Close>",
+      "<Rico>\nRoom to stand here, too. We\ndon't want it at our backs.<Close>",
+      "<Fei>\nReady?<Close>",
+      "<Rico>\nRing it.<Close>"
+    ],
+    "redrum_before": [
+      "<Citan>\nSomething is coming.<Close>",
+      "<Rico>\nGet away from the edge!<Close>",
+      "<Fei>\nRico! Behind you!<Close>",
+      "<Rico>\nWhat?!<Close>"
+    ],
+    "redrum_after": [
+      "<Fei>\nIt's not moving.<Close>",
+      "<Rico>\nWhat the hell was that?<Close>",
+      "<Fei>\nIt came for the bell...<Close>",
+      "<Citan>\nThere was something human in\nthe way it responded.<Close>",
+      "<Citan>\nA little of its intelligence\nmay have survived.<Close>",
+      "<Rico>\nSurvived? You mean it was...<Close>",
+      "<Citan>\n...A sad thing.<Close>",
+      "<Rico>\nWe're done here. Let's get\nout.<Close>"
+    ],
+    "injury_exit": [
+      "<Fei>\nWait. Your left arm is\nbleeding.<Close>",
+      "<Rico>\nI can walk.<Close>",
+      "<Citan>\nWalking is not the concern.\nLet me see it.<Close>",
+      "<Rico>\nBack at the rooms.<Close>",
+      "<Fei>\nYou don't have to go ahead of\nus.<Close>",
+      "<Rico>\nI said I can walk.<Close>"
+    ],
+    "room_bed_injured": [
+      "Blood has dried along the\nedge of Rico's bandage.<Close>",
+      "<Rico>\nI'll sit down when this is\ntied.<Close>"
+    ],
+    "bandage": [
+      "Hammer\nHold still. I can't tie it if\nyou keep pulling away.<Close>",
+      "<Rico>\nIt's tight enough.<Close>",
+      "Hammer\nIt was tight enough before\nyou tried the practice bag.<Close>",
+      "<Rico>\n...<Close>",
+      "Rico stops moving. Hammer\nfinishes the knot.<Close>",
+      "Hammer\nThere. Keep it dry. The\ndoctor said that twice.<Close>",
+      "<Rico>\nI heard him.<Close>",
+      "Hammer\nFei asked if you needed\nanything.<Close>",
+      "<Rico>\nHe should worry about his own\nGear.<Close>",
+      "Hammer\nHe thanked me for checking\nit.<Close>",
+      "<Rico>\n...Leave the spare cloth\nhere.<Close>"
+    ],
+    "finals_before": [
+      "<Fei>\nHow is your arm?<Close>",
+      "<Rico>\nYou planning to ask me that\nin the ring?<Close>",
+      "<Fei>\nI'd rather know you can\nfight.<Close>",
+      "<Rico>\nThen you'll find out. Don't\nhold back on my account.<Close>",
+      "<Fei>\nAll right. I'll not.<Close>",
+      "Arena Official\nFinalists, to your Gears.<Close>"
+    ],
+    "finals_exchange": [
+      "Arena Official\nWeltall advances! Stier is\ndriven back!<Close>",
+      "<Rico>\nNot yet...<Close>",
+      "Stier turns to meet Weltall.\nIts last counter falls short.<Close>",
+      "Arena Official\nStier is down! The winner is\nFei Fong Wong!<Close>"
+    ],
+    "finals_after": [
+      "<Fei>\nRico...<Close>",
+      "<Rico>\nDon't look at my arm. You\nbeat me.<Close>",
+      "<Fei>\nI was going to ask if you\ncould get out.<Close>",
+      "<Rico>\n...I can.<Close>",
+      "<Fei>\nI'll wait.<Close>",
+      "<Rico>\nThey're calling for you. Go.<Close>"
+    ],
+    "title_clerk": [
+      "Clerk\nThe new Champion will be\nusing these rooms.<Close>",
+      "<Rico>\nMy things are still in there.<Close>",
+      "Clerk\nI have an order to clear\nthem. They can be sent\ndownstairs.<Close>",
+      "<Rico>\nI'll carry them.<Close>"
+    ],
+    "title_prisoner": [
+      "Prisoner\nChamp... I mean...<Close>",
+      "<Rico>\nRico. You know my name.<Close>",
+      "Prisoner\nYes. Rico.<Close>",
+      "The prisoner makes room for\nhim again.<Close>"
+    ],
+    "title_fei": [
+      "<Fei>\nThey said I can use your\nroom.<Close>",
+      "<Rico>\nIt's yours. That's how it\nworks.<Close>",
+      "<Fei>\nYou can come by. There's no\nreason to stop talking.<Close>",
+      "<Rico>\nYou won a title. You don't\nowe me anything.<Close>",
+      "<Fei>\nI know.<Close>",
+      "<Rico>\n...Get your collar off. Do\nsomething with it.<Close>"
+    ],
+    "room_bed_after": [
+      "Clean blankets wait for the\nnew Champion.<Close>",
+      "<Rico>\nThey didn't take long.<Close>"
+    ],
+    "room_schedule_after": [
+      "The next notice names Fei\nFong Wong as Champion.<Close>",
+      "<Rico>\nMy name is still on the Group\nLeague card.<Close>"
+    ],
+    "league_return": [
+      "Arena Official\nYou are still entered in the\ngroup bouts, Ricardo.<Close>",
+      "<Rico>\nI can read the card.<Close>",
+      "Arena Official\nThe Kaiser is watching from\nhis box. Take your place.<Close>",
+      "<Rico>\n...So he is.<Close>"
+    ],
+    "crash_before": [
+      "<Rico>\nSigmund...<Close>",
+      "Stier turns away from the\nbout. Its course leads toward\nthe royal box.<Close>"
+    ],
+    "crash_public": [
+      "Stier strikes the Kaiser's\nbox. Dust rolls across the\nstands.<Close>",
+      "Guard\nClear the seats! Secure the\nGear!<Close>",
+      "Guard\nThere is no pilot inside!<Close>",
+      "Arena Official\nKeep the crowd back! They say\nit went out of control.<Close>"
+    ],
+    "central_approach": [
+      "Rue\nChampion Fei, Kaiser Sigmund\nwishes to meet you.<Close>",
+      "<Fei>\nWhat happened to Rico?<Close>",
+      "Rue\nHis Gear crashed into the\nroyal box. He has not been\nfound.<Close>",
+      "<Fei>\nAnd you still want me to go?<Close>",
+      "Rue\nYou are expected in the\nCentral District.<Close>"
+    ],
+    "central_flight": [
+      "Guard\nWatch the streets. Report any\nsighting of Ricardo.<Close>",
+      "<Rico>\nThey've opened the way for\nFei.<Close>",
+      "<Rico>\nToo many eyes at the\nentrance. There's an air duct\nabove it.<Close>",
+      "Rico climbs out of sight as\nthe guards turn toward the\nstreet.<Close>"
+    ],
+    "chapter_end": [
+      "<Rico>\nFootsteps. I need somewhere\nto hide.<Close>",
+      "Rico moves deeper into the\nCentral District.<Close>",
+      "CHAPTER 2 COMPLETE<Close>"
+    ],
+    "treatment_gate_locked": [
+      "<Rico>\nThat lock needs a passkey.\nCheck the maintenance\npassage.<Close>",
+      "<Citan>\nWe should examine the slime\ntrail before we go further.<Close>",
+      "<Fei>\nThat ringing sound... We\nshould find where it came\nfrom.<Close>"
+    ],
+    "fei_before_investigation": [
+      "<Fei>\nI don't intend to stay here\nforever.<Close>",
+      "<Rico>\nThen keep winning.<Close>",
+      "<Citan>\nWe still have work to do.\nCome along, Fei.<Close>"
+    ],
+    "fei_after_investigation": [
+      "<Fei>\nReady when you are.<Close>",
+      "<Citan>\nWe should start at the sewer\nentrance.<Close>",
+      "<Rico>\nFollow me.<Close>"
+    ],
+    "sewer_after_redrum": [
+      "<Fei>\nLet's head back.<Close>",
+      "<Rico>\nYeah. I've seen enough for\ntoday.<Close>"
+    ],
+    "prep_hammer_waiting": [
+      "Hammer\nStill no word from Heinrich\nor Leonardo.<Close>",
+      "<Rico>\nTell me if either of them\nturns up.<Close>",
+      "Hammer\nI'll ask the other crews,\nMaster Rico.<Close>"
+    ],
+    "prep_hammer_injured": [
+      "Hammer\nYou can't work the controls\nwith that arm.<Close>",
+      "<Rico>\nI can manage.<Close>",
+      "Hammer\nLet me bind it first. Come\nup to your room.<Close>"
+    ],
+    "prep_hammer_after_title": [
+      "Hammer\nI'll keep Stier here until\nyou need him.<Close>",
+      "<Rico>\nKeep him ready.<Close>",
+      "Hammer\nOf course, Master Rico.<Close>"
+    ],
+    "clerk_schedule_before": [
+      "Clerk\nYour title defense is on the\nboard, Champion.<Close>",
+      "<Rico>\nI saw it.<Close>",
+      "Clerk\nThen report to the\npreparation bay.<Close>"
+    ],
+    "clerk_waiting": [
+      "Clerk\nNo change to your schedule,\nChampion.<Close>",
+      "<Rico>\nLet Hammer know if that\nchanges.<Close>"
+    ],
+    "clerk_after_title": [
+      "Clerk\nYour things can stay in the\nroom until you collect them.<Close>",
+      "<Rico>\nI'll take care of it.<Close>"
+    ],
+    "citan_before_investigation": [
+      "<Citan>\nFei is still sore from the\nyard.<Close>",
+      "<Rico>\nHe's standing.<Close>",
+      "<Citan>\nThat is not quite the same\nas being well.<Close>"
+    ],
+    "citan_after_investigation": [
+      "<Citan>\nWe should examine the sewer\nbefore drawing conclusions.<Close>",
+      "<Rico>\nWatch where you step.<Close>",
+      "<Citan>\nI shall.<Close>"
+    ],
+    "citan_after_redrum": [
+      "<Citan>\nYou should have that arm\nseen to.<Close>",
+      "<Rico>\nHammer can bind it.<Close>",
+      "<Citan>\nThen let him. You have lost\nenough blood.<Close>"
+    ],
+    "citan_after_title": [
+      "<Citan>\nFei did not ask to have your\nthings removed.<Close>",
+      "<Rico>\nThe room goes with the title.<Close>",
+      "<Citan>\nI thought you should know.<Close>"
+    ]
+  },
+  "descriptions": {
+    "arrival_delivery": "Newly authored medical handoff before Fei's four-day recovery (retail field 213). The attendant asks about unconsciousness and transport, checks breathing, and accepts care; the escort passes on custody instructions. Fei remains silent. Do not invent the circumstances of his capture or give this scene knowledge of later revelations.",
+    "baptism_exchange": "Anthology route abbreviates preliminary bouts. Stage Rico coercing and striking the reluctant Fei; this is not a friendly spar. Dialogue is newly authored.",
+    "baptism_after": "Chosen anthology route: Fei reaches Rico, loses, and receives Rank A. Retain the chosen retail-route visual behavior if available; do not present this as Rico kindly training him.",
+    "defense_before": "One short playable Stier defense. This new anthology bout establishes reputation; it is not a recovered historical match.",
+    "dblock_worker_missing": "Replace the earlier worker interaction as the disappearances become known.",
+    "investigation_request": "Requires the earlier explosion against Fei to be established. Rico admits his men sabotaged Weltall, apologizes, and still suspects Fei.",
+    "sewer_key": "Compact-route adaptation: stage the passkey visibly under a grating on the waterfall walkway. Do not claim this is the full retail key puzzle.",
+    "sewer_drain": "At the selected drain, after the player has found the bell and consulted Gramps. Fei repeats the advice so all speakers belong to the sewer party.",
+    "redrum_after": "Rico and Fei accept the investigation as finished. The narration and Citan do not declare Redrum the murderer. Its identity, family, and origins remain unknown to Rico.",
+    "bandage": "New gesture of reluctant trust. Show Hammer finishing the bandage during the silent beat.",
+    "finals_exchange": "Dedicated staged Fei victory. Do not ask the player to win a concealed forced-loss battle or establish an exact five-round outcome.",
+    "crash_before": "Limited incident staging preserves the later account of an assassination attempt disguised as an accident. Never add private dialogue establishing innocent failed controls.",
+    "crash_public": "The loss-of-control statement is an incomplete public account. No omniscient confirmation and no invented sabotage device.",
+    "chapter_end": "Stop before the locked door, DNA response, familiar smell, childhood recall, or parentage discovery. Chapter 3 owns those events.",
+    "fei_explosion_report": "After the Stier defense and before the missing-person reports. Covers Fei's intervening sabotaged bout without an invented cockpit scene; Rico seeks his subordinates.",
+    "treatment_gate_locked": "Three independent objective hints: block 0 for missing key, block 1 for unexamined slime, block 2 for missing bell. Prefer selecting the first applicable hint rather than replaying all three after some objectives are complete.",
+    "fei_before_investigation": "Fei/Citan fallback after the Baptism but before the investigation agreement. Do not show before Fei has been through the Baptism.",
+    "fei_after_investigation": "Fei/Citan fallback after the agreement and before the sewer fight; no Hammer lines or repeated confession.",
+    "sewer_after_redrum": "Short repeat response for the closed sewer route after the Redrum encounter; does not replay discovery of the wound."
+  },
+  "inventory_labels": {
+    "sewer_passkey": "Sewer Passkey",
+    "small_bell": "Small Bell",
+    "spare_bandage": "Spare Bandage"
+  }
+}

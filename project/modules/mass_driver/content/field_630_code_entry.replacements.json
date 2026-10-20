@@ -1,0 +1,228 @@
+{
+  "format": "xenogears-field-dialogue-replacements-v1",
+  "source_size": 1301,
+  "source_sha256": "a5191aaab54d0010a18cae05b9b24e893db5ca7ea93c1e197f1fadef361fc116",
+  "block_count": 39,
+  "replacements": [
+    {
+      "id": 0,
+      "width": 44,
+      "height": 3,
+      "text": "Elly\n\"This console is still\nresponding...\"<Close>"
+    },
+    {
+      "id": 1,
+      "width": 46,
+      "height": 3,
+      "text": "Elly\n\"This must be the local\nlaunch authorization.\"<Close>"
+    },
+    {
+      "id": 2,
+      "width": 50,
+      "height": 3,
+      "text": "Elly\n\"The archive record\nshould tell us the code.\"<Close>"
+    },
+    {
+      "id": 3,
+      "width": 42,
+      "height": 3,
+      "text": "Emeralda\n\"Four letters... four\nnumbers?\"<Close>"
+    },
+    {
+      "id": 4,
+      "width": 48,
+      "height": 3,
+      "text": "Elly\n\"The address markers are\nset into those columns.\"<Close>"
+    },
+    {
+      "id": 5,
+      "width": 40,
+      "height": 2,
+      "text": "Launch code terminal\nis unlocked.<Close>"
+    },
+    {
+      "id": 6,
+      "width": 40,
+      "height": 2,
+      "text": "Launch authorization\nsystem activated.<Close>"
+    },
+    {
+      "id": 7,
+      "width": 46,
+      "height": 2,
+      "text": "Releasing code terminal\nlock.<Close>"
+    },
+    {
+      "id": 8,
+      "width": 30,
+      "height": 1,
+      "text": "Terminal ready.<Close>"
+    },
+    {
+      "id": 9,
+      "width": 42,
+      "height": 2,
+      "text": "Please activate the\nlaunch authorization.<Close>"
+    },
+    {
+      "id": 10,
+      "width": 44,
+      "height": 2,
+      "text": "Launch authorization\nis active.<Close>"
+    },
+    {
+      "id": 11,
+      "width": 46,
+      "height": 2,
+      "text": "Activating launch\nauthorization.<Close>"
+    },
+    {
+      "id": 12,
+      "text": "Input Directive 0320.<Close>"
+    },
+    {
+      "id": 13,
+      "width": 22,
+      "height": 7,
+      "text": "<Opcode:01:FF> Address A?\n    1\n    2\n    3\n    4\n    0\n    Abort<Close>"
+    },
+    {
+      "id": 14,
+      "width": 22,
+      "height": 6,
+      "text": "<Opcode:01:FF> Address B?\n    5\n    6\n    7\n    8\n    0<Close>"
+    },
+    {
+      "id": 15,
+      "width": 22,
+      "height": 6,
+      "text": "<Opcode:01:FF> Address C?\n    5\n    6\n    7\n    8\n    0<Close>"
+    },
+    {
+      "id": 16,
+      "width": 22,
+      "height": 6,
+      "text": "<Opcode:01:FF> Address D?\n    1\n    2\n    3\n    4\n    0<Close>"
+    },
+    {
+      "id": 17,
+      "width": 52,
+      "height": 8,
+      "text": "<Opcode:01:FF> Confirm Directive 0320...\n    A-<Opcode:0A:00>\n    B-<Opcode:0A:01>\n    C-<Opcode:0A:02>\n    D-<Opcode:0A:03>\n \n    Confirm\n    Retry<Close>"
+    },
+    {
+      "id": 18,
+      "width": 56,
+      "height": 3,
+      "text": "Directive 0320 accepted.\nFour-terminal authorization:\nA-2  B-5  C-8  D-4<Close>"
+    },
+    {
+      "id": 19,
+      "width": 42,
+      "height": 1,
+      "text": "Address A code error.<Close>"
+    },
+    {
+      "id": 20,
+      "width": 42,
+      "height": 1,
+      "text": "Address B code error.<Close>"
+    },
+    {
+      "id": 21,
+      "width": 42,
+      "height": 1,
+      "text": "Address C code error.<Close>"
+    },
+    {
+      "id": 22,
+      "width": 42,
+      "height": 1,
+      "text": "Address D code error.<Close>"
+    },
+    {
+      "id": 23,
+      "width": 52,
+      "height": 4,
+      "text": "Directive 0320 assigns one\ndigit to each launch\nauthorization address.<Close>"
+    },
+    {
+      "id": 24,
+      "text": "Address A uses the\nsecond block.<Close>"
+    },
+    {
+      "id": 25,
+      "width": 24,
+      "height": 2,
+      "text": "It is marked\n'Address A'.<Close>"
+    },
+    {
+      "id": 26,
+      "width": 30,
+      "height": 2,
+      "text": "For use with\nDirective 0320.<Close>"
+    },
+    {
+      "id": 27,
+      "text": "The number 2 block\nis visible.<Close>"
+    },
+    {
+      "id": 28,
+      "width": 24,
+      "height": 2,
+      "text": "It is marked\n'Address B'.<Close>"
+    },
+    {
+      "id": 29,
+      "width": 30,
+      "height": 2,
+      "text": "For use with\nDirective 0320.<Close>"
+    },
+    {
+      "id": 30,
+      "text": "The back of the cover\nis marked 'B-5'.<Close>"
+    },
+    {
+      "id": 31,
+      "width": 46,
+      "height": 2,
+      "text": "One block is open.\nInside is marked 'C-8'.<Close>"
+    },
+    {
+      "id": 32,
+      "width": 24,
+      "height": 2,
+      "text": "It is marked\n'Address C'.<Close>"
+    },
+    {
+      "id": 33,
+      "width": 30,
+      "height": 2,
+      "text": "For use with\nDirective 0320.<Close>"
+    },
+    {
+      "id": 34,
+      "text": "Address D uses the\nfourth block.<Close>"
+    },
+    {
+      "id": 35,
+      "width": 24,
+      "height": 2,
+      "text": "It is marked\n'Address D'.<Close>"
+    },
+    {
+      "id": 36,
+      "width": 30,
+      "height": 2,
+      "text": "For use with\nDirective 0320.<Close>"
+    },
+    {
+      "id": 37,
+      "text": "You cannot carry\n<Opcode:04:14>.<Close>"
+    },
+    {
+      "id": 38,
+      "text": " \n Recovered <Opcode:04:14><Close><Close>"
+    }
+  ]
+}

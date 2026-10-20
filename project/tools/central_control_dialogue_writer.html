@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Xenogears Mass Driver Dialogue Writer</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b1112;
+      --panel: #121d1e;
+      --panel-2: #182728;
+      --line: #3a5551;
+      --text: #ecf2e9;
+      --muted: #a9bbb4;
+      --gold: #d7bd72;
+      --blue: #9db7ff;
+      --danger: #e6968f;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 80% 0%, #173336 0, transparent 36rem),
+        linear-gradient(180deg, #0b1112, #071011);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      background: rgba(8, 15, 16, .94);
+      padding: 22px max(22px, calc((100vw - 1180px) / 2));
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { margin-bottom: 6px; font-size: clamp(1.4rem, 3vw, 2rem); }
+    header p { margin: 0; color: var(--muted); }
+
+    main {
+      width: min(1180px, calc(100% - 28px));
+      margin: 22px auto 70px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 330px;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .panel {
+      background: rgba(18, 29, 30, .96);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, .24);
+    }
+
+    .intro { padding: 20px; margin-bottom: 16px; }
+    .intro p:last-child { margin-bottom: 0; }
+    .muted { color: var(--muted); }
+    .gold { color: var(--gold); }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    button, .file-label {
+      appearance: none;
+      border: 1px solid #60766e;
+      border-radius: 6px;
+      background: #253b3b;
+      color: var(--text);
+      padding: 9px 12px;
+      font: inherit;
+      font-weight: 650;
+      cursor: pointer;
+    }
+
+    button:hover, .file-label:hover { background: #31504e; }
+    button.primary { background: #806b34; border-color: #bca65f; }
+    button.primary:hover { background: #9a813d; }
+    button.danger { color: var(--danger); }
+    button.small { padding: 5px 8px; font-size: .82rem; }
+    input[type="file"] { display: none; }
+
+    .section {
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+
+    .section-head {
+      padding: 16px 18px 13px;
+      background: linear-gradient(90deg, #1d3231, #172525);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head h2 { margin-bottom: 5px; font-size: 1.15rem; }
+    .section-head p { margin: 0; color: var(--muted); font-size: .91rem; }
+    .beats { padding: 14px; display: grid; gap: 12px; }
+
+    .beat {
+      background: var(--panel-2);
+      border: 1px solid #344b48;
+      border-radius: 8px;
+      padding: 12px;
+    }
+
+    .beat-top {
+      display: grid;
+      grid-template-columns: minmax(150px, 220px) 1fr auto;
+      gap: 10px;
+      align-items: end;
+      margin-bottom: 9px;
+    }
+
+    label {
+      color: var(--muted);
+      display: grid;
+      gap: 5px;
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      border: 1px solid #4b6560;
+      border-radius: 5px;
+      background: #0c1516;
+      color: var(--text);
+      padding: 9px 10px;
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+      line-height: 1.42;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      outline: 2px solid #78918b;
+      outline-offset: 1px;
+    }
+
+    .beat-actions { display: flex; gap: 5px; }
+    .add-row { padding: 0 14px 14px; }
+
+    aside {
+      position: sticky;
+      top: 112px;
+      display: grid;
+      gap: 14px;
+    }
+
+    aside .panel { padding: 17px; }
+    aside h2 { font-size: 1.05rem; margin-bottom: 10px; }
+    aside ul { padding-left: 20px; margin: 0; color: var(--muted); }
+    aside li + li { margin-top: 7px; }
+
+    .status {
+      color: var(--muted);
+      min-height: 1.3em;
+      margin-top: 10px;
+      font-size: .9rem;
+    }
+
+    .preview-page {
+      font-family: "Courier New", monospace;
+      white-space: pre-wrap;
+      background: #030506;
+      color: #dbe2ff;
+      border: 2px solid #8391b4;
+      border-radius: 5px;
+      padding: 10px;
+      margin-top: 9px;
+      line-height: 1.25;
+      font-size: .86rem;
+      min-height: 104px;
+    }
+
+    .preview-speaker {
+      color: #f3d55b;
+      font-weight: 700;
+    }
+
+    .preview-meta {
+      margin-top: 14px;
+      color: var(--gold);
+      font-size: .86rem;
+      font-weight: 700;
+    }
+
+    dialog {
+      width: min(760px, calc(100% - 24px));
+      max-height: 85vh;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--panel);
+      color: var(--text);
+      padding: 0;
+    }
+
+    dialog::backdrop { background: rgba(0, 0, 0, .72); }
+    .dialog-body { padding: 20px; overflow: auto; max-height: 72vh; }
+    .dialog-foot {
+      padding: 12px 20px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    @media (max-width: 900px) {
+      main { grid-template-columns: 1fr; }
+      aside { position: static; }
+      .beat-top { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Xenogears Mass Driver Dialogue Writer</h1>
+    <p>Write the Central Control scene in your own voice. Codex will handle the PS1 formatting and implementation.</p>
+  </header>
+
+  <main>
+    <div>
+      <section class="panel intro">
+        <h2>Your words are the source text</h2>
+        <p>Write naturally. Do not add JSON, angle-bracket commands, line-width padding, or page-control codes. You may add, remove, and reorder dialogue beats. Stage directions are welcome and will not appear as spoken text unless you ask for that.</p>
+        <p class="muted">This editor saves automatically in this browser. When finished, click <span class="gold">Export dialogue for Codex</span>. Keep the suggested filename, then tell Codex that the draft is ready.</p>
+        <div class="toolbar">
+          <button class="primary" id="exportButton">Export dialogue for Codex</button>
+          <button id="copyButton">Copy readable script</button>
+          <label class="file-label" for="importFile">Import an earlier draft</label>
+          <input id="importFile" type="file" accept=".json,application/json">
+          <button class="danger" id="resetButton">Reset blank form</button>
+        </div>
+        <div class="status" id="status" aria-live="polite"></div>
+      </section>
+
+      <div id="sections"></div>
+    </div>
+
+    <aside>
+      <section class="panel">
+        <h2>Continuity anchors</h2>
+        <ul>
+          <li>In the present, the payload is Taura's nanomachine capsule—not a nuclear missile.</li>
+          <li>The old nuclear discussion occurs inside Elly's ambiguous dream, memory, or afterimage.</li>
+          <li>Miang encourages the Zeboim personnel to launch.</li>
+          <li>The personnel discuss the human consequences and choose what happens next.</li>
+          <li>The image ends before the present-day capsule is launched.</li>
+          <li>The retail Mass Driver launch sequence follows the final present-day line.</li>
+        </ul>
+      </section>
+
+      <section class="panel">
+        <h2>Approximate game preview</h2>
+        <p class="muted">The game window fits about 29 ordinary characters per line and five lines per page. This preview estimates the wrapping and shows the intended yellow speaker-name line; Codex will perform the exact font and color checks later without rewriting your prose.</p>
+        <div id="preview"></div>
+      </section>
+    </aside>
+  </main>
+
+  <dialog id="allPreview">
+    <div class="dialog-body">
+      <h2>Readable script</h2>
+      <div id="allPreviewBody"></div>
+    </div>
+    <div class="dialog-foot">
+      <button id="closePreview">Close</button>
+    </div>
+  </dialog>
+
+  <script>
+    "use strict";
+
+    const STORAGE_KEY = "xenogears.massDriver.centralControlDraft.v1";
+    const FORMAT = "xenogears-central-control-dialogue-draft-v1";
+    const SPEAKERS = [
+      "Elly",
+      "Citan",
+      "Emeralda",
+      "Miang",
+      "Launch Director",
+      "Systems Officer",
+      "System / Console",
+      "Narration / Stage Direction"
+    ];
+
+    const sectionBlueprints = [
+      {
+        id: "present_console",
+        title: "1. Present — Elly activates the launch console",
+        purpose: "Authorization is accepted; establish the real nanomachine payload and let Elly first sense the old voices.",
+        speakers: ["System / Console", "Citan", "Elly"]
+      },
+      {
+        id: "zeboim_afterimage",
+        title: "2. Zeboim-era afterimage — the nuclear debate",
+        purpose: "Show the old personnel discussing the consequences while Miang encourages launch. Add as many exchanges as you need.",
+        speakers: [
+          "Narration / Stage Direction",
+          "Launch Director",
+          "Systems Officer",
+          "Miang",
+          "Launch Director",
+          "Systems Officer",
+          "Miang",
+          "Launch Director"
+        ]
+      },
+      {
+        id: "present_response",
+        title: "3. Present — the afterimage ends",
+        purpose: "Elly, Citan, and Emeralda respond to what was seen and distinguish the old weapons from today's healing payload.",
+        speakers: ["Emeralda", "Elly", "Citan", "Elly"]
+      },
+      {
+        id: "launch_commit",
+        title: "4. Present — commit the nanomachine launch",
+        purpose: "Write the final exchange that immediately precedes the authentic retail Mass Driver sequence.",
+        speakers: ["System / Console", "Citan", "Elly", "Emeralda"]
+      }
+    ];
+
+    function makeBlankDraft() {
+      return {
+        format: FORMAT,
+        title: "Mass Driver — Central Control",
+        authorNote: "",
+        sections: sectionBlueprints.map(section => ({
+          id: section.id,
+          title: section.title,
+          purpose: section.purpose,
+          beats: section.speakers.map(speaker => ({
+            speaker,
+            text: "",
+            direction: speaker === "Narration / Stage Direction" ? "Describe what the player sees or hears." : ""
+          }))
+        }))
+      };
+    }
+
+    function validDraft(value) {
+      return value && value.format === FORMAT && Array.isArray(value.sections);
+    }
+
+    function loadDraft() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+        if (validDraft(saved)) return saved;
+      } catch (_) {}
+      return makeBlankDraft();
+    }
+
+    let draft = loadDraft();
+
+    const sectionsNode = document.querySelector("#sections");
+    const previewNode = document.querySelector("#preview");
+    const statusNode = document.querySelector("#status");
+
+    function saveDraft(message = "Draft saved automatically.") {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(draft));
+        statusNode.textContent = message;
+      } catch (_) {
+        statusNode.textContent = `${message} Browser autosave is unavailable, so export a copy before closing.`;
+      }
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;");
+    }
+
+    function speakerOptions(selected) {
+      const choices = SPEAKERS.includes(selected) ? SPEAKERS : [selected, ...SPEAKERS];
+      return choices.map(name =>
+        `<option value="${escapeHtml(name)}"${name === selected ? " selected" : ""}>${escapeHtml(name)}</option>`
+      ).join("");
+    }
+
+    function render() {
+      sectionsNode.innerHTML = "";
+      draft.sections.forEach((section, sectionIndex) => {
+        const node = document.createElement("section");
+        node.className = "panel section";
+        node.innerHTML = `
+          <div class="section-head">
+            <h2>${escapeHtml(section.title)}</h2>
+            <p>${escapeHtml(section.purpose)}</p>
+          </div>
+          <div class="beats"></div>
+          <div class="add-row"><button data-add="${sectionIndex}">+ Add dialogue beat</button></div>
+        `;
+        const beatsNode = node.querySelector(".beats");
+        section.beats.forEach((beat, beatIndex) => {
+          const beatNode = document.createElement("div");
+          beatNode.className = "beat";
+          beatNode.innerHTML = `
+            <div class="beat-top">
+              <label>Speaker
+                <select data-field="speaker" data-section="${sectionIndex}" data-beat="${beatIndex}">
+                  ${speakerOptions(beat.speaker)}
+                </select>
+              </label>
+              <label>Optional stage direction
+                <input data-field="direction" data-section="${sectionIndex}" data-beat="${beatIndex}" value="${escapeHtml(beat.direction || "")}" placeholder="Example: She turns from the console.">
+              </label>
+              <div class="beat-actions">
+                <button class="small" title="Move up" data-move="-1" data-section="${sectionIndex}" data-beat="${beatIndex}">↑</button>
+                <button class="small" title="Move down" data-move="1" data-section="${sectionIndex}" data-beat="${beatIndex}">↓</button>
+                <button class="small danger" title="Remove" data-remove="1" data-section="${sectionIndex}" data-beat="${beatIndex}">×</button>
+              </div>
+            </div>
+            <label>Words to appear in the game
+              <textarea data-field="text" data-section="${sectionIndex}" data-beat="${beatIndex}" placeholder="Write this speaker's dialogue here.">${escapeHtml(beat.text || "")}</textarea>
+            </label>
+          `;
+          beatsNode.appendChild(beatNode);
+        });
+        sectionsNode.appendChild(node);
+      });
+      renderPreview();
+    }
+
+    function wrapParagraph(text, width = 29) {
+      const words = text.trim().split(/\s+/).filter(Boolean);
+      const lines = [];
+      let line = "";
+      words.forEach(word => {
+        if (!line) {
+          line = word;
+        } else if (`${line} ${word}`.length <= width) {
+          line += ` ${word}`;
+        } else {
+          lines.push(line);
+          line = word;
+        }
+      });
+      if (line) lines.push(line);
+      return lines;
+    }
+
+    function previewPages() {
+      const pages = [];
+      draft.sections.forEach(section => {
+        section.beats.forEach(beat => {
+          if (!beat.text.trim()) return;
+          const textLines = beat.text
+            .split(/\n+/)
+            .flatMap(paragraph => wrapParagraph(paragraph));
+          const speakerLine = beat.speaker === "System / Console" ? "" : beat.speaker;
+          const capacity = speakerLine ? 4 : 5;
+          for (let index = 0; index < textLines.length || index === 0; index += capacity) {
+            pages.push({
+              section: section.title,
+              speaker: speakerLine,
+              lines: textLines.slice(index, index + capacity)
+            });
+          }
+        });
+      });
+      return pages;
+    }
+
+    function previewPageHtml(page) {
+      const speaker = page.speaker
+        ? `<span class="preview-speaker">${escapeHtml(page.speaker)}</span>\n`
+        : "";
+      return `<div class="preview-page">${speaker}${escapeHtml(page.lines.join("\n"))}</div>`;
+    }
+
+    function renderPreview() {
+      const pages = previewPages();
+      if (!pages.length) {
+        previewNode.innerHTML = `<p class="muted">Start writing and the first game-window estimate will appear here.</p>`;
+        return;
+      }
+      const page = pages[0];
+      previewNode.innerHTML = `
+        <div class="preview-meta">Page 1 of approximately ${pages.length}</div>
+        ${previewPageHtml(page)}
+        <button class="small" id="showAllPreview">Show all estimated pages</button>
+      `;
+      document.querySelector("#showAllPreview").addEventListener("click", showAllPreview);
+    }
+
+    function showAllPreview() {
+      const body = document.querySelector("#allPreviewBody");
+      const pages = previewPages();
+      body.innerHTML = pages.map((page, index) => `
+        <div class="preview-meta">${escapeHtml(page.section)} — page ${index + 1}</div>
+        ${previewPageHtml(page)}
+      `).join("") || `<p class="muted">No dialogue has been written yet.</p>`;
+      document.querySelector("#allPreview").showModal();
+    }
+
+    function readableScript() {
+      return draft.sections.map(section => {
+        const beats = section.beats.map(beat => {
+          const direction = beat.direction.trim() ? ` [${beat.direction.trim()}]` : "";
+          return `${beat.speaker}${direction}:\n${beat.text.trim() || "[blank]"}`;
+        }).join("\n\n");
+        return `${section.title}\n${"=".repeat(section.title.length)}\n${section.purpose}\n\n${beats}`;
+      }).join("\n\n\n");
+    }
+
+    sectionsNode.addEventListener("input", event => {
+      const field = event.target.dataset.field;
+      if (!field) return;
+      const section = draft.sections[Number(event.target.dataset.section)];
+      const beat = section.beats[Number(event.target.dataset.beat)];
+      beat[field] = event.target.value;
+      saveDraft();
+      renderPreview();
+    });
+
+    sectionsNode.addEventListener("click", event => {
+      const target = event.target;
+      if (target.dataset.add !== undefined) {
+        const section = draft.sections[Number(target.dataset.add)];
+        section.beats.push({ speaker: "Elly", text: "", direction: "" });
+        saveDraft("Dialogue beat added.");
+        render();
+        return;
+      }
+      const sectionIndex = Number(target.dataset.section);
+      const beatIndex = Number(target.dataset.beat);
+      if (!Number.isInteger(sectionIndex) || !Number.isInteger(beatIndex)) return;
+      const beats = draft.sections[sectionIndex].beats;
+      if (target.dataset.remove) {
+        beats.splice(beatIndex, 1);
+        saveDraft("Dialogue beat removed.");
+        render();
+      } else if (target.dataset.move) {
+        const destination = beatIndex + Number(target.dataset.move);
+        if (destination < 0 || destination >= beats.length) return;
+        [beats[beatIndex], beats[destination]] = [beats[destination], beats[beatIndex]];
+        saveDraft("Dialogue beat moved.");
+        render();
+      }
+    });
+
+    document.querySelector("#exportButton").addEventListener("click", () => {
+      const completed = structuredClone(draft);
+      completed.exportedAt = new Date().toISOString();
+      completed.readableScript = readableScript();
+      const blob = new Blob([JSON.stringify(completed, null, 2) + "\n"], { type: "application/json" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "CENTRAL_CONTROL_DIALOGUE_SUBMISSION.json";
+      link.click();
+      setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+      saveDraft("Exported CENTRAL_CONTROL_DIALOGUE_SUBMISSION.json. Tell Codex when you are ready.");
+    });
+
+    document.querySelector("#copyButton").addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(readableScript());
+        statusNode.textContent = "Readable script copied to the clipboard.";
+      } catch (_) {
+        showAllPreview();
+        statusNode.textContent = "Clipboard access was unavailable; the complete script is open for copying.";
+      }
+    });
+
+    document.querySelector("#importFile").addEventListener("change", async event => {
+      const file = event.target.files[0];
+      if (!file) return;
+      try {
+        const imported = JSON.parse(await file.text());
+        if (!validDraft(imported)) throw new Error("wrong format");
+        draft = imported;
+        saveDraft(`Imported ${file.name}.`);
+        render();
+      } catch (_) {
+        statusNode.textContent = "That file is not a Mass Driver dialogue draft.";
+      } finally {
+        event.target.value = "";
+      }
+    });
+
+    document.querySelector("#resetButton").addEventListener("click", () => {
+      if (!confirm("Erase the browser's saved draft and return to blank dialogue cards?")) return;
+      draft = makeBlankDraft();
+      saveDraft("The form was reset.");
+      render();
+    });
+
+    document.querySelector("#closePreview").addEventListener("click", () => {
+      document.querySelector("#allPreview").close();
+    });
+
+    render();
+  </script>
+</body>
+</html>

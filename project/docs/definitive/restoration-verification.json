@@ -1,0 +1,40 @@
+{
+  "format": "xenogears-restoration-release-verification-v1",
+  "release": "deus-restoration-v2",
+  "gameplay_status": "untested",
+  "all_bugs_fixed_verified": false,
+  "tests": {
+    "ran": 287,
+    "skipped": 1,
+    "result": "passed"
+  },
+  "installed_audit": "output/definitive/verification/deus-restoration-v2-installed.json",
+  "discs": {
+    "1": {
+      "sha256": "f0276e623432d2eaf71123754fe5c58ea70ab568f20dbc2091de83be1bce963c",
+      "identical_to_cpu_audited_release": "deus-restoration-v1",
+      "installed_repairs_verified": 8,
+      "legacy_fix_cpu_cases": 256,
+      "food_recovery_cpu_cases": 36,
+      "battle_item_filter_cpu_cases": 150,
+      "weight_tested_blocks_passed": true,
+      "gain_cap_regression_absent": true,
+      "all_menu_copies_match": true,
+      "item_report": "output/definitive/verification/deus-restoration-v1-items-disc1.json",
+      "weight_report": "output/definitive/verification/deus-restoration-v1-weight-disc1.json"
+    },
+    "2": {
+      "sha256": "cb01f4d5cf72681ae1f7f9c2898ce03122b90eff13102aef060f53f1345f6a9d",
+      "identical_to_cpu_audited_release": "deus-restoration-v1",
+      "installed_repairs_verified": 8,
+      "legacy_fix_cpu_cases": 256,
+      "food_recovery_cpu_cases": 36,
+      "battle_item_filter_cpu_cases": 150,
+      "weight_tested_blocks_passed": true,
+      "gain_cap_regression_absent": true,
+      "all_menu_copies_match": true,
+      "item_report": "output/definitive/verification/deus-restoration-v1-items-disc2.json",
+      "weight_report": "output/definitive/verification/deus-restoration-v1-weight-disc2.json"
+    }
+  }
+}

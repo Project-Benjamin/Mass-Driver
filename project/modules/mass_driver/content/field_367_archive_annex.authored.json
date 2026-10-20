@@ -1,0 +1,13 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "ARCHIVE MAIL TERMINAL C\nMAIL THREAD / YEAR 6079\nFROM: MARA / PAYLOAD SAFETY\nTO: FACILITY DIRECTOR<New>Proposal MC-4 replaces the\ncivil instrument bay with a\nstrategic warhead cradle.\nIt breaks Launch Charter 11.\nI do not certify it.<New>REPLY: ADVISER'S OFFICE\nObjection recorded.\nEmergency Continuity Act\npermits alternate approval.\nWork may proceed.<New>FROM: MARA / TO: LENA\nThey thanked me for putting\nmy objection on record. Then\nthey removed my name from the\napproval list.<New>I thought no meant they had\nto stop.<New>REPLY: LENA\nIt should have.\nKeep a copy.<Close>"
+    }
+  ]
+}

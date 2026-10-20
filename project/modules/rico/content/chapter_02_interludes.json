@@ -1,0 +1,229 @@
+{
+  "format": "xenogears-rico-chapter-two-interludes-v1",
+  "title": "The Champ: between the original events",
+  "integration": "Standalone anthology prototype with brief time/location cards; future native campaign insertion must yield to untouched original events at these anchors.",
+  "stages": [
+    {
+      "stage": 1,
+      "scene": "gap_01_familiar",
+      "window": "During Fei's unconscious recovery, before the native awakening/summons.",
+      "preceding_canonical_anchors": [
+        "field234 dialogue20: existing transfer order to D Block (not Rico's knowledge)."
+      ],
+      "following_canonical_anchors": [
+        "field213 dialogue104: four-day recovery ends.",
+        "field213 dialogue26-30 and218 dialogue2-10: unchanged summons/introduction."
+      ],
+      "active_scene_cast": [
+        "rico",
+        "suzarn"
+      ],
+      "ambient_suzarn": true,
+      "ambient_hammer": true,
+      "emotional_change": "Rico refuses to assign a rank without a fight. Suzarn accepts his competitive standard rather than receiving a sentimental favor.",
+      "skip_after": "gap_skip_01"
+    },
+    {
+      "stage": 2,
+      "scene": "gap_02_after_yard",
+      "window": "After the complete native Baptism, whichever rank outcome the player earned.",
+      "preceding_canonical_anchors": [
+        "field199 native Baptism and its existing rank branches finish."
+      ],
+      "following_canonical_anchors": [
+        "Fei's original preparation/early Battling progression and explosion proceed unchanged."
+      ],
+      "active_scene_cast": [
+        "rico",
+        "suzarn"
+      ],
+      "ambient_suzarn": true,
+      "ambient_hammer": true,
+      "emotional_change": "Suzarn wants to win freedom on her own strength. Rico recognizes a possible rival, not merely a subordinate.",
+      "skip_after": "gap_skip_02"
+    },
+    {
+      "stage": 3,
+      "scene": "gap_03_absence",
+      "window": "After the fifth death becomes known, before Rico's original visit to Fei.",
+      "preceding_canonical_anchors": [
+        "field196 dialogue139 is the earlier fourth-victim notice.",
+        "field211 dialogue70 identifies Suzarn as fifth victim."
+      ],
+      "following_canonical_anchors": [
+        "field213 dialogue78-97: untouched apology, suspicion, recruitment and readiness choice."
+      ],
+      "active_scene_cast": [
+        "rico",
+        "hammer"
+      ],
+      "ambient_suzarn": false,
+      "ambient_hammer": true,
+      "emotional_change": "Suzarn's unfulfilled ambition exposes what strength failed to secure. Rico elects to approach Fei himself; the original apology and investigation remain ahead.",
+      "skip_after": "gap_skip_03"
+    },
+    {
+      "stage": 4,
+      "scene": "gap_04_small_task",
+      "window": "After the original sewer return, care/reunion and rivalry discussion have completed.",
+      "preceding_canonical_anchors": [
+        "field239 dialogue17: Fei notices the left-arm wound.",
+        "field211 dialogue178-201: original return/reunion, injury concern and end of alliance."
+      ],
+      "following_canonical_anchors": [
+        "Original remaining Fei tournament progression and Finals."
+      ],
+      "active_scene_cast": [
+        "rico"
+      ],
+      "ambient_suzarn": false,
+      "ambient_hammer": false,
+      "emotional_change": "In private, the wounded Rico fears showing weakness to the opponent who offered concern. His public challenge is not replayed.",
+      "skip_after": "gap_skip_04"
+    },
+    {
+      "stage": 5,
+      "scene": "gap_05_without_title",
+      "window": "After the native Finals result and Rico's dismissal of his followers, before the Group League.",
+      "preceding_canonical_anchors": [
+        "field221 dialogue154-159: wound is no excuse, Fei is Champion, Rico leaves and forbids followers."
+      ],
+      "following_canonical_anchors": [
+        "Group League incident as recounted by field218 dialogue35.",
+        "Rue's later room handover remains at field218 dialogue13-35, in its original chronology."
+      ],
+      "active_scene_cast": [
+        "rico"
+      ],
+      "ambient_suzarn": false,
+      "ambient_hammer": false,
+      "emotional_change": "Loss prompts an unanswered question about the pardon he once refused. This does not establish the canonical reason for his refusal.",
+      "skip_after": "gap_skip_05"
+    },
+    {
+      "stage": 6,
+      "scene": "gap_06_before_league",
+      "window": "Immediately before Rico returns for the already-established Group League appearance.",
+      "preceding_canonical_anchors": [
+        "Original post-Finals departure in field221 dialogue157-159."
+      ],
+      "following_canonical_anchors": [
+        "Unchanged Group League incident, later recounted by Rue at field218 dialogue35.",
+        "Original search, Central District entry and later locked-room material retain their order."
+      ],
+      "active_scene_cast": [
+        "rico"
+      ],
+      "ambient_suzarn": false,
+      "ambient_hammer": false,
+      "emotional_change": "His established resentment over the expulsion remains after the title is gone. No family connection, plan or new motive is disclosed.",
+      "skip_after": "gap_skip_06"
+    }
+  ],
+  "scenes": {
+    "gap_intro": [
+      "Nortune\nThe Champion's rooms<Close>",
+      "Inspect the bout card or bed to continue.<Close>"
+    ],
+    "gap_01_familiar": [
+      "Suzarn\nThe others are tired of waiting on the new prisoner.<Close>",
+      "<Rico>\nIs he awake?<Close>",
+      "Suzarn\nStill out. We could put him at the bottom and get on with it.<Close>",
+      "<Rico>\nYou haven't fought him.<Close>",
+      "Suzarn\nHe can't fight.<Close>",
+      "<Rico>\nThen wait until he can.<Close>",
+      "Suzarn\nUntil the doctor says he's ready?<Close>",
+      "<Rico>\nUntil he can stand. I want to see what he can do.<Close>",
+      "Suzarn\nAll right. I'll tell them.<Close>"
+    ],
+    "gap_02_after_yard": [
+      "Suzarn\nHe'll remember your name. The rest of us are just the Champ's gang.<Close>",
+      "<Rico>\nYou're the strongest of the four.<Close>",
+      "Suzarn\nThen why am I still fetching prisoners for you?<Close>",
+      "<Rico>\nWhat do you want?<Close>",
+      "Suzarn\nS Rank. I want this collar off.<Close>",
+      "<Rico>\nYou want my title.<Close>",
+      "Suzarn\nI don't intend to stay below you forever.<Close>",
+      "<Rico>\nThen you'll have to beat me.<Close>",
+      "Suzarn\nI know. I wasn't asking you to let me win.<Close>",
+      "<Rico>\nGood.<Close>"
+    ],
+    "gap_03_absence": [
+      "<Rico>\nSuzarn wanted the title.<Close>",
+      "Hammer\nMaster Rico...<Close>",
+      "<Rico>\nWanted to get that collar off. She was sure she'd beat me.<Close>",
+      "Hammer\nYou couldn't have known this would happen.<Close>",
+      "<Rico>\nNeither did she.<Close>",
+      "Hammer\n...No.<Close>",
+      "<Rico>\nWhere's that new Battler?<Close>",
+      "Hammer\nFei? He should be at the dorms.<Close>",
+      "Hammer\nIf it's about those rumors...<Close>",
+      "<Rico>\nI'm going to talk to him.<Close>",
+      "Hammer\nI-I can send for him.<Close>",
+      "<Rico>\nNo. I'll go myself.<Close>"
+    ],
+    "gap_04_small_task": [
+      "<Rico>\nThis arm... I can barely keep it steady.<Close>",
+      "<Rico>\nHe'd better not see me like this.<Close>"
+    ],
+    "gap_05_without_title": [
+      "<Rico>\nA pardon...<Close>",
+      "<Rico>\nI could've taken it. Walked out.<Close>",
+      "<Rico>\n...Where would I have gone?<Close>"
+    ],
+    "gap_06_before_league": [
+      "<Rico>\nSigmund...<Close>",
+      "<Rico>\nYou drove us out of this city.<Close>",
+      "<Rico>\n...Did you think I'd forget?<Close>"
+    ],
+    "gap_skip_01": [
+      "After the Baptism<Close>"
+    ],
+    "gap_skip_02": [
+      "After Suzarn's death<Close>"
+    ],
+    "gap_skip_03": [
+      "After the sewer investigation<Close>"
+    ],
+    "gap_skip_04": [
+      "After the Finals<Close>"
+    ],
+    "gap_skip_05": [
+      "Before the Group League<Close>"
+    ],
+    "gap_skip_06": [
+      "After the Group League\nCentral District<Close>"
+    ],
+    "gap_outro": [
+      "CHAPTER 2 COMPLETE<Close>"
+    ],
+    "gap_optional_hammer": [
+      "Hammer\nNeed supplies, Master Rico? You know where to find me. Anything you need!<Close>"
+    ],
+    "gap_optional_suzarn": [
+      "Suzarn\nLeave the others to me, Champ. They haven't beaten me yet.<Close>"
+    ],
+    "gap_optional_schedule": [
+      "<Rico>\nLet's see.<Close>"
+    ],
+    "gap_optional_bed": [
+      "<Rico>\nKeep it down...<Close>"
+    ],
+    "gap_optional_worker": [
+      "They put a fresh coat of paint on the hall. Haven't touched the leaking pipe above my bunk.<Close>"
+    ],
+    "gap_optional_battler": [
+      "I keep dropping my guard on the left. Every time I get tired.<Close>"
+    ],
+    "gap_optional_prisoner": [
+      "Just stretching my legs. If I lie down now, someone'll start snoring before I get to sleep.<Close>"
+    ],
+    "gap_optional_clerk": [
+      "Give me a moment. Two copies of the same entry, and neither one has a signature.<Close>"
+    ],
+    "gap_repeat_03_hammer": [
+      "Hammer\nI'll be downstairs, Master Rico. If you need anything...<Close>"
+    ]
+  },
+  "staging_note": "In-scene text is spoken dialogue only. Do not print prose descriptions of actions, gestures, props or inner thoughts. Time skips use brief captions; the existing scene choreography and gameplay remain unchanged. Optional NPC interactions contain only the NPC's speech; Rico listens. Rico still speaks in story scenes and when inspecting objects alone."
+}

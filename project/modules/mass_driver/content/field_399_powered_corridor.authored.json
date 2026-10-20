@@ -1,0 +1,36 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 64,
+      "height": 4,
+      "text": "MASS DRIVER GRID\nMAGNETIC RAIL POWER - 41 PERCENT<New>Elly\n\"A magnetic rail... It was\nbuilt to carry materials and\ninstruments toward space.\"<New>Emeralda\n\"Big machine sleeps, but\nits eyes are open.\"<Close>"
+    },
+    {
+      "id": 1,
+      "width": 42,
+      "height": 3,
+      "text": "Elly\n\"A magnetic rail...<New>It was built to send\nmaterials and instruments\ntoward space.\"<Close>"
+    },
+    {
+      "id": 2,
+      "width": 46,
+      "height": 3,
+      "text": "Emeralda\n\"Big machine sleeps,\nbut its eyes are open.\"<Close>"
+    },
+    {
+      "id": 3,
+      "width": 48,
+      "height": 2,
+      "text": "UNREGISTERED PERSONNEL\nAUTOMATED DEFENSE ACTIVE<Close>"
+    },
+    {
+      "id": 4,
+      "width": 50,
+      "height": 4,
+      "text": "Elly\n\"These are Zeboim defense\ncircuits. Keep clear of\nthe warning lights.\"<Close>"
+    }
+  ]
+}

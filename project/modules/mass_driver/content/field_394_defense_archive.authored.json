@@ -1,0 +1,295 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "<Elly>\n\"This appears to be the final\nauthorization station before\nCentral Control.\"<New><Emeralda>\n\"Console wants old code?\"<New><Elly>\n\"Directive 0320, followed by\nfour separate authority\npoints.\"<New><Elly>\n\"The surviving archives\nshould contain them. We can\nuse whatever we recovered\nand return for the rest.\"<New><Elly>\n\"Each value goes in alone.\nBut this place still believes\nZeboim is at war.\"<Close>"
+    },
+    {
+      "id": 1,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "DIRECTIVE NUMBER REQUIRED\nEnter directive number.\nREGISTER LOCATION\nControl and Research Annex\nACCESS: east service stairs<Close>"
+    },
+    {
+      "id": 2,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "FOUR AUTHORITY CODES REQUIRED\nEnter codes in order, A to D.\nCREDENTIAL REGISTER\nMaterials Storage\nACCESS: east service stairs<Close>"
+    },
+    {
+      "id": 3,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "LAUNCH AUTHORIZATION\nDirective 0320 accepted.\nAll four authority codes\nverified.<New>Defense Bay lift: unlocked.\nUse the lift on the north\nwall.<New>West bulkhead status is\ndisplayed at the local\ncontrol panel.<Close>"
+    },
+    {
+      "id": 4,
+      "width": 34,
+      "height": 4,
+      "text": "<Opcode:01:FF>DIRECTIVE NUMBER\n  0320\n  0302\n  3200<Close>"
+    },
+    {
+      "id": 5,
+      "width": 34,
+      "height": 4,
+      "text": "<Opcode:01:FF>AUTHORITY POINT A\n  A-2\n  A-4\n  A-5<Close>"
+    },
+    {
+      "id": 6,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "DIRECTIVE 0320 ACCEPTED\nA-2 B-5 C-8 D-4\nAUTHORITY VERIFIED<New>Launch authorization\nrecorded.\nNorth-wall lift unlocked.\nCustodian defense: active.<New><Elly>\n\"The lift is working. But the\ndefense system is still\nactive...\"<New><Elly>\n\"We'd better check our\nequipment before we go down.\"<Close>"
+    },
+    {
+      "id": 7,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "CODE ERROR\nOne or more entries are\nincorrect.<New>Enter Directive 0320 first,\nthen each authority code in\norder from A to D.<Close>"
+    },
+    {
+      "id": 8,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "<Elly>\n\"Authorization is accepted.\nThe north-wall lift now leads\nto the Defense Bay.\"<New><Emeralda>\n\"Gears are below. Emeralda\nready!\"<Close>"
+    },
+    {
+      "id": 9,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "DEFENSE BAY LIFT\nAccess locked.<New>Enter Directive 0320 and the\nfour authority codes at the\nwall console.<Close>"
+    },
+    {
+      "id": 10,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "WEST BULKHEAD\nLocal release required.<New>Use the west control panel\nafter the Custodian defense\nsystem has been disabled.<Close>"
+    },
+    {
+      "id": 11,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "<Elly>\n\"Enter 0320 first. Then A-2,\nB-5, C-8, and D-4.\nOne value at a time.\"<Close>"
+    },
+    {
+      "id": 12,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "<Elly>\n\"The defense system is down\nand the bulkhead is open.\nCentral Control lies beyond\nthe fifth magazine.\"<Close>"
+    },
+    {
+      "id": 13,
+      "width": 34,
+      "height": 4,
+      "text": "<Opcode:01:FF>AUTHORITY POINT B\n  B-2\n  B-5\n  B-8<Close>"
+    },
+    {
+      "id": 14,
+      "width": 34,
+      "height": 4,
+      "text": "<Opcode:01:FF>AUTHORITY POINT C\n  C-4\n  C-5\n  C-8<Close>"
+    },
+    {
+      "id": 15,
+      "width": 34,
+      "height": 4,
+      "text": "<Opcode:01:FF>AUTHORITY POINT D\n  D-2\n  D-4\n  D-8<Close>"
+    },
+    {
+      "id": 16,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "CIVIL DEFENSE\nSAVED DIRECTOR'S BRIEFING\nThe Adviser's Office has\nrequested increased military\nreadiness.<New>Shelter capacity is\nunchanged.<Close>"
+    },
+    {
+      "id": 17,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "DEFENSE PROCUREMENT AUDIT\nORDER: WARHEAD ADAPTER STUDY\nAUTHORITY: STRATEGIC COMMAND\nDATE: 6078<New>CIVIL PROGRAM HEARING\nSHARED USE PROPOSAL\nDATE: 6079<New>AUDIT EXCEPTION\nSTUDY WAS ORDERED BEFORE\nCIVIL REVIEW HAD BEGUN<New>APPROVAL ROUTE\nADVISER'S OFFICE<Close>"
+    },
+    {
+      "id": 18,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "DEFENSE BAY\nACCESS INSTRUCTIONS<New>Complete launch authorization\nat the wall console to unlock\nthe north lift.<New>Authorization grants access\nto the bay. It does not shut\ndown the Custodian defense\nsystem.<New>The west bulkhead has a\nseparate control panel. Its\nrelease is locked while\nCustodian defense remains\nactive.<Close>"
+    },
+    {
+      "id": 19,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "WEST BULKHEAD\nARCHIVED CIVIL DEFENSE REVIEW<New>This bulkhead separates the\ncontrol room from the reserve\nmagazines. Closing it does\nnot make this room a public\nfallout shelter.<New>The shelter plan does not\nprovide enough space for the\ncivilian population. Sealing\nthe magazines will not\ncorrect that shortage.<New>STRATEGIC ASSESSMENT\nLimited strike, first strike,\nand retaliation all lead to a\nfull nuclear exchange in the\ncurrent model.<New>Projected civilian survival\nis too low to sustain\nrecovery.<New>DISPOSITION\nMilitary readiness increased.\nReport withheld from public\nrelease.<Close>"
+    },
+    {
+      "id": 20,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "LAUNCH ORDER CONTROL\nDIRECTIVE 0320<New>CURRENT STATUS\nCentral Command: no\nconnection.\nRecall order: not received.\nDirective: active.<New>REVISION HISTORY / 6081\nPrevious instruction: suspend\na pending launch if contact\nwith Central Command is lost.<New>Replacement instruction:\ncarry out the pending launch\norder unless a recall has\nbeen received.<New>Revision authority: Prime\nMinister's Adviser.\nExpiration clause removed.\nNo review date.<Close>"
+    },
+    {
+      "id": 21,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "LAUNCH DUTY REGISTER\nSAVED RELEASE RECORD<New>Release authorized by:\nFacility Director.\nDirector's signature:\nverified.<New>Supporting orders:\nStrategic access order.\nSafety waivers.\nDirective 0320 revision.<New>All supporting orders were\nrouted through the Prime\nMinister's Adviser.<New>Adviser's signature on\nrelease: none.<New>RECORD QUERY / MARA<New>Please send the authorization\nfor the Safety waiver. The\nrelease record names the\ndirector, but the waiver came\nfrom the Adviser's Office.<Close>"
+    },
+    {
+      "id": 22,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "<Elly>\n\"A video disk... This one\nlooks all right.\"<New><Elly>\n\"We could try playing it on\nthe computer to the right.\"<Close>"
+    },
+    {
+      "id": 23,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "ZBC ARCHIVE\nInsert a Video Disk.<Close>"
+    },
+    {
+      "id": 24,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "ZBC NEWS ARCHIVE\nRECORDINGS: 6081-6083<New>Video Disk accepted.\nStarting playback...<Close>"
+    },
+    {
+      "id": 25,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "Food is disappearing from the\ncapital's markets. Private\ndining rooms in the wealthy\ndistricts, however, remain\nwell supplied.<New>Aid groups have asked their\nowners to release food and\nfuel for public distribution.\nMost have refused.<Close>"
+    },
+    {
+      "id": 26,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "Meanwhile, the country's\nwealthiest families are\nbuying private fallout\nshelters.<New>Builders advertise gardens,\nmedical facilities, and\nprovisions to last for years.<Close>"
+    },
+    {
+      "id": 27,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "Across the country, food\nlines begin before dawn.<New>Children wait in the cold\noutside distribution centers\nwith nothing left to give\nthem.<New>Farmland lies abandoned. Rail\ndeliveries to the poorest\ndistricts have stopped.<Close>"
+    },
+    {
+      "id": 28,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "In the capital, crowds from\npoorer districts have set\nfire to homes in wealthy\nneighborhoods. Families have\nbeen killed inside.<New>Police and military units\nhave withdrawn from several\nwealthy districts. Further\nfires are being reported.<Close>"
+    },
+    {
+      "id": 29,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "Births remain below\nreplacement level.\nInfertility and hereditary\nillness are increasing.<New>Average life expectancy is\nnow approaching thirty.<New>Officials have warned\nprivately that the nation may\nnot survive another\ngeneration.<Close>"
+    },
+    {
+      "id": 30,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "ZBC ARCHIVE / NEXT RECORDING\nEMERGENCY BROADCAST / 6083<New>We interrupt this program. A\nnuclear missile has been\nlaunched.<New>Retaliatory launches are\nbeing reported by several\nnuclear-armed states. We are\nlosing contact with military\ncommand.<New>Take shelter immediately.\nAnyone receiving this\nbroadcast, take shelter. This\nis not a drill.<Close>"
+    },
+    {
+      "id": 31,
+      "width": 40,
+      "height": 2,
+      "manual_wrap": true,
+      "text": " \n Received Video Disk<Close><Close>"
+    },
+    {
+      "id": 32,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "<Elly>\n\"The other disks are too\nbadly damaged.\"<Close>"
+    },
+    {
+      "id": 33,
+      "width": 40,
+      "height": 3,
+      "manual_wrap": true,
+      "text": "<Opcode:01:FF>INSERT VIDEO DISK?\n     Insert disk\n     Cancel<Close>"
+    },
+    {
+      "id": 34,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "<Elly>\n\"We don't have room for the\nVideo Disk.\"<Close>"
+    },
+    {
+      "id": 35,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "ZBC EVENING REPORT / 6081\nCELIA REN, ANCHOR<New>Good evening. Food shortages\ncontinue in the capital,\nwhere unrest has turned\nviolent.<Close>"
+    },
+    {
+      "id": 36,
+      "width": 40,
+      "height": 3,
+      "manual_wrap": true,
+      "text": "<Opcode:01:FF>Take the Video Disk?\n     Take it\n     Leave it<Close>"
+    },
+    {
+      "id": 37,
+      "width": 40,
+      "height": 4,
+      "manual_wrap": true,
+      "text": "<Opcode:01:FF>MEDIA TERMINAL\n     Arcade Games\n     Video Disk\n     Leave<Close>"
+    },
+    {
+      "id": 38,
+      "width": 40,
+      "height": 4,
+      "manual_wrap": true,
+      "text": "<Opcode:01:FF>ARCADE DIRECTORY\n     Play NUKE\n     Missile Command\n     Back<Close>"
+    },
+    {
+      "id": 39,
+      "width": 58,
+      "height": 4,
+      "manual_wrap": true,
+      "text": "<Opcode:01:FF>WEST BULKHEAD CONTROL\n     Operate bulkhead\n     Read safety report\n     Leave<Close>"
+    },
+    {
+      "id": 40,
+      "width": 58,
+      "height": 2,
+      "manual_wrap": true,
+      "text": "CUSTODIAN DEFENSE ACTIVE\nBULKHEAD RELEASE LOCKED<Close>"
+    },
+    {
+      "id": 41,
+      "width": 42,
+      "height": 1,
+      "manual_wrap": true,
+      "text": "WEST BULKHEAD OPEN<Close>"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "ARCHIVE CONSOLE D\nACCELERATOR INTERLOCK<New>Bank test accepted.\nAccelerator supply restored.\nMagnetic banks responding.<New>CENTRAL GATE\nAccelerator power requirement\nsatisfied.<Close>"
+    },
+    {
+      "id": 1,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "ACCELERATOR SERVICE RECORD\nARCHIVED SHIFT LOG / 6081\nOPERATOR: ARON<New>Cooling pumps checked after\nthe power failure. Bank Two\nstopped at the thermal limit\nduring the recharge test. No\ndamage found.<New>Command has requested\ncontinuous readiness. That\nrequires bypassing the\nthermal cutoff.<New>Cooling time between charges\nis still necessary.<New>SHIFT ADDENDUM\nBypass fitted by Aron.\nTemperature must be watched\nfrom the control desk while\nthe bank is charging.<New>ARON / TO: LENA\nI told them it was ready.\nPerhaps that will be enough.\nI don't want to find out how\nlong we can keep doing this.<New>TERMINAL DIRECTORY\nACCELERATOR INTERLOCK\nCONTROL: MAIN CONSOLE<Close>"
+    }
+  ]
+}

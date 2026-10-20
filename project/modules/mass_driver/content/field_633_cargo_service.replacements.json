@@ -1,0 +1,20 @@
+{
+  "format": "xenogears-field-dialogue-replacements-v1",
+  "source_size": 142,
+  "source_sha256": "48496993bf04fe5b5694cbfc836f4f7de82ca45298b69632fd6e27e65acce9b8",
+  "block_count": 3,
+  "replacements": [
+    {
+      "id": 0,
+      "text": "<Opcode:01:FF>North - Payload Routing\n \nSouth - Coil Service\n \nEast - Launch Concourse<Close>"
+    },
+    {
+      "id": 1,
+      "text": "You cannot carry\n<Opcode:04:14>.<Close>"
+    },
+    {
+      "id": 2,
+      "text": " \n Recovered <Opcode:04:14><Close><Close>"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 54,
+      "height": 4,
+      "text": "EMPLOYEE HEALTH NOTICE\nHEREDITARY DAMAGE RISING\nSHORTEN ALL CREW ROTATIONS\nMEDICAL LEAVE GUARANTEED<New>FEDERAL LIFE PROJECTION\nAVERAGE: 30 YEARS\nFERTILITY COUNSELING\nAVAILABLE TO ALL STAFF<New>Elly\n\"(They measured a whole life\nin a line on a work notice.)\"<New>Emeralda\n\"Thirty... not long.\"\nElly\n\"No... it wasn't enough.\"<New>AUXILIARY INTERLOCK\nRESTORED<Close>"
+    },
+    {
+      "id": 1,
+      "width": 54,
+      "height": 3,
+      "text": "CONDUIT ACCESS\nLOCAL POWER AVAILABLE\nPASSAGE OPEN<Close>"
+    }
+  ]
+}

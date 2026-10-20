@@ -1,0 +1,20 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "PAYLOAD TEST STATION\nARCHIVED TEST / 6078\nBANK TWO: SURVEY CRADLE<New>TEST LOAD: INERT CASING\nGuide clearance: acceptable\nCradle locks: secure\nNo damage found after\nremoval.<New>ARON / SYSTEMS<New>The new casing fits. Its\ncontents weren't listed on\nthe test request. Please send\nthe payload specifications\nbefore we approve a launch.<New>REQUEST AMENDED\nPAYLOAD: STRATEGIC WARHEAD\nReferred to Payload Safety.<Close>"
+    },
+    {
+      "id": 1,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "LAUNCH EQUIPMENT DESK\nARCHIVED WORK ORDER / 6079\nBANK TWO CONVERSION<New>Remove the survey cradle.\nInstall the MC-4 assembly and\ncheck the guide clearance\nbefore returning the bank to\nservice.<New>Removed equipment is to be\nreturned to Civil Payload\nStores. Do not discard the\ncradle or its instrument\nconnections.<New>COMPLETION NOTE\nMC-4 assembly installed.\nSurvey cradle packed for\nstorage.<New>STORES REPLY\nInstrument connections\nmissing. Please send them to\nStores. The survey carrier\nstill needs them.<Close>"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "ARCHIVE MAIL TERMINAL A\nSTAFF MAIL / YEAR 6074\nFROM: LENA / GUIDANCE\nTO: ARON / SYSTEMS<New>SUBJECT: SHE STAYED AWAKE\nMira watched the whole count.\nWhen the carrier disappeared,\nshe waved the paper star you\nmade until her arm hurt.<New>The overseas tracking station\ncalled with a clean signal.\nYou should have heard us\nwhen their voices came\nthrough.<New>REPLY: ARON / SYSTEMS\nTell Mira her star helped.<Close>"
+    },
+    {
+      "id": 1,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "OPERATIONS DESK TERMINAL A\nPROGRAM MAIL / YEAR 6072\nFROM: FACILITY DIRECTOR\nTO: CIVIL LAUNCH BUREAU<New>The next carrier holds\natmospheric instruments\nand an unmanned probe.\nThe rail will give it its\nfirst velocity toward space.<New>The Budget Office asks what\nreturn justifies another\nlaunch while the economy\ncontinues to contract.<New>REPLY: FACILITY DIRECTOR\nNot every return appears\non a balance sheet.\nKeep the civil window open.<Close>"
+    }
+  ]
+}

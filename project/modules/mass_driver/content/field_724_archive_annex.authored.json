@@ -1,0 +1,20 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "LAUNCH DUTY STATION\nARCHIVED FINAL SHIFT / 6083\nOPERATOR: ARON<New>Release order received. Bank\nFour opened. Local\nabort refused. Request for\nrecall sent to Central\nControl.<New>STAFF MESSAGE\nFROM: ARON / TO: LENA<New>Mira is in Shelter Four. If\nyou can reach her, stay with\nher. Don't come back here for\nme.<New>UNSENT / LENA\nMira, it's Lena. Are you\nthere? Please answer.<New>TRANSMISSION LOST\nNo later entry recovered.<New><Emeralda>\n\"What happened to Mira...?\"<New><Elly>\n\"I don't know...\"<Close>"
+    },
+    {
+      "id": 1,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "LAUNCH CONTROL DESK\nARCHIVED RECALL RECORD / 6083\nDIRECTIVE 0320\nRecall requested.<New>Executive response:\nnot authorized.\nStrategic release confirmed.\nCommand link lost.\nReserve magazines sealed.<Close>"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+#include "resource.h"
+
+1 24 "app.manifest"
+IDI_MASS_DRIVER ICON "mass_driver.ico"

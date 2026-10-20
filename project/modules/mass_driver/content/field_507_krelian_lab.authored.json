@@ -1,0 +1,48 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "RESEARCH CHAMBER\nPRIMARY USER: KRELIAN\nGUIDANCE LINK ACTIVE<New><Elly>\n\"This is Krelian's\nlaboratory... The Mass\nDriver guidance line ends\nhere.\"<New><Emeralda>\n\"Then this is last room?\"<New><Elly>\n\"The final console is\nahead. Stay close.\"<Close>"
+    },
+    {
+      "id": 1,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "OUROBOROS RESEARCH CHAMBER\nARCHIVE DIRECTORY\nPRIMARY USER: KRELIAN\nREFERENCE ACCESS: SEALED<New>SUBJECT INDEX\nOUROBOROS RING RECURRENCE\nMIANG / REFERENCE FILE\nINTRON PATTERN ANALYSIS<New>VISUAL LOG: NOT RECORDED\nANALYSIS FILES INCOMPLETE<New><Elly>\n\"Only the index survived.\nWhatever Krelian found\nabout Miang and the\nOuroboros Ring is gone.\"<Close>"
+    },
+    {
+      "id": 2,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "FINAL LAUNCH CONSOLE\nGUIDANCE LINK LOCKED\nCENTRAL AUTHORITY MISSING<New>Return to Central Control.\nComplete launch authorization\nbefore using this console.<New><Elly>\n\"The capsule cannot be\nreleased from here yet.\"<Close>"
+    },
+    {
+      "id": 3,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "FINAL LAUNCH CONSOLE\nCAPSULE LINK CONFIRMED\nGUIDANCE CONTROL READY\nMANUAL COMMIT REQUIRED<New><Citan>\n\"Elly. The ascent path is\ndrifting, but I can hold it.\"<New><Elly>\n\"So that red tunnel was the\nlast service route.\"<New><Citan>\n\"Yes. This chamber has a\ndirect guidance link. I can\nsteady the solution here.\"<New><Citan>\n\"The capsule will open in\nthe upper atmosphere. You\nmust release it.\"<New><Elly>\n\"Then hold the path for me.\"<New>GUIDANCE LOCKED\nMAGNETIC BANKS SYNCHRONIZED\nCAPSULE ASCENT READY<New><Citan>\n\"Trajectory is stable.\nCommit the capsule now!\"<New><Elly>\n\"Please... reach everyone.\"<Close>"
+    },
+    {
+      "id": 4,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "LAUNCH STATUS\nLAUNCH COMPLETE\nCAPSULE CLEAR\nATMOSPHERIC DISPERSAL ACTIVE<New>CAPSULE ALREADY RELEASED\nNO SECOND PAYLOAD LOADED<New><Elly>\n\"It is done...\"<New><Citan>\n\"The dispersal pattern is\nstable. There is nothing\nmore to launch here.\"<Close>"
+    },
+    {
+      "id": 5,
+      "width": 58,
+      "height": 5,
+      "manual_wrap": true,
+      "text": "EAST ACCESS DOOR\nRED SERVICE TUNNEL\nROUTE TO CENTRAL CONTROL<New><Elly>\n\"We can return through\nthe red tunnel.\"<Close>"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 42,
+      "height": 3,
+      "text": "PRESSURE TRANSFER LOCK\nATMOSPHERE SEAL OPERABLE<Close>"
+    },
+    {
+      "id": 1,
+      "width": 46,
+      "height": 2,
+      "text": "Equalizing chamber\npressure. Please wait.<Opcode:02:32><Close>"
+    },
+    {
+      "id": 2,
+      "width": 24,
+      "height": 2,
+      "text": "Equalization\ncomplete.<Opcode:02:20><Close>"
+    },
+    {
+      "id": 3,
+      "width": 26,
+      "height": 3,
+      "text": "Venting inner\nchamber.\nPlease wait.<Opcode:02:32><Close>"
+    },
+    {
+      "id": 4,
+      "width": 26,
+      "height": 2,
+      "text": "Decompression\ncomplete.<Opcode:02:20><Close>"
+    }
+  ]
+}

@@ -1,0 +1,1569 @@
+{
+  "source_url": "https://xenoverse.world/#/xenogears/script",
+  "edition": "fan",
+  "translation_method": "Faithful fan localization; Japanese-checked",
+  "chapters": [
+    {
+      "id": "opening",
+      "title": "Opening Movie",
+      "japanese_units": 22,
+      "official_units": 18,
+      "fan_units_available": 22,
+      "missing_fan_units": [],
+      "paired_rows": 18,
+      "japanese_only_rows": 3,
+      "official_only_rows": 0,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "00",
+      "title": "Prologue",
+      "japanese_units": 7,
+      "official_units": 7,
+      "fan_units_available": 7,
+      "missing_fan_units": [],
+      "paired_rows": 7,
+      "japanese_only_rows": 0,
+      "official_only_rows": 0,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "01",
+      "title": "Lahan Village",
+      "japanese_units": 95,
+      "official_units": 386,
+      "fan_units_available": 95,
+      "missing_fan_units": [],
+      "paired_rows": 89,
+      "japanese_only_rows": 1,
+      "official_only_rows": 206,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "02",
+      "title": "Mountain Path",
+      "japanese_units": 11,
+      "official_units": 17,
+      "fan_units_available": 11,
+      "missing_fan_units": [],
+      "paired_rows": 6,
+      "japanese_only_rows": 3,
+      "official_only_rows": 2,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "03",
+      "title": "House on a Hill",
+      "japanese_units": 20,
+      "official_units": 25,
+      "fan_units_available": 20,
+      "missing_fan_units": [],
+      "paired_rows": 19,
+      "japanese_only_rows": 1,
+      "official_only_rows": 3,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "04",
+      "title": "Fallen Shadows",
+      "japanese_units": 57,
+      "official_units": 59,
+      "fan_units_available": 57,
+      "missing_fan_units": [],
+      "paired_rows": 56,
+      "japanese_only_rows": 1,
+      "official_only_rows": 2,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "05",
+      "title": "Attack on Lahan",
+      "japanese_units": 73,
+      "official_units": 58,
+      "fan_units_available": 73,
+      "missing_fan_units": [],
+      "paired_rows": 58,
+      "japanese_only_rows": 11,
+      "official_only_rows": 0,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "06",
+      "title": "Into the Woods",
+      "japanese_units": 42,
+      "official_units": 42,
+      "fan_units_available": 42,
+      "missing_fan_units": [],
+      "paired_rows": 42,
+      "japanese_only_rows": 0,
+      "official_only_rows": 0,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "07",
+      "title": "Girl in Forest",
+      "japanese_units": 127,
+      "official_units": 120,
+      "fan_units_available": 127,
+      "missing_fan_units": [],
+      "paired_rows": 120,
+      "japanese_only_rows": 1,
+      "official_only_rows": 0,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "08",
+      "title": "Broken Silence",
+      "japanese_units": 82,
+      "official_units": 81,
+      "fan_units_available": 82,
+      "missing_fan_units": [],
+      "paired_rows": 81,
+      "japanese_only_rows": 1,
+      "official_only_rows": 0,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "09",
+      "title": "Path to Aveh",
+      "japanese_units": 23,
+      "official_units": 23,
+      "fan_units_available": 23,
+      "missing_fan_units": [],
+      "paired_rows": 23,
+      "japanese_only_rows": 0,
+      "official_only_rows": 0,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "10",
+      "title": "Dazil",
+      "japanese_units": 71,
+      "official_units": 215,
+      "fan_units_available": 71,
+      "missing_fan_units": [],
+      "paired_rows": 44,
+      "japanese_only_rows": 4,
+      "official_only_rows": 18,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "11",
+      "title": "Desert Attack",
+      "japanese_units": 179,
+      "official_units": 174,
+      "fan_units_available": 179,
+      "missing_fan_units": [],
+      "paired_rows": 160,
+      "japanese_only_rows": 6,
+      "official_only_rows": 6,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "12",
+      "title": "Stalactite Cave",
+      "japanese_units": 189,
+      "official_units": 205,
+      "fan_units_available": 189,
+      "missing_fan_units": [],
+      "paired_rows": 175,
+      "japanese_only_rows": 9,
+      "official_only_rows": 9,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "13",
+      "title": "Pirate's Lair",
+      "japanese_units": 291,
+      "official_units": 330,
+      "fan_units_available": 291,
+      "missing_fan_units": [],
+      "paired_rows": 274,
+      "japanese_only_rows": 12,
+      "official_only_rows": 35,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "14",
+      "title": "Operation Aveh",
+      "japanese_units": 181,
+      "official_units": 291,
+      "fan_units_available": 181,
+      "missing_fan_units": [],
+      "paired_rows": 116,
+      "japanese_only_rows": 36,
+      "official_only_rows": 146,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "15",
+      "title": "The Tournament",
+      "japanese_units": 129,
+      "official_units": 174,
+      "fan_units_available": 129,
+      "missing_fan_units": [],
+      "paired_rows": 103,
+      "japanese_only_rows": 14,
+      "official_only_rows": 25,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "16",
+      "title": "Margie's Rescue",
+      "japanese_units": 149,
+      "official_units": 145,
+      "fan_units_available": 149,
+      "missing_fan_units": [],
+      "paired_rows": 145,
+      "japanese_only_rows": 4,
+      "official_only_rows": 0,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "17",
+      "title": "Road to Nisan",
+      "japanese_units": 74,
+      "official_units": 83,
+      "fan_units_available": 74,
+      "missing_fan_units": [],
+      "paired_rows": 60,
+      "japanese_only_rows": 8,
+      "official_only_rows": 18,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "18",
+      "title": "City of Peace",
+      "japanese_units": 264,
+      "official_units": 307,
+      "fan_units_available": 264,
+      "missing_fan_units": [],
+      "paired_rows": 231,
+      "japanese_only_rows": 22,
+      "official_only_rows": 59,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "19",
+      "title": "Recapture Aveh",
+      "japanese_units": 288,
+      "official_units": 287,
+      "fan_units_available": 288,
+      "missing_fan_units": [],
+      "paired_rows": 275,
+      "japanese_only_rows": 9,
+      "official_only_rows": 10,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "20",
+      "title": "Desert Despair",
+      "japanese_units": 253,
+      "official_units": 254,
+      "fan_units_available": 253,
+      "missing_fan_units": [],
+      "paired_rows": 242,
+      "japanese_only_rows": 7,
+      "official_only_rows": 3,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "21",
+      "title": "Kislev Capital",
+      "japanese_units": 454,
+      "official_units": 520,
+      "fan_units_available": 454,
+      "missing_fan_units": [],
+      "paired_rows": 336,
+      "japanese_only_rows": 39,
+      "official_only_rows": 157,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "22",
+      "title": "Brave Battlers",
+      "japanese_units": 131,
+      "official_units": 223,
+      "fan_units_available": 131,
+      "missing_fan_units": [],
+      "paired_rows": 109,
+      "japanese_only_rows": 12,
+      "official_only_rows": 21,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "23",
+      "title": "Sewer Horror",
+      "japanese_units": 344,
+      "official_units": 281,
+      "fan_units_available": 344,
+      "missing_fan_units": [],
+      "paired_rows": 236,
+      "japanese_only_rows": 48,
+      "official_only_rows": 29,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "24",
+      "title": "Battling Champ",
+      "japanese_units": 313,
+      "official_units": 439,
+      "fan_units_available": 313,
+      "missing_fan_units": [],
+      "paired_rows": 257,
+      "japanese_only_rows": 46,
+      "official_only_rows": 169,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "25",
+      "title": "Gear Dock Raid",
+      "japanese_units": 156,
+      "official_units": 134,
+      "fan_units_available": 156,
+      "missing_fan_units": [],
+      "paired_rows": 114,
+      "japanese_only_rows": 10,
+      "official_only_rows": 9,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "26",
+      "title": "Night Purge",
+      "japanese_units": 169,
+      "official_units": 172,
+      "fan_units_available": 169,
+      "missing_fan_units": [],
+      "paired_rows": 169,
+      "japanese_only_rows": 0,
+      "official_only_rows": 1,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "27",
+      "title": "Secret Weapon",
+      "japanese_units": 84,
+      "official_units": 85,
+      "fan_units_available": 84,
+      "missing_fan_units": [],
+      "paired_rows": 71,
+      "japanese_only_rows": 6,
+      "official_only_rows": 12,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "28",
+      "title": "Escape Ignas",
+      "japanese_units": 173,
+      "official_units": 155,
+      "fan_units_available": 173,
+      "missing_fan_units": [],
+      "paired_rows": 155,
+      "japanese_only_rows": 4,
+      "official_only_rows": 0,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "29",
+      "title": "Adrift at Sea",
+      "japanese_units": 163,
+      "official_units": 142,
+      "fan_units_available": 163,
+      "missing_fan_units": [],
+      "paired_rows": 128,
+      "japanese_only_rows": 5,
+      "official_only_rows": 3,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "30",
+      "title": "Men of the Sea",
+      "japanese_units": 154,
+      "official_units": 226,
+      "fan_units_available": 154,
+      "missing_fan_units": [],
+      "paired_rows": 148,
+      "japanese_only_rows": 5,
+      "official_only_rows": 43,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "31",
+      "title": "Friends Again",
+      "japanese_units": 111,
+      "official_units": 108,
+      "fan_units_available": 111,
+      "missing_fan_units": [],
+      "paired_rows": 108,
+      "japanese_only_rows": 3,
+      "official_only_rows": 0,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "32",
+      "title": "Betrayal",
+      "japanese_units": 89,
+      "official_units": 87,
+      "fan_units_available": 89,
+      "missing_fan_units": [],
+      "paired_rows": 75,
+      "japanese_only_rows": 6,
+      "official_only_rows": 11,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "33",
+      "title": "Ramsus' Attack",
+      "japanese_units": 51,
+      "official_units": 51,
+      "fan_units_available": 51,
+      "missing_fan_units": [],
+      "paired_rows": 51,
+      "japanese_only_rows": 0,
+      "official_only_rows": 0,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "34",
+      "title": "A Young Priest",
+      "japanese_units": 177,
+      "official_units": 172,
+      "fan_units_available": 177,
+      "missing_fan_units": [],
+      "paired_rows": 130,
+      "japanese_only_rows": 32,
+      "official_only_rows": 38,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "35",
+      "title": "The Orphanage",
+      "japanese_units": 229,
+      "official_units": 253,
+      "fan_units_available": 229,
+      "missing_fan_units": [],
+      "paired_rows": 184,
+      "japanese_only_rows": 13,
+      "official_only_rows": 21,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "36",
+      "title": "Reaper's Ship",
+      "japanese_units": 70,
+      "official_units": 86,
+      "fan_units_available": 70,
+      "missing_fan_units": [],
+      "paired_rows": 36,
+      "japanese_only_rows": 10,
+      "official_only_rows": 6,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "37",
+      "title": "Burning Souls",
+      "japanese_units": 295,
+      "official_units": 290,
+      "fan_units_available": 295,
+      "missing_fan_units": [],
+      "paired_rows": 218,
+      "japanese_only_rows": 33,
+      "official_only_rows": 19,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "38",
+      "title": "Ocean Floor",
+      "japanese_units": 15,
+      "official_units": 55,
+      "fan_units_available": 15,
+      "missing_fan_units": [],
+      "paired_rows": 15,
+      "japanese_only_rows": 0,
+      "official_only_rows": 39,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "39",
+      "title": "Deep Sea Girl",
+      "japanese_units": 267,
+      "official_units": 241,
+      "fan_units_available": 267,
+      "missing_fan_units": [],
+      "paired_rows": 185,
+      "japanese_only_rows": 31,
+      "official_only_rows": 11,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "40",
+      "title": "Babel Tower",
+      "japanese_units": 134,
+      "official_units": 127,
+      "fan_units_available": 134,
+      "missing_fan_units": [],
+      "paired_rows": 112,
+      "japanese_only_rows": 19,
+      "official_only_rows": 9,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "41",
+      "title": "Sky City Shevat",
+      "japanese_units": 109,
+      "official_units": 307,
+      "fan_units_available": 109,
+      "missing_fan_units": [],
+      "paired_rows": 73,
+      "japanese_only_rows": 24,
+      "official_only_rows": 206,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "42",
+      "title": "Intruder Alert",
+      "japanese_units": 112,
+      "official_units": 102,
+      "fan_units_available": 112,
+      "missing_fan_units": [],
+      "paired_rows": 86,
+      "japanese_only_rows": 19,
+      "official_only_rows": 7,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "43",
+      "title": "Raid of Shevat",
+      "japanese_units": 198,
+      "official_units": 193,
+      "fan_units_available": 198,
+      "missing_fan_units": [],
+      "paired_rows": 173,
+      "japanese_only_rows": 11,
+      "official_only_rows": 12,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "44",
+      "title": "Protect Nisan",
+      "japanese_units": 446,
+      "official_units": 492,
+      "fan_units_available": 446,
+      "missing_fan_units": [],
+      "paired_rows": 330,
+      "japanese_only_rows": 58,
+      "official_only_rows": 58,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "45",
+      "title": "Gate 1 — Margie",
+      "japanese_units": 155,
+      "official_units": 162,
+      "fan_units_available": 155,
+      "missing_fan_units": [],
+      "paired_rows": 139,
+      "japanese_only_rows": 10,
+      "official_only_rows": 14,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "46",
+      "title": "Gate 2 — Babel",
+      "japanese_units": 275,
+      "official_units": 235,
+      "fan_units_available": 275,
+      "missing_fan_units": [],
+      "paired_rows": 218,
+      "japanese_only_rows": 39,
+      "official_only_rows": 15,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "47",
+      "title": "Gate 3 — The Deep",
+      "japanese_units": 90,
+      "official_units": 87,
+      "fan_units_available": 90,
+      "missing_fan_units": [],
+      "paired_rows": 82,
+      "japanese_only_rows": 2,
+      "official_only_rows": 3,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "48",
+      "title": "Into Solaris",
+      "japanese_units": 83,
+      "official_units": 87,
+      "fan_units_available": 83,
+      "missing_fan_units": [],
+      "paired_rows": 57,
+      "japanese_only_rows": 23,
+      "official_only_rows": 28,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "49",
+      "title": "Escape Solaris",
+      "japanese_units": 50,
+      "official_units": 106,
+      "fan_units_available": 50,
+      "missing_fan_units": [],
+      "paired_rows": 45,
+      "japanese_only_rows": 2,
+      "official_only_rows": 45,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "50",
+      "title": "Lone Wolf",
+      "japanese_units": 285,
+      "official_units": 277,
+      "fan_units_available": 285,
+      "missing_fan_units": [],
+      "paired_rows": 265,
+      "japanese_only_rows": 15,
+      "official_only_rows": 5,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "51",
+      "title": "Krelian's Lab",
+      "japanese_units": 103,
+      "official_units": 96,
+      "fan_units_available": 103,
+      "missing_fan_units": [],
+      "paired_rows": 75,
+      "japanese_only_rows": 23,
+      "official_only_rows": 13,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "52",
+      "title": "Tears for Fears",
+      "japanese_units": 218,
+      "official_units": 218,
+      "fan_units_available": 218,
+      "missing_fan_units": [],
+      "paired_rows": 217,
+      "japanese_only_rows": 1,
+      "official_only_rows": 1,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "53",
+      "title": "Fall of Solaris",
+      "japanese_units": 175,
+      "official_units": 177,
+      "fan_units_available": 175,
+      "missing_fan_units": [],
+      "paired_rows": 162,
+      "japanese_only_rows": 3,
+      "official_only_rows": 5,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "54",
+      "title": "Shevat's Move",
+      "japanese_units": 85,
+      "official_units": 85,
+      "fan_units_available": 85,
+      "missing_fan_units": [],
+      "paired_rows": 85,
+      "japanese_only_rows": 0,
+      "official_only_rows": 0,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "55",
+      "title": "Broken Ties",
+      "japanese_units": 123,
+      "official_units": 123,
+      "fan_units_available": 123,
+      "missing_fan_units": [],
+      "paired_rows": 123,
+      "japanese_only_rows": 0,
+      "official_only_rows": 0,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "56",
+      "title": "Shot Down",
+      "japanese_units": 270,
+      "official_units": 265,
+      "fan_units_available": 270,
+      "missing_fan_units": [],
+      "paired_rows": 261,
+      "japanese_only_rows": 2,
+      "official_only_rows": 1,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "57",
+      "title": "Break the Seal",
+      "japanese_units": 125,
+      "official_units": 127,
+      "fan_units_available": 125,
+      "missing_fan_units": [],
+      "paired_rows": 118,
+      "japanese_only_rows": 1,
+      "official_only_rows": 1,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "58",
+      "title": "Soul Vessel",
+      "japanese_units": 162,
+      "official_units": 228,
+      "fan_units_available": 162,
+      "missing_fan_units": [],
+      "paired_rows": 151,
+      "japanese_only_rows": 3,
+      "official_only_rows": 75,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "59",
+      "title": "The Stars Know",
+      "japanese_units": 28,
+      "official_units": 28,
+      "fan_units_available": 28,
+      "missing_fan_units": [],
+      "paired_rows": 28,
+      "japanese_only_rows": 0,
+      "official_only_rows": 0,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "60",
+      "title": "Above Mahanon",
+      "japanese_units": 139,
+      "official_units": 134,
+      "fan_units_available": 139,
+      "missing_fan_units": [],
+      "paired_rows": 128,
+      "japanese_only_rows": 6,
+      "official_only_rows": 3,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "61",
+      "title": "Paradise",
+      "japanese_units": 63,
+      "official_units": 62,
+      "fan_units_available": 63,
+      "missing_fan_units": [],
+      "paired_rows": 56,
+      "japanese_only_rows": 2,
+      "official_only_rows": 5,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "62",
+      "title": "Promised Land",
+      "japanese_units": 93,
+      "official_units": 92,
+      "fan_units_available": 93,
+      "missing_fan_units": [],
+      "paired_rows": 89,
+      "japanese_only_rows": 0,
+      "official_only_rows": 1,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "63",
+      "title": "Waiting Death",
+      "japanese_units": 119,
+      "official_units": 102,
+      "fan_units_available": 119,
+      "missing_fan_units": [],
+      "paired_rows": 99,
+      "japanese_only_rows": 6,
+      "official_only_rows": 2,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "64",
+      "title": "Merkava Calls",
+      "japanese_units": 65,
+      "official_units": 67,
+      "fan_units_available": 65,
+      "missing_fan_units": [],
+      "paired_rows": 63,
+      "japanese_only_rows": 1,
+      "official_only_rows": 2,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "65",
+      "title": "Dreams",
+      "japanese_units": 541,
+      "official_units": 436,
+      "fan_units_available": 541,
+      "missing_fan_units": [],
+      "paired_rows": 394,
+      "japanese_only_rows": 19,
+      "official_only_rows": 9,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "66",
+      "title": "Fallen Star",
+      "japanese_units": 42,
+      "official_units": 35,
+      "fan_units_available": 42,
+      "missing_fan_units": [],
+      "paired_rows": 32,
+      "japanese_only_rows": 0,
+      "official_only_rows": 3,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "67",
+      "title": "Xenogears Wakes",
+      "japanese_units": 243,
+      "official_units": 507,
+      "fan_units_available": 243,
+      "missing_fan_units": [],
+      "paired_rows": 201,
+      "japanese_only_rows": 35,
+      "official_only_rows": 297,
+      "review_needed_rows": 0
+    },
+    {
+      "id": "68",
+      "title": "First and Last",
+      "japanese_units": 201,
+      "official_units": 154,
+      "fan_units_available": 201,
+      "missing_fan_units": [],
+      "paired_rows": 127,
+      "japanese_only_rows": 15,
+      "official_only_rows": 1,
+      "review_needed_rows": 0
+    }
+  ],
+  "chapter_count": 70,
+  "fan_story_count": 63,
+  "fan_passage_count": 10804,
+  "selected_japanese_passage_count": 10804,
+  "selected_fan_passage_count": 10804,
+  "missing_selected_fan_passages": [],
+  "fan_passages_outside_chapter_selections": 0,
+  "characters_requiring_explicit_game_encoding": {
+    ";": 8,
+    "<": 51,
+    ">": 86,
+    "~": 5,
+    "Ö": 1,
+    "×": 1,
+    "à": 1,
+    "é": 2,
+    "ï": 2,
+    "ö": 1,
+    "‐": 2,
+    "–": 6,
+    "—": 611,
+    "‘": 406,
+    "’": 3279,
+    "“": 8424,
+    "”": 1607,
+    "…": 1418,
+    "※": 16,
+    "←": 3,
+    "↑": 2,
+    "→": 127,
+    "└": 5,
+    "■": 3,
+    "□": 12,
+    "△": 2,
+    "○": 2,
+    "●": 4,
+    "　": 26,
+    "・": 1,
+    "（": 4,
+    "）": 4,
+    "～": 2
+  },
+  "verified_rom_replacements": 0,
+  "runtime_verified": false,
+  "limitations": [
+    "Transcript units are not ROM field/block addresses.",
+    "Website coverage does not prove coverage of optional NPCs, menus, items, battle text, or FMV subtitles.",
+    "Original script control bytes, name tokens, choices, pacing, width/height and page layout need per-block verification.",
+    "No ROM text is changed by importing or auditing this corpus."
+  ],
+  "fetched_at_utc": "2026-09-07T12:43:12.556099+00:00",
+  "corpus_manifest_sha256": "502e520126d30af9090bd2c309ca9a3a4970f859b6c4b364068daa2c60e7d41f",
+  "source_asset_count": 133,
+  "source_bytes": 18623163,
+  "missing_fan_stories": [],
+  "source_assets": {
+    "aligned/opening.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/opening.json",
+      "sha256": "dd8ce3ba12b8c1644bbd7ad06307ff4f3c8ab1922db08aaeaf105b2ac60a6fd0",
+      "bytes": 30082
+    },
+    "aligned/00.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/00.json",
+      "sha256": "faca7bbecca0461a76604be37eb8650596a8c36a9a445604caf11eb93ffa6b8d",
+      "bytes": 14174
+    },
+    "aligned/01.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/01.json",
+      "sha256": "f8c6472ce52c5ff7f1a34d35ee8f5703ca0dd521c3a53aec0f039c942bc45156",
+      "bytes": 375532
+    },
+    "aligned/02.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/02.json",
+      "sha256": "baa61789e6e6ba5f3ef9a6edf8799c5f0f7769824962d0b873ef5b86f8801018",
+      "bytes": 22147
+    },
+    "aligned/03.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/03.json",
+      "sha256": "15158dfc0ba62e46174a88fabd8e356e0762d96e702bf72bcbd23045059dec3b",
+      "bytes": 34309
+    },
+    "aligned/04.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/04.json",
+      "sha256": "49c5f618576c1b06747ed19f7ed7101ebbd8396418b691943d2f78f76be73457",
+      "bytes": 87712
+    },
+    "aligned/05.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/05.json",
+      "sha256": "6e3da7569821e8c7d7241e7a946bc296903aba1fa3b0a23f6b8b883d6d8a5265",
+      "bytes": 97109
+    },
+    "aligned/06.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/06.json",
+      "sha256": "d81cfcae4f0958bf6e35d2a70b12df01a83ab6731d414360cf904875f6fd527e",
+      "bytes": 60873
+    },
+    "aligned/07.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/07.json",
+      "sha256": "789746ad1fff13c747d63926e0ac6002588b26699dc81f642b41efcfa108a66a",
+      "bytes": 169683
+    },
+    "aligned/08.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/08.json",
+      "sha256": "efad8f63ba3b03883c49dfb61be143bd422443b41497ac63da88786b3ef374f4",
+      "bytes": 113198
+    },
+    "aligned/09.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/09.json",
+      "sha256": "ae828a9b505d9f47f2e3eb3f0c8f6b962eac5969b3e4f60669dd41c47c52acc6",
+      "bytes": 35406
+    },
+    "aligned/10.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/10.json",
+      "sha256": "09650660d5aabe6450921d8b310bedb32d392bf6266cf7854715d08a5156292e",
+      "bytes": 154920
+    },
+    "aligned/11.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/11.json",
+      "sha256": "c04de448f6ccbbbf59773b11bac4d78dad65db7e8c62314a1b621df1a71016ba",
+      "bytes": 263038
+    },
+    "aligned/12.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/12.json",
+      "sha256": "28286cbfedcba6aab75e9f0798d7b39f4add1b194394b20cbe87286cbf5e9af9",
+      "bytes": 273844
+    },
+    "aligned/13.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/13.json",
+      "sha256": "d8826c010c31c2b6cee8bf7f3e2514658831a69ea9b5b5617da7ee878992d761",
+      "bytes": 475876
+    },
+    "aligned/14.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/14.json",
+      "sha256": "a4c262ba2f99d715b063437b26ea422d796f56f20dc885cf2e96affb90000f8a",
+      "bytes": 383464
+    },
+    "aligned/15.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/15.json",
+      "sha256": "61d01e6ce9f08a3cd8ffa650d13a4478530ffc0c7c96ef4a86e12cbce30afa3f",
+      "bytes": 217280
+    },
+    "aligned/16.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/16.json",
+      "sha256": "0935e74d34da51d51dcec8eb379718e557fb6bda16b44ba1ef97b7ebdfea4b05",
+      "bytes": 196734
+    },
+    "aligned/17.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/17.json",
+      "sha256": "98a062c6a746c60c05e9c6e94e1bddc99da4a33e7d88e0486cd9c4f7c4bdf8aa",
+      "bytes": 117473
+    },
+    "aligned/18.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/18.json",
+      "sha256": "e9647e27b558810da6053452c6f07ae610298e5e1e99f2a2808ebd88bccf785f",
+      "bytes": 419840
+    },
+    "aligned/19.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/19.json",
+      "sha256": "2f366c27fb7c0f38eb33ece8feaa944c5d08608e163cab2cabae59f25fae4611",
+      "bytes": 408239
+    },
+    "aligned/20.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/20.json",
+      "sha256": "32ee785a459649302c790ba9f27e74797b3c43e3f23b7d224dabee774179bd5c",
+      "bytes": 367468
+    },
+    "aligned/21.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/21.json",
+      "sha256": "9d9c072e5cd221d2e1ade961109f012349d085eaedcc24becae51e08226e0840",
+      "bytes": 713379
+    },
+    "aligned/22.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/22.json",
+      "sha256": "22cbe866d04c2b5a80bd083af6d413412a112a206ac3a8f0cc3306e868e74652",
+      "bytes": 241658
+    },
+    "aligned/23.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/23.json",
+      "sha256": "d36f269b505a6a4b4debb7b81022a3c18dc2a5ba8db97060cfd22b2b35e9c886",
+      "bytes": 436043
+    },
+    "aligned/24.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/24.json",
+      "sha256": "ef4c25ea7e9567e15182228a708e252dab9ebaa6ca3c30ed1655d1eb76799ab0",
+      "bytes": 589196
+    },
+    "aligned/25.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/25.json",
+      "sha256": "3bcc11d9ae9d2dee7b6799f309dbfed0abe69b220e5e4162a394108ee0b82a99",
+      "bytes": 196286
+    },
+    "aligned/26.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/26.json",
+      "sha256": "3ec68d17206424ac28a594947402529443d4d3d70b7d9cabfab141327ca99512",
+      "bytes": 231288
+    },
+    "aligned/27.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/27.json",
+      "sha256": "be75f722c20540494764473c3de28314e1c564262ba8d8215a9eaea0c362b2cf",
+      "bytes": 121143
+    },
+    "aligned/28.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/28.json",
+      "sha256": "471eb8df6d9939b77fec5f1935bc1961f2061a1beb07127035d2f3a343b0c0af",
+      "bytes": 222830
+    },
+    "aligned/29.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/29.json",
+      "sha256": "c029d3bd98dec4fce9b72b2509a272509beb802d0f46afd05734d8d14ca62ef5",
+      "bytes": 204052
+    },
+    "aligned/30.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/30.json",
+      "sha256": "decc597a4760fd9a6bd1ab674f8041c0f332119f51dcde1a3a96fd0213cc3307",
+      "bytes": 261423
+    },
+    "aligned/31.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/31.json",
+      "sha256": "e9e2adb2056dd8db025280798febc54a4d3a48826421604bd1cb00b39aa47cf0",
+      "bytes": 153185
+    },
+    "aligned/32.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/32.json",
+      "sha256": "052b084e101c95e99b4d34b3dd64dbd45b965885bd9e296bc682c6149b65eec3",
+      "bytes": 130835
+    },
+    "aligned/33.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/33.json",
+      "sha256": "71dafc4628aa350fafa0dfd4ccf16b990bc233326fa72062264d54fa1cb66b39",
+      "bytes": 68934
+    },
+    "aligned/34.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/34.json",
+      "sha256": "ff794366be049a951a701a36d37cc7df920a579b5ae109658acc847510546553",
+      "bytes": 268950
+    },
+    "aligned/35.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/35.json",
+      "sha256": "e6c8f07f4fd248776ac1f51fb2cb260371281c3fecd37e3112bb41fe9810b46c",
+      "bytes": 331885
+    },
+    "aligned/36.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/36.json",
+      "sha256": "9b488bc7f7cac7b786eaf32059785cd4d8a6c2ad7942ea5c2f92004d9deae0d3",
+      "bytes": 102793
+    },
+    "aligned/37.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/37.json",
+      "sha256": "591f8bcdc85cafd28cb4af97bf8b8f7be5bdeea06a49240fd216b6d06320a050",
+      "bytes": 421141
+    },
+    "aligned/38.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/38.json",
+      "sha256": "ac13bb1b3608df245b3408aa25ad29909e617b8b2b1e8c5c31105c1f486f7b57",
+      "bytes": 64021
+    },
+    "aligned/39.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/39.json",
+      "sha256": "c20433ed84bdd1e3c9683a391a824e6f9145e1ec41e6cbf243b5683c81cd68a0",
+      "bytes": 368563
+    },
+    "aligned/40.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/40.json",
+      "sha256": "bced5a64ec86ace132e94f5777e6bff5c27ab74d0bffc6c2f3d3131088905720",
+      "bytes": 210654
+    },
+    "aligned/41.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/41.json",
+      "sha256": "b1de46bb0f209f123e4f1368d56ce590c9b18068a2f9f34157d242a57686f2d3",
+      "bytes": 382806
+    },
+    "aligned/42.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/42.json",
+      "sha256": "bec2e3865cccad33479a9c16e895f2746636990617cac7a41d6e50b4cf9b76cf",
+      "bytes": 157910
+    },
+    "aligned/43.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/43.json",
+      "sha256": "96456788e36f669aa9baccb0147c7bab19ac7da963df166127ff2636fa891edf",
+      "bytes": 282270
+    },
+    "aligned/44.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/44.json",
+      "sha256": "eb79d277cb3d8b40c525188704382dcecd8b3bf788d463c3d0e076f959b1e338",
+      "bytes": 643551
+    },
+    "aligned/45.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/45.json",
+      "sha256": "d2470ee5bc95d38d3a68ff81f3b30e455543c903f705ae48d399e38ba5d29473",
+      "bytes": 220706
+    },
+    "aligned/46.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/46.json",
+      "sha256": "aa66363e968f7a4e003ccc5bfe27f3f8aec97e266b028ba54e43a533ac58ed1a",
+      "bytes": 436173
+    },
+    "aligned/47.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/47.json",
+      "sha256": "6f700968b3251d11010ddd5403a8c16d8b97815748c4d155df0a547df1005d98",
+      "bytes": 140597
+    },
+    "aligned/48.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/48.json",
+      "sha256": "f30aad01a55cc88d9d672b7be291714af37ef6292c40f7c703f2f301f3a43250",
+      "bytes": 143173
+    },
+    "aligned/49.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/49.json",
+      "sha256": "50f377a8ae59e9981694f44c21ee6361e4cf01efd330de65f00eb3ba45ce9e77",
+      "bytes": 121816
+    },
+    "aligned/50.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/50.json",
+      "sha256": "3c869c3367b446bfa8071e29b73963ff6b003d593dffa6939038c09660dace99",
+      "bytes": 472171
+    },
+    "aligned/51.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/51.json",
+      "sha256": "3c56f7ce02b2602722cd058653530ac5c39ec3e08eb23d4851fd6687f022c02e",
+      "bytes": 161898
+    },
+    "aligned/52.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/52.json",
+      "sha256": "bdc1859d715fa750d325e9143c35d2492ac852d8cffc8e9186f2ec72755b13df",
+      "bytes": 318263
+    },
+    "aligned/53.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/53.json",
+      "sha256": "e7fc9f511afb277deb8b258a43d1eb2b56e0567ad115666888230519f7d476e7",
+      "bytes": 277230
+    },
+    "aligned/54.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/54.json",
+      "sha256": "e2e85c94c32b7a55af451e96545e11eb6788d4cc16f221cf037b5a45848a36c9",
+      "bytes": 157410
+    },
+    "aligned/55.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/55.json",
+      "sha256": "3e12c9b885cb23ea7a86a9b0287d970441863672d5c8695982285be815b8c071",
+      "bytes": 205425
+    },
+    "aligned/56.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/56.json",
+      "sha256": "93857b3aacccb226a7aa4c96f13c0c7ff27acb3ec49aef61223ff8efeb252c5a",
+      "bytes": 353761
+    },
+    "aligned/57.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/57.json",
+      "sha256": "04d2e83536cd389b48aeda40d855cbd18080f0a7ac4fa35a7caae0bf6cb887c1",
+      "bytes": 177436
+    },
+    "aligned/58.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/58.json",
+      "sha256": "3597b1b436bdb78d35043cf0efe003ba09198206d008e697459a1d40801e0135",
+      "bytes": 311626
+    },
+    "aligned/59.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/59.json",
+      "sha256": "e4c988fe533948565d4e5071289b5aeb440910c76b5eb15208e93f8b9d1d81cd",
+      "bytes": 43833
+    },
+    "aligned/60.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/60.json",
+      "sha256": "401ecd75b0872a319feaf52f308d4ac8f3540b5aa072d13eeedff2fb30381e34",
+      "bytes": 193985
+    },
+    "aligned/61.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/61.json",
+      "sha256": "d79bfeaf7178c8db0151910bed946e4c8dd3eb45023542c8ffa444a0f7665016",
+      "bytes": 89035
+    },
+    "aligned/62.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/62.json",
+      "sha256": "8e6be93b173c4fdc4a22b3f0f4d6448e510e00ee98582f33e3c335ddec72c246",
+      "bytes": 127604
+    },
+    "aligned/63.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/63.json",
+      "sha256": "9adf72cea9d0e444d98d87e6bcdc03c9c0d124c6624f4750574447d2874324fd",
+      "bytes": 157480
+    },
+    "aligned/64.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/64.json",
+      "sha256": "29054d5a4451cb1e3eee59c9d016cfb30098891aeee45e9f0a2a164ba3ffa73a",
+      "bytes": 107926
+    },
+    "aligned/65.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/65.json",
+      "sha256": "6700520333f316c4014b86b2d93c36a01b6b6c3648a74fbfa6e0b9e2281652df",
+      "bytes": 666573
+    },
+    "aligned/66.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/66.json",
+      "sha256": "7bed4a79f8795801d3f8b87b7a97578201b147aa511380626c8c2e8310cd9319",
+      "bytes": 55266
+    },
+    "aligned/67.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/67.json",
+      "sha256": "220aecfa035b587b1a55dff540a89351180e495549b8ca12a32aa3ad3ebaa302",
+      "bytes": 674261
+    },
+    "aligned/68.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/aligned/68.json",
+      "sha256": "038ae3c8a27098cdea5541919579809b711f76a9bc5259dacc4cebabde566f02",
+      "bytes": 247857
+    },
+    "fan-retranslation/story00.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story00.json",
+      "sha256": "dd08ad164045a2e412277fcb8c80977b384ff1734a05e8d0a6467ad69241c178",
+      "bytes": 4382
+    },
+    "fan-retranslation/story01.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story01.json",
+      "sha256": "6bd6ce5153da83a78ae0c7a9d1b1e975c880ba25d3a31d932a99cb849ce7780d",
+      "bytes": 16131
+    },
+    "fan-retranslation/story02.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story02.json",
+      "sha256": "a5e850c97399f853b980d858d3f73b7177cfb6a6c99cb8cdd6937ff289fba782",
+      "bytes": 3769
+    },
+    "fan-retranslation/story03.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story03.json",
+      "sha256": "65a614c0cc961e8c38705c2960f79c8cdf6673c8759e0431b0aa3968dfa65b0c",
+      "bytes": 9708
+    },
+    "fan-retranslation/story04.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story04.json",
+      "sha256": "189688efdce25b8f0638e30870623ef44897e69a30b083c9e1b9cefc2fab270b",
+      "bytes": 14787
+    },
+    "fan-retranslation/story05.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story05.json",
+      "sha256": "3bce5c3edc8fb2bd98641f83e9f880aac1bf6d9abf10ec410277bbb262c7002f",
+      "bytes": 7871
+    },
+    "fan-retranslation/story06.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story06.json",
+      "sha256": "46b1a3ba84a6e4cd3f7dc0cd99cef04dfafaa7dda51acb95557e39aea86da7df",
+      "bytes": 12153
+    },
+    "fan-retranslation/story07.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story07.json",
+      "sha256": "4e59ab87a99042ef4c882d07ae9cc2e430ef63453ad4831eab012ac28c4625da",
+      "bytes": 13805
+    },
+    "fan-retranslation/story08.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story08.json",
+      "sha256": "eb1f5d4f8b012822bd07efecde66287bfa4daac5d8ba1b541b160d3d4458ad00",
+      "bytes": 5171
+    },
+    "fan-retranslation/story09.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story09.json",
+      "sha256": "23c11901f5e8579bc05321e1c7cc500d15b3ee477231826c48f739fb65ad417d",
+      "bytes": 22736
+    },
+    "fan-retranslation/story10.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story10.json",
+      "sha256": "b49c97af15dd1848705022b39fc53bfd3ac090007223c04359fce6a77bcfd123",
+      "bytes": 20592
+    },
+    "fan-retranslation/story11.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story11.json",
+      "sha256": "22c650f87cee67cfefa4dea0db29fabba1f35fb31e3e2e54b286730a109de282",
+      "bytes": 24681
+    },
+    "fan-retranslation/story12.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story12.json",
+      "sha256": "bffccf637535502e8d3182d83129c732051d4a4833e0fa0d9194961a0507382a",
+      "bytes": 43135
+    },
+    "fan-retranslation/story13.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story13.json",
+      "sha256": "422fb8f8e27d26f81c9ef161f6c0f33d1c8a6039a7052e370d48b44a39bc6c57",
+      "bytes": 31589
+    },
+    "fan-retranslation/story14.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story14.json",
+      "sha256": "5476348b4e2b4c0e2b6860021fb37d0628feece0c3b030e1685e83f00d5c4c85",
+      "bytes": 20171
+    },
+    "fan-retranslation/story15.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story15.json",
+      "sha256": "efbec65fa583002fd67ab6d09f63909384b4748a00d5d86149b2fb7abe7880b9",
+      "bytes": 17470
+    },
+    "fan-retranslation/story16.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story16.json",
+      "sha256": "c6015eb5c6dfa1837bc26d9bebe6dd5bdc71c26a64b630b606c8966b5f6fd885",
+      "bytes": 14185
+    },
+    "fan-retranslation/story17.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story17.json",
+      "sha256": "d7b5a10d931273561e870c9a354b9cfaddb33a17e71cf26623b6459f18d798f0",
+      "bytes": 53915
+    },
+    "fan-retranslation/story18.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story18.json",
+      "sha256": "ca99257e10275b0085f7d3f9c69073667f8d6455e5f2776f94b45e24002f7767",
+      "bytes": 39000
+    },
+    "fan-retranslation/story19.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story19.json",
+      "sha256": "66e5d3d47dd43c0b1aa43a3e15696fda169a860649d4e735c270bf731b8cc927",
+      "bytes": 31896
+    },
+    "fan-retranslation/story20.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story20.json",
+      "sha256": "62d892d69d83f9db379ad3946b88fde43b648eb0e14deac3af220142bb4d47e8",
+      "bytes": 69530
+    },
+    "fan-retranslation/story21.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story21.json",
+      "sha256": "ac01e193b2cdd1303c08ca82c69722cf4ba113843801ff7c4f83f799ccc207e2",
+      "bytes": 12299
+    },
+    "fan-retranslation/story22.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story22.json",
+      "sha256": "519afb2f7e3d472c965eeb191e4bbcca9af68b5d67e94a22e98562fa44c69984",
+      "bytes": 40788
+    },
+    "fan-retranslation/story23.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story23.json",
+      "sha256": "c99ea74c5d7c9326f5f8cee741e5ea01d77010609fd234f7f61fba66d013e071",
+      "bytes": 32090
+    },
+    "fan-retranslation/story24.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story24.json",
+      "sha256": "f4d4b257c066c189812c2061cde7bd2b8cca9d233d48e43a10e1562d1cfed92f",
+      "bytes": 50857
+    },
+    "fan-retranslation/story25.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story25.json",
+      "sha256": "95081f9d758e0a378cfd77d2890ab20c9c5c698591779b261fcae1a8b917111a",
+      "bytes": 33295
+    },
+    "fan-retranslation/story26.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story26.json",
+      "sha256": "5720210fe3ec44dc35af01a1b5be7b10551cebc67f189540d66403aa2b5b35fe",
+      "bytes": 24694
+    },
+    "fan-retranslation/story27.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story27.json",
+      "sha256": "190aafbd41abc0a6e6999594a710daa6691801c6e347546a04ed188c4e730ca2",
+      "bytes": 5925
+    },
+    "fan-retranslation/story28.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story28.json",
+      "sha256": "238c2dc28973ce68fc05475c1931f589860938be003e46bada7cfdbac1b4d38c",
+      "bytes": 19359
+    },
+    "fan-retranslation/story29.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story29.json",
+      "sha256": "fe030509c68f4e09bf96689dc0e15ca6aa05220659b146544775cdaf681f48e2",
+      "bytes": 16501
+    },
+    "fan-retranslation/story30.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story30.json",
+      "sha256": "171fcf36edbd716701c86b9ed8eb3e1852dc8b7b10da8078b36325fab83a0cae",
+      "bytes": 7011
+    },
+    "fan-retranslation/story31.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story31.json",
+      "sha256": "0aefad2eccb0f5e65b26e5bef441c5724f4aedb59e37deff8f07986afd20b364",
+      "bytes": 23880
+    },
+    "fan-retranslation/story32.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story32.json",
+      "sha256": "587ca6f5f27c9d14bd63b26f770b4474950c5a542dac3906c18c19a2372ed505",
+      "bytes": 10052
+    },
+    "fan-retranslation/story33.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story33.json",
+      "sha256": "7436d5e0cded7e43ec1f3e3b5155127ec48c7a4e180b960ef6ef6625d3806c9d",
+      "bytes": 28382
+    },
+    "fan-retranslation/story34.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story34.json",
+      "sha256": "d1035f07d54c6e55d7d709ac6e904770bde4cbdf23a6e99385479724f3b403ea",
+      "bytes": 15679
+    },
+    "fan-retranslation/story35.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story35.json",
+      "sha256": "b28b7e6846ab25e6a738482aee1679249c5fa8dea208de6867702cd3bd279e51",
+      "bytes": 26744
+    },
+    "fan-retranslation/story36.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story36.json",
+      "sha256": "aeba00623605b9fb6e964d9936f261c744d10cb233de2207b3795940a72d9474",
+      "bytes": 45384
+    },
+    "fan-retranslation/story37.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story37.json",
+      "sha256": "190ec666369e97ae3ac93fe0678dcd7f734384cd3f33e2f388ff18fc16de1209",
+      "bytes": 26470
+    },
+    "fan-retranslation/story38.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story38.json",
+      "sha256": "c25183037be8d95ee827fc5b66824898281684032ab1cb44a41c5b244db75fa5",
+      "bytes": 21759
+    },
+    "fan-retranslation/story39.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story39.json",
+      "sha256": "0fdd0c9f7a9d781517fa4a46215bc8f7b21472cbbec34a564d4ddd3120927630",
+      "bytes": 19825
+    },
+    "fan-retranslation/story40.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story40.json",
+      "sha256": "9d2cc1593802dbcfd00584adea4153950393ce5c12288bfb0f70d3819f2e6623",
+      "bytes": 19027
+    },
+    "fan-retranslation/story41.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story41.json",
+      "sha256": "870e4bd223a93157f7bc55c783af9ad889b032e7231e106df78b5e8178d42c46",
+      "bytes": 16978
+    },
+    "fan-retranslation/story42.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story42.json",
+      "sha256": "51a3a3b71d9034ce538e00e1777f37166c90c0566843723e1df016900d730946",
+      "bytes": 26147
+    },
+    "fan-retranslation/story43.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story43.json",
+      "sha256": "04be9c2702402a8b4e811f134c385e6845d522846a16b408a1c6fe527258103f",
+      "bytes": 67121
+    },
+    "fan-retranslation/story44.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story44.json",
+      "sha256": "d3c1e1af0fc0aa1ea6dc83bd75a07bac70cb8ad45ca7de8c5146288b6f7d1869",
+      "bytes": 23073
+    },
+    "fan-retranslation/story45.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story45.json",
+      "sha256": "c87872da82fddea2187022c67272c8a04ab9a9c8f459ffcf5417b9ef747be75c",
+      "bytes": 29050
+    },
+    "fan-retranslation/story46.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story46.json",
+      "sha256": "6ce8de551d8d41a31827ca18698d18c894d1f54f9b555e30330661716c048f62",
+      "bytes": 22618
+    },
+    "fan-retranslation/story47.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story47.json",
+      "sha256": "fa00dc2ba630f993ad4ad9713ad3e18260547abaeb34c6b22026366f5a409a00",
+      "bytes": 36523
+    },
+    "fan-retranslation/story48.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story48.json",
+      "sha256": "efef6721ca3e15a6284a376c8b39b8f0e92c9f9c1942fa201f5639c0b1d9f6d0",
+      "bytes": 16926
+    },
+    "fan-retranslation/story49.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story49.json",
+      "sha256": "37c9d10b1cb4a643a09721926b12d739b52a14e72a863b523fcd4d72a6c66f78",
+      "bytes": 11544
+    },
+    "fan-retranslation/story50.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story50.json",
+      "sha256": "bcd82d3e3c25d8bd193b9dae21930f5bf1753ed8c024645a1b29f736a34d0a19",
+      "bytes": 43019
+    },
+    "fan-retranslation/story51.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story51.json",
+      "sha256": "ce3fc6fb22b2ceb2b5712cee875cf3d944b0d60ac1174fc86959c84ba8bc665a",
+      "bytes": 67607
+    },
+    "fan-retranslation/story52.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story52.json",
+      "sha256": "748f4dc3452f3766c0a3d914bba62b2c8562ff2784a5e48937c657da9a236428",
+      "bytes": 37075
+    },
+    "fan-retranslation/story53.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story53.json",
+      "sha256": "f7e614380e5431871c606ed112752e8caa9017a428a50be9a4056dfa9c01cd63",
+      "bytes": 21053
+    },
+    "fan-retranslation/story54.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story54.json",
+      "sha256": "3507254b867e2ec45fc54a7849d2c29fe300df4bd2368474167c70da13935b90",
+      "bytes": 20430
+    },
+    "fan-retranslation/story55.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story55.json",
+      "sha256": "2c69405373b6c2479f253bbc3ece2d94d84e20591b73a5a97e935c113f8fdbbd",
+      "bytes": 6526
+    },
+    "fan-retranslation/story56.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story56.json",
+      "sha256": "d6e988482c1a2b8e3146e3126c6baeb0e21065ffda20460f72ad3d16a0eecf0d",
+      "bytes": 24571
+    },
+    "fan-retranslation/story57.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story57.json",
+      "sha256": "99fade68aad4b3ceb5d19c075d3fb46708c3b46666ebf5a295b0e6c33b67f9fb",
+      "bytes": 15464
+    },
+    "fan-retranslation/story58.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story58.json",
+      "sha256": "7d330261b58f2610721b72a2fd4c06ea079a40e31861bf0a6d7a8bf712710f08",
+      "bytes": 13868
+    },
+    "fan-retranslation/story59.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story59.json",
+      "sha256": "9276ccea7ee87f3601daf88051d51b9ab2bc0d46530e9d98dfb370050d2da85c",
+      "bytes": 28187
+    },
+    "fan-retranslation/story60.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story60.json",
+      "sha256": "bc138333eb3f03dcd43016a3aa882137d10cce74518bbdf06551f02d7bdfc24e",
+      "bytes": 71666
+    },
+    "fan-retranslation/story61.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story61.json",
+      "sha256": "56c23eeb3bb73ff56ac135d863402070484902027d2758587c1cf1e12d7974fc",
+      "bytes": 41086
+    },
+    "fan-retranslation/story62.json": {
+      "url": "https://xenoverse.world/assets/scripts/xenogears/fan-retranslation/story62.json",
+      "sha256": "b379309f1bd3dfa691db01d1c6bdeab33f397f179525575479e195b42c5fa977",
+      "bytes": 41231
+    }
+  }
+}

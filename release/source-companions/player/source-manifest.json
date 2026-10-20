@@ -1,0 +1,116 @@
+{
+  "format": "mass-driver-public-player-source-v1",
+  "files": [
+    {
+      "path": "README_SOURCE.txt",
+      "size": 2215,
+      "sha256": "9f2bd04a3db49745a288f0e03c65da5845a2eb0fd209c75f96761c4a728a8a02"
+    },
+    {
+      "path": "release/player-release.json",
+      "size": 1809,
+      "sha256": "7bd2d165553978c7c898ae364fc61d40a14fa409a4608fca95f2ef87f9129ced"
+    },
+    {
+      "path": "tools/mass_driver_standalone/README.md",
+      "size": 9752,
+      "sha256": "10151747e66aa7f56f898d89382a8917cdac5f85b9d284bb709026478784afe4"
+    },
+    {
+      "path": "tools/mass_driver_standalone/README_PLAYER.md",
+      "size": 2799,
+      "sha256": "ead02f63da0386bef6c14956d73695714fa4eb8dd74b36ceca19bf32d206555f"
+    },
+    {
+      "path": "tools/mass_driver_standalone/README_PRIVATE.md",
+      "size": 1507,
+      "sha256": "cc26f5d17175d29a45b02e74c7d6cd1901ca424d4b763b8b6574377618367c42"
+    },
+    {
+      "path": "tools/mass_driver_standalone/app.manifest",
+      "size": 1003,
+      "sha256": "391e9b14f8096970cc17a8c6bde8ccfd756a0f7420cfc431b2d6b1781ba7844d"
+    },
+    {
+      "path": "tools/mass_driver_standalone/archive.cpp",
+      "size": 24865,
+      "sha256": "3c8c81864d7bf478d8712d88f24c48a9956a3bbb099d6c17a826c96860971d78"
+    },
+    {
+      "path": "tools/mass_driver_standalone/archive.h",
+      "size": 1630,
+      "sha256": "052d509f7e96f1dcb1f8585e5211f3eaeb9d316f6d28bae42b9e9372f78b3297"
+    },
+    {
+      "path": "tools/mass_driver_standalone/build.py",
+      "size": 9045,
+      "sha256": "44216a7f608503c138af4e2ef0e0dfbdcae1a22eb7ece819db3e302b0e209bcf"
+    },
+    {
+      "path": "tools/mass_driver_standalone/game.cue.template",
+      "size": 84,
+      "sha256": "bec6ef641e9529bbee486b77e2c4ef02815318b181d9c44a22b455c9daa3c0e4"
+    },
+    {
+      "path": "tools/mass_driver_standalone/licenses/DuckStation_7371_GPL-3.0.txt",
+      "size": 35147,
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "path": "tools/mass_driver_standalone/licenses/Perfect_Works_0.10.2_GPL-3.0.txt",
+      "size": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "path": "tools/mass_driver_standalone/main.cpp",
+      "size": 35293,
+      "sha256": "9e9918bd95e400ab3b9225c2fe2a230061137a0ea60f06a5e42f5cb8e5ad99c2"
+    },
+    {
+      "path": "tools/mass_driver_standalone/pack_payload.py",
+      "size": 14905,
+      "sha256": "e9f7e4f67093137f074e587f8708a91c12e2c1abe1528d0d4ddf5f05d88f240d"
+    },
+    {
+      "path": "tools/mass_driver_standalone/package_source.py",
+      "size": 7683,
+      "sha256": "b162e5deb9ebae79852155c62fbc76ec4fa19073ae33511c37a7ad1e0db578aa"
+    },
+    {
+      "path": "tools/mass_driver_standalone/prepare_payload.py",
+      "size": 9585,
+      "sha256": "4d7930cdfc74a5ce5055a0e5ce5888d77e0e0c7d9cbf096d9f55152aac7476d6"
+    },
+    {
+      "path": "tools/mass_driver_standalone/prepare_public_payload.py",
+      "size": 13630,
+      "sha256": "2b6414070d69415195976b0ca218d02b1ceefe312a49c975bc324ce7526d5a4c"
+    },
+    {
+      "path": "tools/mass_driver_standalone/public_player.h",
+      "size": 17542,
+      "sha256": "b52e7636cbfcc841e8db342f185a5e072febbdfcffbd64f9e8d8d24b4bc72efd"
+    },
+    {
+      "path": "tools/mass_driver_standalone/settings.ini.template",
+      "size": 1983,
+      "sha256": "d370be1192678c920a063c2a116c7fcd0b97132c8b89d0c5de03da8fc9d467d9"
+    },
+    {
+      "path": "tools/mass_driver_standalone/verify.py",
+      "size": 7337,
+      "sha256": "62cc4715345f414e5d44b8b7b6d7adc30e0e7ce4e206bfa5f404fcdc2220075c"
+    },
+    {
+      "path": "tools/mass_driver_standalone/verify_public.py",
+      "size": 10276,
+      "sha256": "1368e63fe205fc65496cc3301c5d05593945d955e415fb0f94b5d6663526cab4"
+    },
+    {
+      "path": "tools/mass_driver_standalone/verify_upgrade.py",
+      "size": 5137,
+      "sha256": "b7a40ef6d98a17b02fc6e0db6302d1835327b2e7e2387dfb6192fa2111a54532"
+    }
+  ],
+  "game_bios_runtime_or_user_data_included": false
+}

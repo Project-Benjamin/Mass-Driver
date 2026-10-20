@@ -1,0 +1,1824 @@
+{
+  "format": "xenogears-external-source-inputs-v1",
+  "profile": "mass_driver",
+  "release": "mass-driver-v176-release-candidate-20261019",
+  "payloads_included": false,
+  "input_root": "Configure tools.input_root locally; relative paths below are the builder's audited donor contract.",
+  "source_discs": {
+    "pw_disc2": {
+      "size": 688456272,
+      "sha256": "7585d2ebadab82f9d982d871e05c02a9fb930167e8fe85d249c266a0e1885d8e"
+    }
+  },
+  "native_tools": {
+    "xenoiso": {
+      "filename": "xenoiso.exe",
+      "size": 69632,
+      "sha256": "63e485219fbad20679871ba9b915ccf584fd15ef5c8868702f74c38e82acd16a"
+    }
+  },
+  "important_requirements": [
+    "Obtain the documented retail/PW disc variants separately; no disc or patch payload is included.",
+    "Restore or independently reproduce each extracted donor below at its recorded size and hash.",
+    "standalone_bootstrap/2595.bin is a captured game-state fixture; it is not generated solely by the disc extraction step.",
+    "Historical regression checks also require excluded historical output images, captures and prepared fixtures.",
+    "Other profiles declare additional source IDs and donors in project.json and their module guides."
+  ],
+  "files": [
+    {
+      "path_below_input_root": "_audit_el_regulus_damage/2594.bin",
+      "size": 40496,
+      "sha256": "b59e5cf492f6e70be1b38390021bb229eca00146f19870dac5e6e4215ed7e054"
+    },
+    {
+      "path_below_input_root": "_audit_gear_damage_battle_overlay/0038.bin",
+      "size": 166665,
+      "sha256": "93a4179fe3b31a4fffb9fe723f63511f15de5177bbfcbca2529124a4108ffbb1"
+    },
+    {
+      "path_below_input_root": "_audit_system_data/0029.bin",
+      "size": 13756,
+      "sha256": "67546805e7e52c8c36561b1f5dc38477aee0d87b788ed980d2a859936ed86029"
+    },
+    {
+      "path_below_input_root": "audit_lighthouse_cd1/1395.bin",
+      "size": 239616,
+      "sha256": "969408b6df78197c0b3c6565cd6d0e654e7c801ad4df46b6e4ef214b03c1f6dd"
+    },
+    {
+      "path_below_input_root": "audit_lighthouse_cd1/field_394/00_images.bin",
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "path_below_input_root": "audit_lighthouse_cd1/field_394/01_walkmesh.bin",
+      "size": 6688,
+      "sha256": "7af7401c48c9fcdb45e421555892ab557f5bf69aa6f2a96441124377b91344f6"
+    },
+    {
+      "path_below_input_root": "audit_lighthouse_cd1/field_394/02_models.bin",
+      "size": 52176,
+      "sha256": "252824c3c5b5486eb2d755df96f9c1e2eeba45bc9c4ef75b65309026a94ee3b2"
+    },
+    {
+      "path_below_input_root": "audit_lighthouse_cd1/field_394/03_actors.bin",
+      "size": 8788,
+      "sha256": "7591225887a6cfe7786e7735cd30ee85678df6b24ef355bd706356d5168d6dec"
+    },
+    {
+      "path_below_input_root": "audit_lighthouse_cd1/field_394/04_sprites.bin",
+      "size": 41380,
+      "sha256": "a64ad004227c419fe2a2ba882d307dac2b2a3780fc1a897848de2c5dec746870"
+    },
+    {
+      "path_below_input_root": "audit_lighthouse_cd1/field_394/05_scripts.bin",
+      "size": 1664,
+      "sha256": "da1be35f616b67ee5c5fcdbb99adf1583be4a9b044ce1af3397fb0e742f07ecc"
+    },
+    {
+      "path_below_input_root": "audit_lighthouse_cd1/field_394/06_encounters.bin",
+      "size": 528,
+      "sha256": "5d593fdc9f3725188054e14658c4710a6f055e9a991db748b520f08762f579bc"
+    },
+    {
+      "path_below_input_root": "audit_lighthouse_cd1/field_394/07_dialogue.bin",
+      "size": 1303,
+      "sha256": "716fba47693001722c948d7961595107f49815e80e334daebb5fe465d4c964d8"
+    },
+    {
+      "path_below_input_root": "audit_lighthouse_cd1/field_394/08_triggers.bin",
+      "size": 24,
+      "sha256": "2ae28be934ec056f2b5538b866dddae8e3a5aaca9591706c784c4cc8d2da8995"
+    },
+    {
+      "path_below_input_root": "audit_lighthouse_cd1/field_394/header.bin",
+      "size": 848,
+      "sha256": "1bb3fb688d7b5fa43d1e63b89557437ab33d11ce6c0a8e9dc18996f20843ddf7"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/1329.bin",
+      "size": 307200,
+      "sha256": "92f7497cf7023322b62de32d557d86f977cba8ede776aeded0cecdc2f6cd1c46"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/1333.bin",
+      "size": 106496,
+      "sha256": "0d561e4850c1ca2205d3e68e7886849412af053816be7c71c76d7f1a6ffc1965"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/1335.bin",
+      "size": 122880,
+      "sha256": "a70b23574f0e0b9d6467c4388f475ca1ca1adf95c021502d74da26cf523d7cce"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/1339.bin",
+      "size": 301056,
+      "sha256": "e35798fd14ec0c2565a6aafb8812b610645a507982e0d138b4bbc02b76aaf0fa"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/1351.bin",
+      "size": 204800,
+      "sha256": "ac2add532e180e4c925bbdeab752f77643617e5c27cfcb57606e417a368f39f1"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/1353.bin",
+      "size": 180224,
+      "sha256": "4d411b597b06d9901789c73ffdb1e7dcaca4fb526b41d806fd01d5abf88a8d28"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/1355.bin",
+      "size": 165888,
+      "sha256": "d38d2ae9a2136b497403b917d04a052ecfd0b476f7f2799c10bfb86a8c235596"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/1357.bin",
+      "size": 262144,
+      "sha256": "75497ba4eca6ff580ba1259a5bdcb50e5a343ee474490d748a553c8f13e844a2"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/1359.bin",
+      "size": 34816,
+      "sha256": "df1211660824d98da2d7ddc7e03fd03ddd52c7ddbae74c69843f3748f4c79f3b"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/1381.bin",
+      "size": 256000,
+      "sha256": "afadd5d8b411cbf437aa3168f9fd96024b8e6c04f7ec9fe58050dd11422a557e"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_361/00_images.bin",
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_361/01_walkmesh.bin",
+      "size": 1504,
+      "sha256": "6d92b629e4bf75a6cda4624a9888c94b3f7307e275d31b4728f6cfb2423702fa"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_361/02_models.bin",
+      "size": 44428,
+      "sha256": "a2f48898527a2df6b20257dde200ab19b64ca26312e459529601f62905e91c85"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_361/03_actors.bin",
+      "size": 2404,
+      "sha256": "f65b8fd5050d6774ac851eb143df8d075974bfbe6cefc28f501630d1244fa289"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_361/04_sprites.bin",
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_361/05_scripts.bin",
+      "size": 2220,
+      "sha256": "fcb374189d0783c322770aded7ca7e245e3802a204fe3c9d77e178234622a61b"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_361/06_encounters.bin",
+      "size": 528,
+      "sha256": "5d593fdc9f3725188054e14658c4710a6f055e9a991db748b520f08762f579bc"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_361/07_dialogue.bin",
+      "size": 596,
+      "sha256": "b8d036b0b52ffccfec982e1d42ae3470ec8c0dbc6d37e238114b9ca518f183e8"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_361/08_triggers.bin",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_361/header.bin",
+      "size": 864,
+      "sha256": "a61e8d0a86ff42ed448b8c805323c98133b651312c23d348f00026a2299bf68a"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_363/00_images.bin",
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_363/01_walkmesh.bin",
+      "size": 2416,
+      "sha256": "df9a70e728f63fee0ee78ac0f5f616ad357a8e590799277db654fa803f428ca7"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_363/02_models.bin",
+      "size": 7376,
+      "sha256": "524e552435be6fd08f4dd7a40dce6b3d24f93cd0bafef08480807b5610101ecc"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_363/03_actors.bin",
+      "size": 2872,
+      "sha256": "9abdba25445fb9f82e3d1393dedb2fc1fbfe39a649b1845868d5f04e0800cf01"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_363/04_sprites.bin",
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_363/05_scripts.bin",
+      "size": 1832,
+      "sha256": "eca65b293c4ba324b1cc63ea08305999034ea375a890bf4c2f2cec48779d7378"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_363/06_encounters.bin",
+      "size": 528,
+      "sha256": "3828516c774346c005fe7255d7b614449458525836d9cc1a233fa8966560b198"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_363/07_dialogue.bin",
+      "size": 418,
+      "sha256": "a2b095d36dd016829336cd20a0703156371ff4a960555ec7f28fc095008f8372"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_363/08_triggers.bin",
+      "size": 24,
+      "sha256": "cfcb3dd937481d792e4086ccf9071502826cd6ea36ddaa39aeb72fb9b52d5189"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_363/header.bin",
+      "size": 800,
+      "sha256": "9c676de1bb64ea8d316da217723729e87674ab126c45597d28cc94b571b9cef0"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_364/00_images.bin",
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_364/01_walkmesh.bin",
+      "size": 1184,
+      "sha256": "3ad85602ff0d04b01a8f65327ee74fb547e4e0a829705c8f8381d5b434bb70a5"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_364/02_models.bin",
+      "size": 11272,
+      "sha256": "5f96304fea823a15e8937627800b64608c96245ec508ff07f898b3c11d8885ce"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_364/03_actors.bin",
+      "size": 8192,
+      "sha256": "5aa8ac6b71e8eca24054d952248f2ab28bc54546d76e6f162fb8cdd46d775f54"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_364/04_sprites.bin",
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_364/05_scripts.bin",
+      "size": 3288,
+      "sha256": "9ef39955b0400cfea9f2ab68a2052eaaadb2b50db95f930f96c36a6bff6de0a7"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_364/06_encounters.bin",
+      "size": 528,
+      "sha256": "5d593fdc9f3725188054e14658c4710a6f055e9a991db748b520f08762f579bc"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_364/07_dialogue.bin",
+      "size": 402,
+      "sha256": "6c6a370907a91cae4f58cf406e29e3fc446cd423a14be45368a852b8c7ff2b7d"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_364/08_triggers.bin",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_364/header.bin",
+      "size": 960,
+      "sha256": "2f0fc5ad035cb3edfb3bb91188b33db33d86a6a7d9d448f046bad1226a257373"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_366/00_images.bin",
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_366/01_walkmesh.bin",
+      "size": 5284,
+      "sha256": "f4ba6048f328dcc044194659ba7ffabf6f2497c7b7f6a4fdade9ab8f6fe99358"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_366/02_models.bin",
+      "size": 68004,
+      "sha256": "614a8299a68ab051d54bbf462cad6f7b40bfa3dcc6df7340416ec8615a47f58b"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_366/03_actors.bin",
+      "size": 12116,
+      "sha256": "8451a0e8dfca1db4a6a5b16417cef9d2ca1e309d44c07676c6a39f307f06564e"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_366/04_sprites.bin",
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_366/05_scripts.bin",
+      "size": 1832,
+      "sha256": "9e85b36ef440606d7f1918e3998f3b430f05161f7da6eaa871de44140eafb2aa"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_366/06_encounters.bin",
+      "size": 528,
+      "sha256": "5d593fdc9f3725188054e14658c4710a6f055e9a991db748b520f08762f579bc"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_366/07_dialogue.bin",
+      "size": 763,
+      "sha256": "b0ef25ac12f39fd591f3a9c7ecf5901293684fec9542ac58b9f143e644fec4f6"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_366/08_triggers.bin",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_366/header.bin",
+      "size": 1152,
+      "sha256": "0a708b5c26bc7ad0440114d31034661e0443d220a7e5f2fb9306eaa4a5d2a738"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_372/00_images.bin",
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_372/01_walkmesh.bin",
+      "size": 2440,
+      "sha256": "cff4ea7650ed6508ba221ec2a40241dbf1346aedf759416d61963a46b2fde940"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_372/02_models.bin",
+      "size": 19680,
+      "sha256": "2c9daf5422eb85042927e9a40e711d14511a6a9ff42fca72864fc259668d72b8"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_372/03_actors.bin",
+      "size": 2872,
+      "sha256": "9abdba25445fb9f82e3d1393dedb2fc1fbfe39a649b1845868d5f04e0800cf01"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_372/04_sprites.bin",
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_372/05_scripts.bin",
+      "size": 5012,
+      "sha256": "55081b9cf0156af4289503bdbd26e1fd6bcf443b3fb2c56402c9a376f176aea8"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_372/06_encounters.bin",
+      "size": 528,
+      "sha256": "e88b412320050425ae87abad80b51749da8171b023e943604cf47a370535ab38"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_372/07_dialogue.bin",
+      "size": 1089,
+      "sha256": "0a95129a76b58419014f3bf9046bc286ba6466a2a1f06fdaa50ccb5d3e22de71"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_372/08_triggers.bin",
+      "size": 48,
+      "sha256": "852e08db04e02559471a27e67b7ddb41f466ff14997d9a384f6158a15c1fe1e1"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_372/header.bin",
+      "size": 1056,
+      "sha256": "0d964c8492a147fe76118ac69f8d99c87441700692e6112da367852c281eab14"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_373/00_images.bin",
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_373/01_walkmesh.bin",
+      "size": 1792,
+      "sha256": "07512054e03e7ad433fe17b7f05b139c43ae3b7b8adda0af739d160a2727efe1"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_373/02_models.bin",
+      "size": 19068,
+      "sha256": "0aa722c57d0ee704124055b4f2ed4edca349de7d245c302be3041c99d306089c"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_373/03_actors.bin",
+      "size": 11448,
+      "sha256": "654b27eec10ee58dae1f61e0856f70d5f84a2d8fe8c32e1975ef7353cd9e0922"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_373/04_sprites.bin",
+      "size": 42164,
+      "sha256": "47d286e93b7481fc1f46b9e57cbf078c528d9d24f0200e363ae84ba087a6adf3"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_373/05_scripts.bin",
+      "size": 2004,
+      "sha256": "ae7e1ce66e73811afb050a961eff93a940e11239af1be496df3825213c97b5ae"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_373/06_encounters.bin",
+      "size": 528,
+      "sha256": "e88b412320050425ae87abad80b51749da8171b023e943604cf47a370535ab38"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_373/07_dialogue.bin",
+      "size": 1326,
+      "sha256": "fa265d31c9d770ee5d21fb3fedcff181266ef2be47593280879132e6e4f3ebb9"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_373/08_triggers.bin",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_373/header.bin",
+      "size": 1376,
+      "sha256": "1f1f84faed6efe45e8eb83d0c7b0980d9cfe7e2473155ef11c2f276b3320693b"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_374/00_images.bin",
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_374/01_walkmesh.bin",
+      "size": 1516,
+      "sha256": "4122b70f1904216efa4c71fa643fee671291c507dd7be6af26414fffc529ec61"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_374/02_models.bin",
+      "size": 28060,
+      "sha256": "aff2acfc5174eabf374df807cad59aed8d8779136e7d7f795b2c9ca8878cb258"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_374/03_actors.bin",
+      "size": 7944,
+      "sha256": "763cd7beb2ef61789fb372532899621dbadecd341a4bc8679bd8a082125d187b"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_374/04_sprites.bin",
+      "size": 8100,
+      "sha256": "337209b64be352028122c9f4ee69761027975592abf1cc09086acefcab36c347"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_374/05_scripts.bin",
+      "size": 1736,
+      "sha256": "19b9b803ccea14cb10a3f38a4b86aba50e004fbaa37a6e501e6f9e0244e7d279"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_374/06_encounters.bin",
+      "size": 528,
+      "sha256": "e88b412320050425ae87abad80b51749da8171b023e943604cf47a370535ab38"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_374/07_dialogue.bin",
+      "size": 51,
+      "sha256": "37a4b87f4393f9ce6ffc87b8a63cc0d300dcfb907096d46938d810e407406eb1"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_374/08_triggers.bin",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_374/header.bin",
+      "size": 832,
+      "sha256": "4015dba74e05433ce0574bebf20c76dd004272f574961825b48b74e9bbfbfa1e"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_375/00_images.bin",
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_375/01_walkmesh.bin",
+      "size": 4656,
+      "sha256": "0bda047efc2a65812cb0ec35f5d611aeaf46dff35a861f79e2fbabb3659eb34f"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_375/02_models.bin",
+      "size": 29212,
+      "sha256": "adab9ac6f94c206149bd6db876da3f219b2ff72317be98acd23e2ce69c93a2f6"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_375/03_actors.bin",
+      "size": 8788,
+      "sha256": "7591225887a6cfe7786e7735cd30ee85678df6b24ef355bd706356d5168d6dec"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_375/04_sprites.bin",
+      "size": 41380,
+      "sha256": "a64ad004227c419fe2a2ba882d307dac2b2a3780fc1a897848de2c5dec746870"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_375/05_scripts.bin",
+      "size": 1608,
+      "sha256": "a660c9151bda54c445b856de073ae346fb5af13a76be9d25a6334fca93b18168"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_375/06_encounters.bin",
+      "size": 528,
+      "sha256": "e88b412320050425ae87abad80b51749da8171b023e943604cf47a370535ab38"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_375/07_dialogue.bin",
+      "size": 699,
+      "sha256": "cb30ececfebae76e7a51711f46d82b10a8aaa4308576b24c979ed58138ee018e"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_375/08_triggers.bin",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_375/header.bin",
+      "size": 944,
+      "sha256": "e7d5590c75ab24ef19bc0f150ceef27680e0e1649c53b12495c137a36605ddcb"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_376/00_images.bin",
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_376/01_walkmesh.bin",
+      "size": 1404,
+      "sha256": "db4155e0ead27fc8b7bd7a5f3bc60a1c199d7ba68f5b2422a92acd642405d2d8"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_376/02_models.bin",
+      "size": 2740,
+      "sha256": "aa5adadf7f09b5d9f3cd5d5e8fd4a66328123f9b2cb1ca2e4e8215b704200b12"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_376/03_actors.bin",
+      "size": 8788,
+      "sha256": "7591225887a6cfe7786e7735cd30ee85678df6b24ef355bd706356d5168d6dec"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_376/04_sprites.bin",
+      "size": 41380,
+      "sha256": "a64ad004227c419fe2a2ba882d307dac2b2a3780fc1a897848de2c5dec746870"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_376/05_scripts.bin",
+      "size": 1856,
+      "sha256": "caefd30f3a41ec0e76b492887587cb184cb5745539d4cd8a0d1506616ae10a99"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_376/06_encounters.bin",
+      "size": 528,
+      "sha256": "5d593fdc9f3725188054e14658c4710a6f055e9a991db748b520f08762f579bc"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_376/07_dialogue.bin",
+      "size": 219,
+      "sha256": "76a33be234902f6ffd8d4b3ab9dd8c4de4e57971378eb0ed0656d0774662ea6b"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_376/08_triggers.bin",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_376/header.bin",
+      "size": 736,
+      "sha256": "6e398b2f2b2416f7b76397cd689ebbec30f73f5815b6fa2fe4e536e9081fb995"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_387/00_images.bin",
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_387/01_walkmesh.bin",
+      "size": 4656,
+      "sha256": "526ee0d41f4c1115c60ef5877c29e1eca7d9e26e11f59f7790fb412fff47b83c"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_387/02_models.bin",
+      "size": 29212,
+      "sha256": "29dbe92b4d0ee0319e7fd1794ee0affdb535475ef31c7b2be45f1c98d6304c95"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_387/03_actors.bin",
+      "size": 8788,
+      "sha256": "7591225887a6cfe7786e7735cd30ee85678df6b24ef355bd706356d5168d6dec"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_387/04_sprites.bin",
+      "size": 41380,
+      "sha256": "a64ad004227c419fe2a2ba882d307dac2b2a3780fc1a897848de2c5dec746870"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_387/05_scripts.bin",
+      "size": 1492,
+      "sha256": "82393af15a6cc7f442ba38e2b3c98242ddc3cfac508a08b28b5e65a15101fe6c"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_387/06_encounters.bin",
+      "size": 528,
+      "sha256": "3828516c774346c005fe7255d7b614449458525836d9cc1a233fa8966560b198"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_387/07_dialogue.bin",
+      "size": 5,
+      "sha256": "687380bc4cdac998c23e03849077c84f556eeecb2b7c1b65d50b513e4ffd265a"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_387/08_triggers.bin",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path_below_input_root": "audit_zeboim_cd1/field_387/header.bin",
+      "size": 944,
+      "sha256": "8b6cf864c201a90f57dc834791c61c22254b3f9cd997aa2bcd28a0122857ac86"
+    },
+    {
+      "path_below_input_root": "field617/02_models.bin",
+      "size": 15560,
+      "sha256": "85b0aa63a5b82324951bd31a08b6d9f6f3ce9b90271fe2215ed5ee0c0b93dc67"
+    },
+    {
+      "path_below_input_root": "guardian_resources/2749.bin",
+      "size": 197900,
+      "sha256": "64dcb01ee940438a8b31657d4805f7679e61da3000b937502646cc743069f1d6"
+    },
+    {
+      "path_below_input_root": "mass-driver-release-20261019/upstream/cd2_story_script_no_deathblow_levels.bin",
+      "size": 688456272,
+      "sha256": "7585d2ebadab82f9d982d871e05c02a9fb930167e8fe85d249c266a0e1885d8e"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2614.bin",
+      "size": 56344,
+      "sha256": "9e78aaaff33d4c92f3228553cf772c10b0d70c53d083f9ee34c661b76dee6014"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2618.bin",
+      "size": 6096,
+      "sha256": "c586291d2923f8563317860bf7d1a03ff03f02a7f94a73976ad8dc11b0e5f843"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2620.bin",
+      "size": 5255,
+      "sha256": "33e53c34b2b8a32b418f828008b87309928fb424b8a02018a384822a0d7c1447"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2622.bin",
+      "size": 5808,
+      "sha256": "adf14b0fe34410e076adfe7d19eb6a2d58d8589031e47de37c98a3072baeb26c"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2624.bin",
+      "size": 5414,
+      "sha256": "68c7a98c7e3201a3836e86b2504a5e06f11b66aabd3e9020351a7f9ddad5d080"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2626.bin",
+      "size": 5357,
+      "sha256": "0c940b16ef4f1aeb4b388ca15ef8915f88a0acb5241ff35ff0b24373835234fb"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2628.bin",
+      "size": 6405,
+      "sha256": "f9826c4b4038f015574ee1df997d5ce2e2d9f17f43b49aa5d91ac30e50af2239"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2630.bin",
+      "size": 5775,
+      "sha256": "dd0567993af22f222652c756b77df29c785bd883e655e5c06f4a7689b0bcdf15"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2632.bin",
+      "size": 5430,
+      "sha256": "22e12f69b55dbf59fc54da1ee690c6b0d20721b034f8ee79701cbf2d7211356b"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2634.bin",
+      "size": 5826,
+      "sha256": "cf2916d1a52ea0184746335f9525b25870f276e43fc3789b9320ba2275d8b287"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2636.bin",
+      "size": 5331,
+      "sha256": "2a7ba53053ee57b9f4ca2a5a22e369b085894e02ed966ffdb41a5fb14c84f3ae"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2638.bin",
+      "size": 5665,
+      "sha256": "f0b1f74ada6f488f264eae0a3c13fc28a2c810f52d2dd65d0f8fe806b5f2f8bf"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2640.bin",
+      "size": 4999,
+      "sha256": "dce24563b9196731b0ed0ab2025d65c994b442b2a96715a6fe8dc84a1385dd9e"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2642.bin",
+      "size": 5189,
+      "sha256": "db55f504a1edfd399702d475b0fea8ca92730e3203912a684ad039a2f0e2e7f3"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2644.bin",
+      "size": 5141,
+      "sha256": "c1589384e0774c5db635c734b502928ae05227a59ba0174fc011edff51acab8d"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2646.bin",
+      "size": 5512,
+      "sha256": "0264e45502dc97812596528b4af6d53423d1d9ff8aa72f79f3ae3231bd9364d7"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2648.bin",
+      "size": 4749,
+      "sha256": "5426b154af04b30806d5121556c8bdd9a75acce673371351ac07e3a5f6a485e7"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2650.bin",
+      "size": 5246,
+      "sha256": "b0dce67010cccbdb2a2e290cc8ff27b1f935ad1a3feb48dca6535f62f4e8e08f"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2652.bin",
+      "size": 4253,
+      "sha256": "f8a99759564d4e2db8c9bdca0622b80c780dcb7b7865e25fdc076e7f27c52c3d"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2654.bin",
+      "size": 6045,
+      "sha256": "ddb04f9d72834d4c221bcab1a00ae76e866cc2150805073ebf5707030734bf8c"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2656.bin",
+      "size": 4849,
+      "sha256": "7741caed630e76cc6e67b28c801ac0f493608dcd8253d811a8c671e411f835bc"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2658.bin",
+      "size": 5694,
+      "sha256": "ca1f029299215875c00fcfccc796fecff73d2eb5fed7e2f1396b55e9240af80b"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2660.bin",
+      "size": 4630,
+      "sha256": "26be2876e3c9cce4823e9fc751f31d4447bd603e88395c4a001987dca12204d8"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2662.bin",
+      "size": 4279,
+      "sha256": "50cb784e3727b7805402d182c613d5db2d848386d7f5c3410000b7353203e7f2"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2664.bin",
+      "size": 4783,
+      "sha256": "c65b2f026645f73f75f747b730bb18ce4b7438d9f5f570afc0cdbc429f1877c6"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2666.bin",
+      "size": 4809,
+      "sha256": "d4dcf6520f11a6cc2910816072e0eb8da1223475003e1543f1b23162b802aff2"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2668.bin",
+      "size": 5461,
+      "sha256": "028e3358303349720b901bdc7b9234d4e001d0624e4dfbbcf343fc7bc21d2758"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2670.bin",
+      "size": 4125,
+      "sha256": "84f4d0992177a89cb231aeb7fef5d23e30a809657a23476492ec481be56a216c"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2672.bin",
+      "size": 5099,
+      "sha256": "03f3b898181adf6beaa7ea097af029116715ad4a44f0328f1133ff734230728e"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2674.bin",
+      "size": 4332,
+      "sha256": "af90ba9e69252d6a869ac59dce83a4d5589965dc2cab577099e220a9a62a4fca"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2676.bin",
+      "size": 4572,
+      "sha256": "38ac095ec06473ed593e469ba9cea35e5e37c40e189c6e9b3cbb66d646d5de70"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2678.bin",
+      "size": 4609,
+      "sha256": "37ddcc93840ffcc2ea77f42a0e586474f05976e0a21795d35fdcb9d647e867ea"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2680.bin",
+      "size": 4951,
+      "sha256": "c81ee403b33a68cec668f168c6f5dd88e8e1c75f394ec3b90e804b26e0fc3ab7"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2682.bin",
+      "size": 4481,
+      "sha256": "bee51b3201972e6379ac10a16af871d1b598e182046dc46cd7d7a1a503c1d13e"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2684.bin",
+      "size": 4533,
+      "sha256": "c7c46e83cf2383de1809f9d6d6faa90617906f0fa56acfea687d6adae248a862"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2686.bin",
+      "size": 4554,
+      "sha256": "33e50e9ec40d4e9c204bdf5c97fc9169fbccabd38d3fbb327e18571779eacf42"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2688.bin",
+      "size": 4397,
+      "sha256": "c4618f66412f86f9f51de85c5719d3314f191980efdfbbf71da0b5bf3e28ccc3"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2690.bin",
+      "size": 4481,
+      "sha256": "db7032bd219dd11490d2cc1e2956bff29a5fd84067a338f073cd49868757326f"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2692.bin",
+      "size": 4570,
+      "sha256": "a13f65ec926f9b2243b842c141f86129236f242f9ae5b2d811b5efaf8c9ea4ae"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2694.bin",
+      "size": 4844,
+      "sha256": "27a41083c70f1f520c9871adae3c75e511372e41b3b3c715d684ff85c926f55a"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2696.bin",
+      "size": 4909,
+      "sha256": "7a44711d26efb7a2b32bfd5102c1083808e0647efc24ac0909f950858405e906"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2698.bin",
+      "size": 4476,
+      "sha256": "b0c8f18f13cd6f9492bda2fa88588cb33106bcb4aa8b04f7947af12717bba746"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2700.bin",
+      "size": 4928,
+      "sha256": "7a9a0b99420ee45c7d7243626626a300b11b2fdbba9ce88ed9ffd9d7ad6fd73d"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2702.bin",
+      "size": 4652,
+      "sha256": "671795eda368ef4974d3e97c0a91b13a9058abcba1ec80e038a9ddffbec5080e"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2704.bin",
+      "size": 4368,
+      "sha256": "8d32a2c4dfd8f45770e3e3da9518801655e6d85c3480d1279bfe30f2e5cd6a61"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2706.bin",
+      "size": 4581,
+      "sha256": "a8260d2351cb681150a7dfbb43068699c717e8ec443783ab7ebb38525f1b50ff"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2708.bin",
+      "size": 4809,
+      "sha256": "22a2d27c2c14699d9199ca5a95df9f707190ea4b58608e7b02890a7851c02b99"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2710.bin",
+      "size": 4647,
+      "sha256": "829756cfaeb2fa12318ecda56420342a16bb94d8d9b1e96b5c77084da19051ac"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2712.bin",
+      "size": 5737,
+      "sha256": "45e4a787bfb6fde262231e0140b142014795489656554e6110de380cef9bfb2d"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2714.bin",
+      "size": 4620,
+      "sha256": "2a7dab3ab1d99cb5666d42d1e073e9f5c3651c301433b7ee8a57a6a7bb946f9a"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2716.bin",
+      "size": 4435,
+      "sha256": "b123d22cf1a2d999d0ddc0f33175d183c813f157194b267372e97ee3f95b71ac"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2718.bin",
+      "size": 4507,
+      "sha256": "29823065bc54e3f99d57f4f3df118d91ba568907c600dd0b94296363cac0caba"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2720.bin",
+      "size": 4455,
+      "sha256": "e0995d5fa3598ddda511f8786967f510c2f37538b0704d06153300180c3c86e1"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2722.bin",
+      "size": 4003,
+      "sha256": "9beb9738f18a39117d9b260024d025db6ac733637ca77d60093a5f4fcb9bfe33"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2724.bin",
+      "size": 5475,
+      "sha256": "d631a8918144f0c74a4037385fe1575936cb3558c9c08ced4e668a6464f17937"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2726.bin",
+      "size": 6624,
+      "sha256": "6e3dfa0d6d55cb5cc93ac4d9de20daa281e1d4d6e2601bdcde90401731348d35"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2728.bin",
+      "size": 6029,
+      "sha256": "4e03e39fe574de382358e781ef18c3d6cbbba240522047c62bf13a8509d3cd2c"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2730.bin",
+      "size": 4693,
+      "sha256": "175581f30e110f8189345c893a38cc9b34642bca90291e40bdc0fa173ccc912b"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2732.bin",
+      "size": 6971,
+      "sha256": "c7bb54e9603f11304ce549a4f90c331125022daa0b762871625710d3e3ea1348"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2734.bin",
+      "size": 5724,
+      "sha256": "ad4f1b8f7c87e6b48c873c2c50c8596e12ce4e31864d965fdb668a34e076c125"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2736.bin",
+      "size": 4850,
+      "sha256": "d9e511531ad475e0824271f591c2a69631817c979a9813ee66581faa95d8138e"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2738.bin",
+      "size": 4386,
+      "sha256": "1aff258379954c9083c32152176d5e1e1fce3590bb29fc5abafa483ce93b9d2c"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2740.bin",
+      "size": 4521,
+      "sha256": "4dbe44edcc5498efddacb4aefa9fd6d590fb6e4e1828f0d1392bde4df70c5cee"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2742.bin",
+      "size": 6138,
+      "sha256": "41db57c2d45da29cabd8d3395260ba676d863895d7a21ff955fb8937294e4ce3"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2744.bin",
+      "size": 7087,
+      "sha256": "42f6c256be5474c5949fcff8d7de246eb41b473101348843dd6fd5de22451c8c"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2746.bin",
+      "size": 4498,
+      "sha256": "86c439808a674c7a3a507fa675ee9ea8fb92631ec18ed3b0ea8513798d17ddc7"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2748.bin",
+      "size": 4367,
+      "sha256": "88f1d4c08bdbdc0355013fb818e375c1fb4c4c632b04bbaac2b968d1be0136d4"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2750.bin",
+      "size": 4489,
+      "sha256": "3fdc572fe7242bc2e71d0ae80936753689ee187e818ea3498001e67b7161695c"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2752.bin",
+      "size": 4919,
+      "sha256": "3f58e20dddd2837cb8fddd2b4f35183ee4121e88bdf1e62a4fb7e186027c12b4"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2754.bin",
+      "size": 4079,
+      "sha256": "a5cdc1bb7e626b0243f99c32dcd5ad61aeaaf45c5a21318f616fd38669bacd39"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2756.bin",
+      "size": 4457,
+      "sha256": "ab78de315807f7aa0bcbb40c16f9fe02518000b79e45758d8d861bd09a666da3"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2758.bin",
+      "size": 4293,
+      "sha256": "84ce1d50f336a5102b49406c23cdaec95e4a55dcac4853337d7b5593488e7409"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2760.bin",
+      "size": 6130,
+      "sha256": "cbfe597d0b5d136380c9fbfb7c3623609fea5db9b001d9b28cb3b13a2ebd513a"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2762.bin",
+      "size": 4643,
+      "sha256": "9e9361973ce5cca0014c26974260fbad0a5bad79224109b197f7510e9ae80c81"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2764.bin",
+      "size": 4708,
+      "sha256": "300608a035909b502eb66e4ccae1024f559c03b04951de49e6da6fadda3fabf8"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2766.bin",
+      "size": 4698,
+      "sha256": "ab8e12514f603d4907e6a5c9310fd9dc9ecd8bb424a28a5f0a7d829452ea2783"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/2768.bin",
+      "size": 4191,
+      "sha256": "44a7eb0cc0e3077e7c1edd95971367ff6bc4b040d7dbab5563add97fd8dfe153"
+    },
+    {
+      "path_below_input_root": "normal_combat_resources/47.bin",
+      "size": 4547,
+      "sha256": "ca7a9e4ae3daf598192c80431079ded82cf0aefe4977ec4025cf70ce2f06076f"
+    },
+    {
+      "path_below_input_root": "overlay_extract/field.bin",
+      "size": 260862,
+      "sha256": "38a1ce829a6f094c505f67143d6ace2d328418c65425a7383991179467e1fdfc"
+    },
+    {
+      "path_below_input_root": "reference_fields/cd1_cloning/1953.bin",
+      "size": 102400,
+      "sha256": "e58a4c0f5aacffbf500c31879e0795238af402d3bfb8d83dfca46df454dca2ed"
+    },
+    {
+      "path_below_input_root": "reference_fields/cd1_zeboim/1331.bin",
+      "size": 296960,
+      "sha256": "738523a1ac713fdfcf83b152ce302cbfdf0983295b7b241a64470a9616696eab"
+    },
+    {
+      "path_below_input_root": "reference_fields/cd1_zeboim/1345.bin",
+      "size": 180224,
+      "sha256": "4d411b597b06d9901789c73ffdb1e7dcaca4fb526b41d806fd01d5abf88a8d28"
+    },
+    {
+      "path_below_input_root": "reference_fields/cd1_zeboim/1361.bin",
+      "size": 116736,
+      "sha256": "db54a274c151c4a2602e10b24e7781e99aed220916b64429b6d1d9bb476b8259"
+    },
+    {
+      "path_below_input_root": "reference_fields/cd1_zeboim/1363.bin",
+      "size": 239616,
+      "sha256": "0406623aac1a16cfadebef4db2391916bfd797677c28eb112154ffc6d957f177"
+    },
+    {
+      "path_below_input_root": "reference_fields/cd1_zeboim/1375.bin",
+      "size": 145408,
+      "sha256": "814172e24014a2ef5050fa8de4e1d4f756a9ff7d060ec29d78ce9504d989e2e3"
+    },
+    {
+      "path_below_input_root": "reference_fields/cd1_zeboim/1377.bin",
+      "size": 212992,
+      "sha256": "e8d6695f0eca70e2b68603bcefb93c10e45b414f7a5f80ec6c6cde0150e1613e"
+    },
+    {
+      "path_below_input_root": "reference_fields/cd2/1401.bin",
+      "size": 319488,
+      "sha256": "8fc521c8500270878422a012a074559a822437bcae682e08681b85d2178ed02a"
+    },
+    {
+      "path_below_input_root": "reference_fields/cd2/1403.bin",
+      "size": 167936,
+      "sha256": "e0c3152bac8ec4dcce2e2daf4863e1065b78dfa678675adfc10115b9f8382f95"
+    },
+    {
+      "path_below_input_root": "reference_fields/cd2/1405.bin",
+      "size": 59392,
+      "sha256": "eb1139bdbd1d52287e781faf05d464294e898f71f2fc60707922dc9712400b97"
+    },
+    {
+      "path_below_input_root": "reference_fields/cd2_cloning_retail/1952.bin",
+      "size": 96540,
+      "sha256": "b242f3f94a358de1f859e69844e8caf6e347723f66e636ed4794441ba40437d1"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_362/00_images.bin",
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_362/01_walkmesh.bin",
+      "size": 2172,
+      "sha256": "7c8c655185b3ff76fc8971693e590a45274bbcd4a19acc80567a829f4387c6ac"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_362/02_models.bin",
+      "size": 47308,
+      "sha256": "d41b07e93c027cf3b732d85c3428558df7c41f567fd1955aa7a803861bd4aa02"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_362/03_actors.bin",
+      "size": 3996,
+      "sha256": "f84a626b32efd650069e635576ba51a420e4dfd2061f8323278737ef1761df5f"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_362/04_sprites.bin",
+      "size": 9876,
+      "sha256": "96902a4a530809dee1c9fb6eb01ec046205ff6a04ff81e445acac3ab3a4052e2"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_362/05_scripts.bin",
+      "size": 1944,
+      "sha256": "61e024bb81e32431ad9d843ac70fbf703251b9c1eed70fd9127015adb0e32c29"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_362/06_encounters.bin",
+      "size": 528,
+      "sha256": "5d593fdc9f3725188054e14658c4710a6f055e9a991db748b520f08762f579bc"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_362/07_dialogue.bin",
+      "size": 5,
+      "sha256": "687380bc4cdac998c23e03849077c84f556eeecb2b7c1b65d50b513e4ffd265a"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_362/08_triggers.bin",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_362/header.bin",
+      "size": 896,
+      "sha256": "2d47988ec588b483b6b55dee1edde6d63a13c40e1bbb6100f2e20910b264e7fd"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_369/00_images.bin",
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_369/01_walkmesh.bin",
+      "size": 2540,
+      "sha256": "6a1f335cd2cf00bcec7a5412b8ab7392fcff378912fd2857880d69f2186e6a14"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_369/02_models.bin",
+      "size": 13504,
+      "sha256": "9bb9ef16cb1f85b0c2a4052d79a710cb91224ea78be7f7b72c246ac6183ab24e"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_369/03_actors.bin",
+      "size": 6656,
+      "sha256": "9efafa5eb89dd6ff945cfccfd130999661ffeca00f2b4902b8434f72a94cce4d"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_369/04_sprites.bin",
+      "size": 10660,
+      "sha256": "4aab88cc9fe7f19ec55b53e1eb4123e7cf6ea8f7772572cdb78e0b4a67663423"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_369/05_scripts.bin",
+      "size": 1980,
+      "sha256": "42f5a3613e91ea441ae20bd7965766fb193578e12bb314452327a672ecee242c"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_369/06_encounters.bin",
+      "size": 528,
+      "sha256": "e88b412320050425ae87abad80b51749da8171b023e943604cf47a370535ab38"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_369/07_dialogue.bin",
+      "size": 844,
+      "sha256": "6ad5de8dd52539c8e79abfe5a798214a4600961a16a81336c601255022c80748"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_369/08_triggers.bin",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_369/header.bin",
+      "size": 1040,
+      "sha256": "e83a23b3f81e425f47fced0ae7264d2e64078fe715c9af2b05179c2245a989d7"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_377/00_images.bin",
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_377/01_walkmesh.bin",
+      "size": 1428,
+      "sha256": "b47b4c276ffec2d279534406f0db31b0a6462a185475b4dbea0c3ffdda71f518"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_377/02_models.bin",
+      "size": 2868,
+      "sha256": "c4435de49086ccfd68df20488c7e69204c2bbde27305d26af798c0512cb1d2b4"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_377/03_actors.bin",
+      "size": 3996,
+      "sha256": "f84a626b32efd650069e635576ba51a420e4dfd2061f8323278737ef1761df5f"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_377/04_sprites.bin",
+      "size": 9876,
+      "sha256": "96902a4a530809dee1c9fb6eb01ec046205ff6a04ff81e445acac3ab3a4052e2"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_377/05_scripts.bin",
+      "size": 1704,
+      "sha256": "9c7f475ea1cfc1ffc019c92a5272a869d46f04c41ccc97dc4a1d79a00daeb23f"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_377/06_encounters.bin",
+      "size": 528,
+      "sha256": "e88b412320050425ae87abad80b51749da8171b023e943604cf47a370535ab38"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_377/07_dialogue.bin",
+      "size": 5,
+      "sha256": "687380bc4cdac998c23e03849077c84f556eeecb2b7c1b65d50b513e4ffd265a"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_377/08_triggers.bin",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_377/header.bin",
+      "size": 720,
+      "sha256": "f46e59eb359cca3d27da02b1c1919a2c4c1e846ed3562b38ebcbb803b8757f09"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_378/00_images.bin",
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_378/01_walkmesh.bin",
+      "size": 1604,
+      "sha256": "5bae54017424c13437d0790f57e4b5be3eea2e3f6fd3952351a87b03bac12e6f"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_378/02_models.bin",
+      "size": 35628,
+      "sha256": "b734fbc3155ba006227ff9f2c0540558a283574d3b1beea0f3f988cac749af87"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_378/03_actors.bin",
+      "size": 4868,
+      "sha256": "7c2175acc5af83ddd3d72b06a22ac21ec3dea9c928cd6fec47f800ef1b63224f"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_378/04_sprites.bin",
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_378/05_scripts.bin",
+      "size": 2732,
+      "sha256": "90d13766773b8b3381e531985db1ce7abb60832f3a073029f33865836c5a687f"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_378/06_encounters.bin",
+      "size": 528,
+      "sha256": "5d593fdc9f3725188054e14658c4710a6f055e9a991db748b520f08762f579bc"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_378/07_dialogue.bin",
+      "size": 541,
+      "sha256": "e25734ee803829224d409e92d74c8ff03daa6056bf8d7253081bf49db5d86c55"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_378/08_triggers.bin",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_378/header.bin",
+      "size": 976,
+      "sha256": "1745402e7ac9bc03566a0546e8bce08b1d4316af20082ae8b0083d26b69bd22f"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_384/00_images.bin",
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_384/01_walkmesh.bin",
+      "size": 2472,
+      "sha256": "6bf746c309116834609fdb52bf6594a36139ee75d356fbce91f219efdb5a6c21"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_384/02_models.bin",
+      "size": 9120,
+      "sha256": "f9e3fdf6f059a0d8b848c8328bdd64fea39130213baa7583f32374a62cee6d34"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_384/03_actors.bin",
+      "size": 2872,
+      "sha256": "9abdba25445fb9f82e3d1393dedb2fc1fbfe39a649b1845868d5f04e0800cf01"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_384/04_sprites.bin",
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_384/05_scripts.bin",
+      "size": 1824,
+      "sha256": "1f2e23dc0014c1cb0eb735e14d80472645bde1e45ed382a2bcf829f3a2551f86"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_384/06_encounters.bin",
+      "size": 528,
+      "sha256": "3828516c774346c005fe7255d7b614449458525836d9cc1a233fa8966560b198"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_384/07_dialogue.bin",
+      "size": 5,
+      "sha256": "687380bc4cdac998c23e03849077c84f556eeecb2b7c1b65d50b513e4ffd265a"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_384/08_triggers.bin",
+      "size": 24,
+      "sha256": "8c56149fb1f11a50e81ef78ced47fea0239b772769309f74f397a06535929065"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_384/header.bin",
+      "size": 752,
+      "sha256": "7c0d88ee5ec0ee349336ac6c49dde7b680352539c7be44fef46ff0682d0ea141"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_385/00_images.bin",
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_385/01_walkmesh.bin",
+      "size": 3608,
+      "sha256": "9385d7b0c51eb21e528d7f6c24de9f6d397d2849a1db45f6432c4f8b9a1b773f"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_385/02_models.bin",
+      "size": 56620,
+      "sha256": "558f17333a467d274b28fde9c2a20f29e241a08317a1c2f0f170c5b642319823"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_385/03_actors.bin",
+      "size": 6408,
+      "sha256": "23d37573e216cc53b799243ca5e13d7450ee77f0e3a12311fff53b88221c3127"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_385/04_sprites.bin",
+      "size": 17188,
+      "sha256": "861048958459dd45e8f3b44ea553a7b2979bacecf29ea6f594e53c39d2802094"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_385/05_scripts.bin",
+      "size": 1688,
+      "sha256": "a4ab4bd30b8f842b3a8d91f8acef04ac7a9f780f1bc12e2b2580527a7bb0d0fd"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_385/06_encounters.bin",
+      "size": 528,
+      "sha256": "3828516c774346c005fe7255d7b614449458525836d9cc1a233fa8966560b198"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_385/07_dialogue.bin",
+      "size": 5,
+      "sha256": "687380bc4cdac998c23e03849077c84f556eeecb2b7c1b65d50b513e4ffd265a"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_385/08_triggers.bin",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_385/header.bin",
+      "size": 848,
+      "sha256": "b37a0ae254f92463d515606d988a239ba0ce70f5366f7fd0a05c094c8e3f8c3b"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_397/00_images.bin",
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_397/01_walkmesh.bin",
+      "size": 5544,
+      "sha256": "37fa0a4af5be2977b12544d85a62b82ca95fd004baaa2d661743f461fcd7caf6"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_397/02_models.bin",
+      "size": 49436,
+      "sha256": "51193f0e147e06ee137b6678e5b4128cee57d07e0aaa9277ac673b43b5eb4b64"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_397/03_actors.bin",
+      "size": 6656,
+      "sha256": "9efafa5eb89dd6ff945cfccfd130999661ffeca00f2b4902b8434f72a94cce4d"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_397/04_sprites.bin",
+      "size": 10660,
+      "sha256": "4aab88cc9fe7f19ec55b53e1eb4123e7cf6ea8f7772572cdb78e0b4a67663423"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_397/05_scripts.bin",
+      "size": 1536,
+      "sha256": "e6b8421aa66461f70f5638758d3703ab4f6a46cce7ba251d59a8dd913c01b345"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_397/06_encounters.bin",
+      "size": 528,
+      "sha256": "5d593fdc9f3725188054e14658c4710a6f055e9a991db748b520f08762f579bc"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_397/07_dialogue.bin",
+      "size": 51,
+      "sha256": "37a4b87f4393f9ce6ffc87b8a63cc0d300dcfb907096d46938d810e407406eb1"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_397/08_triggers.bin",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_397/header.bin",
+      "size": 880,
+      "sha256": "04be6c5cc3ad98a7e08dc4aaf1e92ffd547e64245c8b682c3363bc62bda2d749"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_398/00_images.bin",
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_398/01_walkmesh.bin",
+      "size": 3120,
+      "sha256": "0b2b339a7a5953e5d730fe0ab30a444f05017ef982c28418daee9c8b1c2c0f16"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_398/02_models.bin",
+      "size": 30956,
+      "sha256": "082f649faf39ecad896914edee7ed8133fcba5634e3de6c124a5cc4e3ffeaee6"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_398/03_actors.bin",
+      "size": 8788,
+      "sha256": "7591225887a6cfe7786e7735cd30ee85678df6b24ef355bd706356d5168d6dec"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_398/04_sprites.bin",
+      "size": 41380,
+      "sha256": "a64ad004227c419fe2a2ba882d307dac2b2a3780fc1a897848de2c5dec746870"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_398/05_scripts.bin",
+      "size": 1228,
+      "sha256": "d0015534a01eeb3319c98960139bd310c4fca6d8f9407d03d22fb9eac47b9102"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_398/06_encounters.bin",
+      "size": 528,
+      "sha256": "5d593fdc9f3725188054e14658c4710a6f055e9a991db748b520f08762f579bc"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_398/07_dialogue.bin",
+      "size": 5,
+      "sha256": "687380bc4cdac998c23e03849077c84f556eeecb2b7c1b65d50b513e4ffd265a"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_398/08_triggers.bin",
+      "size": 24,
+      "sha256": "99dbdc79998476514e739061902bded63aad1ef52a9a38e953d0e80cb1bdfa40"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_398/header.bin",
+      "size": 704,
+      "sha256": "6f9183e4ba3314dce69d1e3ca7127fc55c5d63ce605ad7bf0bc0a178a58c9916"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_399/00_images.bin",
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_399/01_walkmesh.bin",
+      "size": 1184,
+      "sha256": "1853233af2e629bcabaa863869d22da5cd90612032bd3f2311abeab4ef045385"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_399/02_models.bin",
+      "size": 20572,
+      "sha256": "2c92a4cb3fcbb864589eec43e3f41cfe63fa2dfc1b3f07b7597d2f4eee315f30"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_399/03_actors.bin",
+      "size": 8788,
+      "sha256": "7591225887a6cfe7786e7735cd30ee85678df6b24ef355bd706356d5168d6dec"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_399/04_sprites.bin",
+      "size": 41380,
+      "sha256": "a64ad004227c419fe2a2ba882d307dac2b2a3780fc1a897848de2c5dec746870"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_399/05_scripts.bin",
+      "size": 1244,
+      "sha256": "bbf5e0e19c265bbb886da95dc65ad105aa068fa89e68155b82a2fe87314c2b40"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_399/06_encounters.bin",
+      "size": 528,
+      "sha256": "5d593fdc9f3725188054e14658c4710a6f055e9a991db748b520f08762f579bc"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_399/07_dialogue.bin",
+      "size": 5,
+      "sha256": "687380bc4cdac998c23e03849077c84f556eeecb2b7c1b65d50b513e4ffd265a"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_399/08_triggers.bin",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_399/header.bin",
+      "size": 656,
+      "sha256": "6bcc8f62dc263083f8cec9e5b98bcc16a2ac51f391b7502dd69bf94f6e7d860e"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_403/06_encounters.bin",
+      "size": 528,
+      "sha256": "6430c533c3e59ebba88acd33cbeadfb2fabe609b68dabd89891bf7e7164858f1"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_673/00_images.bin",
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_673/01_walkmesh.bin",
+      "size": 1184,
+      "sha256": "d5c3d0cef027ac709df539c1cc82e20c8e7b50b72b1f022759cffc365347b2eb"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_673/02_models.bin",
+      "size": 69204,
+      "sha256": "bf8ad4d546485459761b3db1a934716d391216665a1ed982ccf2d7095db5e668"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_673/03_actors.bin",
+      "size": 11968,
+      "sha256": "9da5b8e452b65bc64633f8bcd407c34650b719ba6ace5fc389326730c4548c91"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_673/04_sprites.bin",
+      "size": 77636,
+      "sha256": "d775451137f117201ea223ac24c3b78e889c35dd6c06b65c71124a799d046632"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_673/05_scripts.bin",
+      "size": 3236,
+      "sha256": "3bb058b484a306b95856efd52a6d279dc3fd9f6efeca6e922a527ec28cab8ad9"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_673/06_encounters.bin",
+      "size": 528,
+      "sha256": "54325752ea0b7e2c679501792acf113e86495454e3a238acdaf63eaa7db06e16"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_673/07_dialogue.bin",
+      "size": 2835,
+      "sha256": "3c4abd58736a2eda9b5c421bf211c7ac1886aa2d81780d93750dc7c841680d73"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_673/08_triggers.bin",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path_below_input_root": "reference_fields/field_673/header.bin",
+      "size": 1520,
+      "sha256": "c3e085b9c1b0c165bda0b71953380d63c7cda54fa5ebca70e848bff8599bb62d"
+    },
+    {
+      "path_below_input_root": "reference_fields/goliath_factory/field_260/00_images.bin",
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "path_below_input_root": "reference_fields/goliath_factory/field_260/01_walkmesh.bin",
+      "size": 13244,
+      "sha256": "95fd8cb6a98f6b07c877fde1d955890cd9ec2b849fffe6a430fcb8e4f25b06dc"
+    },
+    {
+      "path_below_input_root": "reference_fields/goliath_factory/field_260/02_models.bin",
+      "size": 118056,
+      "sha256": "3434e5d27e589030eff90a7bff0dda6ed238502b576510b07cf8911d75055408"
+    },
+    {
+      "path_below_input_root": "reference_fields/goliath_factory/field_260/03_actors.bin",
+      "size": 44448,
+      "sha256": "01bd9207d346b8dd411bdfa1a83dde2989ffd3ea1c1703c498dd25eaf180595e"
+    },
+    {
+      "path_below_input_root": "reference_fields/goliath_factory/field_260/04_sprites.bin",
+      "size": 43308,
+      "sha256": "a2774f9c5b673e898d6dfcacdf351ffd12fc9f3ccadcbce7346dc9d8fbed1610"
+    },
+    {
+      "path_below_input_root": "reference_fields/goliath_factory/field_260/05_scripts.bin",
+      "size": 20892,
+      "sha256": "24ffb0d4a533efee27f725d1510708d15901aea79e99916c124096b32f8fecec"
+    },
+    {
+      "path_below_input_root": "reference_fields/goliath_factory/field_260/06_encounters.bin",
+      "size": 528,
+      "sha256": "a3c84f53e6d1eac40cc8eceb1687a3aeee05d81ebb02bb6344273f261530df5b"
+    },
+    {
+      "path_below_input_root": "reference_fields/goliath_factory/field_260/07_dialogue.bin",
+      "size": 51,
+      "sha256": "37a4b87f4393f9ce6ffc87b8a63cc0d300dcfb907096d46938d810e407406eb1"
+    },
+    {
+      "path_below_input_root": "reference_fields/goliath_factory/field_260/08_triggers.bin",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path_below_input_root": "reference_fields/goliath_factory/field_260/header.bin",
+      "size": 1616,
+      "sha256": "42b9f77fb93b805dc5613fd4acfc0ad04b9c8be1ec113d3850efb143b51a7ded"
+    },
+    {
+      "path_below_input_root": "reference_fields/goliath_factory_raw/1126.bin",
+      "size": 142924,
+      "sha256": "8561b043b4d624a492cc4ca3b1e39d6604f49866b2e962d392ed9ba6736f5c8e"
+    },
+    {
+      "path_below_input_root": "reference_fields/goliath_factory_raw/1127.bin",
+      "size": 327680,
+      "sha256": "a00a98333854e61e3e9f0e62a37866487f0362cce4574de96eae976a642a09d5"
+    },
+    {
+      "path_below_input_root": "robot_shop_donor/field_172/00_images.bin",
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "path_below_input_root": "robot_shop_donor/field_172/01_walkmesh.bin",
+      "size": 14172,
+      "sha256": "04d1d28a56a3664774c110e47df7ff32f0b6969f36de4e6569eab1f2e6766540"
+    },
+    {
+      "path_below_input_root": "robot_shop_donor/field_172/02_models.bin",
+      "size": 30140,
+      "sha256": "6c572ae2a7a5890b69d656cb32d93f3c75be0e295799c0032870aec398c65347"
+    },
+    {
+      "path_below_input_root": "robot_shop_donor/field_172/03_actors.bin",
+      "size": 44836,
+      "sha256": "a94953f8ef16cf30e849a61e27332e9c2c01829e606121662d4d05adf0d19b4d"
+    },
+    {
+      "path_below_input_root": "robot_shop_donor/field_172/04_sprites.bin",
+      "size": 113484,
+      "sha256": "4167701a29c8edc30ddcca2da010e3c3a4039ca24b00a5010d8818fc4de76e3d"
+    },
+    {
+      "path_below_input_root": "robot_shop_donor/field_172/05_scripts.bin",
+      "size": 18648,
+      "sha256": "5995050a5decd6529821b2024ab5edfe284251c978019f55dd1aaf254727d51c"
+    },
+    {
+      "path_below_input_root": "robot_shop_donor/field_172/06_encounters.bin",
+      "size": 528,
+      "sha256": "46dfeb04ffe5eea980e5e48344fb9c7a8d452466eda83e0183e5a8466c5d4e06"
+    },
+    {
+      "path_below_input_root": "robot_shop_donor/field_172/07_dialogue.bin",
+      "size": 407,
+      "sha256": "905ad3625afdd317c8987ee54cb0e04e9359e19fc097e1d6f80511d523be8e01"
+    },
+    {
+      "path_below_input_root": "robot_shop_donor/field_172/08_triggers.bin",
+      "size": 48,
+      "sha256": "6d059cba4eb92a27181e15dd40cd2dd4ce18340ca3f72273f8f93bc6fa7a5a78"
+    },
+    {
+      "path_below_input_root": "robot_shop_donor/field_172/header.bin",
+      "size": 608,
+      "sha256": "e319f4e28918dab02f54582af7230528f993c90287f1c2502cb61108dbd41059"
+    },
+    {
+      "path_below_input_root": "shop_menu_data/2593.bin",
+      "size": 65544,
+      "sha256": "cc5c07094ec42cd18cbe339321c970cdc01c332ff76675ee2ac2c4ac3aa0878c"
+    },
+    {
+      "path_below_input_root": "shop_menu_data/2599.bin",
+      "size": 153864,
+      "sha256": "82f84a24ac1fd1979754e1cc9c861405fb59ce95dd78db00a76f00c8f1bd177d"
+    },
+    {
+      "path_below_input_root": "standalone_bootstrap/2595.bin",
+      "size": 9048,
+      "sha256": "c90f343a1cceccf9e9a8d3cb68079856ac8e63efad0d99a1f5655a4d45fa4375"
+    },
+    {
+      "path_below_input_root": "subway_robot_audit/field_250/00_images.bin",
+      "size": 4,
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    {
+      "path_below_input_root": "subway_robot_audit/field_250/01_walkmesh.bin",
+      "size": 26088,
+      "sha256": "ad4ca204ac166c7003d88a2ad9839e291ea86e9679dfdc4f9e0bc673e7ee04b0"
+    },
+    {
+      "path_below_input_root": "subway_robot_audit/field_250/02_models.bin",
+      "size": 122172,
+      "sha256": "568b16e44158e294c47d94300174a8148cf4145cd1ef3e408d3810e69e97d321"
+    },
+    {
+      "path_below_input_root": "subway_robot_audit/field_250/03_actors.bin",
+      "size": 44712,
+      "sha256": "25ac2f56357ecf2e5ce1d694112de691edc70299ba09d6efcebe7158309898b1"
+    },
+    {
+      "path_below_input_root": "subway_robot_audit/field_250/04_sprites.bin",
+      "size": 46380,
+      "sha256": "74f9a47731fb663e46a42aea7c4acbdf72a956e81c59cb2faa8b5078df8c4e93"
+    },
+    {
+      "path_below_input_root": "subway_robot_audit/field_250/05_scripts.bin",
+      "size": 21704,
+      "sha256": "1a557f4552a96f60cab46edf3ebe4e2940a7e1f5591f07382552ec87479015a8"
+    },
+    {
+      "path_below_input_root": "subway_robot_audit/field_250/06_encounters.bin",
+      "size": 528,
+      "sha256": "5d593fdc9f3725188054e14658c4710a6f055e9a991db748b520f08762f579bc"
+    },
+    {
+      "path_below_input_root": "subway_robot_audit/field_250/07_dialogue.bin",
+      "size": 123,
+      "sha256": "602453182e812f97565a384b2833d6d4523c5a37ea472d15324a9fe148cc00b1"
+    },
+    {
+      "path_below_input_root": "subway_robot_audit/field_250/08_triggers.bin",
+      "size": 72,
+      "sha256": "38cae60d77e5ecec7a4dc9108a02f2d6e104eacc1951d2b58a5250ec875f243e"
+    },
+    {
+      "path_below_input_root": "subway_robot_audit/field_250/header.bin",
+      "size": 1328,
+      "sha256": "d87035bc6a0e937c90b32b78021f6a061f9d775191bd6414bbd7e04cc5a611b1"
+    },
+    {
+      "path_below_input_root": "target_chain/1840.bin",
+      "size": 71180,
+      "sha256": "a961ea6ff4460f5cd31a35687d3669f6f90b46dcec8c0aed9f17e3674a6778ef"
+    },
+    {
+      "path_below_input_root": "title_menu_audit_20260813/1587.bin",
+      "size": 182272,
+      "sha256": "80be3ad78cea10a701a7509f0cb75c247c1f8875543189a2c3c2176a960fe048"
+    },
+    {
+      "path_below_input_root": "title_menu_audit_20260813/pwe/1586.bin",
+      "size": 4336,
+      "sha256": "8086ef838b330ef7d8385a44d45352ba9017eeaab0db34ef6f9b23d39c085ba8"
+    },
+    {
+      "path_below_input_root": "title_menu_audit_20260813/retail/1587.bin",
+      "size": 182272,
+      "sha256": "c451da6b1f1ea04eb6e654dfe60d251fbcbca3818b8e412c9d07d5505c2754e1"
+    },
+    {
+      "path_below_input_root": "worldmap_audit/0037.bin",
+      "size": 91816,
+      "sha256": "359f5aaa5e2787c426d309c54f7f37f6a14649420525cf4a7bea1d20aa89f1a9"
+    },
+    {
+      "path_below_input_root": "worldmap_audit/4052.bin",
+      "size": 89097,
+      "sha256": "f3edc3850bce0cdf3865dfd8675092f287edb92c12f2e17e9518828babd1fdab"
+    }
+  ]
+}

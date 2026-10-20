@@ -1,0 +1,12 @@
+{
+  "format": "xenogears-field-dialogue-authored-v1",
+  "reconstruction": true,
+  "blocks": [
+    {
+      "id": 0,
+      "width": 54,
+      "height": 4,
+      "text": "INCLINED TRANSIT LIFT\nLOWER TERMINAL<New>CREW ACCESS LEVEL\nAUTHORIZED PERSONNEL ONLY<Close>"
+    }
+  ]
+}
