@@ -41,7 +41,8 @@
     "microsoft_binaries_included": false,
     "code_signed": false,
     "installer_sha256": "80bf9a93b08bc4d38eda76d2f709dfafbf010c8574d8b102cf8f673f8ccdbc1c",
-    "reproducible": true
+    "reproducible": true,
+    "native_Windows_integration": "GUI input import, exact game reconstruction, remembered launch, upgrade preservation, native in-game Save, fresh-process Continue and normal restored field passed. QA-only automation bindings removed after testing."
   },
   "limitations": [
     "Finite acceptance rather than every possible action/timing/hardware configuration.",
