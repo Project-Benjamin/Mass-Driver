@@ -1,0 +1,145 @@
+{
+  "format": "mass-driver-public-runtime-dependency-sources-v1",
+  "upstream_script": "D:\\CodexWork\\Xenogears\\MassDriver20261019\\public-v175-runtime\\source\\duckstation-b2577ef8bdaae99840874b6dae8146f0316357b4\\scripts\\deps\\build-dependencies-windows-x64.bat",
+  "upstream_script_sha256": "c16ed723d79938dcf9b8a3aa17d0237f68b15a50bccc5faede4de750eaae96ff",
+  "files": [
+    {
+      "filename": "freetype-2.13.2.tar.gz",
+      "url": "https://download.savannah.gnu.org/releases/freetype/freetype-2.13.2.tar.gz",
+      "sha256": "1ac27e16c134a7f2ccea177faba19801131116fd682efc1f5737037c5db224b5",
+      "bytes": 3875020,
+      "status": "verified"
+    },
+    {
+      "filename": "harfbuzz-8.3.1.zip",
+      "url": "https://github.com/harfbuzz/harfbuzz/archive/refs/tags/8.3.1.zip",
+      "sha256": "b2bc56184ae37324bc4829fde7d3f9e6916866ad711ee85792e457547c9fd127",
+      "bytes": 40942608,
+      "status": "verified"
+    },
+    {
+      "filename": "lpng1643.zip",
+      "url": "https://download.sourceforge.net/libpng/lpng1643.zip",
+      "sha256": "fc466a1e638e635d6c66363bdf3f38555b81b0141d0b06ba45b49ccca327436d",
+      "bytes": 1812260,
+      "status": "verified"
+    },
+    {
+      "filename": "jpegsr9f.zip",
+      "url": "https://ijg.org/files/jpegsr9f.zip",
+      "sha256": "6255da8c89e09d694e6800688c76145eb6870a76ac0d36c74fccd61b3940aafa",
+      "bytes": 1209165,
+      "status": "verified"
+    },
+    {
+      "filename": "SDL2-2.30.6.zip",
+      "url": "https://github.com/libsdl-org/SDL/releases/download/release-2.30.6/SDL2-2.30.6.zip",
+      "sha256": "6d4e00fcbee9fd8985cc2869edeb0b1a751912b87506cf2fb6471e73d981e1f4",
+      "bytes": 8906888,
+      "status": "verified"
+    },
+    {
+      "filename": "qtbase-everywhere-src-6.7.2.zip",
+      "url": "https://download.qt.io/official_releases/qt/6.7/6.7.2/submodules/qtbase-everywhere-src-6.7.2.zip",
+      "sha256": "488119aad60719a085a1e45c31641ac2406ef86fc088a3c99885c18e9d6b4bb9",
+      "bytes": 74254369,
+      "status": "verified"
+    },
+    {
+      "filename": "qtimageformats-everywhere-src-6.7.2.zip",
+      "url": "https://download.qt.io/official_releases/qt/6.7/6.7.2/submodules/qtimageformats-everywhere-src-6.7.2.zip",
+      "sha256": "8e736b02db7dd67dbe834d56503b242344ce85d3532da692f1812b30ccf80997",
+      "bytes": 2915005,
+      "status": "verified"
+    },
+    {
+      "filename": "qtsvg-everywhere-src-6.7.2.zip",
+      "url": "https://download.qt.io/official_releases/qt/6.7/6.7.2/submodules/qtsvg-everywhere-src-6.7.2.zip",
+      "sha256": "85a22142270a92be0dd0ab5d27cc53617b2a2f1a45fc0a3890024164032f8475",
+      "bytes": 2452268,
+      "status": "verified"
+    },
+    {
+      "filename": "qttools-everywhere-src-6.7.2.zip",
+      "url": "https://download.qt.io/official_releases/qt/6.7/6.7.2/submodules/qttools-everywhere-src-6.7.2.zip",
+      "sha256": "9e15f1fdbd83e4123e733bff20aff1b45921c09056c3790fa42eb71d0a5cd01f",
+      "bytes": 13432202,
+      "status": "verified"
+    },
+    {
+      "filename": "qttranslations-everywhere-src-6.7.2.zip",
+      "url": "https://download.qt.io/official_releases/qt/6.7/6.7.2/submodules/qttranslations-everywhere-src-6.7.2.zip",
+      "sha256": "d1f25e0f68a1282feffdd5fe795a027ee5f16ad19e3b1fa2e04a51cea19110ec",
+      "bytes": 3109564,
+      "status": "verified"
+    },
+    {
+      "filename": "libwebp-1.4.0.tar.gz",
+      "url": "https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.4.0.tar.gz",
+      "sha256": "61f873ec69e3be1b99535634340d5bde750b2e4447caa1db9f61be3fd49ab1e5",
+      "bytes": 4281370,
+      "status": "verified"
+    },
+    {
+      "filename": "zlib131.zip",
+      "url": "https://zlib.net/zlib131.zip",
+      "sha256": "72af66d44fcc14c22013b46b814d5d2514673dda3d115e64b690c1ad636e7b17",
+      "bytes": 1655249,
+      "status": "verified",
+      "download_url": "https://github.com/madler/zlib/releases/download/v1.3.1/zlib131.zip"
+    },
+    {
+      "filename": "zstd-1.5.6.zip",
+      "url": "https://github.com/facebook/zstd/archive/refs/tags/v1.5.6.zip",
+      "sha256": "3b1c3b46e416d36931efd34663122d7f51b550c87f74de2d38249516fe7d8be5",
+      "bytes": 2727058,
+      "status": "verified"
+    },
+    {
+      "filename": "zstd-fd5f8106a58601a963ee816e6a57aa7c61fafc53.patch",
+      "url": "https://github.com/facebook/zstd/commit/fd5f8106a58601a963ee816e6a57aa7c61fafc53.patch",
+      "sha256": "675f144b11f8ab2424b64bed8ccdca5d3f35b9326046fa7a883925dd180f0651",
+      "bytes": 779,
+      "status": "verified",
+      "recovery": "GitHub changed only abbreviated blob IDs from 10 to 11 digits. Restoring both index-line abbreviations to 10 digits recovered the exact pinned original SHA256; all bytes independently match that pin."
+    },
+    {
+      "filename": "cpuinfo-7524ad504fdcfcf75a18a133da6abd75c5d48053.zip",
+      "url": "https://github.com/pytorch/cpuinfo/archive/7524ad504fdcfcf75a18a133da6abd75c5d48053.zip",
+      "sha256": "13146ae7983d767a678dd01b0d6af591e77cec82babd41264b9164ab808d7d41",
+      "bytes": 3847797,
+      "status": "verified"
+    },
+    {
+      "filename": "discord-rpc-144f3a3f1209994d8d9e8a87964a989cb9911c1e.zip",
+      "url": "https://github.com/stenzek/discord-rpc/archive/144f3a3f1209994d8d9e8a87964a989cb9911c1e.zip",
+      "sha256": "61e185e75d37b360c314125bcdf4697192d15e2d5209db3306ed6cd736d508b3",
+      "bytes": 1868482,
+      "status": "verified"
+    },
+    {
+      "filename": "shaderc-feb2460bf3a504d67011246edeb810c45ea58826.zip",
+      "url": "https://github.com/stenzek/shaderc/archive/feb2460bf3a504d67011246edeb810c45ea58826.zip",
+      "sha256": "a50687a3903328976c3a49f6ba6326196f7713660048957eb033408630af70b1",
+      "bytes": 11343557,
+      "status": "verified"
+    },
+    {
+      "filename": "soundtouch-463ade388f3a51da078dc9ed062bf28e4ba29da7.zip",
+      "url": "https://github.com/stenzek/soundtouch/archive/463ade388f3a51da078dc9ed062bf28e4ba29da7.zip",
+      "sha256": "107a1941181a69abe28018b9ad26fc0218625758ac193bc979abc9e26b7c0c3a",
+      "bytes": 121259,
+      "status": "verified"
+    },
+    {
+      "filename": "SPIRV-Cross-5d127b917f080c6f052553c47170ec0ba702e54f.zip",
+      "url": "https://codeload.github.com/KhronosGroup/SPIRV-Cross/zip/5d127b917f080c6f052553c47170ec0ba702e54f",
+      "git_tag": "vulkan-sdk-1.3.290.0",
+      "git_commit": "5d127b917f080c6f052553c47170ec0ba702e54f",
+      "sha256": "e841870266e97d364d4b6587d719da3adaf7333d8f4777fa0f386ac34cb3fc30",
+      "bytes": 4244010,
+      "status": "verified-tag-resolved"
+    }
+  ],
+  "status": "passed"
+}

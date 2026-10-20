@@ -1,0 +1,46 @@
+{
+  "format": "mass-driver-public-runtime-provenance-v1",
+  "tag": "v0.1-7371",
+  "commit": "b2577ef8bdaae99840874b6dae8146f0316357b4",
+  "license": "GPL-3.0",
+  "official_asset_api_sha256_verified": true,
+  "downloads": [
+    {
+      "path": "duckstation-windows-x64-release.zip",
+      "url": "https://github.com/duckstation/old-releases/releases/download/v0.1-7371/duckstation-windows-x64-release.zip",
+      "size": 27509592,
+      "sha256": "b1036ea9dbf91609cef77daf03bdf2efce19b03ed3d6b4ea7c5c3396f5fc3b96"
+    },
+    {
+      "path": "duckstation-b2577ef8bdaae99840874b6dae8146f0316357b4-source.zip",
+      "url": "https://codeload.github.com/stenzek/duckstation/zip/b2577ef8bdaae99840874b6dae8146f0316357b4",
+      "size": 16426528,
+      "sha256": "38a4fa18425a175b66cbe29b29bbd92336715fa0a6fbf08a99ac9d636cf1f489"
+    },
+    {
+      "path": "README-upstream.md",
+      "url": "https://raw.githubusercontent.com/stenzek/duckstation/b2577ef8bdaae99840874b6dae8146f0316357b4/README.md",
+      "size": 16698,
+      "sha256": "979d2023a660be5ede16f551d3bd6dbed3b970d1246db3eb9b108618d2214ba6"
+    },
+    {
+      "path": "LICENSE-upstream.txt",
+      "url": "https://raw.githubusercontent.com/stenzek/duckstation/b2577ef8bdaae99840874b6dae8146f0316357b4/LICENSE",
+      "size": 35147,
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "path": "release-api.json",
+      "url": "https://api.github.com/repos/duckstation/old-releases/releases/tags/v0.1-7371",
+      "size": 15456,
+      "sha256": "40327ca41570f8e124bae2c559a83e82935976f870c49658c3e8a0a4f9cf023f"
+    },
+    {
+      "path": "commit-api.json",
+      "url": "https://api.github.com/repos/stenzek/duckstation/commits/b2577ef8bdaae99840874b6dae8146f0316357b4",
+      "size": 8852,
+      "sha256": "515b5c41470612f356bfde1173927652919c5048715e661f2f0a45aba35c9400"
+    }
+  ],
+  "public_publication": "Not published; dependency/source review and runtime acceptance remain pending"
+}
