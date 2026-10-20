@@ -30,4 +30,4 @@ Player guide: https://github.com/Project-Benjamin/Mass-Driver/blob/mass-driver-1
 QA coverage: https://github.com/Project-Benjamin/Mass-Driver/blob/mass-driver-1.0/project/docs/mass-driver-release-qa.md
 Source scope: https://github.com/Project-Benjamin/Mass-Driver/blob/mass-driver-1.0/project/docs/source-distribution.md
 
-The previous Surface Soylent System demo release is preserved separately.
+Earlier Surface Soylent System source and documentation remain preserved in repository history.

@@ -24,8 +24,8 @@ installation: it contains the game and BIOS you supplied. This fan project is
 unaffiliated with Square Enix, Sony or the emulator's developers.
 
 [All release downloads and checksums](https://github.com/Project-Benjamin/Mass-Driver/releases/tag/mass-driver-1.0)
-Ã‚Â· [Player guide](project/docs/mass-driver-public-player.md)
-Ã‚Â· [Test coverage and limits](project/docs/mass-driver-release-qa.md)
+Ãƒâ€šÃ‚Â· [Player guide](project/docs/mass-driver-public-player.md)
+Ãƒâ€šÃ‚Â· [Test coverage and limits](project/docs/mass-driver-release-qa.md)
 
 ## Controls and saves
 
@@ -92,8 +92,7 @@ underlying Xenogears game or Sony firmware. No endorsement is implied.
 
 ## Earlier Soylent demo
 
-The previous **Xenogears Cut Content Patcher / Surface Soylent System demo**
-remains available in the [original patcher release](https://github.com/Project-Benjamin/Mass-Driver/releases/tag/patcher).
-Its [earlier README](release/history/SOYLENT_DEMO_README.md), `source/` tree and
-`xenogears_modding_starter/` remain preserved. That demo is separate from the
-Mass Driver 1.0 Windows player.
+The older Surface Soylent System demo release has been retired. Its
+[earlier README](release/history/SOYLENT_DEMO_README.md), `source/` tree and
+`xenogears_modding_starter/` retain the development history. Use the Mass Driver
+1.0 release linked above for the current Windows player.
